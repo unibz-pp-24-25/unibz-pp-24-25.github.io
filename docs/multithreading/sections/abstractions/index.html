@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Abstractions
+  #
+
+We review here some higher-level utilities available in Java to use multithreading, while reducing the risk of unwanted behaviors.
+
+  Thread safety
+  #
+
+
+Terminology.
+A method is said to be tread-safe if it can be accessed by concurrently by several threads without &ldquo;unexpected&rdquo; consequences.
+
+Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.
+Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.
+In particular, this is the case of most Graphical User Interface frameworks (such as JavaFX or Swing for Java).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/multithreading/sections/abstractions/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Abstractions">
+  <meta property="og:description" content="Abstractions # We review here some higher-level utilities available in Java to use multithreading, while reducing the risk of unwanted behaviors.
+Thread safety # Terminology. A method is said to be tread-safe if it can be accessed by concurrently by several threads without “unexpected” consequences.
+Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.
+Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety. In particular, this is the case of most Graphical User Interface frameworks (such as JavaFX or Swing for Java).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Abstractions | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/multithreading/sections/abstractions/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Abstractions</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#thread-safety">Thread safety</a>
+      <ul>
+        <li><a href="#atomic">Atomic operation</a></li>
+        <li><a href="#associative-array">Associative array</a></li>
+      </ul>
+    </li>
+    <li><a href="#thread-pool">Thread pool</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="abstractions">
+  Abstractions
+  <a class="anchor" href="#abstractions">#</a>
+</h1>
+<p>We review here some higher-level utilities available in Java to use multithreading, while reducing the risk of unwanted behaviors.</p>
+<h2 id="thread-safety">
+  Thread safety
+  <a class="anchor" href="#thread-safety">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong>
+A method is said to be <strong>tread-safe</strong> if it can be accessed by concurrently by several threads without &ldquo;unexpected&rdquo; consequences.</p>
+</blockquote>
+<p>Thread safety is a vague term, which may for instance refers to implementations that are free of <a href="http://localhost:1313/docs/multithreading/sections/race/">race conditions</a>.</p>
+<p>Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.
+In particular, this is the case of most <a href="https://en.wikipedia.org/wiki/List_of_widget_toolkits#Based_on_Java">Graphical User Interface frameworks</a> (such as JavaFX or Swing for Java).</p>
+<p>By default, it is <em>highly recommended</em> to rely on such methods when using concurrency.
+For instance, <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a> (Item 81) recommends using &ldquo;thread safe&rdquo; concurrency utilities when possible, rather than Java&rsquo;s (error prone) <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#wait">wait</a>, <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#notify">notify</a> and <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#notifyAll">notifyAll</a> methods.</p>
+<h3 id="atomic">
+  Atomic operation
+  <a class="anchor" href="#atomic">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong>
+An operation performed by a thread is <strong>atomic</strong> if no operation performed by a concurrent or parallel thread can affect its execution.</p>
+</blockquote>
+<p>We saw <a href="http://localhost:1313/docs/multithreading/sections/race/">earlier</a> that the operation</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>i<span style="color:#f92672">++</span>;
+</span></span></code></pre></div><p>is <em>not</em> atomic, but corresponds to a sequence of instructions (fetch, increment and write).</p>
+<p>The package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/package-summary.html">java.util.concurrent.atomic</a> provides classes like <code>AtomicInteger</code>, <code>AtomicBoolean</code> or <code>AtomicReference</code> that support atomic operations.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The program</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>AtomicInteger i <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AtomicInteger(0);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i.<span style="color:#a6e22e">getAndIncrement</span>();
+</span></span></code></pre></div><p>is analogous to</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">++</span>;
+</span></span></code></pre></div><p>but the operation <code>i.getAndIncrement()</code> is atomic, whereas <code>i++</code> is not.</p>
+</blockquote>
+<h3 id="associative-array">
+  Associative array
+  <a class="anchor" href="#associative-array">#</a>
+</h3>
+<h5 id="concurrentmap">
+  <code>ConcurrentMap</code>
+  <a class="anchor" href="#concurrentmap">#</a>
+</h5>
+<p>The interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ConcurrentMap.html"><code>ConcurrentMap</code></a> is a sub-interface of <code>Map</code> (which stands for an <a href="">associative array</a>) with additional atomicity and thread-safety guarantees.</p>
+<p>It has two native implementations, one as a <a href="">hash table</a>, the other as a so-called <a href="https://en.wikipedia.org/wiki/Skip_list">skip list</a>.
+The latter maintains the order of insertion, analogously to <a href="">what we saw</a> for a <code>LinkedHashMap</code>.</p>
+<h5 id="concurrentnavigablemap">
+  <code>ConcurrentNavigableMap</code>
+  <a class="anchor" href="#concurrentnavigablemap">#</a>
+</h5>
+<p>The interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ConcurrentNavigableMap.html"><code>ConcurrentNavigableMap</code></a> is a sub-interface of <code>SortedMap</code> (like <code>TreeMap</code>, that we saw in the <a href="">dedicated section</a>), with additional atomicity and thread-safety guarantees.
+It has one native implementations, as a so-called <a href="https://en.wikipedia.org/wiki/Skip_list">skip list</a>.</p>
+<h4 id="queue">
+  Queue
+  <a class="anchor" href="#queue">#</a>
+</h4>
+<p>The Java interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html"><code>BlockingQueue</code></a> is a sub-interface of <code>Queue</code> (which stands for the abstract data type <a href="">queue</a>).
+In addition to the traditional operations supported by a queue (<code>dequeue</code> and <code>enqueue</code>), a blocking queue provides variants of these operations to:</p>
+<ul>
+<li>wait for the queue to become non-empty (when dequeuing), or</li>
+<li>wait for space to be freed in the queue (when enqueueing).</li>
+</ul>
+<p>These allow implementing the producer/consumer pattern <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#producerConsumer">seen earlier</a>, without relying on Java&rsquo;s <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#wait">wait</a>, <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#notify">notify</a> and <a href="http://localhost:1313/docs/multithreading/sections/synchronization/#notifyAll">notifyAll</a> methods.</p>
+<p><code>BlockingQueue</code> has several native implementations (e.g. as a <a href="">doubly linked list</a> or as a <a href="">dynamic array</a>).</p>
+<h2 id="thread-pool">
+  Thread pool
+  <a class="anchor" href="#thread-pool">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>thread pool</strong> is a (of fixed or flexible) set of threads that can be reused for different tasks.</p>
+</blockquote>
+<p>The factory class <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executors.html"><code>Executors</code></a> provides a series of static methods that return a thread pool.
+In particular:</p>
+<ul>
+<li><code>Executors.newFixedThreadPool</code> returns a pool (instance of <code>ExecutorService</code>) with a fixed number of threads (specified as argument),</li>
+<li><code>Executors.newCachedThreadPool</code> returns a pool (also instance of <code>ExecutorService</code>), but with flexible size.</li>
+</ul>
+<p>In both cases, tasks submitted to the pool will reuse existing threads if available.</p>
+<p>An introduction to Java thread pools can be found <a href="https://www.baeldung.com/java-executors-cached-fixed-threadpool">here</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#thread-safety">Thread safety</a>
+      <ul>
+        <li><a href="#atomic">Atomic operation</a></li>
+        <li><a href="#associative-array">Associative array</a></li>
+      </ul>
+    </li>
+    <li><a href="#thread-pool">Thread pool</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

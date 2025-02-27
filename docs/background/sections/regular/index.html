@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Regular languages
+  #
+
+
+  Definitions
+  #
+
+
+  Alphabet
+  #
+
+
+Definition.
+An alphabet is a finite set of characters.
+
+
+Examples.
+{a} is a alphabet,
+{a,b} is another alphabet,
+{a, b, 3, 5,\n} is yet another alphabet.
+
+
+Warning.
+A blank space is is a character.
+
+The letter $\Sigma$ is often used to refer to an alphabet.
+
+  Word
+  #
+
+
+Definition.
+A word over an alphabet $\Sigma$ is a (possibly empty) finite sequence of character in $\Sigma$.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/background/sections/regular/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Regular languages">
+  <meta property="og:description" content="Regular languages # Definitions # Alphabet # Definition.
+An alphabet is a finite set of characters.
+Examples.
+{a} is a alphabet,
+{a,b} is another alphabet,
+{a, b, 3, 5,\n} is yet another alphabet.
+Warning. A blank space is is a character.
+The letter $\Sigma$ is often used to refer to an alphabet.
+Word # Definition. A word over an alphabet $\Sigma$ is a (possibly empty) finite sequence of character in $\Sigma$.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Regular languages | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/background/sections/regular/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Regular languages</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definitions">Definitions</a>
+      <ul>
+        <li><a href="#alphabet">Alphabet</a></li>
+        <li><a href="#word">Word</a></li>
+        <li><a href="#language">Language</a></li>
+      </ul>
+    </li>
+    <li><a href="#operations-on-languages">Operations on languages</a>
+      <ul>
+        <li><a href="#concat">Element-wise concatenation</a></li>
+        <li><a href="#closure">Closure</a></li>
+      </ul>
+    </li>
+    <li><a href="#reglanguage">Regular language</a></li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li><a href="#regular-expressions">Regular expressions</a></li>
+        <li><a href="#finite-automata">Finite automata</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="regular-languages">
+  Regular languages
+  <a class="anchor" href="#regular-languages">#</a>
+</h1>
+<h2 id="definitions">
+  Definitions
+  <a class="anchor" href="#definitions">#</a>
+</h2>
+<h3 id="alphabet">
+  Alphabet
+  <a class="anchor" href="#alphabet">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong></p>
+<p>An <strong>alphabet</strong> is a finite set of characters.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Examples.</em></strong></p>
+<p>{<code>a</code>} is a alphabet,</p>
+<p>{<code>a</code>,<code>b</code>} is another alphabet,</p>
+<p>{<code>a</code>, <code>b</code>, <code>3</code>, <code>5</code>,<code>\n</code>} is yet another alphabet.</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+A blank space is is a character.</p>
+</blockquote>
+<p>The letter $\Sigma$ is often used to refer to an alphabet.</p>
+<h3 id="word">
+  Word
+  <a class="anchor" href="#word">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A <strong>word</strong> over an alphabet $\Sigma$ is a (possibly empty) finite sequence of character in $\Sigma$.</p>
+</blockquote>
+<p>The empty word (a.k.a. &ldquo;empty string&rdquo;) is traditionally denoted with $\varepsilon$.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+Let $\Sigma$ be the alphabet {<code>a</code>, <code>b</code>, <code>3</code>, <code>5</code>, <code>\n</code>}.
+Then possible words over $\Sigma$ are:</p>
+<ul>
+<li>$\varepsilon$</li>
+<li><code>a</code></li>
+<li><code>aa</code></li>
+<li><code>ba\n</code></li>
+<li><code>\n\nba353\n\nb</code></li>
+</ul>
+</blockquote>
+<h3 id="language">
+  Language
+  <a class="anchor" href="#language">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A formal <strong>language</strong> over an alphabet $\Sigma$ is a (possibly infinite) set of words over $\Sigma$.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+Let $\Sigma$ be the alphabet { <code>a</code>, <code>b</code> }.</p>
+<p>Then possible languages over $\Sigma$ are:</p>
+<ul>
+<li>{ }</li>
+<li>{ <code>a</code> }</li>
+<li>{ <code>a</code>, <code>aa</code>, <code>aaa</code>, <code>b</code>, <code>aba</code> }</li>
+<li>{ $\varepsilon$, <code>a</code>, <code>ba</code> }</li>
+<li>the set of all words that contain only the character <code>a</code></li>
+<li>the set of all words over $\Sigma$</li>
+<li>the set of all words over $\Sigma$ that do not contain 2 consecutive <code>b</code>&rsquo;s</li>
+<li>the set of all words over $\Sigma$ that contain as many <code>a</code>&rsquo;s as <code>b</code>&rsquo;s</li>
+</ul>
+</blockquote>
+<h2 id="operations-on-languages">
+  Operations on languages
+  <a class="anchor" href="#operations-on-languages">#</a>
+</h2>
+<h3 id="concat">
+  Element-wise concatenation
+  <a class="anchor" href="#concat">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>If $L_1$ and $L_2$ are languages, then we use $L_1 \circ L_2$ for the language that consists of the element-wise concatenation of all words in $L_1$ and $L_2$ (in that order).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<p>If $L_1$ = {<code>ab</code>, <code>c</code>} and $L_2$ = {<code>d</code>, <code>ef</code>}, then
+$L_1 \circ L_2$ = { <code>abd</code>, <code>abef</code>, <code>cd</code>, <code>cef</code>}</p>
+<p>If $L_3$ = {<code>ab</code>, <code>b</code>} and $L_4$ = { $\varepsilon$, <code>ac</code> }, then
+$L_3 \circ L_4$ = { <code>ab</code>, <code>abac</code>, <code>b</code>, <code>bac</code> }</p>
+</blockquote>
+<h3 id="closure">
+  Closure
+  <a class="anchor" href="#closure">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>If $L$ is a language, then the <strong>closure</strong> (also called <strong>Kleene closure</strong>) $L^*$ of $L$ is the language</p>
+<p>$L^*$ = { $\varepsilon$ } $\cup\ L \cup\ (L \circ L) \cup\ (L \circ L \circ L) \cup (L \circ L \circ L \circ L) \cup &hellip;$</p>
+</blockquote>
+<p>Equivalently, $L^*$ can be defined as:</p>
+<ul>
+<li>the set that consists of $L$, the empty word $\varepsilon$, and all possible concatenations of words in $L$.</li>
+<li>the smallest superset of $L\ \cup$ { $\varepsilon$ } that is closed under word concatenation (meaning that if $L^*$ contains two words $w_1$ and $w_2$, then it also contains the word $w_1 w_2$).</li>
+</ul>
+<h2 id="reglanguage">
+  Regular language
+  <a class="anchor" href="#reglanguage">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition</em>.</strong>
+A language is <strong>regular</strong> if it is:</p>
+<ul>
+<li>the empty set, or</li>
+<li>the language { $\varepsilon$ }, or</li>
+<li>the language { <code>a</code> } for some character <code>a</code>, or</li>
+<li>the union of two regular languages, or</li>
+<li>the element-wise concatenation of two regular languages, or</li>
+<li>the closure of a regular language.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples</em></strong></p>
+<ul>
+<li>$L_1$ = { <code>a</code> } is regular</li>
+<li>$L_2$ = { <code>b</code> } is regular</li>
+<li>$L_3$ = $L_1 \cup L_2$ = { <code>a</code>, <code>b</code> } is regular</li>
+<li>$L_4 = L_1 \circ L_3$ = { <code>aa</code>, <code>ab</code> } is regular</li>
+<li>$(L_4)^*$ = { $\varepsilon$, <code>aa</code>, <code>ab</code>, <code>aaaa</code>, <code>aaab</code>, <code>abaa</code>, <code>abab</code>, <code>aaaaaa</code>, <code>aaaaab</code>, &hellip; } is regular</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Observation.</em></strong>
+If $\Sigma$ is an alphabet, then the language $\Sigma^*$ of all possible words over $\Sigma$ is regular.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Counter-examples.</em></strong></p>
+<p>If $\Sigma$ = { <code>a</code>,<code>b</code> }, then the set of all words over $\Sigma$ that contain as many <code>a</code>&rsquo;s as <code>b</code>&rsquo;s is not regular.</p>
+<p>If $\Sigma$ = {<code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code>} $\cup$ { <code>+</code>, <code>-</code>, <code>(</code> , <code>)</code>} , then the set of well-formed algebraic expressions over $\Sigma$ (in particular, where each opening parenthesis is closed) is not regular.</p>
+<p>More generally, most programming languages are not regular.</p>
+</blockquote>
+<h2 id="properties">
+  Properties
+  <a class="anchor" href="#properties">#</a>
+</h2>
+<blockquote>
+<ul>
+<li>The intersection of two regular languages is a regular language.</li>
+<li>The difference between two regular languages is a regular language.</li>
+</ul></blockquote>
+<h3 id="regular-expressions">
+  Regular expressions
+  <a class="anchor" href="#regular-expressions">#</a>
+</h3>
+<p>A language is regular iff it can be described by a <strong>regular expression</strong>.</p>
+<p>Regular expressions are covered in the <a href="">dedicated chapter</a>.</p>
+<h3 id="finite-automata">
+  Finite automata
+  <a class="anchor" href="#finite-automata">#</a>
+</h3>
+<p>Regular languages have a close connection to so-called <a href="https://en.wikipedia.org/wiki/Finite-state_machine">finite automata</a>.</p>
+<p>A finite automaton can be viewed as a simple program that recognizes a regular language $L$, meaning that the automaton takes as input a word $w$ and returns true iff $w$ belongs to $L$.</p>
+<p>Finite automata are one of the simplest (theoretical) models of computation.
+They (approximately) correspond to computers that cannot use memory.</p>
+<p>Automata theory is beyond the scope of this course.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definitions">Definitions</a>
+      <ul>
+        <li><a href="#alphabet">Alphabet</a></li>
+        <li><a href="#word">Word</a></li>
+        <li><a href="#language">Language</a></li>
+      </ul>
+    </li>
+    <li><a href="#operations-on-languages">Operations on languages</a>
+      <ul>
+        <li><a href="#concat">Element-wise concatenation</a></li>
+        <li><a href="#closure">Closure</a></li>
+      </ul>
+    </li>
+    <li><a href="#reglanguage">Regular language</a></li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li><a href="#regular-expressions">Regular expressions</a></li>
+        <li><a href="#finite-automata">Finite automata</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+@startuml
+scale 210 width
+
+class Node {
+ char label
+ Node next
+}
+
+@enduml

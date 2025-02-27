@@ -1,0 +1,60 @@
+\documentclass[tikz,margin=5mm]{standalone}
+\usepackage{tikz}
+\newcounter{num}
+\newcommand{\tictactoe}[1]
+    {
+    \begin{tikzpicture}[line width=2pt]
+        \def\r{3mm}
+            \tikzset{
+                    circ/.pic={\draw circle (\r);},
+                    cross/.pic={\draw (-\r,-\r) -- (\r,\r) (-\r,\r) -- (\r,-\r);},
+                    opt/.pic={\draw[opacity=0.2] (-\r,-\r) -- (\r,\r) (-\r,\r) -- (\r,-\r);}
+                    }
+            
+            % The grid
+            \foreach \i in {1,2} \draw (\i,0) -- (\i,3) (0,\i) -- (3,\i);
+            
+            % Numbering the cells
+            \setcounter{num}{0}
+            \foreach \y in {0,...,2}
+                \foreach \x in {0,...,2}
+                    {
+                    \coordinate (\thenum) at (\x+0.5,2-\y+0.5);
+                    %\node[opacity=0.5] at (\thenum) {\sffamily\thenum}; % Uncomment to see numbers in the cells
+                    \addtocounter{num}{1}
+                    }
+                    
+                    
+        \def\X{X} \def\x{x} \def\O{O} \def\n{n}
+        
+        \foreach \l [count = \i from 0] in {#1}
+            {
+            \if\l\X \path (\i) pic{cross};
+            \else
+                \if\l\O \path (\i) pic{circ};
+                \else
+                    \if\l\x \path (\i) pic{opt};
+                    \else
+                        \if\l\n \node[opacity=0.5] at (\i) {\sffamily\i};
+                        \fi
+                    \fi
+                \fi
+            \fi
+            }
+    \end{tikzpicture}
+    }
+    
+
+\begin{document}
+    
+    % \tictactoe{O,x,n,
+    %            x,X,x,
+    %            n,x,O}
+    %
+    % \vspace*{1cm}
+    %
+    \tictactoe{ ,O, ,
+               O,X,X,
+                , , }           
+                    
+\end{document}

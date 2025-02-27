@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Hierarchical file system
+  #
+
+
+  Tree
+  #
+
+Most operating system expose files as a tree (or possibly several trees for Windows).
+
+A (nonempty) tree is either:
+
+a single node (called a leaf), or
+a node with one or several children that are trees.
+
+
+In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
+For instance:
+├── bin
+│   ├── echo
+│   └── ...
+├── home
+│   ├── alice
+│   │   ├── .bashrc
+│   │   ├── .m2
+│   │   │   └── ...
+│   │   ├── Desktop
+│   │   │   └── ...
+│   │   ├── music
+│   │   │   └── thatSong.mp3
+│   │   └── workspace
+│   │       └── pp
+│   │           ├── assignments
+│   │           │   └── ...
+│   │           └── project
+│   │               ├── .git
+│   │               │   └── ...
+│   │               ├── src
+│   │               │   └── HelloWorld.java
+│   │               └── test
+│   │                   └── testHelloWorld.java
+│   └── bob
+│       ├── .bashrc
+│       ├── Desktop
+│       │   └── ...
+│       └── music
+│           ├── thatSong.mp3
+│           └── anotherSong.mp3
+└── ...
+
+Terminology. In this course, we will use the terms &ldquo;folder&rdquo; and &ldquo;directory&rdquo; interchangeably.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Hierarchical file system">
+  <meta property="og:description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
+A (nonempty) tree is either:
+a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
+├── bin │ ├── echo │ └── ... ├── home │ ├── alice │ │ ├── .bashrc │ │ ├── .m2 │ │ │ └── ... │ │ ├── Desktop │ │ │ └── ... │ │ ├── music │ │ │ └── thatSong.mp3 │ │ └── workspace │ │ └── pp │ │ ├── assignments │ │ │ └── ... │ │ └── project │ │ ├── .git │ │ │ └── ... │ │ ├── src │ │ │ └── HelloWorld.java │ │ └── test │ │ └── testHelloWorld.java │ └── bob │ ├── .bashrc │ ├── Desktop │ │ └── ... │ └── music │ ├── thatSong.mp3 │ └── anotherSong.mp3 └── ... Terminology. In this course, we will use the terms “folder” and “directory” interchangeably.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Hierarchical file system | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.d2bdf4d41b8b16ba58f297d496360ffb40cb9e480b1bad2b10f8936f4c137ad0.js" integrity="sha256-0r301BuLFrpY8pfUljYP&#43;0DLnkgLG60rEPiTb0wTetA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="active">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Hierarchical file system</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tree">Tree</a></li>
+    <li><a href="#path">Path</a>
+      <ul>
+        <li><a href="#absolute">Absolute path</a></li>
+        <li><a href="#relative-path">Relative path</a></li>
+      </ul>
+    </li>
+    <li><a href="#wd">Working directory</a></li>
+    <li><a href="#home-directory">Home directory</a>
+      <ul>
+        <li><a href="#absolute-paths-to-the-home-directory">Absolute paths to the home directory</a></li>
+        <li><a href="#access-restriction">Access restriction</a></li>
+        <li><a href="#hidden-files-and-directories">Hidden files and directories</a></li>
+        <li><a href="#usage-and-layout">Usage and layout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="hierarchical-file-system">
+  Hierarchical file system
+  <a class="anchor" href="#hierarchical-file-system">#</a>
+</h1>
+<h2 id="tree">
+  Tree
+  <a class="anchor" href="#tree">#</a>
+</h2>
+<p>Most operating system expose files as a <em>tree</em> (or possibly several trees for Windows).</p>
+<blockquote class="book-hint warning">
+<p>A (nonempty) <strong>tree</strong> is either:</p>
+<ul>
+<li>a single node (called a <strong>leaf</strong>), or</li>
+<li>a node with one or several children that are trees.</li>
+</ul>
+</blockquote>
+<p>In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── bin
+</span></span><span style="display:flex;"><span>│   ├── echo
+</span></span><span style="display:flex;"><span>│   └── ...
+</span></span><span style="display:flex;"><span>├── home
+</span></span><span style="display:flex;"><span>│   ├── alice
+</span></span><span style="display:flex;"><span>│   │   ├── .bashrc
+</span></span><span style="display:flex;"><span>│   │   ├── .m2
+</span></span><span style="display:flex;"><span>│   │   │   └── ...
+</span></span><span style="display:flex;"><span>│   │   ├── Desktop
+</span></span><span style="display:flex;"><span>│   │   │   └── ...
+</span></span><span style="display:flex;"><span>│   │   ├── music
+</span></span><span style="display:flex;"><span>│   │   │   └── thatSong.mp3
+</span></span><span style="display:flex;"><span>│   │   └── workspace
+</span></span><span style="display:flex;"><span>│   │       └── pp
+</span></span><span style="display:flex;"><span>│   │           ├── assignments
+</span></span><span style="display:flex;"><span>│   │           │   └── ...
+</span></span><span style="display:flex;"><span>│   │           └── project
+</span></span><span style="display:flex;"><span>│   │               ├── .git
+</span></span><span style="display:flex;"><span>│   │               │   └── ...
+</span></span><span style="display:flex;"><span>│   │               ├── src
+</span></span><span style="display:flex;"><span>│   │               │   └── HelloWorld.java
+</span></span><span style="display:flex;"><span>│   │               └── test
+</span></span><span style="display:flex;"><span>│   │                   └── testHelloWorld.java
+</span></span><span style="display:flex;"><span>│   └── bob
+</span></span><span style="display:flex;"><span>│       ├── .bashrc
+</span></span><span style="display:flex;"><span>│       ├── Desktop
+</span></span><span style="display:flex;"><span>│       │   └── ...
+</span></span><span style="display:flex;"><span>│       └── music
+</span></span><span style="display:flex;"><span>│           ├── thatSong.mp3
+</span></span><span style="display:flex;"><span>│           └── anotherSong.mp3
+</span></span><span style="display:flex;"><span>└── ...
+</span></span></code></pre></div><blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong> In this course, we will use the terms &ldquo;folder&rdquo; and &ldquo;directory&rdquo; interchangeably.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong> &ldquo;File&rdquo; is sometimes used (e.g. in the Linux documentation) as a generic term for all nodes in this tree (in combination with &ldquo;directory file&rdquo;, &ldquo;executable file&rdquo;, &ldquo;regular file&rdquo;, etc.)
+We will <em>not</em> follow this terminology.</p>
+</blockquote>
+<p>Windows may expose several trees (e.g. one per physical device).</p>
+<h2 id="path">
+  Path
+  <a class="anchor" href="#path">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> In such a tree, a <strong>path</strong> from a directory $s$ to an arbitrary node $t$ is either:</p>
+<ul>
+<li><code>.</code> if $s$ and $t$ are the same node, or</li>
+<li><code>..</code> if $t$ is the parent of $s$, or</li>
+<li>the name of $t$ if $s$ is the parent of $t$, or</li>
+<li>a path from $s$ to some node $i$, followed by <code>/</code> (or <code>\</code>on Windows), followed by a path from $i$ to $t$.</li>
+</ul>
+</blockquote>
+<p>For instance (on macOS, Linux, etc.), in the tree above:</p>
+<ul>
+<li><code>home/alice/workspace/pp/project/src/HelloWorld.java</code> is a path from the root to the file <code>HelloWorld.java</code>,</li>
+<li><code>workspace/pp/project/src/HelloWorld.java</code> is a path from the directory <code>alice</code> to the file <code>HelloWorld.java</code>,</li>
+<li><code>../../bob/Desktop</code> is a path from Alice&rsquo;s Desktop to Bob&rsquo;s Desktop,</li>
+<li><code>../../bob/../bob/./Desktop</code> is another path from Alice&rsquo;s Desktop to Bob&rsquo;s Desktop.</li>
+</ul>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-0" checked="checked" />
+<label for="tabs-number_of_paths-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>How many paths are there from a directory to a node?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-1"  />
+<label for="tabs-number_of_paths-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>(Countably) infinitely many.</p>
+</div>
+</div>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> Some operating system (Windows, macOS) use <em>case-insensitive</em> paths, whereas others (Linux, Android) use <em>case-sensitive</em> paths (this may also vary depending on physical storage devices).</p>
+<p>For instance, on Windows, <code>src/HelloWorld.java</code> and <code>src/helloworld.java</code> are the <em>same path</em>.</p>
+<p>In order to make sure that your code is portable:</p>
+<ul>
+<li>always use <em>case-sensitive</em> paths in your code (i.e. respect the names of your files, folders, executables, etc.),</li>
+<li>do not create two files (or subfolders, executables, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Convention.</em></strong> In what follows (unless explicitly stated), we will adopt by default the conventions for path names adopted on Linux.
+In particular, we will use <code>/</code> as a separator, and case-sensitive file and folder names.</p>
+</blockquote>
+<h3 id="absolute">
+  Absolute path
+  <a class="anchor" href="#absolute">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> An <strong>absolute path</strong> is a path prefixed with:</p>
+<ul>
+<li><code>/</code> on macOS, Linux, Android, IOs, etc.</li>
+<li>a capital letter followed by <code>:\</code> on Windows, where the letter identifies a physical device, disk partition, etc.
+In particular, the identifier of the main partition is often the letter <code>C</code>, in which case absolute paths (within this partition) are prefixed with <code>C:\</code>.</li>
+</ul>
+<p>An absolute path is always a path <em>from the root of the tree</em>.</p>
+</blockquote>
+<p>For instance (on macOS, Linux, etc.), <code>/home/alice/workspace/pp/project/src/HelloWorld.java</code> is an absolute path to the file <code>HelloWorld.java</code></p>
+<p>A few simple observations:</p>
+<ul>
+<li>two different files may share the <em>same name</em> (but cannot share an absolute path), and</li>
+<li>two files with the same name <em>may or may not</em> be identical. E.g. in the above example, the two files named <code>thatSong.mp3</code> may or may not be identical.</li>
+</ul>
+<h3 id="relative-path">
+  Relative path
+  <a class="anchor" href="#relative-path">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> A <strong>relative path</strong> is a path that is not absolute.</p>
+</blockquote>
+<p>For instance, <code>../../bob/Desktop</code> is a path to Bob&rsquo;s Desktop <em>relative to</em> Alice&rsquo;s Desktop.</p>
+<p>Note that if <em>p</em> is a relative path, then <em>p</em> prefixed with <code>./</code> (or <code>.\</code> on Windows) is a path equivalent to <em>p</em>.
+This prefix is sometimes used to emphasize that a path is relative (among other purposes).</p>
+<h2 id="wd">
+  Working directory
+  <a class="anchor" href="#wd">#</a>
+</h2>
+<p>Each <em>process</em> (e.g. a process that executes a Java program) has a <strong>working directory</strong>, which is a directory of the hierarchical file system.
+This directory may vary depending on the program and/or how it was started.</p>
+<p>Many programs (implicitly) interpret a relative path as <em>relative to their working directory</em>, regardless of whether the path is prefixed with <code>./</code> (or <code>.\</code> on Windows).</p>
+<p>In particular, this is the case of:</p>
+<ul>
+<li>Java programs,</li>
+<li>file browsers,</li>
+<li>shells.</li>
+</ul>
+<h2 id="home-directory">
+  Home directory
+  <a class="anchor" href="#home-directory">#</a>
+</h2>
+<p>Each user of a system has its own <strong>home directory</strong>.
+E.g. in this example:</p>
+<ul>
+<li><code>/home/alice/</code> for Alice</li>
+<li><code>/home/bob/</code> for Bob</li>
+</ul>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> The home directory is usually <em>not</em> the root of the tree (even if there is a single user on the machine).</p>
+</blockquote>
+<h3 id="absolute-paths-to-the-home-directory">
+  Absolute paths to the home directory
+  <a class="anchor" href="#absolute-paths-to-the-home-directory">#</a>
+</h3>
+<p>The home directory (of a regular user) is normally:</p>
+<ul>
+<li><code>/home/&lt;userId&gt;</code> on Linux/BSD,</li>
+<li><code>/Users/&lt;userId&gt;</code> on macOS,</li>
+<li><code>/User/&lt;userId&gt;</code> on iOS,</li>
+<li><code>/data/media/&lt;userId&gt;</code> on Android,</li>
+<li><code>&lt;mainHardDriveId&gt;:\Users\&lt;userId&gt;</code> on Windows (e.g. <code>C:\Users\&lt;userId&gt;</code>).</li>
+</ul>
+<p>On Linux and macOS, the alias <code>~</code> can be used as an absolute path to the current user&rsquo;s home directory.
+For instance, in the above example, if Alice is logged in, then <code>~/music/thatSong.mp3</code> and <code>/home/alice/music/thatSong.mp3</code> are two absolute paths to the same file.</p>
+<h3 id="access-restriction">
+  Access restriction
+  <a class="anchor" href="#access-restriction">#</a>
+</h3>
+<p>Files and programs within the home directory of a user can usually be accessed by this user only (or a system admin).
+Therefore programs that can be executed by <em>all users</em> are usually located in <em>other directories</em> (e.g. the program <code>/bin/echo</code> in the example above).</p>
+<p>Access restrictions (read, write and/or execute) may apply to the content of such directories.
+Notably, on Linux systems, (most of) the content of these directories can only be modified by a system admin.</p>
+<h3 id="hidden-files-and-directories">
+  Hidden files and directories
+  <a class="anchor" href="#hidden-files-and-directories">#</a>
+</h3>
+<p>The home directory often contains files (resp. directories) whose names are preceded with a <code>.</code> (e.g. the file <code>/home/alice/.bashrc</code> in the above example).
+These are sometimes called &ldquo;dot files&rdquo; (resp. &ldquo;dot folders&rdquo;).
+On Linux and macOS, dot files and dot folder are <a href="https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory">hidden</a> by default in a terminal or a file browser.
+On Windows, a (dot or not) file or folder can also be hidden, via a dedicated &ldquo;hidden&rdquo; attribute.</p>
+<p>Hidden files and directories may be used to store (user-specific) parameters or options for a program.
+For instance, the <a href="https://en.wikipedia.org/wiki/Configuration_file">configuration file</a>
+<code>~/.gitconfig</code>
+can be used to declare parameters (e.g. user identifier, etc.) or options (e.g. disable default fast-forward merge, etc.) to be used with git.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong> Configuration files are a convenient way to save your personal preferences and use them on several machines.
+For instance, you may need to connect to a remote server via <a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> to perform some tasks (e.g. deploy a database or run costly computations).
+In such a scenario, you can upload dot files to your home directory on this server.</p>
+</blockquote>
+<p>Hidden files or directories may serve other purposes.
+For instance, the dot folder
+<code>~/.m2</code>
+is used by Maven to store (in one place) the Java libraries that are required (as dependencies) by any Java project present in the home directory.</p>
+<p>Hidden files or directories may also contain information specific to a subdirectory.
+For instance, every git <a href="%7b%7b%22../../git/sections/basics.md#repository%22%7d%7d">repository</a> (a.k.a. &ldquo;project&rdquo;) contains a dot folder <code>.git</code> that stores the full history of modification made to the repository.</p>
+<h3 id="usage-and-layout">
+  Usage and layout
+  <a class="anchor" href="#usage-and-layout">#</a>
+</h3>
+<p>Your home directory is where you generally want to store your projects, documents, scripts, etc.</p>
+<p>You are free to structure it as you like (using sub-directories).
+Make sure that this structure allows you to <em>retrieve your own work</em> easily.</p>
+<!-- You may also create dedicated (sub)directories for content that requires no [back up]() (such as generated files, downloadable data, etc.). -->
+<blockquote class="book-hint danger">
+<p><strong><em>Warning</em></strong>. When you download or create a project/document in your home directory, <em>choose its location</em>.
+Do <em>not</em>:</p>
+<ul>
+<li>let an application decide this location for you,</li>
+<li>rely exclusively on the &ldquo;recently opened&rdquo; feature of an app to locate your files,</li>
+<li>store files and project directly at the root of your home directory.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning</em></strong>. Aside from a few exceptional cases, your home directory should <em>not</em> contain multiple copies of a project or document.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong> It can be difficult for a new developer to figure out when to accept the default directory or layout suggested by a program, and when to overwrite it.
+As a (soft) rule of thumb, you generally want to <em>choose the location</em> of:</p>
+<ul>
+<li>a file downloaded from your browser (or mail client),</li>
+<li>a project created with your IDE,</li>
+<li>a cloned git repository,</li>
+<li>a file created with an app,</li>
+<li>etc.</li>
+</ul>
+<p>Conversely, it is generally recommended to <em>follow suggestions</em> in the following cases:</p>
+<ul>
+<li>internal structure of a project (typically the one generated by an IDE): e.g. the <a href="%7b%7b%22../../build/sections/layout.md%22%7d%7d">standard directory layout</a> for a Maven project, or the <a href="https://www.geeksforgeeks.org/folder-structure-for-a-node-js-project/">standard directory structure</a> of a Node JS project.</li>
+<li>software installed outside of your home directory,</li>
+<li>location of dot files and folders,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tree">Tree</a></li>
+    <li><a href="#path">Path</a>
+      <ul>
+        <li><a href="#absolute">Absolute path</a></li>
+        <li><a href="#relative-path">Relative path</a></li>
+      </ul>
+    </li>
+    <li><a href="#wd">Working directory</a></li>
+    <li><a href="#home-directory">Home directory</a>
+      <ul>
+        <li><a href="#absolute-paths-to-the-home-directory">Absolute paths to the home directory</a></li>
+        <li><a href="#access-restriction">Access restriction</a></li>
+        <li><a href="#hidden-files-and-directories">Hidden files and directories</a></li>
+        <li><a href="#usage-and-layout">Usage and layout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

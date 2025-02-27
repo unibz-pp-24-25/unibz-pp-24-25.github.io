@@ -1,0 +1,48 @@
+@startuml
+scale 800 width
+
+interface Unit {
+  void sleep()
+}
+
+interface Animal {
+  void hide()
+} 
+
+interface ImaginaryCreature {
+  void heal(Unit unit)
+}
+
+abstract class AbstractUnit {
+  void sleep()
+}
+
+class Butterfly {
+  void hide()
+}
+
+
+class Unicorn {
+  void heal(Unit unit)
+}
+
+
+
+
+Unit <|.. Animal : extends
+Unit <|.. ImaginaryCreature : extends
+
+Unit <--  AbstractUnit : implements
+Animal <--  Unicorn : implements
+Animal <--  Butterfly : implements
+ImaginaryCreature <-- Unicorn : implements
+
+AbstractUnit <|-- Unicorn : extends
+AbstractUnit <|-- Butterfly : extends
+
+
+
+
+
+
+@enduml

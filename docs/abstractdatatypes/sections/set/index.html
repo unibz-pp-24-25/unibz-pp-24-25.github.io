@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Set
+  #
+
+
+The abstract data type set simulates a (usually finite) mathematical set.
+
+A set may expose the following methods:
+
+add: adds an element to the set if it was not present already (and returns true iff this was the case),
+contains: checks whether an element belongs to the set,
+size: returns the cardinality of the set,
+etc.
+
+
+Warning.
+A set provides no guarantee on the order of its elements!">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/abstractdatatypes/sections/set/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Set">
+  <meta property="og:description" content="Set # The abstract data type set simulates a (usually finite) mathematical set.
+A set may expose the following methods:
+add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Set | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/abstractdatatypes/sections/set/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Set</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#java">in Java</a>
+      <ul>
+        <li><a href="#syntax">Syntax</a></li>
+        <li><a href="#duplicates">Duplicates</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="set">
+  Set
+  <a class="anchor" href="#set">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p>The abstract data type <strong>set</strong> simulates a (usually finite) mathematical <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#set">set</a>.</p>
+</blockquote>
+<p>A set may expose the following methods:</p>
+<ul>
+<li><strong>add</strong>: adds an element to the set if it was not present already (and returns true iff this was the case),</li>
+<li><strong>contains</strong>: checks whether an element belongs to the set,</li>
+<li><strong>size</strong>: returns the cardinality of the set,</li>
+<li>etc.</li>
+</ul>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+A set provides no guarantee on the <em>order</em> of its elements!</p>
+</blockquote>
+<h2 id="java">
+  in Java
+  <a class="anchor" href="#java">#</a>
+</h2>
+<p>Java provides an interface <code>Set</code> with 8 native implementations (i.e. different <em>classes</em> that implement this interface).
+The most commonly used are <a href="http://localhost:1313/docs/datastructures/sections/hash/#hashSet">HashSet</a> and <a href="http://localhost:1313/docs/datastructures/sections/tree/#treeMap">TreeSet</a>.</p>
+<p>The interface <code>Set</code> extends the interface <code>Collection</code>.</p>
+<h3 id="syntax">
+  Syntax
+  <a class="anchor" href="#syntax">#</a>
+</h3>
+<p>Here are code snippets for a few simple operations specified in the interface <code>Set</code>.</p>
+<ul>
+<li>Create a <code>Set</code> and populate it:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
+</span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an empty set of cities</span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> mySet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Adds Milan to the set</span>
+</span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(milan);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Adds Florence to the set</span>
+</span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(florence);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Tries to add Milan again; this has no effect.</span>
+</span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(milan);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a set identical to the previous one,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// but which cannot be modified</span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> myOtherSet <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(milan, florence);
+</span></span></code></pre></div><ul>
+<li>Remove an element from a set:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">remove</span>(milan);
+</span></span></code></pre></div><ul>
+<li>Check whether a set contains an certain element:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs false</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">contains</span>(milan));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">contains</span>(florence));
+</span></span></code></pre></div><ul>
+<li>Retrieve the cardinality of a set:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 1</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div><ul>
+<li>Compute the intersection of two sets:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100));
+</span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">retainAll</span>(myOtherSet);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 1</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div><ul>
+<li>Add a collection to a set:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">addAll</span>(myOtherSet);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 2</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div><p>For more operations, consult the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html">Javadoc</a> of the interface <code>Set</code>.</p>
+<h3 id="duplicates">
+  Duplicates
+  <a class="anchor" href="#duplicates">#</a>
+</h3>
+<p>By definition, a set cannot contain identical elements.
+But what does &ldquo;identical&rdquo; mean for two objects?</p>
+<p>In Java, the method <code>equals</code> is (implicitly) used to determine whether two elements added to a <code>Set</code> should be considered identical.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+<a href="http://localhost:1313/docs/objects/sections/comparing/#hashCode">Recall</a> that the method <code>equals</code> should be overridden <em>together with</em> the method <code>hashCode</code> (more on this later).
+This is essential for a <code>HashSet</code> to behave as expected (more on this <a href="http://localhost:1313/docs/datastructures/sections/hash/#hashCode">later</a>).</p>
+</blockquote>
+<p>For instance, consider a naive implementation of the class <code>City</code>, which does <em>not</em> override <code>equals</code> (or <code>hashCode</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipcode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span>zipCode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="http://localhost:1313/docs/objects/sections/comparing/#equals">Recall</a>
+that every class inherits a default implementation of <code>equals</code> (and <code>hashCode</code>), from the class <code>Object</code>.
+According to this default implementation, <code>equals</code> behaves like <code>==</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+</span></span><span style="display:flex;"><span>City trentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(trento, trentoAgain);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 2</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div><p>Now consider a class <code>SmartCity</code> identical to <code>City</code>, but that overrides <code>equals</code> (and<code>hashCode</code>) in the standard way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartCity</span> {
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SmartCity</span>(String name, <span style="color:#66d9ef">int</span> zipCode) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object o) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> o) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (o <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> getClass() <span style="color:#f92672">!=</span> o.<span style="color:#a6e22e">getClass</span>()) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    SmartCity smartCity <span style="color:#f92672">=</span> (SmartCity) o;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">==</span> smartCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">&amp;&amp;</span> name.<span style="color:#a6e22e">equals</span>(smartCity.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Objects.<span style="color:#a6e22e">hash</span>(name, zipCode);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A Java <code>Set</code> cannot contain two instances of <code>SmartCity</code> that have the same name and zip code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SmartCity smartTrento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+</span></span><span style="display:flex;"><span>SmartCity smartTrentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> smartCities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>smartCities.<span style="color:#a6e22e">add</span>(smartTrento);
+</span></span><span style="display:flex;"><span>smartCities.<span style="color:#a6e22e">add</span>(smartTrentoAgain);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 1</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(smartCities.<span style="color:#a6e22e">size</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(smartCities.<span style="color:#a6e22e">add</span>(smartTrentoAgain));
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> Recall that many native Java classes already override <code>equals</code> (and <code>hashCode</code>).
+Among others: <code>String</code>, boxed types (like <code>Integer</code>), but also most implementations of the <code>Collection</code> interface (including <code>HashSet</code>).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+Some implementations of <code>List</code> also provide methods that perform &ldquo;set-like&rdquo; comparisons.
+E.g. <code>containsAll</code>, <code>removeAll</code>, <code>retainAll</code>, etc.
+Again, we refer to the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html">Javadoc</a> for an exhaustive documentation.</p>
+</blockquote>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<p>Implementations of the ADT set can be useful in a variety of contexts.
+For instance, remove duplicates from an array (assuming that the order of elements in the array is irrelevant):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{1,2,3,1,2};
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> tuple <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(myArray);
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(tuple);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(set.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div><p>Or check whether two lists contain the same (distinct) elements:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SmartCity mantova <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100);
+</span></span><span style="display:flex;"><span>SmartCity bergamo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Bergamo&#34;</span>, 24100);
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> list1 <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(mantova, bergamo);
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> list2 <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(bergamo, mantova);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> set1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(list1);
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> set2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(list2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(set1.<span style="color:#a6e22e">equals</span>(set2));
+</span></span></code></pre></div><div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_set_miniboard" id="tabs-exercise_set_miniboard-0" checked="checked" />
+<label for="tabs-exercise_set_miniboard-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In our game, a same unit may sit on two (or more) adjacent tiles.</p>
+<p>Consider an implementation where:</p>
+<ul>
+<li>a board consists of a two-dimensional array with type <code>Unit[][]</code>, and</li>
+<li>if a same unit sits on several tiles, then these tiles contain (a reference to) the same (instance of) <code>Unit</code>, and</li>
+<li><code>Unit</code> does <em>not</em> override <code>equals</code> (neither do its sub or superclasses).</li>
+</ul>
+<p>Write a Java method <code>int countUnits(Unit[][] board)</code> that takes such an array as input, and returns the number of different units on the board.</p>
+<p>For instance, with the board below as input, the method should return 5.</p>
+<p><img src="/img/adt/miniboard.png" alt="" /></p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_set_miniboard" id="tabs-exercise_set_miniboard-1"  />
+<label for="tabs-exercise_set_miniboard-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countUnits</span>(Unit<span style="color:#f92672">[][]</span> board) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit<span style="color:#f92672">[]</span> row : board) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Unit unit : row) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (unit <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                  units.<span style="color:#a6e22e">add</span>(unit);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">size</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_set_family" id="tabs-exercise_set_family-0" checked="checked" />
+<label for="tabs-exercise_set_family-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What dose the following program output?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> aSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>aSet.<span style="color:#a6e22e">add</span>(1);
+</span></span><span style="display:flex;"><span>aSet.<span style="color:#a6e22e">add</span>(2);
+</span></span><span style="display:flex;"><span>anotherSet.<span style="color:#a6e22e">add</span>(1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> aFamily <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>aFamily.<span style="color:#a6e22e">add</span>(aSet);
+</span></span><span style="display:flex;"><span>aFamily.<span style="color:#a6e22e">add</span>(anotherSet);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aFamily.<span style="color:#a6e22e">size</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>anotherSet.<span style="color:#a6e22e">add</span>(2);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aFamily.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_set_family" id="tabs-exercise_set_family-1"  />
+<label for="tabs-exercise_set_family-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p><code>2</code> and <code>2</code>.</p>
+</div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#java">in Java</a>
+      <ul>
+        <li><a href="#syntax">Syntax</a></li>
+        <li><a href="#duplicates">Duplicates</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

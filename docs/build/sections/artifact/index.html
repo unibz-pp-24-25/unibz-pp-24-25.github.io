@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Artifact
+  #
+
+
+A Maven artifact is the output of a build process.
+It can for instance be a jar.
+
+
+  Coordinates
+  #
+
+
+A Maven artifact is identified by so-called coordinates:
+
+groupId: identifier of the organization that created the project (this is usually the organization&rsquo;s reversed domain name),
+artifactId: identifier of the project within the group,
+version: version of the artifact.
+
+
+
+Examples.
+&lt;groupId&gt;com.google.guava&lt;/groupId&gt;
+&lt;artifactId&gt;guava&lt;/artifactId&gt;
+&lt;version&gt;33.1.0-jre&lt;/version&gt;
+&lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+&lt;artifactId&gt;smile-core&lt;/artifactId&gt;
+&lt;version&gt;3.1.0&lt;/version&gt;
+
+These coordinates are notably used to declare dependencies.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/build/sections/artifact/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Artifact">
+  <meta property="og:description" content="Artifact # A Maven artifact is the output of a build process. It can for instance be a jar.
+Coordinates # A Maven artifact is identified by so-called coordinates:
+groupId: identifier of the organization that created the project (this is usually the organization’s reversed domain name), artifactId: identifier of the project within the group, version: version of the artifact. Examples.
+&lt;groupId&gt;com.google.guava&lt;/groupId&gt; &lt;artifactId&gt;guava&lt;/artifactId&gt; &lt;version&gt;33.1.0-jre&lt;/version&gt; &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt; &lt;artifactId&gt;smile-core&lt;/artifactId&gt; &lt;version&gt;3.1.0&lt;/version&gt; These coordinates are notably used to declare dependencies.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Artifact | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/build/sections/artifact/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Artifact</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#coordinates">Coordinates</a></li>
+    <li><a href="#versions">Versions</a>
+      <ul>
+        <li><a href="#semver">SemVer</a></li>
+        <li><a href="#snapshot">SNAPSHOT</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="artifact">
+  Artifact
+  <a class="anchor" href="#artifact">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p>A Maven <strong>artifact</strong> is the output of a build process.
+It can for instance be a <a href="http://localhost:1313/docs/build/sections/packaging/#jar">jar</a>.</p>
+</blockquote>
+<h2 id="coordinates">
+  Coordinates
+  <a class="anchor" href="#coordinates">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A Maven artifact is identified by so-called <strong>coordinates</strong>:</p>
+<ul>
+<li><strong>groupId:</strong> identifier of the organization that created the project (this is usually the organization&rsquo;s reversed domain name),</li>
+<li><strong>artifactId:</strong> identifier of the project within the group,</li>
+<li><strong>version:</strong> version of the artifact.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;groupId&gt;</span>com.google.guava<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;artifactId&gt;</span>guava<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;version&gt;</span>33.1.0-jre<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;groupId&gt;</span>com.github.haifengl<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;artifactId&gt;</span>smile-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;version&gt;</span>3.1.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span></code></pre></div></blockquote>
+<p>These coordinates are notably used to declare <a href="http://localhost:1313/docs/build/sections/dependencies/">dependencies</a>.</p>
+<h2 id="versions">
+  Versions
+  <a class="anchor" href="#versions">#</a>
+</h2>
+<h3 id="semver">
+  SemVer
+  <a class="anchor" href="#semver">#</a>
+</h3>
+<p>Maven artifact versions often follow (or loosely follow) the so-called <a href="https://semver.org/">semantic versioning</a> scheme.</p>
+<pre tabindex="0"><code>MajorVersion.MinorVersion
+</code></pre><p>or</p>
+<pre tabindex="0"><code>MajorVersion.MinorVersion.Patch
+</code></pre><blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+According to the SemVer scheme, Version <code>3.4.1</code> means:</p>
+<ul>
+<li>major version: <code>3</code></li>
+<li>minor version: <code>4</code></li>
+<li>patch: <code>1</code></li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>By convention:</p>
+<ul>
+<li>a new <strong>major version</strong> often signals the absence of backward compatibility,</li>
+<li>a new <strong>minor version</strong> often signals (backward compatible) new features,</li>
+<li>a <strong>patch</strong> often signals bug (or security-related) fixes.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+Java has only one major version.
+For instance &ldquo;Java 17&rdquo; actually refers to Java <code>1.17</code>.</p>
+</blockquote>
+<h3 id="snapshot">
+  SNAPSHOT
+  <a class="anchor" href="#snapshot">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>The <code>SNAPSHOT</code> qualifier (e.g. in Version <code>3.4.1-SNAPSHOT</code>) indicates an <em>upcoming</em> release, still <em>under development</em>.</p>
+</blockquote>
+<p>The <code>SNAPSHOT</code> qualifier is typically used to describe the (current state of) the source code of (a git branch of) a project (e.g. available as a public git repository).
+For instance, if the latest release of the project was <code>3.5.2</code>, and if the developers are working on bug fixes, then the latest source code may have Version <code>3.5.3-SNAPSHOT</code>.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+A program whose version number has the <code>SNAPSHOT</code> qualifier may be modified by it authors, <em>while keeping the same version number</em>.
+In other words, <code>Version 3.4.1-SNAPSHOT</code> downloaded today may differ from <code>Version 3.4.1-SNAPSHOT</code> downloaded tomorrow.
+So when releasing a project, it is recommended to avoid dependencies on <code>SNAPSHOT</code> versions.</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#coordinates">Coordinates</a></li>
+    <li><a href="#versions">Versions</a>
+      <ul>
+        <li><a href="#semver">SemVer</a></li>
+        <li><a href="#snapshot">SNAPSHOT</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

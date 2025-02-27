@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Variance
+  #
+
+
+  Subtype
+  #
+
+
+Notation.
+If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a subtype of $B$.
+
+
+  Subtype and substitution
+  #
+
+
+The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
+
+
+Examples.
+
+If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer.
+If Butterfly $\sqsubseteq$ Unit, then a method that takes a Unit as input should also accept a Butterfly.
+
+
+
+  Type parameters and subtyping
+  #
+
+A natural question is whether subtyping between parameterized types should be determined by subtyping between their parameters.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/generics/sections/variance/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Variance">
+  <meta property="og:description" content="Variance # Subtype # Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a subtype of $B$.
+Subtype and substitution # The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
+Examples.
+If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer. If Butterfly $\sqsubseteq$ Unit, then a method that takes a Unit as input should also accept a Butterfly. Type parameters and subtyping # A natural question is whether subtyping between parameterized types should be determined by subtyping between their parameters.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Variance | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/generics/sections/variance/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Variance</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#subtype">Subtype</a></li>
+    <li><a href="#subtype-and-substitution">Subtype and substitution</a></li>
+    <li><a href="#type-parameters-and-subtyping">Type parameters and subtyping</a>
+      <ul>
+        <li><a href="#covariance">Covariance</a></li>
+        <li><a href="#contravariance">Contravariance</a></li>
+        <li><a href="#invariance">Invariance</a></li>
+        <li><a href="#variance-in-several-type-variables">Variance in several type variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation">Implementation</a>
+      <ul>
+        <li><a href="#in-java">in Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="variance">
+  Variance
+  <a class="anchor" href="#variance">#</a>
+</h1>
+<h2 id="subtype">
+  Subtype
+  <a class="anchor" href="#subtype">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Notation.</em></strong>
+If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a <a href="http://localhost:1313/docs/generics/sections/subtype/#subtype">subtype</a> of $B$.</p>
+</blockquote>
+<h2 id="subtype-and-substitution">
+  Subtype and substitution
+  <a class="anchor" href="#subtype-and-substitution">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>The <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a> intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>If <code>Integer</code> $\sqsubseteq$ <code>Number</code>, then a method that takes a <code>Number</code> as input should also accept an <code>Integer</code>.</li>
+<li>If <code>Butterfly</code> $\sqsubseteq$ <code>Unit</code>, then a method that takes a <code>Unit</code> as input should also accept a <code>Butterfly</code>.</li>
+</ul>
+</blockquote>
+<h2 id="type-parameters-and-subtyping">
+  Type parameters and subtyping
+  <a class="anchor" href="#type-parameters-and-subtyping">#</a>
+</h2>
+<p>A natural question is whether subtyping between <a href="http://localhost:1313/docs/generics/sections/generics/#genericType">parameterized types</a> should be determined by subtyping between their parameters.</p>
+<h3 id="covariance">
+  Covariance
+  <a class="anchor" href="#covariance">#</a>
+</h3>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the generic type <code>Set&lt;T&gt;</code> (where <code>T</code> is a type variable).</p>
+<ul>
+<li>Should <code>Set&lt;Integer&gt;</code> be treated as a subtype of <code>Set&lt;Number&gt;</code>?</li>
+<li>Should <code>Set&lt;Butterfly&gt;</code> be treated as a subtype of <code>Set&lt;Unit&gt;</code>?</li>
+</ul>
+<p>More generally, if <code>A</code> $\sqsubseteq$ <code>B</code>, then should <code>Set&lt;A&gt;</code> be considered a subtype of <code>Set&lt;B&gt;</code>?</p>
+</blockquote>
+<p>In this example, the intuitively answer to this question seems to be <em>positive</em>.</p>
+<p>When this holds, the generic type (i.e. <code>Set&lt;T&gt;</code> in this example) is said to be covariant.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+Let <code>Gen&lt;T&gt;</code> be a generic type (where <code>T</code> is a type variable).</p>
+<p><code>Gen&lt;T&gt;</code> is <strong>covariant</strong> if for any types <code>A</code> and <code>B</code>,</p>
+<p>$\qquad$ <code>A</code> $\sqsubseteq$ <code>B</code> implies <code>Gen&lt;A&gt;</code> $\sqsubseteq$ <code>Gen&lt;B&gt;</code></p>
+</blockquote>
+<h3 id="contravariance">
+  Contravariance
+  <a class="anchor" href="#contravariance">#</a>
+</h3>
+<p>What intuitively holds above for sets does not seem to hold for all generic types.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the Java functional interface <code>Predicate&lt;T&gt;</code> (where <code>T</code> is a type variable), which stands for all functions that return a Boolean value, i.e. all functions with type</p>
+<p>$\qquad$ <code>T</code> $\to$ <code>Boolean</code></p>
+<p>As we saw in the <a href="http://localhost:1313/docs/generics/sections/subtype/#functionSubtype">dedicated section</a>, if <code>A</code> $\sqsubseteq$ <code>B</code>, then</p>
+<p>$\qquad$ <code>B</code> $\to$ <code>Boolean</code></p>
+<p>should intuitively be considered a subtype of</p>
+<p>$\qquad$ <code>A</code> $\to$ <code>Boolean</code></p>
+<p>Therefore in this case, we would like to treat <code>Predicate&lt;B&gt;</code> as a subtype of <code>Predicate&lt;A&gt;</code>.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+Let <code>Gen&lt;T&gt;</code> be a generic type, where <code>T</code> is a type variable.</p>
+<p><code>Gen&lt;T&gt;</code> is <strong>contravariant</strong> if for any types <code>A</code> and <code>B</code>,</p>
+<p>$\qquad$ <code>A</code> $\sqsubseteq$ <code>B</code> implies <code>Gen&lt;B&gt;</code> $\sqsubseteq$ <code>Gen&lt;A&gt;</code></p>
+</blockquote>
+<h3 id="invariance">
+  Invariance
+  <a class="anchor" href="#invariance">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A generic type is <strong>invariant</strong> if it is neither covariant nor contravariant.</p>
+</blockquote>
+<h3 id="variance-in-several-type-variables">
+  Variance in several type variables
+  <a class="anchor" href="#variance-in-several-type-variables">#</a>
+</h3>
+<p>If a generic type has several type variables, then it can be independently covariant, contravariant or invariant in <em>each</em> of them.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the Java functional interface <code>Function&lt;T,R&gt;</code> (where <code>T</code> and <code>R</code> are type variables), which stands for all functions with type</p>
+<p>$\qquad$ <code>T</code> $\to$ <code>R</code></p>
+<p>As we saw in the <a href="http://localhost:1313/docs/generics/sections/subtype/#functionSubtype">dedicated section</a>,
+if <code>X1</code> $\sqsubseteq$ <code>X2</code> and
+<code>Y1</code> $\sqsubseteq$ <code>Y2</code>, then</p>
+<p>$\qquad$ <code>X2</code> $\to$ <code>Y1</code></p>
+<p>should intuitively be considered a subtype of</p>
+<p>$\qquad$ <code>X1</code> $\to$ <code>Y2</code></p>
+<p>Therefore in this case, we would like to treat <code>Function&lt;T,R&gt;</code> as:</p>
+<ul>
+<li>contravariant in <code>T</code>, and</li>
+<li>covariant in <code>R</code>.</li>
+</ul>
+</blockquote>
+<h2 id="implementation">
+  Implementation
+  <a class="anchor" href="#implementation">#</a>
+</h2>
+<p>As we just saw with the previous examples, some generic types are naturally covariant and/or contravariant in (some of) their type variables.</p>
+<p>Some languages (like C#) provide a syntax to declare that a generic type should <em>always</em> be treated by the compiler as covariant, contravariant, invariant or a combination of them.
+However, Java does <em>not</em> offer this possibility.</p>
+<h3 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h3>
+<h4 id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
+</h4>
+<p>Java arrays predate (by almost 10 years) the introduction of generics.
+Technically, in Java, &ldquo;array&rdquo; is not a generic type.
+But conceptually, it can be thought of as a &ldquo;generic-like&rdquo; type.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+Java arrays are <em>covariant</em>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program compiles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number<span style="color:#f92672">[]</span> anArray;
+</span></span><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> anotherArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{};
+</span></span><span style="display:flex;"><span>anArray <span style="color:#f92672">=</span> anotherArray;
+</span></span></code></pre></div></blockquote>
+<h4 id="generic-types">
+  Generic types
+  <a class="anchor" href="#generic-types">#</a>
+</h4>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+Java generic types are <em>invariant</em>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program does <em>not</em> compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> aList;
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
+</span></span></code></pre></div></blockquote>
+<p>So a Java generic type cannot be <em>declared</em> as covariant or contravariant.
+However, each time we <em>use</em> a generic type,
+we can specify that it should be interpreted by the compiler as covariant or contravariant.</p>
+<h5 id="covariance-1">
+  Covariance
+  <a class="anchor" href="#covariance-1">#</a>
+</h5>
+<p>We saw <a href="http://localhost:1313/docs/generics/sections/generics/#extendsSyntax">earlier</a> that the keyword <code>extends</code> specifies an upper bound on the value of a type variable.
+We can also use it with a <code>?</code> to allow covariance.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program does compiles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> aList;
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
+</span></span></code></pre></div></blockquote>
+<h5 id="contravariance-1">
+  Contravariance
+  <a class="anchor" href="#contravariance-1">#</a>
+</h5>
+<p>The keyword <code>super</code> is symmetric to the keyword <code>extends</code>.
+It can be used to specify a <strong>lower bound</strong> on the value of a type variable, or to allow contravariance (in combination with <code>?</code>).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The instance method <code>Stream.filter</code> takes as argument a callback function with type <code>Predicate&lt;T&gt;</code>, where <code>T</code> is the type of the elements of the stream.</p>
+<p>As we saw above, <code>Predicate&lt;T&gt;</code> should intuitively be interpreted as contravariant.
+Accordingly, the signature of the method <code>filter</code> is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filter</span>(Predicate<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> predicate)
+</span></span></code></pre></div><p>It accepts as argument any <code>Predicate&lt;V&gt;</code> such that <code>T</code> $\sqsubseteq$ <code>V</code>.
+So the following program compiles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+</span></span><span style="display:flex;"><span>integers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">filter</span>(MyClass::myPredicate);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">myPredicate</span>(Number number) {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h5 id="combinations">
+  Combinations
+  <a class="anchor" href="#combinations">#</a>
+</h5>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The instance method <code>Stream.map</code> takes as argument a callback function with type <code>Function&lt;T,R&gt;</code>, where <code>T</code> is the type of the elements of the stream.</p>
+<p>As we saw above, the generic type <code>Function&lt;T,R&gt;</code> should intuitively be interpreted as contravariant in <code>T</code> and covariant in <code>R</code>.
+Accordingly, the signature of the method <code>map</code> is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> Stream<span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">map</span>(Function<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T,<span style="color:#f92672">?</span> <span style="color:#66d9ef">extends</span> R<span style="color:#f92672">&gt;</span> mapper)
+</span></span></code></pre></div></blockquote>
+<h5 id="covarContravarUsage">
+  When to use covariance or contravariance in Java?
+  <a class="anchor" href="#covarContravarUsage">#</a>
+</h5>
+<p>Let us assume a generic type <code>Gen</code> with a type variable <code>T</code> .
+As a rule of thumb:</p>
+<ul>
+<li>if we use an instance method of <code>Gen</code> that does not <em>take</em> a <code>T</code> as argument, then we may allow <code>Gen</code> to be covariant in <code>T</code>,</li>
+<li>if we use a method of <code>Gen</code> that does not <em>return</em> a <code>T</code>, then we may allow <code>Gen</code> to be contravariant in <code>T</code>.</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T boxedValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Box</span>(T boxedValue){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">getValue</span>(){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setValue</span>(T newValue){
+</span></span><span style="display:flex;"><span>          boxedValue <span style="color:#f92672">=</span> value;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Covariance can be used, because the method Box.getValue() does not take a T as argument.</span>
+</span></span><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> box){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> box.<span style="color:#a6e22e">getValue</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contravariance can be used, because the method Box.setValue() does not return a T.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">replaceValue</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> Integer<span style="color:#f92672">&gt;</span> box, <span style="color:#66d9ef">int</span> integer){
+</span></span><span style="display:flex;"><span>    box.<span style="color:#a6e22e">setValue</span>(integer);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#subtype">Subtype</a></li>
+    <li><a href="#subtype-and-substitution">Subtype and substitution</a></li>
+    <li><a href="#type-parameters-and-subtyping">Type parameters and subtyping</a>
+      <ul>
+        <li><a href="#covariance">Covariance</a></li>
+        <li><a href="#contravariance">Contravariance</a></li>
+        <li><a href="#invariance">Invariance</a></li>
+        <li><a href="#variance-in-several-type-variables">Variance in several type variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation">Implementation</a>
+      <ul>
+        <li><a href="#in-java">in Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

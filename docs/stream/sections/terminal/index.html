@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Terminal operation
+  #
+
+A stream pipeline contains one terminal operation.
+This operation may for instance:
+
+execute a method for each element of the stream (e.g. print the value of each of them), or
+collect these elements (e.g. into a list), or
+inspect these elements (check whether all of them satisfy a certain condition), or
+aggregate these elements (e.g. sum the values of a stream of integers).
+
+
+  Stream.forEach
+  #
+
+This instance method is similar to Stream.map,
+in the sense that it also applies a callback method to each element of the stream.
+However, in this case, the callback method is not a function (i.e. it has no return value).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/stream/sections/terminal/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Terminal operation">
+  <meta property="og:description" content="Terminal operation # A stream pipeline contains one terminal operation.
+This operation may for instance:
+execute a method for each element of the stream (e.g. print the value of each of them), or collect these elements (e.g. into a list), or inspect these elements (check whether all of them satisfy a certain condition), or aggregate these elements (e.g. sum the values of a stream of integers). Stream.forEach # This instance method is similar to Stream.map, in the sense that it also applies a callback method to each element of the stream. However, in this case, the callback method is not a function (i.e. it has no return value).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Terminal operation | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/stream/sections/terminal/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Terminal operation</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#forEach"><code>Stream.forEach</code></a></li>
+    <li><a href="#collect">Collecting a stream</a>
+      <ul>
+        <li><a href="#streamtolist"><code>Stream.toList</code></a></li>
+        <li><a href="#streamcollect"><code>Stream.collect</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#checks">Boolean checks</a>
+      <ul>
+        <li><a href="#streamanymatch"><code>Stream.anyMatch</code></a></li>
+        <li><a href="#streamallmatch"><code>Stream.allMatch</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#aggregate">Aggregation</a>
+      <ul>
+        <li><a href="#streamfindfirst"><code>Stream.findFirst</code></a></li>
+        <li><a href="#streamcount"><code>Stream.count</code></a></li>
+        <li><a href="#streammax"><code>Stream.max</code></a></li>
+        <li><a href="#streamreduce"><code>Stream.reduce</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="terminal-operation">
+  Terminal operation
+  <a class="anchor" href="#terminal-operation">#</a>
+</h1>
+<p>A stream pipeline contains one terminal operation.</p>
+<p>This operation may for instance:</p>
+<ul>
+<li><a href="#forEach">execute a method</a> for each element of the stream (e.g. print the value of each of them), or</li>
+<li><a href="#collect">collect</a> these elements (e.g. into a list), or</li>
+<li><a href="#checks">inspect</a> these elements (check whether all of them satisfy a certain condition), or</li>
+<li><a href="#aggregate">aggregate</a> these elements (e.g. sum the values of a stream of integers).</li>
+</ul>
+<h2 id="forEach">
+  <code>Stream.forEach</code>
+  <a class="anchor" href="#forEach">#</a>
+</h2>
+<p>This instance method is similar to <code>Stream.map</code>,
+in the sense that it also applies a callback method to each element of the stream.
+However, in this case, the callback method is not a function (i.e. it has no return value).</p>
+<p>In other words, if the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
+then <code>foreach</code> takes as argument a callback method of type</p>
+<p>$\qquad \mathit{T} \to$ <code>void</code></p>
+<p>(equivalently, in Java&rsquo;s terminology, the callback method must implement the native functional interface <code>Consumer&lt;</code>$\mathit{T}$<code>&gt;</code>, <a href="">seen earlier</a>).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// outputs `4, `2` and `4`</span>
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">filter</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+In the absence of intermediate operation, the instance method <code>Collection.forEach</code> can be used instead, with the same effect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ouputs `4`, `1`, `3`, `2`, and `4`</span>
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);
+</span></span></code></pre></div></blockquote>
+<h2 id="collect">
+  Collecting a stream
+  <a class="anchor" href="#collect">#</a>
+</h2>
+<h3 id="streamtolist">
+  <code>Stream.toList</code>
+  <a class="anchor" href="#streamtolist">#</a>
+</h3>
+<p>This instance method outputs a <a href="">final</a> list with the elements of the stream.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+We already used this method in several of our examples.
+For instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [1, 1, 2, 2, 3]</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">sorted</span>()
+</span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
+</span></span></code></pre></div></blockquote>
+<h3 id="streamcollect">
+  <code>Stream.collect</code>
+  <a class="anchor" href="#streamcollect">#</a>
+</h3>
+<p>This instance method takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>, or a <code>Map</code>, or a <code>String</code>, etc.</p>
+<p>The utility class <code>Collectors</code> provides a variety of static methods that return a collector.</p>
+<h4 id="collectorsjoining">
+  <code>Collectors.joining</code>
+  <a class="anchor" href="#collectorsjoining">#</a>
+</h4>
+<p>This static method returns a collector that concatenates a stream of strings.
+<code>joining</code> (optionally) take a string as argument, which is used to separate the concatenated elements in the output string.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);
+</span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+</span></span><span style="display:flex;"><span>City matera <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(ancona, bologna, matera);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains the string `Ancona:Bologna:Matera`</span>
+</span></span><span style="display:flex;"><span>String concat <span style="color:#f92672">=</span> cities.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(c <span style="color:#f92672">-&gt;</span> c.<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;:&#34;</span>));
+</span></span></code></pre></div></blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_joining" id="tabs-exercise_joining-0" checked="checked" />
+<label for="tabs-exercise_joining-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The method <code>Files.list(path)</code> takes as argument a path to a directory,
+and returns an instance of <code>Stream&lt;Path&gt;</code>, whose elements are the entries in the directory.</p>
+<p>What does the method <code>mysteriousMethod</code> below return?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>Files.<span style="color:#a6e22e">isDirectory</span>(path)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Files.<span style="color:#a6e22e">list</span>(path)
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">filter</span>(p <span style="color:#f92672">-&gt;</span> path.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#34;.txt&#34;</span>))
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">flatMap</span>(p <span style="color:#f92672">-&gt;</span> readLines(p))
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">filter</span>(l <span style="color:#f92672">-&gt;</span> l.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;foo&#34;</span>))
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(System.<span style="color:#a6e22e">lineSeparator</span>()));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">readLines</span>(Path path){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Files.<span style="color:#a6e22e">lines</span>(path);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_joining" id="tabs-exercise_joining-1"  />
+<label for="tabs-exercise_joining-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>A string that consists of all lines that contain the string <code>foo</code> in any <code>.txt</code> file of the directory.</p>
+</div>
+</div>
+<h4 id="collectorstocollection">
+  <code>Collectors.toCollection</code>
+  <a class="anchor" href="#collectorstocollection">#</a>
+</h4>
+<p>This static method takes as argument the constructor of a Java collection (e.g. <code>HashSet::new</code>, <code>TreeSet::new</code>, <code>ArrayList::new</code>, etc.), and returns a collector for this type of collection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// This is the TreeSet {1, 2, 3}</span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputSet <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toCollection</span>(TreeSet::<span style="color:#66d9ef">new</span>));
+</span></span></code></pre></div><h4 id="collectorstoset">
+  <code>Collectors.toSet</code>
+  <a class="anchor" href="#collectorstoset">#</a>
+</h4>
+<p>As we saw in our <a href="http://localhost:1313/docs/stream/sections/pipeline/#example">initial pipeline example</a>, this static method takes no argument, and returns a collector that produces a Java <code>Set</code>.</p>
+<p>The Java specification does <em>not</em> require a specific implementation.
+So this set could for instance be a <code>HashSet</code>or a <code>TreeSet</code>, depending on the Java Virtual Machine that executes the program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains {1, 2, 3}</span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputSet <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
+</span></span></code></pre></div><h4 id="collectorstolist">
+  <code>Collectors.toList</code>
+  <a class="anchor" href="#collectorstolist">#</a>
+</h4>
+<p>This static method is analogous to <code>Collectors.toSet</code>, but the collector that it returns produces a Java <code>List</code>.
+Again, there is no requirement on the specific implementation of this list.</p>
+<h4 id="collectorstomap">
+  <code>Collectors.toMap</code>
+  <a class="anchor" href="#collectorstomap">#</a>
+</h4>
+<p>This static method is analogous to <code>Collectors.toSet</code> and <code>Collectors.toList</code>, but the collector that it returns produces a Java <code>Map</code>.</p>
+<p>If the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
+then <code>toMap</code> takes as argument two callback functions, of type</p>
+<p>$\qquad \mathit{T} \to K$</p>
+<p>and</p>
+<p>$\qquad \mathit{T} \to V$</p>
+<p>respectively, where $K$ and $V$ are arbitrary types.</p>
+<p>The first callback method defines the keys of the map, and the second defines the values.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following method takes a list of cities, and returns a map from city name to city.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, City<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">buildMap</span>(List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cities.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toMap</span>(
+</span></span><span style="display:flex;"><span>                c <span style="color:#f92672">-&gt;</span> c.<span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>                c <span style="color:#f92672">-&gt;</span> c
+</span></span><span style="display:flex;"><span>            ));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+This method may throw an exception at runtime, in case of conflicting keys (in other words, if the first callback function is not <a href="">injective</a>).
+To make it robust, it is possible to pass it a <a href="https://www.baeldung.com/java-collectors-tomap#solving_key_conflicts">third callback method</a>, in charge of solving conflicts.</p>
+</blockquote>
+<h4 id="collectorsgroupingby">
+  <code>Collectors.groupingBy</code>
+  <a class="anchor" href="#collectorsgroupingby">#</a>
+</h4>
+<p>This static method returns a collector that groups the elements of the stream, based on some input grouping criterion.
+The grouping criterion is specified as a callback function.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following method take a list of units as argument, and returns a map from a color to a list of units that share this color:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">groupByColor</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">groupingBy</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">color</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>If the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
+then <code>Collectors.groupingBy</code> takes as argument a callback function of type</p>
+<p>$\qquad \mathit{T} \to K$</p>
+<p>where $K$ is an arbitrary type.
+This callback function computes a key for each element of the stream.</p>
+<p><code>groupingBy</code> returns a map with type <code>Map&lt;</code>$K$, <code>List&lt;</code>$T$<code>&gt;&gt;</code> that maps each key to the list of elements that share this key.</p>
+<p>Alternatively, <code>groupingBy</code> may be called with a <code>Collector</code> as second argument, which aggregates the elements of each list.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following method take a list of units as argument, and returns a map from color to number of units that share this color.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Long<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">groupByColor</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">groupingBy</span>(
+</span></span><span style="display:flex;"><span>                        u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">color</span>,
+</span></span><span style="display:flex;"><span>                        Collectors.<span style="color:#a6e22e">counting</span>()
+</span></span><span style="display:flex;"><span>        ));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h2 id="checks">
+  Boolean checks
+  <a class="anchor" href="#checks">#</a>
+</h2>
+<h3 id="streamanymatch">
+  <code>Stream.anyMatch</code>
+  <a class="anchor" href="#streamanymatch">#</a>
+</h3>
+<p>This instance method checks whether at least one element in the stream satisfies a certain Boolean condition.</p>
+<p>Similarly to the method <a href="http://localhost:1313/docs/stream/sections/intermediate/#filterAndMap">filter</a>, if the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
+then <code>anyMatch</code> takes as argument a callback function of type</p>
+<p>$\qquad \mathit{T} \to$ <code>Boolean</code></p>
+<p>which specifies the Boolean condition.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+<code>anyMatch</code> is a <strong>short-circuiting</strong> operation, meaning that the stream is interrupted after the first match (if any).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following two programs are equivalent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> containsEvenNumber <span style="color:#f92672">=</span> integers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">anyMatch</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0);
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> containsEvenNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x : integers){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        containsEvenNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Coding style.</em></strong>
+Programs with multiple <code>break</code> statements can be difficult to read and/or debug.
+A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a way to avoid them.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_anyMatch" id="tabs-exercise_anyMatch-0" checked="checked" />
+<label for="tabs-exercise_anyMatch-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What does the method <code>mysteriousMethod</code> below return?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Path<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Files.<span style="color:#a6e22e">isDirectory</span>(path)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> List.<span style="color:#a6e22e">of</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Files.<span style="color:#a6e22e">list</span>(path)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(p <span style="color:#f92672">-&gt;</span> path.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#34;.txt&#34;</span>))
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(p <span style="color:#f92672">-&gt;</span> readLines(p).<span style="color:#a6e22e">anyMatch</span>(l <span style="color:#f92672">-&gt;</span> l.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;foo&#34;</span>)))
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">toList</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">readLines</span>(Path path){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Files.<span style="color:#a6e22e">lines</span>(path);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_anyMatch" id="tabs-exercise_anyMatch-1"  />
+<label for="tabs-exercise_anyMatch-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>The list of all <code>.txt</code> files in the input directory that contain the string <code>foo</code>.</p>
+</div>
+</div>
+<h3 id="streamallmatch">
+  <code>Stream.allMatch</code>
+  <a class="anchor" href="#streamallmatch">#</a>
+</h3>
+<p>This instance method is analogous to <code>Stream.anyMatch</code>, but checks whether <em>all</em> elements in the stream satisfy the Boolean condition.</p>
+<p>This is also a short-circuiting operation (if an element does not satisfy the criterion).</p>
+<h2 id="aggregate">
+  Aggregation
+  <a class="anchor" href="#aggregate">#</a>
+</h2>
+<h3 id="streamfindfirst">
+  <code>Stream.findFirst</code>
+  <a class="anchor" href="#streamfindfirst">#</a>
+</h3>
+<p>This instance method returns the first element in the stream.</p>
+<p>This is a short-circuiting operation.</p>
+<p>In combination with <code>Stream.filter</code>, it can simulate <code>Stream.anyMatch</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example</em></strong>
+The following two programs are equivalent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> firstEvenNumber <span style="color:#f92672">=</span> integers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                                      .<span style="color:#a6e22e">filter</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>                                      .<span style="color:#a6e22e">findFirst</span>();
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> firstEvenNumber <span style="color:#f92672">=</span> Optional.<span style="color:#a6e22e">empty</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x : integers){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        firstEvenNumber <span style="color:#f92672">=</span> Optional.<span style="color:#a6e22e">of</span>(x);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h3 id="streamcount">
+  <code>Stream.count</code>
+  <a class="anchor" href="#streamcount">#</a>
+</h3>
+<p>This instance method returns the size of the stream.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// has value 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">count</span>();
+</span></span></code></pre></div></blockquote>
+<h3 id="streammax">
+  <code>Stream.max</code>
+  <a class="anchor" href="#streammax">#</a>
+</h3>
+<p>This instance method takes as argument a <a href="">Comparator</a>, and returns (one of the) maximal element(s) in the stream w.r.t. this comparator (if any).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);,
+</span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);,
+</span></span><span style="display:flex;"><span>City matera <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100);,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(ancona, bologna, matera);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains matera</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> selectedCity <span style="color:#f92672">=</span> cities.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                        .<span style="color:#a6e22e">max</span>((c1, c2) <span style="color:#f92672">-&gt;</span> c1.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">-</span> c2.<span style="color:#a6e22e">zipCode</span>);
+</span></span></code></pre></div></blockquote>
+<h3 id="streamreduce">
+  <code>Stream.reduce</code>
+  <a class="anchor" href="#streamreduce">#</a>
+</h3>
+<p>This instance method aggregates the elements of the stream based on a binary operator $\circ$.</p>
+<p>For instance, $\circ$ could be <code>+</code> or <code>*</code> for a stream of numbers, or concatenation for a stream of strings.</p>
+<p>As an illustration, if the stream has elements</p>
+<p>$\qquad (a, b, c, d)$</p>
+<p>then the method <code>reduce</code> returns</p>
+<p>$\qquad (((a \circ b) \circ c) \circ d)$</p>
+<p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>.
+The method <code>reduce</code> takes two arguments:</p>
+<ul>
+<li>
+<p>a neutral element for the operator $\circ$, i.e. a value $a$ such that $a \circ x = x$ for any $x \in T$.
+For instance,</p>
+<ul>
+<li>$0$ is the neutral element for $+$,</li>
+<li>$1$ is the neutral element for $*$,</li>
+<li><code>&quot;&quot;</code> is the neutral element for string concatenation,</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>
+<p>the binary operator $\circ$, specified as a callback function.</p>
+</li>
+</ul>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_reduce" id="tabs-exercise_reduce-0" checked="checked" />
+<label for="tabs-exercise_reduce-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What is the type of this callback function?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_reduce" id="tabs-exercise_reduce-1"  />
+<label for="tabs-exercise_reduce-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>$\qquad T \times T \to T$</p>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Has value 24</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> product <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">reduce</span>(1, (subtotal, element) <span style="color:#f92672">-&gt;</span> subtotal <span style="color:#f92672">*</span> element);
+</span></span></code></pre></div></blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#forEach"><code>Stream.forEach</code></a></li>
+    <li><a href="#collect">Collecting a stream</a>
+      <ul>
+        <li><a href="#streamtolist"><code>Stream.toList</code></a></li>
+        <li><a href="#streamcollect"><code>Stream.collect</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#checks">Boolean checks</a>
+      <ul>
+        <li><a href="#streamanymatch"><code>Stream.anyMatch</code></a></li>
+        <li><a href="#streamallmatch"><code>Stream.allMatch</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#aggregate">Aggregation</a>
+      <ul>
+        <li><a href="#streamfindfirst"><code>Stream.findFirst</code></a></li>
+        <li><a href="#streamcount"><code>Stream.count</code></a></li>
+        <li><a href="#streammax"><code>Stream.max</code></a></li>
+        <li><a href="#streamreduce"><code>Stream.reduce</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

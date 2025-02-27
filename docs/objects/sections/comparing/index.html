@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Cast and Equality
+  #
+
+
+  Cast
+  #
+
+
+Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object o, using
+either a supertype of o (this is an upcast),
+or a subtype of o (this is a downcast).
+
+
+  Upcast
+  #
+
+Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.
+Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/comparing/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Cast and equality">
+  <meta property="og:description" content="Cast and Equality # Cast # Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast).
+Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.
+Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Cast and equality | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/comparing/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="active">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Cast and equality</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cast">Cast</a>
+      <ul>
+        <li><a href="#upcast">Upcast</a></li>
+        <li><a href="#downcast">Downcast</a></li>
+      </ul>
+    </li>
+    <li><a href="#equals">Object equality</a>
+      <ul>
+        <li><a href="#recursion">Recursion</a></li>
+        <li><a href="#built-in-implementations">Built-in implementations</a></li>
+        <li><a href="#hashCode">The method <code>hashCode</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="cast-and-equality">
+  Cast and Equality
+  <a class="anchor" href="#cast-and-equality">#</a>
+</h1>
+<h2 id="cast">
+  Cast
+  <a class="anchor" href="#cast">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>Java (as well as C# and C++) provides mechanisms to change the type associated with an object <em>o</em>, using
+either a <em>supertype</em> of <em>o</em> (this is an <strong>upcast</strong>),
+or a <em>subtype</em> of <em>o</em> (this is a <strong>downcast</strong>).</p>
+</blockquote>
+<h3 id="upcast">
+  Upcast
+  <a class="anchor" href="#upcast">#</a>
+</h3>
+<p><em>Explicit</em> upcasts are uncommon, but may still be useful in some scenarios, e.g. to <a href="https://stackoverflow.com/questions/5361999/whats-the-need-to-use-upcasting-in-java">disambiguate two method calls</a>.</p>
+<p><em>Implicit</em> upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the following classes:</p>
+<p><img src="/img/diagrams/plantuml/downcast_simple.svg" alt="" /></p>
+<p>Now consider the following program, where the method <code>getUnits</code> produces an array of units that depends on the player&rsquo;s input.
+The type of objects in this array (<code>Unicorn</code> or <code>Butterfly</code>) cannot be determined at compile time.
+Thanks to the implicit upcast, they can nonetheless be treated as (underspecified) units.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(unit.<span style="color:#a6e22e">health</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h3 id="downcast">
+  Downcast
+  <a class="anchor" href="#downcast">#</a>
+</h3>
+<p>Downcasting in Java is frequent for objects whose type cannot be determined at compile time.
+However, this may not be safe.
+For instance, in the above example, downcasting a unit from <code>Unit</code> to <code>Unicorn</code> may cause a <code>ClassCastException</code> (at runtime), because this unit is a instance of <code>Butterfly</code>.
+This is why downcasting is often used in combination with the <code>instanceof</code> operator.
+For instance the above example can be modifed as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(unit <span style="color:#66d9ef">instanceof</span> Unicorn){
+</span></span><span style="display:flex;"><span>        ((Unicorn) unit).<span style="color:#a6e22e">regen</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here the operation <code>(Unicorn) unit</code> is a downcast.
+The output of this operation has type <code>Unicorn</code>, thus allowing the call to the method <code>regen</code>.</p>
+<h2 id="equals">
+  Object equality
+  <a class="anchor" href="#equals">#</a>
+</h2>
+<p>As we saw in a <a href="">previous chapter</a>, a constructor in Java creates an object in memory and returns a (fresh) <em>reference</em> to that object.
+Since two objects have different locations in memory, their respective references must differ, <em>even if the objects are identical</em>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider (a simplified version of) the class <code>City</code> that we saw <a href="">earlier</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipcode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><p>The following program will output <code>false</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City city1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>City city2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(city1 <span style="color:#f92672">==</span> city2);
+</span></span></code></pre></div></blockquote>
+<p>However, in some scenarios, it may be useful to compare the objects themselves, rather than their references.
+Java provides a native method called <code>equals</code> for this purpose.</p>
+<p>Like the method <code>toString</code> that we saw <a href="http://localhost:1313/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
+So every (user-defined of native) class inherits <code>equals</code>.</p>
+<p>Here is the source code of <code>Object.equals</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In other words, by default, this method behaves like the <code>==</code> operator.
+In order to use this method to check whether two objects are equal, it has to be <a href="http://localhost:1313/docs/objects/sections/methods/#overriding">overriden</a>.</p>
+<p>For instance, here is a prototypical implementation of the method <code>equals</code> within our class <code>City</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object o) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> o) { <span style="color:#75715e">// same reference</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (o <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> getClass() <span style="color:#f92672">!=</span> o.<span style="color:#a6e22e">getClass</span>())
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// o is null or has a different type</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    City downcastObject <span style="color:#f92672">=</span> (City) o;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">==</span> downcastObject.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        name.<span style="color:#a6e22e">equals</span>(downcastObject.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong> Your IDE can generate such a method.</p>
+</blockquote>
+<p>Note in this example:</p>
+<ul>
+<li>the (safe) downcast from <code>Object</code> to <code>City</code>, and</li>
+<li>the recursive call to <code>equals</code> (because <code>String</code> is not a primitive type).</li>
+</ul>
+<h3 id="recursion">
+  Recursion
+  <a class="anchor" href="#recursion">#</a>
+</h3>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> Similarly to what we saw with the method <a href="http://localhost:1313/docs/objects/sections/tostring/#recursion">toString</a>,
+beware of naive (recursive) implementations of <code>equals</code> if your program can create an object that refers to itself (directly or indirectly).</p>
+</blockquote>
+<h3 id="built-in-implementations">
+  Built-in implementations
+  <a class="anchor" href="#built-in-implementations">#</a>
+</h3>
+<p>Several native Java classes have their own implementation of <code>equals</code>.
+We will encounter several of them during this course, notably for the class <code>String</code> and for the implementations of the interface <code>Set</code>.</p>
+<h3 id="hashCode">
+  The method <code>hashCode</code>
+  <a class="anchor" href="#hashCode">#</a>
+</h3>
+<p>The method <code>equals</code> is usually overridden together with another method of the class <code>Object</code>, called <code>hashCode</code>.
+In particular, this is needed for the method <code>equals</code> of the class <code>HashSet</code> to behave correctly.
+We will explore this topic <a href="">later in this course</a>, when we introduce the notion of a hash table.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cast">Cast</a>
+      <ul>
+        <li><a href="#upcast">Upcast</a></li>
+        <li><a href="#downcast">Downcast</a></li>
+      </ul>
+    </li>
+    <li><a href="#equals">Object equality</a>
+      <ul>
+        <li><a href="#recursion">Recursion</a></li>
+        <li><a href="#built-in-implementations">Built-in implementations</a></li>
+        <li><a href="#hashCode">The method <code>hashCode</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

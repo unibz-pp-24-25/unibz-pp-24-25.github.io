@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Quasi-objects
+  #
+
+
+  Enumerated types
+  #
+
+Most imperative languages allow the creation of so-called enumerated types.
+An enumerated type is a datatype for a finite set or enumerated values.
+For instance, if our game only allows &ldquo;blue&rdquo;, &ldquo;green&rdquo; and &ldquo;red&rdquo; as unit colors, then we may create a dedicated type that only allows these three values.
+
+  In Java
+  #
+
+An enumerated type in Java is a set of constants.
+These constants are effectively static,
+meaning that they depends on the class or interface where the enumerated type is declared (similarly to a static attribute).
+The name of an enumerated type can generally be used like a regular reference type.
+For instance">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/quasi-objects/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Quasi-objects">
+  <meta property="og:description" content="Quasi-objects # Enumerated types # Most imperative languages allow the creation of so-called enumerated types.
+An enumerated type is a datatype for a finite set or enumerated values. For instance, if our game only allows “blue”, “green” and “red” as unit colors, then we may create a dedicated type that only allows these three values.
+In Java # An enumerated type in Java is a set of constants. These constants are effectively static, meaning that they depends on the class or interface where the enumerated type is declared (similarly to a static attribute). The name of an enumerated type can generally be used like a regular reference type. For instance">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Quasi-objects | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/quasi-objects/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="active">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Quasi-objects</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#enumerated-types">Enumerated types</a>
+      <ul>
+        <li><a href="#in-java">In Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#record">Records</a>
+      <ul>
+        <li><a href="#in-java-1">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#string">Strings</a>
+      <ul>
+        <li><a href="#interning">Interning</a></li>
+        <li><a href="#in-java-2">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#boxedTypes">Java boxed types</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="quasi-objects">
+  Quasi-objects
+  <a class="anchor" href="#quasi-objects">#</a>
+</h1>
+<h2 id="enumerated-types">
+  Enumerated types
+  <a class="anchor" href="#enumerated-types">#</a>
+</h2>
+<p>Most imperative languages allow the creation of so-called <strong>enumerated types</strong>.</p>
+<p>An enumerated type is a datatype for a finite set or enumerated values.
+For instance, if our game only allows &ldquo;blue&rdquo;, &ldquo;green&rdquo; and &ldquo;red&rdquo; as unit colors, then we may create a dedicated type that only allows these three values.</p>
+<h3 id="in-java">
+  In Java
+  <a class="anchor" href="#in-java">#</a>
+</h3>
+<p>An enumerated type in Java is a set of constants.
+These constants are effectively <a href="">static</a>,
+meaning that they depends on the class or interface where the enumerated type is declared (similarly to a <a href="">static attribute</a>).
+The <em>name</em> of an enumerated type can generally be used like a regular reference type.
+For instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">enum</span> UnitColor {BLUE, GREEN, RED}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>    UnitColor color;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(<span style="color:#66d9ef">int</span> health, UnitColor color){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+In the above example, the enumerated type <code>UnitColor</code> could equivalently be represented with an integer.
+For instance, <code>0</code> for blue, <code>1</code> for green and <code>2</code> for red.
+However, with such an encoding, a conditional statement (e.g. <code>if</code> or <code>switch</code>) that checks the color of a unit would also need to handle the case of values <code>&lt; 0</code> or <code>&gt; 2</code>.
+So (besides readability), a benefit of the enumerated type in this case is that it restricts possible inputs to <em>valid</em> ones.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+Enumerated types in Java are significantly more expressive than their counterparts in some other languages.
+Notably, a Java <code>enum</code> can have its own <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">constructor and methods</a>.</p>
+</blockquote>
+<h2 id="record">
+  Records
+  <a class="anchor" href="#record">#</a>
+</h2>
+<p>A <strong>record</strong> is an object whose attributes cannot be modified.</p>
+<h3 id="in-java-1">
+  in Java
+  <a class="anchor" href="#in-java-1">#</a>
+</h3>
+<p>Records were introduced in Java 14 (2020).
+They are a convenient way to avoid boilerplate code.
+Records provide a concise syntax for &ldquo;lightweight&rdquo; classes that are only meant to hold data.</p>
+<p>For instance, here is the full implementation of a record <code>City</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode) {}
+</span></span></code></pre></div><p>This record has an implicit constructor, and implements <code>equals</code>, <code>hashcode</code> and <code>toString</code> in the expected way.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>    City florenceAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Outputs true.</span>
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(florence.<span style="color:#a6e22e">equals</span>(florenceAgain));
+</span></span></code></pre></div><p>The attributes of a record <em>cannot</em> be modified.
+For instance, the following program does not compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>    florence.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> 50121;
+</span></span></code></pre></div><p>A record is often declared inside a class or interface.
+For instance, in our game:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">TileCoordinates</span>(<span style="color:#66d9ef">int</span> X, <span style="color:#66d9ef">int</span> Y){};
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Records are convenient for methods that need to return more than one value.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>TileCoordinates <span style="color:#a6e22e">getOngoingMove</span>();
+</span></span></code></pre></div><h2 id="string">
+  Strings
+  <a class="anchor" href="#string">#</a>
+</h2>
+<h3 id="interning">
+  Interning
+  <a class="anchor" href="#interning">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>Many modern languages (such as Java, C#, Python, Ruby, JavaScript, Go, etc.) support a technique called <strong>interning</strong>, in order to manage strings in memory.
+This consists in storing only one copy of each distinct string created during the execution of a program.
+These strings are stored in a shared <strong>pool</strong>, and each of them is an <a href="">immutable</a> object (meaning that it cannot be modified).</p>
+</blockquote>
+<p>Some benefits are faster string comparisons, lower memory footprint, etc.</p>
+<h3 id="in-java-2">
+  in Java
+  <a class="anchor" href="#in-java-2">#</a>
+</h3>
+<p>In Java, a string is an object.
+Like for regular objects, comparing two variables of type <code>String</code> with <code>==</code> compares their references:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+</span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false, because the two variables hold different references.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
+</span></span></code></pre></div><p>A string can be explicitly interned (i.e. added to the shared pool) with the (instance) method <code>intern</code>.
+This method:</p>
+<ul>
+<li>tries to add the string to the pool, and then</li>
+<li>returns a reference to the (only) version of the string contained in the pool.</li>
+</ul>
+<p>For instance, consider the following program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates a string &#34;foo&#34;,</span>
+</span></span><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// adds it to the pool,</span>
+</span></span><span style="display:flex;"><span>myString <span style="color:#f92672">=</span> myString.<span style="color:#a6e22e">intern</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates another string &#34;foo&#34;,</span>
+</span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Tries to add &#34;foo&#34; to the pool once again.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Because the pool already contains a version of &#34;foo&#34;, returns a reference to it.</span>
+</span></span><span style="display:flex;"><span>sameString <span style="color:#f92672">=</span> sameString.<span style="color:#a6e22e">intern</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because the two variables now hold the same reference.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
+</span></span></code></pre></div><p>A string that is initialized without constructor (i.e. directly with &quot; &ldquo;) <em>is interned</em>.
+For instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
+</span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because of (implicit) interning</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
+</span></span></code></pre></div><p>In order to support interning, string in Java are <a href="">immutable</a>.</p>
+<p>In particular, the instance methods of the class <code>String</code> (like <code>substring</code>, etc.) do <em>not</em> modify a string.
+Instead, some of them may return (a reference to) a <em>different</em> object.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+</span></span><span style="display:flex;"><span>String copy <span style="color:#f92672">=</span> foo;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because the two variables hold the same object reference.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(copy <span style="color:#f92672">==</span> foo);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>foo <span style="color:#f92672">=</span> foo.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;o&#39;</span>,<span style="color:#e6db74">&#39;O&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false, because the method &#39;replace&#39; returns a reference</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// to another object.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(copy <span style="color:#f92672">==</span> foo);
+</span></span></code></pre></div><p>The class <code>String</code> overrides the method <a href="">equals</a> so that it implements string comparison in the expected way.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+</span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true.</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString.<span style="color:#a6e22e">equals</span>(sameString));
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+By default, you can always use <code>equals</code> to compare the values of two strings.
+This is less error-prone than <code>==</code> (albeit less efficient if the two strings differ).</p>
+</blockquote>
+<h2 id="boxedTypes">
+  Java boxed types
+  <a class="anchor" href="#boxedTypes">#</a>
+</h2>
+<p>Java has 8 primitive types: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>boolean</code> and <code>char</code>.</p>
+<p>For each primitive type, Java has a so-called <strong>boxed</strong> or (<strong>wrapper</strong>) type:
+<code>Byte</code>, <code>Short</code>, <code>Integer</code>, <code>Long</code>, <code>Float</code>, <code>Double</code>, <code>Boolean</code> and <code>Character</code>.</p>
+<p>These types can be used in Java collections (<code>Set</code>, <code>List</code>, etc.), whereas primitive types cannot.
+Some boxed types also offer additional functionalities, via instance methods (e.g. an <code>Integer</code> can represent a positive numbers up to $2^{32} - 1$.</p>
+<p>Constructors for boxed types are deprecated.
+Instead, instances can be created via so-called <strong>autoboxing</strong>, for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer myInteger <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>Character myCharacter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span>;
+</span></span></code></pre></div><p>Several Java operators (like <code>+</code>, <code>==</code>, <code>&lt;=</code>, etc.) are also overloaded so that they behave with boxed types as they would with primitive types.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>i <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>Integer j <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(i <span style="color:#f92672">==</span> j);
+</span></span></code></pre></div><p>Like strings, instances of boxed types are <a href="">immutable</a>.
+This can affect performance.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Integer i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000000 ; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>may create up to 1 million objects in memory.
+This is one of the reasons why it is usually recommended to use primitive types whenever possible (see for instance <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>,
+Item 61).
+Some boxed types are (partially) interned, analogously to strings.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#enumerated-types">Enumerated types</a>
+      <ul>
+        <li><a href="#in-java">In Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#record">Records</a>
+      <ul>
+        <li><a href="#in-java-1">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#string">Strings</a>
+      <ul>
+        <li><a href="#interning">Interning</a></li>
+        <li><a href="#in-java-2">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#boxedTypes">Java boxed types</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

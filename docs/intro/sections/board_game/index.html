@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Board game
+  #
+
+In order to follow this course, you will need to play one of the two following video games:
+
+Might &amp; Magic: Clash of Heroes, or
+Legend of Solgard.
+
+These two games have nearly identical mechanics.
+So by default, we will refer to them as a unique game (e.g. when we write &ldquo;this game&rdquo; or &ldquo;our board game&rdquo;).
+
+  Why this game
+  #
+
+Turn-based board games (like chess, go, checkers, etc.) are traditionally a good playground to learn the basics of algorithmic thinking.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/intro/sections/board_game/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Board game">
+  <meta property="og:description" content="Board game # In order to follow this course, you will need to play one of the two following video games:
+Might &amp; Magic: Clash of Heroes, or Legend of Solgard. These two games have nearly identical mechanics. So by default, we will refer to them as a unique game (e.g. when we write “this game” or “our board game”).
+Why this game # Turn-based board games (like chess, go, checkers, etc.) are traditionally a good playground to learn the basics of algorithmic thinking.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Board game | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/intro/sections/board_game/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.d2bdf4d41b8b16ba58f297d496360ffb40cb9e480b1bad2b10f8936f4c137ad0.js" integrity="sha256-0r301BuLFrpY8pfUljYP&#43;0DLnkgLG60rEPiTb0wTetA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle" checked />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="active">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Board game</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-this-game">Why this game</a></li>
+    <li><a href="#how-long-to-play">How long to play</a></li>
+    <li><a href="#which-game-to-choose">Which game to choose</a>
+      <ul>
+        <li><a href="#might-and-magic-clash-of-heroes-mmcoh">Might and Magic clash of heroes (MMCoH)</a></li>
+        <li><a href="#legend-of-solgard">Legend of Solgard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="board-game">
+  Board game
+  <a class="anchor" href="#board-game">#</a>
+</h1>
+<p>In order to follow this course, you will need to play one of the two following video games:</p>
+<ul>
+<li><a href="https://www.dotemu.com/games/might-magic-clash-of-heroes-definitive-edition/">Might &amp; Magic: Clash of Heroes</a>, or</li>
+<li><a href="https://snowprintstudios.com/solgard/">Legend of Solgard</a>.</li>
+</ul>
+<p>These two games have nearly identical mechanics.
+So by default, we will refer to them as a unique game (e.g. when we write &ldquo;this game&rdquo; or &ldquo;our board game&rdquo;).</p>
+<h2 id="why-this-game">
+  Why this game
+  <a class="anchor" href="#why-this-game">#</a>
+</h2>
+<p>Turn-based board games (like chess, go, checkers, etc.) are traditionally a good playground to learn the basics of algorithmic thinking.</p>
+<!-- We could have used chess for this course, but everything about chess has already been done and written. -->
+<blockquote class="book-hint danger">
+<p><strong><em>Disclaimer.</em></strong> The course is <em>not</em> about video game development, but general-purpose programming.
+This game is only used as didactic support.</p>
+</blockquote>
+<p>Precisely, this game will serve two purposes:</p>
+<ul>
+<li>we will use it as a running example throughout the lectures, and</li>
+<li>students can choose to implement (their own version of) this game as their <a href="%7b%7b%22../../project/sections/board_game.md%22%7d%7d">group project</a>.</li>
+</ul>
+<p>By default, we will focus on the <em>two player</em> variant, where both players play by the same rules.
+These two players may be humans and/or bots.</p>
+<h2 id="how-long-to-play">
+  How long to play
+  <a class="anchor" href="#how-long-to-play">#</a>
+</h2>
+<p>Students only need to play long enough to understand the basic mechanics of the game.</p>
+<p>1.5 to 2 hours should be sufficient.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+In both games, mechanics are introduced gradually, so it is difficult to get a full overview by playing less than 1.5 hours.</p>
+</blockquote>
+<h2 id="which-game-to-choose">
+  Which game to choose
+  <a class="anchor" href="#which-game-to-choose">#</a>
+</h2>
+<h3 id="might-and-magic-clash-of-heroes-mmcoh">
+  Might and Magic clash of heroes (MMCoH)
+  <a class="anchor" href="#might-and-magic-clash-of-heroes-mmcoh">#</a>
+</h3>
+<p>This game was initially released in 2009 for Nintendo DS.
+It has then been ported to PC and several consoles, as well as Android and iOS.</p>
+<p>A free demo was available on Steam until July 2023.
+The game has been re-released since, by another editor.
+As a side-effect, the demo is not available on Steam anymore.</p>
+<p>The Android and iOS versions have also been removed from the Google Play store and App store respectively.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Advantages.</em></strong></p>
+<ul>
+<li>The mechanics of this game may be easier to understand (in a short amount of time).</li>
+<li>The default mode is the (symmetric) 2 player mode (player vs bot or player vs player) that we will work on.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Drawbacks.</em></strong></p>
+<ul>
+<li>The touch-screen interface on Android and iOS is arguably dated.</li>
+</ul>
+</blockquote>
+<h3 id="legend-of-solgard">
+  Legend of Solgard
+  <a class="anchor" href="#legend-of-solgard">#</a>
+</h3>
+<p>This game was released in 2016 for Android and iOS.
+It is still available on the Google Play store and the App store.</p>
+<p>It is free to play, with optional microtransactions (via so-called <a href="https://en.wikipedia.org/wiki/Loot_box">loot boxes</a>).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+For this course, <em>no</em> transaction is needed.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Advantages.</em></strong></p>
+<ul>
+<li>Animations can be sped up.</li>
+<li>The touch-screen interface is more modern than the one of MMCoH for Android and iOS.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Drawbacks.</em></strong></p>
+<ul>
+<li>Progression is based on a (complex) system of virtual currencies, which adds noise to the interface.</li>
+<li>The game can only be played (for free) a limited amount of time per day (approximately 45 min).</li>
+<li>The default mode is <em>not</em> the (symmetric) 2 players mode that we will work on (it requires more playtime to be unlocked).
+So an extra effort of imagination may be needed.</li>
+</ul>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-this-game">Why this game</a></li>
+    <li><a href="#how-long-to-play">How long to play</a></li>
+    <li><a href="#which-game-to-choose">Which game to choose</a>
+      <ul>
+        <li><a href="#might-and-magic-clash-of-heroes-mmcoh">Might and Magic clash of heroes (MMCoH)</a></li>
+        <li><a href="#legend-of-solgard">Legend of Solgard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

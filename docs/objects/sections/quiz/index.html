@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Quiz
+  #
+
+To answer the quiz (and check your answers), click here or scan this code:
+
+
+  Boxed type
+  #
+
+public class City {
+
+  int population;
+
+    public City (int population){
+      this.population = population;
+  }
+}
+int myInteger = 1;
+Integer myBoxedInteger = 1;
+Integer myBoxedCopy = myInteger;
+City myCity = new City(5000);
+
+myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity);
+
+System.out.println( myInteger &#43; &#34;, &#34;&#43; myBoxedInteger &#43; &#34;, &#34;&#43; myBoxedCopy &#43; &#34;,&#34;
+                  &#43; myCity.population);
+
+void myMethod(int integer, Integer boxedInteger, Integer boxedCopy, City city) {
+    integer &#43;= 1;
+    boxedInteger &#43;= 1;
+    boxedCopy &#43;= 1;
+    city.population &#43;= 1;
+}
+This Java program outputs:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/quiz/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Quiz">
+  <meta property="og:description" content="Quiz # To answer the quiz (and check your answers), click here or scan this code:
+Boxed type # public class City { int population; public City (int population){ this.population = population; } } int myInteger = 1; Integer myBoxedInteger = 1; Integer myBoxedCopy = myInteger; City myCity = new City(5000); myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity); System.out.println( myInteger &#43; &#34;, &#34;&#43; myBoxedInteger &#43; &#34;, &#34;&#43; myBoxedCopy &#43; &#34;,&#34; &#43; myCity.population); void myMethod(int integer, Integer boxedInteger, Integer boxedCopy, City city) { integer &#43;= 1; boxedInteger &#43;= 1; boxedCopy &#43;= 1; city.population &#43;= 1; } This Java program outputs:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Quiz | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/quiz/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="active">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Quiz</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#boxed-type">Boxed type</a></li>
+    <li><a href="#objects-and-references">Objects and references</a></li>
+    <li><a href="#copy-constructor">Copy constructor</a></li>
+    <li><a href="#tostring"><code>toString</code></a></li>
+    <li><a href="#static-attribute">Static attribute</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="quiz">
+  Quiz
+  <a class="anchor" href="#quiz">#</a>
+</h1>
+<p>To answer the quiz (and check your answers), <a href="https://forms.gle/P2GgesHngYRZAGSh7">click here</a> or scan this code:</p>
+<p><img src="/img/qr_codes/quiz2_400.svg" alt="" /></p>
+<h2 id="boxed-type">
+  Boxed type
+  <a class="anchor" href="#boxed-type">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> population;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span> (<span style="color:#66d9ef">int</span> population){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">population</span> <span style="color:#f92672">=</span> population;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInteger <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>Integer myBoxedInteger <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>Integer myBoxedCopy <span style="color:#f92672">=</span> myInteger;
+</span></span><span style="display:flex;"><span>City myCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(5000);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>( myInteger <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span> myBoxedInteger <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span> myBoxedCopy <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">+</span> myCity.<span style="color:#a6e22e">population</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> integer, Integer boxedInteger, Integer boxedCopy, City city) {
+</span></span><span style="display:flex;"><span>    integer <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    boxedInteger <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    boxedCopy <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    city.<span style="color:#a6e22e">population</span> <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This Java program outputs:</p>
+<ul>
+<li>1, 1, 1, 5000</li>
+<li>1, 1, 1, 5001</li>
+<li>1, 2, 1, 5000</li>
+<li>1, 2, 1, 5001</li>
+<li>1, 2, 2, 5000</li>
+<li>1, 2, 2, 5001</li>
+<li>2, 2, 2, 5000</li>
+<li>2, 2, 2, 5001</li>
+<li>I do not know the answer</li>
+</ul>
+<h2 id="objects-and-references">
+  Objects and references
+  <a class="anchor" href="#objects-and-references">#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  Country country;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name,
+</span></span><span style="display:flex;"><span>              Country country) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  City capital;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(String name,
+</span></span><span style="display:flex;"><span>                 City capital) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> capital;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>, <span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, italy);
+</span></span><span style="display:flex;"><span>City rome <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, italy);
+</span></span><span style="display:flex;"><span>italy.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> rome;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(italy.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(florence.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(rome.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(rome.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span>);
+</span></span></code></pre></div><p>This Java program:</p>
+<ul>
+<li>does not terminate</li>
+<li>outputs null, null, null, null</li>
+<li>outputs null, null, Rome, null</li>
+<li>outputs null, null, Rome, Rome</li>
+<li>outputs Rome, null, null, null</li>
+<li>outputs Rome, null, Rome, null</li>
+<li>outputs Rome, null, Rome, Rome</li>
+<li>outputs Rome, Rome, Rome, Rome</li>
+<li>I do not know the answer</li>
+</ul>
+<h2 id="copy-constructor">
+  Copy constructor
+  <a class="anchor" href="#copy-constructor">#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  Country country;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name,
+</span></span><span style="display:flex;"><span>              Country country) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span> (City original) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>          original.<span style="color:#a6e22e">country</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  City capital;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(String name,
+</span></span><span style="display:flex;"><span>                 City capital) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> capital;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(Country original){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">new</span> City(original.<span style="color:#a6e22e">capital</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>, <span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>City rome <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, italy);
+</span></span><span style="display:flex;"><span>italy.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> rome;
+</span></span><span style="display:flex;"><span>Country littleItaly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(italy);
+</span></span><span style="display:flex;"><span>littleItaly.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;littleItaly&#34;</span>;
+</span></span><span style="display:flex;"><span>littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;littleRome&#34;</span>;
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span>);
+</span></span></code></pre></div><p>This Java program:</p>
+<ul>
+<li>does not terminate</li>
+<li>outputs Rome, Italy, Rome</li>
+<li>outputs Rome, littleItaly, Rome</li>
+<li>outputs littleRome, Italy, Rome</li>
+<li>outputs littleRome, littleItaly, Rome</li>
+<li>outputs littleRome, littleItaly, littleRome</li>
+<li>I do not know the answer</li>
+</ul>
+<h2 id="tostring">
+  <code>toString</code>
+  <a class="anchor" href="#tostring">#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  Country country;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name,
+</span></span><span style="display:flex;"><span>              Country country) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;City{&#34;</span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name=&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;country=&#34;</span> <span style="color:#f92672">+</span> country <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;}&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  City capital;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(String name,
+</span></span><span style="display:flex;"><span>                 City capital) {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> capital;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Country{&#34;</span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name=&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;capital=&#34;</span> <span style="color:#f92672">+</span> capital <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;}&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+</div>
+<p>In this program, the method <code>City.toString()</code>:</p>
+<ul>
+<li>can output the empty string</li>
+<li>always outputs the empty string</li>
+<li>never outputs the empty string</li>
+<li>is recursive</li>
+<li>is not recursive</li>
+<li>may not terminate</li>
+<li>always terminates</li>
+<li>never terminates</li>
+</ul>
+<h2 id="static-attribute">
+  Static attribute
+  <a class="anchor" href="#static-attribute">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> value;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> flag;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(<span style="color:#66d9ef">int</span> value, <span style="color:#66d9ef">boolean</span> flag){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> value;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> flag;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(){ System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;[&#34;</span><span style="color:#f92672">+</span>value<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>flag<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;]&#34;</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incrementValue</span>(){ value<span style="color:#f92672">++</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setFlag</span>(<span style="color:#66d9ef">boolean</span> flag){ <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> flag; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MyClass o1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyClass(2, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>MyClass o2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyClass(3, <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>o1.<span style="color:#a6e22e">print</span>();
+</span></span><span style="display:flex;"><span>myMethod(o1);
+</span></span><span style="display:flex;"><span>o1.<span style="color:#a6e22e">print</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(MyClass object) {
+</span></span><span style="display:flex;"><span>    object.<span style="color:#a6e22e">setFlag</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>    object.<span style="color:#a6e22e">incrementValue</span>();
+</span></span><span style="display:flex;"><span>    object.<span style="color:#a6e22e">print</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This (strange) Java program outputs:</p>
+<ul>
+<li>[2 true][3 false ][3 false]</li>
+<li>[3 true][4 false ][4 false]</li>
+<li>[2 true][3 false ][2 true]</li>
+<li>[3 true][4 false ][3 true]</li>
+<li>[2 false][3 false ][3 false]</li>
+<li>[3 false][4 false ][4 false]</li>
+<li>[2 false][3 false ][2 true]</li>
+<li>[3 false][4 false ][3 true]</li>
+<li>I do not know the answer.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#boxed-type">Boxed type</a></li>
+    <li><a href="#objects-and-references">Objects and references</a></li>
+    <li><a href="#copy-constructor">Copy constructor</a></li>
+    <li><a href="#tostring"><code>toString</code></a></li>
+    <li><a href="#static-attribute">Static attribute</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Regexes in practice
+  #
+
+Concrete regexes deviate from theoretical ones in several ways.
+In particular:
+
+
+Concrete syntaxes include a wide range of syntactic sugar, i.e. operators that could in theory be expressed in terms of |, * and concatenation.
+
+
+
+
+
+Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes.
+Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular).
+However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
+This is also what we will do in this section.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/regex/sections/practice/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="in practice">
+  <meta property="og:description" content="Regexes in practice # Concrete regexes deviate from theoretical ones in several ways. In particular:
+Concrete syntaxes include a wide range of syntactic sugar, i.e. operators that could in theory be expressed in terms of |, * and concatenation.
+Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes. Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular). However, in practice, they are still referred to as “regexes”. This is also what we will do in this section.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>in practice | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/regex/sections/practice/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>in practice</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#flavours">Flavours</a></li>
+    <li><a href="#java-regexes">Java regexes</a>
+      <ul>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#syntactic-sugar">Syntactic sugar</a></li>
+        <li><a href="#lazy-quantification">Lazy quantification</a></li>
+        <li><a href="#boundary-matchers">Boundary matchers</a></li>
+        <li><a href="#group">Group</a></li>
+        <li><a href="#backreference">Backreference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="regexes-in-practice">
+  Regexes in practice
+  <a class="anchor" href="#regexes-in-practice">#</a>
+</h1>
+<p>Concrete regexes deviate from theoretical ones in several ways.
+In particular:</p>
+<ol>
+<li>
+<p>Concrete syntaxes include a wide range of <em>syntactic sugar</em>, i.e. operators that could in theory be expressed in terms of <code>|</code>, <code>*</code> and concatenation.</p>
+<!-- This is almost a necessity for most practical applications. -->
+<!-- For instance, concrete syntaxes usually allow specifying a range of characters, like `[A-Z]` for "any capital letter between A and Z", -->
+<!-- which is syntactic sugar for $A | B | C |..| Z$. -->
+</li>
+<li>
+<p>Many regex engines support expressions with features (such as <a href="#backreference">backreferences</a>) that go beyond the expressivity of theoretical regexes.
+Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="">regular</a>).
+However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
+This is also what we will do in this section.</p>
+</li>
+</ol>
+<h2 id="flavours">
+  Flavours
+  <a class="anchor" href="#flavours">#</a>
+</h2>
+<p>Multiple syntaxes for regexes coexist, which have a lot in common.
+Among these:</p>
+<ul>
+<li>
+<p>Regexes defined by the IEEE POSIX standards are supported by a variety of command-line utilities, scripting languages or database engines.</p>
+</li>
+<li>
+<p>The regex engine of the programming language Perl has been very influential.
+A widely used variant is the <a href="https://www.pcre.org/">PCRE</a> (Perl Compatible Regular Expressions) library, written in C (and natively used by PHP and R).
+Besides, many programming languages (Java, Javascript, Python, C#, etc.) have adopted a regex syntax and engine inspired by Perl&rsquo;s.</p>
+</li>
+</ul>
+<p>A detailed comparison of some the main flavours of regexes can be found <a href="https://gist.github.com/CMCDragonkai/6c933f4a7d713ef712145c5eb94a1816">here</a>.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The patterns used in <a href="">.gitigore</a> files are <em>not</em> regular expressions.</p>
+</blockquote>
+<h2 id="java-regexes">
+  Java regexes
+  <a class="anchor" href="#java-regexes">#</a>
+</h2>
+<p>Java regexes are very similar to PCRE regexes (albeit less expressive).</p>
+<p>We list below some of the main constructs of Java regexes, and refer to the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">Javadoc</a> for an exhaustive list.
+Most of these are identical in other regex languages inspired by Perl&rsquo;s.</p>
+<h3 id="characters">
+  Characters
+  <a class="anchor" href="#characters">#</a>
+</h3>
+<p>A character in a Java regex can alternatively be written using its <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode hexadecimal identifier</a>, preceded with <code>\u</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>the character <code>A</code> can be written either in its normal form, or <code>\u0041</code></li>
+<li>the carriage return character can be written either <code>\r</code> or <code>\u000D</code></li>
+</ul>
+</blockquote>
+<p>Special characters (like <code>|</code> or <code>*</code>) need to be escaped to be treated as standard ones (except in some specific contexts, see below).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+In order to be treated as a standard character:</p>
+<ul>
+<li><code>*</code> can be either escaped (<code>\*</code>) or written <code>\u002A</code></li>
+<li><code>\</code> can be either escaped (<code>\\</code>) or written <code>\u005C</code></li>
+</ul>
+</blockquote>
+<h3 id="syntactic-sugar">
+  Syntactic sugar
+  <a class="anchor" href="#syntactic-sugar">#</a>
+</h3>
+<p>We have seen in previous sections that in theory, regular expressions only admit <a href="#definition">three operators</a>:</p>
+<ul>
+<li>concatenation ($e_1e_2$),</li>
+<li>union ($e_1$<code>|</code>$e_2$) and</li>
+<li>closure ($e$<code>*</code>).</li>
+</ul>
+<p>However, this is impractical for most implication.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="">alphabet</a>, e.g.:</p>
+<p>$\qquad\qquad$ <code>a | b | c | .. | A | B | C | .. | &amp; | ! | &gt; | ..</code></p>
+<p>For the simple <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> alphabet, this is already more than a hundred characters.
+For the Unicode alphabet, this is more than 100 000.</p>
+</blockquote>
+<p>In practice, regexes include additional operators, most of which are <em>syntactic sugar</em> (i.e. could in theory be expressed with only concatenation, union, and closure).</p>
+<h4 id="characterClass">
+  Character class
+  <a class="anchor" href="#characterClass">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p>Square brackets (<code>[</code> and <code>]</code>) are used to denote a set of characters, called a <strong>character class</strong>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>
+<p><code>[abcd]</code> is equivalent to <code>a|b|c|d</code></p>
+</li>
+<li>
+<p><code>gr[ae]y</code> is equivalent to <code>gr(a|e)y</code></p>
+</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>A character class can also be defined with <em>ranges</em> of characters.
+If $c_1$ and $c_2$ are two characters, then $c_1$<code>-</code>$c_2$ (within square brackets still) denotes any character <em>between</em> $c_1$ and $c_2$ in the Unicode alphabet.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>[A-Z]</code> matches any character between <code>A</code> and <code>Z</code></li>
+<li><code>[A-Za-z0-9]</code> matches any character between (<code>A</code> and <code>Z</code>) or between (<code>a</code> and <code>z</code>) or between (<code>0</code> and <code>9</code>)</li>
+<li><code>[A-Za-z@]</code> matches <code>@</code> or any character between (<code>A</code> and <code>Z</code>) or between (<code>a</code> and <code>z</code>)</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>The <strong>complement</strong> (in the Unicode alphabet) of a character class is described by adding a <code>^</code> after the opening square bracket <code>[</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>[^a]</code> matches any character different from <code>a</code></li>
+<li><code>[^abc]</code> matches any character that is neither <code>a</code>, <code>b</code> or <code>c</code></li>
+<li><code>[^0-9]</code> matches any character that is not a digit</li>
+<li><code>[^A-Za-z0-9]</code> matches any character that is not an ASCII letter or digit</li>
+</ul>
+</blockquote>
+<p>Most special characters (like <code>*</code> or <code>|</code>) can be used unescaped inside square brackets to refer to a character (some exceptions to this rule are <code>-</code>, <code>^</code> or <code>\</code>).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>[|*]</code> matches either a <code>|</code> or a <code>*</code></li>
+<li><code>[^|]</code> matches any character that is not <code>|</code></li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>The special character <code>.</code> stands for any (Unicode) character</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>..</code> matches any string of two characters</li>
+<li><code>.*</code> matches any Unicode string</li>
+</ul>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_character_class_matches" id="tabs-exercise_character_class_matches-0" checked="checked" />
+<label for="tabs-exercise_character_class_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>List all matches returned by a regex engine for:</p>
+<ol>
+<li>the regex <code>gr[ae]y</code> in <code>the words grey and gray are homonyms</code></li>
+<li>the regex <code>[A-Z][^;]*;</code> in <code>Alice:12;Bob,35;</code></li>
+<li>the regex <code>&lt;.*&gt;</code> in <code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></li>
+</ol>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_character_class_matches" id="tabs-exercise_character_class_matches-1"  />
+<label for="tabs-exercise_character_class_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ol>
+<li>$[10 .. 14)$: <code>grey</code>, $[19 .. 23)$: <code>gray</code></li>
+<li>$[0 .. 8)$: <code>Alice:12;</code>, $[19 .. 23)$: <code>Bob:35;</code></li>
+<li>$[0 .. 35)$: <code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></li>
+</ol>
+</div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-0" checked="checked" />
+<label for="tabs-exercise_html_tag_regex-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex whose evaluation matches HTML tags.
+For instance, in the word</p>
+<p>$\qquad\qquad$<code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></p>
+<p>the regex should match
+<code>&lt;span class=&quot;title&quot;&gt;</code> and <code>&lt;/span&gt;</code>.</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-1"  />
+<label for="tabs-exercise_html_tag_regex-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p><code>&lt;[^&gt;]*&gt;</code></p>
+</div>
+</div>
+<!-- **_Warning_** -->
+<!-- Character classes with nonempty intersections can easily lead to unexpected matches. -->
+<h4 id="predefined-character-classes">
+  Predefined character classes
+  <a class="anchor" href="#predefined-character-classes">#</a>
+</h4>
+<p>Some escaped characters denote common character classes:</p>
+<blockquote class="book-hint warning">
+<ul>
+<li><code>\d</code> is equivalent to <code>[0-9]</code></li>
+<li><code>\w</code> is equivalent to <code>[A-Za-z0-9]</code></li>
+<li><code>\s</code> stands for any whitespace character. It is equivalent to</li>
+</ul>
+<p>$\qquad\qquad$<code>[ \t\n\x0B\f\r]</code></p>
+<ul>
+<li>
+<p><code>\R</code> stands for any Unicode linebreak sequence. It is equivalent to</p>
+<p>$\qquad$<code>\u000D\u000A|[\u000A\u000B\u000C\u000D\u0085\u2028\u2029]</code></p>
+</li>
+</ul>
+</blockquote>
+<p>The <em>complements</em> of some of these classes are also available:</p>
+<blockquote class="book-hint warning">
+<ul>
+<li><code>\D</code> is equivalent to <code>[^\d]</code></li>
+<li><code>\S</code> is equivalent to <code>[^\s]</code></li>
+<li><code>\W</code> is equivalent to <code>[^\w]</code></li>
+</ul>
+</blockquote>
+<h4 id="quantifiers">
+  Quantifiers
+  <a class="anchor" href="#quantifiers">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p>If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="http://localhost:1313/docs/regex/sections/pattern/#greedy">greedy</a> way.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>a{1,3}</code> is equivalent to <code>aaa|aa|a</code></li>
+<li><code>[A-Z]{1,3}</code> greedily matches a sequence of 1 to 3 capital letters</li>
+<li><code>[A-Z]{0,3}</code> greedily matches a (possibly empty) sequence of at most 3 capital letters</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>$e$<code>{</code>$i$<code>}</code> is equivalent to $e$<code>{</code>$i$<code>,</code>$i$<code>}</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>a{3}</code> is equivalent to <code>aaa</code></li>
+<li><code>[A-Z]{4}</code> matches a sequence of 4 capital letters</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>$e$<code>+</code> is equivalent to $ee$<code>*</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>a+</code> greedily matches a sequence of at least one <code>a</code></li>
+<li><code>\d+</code> greedily matches a nonempty sequence of digits</li>
+<li><code>[^\d]+</code> greedily matches a nonempty sequence of non-digits</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>If $e$ does not end with a quantifier, then $e$<code>?</code> is equivalent to $e$<code>|</code>$\varepsilon$.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li><code>a?</code> greedily matches at most one occurrence of <code>a</code></li>
+<li><code>(ab)?</code> greedily matches at most one occurrence of <code>ab</code></li>
+<li><code>[A-Z]?</code> greedily matches at most one capital letter</li>
+</ul>
+</blockquote>
+<h3 id="lazy-quantification">
+  Lazy quantification
+  <a class="anchor" href="#lazy-quantification">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="http://localhost:1313/docs/regex/sections/pattern/#lazy">lazy</a> evaluation of this quantifier.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>
+<p>In the word $w$ = <code>ab</code>:</p>
+<ul>
+<li><code>ab*</code> matches $w$</li>
+<li><code>ab*?</code> matches $w[0 .. 1)$: <code>a</code></li>
+</ul>
+</li>
+<li>
+<p>In the word $w$ = <code>abbb</code>:</p>
+<ul>
+<li><code>ab{1,3}</code> matches $w$</li>
+<li><code>ab{1,3}?</code> matches $w[0 .. 2)$: <code>ab</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="boundary-matchers">
+  Boundary matchers
+  <a class="anchor" href="#boundary-matchers">#</a>
+</h3>
+<p>Some special characters match empty segments (i.e. segments with word $\varepsilon$).</p>
+<p>In particular:</p>
+<blockquote class="book-hint warning">
+<ul>
+<li><code>^</code> (outside of a <a href="#characterClass">character class</a> definition) matches the beginning of a string,</li>
+<li><code>$</code> matches the end of a string.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+Consider the string $w$ = <code>a123b</code></p>
+<ul>
+<li>the regex <code>\d+</code> matches $w[1 .. 3)$: <code>123</code></li>
+<li>the regex <code>^\d+</code> has no match in $w$</li>
+<li>the regex <code>\d+$</code> has no match in $w$</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+These two special characters are widely used, in particular for string validation:
+an input word $w$ belongs to the language described by a regex $e$ iff there is a match for the regex <code>^</code>$e$<code>$</code> in $w$.</p>
+<p>Besides, if this is the case, then the best first match is also the longest possible match.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In the string $w$ = <code>ab</code>:</p>
+<ul>
+<li>the best first match for <code>a|ab</code> is $w[a .. 1)$: <code>a</code></li>
+<li>the best first match for <code>^(a|ab)$</code> is $w[a .. 2)$: <code>ab</code></li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>The special character <code>\b</code> matches any &ldquo;natural language word&rdquo; boundary (i.e. beginning or end).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the string $w$ = <code>User Alice797 is 55 years old</code></p>
+<ul>
+<li>The best first match for <code>\d+</code> in $w$ is $w[10 .. 13)$: <code>797</code></li>
+<li>The best first match for <code>\d+\b</code> in $w$ is $w[10 .. 13)$: <code>797</code></li>
+<li>The only match for <code>\b\d+</code> in $w$ is $w[17 .. 19)$: <code>55</code></li>
+<li>The only match for <code>\b\d+\b</code> in $w$ is $w[17 .. 19)$: <code>55</code></li>
+</ul>
+</blockquote>
+<h3 id="group">
+  Group
+  <a class="anchor" href="#group">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A <strong>group</strong> in a regex is the content of a pair of parentheses.</p>
+</blockquote>
+<p>Groups allow capturing <em>subsegments</em> of a matched segment.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the regex:
+$e$ = <code>a(b|c)d</code>
+and the word
+$w = $<code>abd</code></p>
+<p>There is only one match for $e$ in $w$ (namely $w$ itself).</p>
+<p><em>Within this match</em>, the subsegment captured by the group <code>(a|b)</code> is $w[1 .. 2)$: <code>b</code>.</p>
+</blockquote>
+<p>Groups in a regex are (totally) ordered based on the position of their opening parenthesis.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In the regex <code>a(([\d]*)(a|b))</code></p>
+<ul>
+<li>Group number 1 is <code>(([\d]*)(a|b))</code></li>
+<li>Group number 2 is <code>([\d]*)</code></li>
+<li>Group number 3 is <code>(a|b)</code></li>
+</ul>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-0" checked="checked" />
+<label for="tabs-exercise_html_tag_group_regex-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex with a group that matches what is inside a pair of opening and a closing HTML tags.
+For instance, in the word</p>
+<p>$\qquad\qquad$<code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;  &lt;span class=&quot;content&quot;&gt;Hello&lt;/span&gt;</code></p>
+<p>the group should match
+<code>My Title</code> and <code>Hello</code></p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-1"  />
+<label for="tabs-exercise_html_tag_group_regex-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p><code>&gt;([^&lt;]*)&lt;/</code></p>
+</div>
+</div>
+<h3 id="backreference">
+  Backreference
+  <a class="anchor" href="#backreference">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A group can be referenced <em>within</em> a regex, with <code>\</code>$n$, where $n$ is the group number.
+If the reference appears <em>after</em> the group, this is called a <strong>backreference</strong>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<ul>
+<li>In the regex <code>a(b|c)d\1q</code>, the backreference <code>\1</code> refers to the group <code>(b|c)</code></li>
+<li>In the regex <code>(a(b|m))d\2m</code>, the backreference <code>\2</code> refers to the group <code>(b|m)</code></li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Evaluation.</em></strong>
+Let $e$ be a regex with backreferences.</p>
+<p>Consider the expression $e&rsquo;$ identical to $e$, but where each backreference is replaced with the group that it references.
+Then a match for $e$ is a match for $e&rsquo;$ where each group and its copy capture segments with identical words.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The regex <code>(a|b)\1</code> is equivalent to <code>aa|bb</code></p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_backreferences" id="tabs-exercise_backreferences-0" checked="checked" />
+<label for="tabs-exercise_backreferences-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Which words does the following regex match?</p>
+<p>$\qquad\qquad$<code>((\d)_\2)@\1</code></p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_backreferences" id="tabs-exercise_backreferences-1"  />
+<label for="tabs-exercise_backreferences-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>.</p>
+<ul>
+<li><code>1_1@1_1</code>,</li>
+<li><code>2_2@2_2</code>,</li>
+<li><code>3_3@3_3</code>,</li>
+<li>etc.</li>
+</ul>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="">regular</a>.</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#flavours">Flavours</a></li>
+    <li><a href="#java-regexes">Java regexes</a>
+      <ul>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#syntactic-sugar">Syntactic sugar</a></li>
+        <li><a href="#lazy-quantification">Lazy quantification</a></li>
+        <li><a href="#boundary-matchers">Boundary matchers</a></li>
+        <li><a href="#group">Group</a></li>
+        <li><a href="#backreference">Backreference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

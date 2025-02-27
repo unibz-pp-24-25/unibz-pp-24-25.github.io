@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Encapsulation
+  #
+
+
+Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+
+
+From Wikipedia:
+&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
+Each component hides its internal logic by exposing only data and methods that other components may need.
+
+Example. As we saw earlier, in our game,
+the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend,
+if these snapshots are received faster than they can be displayed.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/encapsulation/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Encapsulation">
+  <meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to “bundling” data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+From Wikipedia: “Essentially, encapsulation prevents external code from being concerned […]”
+Each component hides its internal logic by exposing only data and methods that other components may need.
+Example. As we saw earlier, in our game, the “view” component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Encapsulation | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/encapsulation/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="active">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Encapsulation</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#inJava">in Java</a></li>
+    <li><a href="#getterSetter">Getters and setters</a></li>
+    <li><a href="#to-go-further-inheritance-violates-encapsulation">To go further: inheritance violates encapsulation</a>
+      <ul>
+        <li><a href="#composition">Composition</a></li>
+        <li><a href="#final">Prevent overriding or inheritance</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="encapsulation">
+  Encapsulation
+  <a class="anchor" href="#encapsulation">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p><strong>Encapsulation</strong> is a (vague) principle in object-oriented programming that refers to <em>&ldquo;bundling&rdquo;</em> data with the code that operates on it, and <em>restrict visibility</em> of this code and data to other components of a system.</p>
+</blockquote>
+<blockquote>
+<p>From <a href="https://en.wikipedia.org/wiki/Encapsulation_%28computer_programming%29">Wikipedia</a>:
+&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;</p></blockquote>
+<p>Each component hides its internal logic by exposing only data and methods that other components may need.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong> As we saw <a href="">earlier</a>, in our game,
+the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may <em>buffer</em> the game snapshots that it receives from the backend,
+if these snapshots are received faster than they can be displayed.</p>
+<p>As a buffer, this component uses a structure called a <strong>queue</strong>.
+This queue is <em>not exposed</em> to other components, because they do not need to <em>see</em> it, and (most importantly) should not <em>modify</em> it.
+In other words, this queue is an implementation detail, <em>internal</em> to the &ldquo;view&rdquo; component.</p>
+<!-- Similarly, the implementation of the `drawSnapshot` method relies on subroutines (a.k.a. auxiliary methods) that are only useful to the renderer. -->
+<!-- These auxiliary methods do not need to be exposed. -->
+</blockquote>
+<p>Encapsulation can have many benefits.
+Among others:</p>
+<ol>
+<li><strong><em>Easier debugging.</em></strong>
+If our queue is internal to the &ldquo;view&rdquo; component, then we know that it cannot be responsible for the malfunction of another component.</li>
+<li><strong><em>Easier collaboration</em></strong>. Alice may refactor the implementation of the &ldquo;view&rdquo; component, knowing that this will not affect Bob, who is currently working on the backend.</li>
+</ol>
+<p>This is why a common practice in object-oriented programming consists in <em>hiding all attributes and methods</em> of a new class by default, and make accessible only the ones that need to be (in particular, this is likely to be the default behaviour of your IDE).</p>
+<p>Encapsulation also largely dictates how <em>libraries</em> are structured.
+For instance, when you create a <code>String</code> in Java, you do not have access to the internal representation of the string object.</p>
+<h2 id="inJava">
+  in Java
+  <a class="anchor" href="#inJava">#</a>
+</h2>
+<p>Each attribute or method of a class can have an <strong>access modifier</strong>, which specifies which other classes can access it.
+For instance, the keywords <code>private</code> and <code>protected</code> below are access modifiers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> myAttribute;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> 1;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+There are four levels of access in Java:</p>
+<ul>
+<li><code>private</code> restricts access to the <em>current class</em>,</li>
+<li>&ldquo;package-private&rdquo; relaxes <code>private</code> by also allowing access from the <em>folder</em> of the current class (in Java, a folder for source code is called a <strong>package</strong>), <em>excluding subfolders</em>,</li>
+<li><code>protected</code> relaxes &ldquo;package-private&rdquo; by also allowing access from the <em>subclasses</em> of the current class,</li>
+<li><code>public</code> does not restrict access.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+There is no keyword for the &ldquo;package-private&rdquo; level.
+Instead, this is the default level for an attribute or method <em>without</em> access modifier.
+For instance, in the example below, the attribute <code>myAttribute</code> is package-private:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myAttribute;
+</span></span></code></pre></div><p>Here is a recap table from the <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Oracle tutorials</a>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>keyword</th>
+          <th>class</th>
+          <th>package</th>
+          <th>subclasses</th>
+          <th>world</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>private</code></td>
+          <td>yes</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>none</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>no</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td><code>protected</code></td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td><code>public</code></td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+A method declared in an <a href="">interface</a> is (implicitly) public.</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+If a method <em>m1</em> overrides (or implements) a method <em>m2</em>, then <em>m1</em> must be at least as accessible as <em>m2</em>.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-0" checked="checked" />
+<label for="tabs-exercise_encapsulation_relax-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The following program does not compile.
+Can you see why, and how to fix this?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
+</span></span><span style="display:flex;"><span>└── units
+</span></span><span style="display:flex;"><span>    ├── Unit.java
+</span></span><span style="display:flex;"><span>    └── impl
+</span></span><span style="display:flex;"><span>        └── Unicorn.java
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> String configFolder <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;path/to/config&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span> (String name){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getConfigFilePath</span> (){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> configFolder <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/unicorn.properties&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Run</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testUnicorn</span>(){
+</span></span><span style="display:flex;"><span>        Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;Storm&#34;</span>);
+</span></span><span style="display:flex;"><span>        myUnicorn.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tornado&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-1"  />
+<label for="tabs-exercise_encapsulation_relax-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li><code>Unicorn.getConfigFilePath</code> tries to access the package-private attribute <code>Unit.configFolder</code> (it should be made protected of public),</li>
+<li><code>Run.getConfigFilePath</code>, tries to access the package-private attribute <code>name</code> of <code>myUnicorn</code> (it should be made public).</li>
+</ul>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+Your IDE may suggest how to fix such compilation errors.</p>
+<!-- For instance, with IntelliJ, in the previous exercise, move the cursor to `name` in `myUnicorn.name` and press "Alt+Enter" (or equivalently, right click on it and select "Show context actions"). -->
+<!-- You can then select "Make \`Unicorn.name\` public" as an automatic fix. -->
+</blockquote>
+<p>To improve encapsulation, it is good practice to <em>restrict access</em> whenever possible (i.e. without compromising compilation).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Hint</em>.</strong>
+As a rule of thumb, in Java:</p>
+<ul>
+<li>use <code>private</code> by default for all attributes and methods that you create, and</li>
+<li>if the program does not compile, then use your IDE to relax access.</li>
+</ul>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-0" checked="checked" />
+<label for="tabs-exercise_encapsulation_restrict-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Encapsulation in this program can be improved.
+Can you see how?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
+</span></span><span style="display:flex;"><span>└── units
+</span></span><span style="display:flex;"><span>    ├── Unit.java
+</span></span><span style="display:flex;"><span>    └── impl
+</span></span><span style="display:flex;"><span>        └── Unicorn.java
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(<span style="color:#66d9ef">int</span> health) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">attack</span>(Unit defender){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> copy <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">-=</span> defender.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>        defender.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> copy;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span> (){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(1);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">attack</span>(Unit defender){
+</span></span><span style="display:flex;"><span>        regen();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">attack</span>(defender);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>(){
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Run</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testUnicorn</span>(){
+</span></span><span style="display:flex;"><span>        Unicorn u1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span><span style="display:flex;"><span>        Unicorn u2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span><span style="display:flex;"><span>        u1.<span style="color:#a6e22e">attack</span>(u2);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-1"  />
+<label for="tabs-exercise_encapsulation_restrict-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li><code>Unit.health</code> can be made protected,</li>
+<li>the constructor of <code>Unit</code> can be made protected,</li>
+<li><code>Unit.attack</code> can be made protected,</li>
+<li><code>Unicorn.regen</code> can be made private.</li>
+</ul>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> The constructor of an <em>abstract</em> class can always be made protected (since it can only be called in the constructor of a subclass).</p>
+</blockquote>
+<h2 id="getterSetter">
+  Getters and setters
+  <a class="anchor" href="#getterSetter">#</a>
+</h2>
+<p>For attributes, the notion of &ldquo;access&rdquo; can be refined.
+An attribute may be:</p>
+<ul>
+<li>neither visible nor modifiable, or</li>
+<li>only visible, or</li>
+<li>only modifiable, or</li>
+<li>both visible and modifiable.</li>
+</ul>
+<p>This can be achieved with private attributes and so-called &ldquo;getter&rdquo; and &ldquo;setter&rdquo; methods.
+For instance, in the following class,
+the attribute <code>health</code> has public visibility but is not modifiable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getHealth</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> health;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Conversely, in the following class,
+the attribute <code>health</code> can be modified but is not visible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Butterfly</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setHealth</span>(<span style="color:#66d9ef">int</span> health){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+Getter and setter methods can be automatically generated by your IDE.</p>
+</blockquote>
+<h2 id="to-go-further-inheritance-violates-encapsulation">
+  To go further: inheritance violates encapsulation
+  <a class="anchor" href="#to-go-further-inheritance-violates-encapsulation">#</a>
+</h2>
+<h3 id="composition">
+  Composition
+  <a class="anchor" href="#composition">#</a>
+</h3>
+<blockquote class="book-hint info">
+<p><strong><em>Example</em></strong> (from <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 18).</p>
+<p>Consider a class <code>MyHashSet</code> that extends Java&rsquo;s <code>Hashset</code> functionality by keeping track of the number of objects <em>added</em> to the set (as opposed to the output of <code>HashSet.size()</code>, which returns the numer of elements <em>remaining</em> in the set).</p>
+<p>This class <code>myHashSet</code> may have an attribute <code>int counter</code> (initialized to <code>0</code>) that keeps track of the number of elements added to the set so far.
+And it may be implemented by overriding <code>add</code> and <code>addAll</code> in the expected way, i.e.:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">add</span>(E e){
+</span></span><span style="display:flex;"><span>    counter<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">add</span>(e);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">addAll</span>(Collection<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> E<span style="color:#f92672">&gt;</span> c){
+</span></span><span style="display:flex;"><span>    counter <span style="color:#f92672">+=</span> c.<span style="color:#a6e22e">size</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">addAll</span>(c);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>However, this implementation of <code>addAll</code> would count every insertion twice, because the implementation of <code>HashSet.addAll</code> calls <code>HashSet.add</code>.</p>
+</blockquote>
+<p>A design pattern called <strong>composition</strong> can be used to avoid such unintended effects.
+Intuitively, instead of extending the original class, use an instance <code>Hashset set</code> of it as a (private) attribute of the new class.
+However, this requires re-implementing all methods of the original class (albeit in a straightforward way), for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isEmpty</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> set.<span style="color:#a6e22e">isempty</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="final">
+  Prevent overriding or inheritance
+  <a class="anchor" href="#final">#</a>
+</h3>
+<p>As show by the example above, in order to improve encapsulation, one may want in some scenarios to forbid overriding a method or extending a class.
+In Java, this can be enforced with the keyword <code>final</code>, for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NonExtensibleClass</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nonOverridableMethod</span>(){
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#inJava">in Java</a></li>
+    <li><a href="#getterSetter">Getters and setters</a></li>
+    <li><a href="#to-go-further-inheritance-violates-encapsulation">To go further: inheritance violates encapsulation</a>
+      <ul>
+        <li><a href="#composition">Composition</a></li>
+        <li><a href="#final">Prevent overriding or inheritance</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

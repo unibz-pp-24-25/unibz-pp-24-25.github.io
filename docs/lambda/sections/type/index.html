@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Type of a method
+  #
+
+
+Terminology.
+The type (a.k.a. signature) of a method consists of:
+
+the type(s) of its argument(s), and
+its return type.
+
+
+
+Notation.
+The type of a method is sometimes described analogously to the type of a mathematical function.
+For instance, consider the following Java method square:
+int square(int x){
+    return x * x;
+}
+This method takes as input an int, and returns an int.
+In other words, this is a function with domain int and codomain int.
+This is written:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/lambda/sections/type/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Type of a method">
+  <meta property="og:description" content="Type of a method # Terminology. The type (a.k.a. signature) of a method consists of:
+the type(s) of its argument(s), and its return type. Notation. The type of a method is sometimes described analogously to the type of a mathematical function. For instance, consider the following Java method square:
+int square(int x){ return x * x; } This method takes as input an int, and returns an int.
+In other words, this is a function with domain int and codomain int. This is written:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Type of a method | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/lambda/sections/type/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Type of a method</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#functionalInterface">Functional interface</a></li>
+        <li><a href="#native-functional-interfaces">Native functional interfaces</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="type-of-a-method">
+  Type of a method
+  <a class="anchor" href="#type-of-a-method">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong>
+The <strong>type</strong> (a.k.a. <strong>signature</strong>) of a method consists of:</p>
+<ul>
+<li>the type(s) of its argument(s), and</li>
+<li>its return type.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Notation.</em></strong>
+The type of a method is sometimes described analogously to the type of a mathematical <a href="">function</a>.
+For instance, consider the following Java method <code>square</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">square</span>(<span style="color:#66d9ef">int</span> x){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This method takes as input an <code>int</code>, and returns an <code>int</code>.</p>
+<p>In other words, this is a function with domain <code>int</code> and codomain <code>int</code>.
+This is written:</p>
+<p>$\qquad$<code>square</code>$\colon$ <code>int</code> $\to$ <code>int</code></p>
+<p>And the type of this function is</p>
+<p>$\qquad$ <code>int</code> $\to$ <code>int</code></p>
+<p>Similarly, we may use:</p>
+<ul>
+<li><code>int</code> $\times$ <code>int</code> $\to$ <code>int</code> if the method takes two <code>int</code> and returns another,</li>
+<li><code>Unit</code> $\times$ <code>int</code> $\to$ <code>Unit</code> if the method takes a <code>Unit</code> and an <code>int</code> (in that order) and returns a <code>Unit</code>,</li>
+<li><code>Unit[]</code> $\to$ <code>void</code> if the method takes an array of <code>Units[]</code> and returns nothing,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<p>Syntactically, Java does not provide a method typing system like the one above.
+Instead, Java uses (abuses?) <a href="http://localhost:1313/docs/interfaces/sections/java_interfaces/">interfaces</a> for this purpose.</p>
+<h3 id="functionalInterface">
+  Functional interface
+  <a class="anchor" href="#functionalInterface">#</a>
+</h3>
+<p>A method type in Java is described with a so-called <em>functional interface</em>.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Syntax.</em></strong> A Java <strong>functional interface</strong> is an <a href="http://localhost:1313/docs/interfaces/sections/java_interfaces/">interface</a> with a single (standard) method.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+In this definition, &ldquo;standard&rdquo; method stands for a method that does not have the <a href="http://localhost:1313/docs/interfaces/sections/java_interfaces/#interfaceVsAbstractClass">default</a> qualifier (&ldquo;standard&rdquo; interface methods are also called &ldquo;abstract&rdquo;).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following is a functional interface, which describes the type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code>.</p>
+<p>Any method with type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code> implements this interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UnitPerIntegerToUnit</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">myMethod</span>(Unit unit, Integer x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>The name of a functional interface is irrelevant, as well as the name of its method (and the arguments of this method).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following functional interface also describes the type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Just</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">because</span>(Unit we, Integer can);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>A functional interface can be annotated with <code>@FunctionalInterface</code>.
+This will for instance cause a compilation error if the interface has more than one (non-default) method.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@FunctionalInterface</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UnitPerIntegerToUnit</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">myMethod</span>(Unit unit, Integer x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h3 id="native-functional-interfaces">
+  Native functional interfaces
+  <a class="anchor" href="#native-functional-interfaces">#</a>
+</h3>
+<p>Java provides native (parameterized) functional interfaces for some frequent method types.</p>
+<p>We highlight here a few of them:</p>
+<h4 id="function">
+  <code>Function</code>
+  <a class="anchor" href="#function">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p>The functional interface <code>Function&lt;InputType, OutputType&gt;</code> stands for the type <code>InputType</code> $\to$ <code>OutputType</code>.
+Its method is called <code>apply</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>a method with type <code>Unit</code> $\to$ <code>Integer</code> implements the functional interface <code>Function&lt;Unit, Integer&gt;</code></li>
+<li>a method with type <code>Unit</code> $\to$ <code>Unit</code> implements the functional interface <code>Function&lt;Unit, Unit&gt;</code></li>
+</ul>
+</blockquote>
+<h4 id="consumer">
+  <code>Consumer</code>
+  <a class="anchor" href="#consumer">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p>The functional interface <code>Consumer&lt;InputType&gt;</code> stands for the type <code>InputType</code> $\to$ <code>void</code>.
+Its method is called <code>accept</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>a method with type <code>Integer</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Integer&gt;</code></li>
+<li>a method with type <code>Unit</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Unit&gt;</code></li>
+</ul>
+</blockquote>
+<h4 id="supplier">
+  <code>Supplier</code>
+  <a class="anchor" href="#supplier">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p>The functional interface <code>Supplier&lt;OutputType&gt;</code> stands for the type <code>void</code> $\to$ <code>OutputType</code>.
+Its method is called <code>get</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>a method with type <code>void</code> $\to$ <code>Integer</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
+<li>a method with type <code>void</code> $\to$ <code>Unit</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
+</ul>
+</blockquote>
+<h4 id="comparator">
+  <code>Comparator</code>
+  <a class="anchor" href="#comparator">#</a>
+</h4>
+<p>The interface <code>Comparator&lt;T&gt;</code> (already seen in the section dedicated to <a href="">sorting</a>) is functional.
+Its method is called <code>compare</code>, and has type <code>T</code> $\times$ <code>T</code> $\to$ <code>int</code>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#functionalInterface">Functional interface</a></li>
+        <li><a href="#native-functional-interfaces">Native functional interfaces</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

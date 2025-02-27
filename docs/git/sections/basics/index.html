@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Basics: repository, commits and branches
+  #
+
+
+  Repository
+  #
+
+
+A git repository is a folder that stores a project.
+It is identical to a regular folder, except for a hidden folder named .git.
+This folder stores (among others) the whole history of the project.
+
+
+  Commit
+  #
+
+
+A commit is a snapshot of a repository.
+
+Each commit has medatada associated to it.
+In particular:
+
+an ID,
+the name of the commit&rsquo;s author,
+a timestamp,
+a message that describes the commit.
+
+For instance, Alice may create a fresh git repository, add some files to it, and commit these files.
+After this step, Alice&rsquo;s repository may be pictured as follows.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/git/sections/basics/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Basics: repository, commits and branches">
+  <meta property="og:description" content="Basics: repository, commits and branches # Repository # A git repository is a folder that stores a project. It is identical to a regular folder, except for a hidden folder named .git. This folder stores (among others) the whole history of the project.
+Commit # A commit is a snapshot of a repository.
+Each commit has medatada associated to it. In particular:
+an ID, the name of the commit’s author, a timestamp, a message that describes the commit. For instance, Alice may create a fresh git repository, add some files to it, and commit these files. After this step, Alice’s repository may be pictured as follows.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Basics: repository, commits and branches | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/git/sections/basics/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Basics: repository, commits and branches</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#repository">Repository</a></li>
+    <li><a href="#commit">Commit</a></li>
+    <li><a href="#main-branch">Main branch</a></li>
+    <li><a href="#time-travel">Time travel</a></li>
+    <li><a href="#branching-time">Branching time</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#merging-branches">Merging branches</a></li>
+    <li><a href="#after-a-merge">After a merge</a></li>
+    <li><a href="#fast-forward-merge">Fast-forward merge</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="basics-repository-commits-and-branches">
+  Basics: repository, commits and branches
+  <a class="anchor" href="#basics-repository-commits-and-branches">#</a>
+</h1>
+<h2 id="repository">
+  Repository
+  <a class="anchor" href="#repository">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A git <strong>repository</strong> is a folder that stores a project.
+It is identical to a regular folder, except for a hidden folder named <code>.git</code>.
+This folder stores (among others) the whole history of the project.</p>
+</blockquote>
+<h2 id="commit">
+  Commit
+  <a class="anchor" href="#commit">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>commit</strong> is a snapshot of a repository.</p>
+</blockquote>
+<p>Each commit has medatada associated to it.
+In particular:</p>
+<ul>
+<li>an ID,</li>
+<li>the name of the commit&rsquo;s author,</li>
+<li>a timestamp,</li>
+<li>a message that describes the commit.</li>
+</ul>
+<p>For instance, Alice may create a fresh git repository, add some files to it, and commit these files.
+After this step, Alice&rsquo;s repository may be pictured as follows.</p>
+<p><img src="/img/git/first_commit_verbose.svg" alt="" /></p>
+<p>Next, Alice may modify some of these files (and/or add new ones), and commit these changes:</p>
+<p><img src="/img/git/second_commit_verbose.svg" alt="" /></p>
+<blockquote class="book-hint danger">
+<p><strong><em>Notation.</em></strong> In the figures below, for readability, we will omit the commits&rsquo; metadata.
+So the above repository will be represented as:</p>
+<p><img src="/img/git/second_commit_no_pointer.svg" alt="" /></p>
+</blockquote>
+<h2 id="main-branch">
+  Main branch
+  <a class="anchor" href="#main-branch">#</a>
+</h2>
+<p>By default, Alice&rsquo;s commits belong the <strong>main branch</strong> of her repository (often called <code>main</code> or <code>master</code>).
+You can think of a branch as a timeline.</p>
+<p>Git keeps tack of the latest commit on this branch with a so-called &ldquo;pointer&rdquo; (you can think of it as a variable) to that commit:
+<img src="/img/git/second_commit_no_head.svg" alt="" /></p>
+<h2 id="time-travel">
+  Time travel
+  <a class="anchor" href="#time-travel">#</a>
+</h2>
+<p>Alice can load any previous snapshot of her repository.
+The history of the repository will <em>not</em> be affected.</p>
+<p>To achieve this, Git uses another &ldquo;pointer&rdquo; called <code>HEAD</code>, which intuitively keeps track of the current position of Alice in the commit&rsquo;s history.
+By default, <code>HEAD</code> points to the main pointer:
+<img src="/img/git/second_commit.svg" alt="" /></p>
+<p>If Alice decides to load her previous snapshot (thanks to the <code>git checkout</code> command), then <code>HEAD</code> will instead point to the corresponding commit:
+<img src="/img/git/detached_head.svg" alt="" /></p>
+<p>In this case (i.e. when it does not point to a branch pointer, but directly to a commit), the HEAD pointer is said to be in a <strong>detached</strong> state.</p>
+<h2 id="branching-time">
+  Branching time
+  <a class="anchor" href="#branching-time">#</a>
+</h2>
+<p>Alice may want to work on an experimental feature of her project.
+She can develop this feature in an &ldquo;alternative timeline&rdquo;, a.k.a. another branch.</p>
+<p>Before creating this new branch, Alice most likely wants to travel back to her latest commit.
+This will move the HEAD pointer back to where it was:</p>
+<p><img src="/img/git/second_commit.svg" alt="" /></p>
+<p>Now Alice may create a new branch, and name it <code>myFeature</code>.
+This will create a new branch pointer:</p>
+<p><img src="/img/git/create_feature_branch.svg" alt="" /></p>
+<p>Alice can also specify that she want to work on this new branch (using the <code>git checkout</code> command still).
+This will affect the <code>HEAD</code> pointer:</p>
+<p><img src="/img/git/switch_to_feature_branch.svg" alt="" /></p>
+<p>Next, Alice may implement (part of) her new feature, and commit these changes.
+This will move the <code>myfeature</code> pointer forward:</p>
+<p><img src="/img/git/commit_to_feature_branch.svg" alt="" /></p>
+<p>Now Alice may need to fix an urgent bug on her main branch.
+If she switches to the main branch (again, with <code>git checkout</code>), then <code>HEAD</code> will point to it:</p>
+<p><img src="/img/git/back_to_main_branch.svg" alt="" /></p>
+<p>Alice may fix the bug and commit her changes.
+This will create a commit and move the <code>main</code> pointer as expected. The two branches now <strong>diverge</strong>:</p>
+<p><img src="/img/git/diverging.svg" alt="" /></p>
+<p>Then Alice may switch back to the <code>myFeature</code> branch to resume her work:</p>
+<p><img src="/img/git/back_to_feature_branch.svg" alt="" /></p>
+<p>And add a commit to this branch:</p>
+<p><img src="/img/git/second_commit_to_feature_branch.svg" alt="" /></p>
+<h2 id="history">
+  History
+  <a class="anchor" href="#history">#</a>
+</h2>
+<p>The <strong>history</strong> of a branch consists of all commits on a path from the branch&rsquo;s pointer to the original commit.
+For instance, this is the history of the <code>myFeature</code> branch:
+<img src="/img/git/history_feature_branch.svg" alt="" /></p>
+<p>And this is the history of <code>main</code> branch:
+<img src="/img/git/history_main_branch.svg" alt="" /></p>
+<h2 id="merging-branches">
+  Merging branches
+  <a class="anchor" href="#merging-branches">#</a>
+</h2>
+<p>We left Alice&rsquo;s repository in this situation:
+<img src="/img/git/second_commit_to_feature_branch.svg" alt="" /></p>
+<p>Alice is now satisfied with her new feature, and she wants to incorporate it into her main branch.</p>
+<p>To do so, she first switches to the <em>receiving</em> branch (in this case, the <code>main</code> branch):
+<img src="/img/git/switch_to_merge_recipient.svg" alt="" /></p>
+<p>Then she can <strong>merge</strong> the branch <code>myFeature</code> <em>into</em> the branch <code>main</code>.
+Because the two branches have diverged, this will generate a new commit, called a <strong>merge commit</strong>:</p>
+<p><img src="/img/git/after_merge.svg" alt="" /></p>
+<p>Before she can create a merge commit, Alice may need to fix potential <strong>conflicts</strong> between the diverging branches.</p>
+<p>In this happens, then git will provide Alice a list of files that contain so-called &ldquo;merge conflicts&rdquo;.
+In each of theses files, each conflict will be identified as follows:</p>
+<pre tabindex="0"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+
+  &lt;Conflicting content from the receiving branch&gt;
+
+=======
+
+  &lt;Conflicting content from the merged branch&gt;
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;mergedBranchName&gt;
+</code></pre><h2 id="after-a-merge">
+  After a merge
+  <a class="anchor" href="#after-a-merge">#</a>
+</h2>
+<p>Observe that a merge commit (usually) has <em>two</em> parent commits.
+More generally:</p>
+<ul>
+<li>a repository with merge commits is <em>not</em> a tree.</li>
+<li>in such a repository, the history of a &ldquo;branch&rdquo; may consists of commits from <em>different paths</em>. For instance, here is the history of the main branch:</li>
+</ul>
+<p><img src="/img/git/history_after_merge.svg" alt="" /></p>
+<p>Note that after this merge, all commits of the <code>myFeature</code> branch are part of the history of the branch <code>main</code>.</p>
+<p>Alice may keep the <code>myFeature</code> branch for some future usage, or she may decide to delete it.
+In the latter case, the <code>myFeature</code> pointer will simply be deleted:</p>
+<p><img src="/img/git/after_branch_deletion.svg" alt="" /></p>
+<h2 id="fast-forward-merge">
+  Fast-forward merge
+  <a class="anchor" href="#fast-forward-merge">#</a>
+</h2>
+<p>If two branches have <em>not</em> diverged, then there is a simpler way to merge them.</p>
+<p>For instance, consider Carol&rsquo;s repository:</p>
+<p><img src="/img/git/non_diverging.svg" alt="" /></p>
+<p>The branches <code>main</code> and <code>experimental</code> have not diverged.
+So <code>experimental</code> can be merged into <code>main</code> by simply moving the <code>main</code> pointer:</p>
+<p><img src="/img/git/fast-forward.svg" alt="" /></p>
+<p>In this case, <em>no merge commit is needed</em>.
+This is called a <strong>fast-forward merge</strong>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#repository">Repository</a></li>
+    <li><a href="#commit">Commit</a></li>
+    <li><a href="#main-branch">Main branch</a></li>
+    <li><a href="#time-travel">Time travel</a></li>
+    <li><a href="#branching-time">Branching time</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#merging-branches">Merging branches</a></li>
+    <li><a href="#after-a-merge">After a merge</a></li>
+    <li><a href="#fast-forward-merge">Fast-forward merge</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

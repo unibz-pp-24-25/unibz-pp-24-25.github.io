@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Displaying objects
+  #
+
+
+  The class Object
+  #
+
+
+Java has a native class called Object with 11 instance methods.
+Every Java class implicitly extends Object, including user-defined classes.
+Therefore any Java class inherits these methods.
+
+
+  The method toString
+  #
+
+toString is one of the methods of the class Object.
+Here is (part of) its specification:
+/** Returns a string representation of the object.
+ * In general, the toString method returns a string that
+ * &#34;textually represents&#34; this object.
+ */
+public String toString();
+This is the preferred way to display information about an object.
+For instance, the debugger of your IDE probably relies on this method to display a string that represents an object.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/tostring/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Displaying objects">
+  <meta property="og:description" content="Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods.
+The method toString # toString is one of the methods of the class Object. Here is (part of) its specification:
+/** Returns a string representation of the object. * In general, the toString method returns a string that * &#34;textually represents&#34; this object. */ public String toString(); This is the preferred way to display information about an object. For instance, the debugger of your IDE probably relies on this method to display a string that represents an object.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Displaying objects | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/tostring/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="active">Displaying objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Displaying objects</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-class-object">The class <code>Object</code></a></li>
+    <li><a href="#the-method-tostring">The method <code>toString</code></a>
+      <ul>
+        <li><a href="#overriding-tostring">Overriding toString</a></li>
+        <li><a href="#recursion">Recursion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="displaying-objects">
+  Displaying objects
+  <a class="anchor" href="#displaying-objects">#</a>
+</h1>
+<h2 id="the-class-object">
+  The class <code>Object</code>
+  <a class="anchor" href="#the-class-object">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>Java has a native class called <code>Object</code> with <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html">11 instance methods</a>.
+Every Java class implicitly extends <code>Object</code>, <em>including user-defined classes</em>.
+Therefore any Java class <em>inherits</em> these methods.</p>
+</blockquote>
+<h2 id="the-method-tostring">
+  The method <code>toString</code>
+  <a class="anchor" href="#the-method-tostring">#</a>
+</h2>
+<p><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString%28%29">toString</a> is one of the methods of the class <code>Object</code>.
+Here is (part of) its specification:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/** Returns a string representation of the object.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * In general, the toString method returns a string that
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * &#34;textually represents&#34; this object.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>();
+</span></span></code></pre></div><p>This is the preferred way to display information about an object.
+For instance, the debugger of your IDE probably relies on this method to display a string that represents an object.</p>
+<p>This method is also called by many (native or not) methods and operators.
+For instance, the following program</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myUnicorn);
+</span></span><span style="display:flex;"><span>String message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> myUnicorn;
+</span></span></code></pre></div><p>is equivalent to</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myUnicorn.<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>String message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> myUnicorn.<span style="color:#a6e22e">toString</span>();
+</span></span></code></pre></div><h3 id="overriding-tostring">
+  Overriding toString
+  <a class="anchor" href="#overriding-tostring">#</a>
+</h3>
+<p>The default implementation of <code>toString</code> (in the class <code>Object</code>) displays very little information about the object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> getClass().<span style="color:#a6e22e">getName</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      Integer.<span style="color:#a6e22e">toHexString</span>(hashCode());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> The output of <code>hashCode()</code> in this example is <em>not</em> the reference (a.k.a. &ldquo;memory address&rdquo;) of the object.</p>
+</blockquote>
+<p>So a common practice consists in <a href="">overriding</a> <code>toString</code>.
+For instance, here is a possible implementation of the method <code>toString</code> within a class <code>Unicorn</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String color;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Unicorn{&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;color=&#34;</span> <span style="color:#f92672">+</span> color <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;health=&#34;</span> <span style="color:#f92672">+</span> health <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;}&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong> Your IDE can generate such a method.</p>
+</blockquote>
+<h3 id="recursion">
+  Recursion
+  <a class="anchor" href="#recursion">#</a>
+</h3>
+<p>A naive implementation of <code>toString</code> (e.g. generated by an IDE) may have unexpected effects.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_toString_rec" id="tabs-exercise_toString_rec-0" checked="checked" />
+<label for="tabs-exercise_toString_rec-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider an implementation of our game where units (on each side of the board) are grouped by column.
+This implementation may use a class <code>Column</code> to represent a column and the adjacent one(s), as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Column</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Unit<span style="color:#f92672">[]</span> units;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// null if this is the left-most column</span>
+</span></span><span style="display:flex;"><span>    Column leftAdjacentColumn;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// null if this is the right-most column</span>
+</span></span><span style="display:flex;"><span>    Column rightAdjacentColumn;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Column</span>(Unit<span style="color:#f92672">[]</span> units){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">units</span> <span style="color:#f92672">=</span> units;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Column{&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;left=&#34;</span> <span style="color:#f92672">+</span> leftAdjacentColumn <span style="color:#f92672">+</span><span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;right=&#34;</span> <span style="color:#f92672">+</span> rightAdjacentColumn <span style="color:#f92672">+</span><span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;units=&#34;</span> <span style="color:#f92672">+</span> units <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;}&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then a board may be created as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> a1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unit<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>) };
+</span></span><span style="display:flex;"><span>Column c1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Column(a1);
+</span></span><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> a2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unit<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;yellow&#34;</span>) };
+</span></span><span style="display:flex;"><span>Column c2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Column(a2);
+</span></span><span style="display:flex;"><span>c1.<span style="color:#a6e22e">rightAdjacentColumn</span> <span style="color:#f92672">=</span> c2;
+</span></span><span style="display:flex;"><span>c2.<span style="color:#a6e22e">leftAdjacentColumn</span> <span style="color:#f92672">=</span> c1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(c1);
+</span></span></code></pre></div><p>There is an issue with this program.
+Can you identify it?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_toString_rec" id="tabs-exercise_toString_rec-1"  />
+<label for="tabs-exercise_toString_rec-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>The program does not terminate, because <code>toString</code> is (implicitly) recursive, and each of the two columns refers to the other.</p>
+</div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-class-object">The class <code>Object</code></a></li>
+    <li><a href="#the-method-tostring">The method <code>toString</code></a>
+      <ul>
+        <li><a href="#overriding-tostring">Overriding toString</a></li>
+        <li><a href="#recursion">Recursion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

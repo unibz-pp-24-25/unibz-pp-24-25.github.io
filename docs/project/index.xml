@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Programming project 2024-25</title>
+    <link>https://unibz-pp-24-25.github.io/docs/project/</link>
+    <description>Recent content in Project on Programming project 2024-25</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://unibz-pp-24-25.github.io/docs/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Option 1: free project</title>
+      <link>https://unibz-pp-24-25.github.io/docs/project/sections/free_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/project/sections/free_project/</guid>
+      <description>&lt;h1 id=&#34;option-1-free-project&#34;&gt;&#xA;  Option 1: free project&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#option-1-free-project&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The first possible type of group projects is for students to develop a Java application &lt;em&gt;of their choice&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This application is only a prototype, so it does &lt;em&gt;not&lt;/em&gt; need a comprehensive list of features or functionalities.&lt;/p&gt;&#xA;&lt;p&gt;The evaluation of the project will be mostly based on its &lt;strong&gt;backend&lt;/strong&gt; (rather than the frontend).&#xA;This means that the application:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;does &lt;em&gt;not&lt;/em&gt; need a graphical user interface (but may have one),&lt;/li&gt;&#xA;&lt;li&gt;should perform &lt;em&gt;non-trivial&lt;/em&gt; backend task(s) (e.g. writing and/or reading to/from files is not sufficient).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;guidelines&#34;&gt;&#xA;  Guidelines&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#guidelines&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;motivation&#34;&gt;&#xA;  Motivation&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#motivation&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;A good projects is driven by an &lt;em&gt;idea&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Option 2: board game</title>
+      <link>https://unibz-pp-24-25.github.io/docs/project/sections/board_game/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/project/sections/board_game/</guid>
+      <description>&lt;h1 id=&#34;option-2-board-game&#34;&gt;&#xA;  Option 2: board game&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#option-2-board-game&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The second project option available to you consists in developing a video game with mechanics analogous to the ones of&#xA;&lt;a href=&#34;https://www.dotemu.com/games/might-magic-clash-of-heroes-definitive-edition/&#34;&gt;Might &amp;amp; Magic: Clash of Heroes&lt;/a&gt; or&#xA;&lt;a href=&#34;https://snowprintstudios.com/solgard/&#34;&gt;Legend of Solgard&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Students who choose this option you will be provided:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;a basic graphical user interface (GUI) that they can reuse and/or customize,&lt;/li&gt;&#xA;&lt;li&gt;examples during lectures that they may adapt to their project.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;&#xA;  Requirements&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#requirements&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The minimal requirement to submit this project is a &lt;em&gt;player vs player&lt;/em&gt; game playable on a &lt;em&gt;single machine&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

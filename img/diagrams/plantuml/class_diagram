@@ -1,0 +1,18 @@
+@startuml
+scale 500 width
+
+abstract class Unit {
+ int health
+}
+
+class Unicorn {
+ void regen()
+}
+
+class Butterfly {
+}
+
+Unit <|-- Unicorn : extends
+Unit <|-- Butterfly : extends
+
+@enduml

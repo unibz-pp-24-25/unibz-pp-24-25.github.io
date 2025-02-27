@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Classes as objects
+  #
+
+Some object-oriented languages (like Java, C# or C&#43;&#43;) provide ways to access or manipulate classes (almost) as if they were objects.
+
+  Static attributes and methods
+  #
+
+
+  Static attributes
+  #
+
+
+Java (as well as C# and C&#43;&#43;) supports attributes that do not depend on a specific object, but on a class instead.
+These are often called static attributes (or sometimes class attributes or class variables),
+as opposed to the attributes that we have seen so far, called instance attributes (or member variables).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/classesasobjects/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Classes as objects">
+  <meta property="og:description" content="Classes as objects # Some object-oriented languages (like Java, C# or C&#43;&#43;) provide ways to access or manipulate classes (almost) as if they were objects.
+Static attributes and methods # Static attributes # Java (as well as C# and C&#43;&#43;) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Classes as objects | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/classesasobjects/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="active">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Classes as objects</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#static-attributes-and-methods">Static attributes and methods</a>
+      <ul>
+        <li><a href="#staticAttributes">Static attributes</a></li>
+        <li><a href="#staticMethods">Static methods</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+      </ul>
+    </li>
+    <li><a href="#reflection">Reflection</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="classes-as-objects">
+  Classes as objects
+  <a class="anchor" href="#classes-as-objects">#</a>
+</h1>
+<p>Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.</p>
+<h2 id="static-attributes-and-methods">
+  Static attributes and methods
+  <a class="anchor" href="#static-attributes-and-methods">#</a>
+</h2>
+<h3 id="staticAttributes">
+  Static attributes
+  <a class="anchor" href="#staticAttributes">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a <em>class</em> instead.
+These are often called <strong>static attributes</strong> (or sometimes <strong>class attributes</strong> or <strong>class variables</strong>),
+as opposed to the attributes that we have seen so far, called <strong>instance attributes</strong> (or <strong>member variables</strong>).</p>
+</blockquote>
+<p>Static attributes are marked with the keyword <code>static</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider a version of our game where characteristics for each unit type (e.g. default health, etc.) can be declared manually, in a text file.
+The path to this file could be stored as a static attribute, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> String configFile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;units/unicorn.txt&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span>(){
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">=</span> getHealthFromConfigFile(configFile);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">regen</span>(){
+</span></span><span style="display:flex;"><span>        health<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>Each instance of <code>Unicorn</code> carries its own value for the attribute <code>health</code>.
+But the value of <code>configFile</code> is <em>unique</em>.</p>
+<p>For instance, the following program creates in memory a <em>unique</em> string for <code>configFile</code>, which is carried by the class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn u1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span><span style="display:flex;"><span>Unicorn u2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span></code></pre></div><h3 id="staticMethods">
+  Static methods
+  <a class="anchor" href="#staticMethods">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>Similarly to a static attribute, a <strong>static method</strong> does not depend on a specific object, as opposed to an <a href="http://localhost:1313/docs/objects/sections/methods/">instance method</a>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example</em></strong> (continued).</p>
+<p>We can add to our class <code>Unicorn</code> a static method that checks whether the configuration file exists:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span>{
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">configFileExists</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Files.<span style="color:#a6e22e">exists</span>(Paths.<span style="color:#a6e22e">get</span>(configFile));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>(note that the method <code>getHealthFromConfigFile</code> also may also be static, if its execution is identical for all instances of <code>Unicorn</code>).</p>
+</blockquote>
+<p>Remember that an instance method can be called outside of the class where it is declared, using an instance of the class followed by <code>.</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span><span style="display:flex;"><span>myUnicorn.<span style="color:#a6e22e">regen</span>();
+</span></span></code></pre></div><p>A static method can (syntactically) be called in the same way, for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> valid <span style="color:#f92672">=</span> myUnicorn.<span style="color:#a6e22e">configFileExists</span>();
+</span></span></code></pre></div><p>However, this is often <em>discouraged</em>, because this syntax can be misleading (in this example, <code>configFileExists</code> can be mistaken for an instance method).</p>
+<p>Alternatively, since the method depends on the class (rather than an instance), the call can be prefixed with the class name.
+This syntax is often <em>preferred</em>, because it leaves no ambiguity.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> valid <span style="color:#f92672">=</span> Unicorn.<span style="color:#a6e22e">configFileExists</span>();
+</span></span></code></pre></div><p>Note that there may be several instances of a same class in memory during the execution of a program, or no instance at all.
+This is why a static method <em>cannot</em> reference an instance method or attribute.
+For instance, adding the following static method to our class would cause a compilation error, because <code>health</code> is an instance attribute.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">reduceHealth</span>(){
+</span></span><span style="display:flex;"><span>        health<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Two static methods with the same name and signature can be declared in a class and a superclass.
+In Java&rsquo;s terminology, this is <em>not</em> called <a href="http://localhost:1313/docs/objects/sections/methods/#overriding">method overriding</a>, but instead <strong>method hiding</strong>.
+An important difference is that <a href="http://localhost:1313/docs/objects/sections/methods/#dispatch">dynamic dispatch</a> (a.k.a. runtime polymorphism) does <em>not</em> apply to this case (the method to be called is determined at compile time, rather than run time).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example</em></strong> (continued).</p>
+<p>Let us extend our example with a subclass of Unicorn that <strong>hides</strong> the static method <code>configFileExists</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EvilUnicorn</span> <span style="color:#66d9ef">extends</span> Unicorn {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">configFileExists</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>Now consider the following program, where the method <code>getUnicorns</code> produces an array of unicorns that depend on the player&rsquo;s input.
+The specific type of objects in this array (<code>Unicorn</code> or <code>EvilUnicorn</code>) cannot be determined at compile time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    Unicorn<span style="color:#f92672">[]</span> unicorns <span style="color:#f92672">=</span> getUnicorns();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unicorn unicorn: unicorns){
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(unicorn.<span style="color:#a6e22e">configFileExists</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, the method of the superclass (i.e. <code>Unicorn.configFileExists</code>) will be executed for each object in the array, regardless of its type.</p>
+<p>This is another reason why calling a static method via an instance (rather than via a class name) is often discouraged.
+In this example, writing <code>Unicorn.configFileExists()</code> would make it clear that this loop serves no purpose (the same method is executed <code>unicorns.length</code> times).</p>
+<h2 id="reflection">
+  Reflection
+  <a class="anchor" href="#reflection">#</a>
+</h2>
+<p>Java (as well as C#) offers a mechanism called <strong>reflection</strong> to intuitively treat classes analogously to objects.
+Precisely, each class of a program (e.g. the class <code>Unicorn</code>) is associated with an object that represents it.
+This object is itself an instance of the Java class called <code>Class</code>.
+It can be accessed either:</p>
+<ul>
+<li>via an instance of the class:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
+</span></span><span style="display:flex;"><span>Class unicornClass <span style="color:#f92672">=</span> myUnicorn.<span style="color:#a6e22e">getClass</span>();
+</span></span></code></pre></div><ul>
+<li>or via the qualified name of the class (assuming for instance that the file <code>Unicorn.java</code> is in the folder <code>&lt;workingDirectory&gt;/src/main/java/org/units</code>):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Class unicornClass <span style="color:#f92672">=</span> Class.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;org.units.Unicorn&#34;</span>);
+</span></span></code></pre></div><p>The instance methods of the class <code>Class</code> are listed <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html">here</a>.
+Among others, they allow:</p>
+<ul>
+<li>listing the attributes of the class,</li>
+<li>retrieving its immediate superclass, or the interfaces that it implements,</li>
+<li>creating a new instance of this class,</li>
+<li>etc.</li>
+</ul>
+<p>Reflection is a powerful feature.
+It is rarely used in everyday code, but can be helpful in specific situations.
+Notably, it is used (internally) by numerous <a href="https://en.wikipedia.org/wiki/List_of_Java_frameworks">Java frameworks</a> such as Spring, Jackson or JUnit.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#static-attributes-and-methods">Static attributes and methods</a>
+      <ul>
+        <li><a href="#staticAttributes">Static attributes</a></li>
+        <li><a href="#staticMethods">Static methods</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+      </ul>
+    </li>
+    <li><a href="#reflection">Reflection</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

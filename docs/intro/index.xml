@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>This course on Programming project 2024-25</title>
+    <link>https://unibz-pp-24-25.github.io/docs/intro/</link>
+    <description>Recent content in This course on Programming project 2024-25</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://unibz-pp-24-25.github.io/docs/intro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Schedule</title>
+      <link>https://unibz-pp-24-25.github.io/docs/intro/sections/schedule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/intro/sections/schedule/</guid>
+      <description>&lt;h1 id=&#34;schedule&#34;&gt;&#xA;  Schedule&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#schedule&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The course consists of 60 hours of lectures and 30 hours of labs.&lt;/p&gt;&#xA;&lt;h2 id=&#34;lectures&#34;&gt;&#xA;  Lectures&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#lectures&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;By default, lectures are scheduled:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Monday 13:30 - 15:30&lt;/li&gt;&#xA;&lt;li&gt;Tuesday 08:30 - 10:30&lt;/li&gt;&#xA;&lt;li&gt;Wednesday 08:30 - 10:30&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;All students attend the same lectures.&lt;/p&gt;&#xA;&lt;h2 id=&#34;labs&#34;&gt;&#xA;  Labs&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#labs&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;By default, labs are scheduled:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Monday 15:30 - 17:30&lt;/li&gt;&#xA;&lt;li&gt;Wednesday 13:30 - 15:30&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Students are split in two groups (to be determined) for the labs, with identical content.&#xA;Students who collaborate on the same &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/intro/sections/evaluation/#group-project&#34;&gt;group project&lt;/a&gt; are expected to attend the same lab.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Teaching staff</title>
+      <link>https://unibz-pp-24-25.github.io/docs/intro/sections/lecturers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/intro/sections/lecturers/</guid>
+      <description>&lt;h1 id=&#34;teaching-staff&#34;&gt;&#xA;  Teaching staff&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#teaching-staff&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.unibz.it/it/faculties/engineering/academic-staff/person/37010-julien-corman&#34;&gt;Julien Corman&lt;/a&gt; will teach the lectures and one lab.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.unibz.it/it/faculties/engineering/academic-staff/person/49630-jamila-oukharijane&#34;&gt;Djamila Oukharijane&lt;/a&gt; will teach the other lab.&lt;/p&gt;&#xA;&lt;h2 id=&#34;office-hours&#34;&gt;&#xA;  Office hours&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#office-hours&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&lt;/p&gt;&#xA;&lt;p&gt;These appointments must be scheduled via email (follow the links above for our email addresses).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Evaluation</title>
+      <link>https://unibz-pp-24-25.github.io/docs/intro/sections/evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/intro/sections/evaluation/</guid>
+      <description>&lt;h1 id=&#34;evaluation&#34;&gt;&#xA;  Evaluation&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#evaluation&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Evaluation for this course is based on:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#assignments&#34;&gt;assignments&lt;/a&gt;: up to 30 points,&lt;/li&gt;&#xA;&lt;li&gt;a &lt;a href=&#34;#group-project&#34;&gt;group project&lt;/a&gt;: up to 60 points, and&lt;/li&gt;&#xA;&lt;li&gt;an &lt;a href=&#34;#oral-exam&#34;&gt;oral exam&lt;/a&gt;: up to 10 points.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Your final grade is the sum of the above, multiplied by 0.3.&lt;/p&gt;&#xA;&lt;h2 id=&#34;assignments&#34;&gt;&#xA;  Assignments&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#assignments&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;There will be &lt;em&gt;7 or 8&lt;/em&gt; assignments for this course.&#xA;These are standard programming exercises, related to notions seen during the lectures.&#xA;The &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/intro/sections/schedule/#labs&#34;&gt;labs&lt;/a&gt; are (mostly) dedicated to these assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Content</title>
+      <link>https://unibz-pp-24-25.github.io/docs/intro/sections/content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/intro/sections/content/</guid>
+      <description>&lt;h1 id=&#34;content-of-the-course&#34;&gt;&#xA;  Content of the course&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#content-of-the-course&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;This is a beginner&amp;rsquo;s course on &lt;strong&gt;imperative&lt;/strong&gt; and (class-based) &lt;strong&gt;object oriented&lt;/strong&gt; programming, with an emphasis on &lt;em&gt;practice&lt;/em&gt; and &lt;em&gt;collaboration&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The course relies on Java as main programming language.&#xA;However, many concepts seen in this course are relevant to other (imperative and/or object-oriented) programming languages:&#xA;C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;&#xA;  Prerequisites&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Students are expected to have completed the &lt;em&gt;Computer Programming&lt;/em&gt; course (INF/01 76203).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Board game</title>
+      <link>https://unibz-pp-24-25.github.io/docs/intro/sections/board_game/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/intro/sections/board_game/</guid>
+      <description>&lt;h1 id=&#34;board-game&#34;&gt;&#xA;  Board game&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#board-game&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;In order to follow this course, you will need to play one of the two following video games:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.dotemu.com/games/might-magic-clash-of-heroes-definitive-edition/&#34;&gt;Might &amp;amp; Magic: Clash of Heroes&lt;/a&gt;, or&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://snowprintstudios.com/solgard/&#34;&gt;Legend of Solgard&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;These two games have nearly identical mechanics.&#xA;So by default, we will refer to them as a unique game (e.g. when we write &amp;ldquo;this game&amp;rdquo; or &amp;ldquo;our board game&amp;rdquo;).&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-this-game&#34;&gt;&#xA;  Why this game&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#why-this-game&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Turn-based board games (like chess, go, checkers, etc.) are traditionally a good playground to learn the basics of algorithmic thinking.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Additional resources</title>
+      <link>https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/</guid>
+      <description>&lt;h1 id=&#34;additional-resources&#34;&gt;&#xA;  Additional resources&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#additional-resources&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;You are free to use additional resources to solve the course&amp;rsquo;s assignments and/or develop your project(web sites, IDE generated code, Copilot, etc.).&lt;/p&gt;&#xA;&lt;p&gt;However, make sure that you &lt;em&gt;understand&lt;/em&gt; the code that you submit.&lt;/p&gt;&#xA;&lt;h2 id=&#34;javas-syntax&#34;&gt;&#xA;  Java&amp;rsquo;s syntax&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#javas-syntax&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This website contains Java code snippets that illustrate how to perform certain operations.&#xA;However, this documentation is &lt;em&gt;far from exhaustive&lt;/em&gt; (on purpose).&lt;/p&gt;&#xA;&lt;!-- In particular, _alternative syntaxes_ often coexist for the same (or similar) operations, either within the Java standard library, or in additional libraries such as [Guava](https://github.com/google/guava) or the [Apache commons libraries](https://commons.apache.org/). --&gt;&#xA;&lt;!-- For instance, there are multiple ways to [read a file](https://www.baeldung.com/reading-file-in-java) in Java. --&gt;&#xA;&lt;p&gt;When it comes to syntax, the first two sources of complementary material for this course are:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

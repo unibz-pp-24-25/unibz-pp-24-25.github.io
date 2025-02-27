@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=35131&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Unit tests
+  #
+
+
+  Testing software
+  #
+
+Testing is an integral part of software development.
+Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings).
+Common categories are:
+
+functional vs non-functional test
+unit vs integration test
+security test
+performance test
+regression test
+etc.
+
+A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do.
+So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:35131/docs/unittests/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Unit tests">
+  <meta property="og:description" content="Unit tests # Testing software # Testing is an integral part of software development.
+Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
+functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+<title>Unit tests | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:35131/docs/unittests/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.6131cb94a83471639515accfb911b3d584a42e60181cda870ceef0e2501516e3.js" integrity="sha256-YTHLlKg0cWOVFazPuRGz1YSkLmAYHNqHDO7w4lAVFuM=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="http://localhost:35131/docs/unittests/index.xml" title="Programming project 2024-25" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5c4910c712e8dfeaf9f3180911e57b92" class="toggle"  />
+    <label for="section-5c4910c712e8dfeaf9f3180911e57b92" class="flex justify-between">
+      <a href="/docs/regex/" class="">Regular expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
+    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle" checked />
+    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
+      <a href="/docs/unittests/" class="active">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
+    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Unit tests</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#testing-software">Testing software</a></li>
+    <li><a href="#unit-tests-1">Unit tests</a></li>
+    <li><a href="#unit-test-design">Unit test design</a></li>
+    <li><a href="#implementation">Implementation</a></li>
+    <li><a href="#unit-tests-and-build-automation">Unit tests and build automation</a></li>
+    <li><a href="#regression-tests">Regression tests</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="unit-tests">
+  Unit tests
+  <a class="anchor" href="#unit-tests">#</a>
+</h1>
+<h2 id="testing-software">
+  Testing software
+  <a class="anchor" href="#testing-software">#</a>
+</h2>
+<p>Testing is an integral part of software development.</p>
+<p>Different terminologies coexists to <a href="https://en.wikipedia.org/wiki/Software_testing#Testing_types,_techniques_and_tactics">categorize</a> software tests (more or less precise, an with overlapping meanings).
+Common categories are:</p>
+<ul>
+<li>functional vs non-functional test</li>
+<li>unit vs integration test</li>
+<li>security test</li>
+<li>performance test</li>
+<li>regression test</li>
+<li>etc.</li>
+</ul>
+<p>A side benefit of many tests is that they help clarifying <em>what</em> a program (resp. component, method) is expected to do.
+So in a sense, tests are part of the <em>documentation</em> or specification of a system, because they provide precise <em>examples</em> of the expected behavior of the program (resp. component, method).</p>
+<p>This is why tests are often part of the development process itself.
+Notably, <a href="http://localhost:35131/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
+<h2 id="unit-tests-1">
+  Unit tests
+  <a class="anchor" href="#unit-tests-1">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>unit test</strong> is usually understood as:</p>
+<ul>
+<li>testing the behavior of a <em>small</em> piece of code (typically a method),</li>
+<li>automated (typically integrated to the <a href="">build</a> process),</li>
+<li>fast.</li>
+</ul>
+<!-- - isolated. -->
+</blockquote>
+<p>Besides, most unit tests are concerned with <em>correctness</em> (rather than performance for instance).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The tests used to evaluate assignments in this course are implemented via libraries for unit testing.
+However, many of them do <em>not</em> qualify as unit tests.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>In its simplest form, a unit test can be viewed as a pair</p>
+<p>$\qquad$ (input, expected output)</p>
+<p>for a given <a href="http://localhost:35131/docs/background/sections/problem/">computational problem</a>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the following problem:</p>
+<blockquote>
+<p><strong><em>Input:</em></strong> a (finite) array of positive integers, representing the successive values of a stock, one value per day.</p>
+<p><strong><em>Output:</em></strong> the maximal gain that can be made by buying on a certain day, and selling the same day or later on.</p></blockquote>
+<p>Possible unit tests for this problem are:</p>
+<ul>
+<li>( [0, 3], 3 )</li>
+<li>( [4, 3, 6, 8, 6], 5 )</li>
+<li>( [2, 4, 9, 1, 3], 7 )</li>
+<li>( [3, 2], 0 )</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-0" checked="checked" />
+<label for="tabs-exercise_finite_unitTests-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following problem:</p>
+<blockquote>
+<p><strong><em>Input:</em></strong> a (finite) array of characters, with possibly duplicated characters (and no restriction on the size of the array).</p>
+<p><strong><em>Output:</em></strong> the size of the longest (left-to-right) sequence in this array that respects alphabetical order.</p></blockquote>
+<p>For instance, for the input</p>
+<p>$\qquad$ <code>[m, q, b, e, e, z, m, e]</code>,</p>
+<p>the expected output is
+<code>4</code>.</p>
+<p><strong><em>Question.</em></strong> Does there exist a (finite) set of unit tests for this problem that guarantees that an implementation is correct?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
+<label for="tabs-exercise_finite_unitTests-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>No.</p>
+<p>A unit tests for this problem is a pair
+$(a, i)$,
+where</p>
+<ul>
+<li>$a$ is an array of characters, and</li>
+<li>$i$ is a natural number.</li>
+</ul>
+<p>Take any finite set</p>
+<p>$\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$</p>
+<p>of such unit tests.</p>
+<p>Because this set if finite,
+there exists an array of characters $a_0$ that does not appear in this set of tests.</p>
+<p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
+<p>Now consider the method (in pseudocode):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int sizeOfLongestNonDecreasingSequence(char<span style="color:#f92672">[]</span> characters) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_1) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_2) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_n) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_n
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> j;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
+<p>So given any set of unit tests (for this problem), there exists an incorrect algorithm that passes these tests.</p>
+</div>
+</div>
+<p>This (artificial) exercise was only meant to illustrate the following:</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+In general, no (reasonably small) set of unit tests can ensure that a (non-trivial) method is correct.</p>
+</blockquote>
+<h2 id="unit-test-design">
+  Unit test design
+  <a class="anchor" href="#unit-test-design">#</a>
+</h2>
+<p>Here are a few simple rules of thumb to design unit tests.</p>
+<ol>
+<li>
+<p>The input for a unit test is usually <em>small</em> (this makes debugging easier when the test fails).</p>
+</li>
+<li>
+<p>Two tests for the same method should illustrate different types of inputs/scenarios (writing similar tests is a waste of time).</p>
+</li>
+<li>
+<p>Trivial methods do not need unit tests.</p>
+</li>
+<li>
+<p>Priority is often given to so-called &ldquo;<a href="https://en.wikipedia.org/wiki/Happy_path">happy path</a>&rdquo; tests (a.k.a &ldquo;normal&rdquo; scenarios).
+These are representative of what the tested method is likely to receive as input.</p>
+</li>
+<li>
+<p>In addition to &ldquo;happy path&rdquo; tests, one <em>may</em> implement tests that deal with corner cases (e.g. empty array, value <code>0</code>, etc.).
+However, an exhaustive coverage of corner cases is often unnecessary, because the methods that call the tested method cannot produce such inputs.</p>
+</li>
+<li>
+<p>A unit test should be <em>reproducible</em>.
+In particular, it should not depend on:</p>
+<ul>
+<li>(pseudo)-random values,</li>
+<li>external services (web API, etc.) whose behavior cannot be controlled.</li>
+</ul>
+</li>
+</ol>
+<h2 id="implementation">
+  Implementation
+  <a class="anchor" href="#implementation">#</a>
+</h2>
+<blockquote class="book-hint danger">
+<p><strong><em>Requirement.</em></strong>
+A unit test should itself be <em>free of bugs</em>.</p>
+</blockquote>
+<p>For this reason, unit tests usually:</p>
+<ul>
+<li>rely of widely used libraries for test execution,</li>
+<li>mostly consist of simple, <em>declarative</em> code otherwise.</li>
+</ul>
+<p>In particular, unit tests are a (rare) case where code factorization is <em>not</em> a priority (i.e. unit tests may contain redundant code).</p>
+<h2 id="unit-tests-and-build-automation">
+  Unit tests and build automation
+  <a class="anchor" href="#unit-tests-and-build-automation">#</a>
+</h2>
+<p>Unit tests are usually integrated to the standard build automation process of a project.</p>
+<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="http://localhost:35131/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
+This effectively prevents further phases to be executed if a test fails.</p>
+<h2 id="regression-tests">
+  Regression tests
+  <a class="anchor" href="#regression-tests">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>regression test</strong> is meant to verify that modifications brought to the code base (e.g. a new feature, code optimization, reorganization, etc. ) do not compromise correctness of functionalities that were already implemented.</p>
+</blockquote>
+<p>Some unit tests may act in practice as regression tests.</p>
+<p>In particular, before sharing code with co-developers (e.g. via the main branch of a git repository), it is good practice to verify that all unit tests as <em>successful</em>.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-0" checked="checked" />
+<label for="tabs-exercise_git_collab_reminder-0">Exercise (reminder)</label>
+<div class="book-tabs-content markdown-inner"><p>Consider a basic collaboration scheme via git, where:</p>
+<ul>
+<li>Alice, Bob and Carol collaborate on the same project,</li>
+<li>they share code via the <code>main</code> branch,</li>
+<li>each of them has a personal branch (named <code>alice</code>, <code>bob</code> and <code>carol</code> respectively) where they write code that is not yet ready to be shared with the others.</li>
+</ul>
+<p>Alice just finished implementing a method, on the branch <code>alice</code>.
+Her code compiles and passes all unit tests.
+Now she wants to share her code with the other two.</p>
+<p>Which sequence of git commands should Alice execute?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-1"  />
+<label for="tabs-exercise_git_collab_reminder-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ol>
+<li>Commit her changes (locally, to the branch <code>alice</code>):</li>
+</ol>
+<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;commit message&quot;</code></li>
+</ul>
+<ol start="2">
+<li>Update the remote copy of the branch <code>alice</code> (for backup only):</li>
+</ol>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<ol start="3">
+<li>Synchronize the local copy of the branch <code>main</code> (because Bob and Carol may have added content to it):</li>
+</ol>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git pull</code></li>
+</ul>
+<ol start="4">
+<li>Merge (locally) the content of <code>main</code> into <code>alice</code> (and fix the merge conflicts, if any):</li>
+</ol>
+<ul>
+<li><code>git checkout alice</code></li>
+<li><code>git merge main</code></li>
+</ul>
+<ol start="5">
+<li>Merge (locally) the content of <code>alice</code> into <code>main</code> (there should be no more conflict).
+After this step, the local copies of <code>alice</code> and <code>main</code> will be identical.</li>
+</ol>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git merge alice</code></li>
+</ul>
+<ol start="6">
+<li>Upload the changes:</li>
+</ol>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<ol start="7">
+<li>Go back to work:</li>
+</ol>
+<ul>
+<li><code>git checkout alice</code></li>
+</ul>
+</div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#testing-software">Testing software</a></li>
+    <li><a href="#unit-tests-1">Unit tests</a></li>
+    <li><a href="#unit-test-design">Unit test design</a></li>
+    <li><a href="#implementation">Implementation</a></li>
+    <li><a href="#unit-tests-and-build-automation">Unit tests and build automation</a></li>
+    <li><a href="#regression-tests">Regression tests</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

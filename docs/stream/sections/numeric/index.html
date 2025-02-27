@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Numeric stream
+  #
+
+In addition to the interface Stream, Java 8 introduced the interface IntStream (resp. DoubleStream, LongStream) that represents a stream of (unboxed) int (resp. long, double).
+It provides operations that are not available in Stream&lt;Integer&gt; (resp. Streanm&lt;Double&gt;, Stream&lt;Long&gt;).
+
+Warning.
+The interface IntStream (resp. DoubleStream, LongStream) does not extend the interface Stream.
+
+
+  Conversion
+  #
+
+A instance of Stream&lt;$T$&gt; can be converted to an instance of IntStream (resp. DoubleStream, LongStream) with the instance method Stream.mapToInt.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/stream/sections/numeric/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Numeric stream">
+  <meta property="og:description" content="Numeric stream # In addition to the interface Stream, Java 8 introduced the interface IntStream (resp. DoubleStream, LongStream) that represents a stream of (unboxed) int (resp. long, double).
+It provides operations that are not available in Stream&lt;Integer&gt; (resp. Streanm&lt;Double&gt;, Stream&lt;Long&gt;).
+Warning. The interface IntStream (resp. DoubleStream, LongStream) does not extend the interface Stream.
+Conversion # A instance of Stream&lt;$T$&gt; can be converted to an instance of IntStream (resp. DoubleStream, LongStream) with the instance method Stream.mapToInt.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Numeric stream | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/stream/sections/numeric/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Numeric stream</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#conversion">Conversion</a></li>
+    <li><a href="#operations">Operations</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="numeric-stream">
+  Numeric stream
+  <a class="anchor" href="#numeric-stream">#</a>
+</h1>
+<p>In addition to the interface <code>Stream</code>, Java 8 introduced the interface <code>IntStream</code> (resp. <code>DoubleStream</code>, <code>LongStream</code>) that represents a stream of (unboxed) <code>int</code> (resp. <code>long</code>, <code>double</code>).</p>
+<p>It provides operations that are not available in <code>Stream&lt;Integer&gt;</code> (resp. <code>Streanm&lt;Double&gt;</code>, <code>Stream&lt;Long&gt;</code>).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The interface <code>IntStream</code> (resp. <code>DoubleStream</code>, <code>LongStream</code>) does <em>not</em> extend the interface <code>Stream</code>.</p>
+</blockquote>
+<h2 id="conversion">
+  Conversion
+  <a class="anchor" href="#conversion">#</a>
+</h2>
+<p>A instance of <code>Stream&lt;</code>$T$<code>&gt;</code> can be converted to an instance of <code>IntStream</code> (resp. <code>DoubleStream</code>, <code>LongStream</code>) with the instance method <code>Stream.mapToInt</code>.</p>
+<p>This method takes as argument a callback method of type</p>
+<p>$\qquad T \to$ <code>int</code></p>
+<p>that converts each element of the stream to an <code>int</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<p>The following method converts a list of cities into an <code>IntStream</code> that contains their zip codes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>IntStream <span style="color:#a6e22e">extractZipCodes</span>(List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cities.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">mapToInt</span>(c <span style="color:#f92672">-&gt;</span> c.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h2 id="operations">
+  Operations
+  <a class="anchor" href="#operations">#</a>
+</h2>
+<p>Numeric streams provide operations that are not available in standard streams, such as <code>sum</code> and <code>average</code>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#conversion">Conversion</a></li>
+    <li><a href="#operations">Operations</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

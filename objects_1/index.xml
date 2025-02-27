@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Objects_1s on Programming project 2024-25</title><link>http://localhost:1313/objects_1/</link><description>Recent content in Objects_1s on Programming project 2024-25</description><generator>Hugo</generator><language>en-us</language><atom:link href="http://localhost:1313/objects_1/index.xml" rel="self" type="application/rss+xml"/><item><title>Class and instance</title><link>http://localhost:1313/objects_1/sections/classes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/objects_1/sections/classes/</guid><description>&lt;h1 id="class-and-instance">
+ Class and instance
+ &lt;a class="anchor" href="#class-and-instance">#&lt;/a>
+&lt;/h1>
+&lt;p>A &lt;strong>class&lt;/strong> can be viewed as a &lt;em>blueprint&lt;/em> for a set of similar objects.&lt;/p>
+&lt;p>For instance, consider the two objects:&lt;/p>
+&lt;div class="book-columns flex flex-wrap">
+&lt;div class="flex-even markdown-inner" style="flex-grow: 1;">
+ 
+
+```javascript
+{
+ name: "Florence",
+ zipCode: 50100,
+ region: "Tuscany"
+}
+```
+
+
+ &lt;/div>
+&lt;div class="flex-even markdown-inner" style="flex-grow: 1;">
+ 
+
+```javascript
+{
+ name: "Rome",
+ zipCode: 00100,
+ region: "Lazio"
+}
+```
+
+
+ &lt;/div>
+
+&lt;/div>
+
+&lt;p>Each of these objects describes a city, and they share the same keys (&lt;code>name&lt;/code>, &lt;code>zipCode&lt;/code> and &lt;code>region&lt;/code>).
+A possible class for these two objects may enforce this structure, and it could be named &lt;code>City&lt;/code>.
+An object that follows this blueprint is called an &lt;strong>instance&lt;/strong> of this class.&lt;/p></description></item></channel></rss>

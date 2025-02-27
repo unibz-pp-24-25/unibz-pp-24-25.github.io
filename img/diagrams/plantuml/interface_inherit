@@ -1,0 +1,39 @@
+@startuml
+scale 500 width
+
+interface Unit {
+ void boost()
+ void sleep()
+}
+
+interface MobileUnit {
+ void move(int x, int y)
+}
+
+abstract class AbstractUnit {
+ void boost()
+}
+
+abstract class AbstractMobileUnit {
+ void move(int x, int y)
+}
+
+class Unicorn {
+ void sleep()
+}
+
+class Butterfly {
+ void boost()
+}
+
+Unit <|.. MobileUnit : extends
+
+Unit <-- AbstractUnit : implements
+MobileUnit <-- AbstractMobileUnit : implements
+
+AbstractUnit <|-- AbstractMobileUnit : extends
+AbstractMobileUnit <|-- Unicorn : extends
+AbstractMobileUnit <|-- Butterfly : extends
+
+
+@enduml

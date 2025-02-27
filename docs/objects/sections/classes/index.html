@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Class and instance
+  #
+
+A class can be viewed as a blueprint for a set of similar objects.
+For instance, consider the two objects:
+
+
+{
+  name: &#34;Florence&#34;,
+  zipCode: 50100,
+  region: &#34;Tuscany&#34;
+}
+  
+
+{
+  name: &#34;Rome&#34;,
+  zipCode: 00100,
+  region: &#34;Lazio&#34;
+}
+  
+
+Each of these objects describes a city, and they share the same keys (name, zipCode and region).
+A possible class for these two objects may enforce this structure, and it could be named City.
+An object that follows this blueprint is called an instance of this class.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Class and instance">
+  <meta property="og:description" content="Class and instance # A class can be viewed as a blueprint for a set of similar objects.
+For instance, consider the two objects:
+{ name: &#34;Florence&#34;, zipCode: 50100, region: &#34;Tuscany&#34; } { name: &#34;Rome&#34;, zipCode: 00100, region: &#34;Lazio&#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City. An object that follows this blueprint is called an instance of this class.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Class and instance | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.d2bdf4d41b8b16ba58f297d496360ffb40cb9e480b1bad2b10f8936f4c137ad0.js" integrity="sha256-0r301BuLFrpY8pfUljYP&#43;0DLnkgLG60rEPiTb0wTetA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="active">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Class and instance</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#declaration">Declaration</a></li>
+    <li><a href="#constructor">Constructor</a>
+      <ul>
+        <li><a href="#writing-a-constructor-in-java">Writing a constructor in Java</a></li>
+        <li><a href="#calling-a-constructor-in-java">Calling a constructor in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#accessing-an-object-in-java">Accessing an object in Java</a></li>
+    <li><a href="#refType">Reference type vs primitive type</a></li>
+    <li><a href="#passing-by-value-or-by-reference">Passing by value or by reference</a>
+      <ul>
+        <li><a href="#javaByValue">Java passes by value</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="class-and-instance">
+  Class and instance
+  <a class="anchor" href="#class-and-instance">#</a>
+</h1>
+<p>A <strong>class</strong> can be viewed as a <em>blueprint</em> for a set of similar objects.</p>
+<p>For instance, consider the two objects:</p>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Florence&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">zipCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50100</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tuscany&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Rome&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">zipCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">00100</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Lazio&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  </div>
+</div>
+<p>Each of these objects describes a city, and they share the same keys (<code>name</code>, <code>zipCode</code> and <code>region</code>).
+A possible class for these two objects may enforce this structure, and it could be named <code>City</code>.
+An object that follows this blueprint is called an <strong>instance</strong> of this class.</p>
+<h2 id="declaration">
+  Declaration
+  <a class="anchor" href="#declaration">#</a>
+</h2>
+<p>In a typed language (like Java), a class must specify not only the &ldquo;keys&rdquo; of its instances, but also their types.
+For instance, the class <code>City</code> could be declared as follows in Java:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>  String region;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p>In Java, a class is often declared in a dedicated file.
+This file must have the <em>same name</em> as the class (e.g. <code>City.java</code> in this example).</p>
+</blockquote>
+<p>The three variables (<code>name</code>, <code>zipCode</code> and <code>region</code>) are called <strong>attributes</strong> (or sometimes <strong>member variables</strong>).</p>
+<h2 id="constructor">
+  Constructor
+  <a class="anchor" href="#constructor">#</a>
+</h2>
+<p>A class also needs a special method called a <strong>constructor</strong>.<br>
+The constructor is in charge of creating a (fresh) instance of the class.<br></p>
+<blockquote class="book-hint warning">
+<p><strong><em>Note.</em></strong> A class may have several constructors (with different signatures).</p>
+</blockquote>
+<h3 id="writing-a-constructor-in-java">
+  Writing a constructor in Java
+  <a class="anchor" href="#writing-a-constructor-in-java">#</a>
+</h3>
+<blockquote class="book-hint danger">
+<p>The constructor of a Java class must have the <em>same name</em> as the class.</p>
+</blockquote>
+<p>For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>  String region;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String n, <span style="color:#66d9ef">int</span> z, String r){
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>    zipCode <span style="color:#f92672">=</span> z;
+</span></span><span style="display:flex;"><span>    region <span style="color:#f92672">=</span> r;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint warning">
+<p><strong><em>Note.</em></strong>
+In this example, the variable names <code>n</code>, <code>z</code> and <code>r</code> are not very explicit.
+However, using <code>name</code>, <code>zipCode</code> and <code>region</code> would be ambiguous (because these names are already used for the attributes of the class).
+In Java, we can use the prefix <code>this.</code> to refer to attribute names, thus eliminating the ambiguity.</p>
+<p>For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>  String region;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode, String region){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipcode;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> region;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div></blockquote>
+<h3 id="calling-a-constructor-in-java">
+  Calling a constructor in Java
+  <a class="anchor" href="#calling-a-constructor-in-java">#</a>
+</h3>
+<p>A Java constructor is called with the keyword <code>new</code>.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> City myCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100, <span style="color:#e6db74">&#34;Tuscany&#34;</span>);
+</span></span><span style="display:flex;"><span> City yourCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, 00100, <span style="color:#e6db74">&#34;Lazio&#34;</span>);
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> In Java (as in Python, C#, etc.), the constructor does not return the instance itself, but a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/objects/#objectRef">reference</a> (sometimes called &ldquo;pointer&rdquo;) to this instance.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Note.</em></strong> The object that is created in memory contains extra information, in particular a reference to its class.
+This allows type checking, casts, etc. (more on this later).</p>
+</blockquote>
+<h2 id="accessing-an-object-in-java">
+  Accessing an object in Java
+  <a class="anchor" href="#accessing-an-object-in-java">#</a>
+</h2>
+<p>The attributes of an object can be accessed like regular variables, using <code>.</code>, followed by the name of the attribute.
+For instance,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  City thatCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Siena&#34;</span>, 53100, <span style="color:#e6db74">&#34;Lazio&#34;</span>);
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Wrong region: &#34;</span> <span style="color:#f92672">+</span> thatCity.<span style="color:#a6e22e">region</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  thatCity.<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tuscany&#34;</span>;
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Better now: &#34;</span> <span style="color:#f92672">+</span> thatCity.<span style="color:#a6e22e">region</span>);
+</span></span></code></pre></div><p>will output</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Wrong region: Lazio
+</span></span><span style="display:flex;"><span>Better now: Tuscany
+</span></span></code></pre></div><h2 id="refType">
+  Reference type vs primitive type
+  <a class="anchor" href="#refType">#</a>
+</h2>
+<p>Recall that a Java constructor returns a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/objects/#objectRef">reference</a> to the object that it creates.
+So in the examples above, the value of each variable (<code>myCity</code>, <code>yourCity</code> and <code>thatCity</code>) is a reference, not the object itself.</p>
+<p>This also holds for variable with an array type (like <code>int[] myArray</code>).</p>
+<p>The types of these variables (e.g. <code>City</code> or <code>int[]</code>) are called <strong>reference types</strong>.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Syntax.</em></strong> In Java, types that start with a <em>capital letter</em> (like <code>City</code> or <code>Set&lt;Integer&gt;</code>) are usually reference types.</p>
+</blockquote>
+<p>Types that are not references types (like <code>int</code> or <code>char</code>) are called <strong>primitive types</strong>.</p>
+<p>In Java, the <em>value</em> of a reference <em>cannot</em> be output (printed, displayed, etc.) by a program (as opposed to C/C++ for instance).
+But this value can be overwritten or compared to another.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-ex_object_ref_1" id="tabs-ex_object_ref_1-0" checked="checked" />
+<label for="tabs-ex_object_ref_1-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What is the output of the following program?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> City aCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100, <span style="color:#e6db74">&#34;Basilicata&#34;</span>);
+</span></span><span style="display:flex;"><span> City theSameCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100, <span style="color:#e6db74">&#34;Basilicata&#34;</span>);
+</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aCity <span style="color:#f92672">==</span> theSameCity);
+</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">==</span> theSameCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-ex_object_ref_1" id="tabs-ex_object_ref_1-1"  />
+<label for="tabs-ex_object_ref_1-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-ex_object_ref_2" id="tabs-ex_object_ref_2-0" checked="checked" />
+<label for="tabs-ex_object_ref_2-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What is the output of the following program?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> City anotherCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100, <span style="color:#e6db74">&#34;Emilia-Romagna&#34;</span>);
+</span></span><span style="display:flex;"><span> City yetAnotherCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100, <span style="color:#e6db74">&#34;Emilia-Romagna&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> yetAnotherCity.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> anotherCity.<span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(yetAnotherCity.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> anotherCity <span style="color:#f92672">=</span> yetAnotherCity;
+</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(anotherCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(anotherCity <span style="color:#f92672">==</span> yetAnotherCity);
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-ex_object_ref_2" id="tabs-ex_object_ref_2-1"  />
+<label for="tabs-ex_object_ref_2-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><blockquote>
+<p>Exercise 2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#e6db74">&#34;Bologna&#34;</span>
+</span></span><span style="display:flex;"><span>46100
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></blockquote>
+</div>
+</div>
+<h2 id="passing-by-value-or-by-reference">
+  Passing by value or by reference
+  <a class="anchor" href="#passing-by-value-or-by-reference">#</a>
+</h2>
+<p>Programming languages differ in the way arguments are passed to methods.
+Two common strategies are:</p>
+<ul>
+<li><strong>passing by value</strong>: the method receives as input a <em>copy</em> of each argument,</li>
+<li><strong>passing by reference</strong>: the method receives as input a <em>reference</em> to each argument (which allows the method to modify the initial argument).</li>
+</ul>
+<p>Consider for instance the following program (in pseudocode):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInteger <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">myMethod</span>(myInteger)
+</span></span><span style="display:flex;"><span>print(myInteger)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> argument){
+</span></span><span style="display:flex;"><span>  argument <span style="color:#f92672">+=</span> 1
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>If the argument is passed by value, then the program will print <code>0</code>.</li>
+<li>If the argument is passed by reference, then the program will print <code>1</code>.</li>
+</ul>
+<h3 id="javaByValue">
+  Java passes by value
+  <a class="anchor" href="#javaByValue">#</a>
+</h3>
+<p>In Java (and many other programming languages, like C, Python, Javascript, etc.), arguments are <a href="https://www.javadude.com/articles/passbyvalue.htm">passed by value</a>.
+So the above program translated in Java will print <code>0</code>.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> Consider a method with a <a href="#refType">reference type</a> argument.
+Because Java passes by value, this method will receive a copy of this argument.
+But this is a copy <em>of the reference</em>, not a copy of the object itself.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-ex_passByValue" id="tabs-ex_passByValue-0" checked="checked" />
+<label for="tabs-ex_passByValue-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What does the following Java program print?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> myInteger <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>  City myFirstCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100, <span style="color:#e6db74">&#34;Tuscany&#34;</span>);
+</span></span><span style="display:flex;"><span>  City mySecondCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100, <span style="color:#e6db74">&#34;Emilia-Romagna&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  myMethod(myInteger, myFirstCity, mySecondCity);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myInteger);
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myFirstCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySecondCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> integer, City firstCity, City secondCity){
+</span></span><span style="display:flex;"><span>    integer <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(integer);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    firstCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> 20590;
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(firstCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    secondCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, 00100, <span style="color:#e6db74">&#34;Lazio&#34;</span>);
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(secondCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-ex_passByValue" id="tabs-ex_passByValue-1"  />
+<label for="tabs-ex_passByValue-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  1
+</span></span><span style="display:flex;"><span>  20590
+</span></span><span style="display:flex;"><span>  00100
+</span></span><span style="display:flex;"><span>  0
+</span></span><span style="display:flex;"><span>  20590
+</span></span><span style="display:flex;"><span>  46100
+</span></span></code></pre></div></div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#declaration">Declaration</a></li>
+    <li><a href="#constructor">Constructor</a>
+      <ul>
+        <li><a href="#writing-a-constructor-in-java">Writing a constructor in Java</a></li>
+        <li><a href="#calling-a-constructor-in-java">Calling a constructor in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#accessing-an-object-in-java">Accessing an object in Java</a></li>
+    <li><a href="#refType">Reference type vs primitive type</a></li>
+    <li><a href="#passing-by-value-or-by-reference">Passing by value or by reference</a>
+      <ul>
+        <li><a href="#javaByValue">Java passes by value</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

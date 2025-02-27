@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  A simplified view
+  #
+
+From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
+
+has an unlimited number of cores, and
+relies exclusively on parallelism.
+
+
+  Parallel computation
+  #
+
+In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.
+This syntax extends imperative pseudocode with three keywords:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/multithreading/sections/simple/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="A simplified view">
+  <meta property="og:description" content="A simplified view # From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
+has an unlimited number of cores, and relies exclusively on parallelism. Parallel computation # In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.
+This syntax extends imperative pseudocode with three keywords:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>A simplified view | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/multithreading/sections/simple/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>A simplified view</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#parallel-computation">Parallel computation</a>
+      <ul>
+        <li><a href="#spawnSync"><code>spawn</code> and <code>sync</code></a></li>
+        <li><a href="#parallel"><code>parallel</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#creating-a-thread">Creating a thread</a></li>
+        <li><a href="#spawning-a-thread">Spawning a thread</a></li>
+        <li><a href="#waiting-for-a-thread-to-terminate">Waiting for a thread to terminate</a></li>
+        <li><a href="#loop">Loop</a></li>
+        <li><a href="#pause">Pause</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="a-simplified-view">
+  A simplified view
+  <a class="anchor" href="#a-simplified-view">#</a>
+</h1>
+<p>From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:</p>
+<ul>
+<li>has an unlimited number of cores, and</li>
+<li>relies exclusively on parallelism.</li>
+</ul>
+<h2 id="parallel-computation">
+  Parallel computation
+  <a class="anchor" href="#parallel-computation">#</a>
+</h2>
+<p>In this section, we borrow the simple syntax for parallel computation used in the popular textbook <a href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms">Introduction to algorithms</a>.</p>
+<p>This syntax extends imperative pseudocode with three keywords:</p>
+<ul>
+<li><code>spawn</code></li>
+<li><code>sync</code></li>
+<li><code>parallel</code></li>
+</ul>
+<p>These keywords correspond to primitives that are available (in one form or another) in many programming languages (like Java) or libraries (like OpenMP) that support multithreading.</p>
+<h3 id="spawnSync">
+  <code>spawn</code> and <code>sync</code>
+  <a class="anchor" href="#spawnSync">#</a>
+</h3>
+<ul>
+<li>the keyword <code>spawn</code> allows the current thread to create a child thread and execute an instruction (possibly a method call) in this child thread, as follows:</li>
+</ul>
+<p>$\qquad$ <code>spawn &lt;myInstruction&gt;</code></p>
+<ul>
+<li>the keyword <code>sync</code> forces the current thread to pause its execution, until all the threads that it has spawned have terminated.
+<!--In pseudocode, this is written as a single "instruction"-->
+<!--$\qquad$ `sync`-->
+</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following method:</p>
+<ul>
+<li>takes as arguments two vectors with integer values,</li>
+<li>computes the sum of the values of each vector, and returns the sum of the two results.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">aggregate</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v1, <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v2){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> spawn <span style="color:#a6e22e">sumElts</span>(v1)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> sumElts(v2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;waiting&#34;</span>)
+</span></span><span style="display:flex;"><span>    sync
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> s1 <span style="color:#f92672">+</span> s2
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumElts</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> v.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        sum <span style="color:#f92672">+=</span> v<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;done&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this method:</p>
+<ul>
+<li>the statement <code>spawn sumElts(v1)</code> creates a child thread and executes the auxiliary method <code>sumElts</code> (with argument <code>v1</code>) in this child thread.</li>
+<li>the statement <code>sync</code> forces the main thread to wait for termination of the child thread.</li>
+</ul>
+<p>There is <em>no guarantee</em> on which of the two threads will first finish executing the method <code>sumElts</code>.
+As a result, depending on the runtime environment,
+the program may output either</p>
+<pre tabindex="0"><code>done
+done
+waiting
+</code></pre><p>or</p>
+<pre tabindex="0"><code>done
+waiting
+done
+</code></pre></blockquote>
+<h3 id="parallel">
+  <code>parallel</code>
+  <a class="anchor" href="#parallel">#</a>
+</h3>
+<p>The keyword <code>parallel</code> is associated to a loop.
+Intuitively, it allows the environment to execute iterations of this loop in different threads (for instance, the library OpenMP provides such a keyword).</p>
+<p>The (abstract) syntax is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> parallel (<span style="color:#f92672">&lt;</span>myIterationCondition<span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>myLoopBody<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+We can parallelize the auxiliary method <code>sumElts</code> in our previous example by adding the keyword <code>parallel</code> to the loop:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumElts</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">parallel</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> v.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        sum <span style="color:#f92672">+=</span> v<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>The keyword <code>parallel</code> can be replaced with combinations of <code>spawn</code> and (if needed) <code>sync</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The example that immediately precedes can be rewritten as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumElts</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    sumRec(v, 0, v.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumRec</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> max){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">=</span> max){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> v<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// compute the middle index</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (i <span style="color:#f92672">+</span> max) <span style="color:#f92672">/</span> 2
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// recursive call on the left half, in a separate thread</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> leftSum <span style="color:#f92672">=</span> spawn <span style="color:#a6e22e">sumRec</span>(v, i, mid)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// recursive call on the right half (in the current thread)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> rightSum <span style="color:#f92672">=</span> sumRec(v, mid <span style="color:#f92672">+</span> 1, max)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sync
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> leftSum <span style="color:#f92672">+</span> rightSum
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+The <strong>span</strong> of a program&rsquo;s execution is the maximal number of instructions that it has to perform <em>sequentially</em>.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_parallel" id="tabs-exercise_parallel-0" checked="checked" />
+<label for="tabs-exercise_parallel-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Let $f(n)$ measure the span of the program above, where $n$ is the size of the input vector.</p>
+<p>Assuming a number of cores $\ge n$, which asymptotic class of cost functions does $f$ belong to?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_parallel" id="tabs-exercise_parallel-1"  />
+<label for="tabs-exercise_parallel-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>$f$ is in $\Theta(\log n)$</p>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+In this example, it may be tempting to spawn the threads sequentially, rather than recursively.
+However, the benefit of parallelization is lost:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int sumElts(int<span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    int sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> v<span style="color:#f92672">.</span>length; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        spawn sum <span style="color:#f92672">+=</span> v[i]
+</span></span><span style="display:flex;"><span>        sync
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="creating-a-thread">
+  Creating a thread
+  <a class="anchor" href="#creating-a-thread">#</a>
+</h3>
+<p>A thread in Java is an instance of the class <code>java.lang.Thread</code>.</p>
+<p>There are many alternative syntaxes to create an instance of this class.
+We cover here two of the most common ones.</p>
+<h4 id="instantiate-runnable">
+  Instantiate <code>Runnable</code>
+  <a class="anchor" href="#instantiate-runnable">#</a>
+</h4>
+<p>The constructor <code>Thread(Runnable runnable)</code> takes as input an instance of the interface <code>Runnable</code>.</p>
+<p>Runnable is a <a href="http://localhost:1313/docs/lambda/sections/type/#functionalInterface">functional interface</a>, whose method is called <code>run</code> and has type</p>
+<p>$\qquad$ <code>void</code> $\to$ <code>void</code></p>
+<p>Therefore it can be instantiated with a callback method (that takes no argument and returns no value).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>); } );
+</span></span></code></pre></div></blockquote>
+<p>Alternatively, in order to pass an argument to the thread, we can create a class that implements <code>Runnable</code>, and pass the argument to the constructor if this class.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRunnable</span> <span style="color:#66d9ef">implements</span> Runnable {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String arg;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyRunnable</span>(String arg){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg</span> <span style="color:#f92672">=</span> arg;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arg);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> MyRunnable(<span style="color:#e6db74">&#34;Hello&#34;</span>));
+</span></span></code></pre></div></blockquote>
+<h4 id="create-a-subclass-of-thread">
+  Create a subclass of <code>Thread</code>
+  <a class="anchor" href="#create-a-subclass-of-thread">#</a>
+</h4>
+<p>Instead of instantiating <code>Runnable</code>, we can create a subclass of <code>Thread</code> ans instantiate it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyThread</span> <span style="color:#66d9ef">extends</span> Thread {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String arg;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyThread</span>(String arg){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg</span> <span style="color:#f92672">=</span> arg;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arg);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyThread(<span style="color:#e6db74">&#34;Hello&#34;</span>);
+</span></span></code></pre></div><ul>
+<li>An advantage of this approach (compared to the previous one) is that we do not need to create an instance of <code>Runnable</code>.</li>
+<li>A drawback is that the class <code>MyThread</code> cannot extend another class (since Java does not support multiple inheritance).</li>
+</ul>
+<h3 id="spawning-a-thread">
+  Spawning a thread
+  <a class="anchor" href="#spawning-a-thread">#</a>
+</h3>
+<p>The instance method <code>Thread.start</code> spawns a thread.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>); } );
+</span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div></blockquote>
+<h3 id="waiting-for-a-thread-to-terminate">
+  Waiting for a thread to terminate
+  <a class="anchor" href="#waiting-for-a-thread-to-terminate">#</a>
+</h3>
+<p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with a more fine-grained control.</p>
+<p>Calling the instance method <code>Thread.join</code> for a thread $t$ causes the <em>current</em> thread to pause its execution until termination of $t$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { myExpensiveMethod(); } );
+</span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// wait for the spawned thread to terminate</span>
+</span></span><span style="display:flex;"><span>    myThread.<span style="color:#a6e22e">join</span>()
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (InterruptedException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Job done, resuming execution&#34;</span>);
+</span></span></code></pre></div><h3 id="loop">
+  Loop
+  <a class="anchor" href="#loop">#</a>
+</h3>
+<p>In Java, an operation analogous to the <code>parallel</code> keyword is the instance method <code>Stream.parallel</code> that we saw in the <a href="http://localhost:1313/docs/stream/sections/order/">dedicated section</a></p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> vector <span style="color:#f92672">=</span> getVector();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vector.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">parallel</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#f92672">&lt;</span>myPredicate<span style="color:#f92672">&gt;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#f92672">&lt;</span>myFunction<span style="color:#f92672">&gt;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">forEach</span>(<span style="color:#f92672">&lt;</span>myConsumer<span style="color:#f92672">&gt;</span>);
+</span></span></code></pre></div></blockquote>
+<p>In this case, the <em>whole</em> stream pipeline is executed in a concurrent fashion (possibly parallel if some cores are available).</p>
+<p>By default, a pool of threads of size $k - 1$ is used, where $k$ is the number of cores of the CPU (but a larger pool can be manually configured).</p>
+<h3 id="pause">
+  Pause
+  <a class="anchor" href="#pause">#</a>
+</h3>
+<p>The static method <code>Thread.sleep</code> can be used to pause the current thread for a certain amount of time.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">ptinln</span>(<span style="color:#e6db74">&#34;Going to sleep...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// sleep for 4 seconds</span>
+</span></span><span style="display:flex;"><span>Thread.<span style="color:#a6e22e">sleep</span>(4000);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">ptinln</span>(<span style="color:#e6db74">&#34;Waking up&#34;</span>);
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The method <code>Thread.sleep</code> does not guarantee that the input sleeping duration is precisely enforced.
+Therefore sleeping times should <em>not</em> be used to synchronize the activity of two threads.</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#parallel-computation">Parallel computation</a>
+      <ul>
+        <li><a href="#spawnSync"><code>spawn</code> and <code>sync</code></a></li>
+        <li><a href="#parallel"><code>parallel</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#creating-a-thread">Creating a thread</a></li>
+        <li><a href="#spawning-a-thread">Spawning a thread</a></li>
+        <li><a href="#waiting-for-a-thread-to-terminate">Waiting for a thread to terminate</a></li>
+        <li><a href="#loop">Loop</a></li>
+        <li><a href="#pause">Pause</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Using a terminal (demo)
+  #
+
+The following demo is meant to (quickly) illustrate some benefits of a properly configured terminal, as well a few terminal-based applications.
+This is not an introduction to bash or Linux core utilities.
+
+  Virtual environment
+  #
+
+For this demo, we deployed a virtual machine with a pre-configured terminal.
+The instructions for connecting to this machine are identical to the one for the project evaluation environment.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/labs/sections/demo/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Using a terminal (demo)">
+  <meta property="og:description" content="Using a terminal (demo) # The following demo is meant to (quickly) illustrate some benefits of a properly configured terminal, as well a few terminal-based applications.
+This is not an introduction to bash or Linux core utilities.
+Virtual environment # For this demo, we deployed a virtual machine with a pre-configured terminal.
+The instructions for connecting to this machine are identical to the one for the project evaluation environment.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Using a terminal (demo) | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/labs/sections/demo/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.d2bdf4d41b8b16ba58f297d496360ffb40cb9e480b1bad2b10f8936f4c137ad0.js" integrity="sha256-0r301BuLFrpY8pfUljYP&#43;0DLnkgLG60rEPiTb0wTetA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Using a terminal (demo)</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#virtual-environment">Virtual environment</a></li>
+    <li><a href="#creating-a-static-website">Creating a static website</a></li>
+    <li><a href="#navigation">Navigation</a></li>
+    <li><a href="#starting-the-web-server">Starting the web server</a></li>
+    <li><a href="#adding-content">Adding content</a></li>
+    <li><a href="#aliases">Aliases</a></li>
+    <li><a href="#scripts">Scripts</a></li>
+    <li><a href="#terminal-based-applications">Terminal-based applications</a>
+      <ul>
+        <li><a href="#ripgrep">ripgrep</a></li>
+        <li><a href="#ranger">ranger</a></li>
+        <li><a href="#htop">htop</a></li>
+        <li><a href="#ncdu">ncdu</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="using-a-terminal-demo">
+  Using a terminal (demo)
+  <a class="anchor" href="#using-a-terminal-demo">#</a>
+</h1>
+<p>The following demo is meant to (quickly) illustrate some benefits of a properly configured terminal, as well a few terminal-based applications.</p>
+<p>This is <em>not</em> an introduction to bash or Linux core utilities.</p>
+<h2 id="virtual-environment">
+  Virtual environment
+  <a class="anchor" href="#virtual-environment">#</a>
+</h2>
+<p>For this demo, we deployed a virtual machine with a pre-configured terminal.</p>
+<p>The instructions for connecting to this machine are identical to the one for the project <a href="https://unibz-pp-24-25.github.io/docs/labs/sections/eval/">evaluation environment</a>.</p>
+<h2 id="creating-a-static-website">
+  Creating a static website
+  <a class="anchor" href="#creating-a-static-website">#</a>
+</h2>
+<!-- For this demo, instead of the default shell (called "bash"), we will use the Z shell (a.k.a. "zsh"). -->
+<!-- To activate it, run: -->
+<!---->
+<!-- ```bash -->
+<!-- zsh -->
+<!-- ``` -->
+<!-- in the terminal (if you need to go back to bash at some point, you can either type `bash` or open a new terminal). -->
+<p>As an exercise, we will create a static website, using a simple framework called <a href="https://gohugo.io/">Hugo</a>.</p>
+<p>First, in our home folder, let us create a subfolder dedicated to our projects.
+For instance, we can call this subfolder <code>workspace</code>.
+To create this folder, <a href="https://unibz-pp-24-25.github.io/docs/labs/sections/eval/#apps">open a terminal</a> and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir workspace
+</span></span></code></pre></div><p>Then navigate to this folder with the command <code>cd</code> (you do not need to type the full name of the directory, just type <code>cd w</code>, and press the Tab key for autocompletion):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd workspace
+</span></span></code></pre></div><p>Next, we will (loosely) follow the quick start tutorial for Hugo.
+Explanations about some of the command below can be found <a href="https://gohugo.io/getting-started/quick-start/">here</a>.</p>
+<p>Copy-paste the following instruction and press Enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site mySite
+</span></span></code></pre></div><p>This will create a project in a fresh folder called <code>mySite</code>.
+Let us navigate to it (again, you can take advantage of autocompletion):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd mySite
+</span></span></code></pre></div><p>Now copy-paste the following commands to declare this folder as a git repository and download a graphical theme for our website:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;theme = &#39;ananke&#39;&#34;</span> &gt;&gt; hugo.toml
+</span></span></code></pre></div><h2 id="navigation">
+  Navigation
+  <a class="anchor" href="#navigation">#</a>
+</h2>
+<p>At any moment, you can run the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pwd
+</span></span></code></pre></div><p>to display the current directory.
+With this command, you can check that you are indeed in the folder <code>mySite</code>.</p>
+<p>To get a overview of the content of the current folder, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ll
+</span></span></code></pre></div><p>To get a recursive overview of the content of this folder, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tree
+</span></span></code></pre></div><p>In order to navigate to a certain subfolder in this tree, we can take advantage of the <a href="https://github.com/junegunn/fzf">fuzzy finder</a>.
+For instance, let us assume that we want to move to some folder called <code>socials</code>, but we forgot its exact path.</p>
+<p>Run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c
+</span></span></code></pre></div><p>This will display the paths to all directories in this tree.
+You can type characters to restrict your search, and use the up down arrow keys to select your destination.
+For instance, type the three character <code>soc</code>.
+The best matches are displayed at the bottom of the list.
+To select one of them, navigate up and down with the arrow keys and press Enter.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Note</em>.</strong> Thanks to fuzzy search, the characters that you type do not need to be contiguous in a path.
+For instance, when you typed <code>soc</code>, all paths containing these three letters (in that order, but not necessarily contiguous) were retained.</p>
+</blockquote>
+<p>Now let us navigate back to the <code>mySite</code> folder.
+Here we can use <a href="https://github.com/ajeetdsouza/zoxide">zoxide</a>, which uses our path navigation history to allow faster navigation.
+Run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zi
+</span></span></code></pre></div><p>and then type (the beginning of) <code>mySite</code>.</p>
+<p>Similarly, to go back to the <code>socials</code> subfolder that we previously went to, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zi
+</span></span></code></pre></div><p>again and type (the beginning of) <code>socials</code>.</p>
+<p>Alternatively, you can switch between your current location and the previous one (thanks to zoxide still) with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zz
+</span></span></code></pre></div><h2 id="starting-the-web-server">
+  Starting the web server
+  <a class="anchor" href="#starting-the-web-server">#</a>
+</h2>
+<p>Navigate (back) to the <code>mySite</code> folder (you should know how to do this by now), and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server
+</span></span></code></pre></div><p>This will start a local development server for our website.
+To visualize the site, open Firefox (from the app menu), and use the address displayed in the terminal (it should be <code>http://localhost:1313/</code>)</p>
+<p>To stop the server (or any Linux process running in a terminal), go back to the terminal an press Ctrl+C.</p>
+<p>Next, we will add content to our website, while keeping the server running.</p>
+<p>To restart the server, we can use our command history.
+Type the first letters of the command that we used above to start the serve (e.g. <code>hu</code>).
+By pressing the up and down arrow keys, you can scroll through the commands that you already typed and start with these letters.
+Scroll until you find the command <code>hugo server</code>, and press Enter to restart the server.</p>
+<p>In order to keep the server running, we will execute our next command in another terminal.
+You can create a new one by clicking on the boxed &ldquo;+&rdquo; icon:</p>
+<!-- Do not forget to activate zsh in this new terminal: -->
+<!---->
+<!-- ```bash -->
+<!-- zsh -->
+<!-- ``` -->
+<h2 id="adding-content">
+  Adding content
+  <a class="anchor" href="#adding-content">#</a>
+</h2>
+<p>Navigate to the (immediate) subfolder <code>content</code> of <code>mysite</code>.
+Then create a subfolder named <code>posts</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir posts
+</span></span></code></pre></div><p>Navigate to this new folder.
+Then create a new text file called <code>myPost.md</code>.
+You can for instance do this with the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gedit myPost.md
+</span></span></code></pre></div><p>which will open a new file with this name in text editor &ldquo;gedit&rdquo;.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+If you only type <code>ge</code> followed by Tab, the shell will suggest you a list of programs whose name starts with these letters.
+You can scroll through them by pressing Tab again, or add a letter to disambiguate your search.</p>
+</blockquote>
+<p>In the text editor, copy-paste the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>title = &#39;My First Post&#39;
+</span></span><span style="display:flex;"><span>date = 2024-01-14T07:07:07+01:00
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Introduction
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This is **bold** text, and this is *emphasized* text.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### Subsection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This is a [link](https://gohugo.io) to the Hugo website.
+</span></span></code></pre></div><p>In this file, everything below the header (title/date) is written in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a>.</p>
+<p>Save the file, and check with Firefox that your first post has been added to your website.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+To see your changes, you may need to force Firefox to clear its cache: in &ldquo;Settings | Privacy &amp; Security | Cookies and Site Data&rdquo;, click on the &ldquo;Clear Data&rdquo; button.</p>
+<p>If this does not work, then you can stop and restart the Hugo server, as explained above.</p>
+</blockquote>
+<h2 id="aliases">
+  Aliases
+  <a class="anchor" href="#aliases">#</a>
+</h2>
+<p>The command <code>c</code> that we used above is an alias for a more complex command, namely <code>cd $(find * -type d | fzf)</code></p>
+<p>We declared this alias in the file <code>~/.zshrc</code> (remember that <code>~</code> is a shortcut for your home folder).</p>
+<p>Let us open this file to see the declaration of this alias.
+Navigate to your home folder, for instance with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd
+</span></span></code></pre></div><p>And list its content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ll
+</span></span></code></pre></div><p>The file <code>.zshrc</code> should be there.
+Open this file with gedit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gedit .zshrc
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> Again, you can take advantage of autocompletion here.
+For instance, press <code>ged</code> followed by Tab followed by <code>.z</code> followed by Tab.</p>
+</blockquote>
+<p>Towards the end of this file, you will see the declaration of the alias:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd $(find * -type d | fzf)&#39;</span>
+</span></span></code></pre></div><p>Let us create another useful alias.
+Ubuntu has a convenient command called <code>xdg-open</code> that opens a file with the default application associated to this file&rsquo;s extension (this is the equivalent of a double-click in a graphical file browser).
+Let us set a simpler name than <code>xdg-open</code> to execute this command.
+For instance <code>o</code> (like &ldquo;open&rdquo;).</p>
+<p>First, let us check that the name <code>o</code> is not used already for another command.
+Open a new terminal and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>o
+</span></span></code></pre></div><p>You should get a &ldquo;command not found&rdquo; message, which confirms that this command is free.</p>
+<p>Now let us add the following line to the <code>.zshrc</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias o<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xdg-open&#39;</span>
+</span></span></code></pre></div><p>Save the file and open a new terminal.</p>
+<!-- and switch to zsh. -->
+<p>You can now use the <code>o</code> command to open any file.</p>
+<p>To see this, let us navigate back to the <code>socials</code> folder that we were previously in (e.g. using <code>zi</code>, as explained above).
+If you list the files in this folder (with <code>ll</code>), then you will see that they have the <code>.svg</code> extension.
+To open one of these files, you can type <code>o </code> and the first letters of the name of the file, then Tab for autocompletion.
+This will open the file with the default image viewer application on this machine.</p>
+<h2 id="scripts">
+  Scripts
+  <a class="anchor" href="#scripts">#</a>
+</h2>
+<p>If you want to use an alias to execute a (possibly complex) <em>sequence</em> of commands, then the preferred way is to write a script.</p>
+<p>For instance, we could write a script that navigates to the <code>mySite</code> folder and then starts the hugo server.
+And we may use the alias <code>ws</code> (like &ldquo;website&rdquo;) to call this script (you can check that it is free).</p>
+<p>Navigate to the <code>~/bin</code> folder, and create a text file called <code>ws</code> (for instance with gedit, as we did above for the post).</p>
+<p>In this file, copy-paste the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#! /bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>cd ~/workspace/mySite
+</span></span><span style="display:flex;"><span>hugo server start
+</span></span></code></pre></div><p>Observe that these are the two instructions for the two tasks that we want to execute.
+Save the file, and make it executable by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod u+x ws
+</span></span></code></pre></div><p>To test your script, close all running instances of hugo (if any), e.g. with Ctrl + C, as explained above.</p>
+<p>Now regardless of your location, you can type <code>ws</code> to start the web server.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Note.</em></strong>
+Linux shells (such as bash or zsh) support the same language for commands and scripts.
+This is a full-fledged programming language (with conditional statements, loops, etc.), where an instruction can also be a command.</p>
+</blockquote>
+<h2 id="terminal-based-applications">
+  Terminal-based applications
+  <a class="anchor" href="#terminal-based-applications">#</a>
+</h2>
+<p>To conclude the demo, we introduce a few convenient applications that run in a terminal.
+These may save you time (compared to similar applications that rely on a GUI).</p>
+<h3 id="ripgrep">
+  ripgrep
+  <a class="anchor" href="#ripgrep">#</a>
+</h3>
+<p><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> allows you to search files that contain certain words or regular expressions (your IDE offers a similar functionality).
+For instance, let us assume that we want to search for all files under <code>mySite</code> that contain the string &ldquo;Canada&rdquo;.</p>
+<p>Navigate to the <code>mySite</code> folder.
+Then run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rg Canada
+</span></span></code></pre></div><p>This will display the path to each (text) file that contains this word (in this example, there is only one match), and the corresponding line numbers.</p>
+<h3 id="ranger">
+  ranger
+  <a class="anchor" href="#ranger">#</a>
+</h3>
+<p><a href="https://github.com/ranger/ranger">ranger</a> is a popular terminal-based file browser.</p>
+<p>To open it, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ranger
+</span></span></code></pre></div><p>You can navigate within the current directory with the up and down arrow keys, and in the directory tree (from child to parent and conversely) with the left and right arrow keys.
+Note that it also displays previews of text files.</p>
+<p>To quit ranger, you can press the letter q.</p>
+<h3 id="htop">
+  htop
+  <a class="anchor" href="#htop">#</a>
+</h3>
+<p><a href="https://htop.dev/">htop</a> allows you to monitor processes running on your machine.
+To open it, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>htop
+</span></span></code></pre></div><p>The upper part of the interface displays memory and CPU usage, whereas the lower part displays running process (sorted by CPU usage by default).
+You can kill a process with F9.</p>
+<p>To quit htop, you can press the letter q.</p>
+<h3 id="ncdu">
+  ncdu
+  <a class="anchor" href="#ncdu">#</a>
+</h3>
+<p><a href="https://dev.yorhel.nl/ncdu">ncdu</a> allows you to visualize the amount of disk space taken by your files and programs.</p>
+<p>To open it, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ncdu
+</span></span></code></pre></div><p>The folders and files in the current folder are sorted by disk space, and you can navigate the directory tree using the arrow keys (like with ranger).</p>
+<p>To quit ranger, you can press the letter q.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#virtual-environment">Virtual environment</a></li>
+    <li><a href="#creating-a-static-website">Creating a static website</a></li>
+    <li><a href="#navigation">Navigation</a></li>
+    <li><a href="#starting-the-web-server">Starting the web server</a></li>
+    <li><a href="#adding-content">Adding content</a></li>
+    <li><a href="#aliases">Aliases</a></li>
+    <li><a href="#scripts">Scripts</a></li>
+    <li><a href="#terminal-based-applications">Terminal-based applications</a>
+      <ul>
+        <li><a href="#ripgrep">ripgrep</a></li>
+        <li><a href="#ranger">ranger</a></li>
+        <li><a href="#htop">htop</a></li>
+        <li><a href="#ncdu">ncdu</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

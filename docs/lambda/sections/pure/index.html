@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Pure function
+  #
+
+
+  Side effects
+  #
+
+
+Definition.
+A method has side effects if it modifies resources (variable, object, array, etc.) that are accessible outside of its scope.
+
+
+  Definition
+  #
+
+A pure function is a method that intuitively behaves like a mathematical function.
+More precisely:
+
+Definition.
+A pure function is a method that:
+
+returns a value,
+returns the same value if called twice with the same arguments, and
+has no side-effect.
+
+
+
+  Example
+  #
+
+
+
+Exercise
+The Java method createUsers below violates each of the three properties that define a pure function.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/lambda/sections/pure/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Pure function">
+  <meta property="og:description" content="Pure function # Side effects # Definition. A method has side effects if it modifies resources (variable, object, array, etc.) that are accessible outside of its scope.
+Definition # A pure function is a method that intuitively behaves like a mathematical function. More precisely:
+Definition. A pure function is a method that:
+returns a value, returns the same value if called twice with the same arguments, and has no side-effect. Example # Exercise The Java method createUsers below violates each of the three properties that define a pure function.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pure function | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/lambda/sections/pure/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Pure function</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#side-effects">Side effects</a></li>
+    <li><a href="#definition">Definition</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#benefits">Benefits</a>
+      <ul>
+        <li><a href="#easier-debugging">Easier debugging</a></li>
+        <li><a href="#readability">Readability</a></li>
+        <li><a href="#easier-parallelization">Easier parallelization</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="pure-function">
+  Pure function
+  <a class="anchor" href="#pure-function">#</a>
+</h1>
+<h2 id="side-effects">
+  Side effects
+  <a class="anchor" href="#side-effects">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A method has <strong>side effects</strong> if it modifies resources (variable, object, array, etc.) that are accessible outside of its scope.</p>
+</blockquote>
+<h2 id="definition">
+  Definition
+  <a class="anchor" href="#definition">#</a>
+</h2>
+<p>A pure function is a method that intuitively behaves like a mathematical function.
+More precisely:</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A <strong>pure function</strong> is a method that:</p>
+<ol>
+<li>returns a value,</li>
+<li>returns the <em>same</em> value if called twice with the same arguments, and</li>
+<li>has no side-effect.</li>
+</ol>
+</blockquote>
+<h2 id="example">
+  Example
+  <a class="anchor" href="#example">#</a>
+</h2>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_pure_function" id="tabs-exercise_pure_function-0" checked="checked" />
+<label for="tabs-exercise_pure_function-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The Java method <code>createUsers</code> below violates each of the three properties that define a pure function.</p>
+<p>Can you see why?</p>
+<p>How would you rewrite it into a pure function?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids <span style="color:#f92672">=</span> parseIds();
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> parseNames();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>ids.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>createUsers(ids, names, users);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names, User<span style="color:#f92672">[]</span> users) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>, names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_pure_function" id="tabs-exercise_pure_function-1"  />
+<label for="tabs-exercise_pure_function-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids <span style="color:#f92672">=</span> parseIds();
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> parseNames();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> createUsers(ids, names);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names) {
+</span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>ids.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>, names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> users;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<h2 id="benefits">
+  Benefits
+  <a class="anchor" href="#benefits">#</a>
+</h2>
+<h3 id="easier-debugging">
+  Easier debugging
+  <a class="anchor" href="#easier-debugging">#</a>
+</h3>
+<ul>
+<li>Because it has no side effect, a pure function may cause of a bug <em>only</em> if it returns an incorrect value.</li>
+<li>Because it only depend on its arguments, the behavior of a pure function is easier to predict.</li>
+</ul>
+<h3 id="readability">
+  Readability
+  <a class="anchor" href="#readability">#</a>
+</h3>
+<p>The behavior of a pure function can be fully documented by describing its signature (arguments and return value).</p>
+<h3 id="easier-parallelization">
+  Easier parallelization
+  <a class="anchor" href="#easier-parallelization">#</a>
+</h3>
+<p>Consider two pure functions $f$ and $g$.
+If the input of $f$ (resp. $g$) does not depend on the output of $g$ (resp. $f$), then they can be executed in any order (therefore also in parallel).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+If $f$ and $g$ are pure functions, the two programs below (written in pseudocode) are equivalent:</p>
+</blockquote>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> f(a)
+</span></span><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> g(b)
+</span></span><span style="display:flex;"><span>   result <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> g(b)
+</span></span><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> f(a)
+</span></span><span style="display:flex;"><span>   result <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div>  </div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#side-effects">Side effects</a></li>
+    <li><a href="#definition">Definition</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#benefits">Benefits</a>
+      <ul>
+        <li><a href="#easier-debugging">Easier debugging</a></li>
+        <li><a href="#readability">Readability</a></li>
+        <li><a href="#easier-parallelization">Easier parallelization</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

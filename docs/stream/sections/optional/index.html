@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Optional
+  #
+
+The class Optional was introduced in Java 8.
+An Optional is a container object that may or may not contain a value.
+Its main purpose is to indicate that the object returned by a function may be null.
+
+Example.
+In our game, the interface Board provides a method getUnit(int rowIndex, int columnIndex), that returns the unit standing on the tile with these coordinates, if any.
+This could be implemented with a method">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/stream/sections/optional/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Optional">
+  <meta property="og:description" content="Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.
+Example. In our game, the interface Board provides a method getUnit(int rowIndex, int columnIndex), that returns the unit standing on the tile with these coordinates, if any.
+This could be implemented with a method">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Optional | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/stream/sections/optional/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Optional</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#syntax">Syntax</a>
+      <ul>
+        <li><a href="#declaring-an-empty-optional">Declaring an empty <code>Optional</code></a></li>
+        <li><a href="#setting-an-optionals-value">Setting an <code>Optional</code>&rsquo;s value</a></li>
+        <li><a href="#getting-an-optionals-value">Getting an <code>Optional</code>&rsquo;s value</a></li>
+      </ul>
+    </li>
+    <li><a href="#primitive-types">Primitive types</a></li>
+    <li><a href="#optional-and-streams">Optional and streams</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="optional">
+  Optional
+  <a class="anchor" href="#optional">#</a>
+</h1>
+<p>The class <code>Optional</code> was introduced in Java 8.
+An <code>Optional</code> is a container object that may or may not contain a value.
+Its main purpose is to indicate that the object returned by a function may be <code>null</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In our <a href="http://localhost:1313/docs/intro/sections/board_game/">game</a>, the interface <code>Board</code> provides a method <code>getUnit(int rowIndex, int columnIndex)</code>, that returns the unit standing on the tile with these coordinates, <em>if any</em>.</p>
+<p>This could be implemented with a method</p>
+<p>$\qquad$ <code>Unit getUnit(int rowIndex, int columnIndex)</code></p>
+<p>that returns <code>null</code> if there is no unit on this tile (and returns the unit otherwise).</p>
+<p>However, from the signature of this method, it is not immediately clear that the returned unit may be <code>null</code>.
+This may cause a <code>NullPointerException</code> at runtime, if the method is called by some program that does not check whether this unit is <code>null</code>.</p>
+<p>Instead, we can use</p>
+<p>$\qquad$ <code>Optional&lt;Unit&gt; getUnit(int rowIndex, columnIndex)</code></p>
+<p>to clearly indicate that the return value may not be present.</p>
+</blockquote>
+<h2 id="syntax">
+  Syntax
+  <a class="anchor" href="#syntax">#</a>
+</h2>
+<h3 id="declaring-an-empty-optional">
+  Declaring an empty <code>Optional</code>
+  <a class="anchor" href="#declaring-an-empty-optional">#</a>
+</h3>
+<p>An empty <code>Optional</code> can be initialized with the static method <code>Optional.empty()</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> unit <span style="color:#f92672">=</span> Optional.<span style="color:#a6e22e">empty</span>();
+</span></span></code></pre></div></blockquote>
+<h3 id="setting-an-optionals-value">
+  Setting an <code>Optional</code>&rsquo;s value
+  <a class="anchor" href="#setting-an-optionals-value">#</a>
+</h3>
+<p>The value of an <code>Optional</code> can be set with the static method <code>Optional.of</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> unicorn <span style="color:#f92672">=</span> Optional.<span style="color:#a6e22e">of</span>(<span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>));
+</span></span></code></pre></div></blockquote>
+<h3 id="getting-an-optionals-value">
+  Getting an <code>Optional</code>&rsquo;s value
+  <a class="anchor" href="#getting-an-optionals-value">#</a>
+</h3>
+<p>Whether an Optional has a value can be checked with the instance method <code>Optional.isPresent()</code>, and the value (if present) can be retrieved with the instance method <code>Optional.get()</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> unit <span style="color:#f92672">=</span> board.<span style="color:#a6e22e">getUnit</span>(rowIndex, columnIndex);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(unit.<span style="color:#a6e22e">isPresent</span>()){
+</span></span><span style="display:flex;"><span>    unit.<span style="color:#a6e22e">get</span>().<span style="color:#a6e22e">boost</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>The instance method <code>Optional.ifPresent</code> can be used (as an alternative) for the same purpose.</p>
+<p>If the optional object has type <code>Optional&lt;</code>$T$<code>&gt;</code>, then <code>ifPresent</code> takes as argument a callback method with type</p>
+<p>$\qquad T \to$ <code>void</code></p>
+<p>(a.k.a. a Java <a href=""><code>Consumer</code></a>) that is executed iff the <code>Optional</code> is nonempty.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> unit <span style="color:#f92672">=</span> board.<span style="color:#a6e22e">getUnit</span>(rowIndex, columnIndex);
+</span></span><span style="display:flex;"><span>unit.<span style="color:#a6e22e">ifPresent</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">boost</span>());
+</span></span></code></pre></div></blockquote>
+<h2 id="primitive-types">
+  Primitive types
+  <a class="anchor" href="#primitive-types">#</a>
+</h2>
+<p>Java 8 also introduced the container <code>OptionalInt</code> (resp. <code>OptionalLong</code>, <code>OptionalDouble</code>), which behaves analogously to <code>Optional&lt;Integer&gt;</code> (resp. <code>Optional&lt;Long&gt;</code>, <code>Optional&lt;Double&gt;</code>), but contains an <code>int</code> (resp. <code>long</code>, <code>double</code>).
+It is mostly used in combination with <code>IntStream</code> (resp. <code>LongStream</code>, <code>DoubleStream</code>).</p>
+<h2 id="optional-and-streams">
+  Optional and streams
+  <a class="anchor" href="#optional-and-streams">#</a>
+</h2>
+<p>Some methods of the interface <code>Stream&lt;</code>$T$<code>&gt;</code> (resp. <code>IntStream</code>, <code>LongStream</code>, <code>DoubleStream</code>) return an <code>Optional&lt;</code>$T$<code>&gt;</code> (resp.<code>OptionalInt</code>, <code>OptionalLong</code>, <code>OptionalDouble</code>).</p>
+<p>In particular:</p>
+<ul>
+<li><code>findFirst</code></li>
+<li><code>average</code>,</li>
+<li><code>max</code> and <code>min</code></li>
+<li>etc.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#syntax">Syntax</a>
+      <ul>
+        <li><a href="#declaring-an-empty-optional">Declaring an empty <code>Optional</code></a></li>
+        <li><a href="#setting-an-optionals-value">Setting an <code>Optional</code>&rsquo;s value</a></li>
+        <li><a href="#getting-an-optionals-value">Getting an <code>Optional</code>&rsquo;s value</a></li>
+      </ul>
+    </li>
+    <li><a href="#primitive-types">Primitive types</a></li>
+    <li><a href="#optional-and-streams">Optional and streams</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

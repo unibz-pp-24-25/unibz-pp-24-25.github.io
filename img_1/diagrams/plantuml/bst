@@ -1,0 +1,11 @@
+@startuml
+scale 250 width
+
+class Node {
+ K key   
+ V value
+ Node leftChild
+ Node rightChild
+}
+
+@enduml

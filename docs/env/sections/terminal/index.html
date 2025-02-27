@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Terminal
+  #
+
+Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
+But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs.
+Possible benefits are:
+
+efficiency (thanks to autocompletion, there is very little to type),
+automation (via scripting),
+more transparency (a GUI may add a layer of obfuscation),
+stability over time (GUIs tend to change from one version of a program to another),
+a wider range of available actions (a GUI may allow you to execute a limited set of commands only),
+reproducibility (the same command performs the same action, with a limited reliance on memory),
+customizability.
+
+
+  Shell
+  #
+
+
+A shell interprets command typed in a terminal.
+It can also interpret programs (usually called scripts).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Terminal">
+  <meta property="og:description" content="Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
+But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:
+efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), a wider range of available actions (a GUI may allow you to execute a limited set of commands only), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability. Shell # A shell interprets command typed in a terminal. It can also interpret programs (usually called scripts).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Terminal | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.d2bdf4d41b8b16ba58f297d496360ffb40cb9e480b1bad2b10f8936f4c137ad0.js" integrity="sha256-0r301BuLFrpY8pfUljYP&#43;0DLnkgLG60rEPiTb0wTetA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="active">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Terminal</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell">Shell</a>
+      <ul>
+        <li><a href="#on-linux">on Linux</a></li>
+        <li><a href="#on-macos">on macOS</a></li>
+        <li><a href="#windows">on Windows</a></li>
+      </ul>
+    </li>
+    <li><a href="#autocompletion">Autocompletion</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="terminal">
+  Terminal
+  <a class="anchor" href="#terminal">#</a>
+</h1>
+<p>Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).</p>
+<p>But even when a GUI is available, a Command Line Interface (CLI) can still be the <em>preferred way</em> to interact with some programs.
+Possible benefits are:</p>
+<ul>
+<li>efficiency (thanks to autocompletion, there is very little to type),</li>
+<li>automation (via scripting),</li>
+<li>more transparency (a GUI may add a layer of obfuscation),</li>
+<li>stability over time (GUIs tend to change from one version of a program to another),</li>
+<li>a wider range of available actions (a GUI may allow you to execute a limited set of commands only),</li>
+<li>reproducibility (the same command performs the same action, with a limited reliance on memory),</li>
+<li>customizability.</li>
+</ul>
+<h2 id="shell">
+  Shell
+  <a class="anchor" href="#shell">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>shell</strong> interprets command typed in a terminal.
+It can also interpret programs (usually called <strong>scripts</strong>).</p>
+</blockquote>
+<h3 id="on-linux">
+  on Linux
+  <a class="anchor" href="#on-linux">#</a>
+</h3>
+<p>The default shell on most Linux distributions is <a href="https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">bash</a>.</p>
+<h3 id="on-macos">
+  on macOS
+  <a class="anchor" href="#on-macos">#</a>
+</h3>
+<p>The default shell on macOS is <a href="https://en.wikipedia.org/wiki/Z_shell">zsh</a>.
+It extends bash with modern features (notably customization options, via plugins).</p>
+<h3 id="windows">
+  on Windows
+  <a class="anchor" href="#windows">#</a>
+</h3>
+<p>Windows comes with two shells by default:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (a.k.a. command processor shell) and</li>
+<li>Windows PowerShell.</li>
+</ul>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+<a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> is a closely related (cross-platform) shell developed by Microsoft.
+It is <a href="https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.5#using-powershell-7-side-by-side-with-windows-powershell-51">not fully compatible</a> with Windows PowerShell (they are currently meant to &ldquo;coexist&rdquo;).</p>
+</blockquote>
+<p>Other shells are commonly used by Windows developers that offer a (possibly partial) Linux-like shell experience.
+Popular options include:</p>
+<ul>
+<li><a href="https://gitforwindows.org/">git bash</a> (often used to learn git),</li>
+<li><a href="https://www.cygwin.com/">Cygwin</a>,</li>
+<li><a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">WSL</a>,
+whose latest version runs a full (Arch) Linux virtual machine.</li>
+</ul>
+<h2 id="autocompletion">
+  Autocompletion
+  <a class="anchor" href="#autocompletion">#</a>
+</h2>
+<p>Modern shells provide at least two types of command autocompletion:</p>
+<ul>
+<li>completion based on your command history, and</li>
+<li>smart completion (a.k.a. &ldquo;Tab-completion&rdquo;) for possible arguments, paths, etc.</li>
+</ul>
+<p>As a result, using a terminal requires very little typing.</p>
+<p>By default, autocompletion may not be activated (or installed) on your machine.
+We will see how to do it during the <a href="">first lab</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell">Shell</a>
+      <ul>
+        <li><a href="#on-linux">on Linux</a></li>
+        <li><a href="#on-macos">on macOS</a></li>
+        <li><a href="#windows">on Windows</a></li>
+      </ul>
+    </li>
+    <li><a href="#autocompletion">Autocompletion</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

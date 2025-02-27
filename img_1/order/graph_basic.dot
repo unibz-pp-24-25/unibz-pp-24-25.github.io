@@ -1,0 +1,8 @@
+digraph rebb {
+graph [size="4.5!"]
+    a -> a;
+    a -> b;
+    b -> a;
+    b -> c;
+    d;
+}

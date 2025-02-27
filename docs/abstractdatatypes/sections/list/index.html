@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  List
+  #
+
+
+The abstract data type list simulates a tuple.
+
+Accordingly, a list may contain duplicates.
+A list may expose the following methods:
+
+isEmpty is self-explanatory,
+append adds an element at the end of the list,
+prepend adds an element at the beginning of the list,
+tail returns the sub-list identical to the current one, but without its first element,
+etc.
+
+
+Note. The size of a list is often unbounded (as opposed to the size of an array for instance).
+This can be implemented in different ways, for instance with a dynamic array or a linked list.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/abstractdatatypes/sections/list/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="List">
+  <meta property="og:description" content="List # The abstract data type list simulates a tuple.
+Accordingly, a list may contain duplicates.
+A list may expose the following methods:
+isEmpty is self-explanatory, append adds an element at the end of the list, prepend adds an element at the beginning of the list, tail returns the sub-list identical to the current one, but without its first element, etc. Note. The size of a list is often unbounded (as opposed to the size of an array for instance). This can be implemented in different ways, for instance with a dynamic array or a linked list.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>List | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/abstractdatatypes/sections/list/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>List</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#syntax">Syntax</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="list">
+  List
+  <a class="anchor" href="#list">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p>The abstract data type <strong>list</strong> simulates a <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#tuple">tuple</a>.</p>
+</blockquote>
+<p>Accordingly, a list may contain <em>duplicates</em>.</p>
+<p>A list may expose the following methods:</p>
+<ul>
+<li><strong>isEmpty</strong> is self-explanatory,</li>
+<li><strong>append</strong> adds an element at the end of the list,</li>
+<li><strong>prepend</strong> adds an element at the beginning of the list,</li>
+<li><strong>tail</strong> returns the sub-list identical to the current one, but without its first element,</li>
+<li>etc.</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> The <em>size</em> of a list is often unbounded (as opposed to the size of an array for instance).
+This can be implemented in different ways, for instance with a <a href="http://localhost:1313/docs/datastructures/sections/list/#array">dynamic array</a> or a <a href="http://localhost:1313/docs/datastructures/sections/list/#linkedList">linked list</a>.</p>
+</blockquote>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<p>Java has an interface <code>List</code> with 8 native implementations (i.e. 8 different <em>classes</em> that implement this interface).
+The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</p>
+<p>The interface <code>List</code> extends the interface <code>Collection</code>.</p>
+<h3 id="syntax">
+  Syntax
+  <a class="anchor" href="#syntax">#</a>
+</h3>
+<p>Here are code snippets for a few operations specified in the interface <code>List</code>.</p>
+<ul>
+<li>Create a <code>List</code> and populate it:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;milan&#34;</span>, 20100);
+</span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an empty list of cities</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> myList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Appends Milan to the list</span>
+</span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(milan);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Appends Florence to the list</span>
+</span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(florence);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Appends Milan again to the list</span>
+</span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(milan);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a list identical to the previous one, but which cannot be modified</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> myOtherList <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(milan, florence, milan);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>City<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{milan, florence,};
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a fixed-lenght &#34;wrapper&#34; list around the array.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// No data is duplicated.</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> yetAnotherList <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(myArray);
+</span></span></code></pre></div><ul>
+<li>Retrieve the size of a list:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myList.<span style="color:#a6e22e">size</span>());
+</span></span></code></pre></div><ul>
+<li>Retrieve the element at index <em>i</em> (the first index being <code>0</code>, like in an array):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains (a reference to) Florence</span>
+</span></span><span style="display:flex;"><span>City secondCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(1);
+</span></span></code></pre></div><ul>
+<li>Insert an element at index <em>i</em> (shift the position of all subsequent elements by 1).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+</span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(1, trento);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Now contains (a reference to) Trento</span>
+</span></span><span style="display:flex;"><span>secondCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(1);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// contains (a reference to) Florence</span>
+</span></span><span style="display:flex;"><span>City thirdCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(2);
+</span></span></code></pre></div><ul>
+<li>Remove the element a index <em>i</em> (shift the position of all subsequent elements by -1), and return it</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(1);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
+</span></span><span style="display:flex;"><span>Sysetm.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myList.<span style="color:#a6e22e">size</span>());
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Now contains (a reference to) Florence</span>
+</span></span><span style="display:flex;"><span>secondCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(1);
+</span></span></code></pre></div><ul>
+<li>Remove the first occurrence of an object in the list (shift the position of all subsequent elements by -1):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(milan);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// contains (a reference to) Florence</span>
+</span></span><span style="display:flex;"><span>City firstCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(0);
+</span></span></code></pre></div><p>For more operations, consult the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html">Javadoc</a> of the interface <code>List</code>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#syntax">Syntax</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

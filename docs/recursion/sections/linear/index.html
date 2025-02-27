@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Linear recursion
+  #
+
+
+Definition.
+A recursive method is linear recursive if it performs at most one recursive call each time it is executed.
+
+
+Terminology.
+The term unary recursion is sometimes used to refer to linear recursive algorithms (as opposed to n-ary recursion).
+
+
+Hint.
+A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops).
+
+
+  Example
+  #
+
+
+
+Exercise
+Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/linear/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Linear recursion">
+  <meta property="og:description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed.
+Terminology. The term unary recursion is sometimes used to refer to linear recursive algorithms (as opposed to n-ary recursion).
+Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops).
+Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Linear recursion | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/recursion/sections/linear/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Linear recursion</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#tail-recursion">Tail recursion</a>
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#definition">Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#linked-list">Linked list</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="linear-recursion">
+  Linear recursion
+  <a class="anchor" href="#linear-recursion">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A recursive method is <strong>linear recursive</strong> if it performs at most <em>one</em> recursive call each time it is executed.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong>
+The term <strong>unary recursion</strong> is sometimes used to refer to linear recursive algorithms (as opposed to <a href="http://localhost:1313/docs/recursion/sections/nary/">n-ary recursion</a>).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops).</p>
+</blockquote>
+<h2 id="example">
+  Example
+  <a class="anchor" href="#example">#</a>
+</h2>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_array_linearRec" id="tabs-exercise_array_linearRec-0" checked="checked" />
+<label for="tabs-exercise_array_linearRec-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Write in pseudocode a (linear) recursive algorithm for a method <code>int occ(char[] A, char c)</code> that:</p>
+<ul>
+<li>takes as input a (non-null) array <code>A</code> of characters and a character <code>c</code>, and</li>
+<li>returns the number of occurrences of <code>c</code> in <code>A</code>.</li>
+</ul>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_array_linearRec" id="tabs-exercise_array_linearRec-1"  />
+<label for="tabs-exercise_array_linearRec-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, 0)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occRec</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c, <span style="color:#66d9ef">int</span> i) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the segment under consideration is empty</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Count the number of occurrences of c in the &#34;suffix&#34; segment A[i+1 .. A.length-1]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occInSuffix <span style="color:#f92672">=</span> occRec(A, c, i <span style="color:#f92672">+</span> 1)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If the current character is c, then return this value + 1,</span>
+</span></span><span style="display:flex;"><span>        occInSuffix <span style="color:#f92672">+</span> 1 :
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// otherwise return this value as it is.</span>
+</span></span><span style="display:flex;"><span>        occInSuffix
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<h2 id="tail-recursion">
+  Tail recursion
+  <a class="anchor" href="#tail-recursion">#</a>
+</h2>
+<h3 id="motivation">
+  Motivation
+  <a class="anchor" href="#motivation">#</a>
+</h3>
+<p>Consider a (not necessarily recursive) method <code>method1</code> that calls a method <code>method2</code>, for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    method2()
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The execution of <code>method1</code> is interrupted when it calls <code>method2</code>.</p>
+<p>During this interruption, the <a href="">call stack</a> contains:</p>
+<pre tabindex="0"><code>method2
+method1
+&lt;bottom of the stack&gt;
+</code></pre><blockquote class="book-hint warning">
+<p>Variables that are local to the execution of a method are allocated on the so-called <a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a> memory.</p>
+</blockquote>
+<p>In this example, variables that are local to <code>method1</code> remain in memory during the execution of <code>method2</code> (because they may be needed when the execution of <code>method1</code> resumes).
+However, if no instruction in <code>method1</code> needs to be executed <em>after</em> the call to <code>method2</code>, then there is no need to maintain this information in memory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    method2()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In other words, the call stack in this case could be safely be reduced to:</p>
+<pre tabindex="0"><code>method2
+&lt;bottom of the stack&gt;
+</code></pre><p>This optimization technique is known as <a href="https://en.wikipedia.org/wiki/Tail_call">tail-call elimination</a>.
+Some compilers apply it (but most Java compilers do not).</p>
+<p>During the execution of a recursive algorithm, the size of the call stack may become important, therefore also the amount of stack memory required.
+Therefore identifying calls that may be safely be removed from the stack can significantly reduce memory consumption.</p>
+<h3 id="definition">
+  Definition
+  <a class="anchor" href="#definition">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A linear recursive method is <strong>tail recursive</strong> if no instruction in this method can be executed <em>after</em> a recursive call.</p>
+</blockquote>
+<p>A tail recursive algorithm can easily be transformed into an iterative one.
+This transformation can be viewed as a &ldquo;manual&rdquo; form of tail-call elimination.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_array_TailRec" id="tabs-exercise_array_TailRec-0" checked="checked" />
+<label for="tabs-exercise_array_TailRec-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The algorithm above for the method <code>int occ(char[] A, char c)</code> is linear recursive, but not tail-recursive.</p>
+<p>Rewrite it into a tail-recursive algorithm.
+Then convert it into an iterative algorithm.</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_array_TailRec" id="tabs-exercise_array_TailRec-1"  />
+<label for="tabs-exercise_array_TailRec-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p>Tail recursive algorithm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, 0, 0)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occRec</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> occurences) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the segment under consideration is empty</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the current character is c, then increment the number of occurrences.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c) {
+</span></span><span style="display:flex;"><span>        occurrences<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Recursive call</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, i <span style="color:#f92672">+</span> 1, occurrences)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Iterative algorithm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occurrences <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c) {
+</span></span><span style="display:flex;"><span>            occurrences<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occurrences
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<p>A common strategy to convert a linear recursive method into a tail-recursive one consists in using additional arguments (like the argument <code>occurrences</code> in the above example).
+These extra arguments are sometimes called <strong>accumulators</strong>.</p>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<p>Linear recursive implementations are not very frequent, because most of them can be easily converted into iterative ones, as illustrated above.
+Besides, as we explained above, the iterative solution is often more efficient (at least memory-wise) for large inputs.</p>
+<p>However, some problems can be easier to solve in a linear recursive form (e.g. as a first attempt).
+This may also produce code that is easier to read and/or debug.</p>
+<p>In particular, it may be the case when manipulating linked lists.</p>
+<h3 id="linked-list">
+  Linked list
+  <a class="anchor" href="#linked-list">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A <strong>linked list</strong> is a set of objects organized in a <em>sequence</em>, such that each object (except for the last one) points to its successor.</p>
+</blockquote>
+<p>Equivalently, a linked list is a unary tree (and conversely), i.e. a tree where each node has exactly one (possibly null) child.</p>
+<p>For instance:</p>
+<p><img src="/img/linkedLists/unlabeled/list.svg" alt="" /></p>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong></p>
+<ul>
+<li>the first object in a linked list is often called the <strong>head</strong> of the list, and</li>
+<li>the rest of the list (i.e. the sublist with the second object as head) is often called the <strong>tail</strong> of the list.</li>
+</ul>
+</blockquote>
+<h4 id="example-1">
+  Example
+  <a class="anchor" href="#example-1">#</a>
+</h4>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_linkedList_removeDup" id="tabs-exercise_linkedList_removeDup-0" checked="checked" />
+<label for="tabs-exercise_linkedList_removeDup-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider linked lists that consist of instances of the following class:</p>
+<p><img src="/img/diagrams/plantuml/listNode_labeled.svg" alt="" /></p>
+<p>Write (in pseudocode) a linear recursive algorithm <code>Node removeDuplicates(Node head)</code> that:</p>
+<ul>
+<li>takes as input the head of a list with nodes sorted according to their label (in alphabetical order),</li>
+<li>returns the head of a list with the same labels, in alphabetical order, but where each label appears exactly once.</li>
+</ul>
+<p>For instance, for the following input list:</p>
+<p><img src="/img/linkedLists/labeled/char/withDup/list.svg" alt="" /></p>
+<p>the algorithm should output a list with labels:</p>
+<p><img src="/img/linkedLists/labeled/char/noDup/list.svg" alt="" /></p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_linkedList_removeDup" id="tabs-exercise_linkedList_removeDup-1"  />
+<label for="tabs-exercise_linkedList_removeDup-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">removeDuplicates</span>(Node head) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: empty list.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(head <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Remove all duplicate in the tail.</span>
+</span></span><span style="display:flex;"><span>    Node tailHead <span style="color:#f92672">=</span> removeDuplicates(head.<span style="color:#a6e22e">next</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compare the head with the (possibly new) head of the tail.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (tailHead <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> head.<span style="color:#a6e22e">label</span> <span style="color:#f92672">==</span> tailHead.<span style="color:#a6e22e">label</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If they have the same label, then return the tail.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> tailHead
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Otherwise add the head to the returned list.</span>
+</span></span><span style="display:flex;"><span>    head.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> tailHead
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> head
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#tail-recursion">Tail recursion</a>
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#definition">Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#linked-list">Linked list</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

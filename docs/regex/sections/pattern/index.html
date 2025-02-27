@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Pattern matching
+  #
+
+Two of the main uses of regexes are:
+
+string validation, i.e. check whether a string satisfies certain constraints. For instance:
+
+has at least one digit and one special character,
+is a valid address,
+etc.
+
+
+string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for:
+
+replacing strings in a file or a folder (e.g. within a codebase),
+splitting a sentence into (natural language) words,
+splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;,
+filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file,
+etc.
+
+
+
+In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/regex/sections/pattern/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Pattern matching">
+  <meta property="og:description" content="Pattern matching # Two of the main uses of regexes are:
+string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;, filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file, etc. In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pattern matching | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/regex/sections/pattern/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Pattern matching</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#segment">Segment</a></li>
+    <li><a href="#match">Match</a></li>
+    <li><a href="#bestFirstMatch">Best first match</a>
+      <ul>
+        <li><a href="#left-to-right">Left-to-right</a></li>
+        <li><a href="#greedy">Greedyness</a></li>
+      </ul>
+    </li>
+    <li><a href="#successiveMatches">Successive best first matches</a></li>
+    <li><a href="#lazy">Lazy closure</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="pattern-matching">
+  Pattern matching
+  <a class="anchor" href="#pattern-matching">#</a>
+</h1>
+<p>Two of the main uses of regexes are:</p>
+<ul>
+<li><strong>string validation</strong>, i.e. check whether a string satisfies certain constraints. For instance:
+<ul>
+<li>has at least one digit and one special character,</li>
+<li>is a valid address,</li>
+<li>etc.</li>
+</ul>
+</li>
+<li><strong>string search</strong>, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for:
+<ul>
+<li>replacing strings in a file or a folder (e.g. within a codebase),</li>
+<li>splitting a sentence into (natural language) words,</li>
+<li>splitting a program into meaningful substrings, e.g. split the instruction <code>int a=5;</code> into <code>int</code>, <code>a</code>, <code>=</code>, <code>5</code> and <code>;</code>,</li>
+<li>filtering (e.g. with the <code>grep</code> command) of modifying (e.g. with the <code>sed</code> command) lines in a file,</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<p>In both scenarios, a regex is viewed as a <em>pattern</em> that should be <em>matched</em> against a string.</p>
+<h2 id="segment">
+  Segment
+  <a class="anchor" href="#segment">#</a>
+</h2>
+<p>To make the notion of pattern matching more precise, we will represent a word $w$ as an array of characters, and a segment of $w$ as a (possibly empty) subarray of this array.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Notation.</em></strong> If $w$ is a word,
+we use $w[i .. j)$ for the subsegment of $w$ that starts at index $i$ <em>included</em>, and ends at index $j$ <em>excluded</em>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Let $w$ = <code>abca</code>.
+Then:</p>
+<ul>
+<li>$w[0 .. 1)$ is a segment of $w$ with length 1 and word <code>a</code>,</li>
+<li>$w[3 .. 4)$ is another segment of $w$ with length 1 and word <code>a</code></li>
+<li>$w[0 .. 3)$ is a segment of $w$ with length 3 and word <code>abc</code></li>
+<li>$w[0 .. 0)$ is a segment of $w$ with length 0 and word $\varepsilon$</li>
+<li>$w[1 .. 1)$ is another segment of $w$ with length 0 and word $\varepsilon$</li>
+</ul>
+</blockquote>
+<h2 id="match">
+  Match
+  <a class="anchor" href="#match">#</a>
+</h2>
+<p>We can now define what a match is:</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+Let $w$ be a word (viewed as an array), and let $e$ be a regex that describes the language $L$.</p>
+<p>A <strong>match</strong> for $e$ in $w$ is a (possibly empty) segment of $w$ whose word belongs to $L$.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>aba</code>.</p>
+<p>There are 3 matches for $e$ in $w$:</p>
+<ul>
+<li>$w[0 .. 1)$ with word <code>a</code>,</li>
+<li>$w[0 .. 2)$ with word <code>ab</code>,</li>
+<li>$w[2 .. 3)$ with word <code>a</code></li>
+</ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+Several matches may carry the same word (e.g. the first and third matches in the example above).</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> Some matches may overlap (e.g. the first and second matches in the example above).</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-0" checked="checked" />
+<label for="tabs-exercise_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the regex $e$ = <code>a*</code> and the word $w$ = <code>aa</code>.</p>
+<p>How many matches are there for $e$ in $w$?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-1"  />
+<label for="tabs-exercise_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>There are 6 matches for the regex <code>a*</code> in the word <code>aa</code>:</p>
+<ul>
+<li>$w[0 .. 0)$: $\varepsilon$</li>
+<li>$w[0 .. 1)$: <code>a</code></li>
+<li>$w[0 .. 2)$: <code>aa</code></li>
+<li>$w[1 .. 1)$: $\varepsilon$</li>
+<li>$w[1 .. 2)$: <code>a</code></li>
+<li>$w[2 .. 2)$: $\varepsilon$</li>
+</ul>
+</div>
+</div>
+<h2 id="bestFirstMatch">
+  Best first match
+  <a class="anchor" href="#bestFirstMatch">#</a>
+</h2>
+<p>In practice, (most) regex engines do not identify all matches for a regex in a word.
+Instead, they rely on the notion of <em>best first match</em> (explained below).
+Reasons include:</p>
+<ul>
+<li>performance,</li>
+<li>avoiding overlapping matches (e.g. when performing a global &ldquo;search and replace&rdquo;).</li>
+</ul>
+<blockquote class="book-hint warning">
+<p>Let $e$ be a regex, let $w$ be a word, and let $m_1$ and $m_2$ be two matches for $e$ in $w$.</p>
+<p>$m_1$ is <strong>preferred</strong> to $m_2$ if:</p>
+<ul>
+<li>$m_1$ starts before $m_2$: for instance $w[1 .. 4)$ is preferred to $w[3 .. 8)$, or</li>
+<li>they start at the same index and the regex engine favors $m_1$ over $m_2$.</li>
+</ul>
+</blockquote>
+<p>Preference is a <a href="">total order</a> over the matches for for $e$ in $w$, meaning that if there is a match, then there can be at most <em>one</em> best first match.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+When $m_1$ and $m_2$ start at the same index (second case above), whether $m_1$ is favored over $m_2$ can vary in subtle ways from one regex engine to the other.
+These preferences are usually explained in algorithmic terms (and half-informally).</p>
+<p>For a reasonably detailed tutorial about the behavior(s) of regex search engine, we refer to <a href="https://www.regular-expressions.info/tutorial.html">this website</a>.
+For Java, the <a href="https://docs.oracle.com/javase/tutorial/essential/regex/index.html">Oracle tutorial</a> on regexes can also be a good entry point (although less precise that the previous reference).</p>
+<p>In this section, we only introduce basic behaviors of regex engines.</p>
+</blockquote>
+<h3 id="left-to-right">
+  Left-to-right
+  <a class="anchor" href="#left-to-right">#</a>
+</h3>
+<p>Commutative operations are evaluated from <em>left-to-right</em>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider the word $w$ = <code>ab</code>.</p>
+<ul>
+<li>the best first match for the regex <code>ab|a</code> in $w$ is $w[0 .. 2) (with word <code>ab</code>)</li>
+<li>the best first match for the regex <code>a|ab</code> in $w$ is $w[0 .. 1) (with word <code>a</code>)</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Exception.</em></strong>
+In this example,
+A <a href="http://localhost:1313/docs/regex/sections/practice/#flavours">POSIX-compliant</a> regex engine would produce
+$w[0 .. 2) (with word <code>ab</code>) as best first match for both expressions.</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+As illustrated with the above example, two regexes that describe the same language may have different best first matches (in the same word).</p>
+</blockquote>
+<h3 id="greedy">
+  Greedyness
+  <a class="anchor" href="#greedy">#</a>
+</h3>
+<p>The <code>*</code> operator is evaluated (by default) in a <strong>greedy</strong> way.
+This means that the engine
+tries to matches as many characters as possible for this operator.
+More precisely, when encountering a subexpression of the form $e$<code>*</code>:</p>
+<ul>
+<li>the engine first considers the longest possible match for $e$<code>*</code>,</li>
+<li>if this match does not result in a match for the whole expression, then the engine <strong>backtracks</strong> by one character (i.e. reduces the length of the match for $e$<code>*</code> by one), and tries again to find a match for the whole expression,</li>
+<li>if this fails again, then the engine backtracks again by one character,</li>
+<li>etc.</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>The best first match for the regex <code>a*</code> in <code>aa</code> is the whole word.</li>
+<li>The best first match for the regex <code>a*</code> in <code>aab</code> is $[0 ..2)$ (with word <code>aa</code>).</li>
+<li>The best first match for the regex <code>a*</code> in <code>aabaa</code> is $[0 ..2)$ (with word <code>aa</code>).</li>
+<li>The best first match for the regex <code>(a|b)*b</code> in <code>abab</code> is the whole word. In this case,
+<ul>
+<li>the engine first tries to match <code>(a|b)*</code> against the whole word,</li>
+<li>this does not result in a match for the whole regex, because the trailing <code>b</code> in the regex is not matched,</li>
+<li>so the engine backtracks, and matches <code>(a|b)*</code> against $[0 .. 3)$ (with word <code>aba</code>),</li>
+<li>this results in a match for the whole expression.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The interaction of left-to-right evaluation and greedy matching can be hard to predict.
+This is why we highly recommend writing and debugging regexes with a validation engine, such as <a href="https://regex101.com">regex101</a>.</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+Nested <code>*</code> operators can be costly, due to a combinatorial explosion of the number of attempts to find a match.
+This is sometimes referred to as <a href="https://www.regular-expressions.info/catastrophic.html">catastrophic backtracking</a>.</p>
+</blockquote>
+<h2 id="successiveMatches">
+  Successive best first matches
+  <a class="anchor" href="#successiveMatches">#</a>
+</h2>
+<p>Most regex engines can return best first matches in an iterative way.
+Intuitively, the engine &ldquo;consumes&rdquo; the best first match.
+Then the next match is the best first match in the remaining string, etc.</p>
+<p>More precisely:</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+Let $e$ be regex and let $w$ be a word with lenght $n$.</p>
+<p>Then:</p>
+<ul>
+<li>the <strong>first match</strong> $w[i_1 .. j_1)$ for $e$ in $w$ is the best first match (if any) for $e$ in $w$,</li>
+<li>the <strong>second match</strong> $w[i_2 .. j_2)$ for $e$ in $w$ is the best first match (if any) for $e$ in $w[j_1 .. n)$,</li>
+<li>the <strong>third match</strong> $w[i_3 .. j_3)$ for $e$ in $w$ is the best first match (if any) for $e$ in $w[j_2 .. n)$,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>abac</code>.</p>
+<ul>
+<li>
+<p>The best first match for $e$ in $w$ is $w[0 ..2)$, with word <code>ab</code>.</p>
+</li>
+<li>
+<p>The second match is the best first match in the rest of $w$, i.e. in $w[2 .. 4)$.
+This match is $w[2 .. 3)$, with word <code>a</code>.</p>
+</li>
+<li>
+<p>There is no third match.</p>
+</li>
+</ul>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-0" checked="checked" />
+<label for="tabs-exercise_greedy_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$:</p>
+<table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>abab</code></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-1"  />
+<label for="tabs-exercise_greedy_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+          <th>matches</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 1)$:<code>a</code>, $[2 .. 3)$:<code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 2)$:<code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+          <td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$, $[2 .. 3)$:<code>a</code>, $[3 .. 3)$: $\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 1)$:<code>ab</code>, $[2 .. 2)$: $\varepsilon$, $[3 .. 3)$: $\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>abab</code></td>
+          <td>$[0 .. 3)$:<code>abab</code>, $[3 .. 3)$: $\varepsilon$</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<h2 id="lazy">
+  Lazy closure
+  <a class="anchor" href="#lazy">#</a>
+</h2>
+<p>Some regex engines (notably the ones used by default in Java, Javascript, Python, etc.) support alternative ways to evaluate <code>*</code> operators.</p>
+<p>One of them is <strong>lazy</strong> evaluation (also called <strong>reluctant</strong>).
+In this case, the star operator matches the <em>shortest possible</em> segment.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+          <th>best first match with lazy evaluation of star operators</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aa</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>a*ac</code></td>
+          <td><code>ac</code></td>
+          <td>$[0 .. 2)$:<code>ac</code></td>
+      </tr>
+      <tr>
+          <td><code>a*ac</code></td>
+          <td><code>aac</code></td>
+          <td>$[0 .. 3)$:<code>aac</code></td>
+      </tr>
+  </tbody>
+</table>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+In a same regular expression, it is possible to specify that some <code>*</code> operators must be evaluated in a lazy way, and others in a greedy way.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-0" checked="checked" />
+<label for="tabs-exercise_lazy_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$, where <code>*</code> operators are evaluated in a lazy way.</p>
+<table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ab*</code></td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>a*ab*</code></td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aa</code></td>
+      </tr>
+      <tr>
+          <td><code>b*</code></td>
+          <td><code>aa</code></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-1"  />
+<label for="tabs-exercise_lazy_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+          <th>lazy matches</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ab*</code></td>
+          <td><code>ab</code></td>
+          <td>$[0 .. 1)$:<code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 2)$:<code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*ab*</code></td>
+          <td><code>ab</code></td>
+          <td>$[0 .. 1)$:<code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aa</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>b*</code></td>
+          <td><code>aa</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+Lazy <code>*</code> operators can be hard to predict.</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#segment">Segment</a></li>
+    <li><a href="#match">Match</a></li>
+    <li><a href="#bestFirstMatch">Best first match</a>
+      <ul>
+        <li><a href="#left-to-right">Left-to-right</a></li>
+        <li><a href="#greedy">Greedyness</a></li>
+      </ul>
+    </li>
+    <li><a href="#successiveMatches">Successive best first matches</a></li>
+    <li><a href="#lazy">Lazy closure</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

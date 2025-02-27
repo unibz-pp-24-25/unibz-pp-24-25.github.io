@@ -1,0 +1,18 @@
+digraph tree {
+graph [size="6.5!"]
+    a[label="A"];
+    b[label="B"]
+    c[label="C"]
+    d[label="D"]
+    e[label="E"]
+    f[label="F"]
+    a -> b;
+    a -> c;
+    a -> e;
+    b -> d;
+    b -> f;
+    c -> e;
+    c -> f;
+    e -> d;
+    f -> a;
+}

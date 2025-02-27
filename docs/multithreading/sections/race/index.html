@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Race condition
+  #
+
+
+Definition.
+A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.
+
+
+  Illustrations
+  #
+
+
+Example.
+The following program (in pseudocode) apparently increments variable i twice.
+However, it may output either 1 or 2, depending on the execution environment:
+int i = 0
+
+spawn i&#43;&#43;
+
+i&#43;&#43;
+
+sync
+
+print(i)
+The reason is that a core does not increment the value of a variable as an atomic operation.
+Instead, an increment is a sequence of three instructions:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/multithreading/sections/race/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Race condition">
+  <meta property="og:description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.
+Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:
+int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation. Instead, an increment is a sequence of three instructions:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Race condition | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/multithreading/sections/race/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Race condition</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustrations">Illustrations</a></li>
+    <li><a href="#non-determinism">Non determinism</a></li>
+    <li><a href="#caution">Caution</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="race-condition">
+  Race condition
+  <a class="anchor" href="#race-condition">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A <strong>race condition</strong> occurs when the outcome of a program may vary depending on the order in which two threads access a resource.</p>
+</blockquote>
+<h2 id="illustrations">
+  Illustrations
+  <a class="anchor" href="#illustrations">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following program (in pseudocode) apparently increments variable <code>i</code> twice.
+However, it may output either <code>1</code> or <code>2</code>, depending on the execution environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>spawn i<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>i<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sync
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>(i)
+</span></span></code></pre></div><p>The reason is that a core does not increment the value of a variable as an <a href="http://localhost:1313/docs/multithreading/sections/abstractions/#atomic">atomic operation</a>.
+Instead, an increment is a sequence of three instructions:</p>
+<ol>
+<li>read the value of <code>i</code> and fetch it to one of the core&rsquo;s registers</li>
+<li>increment the value of this register</li>
+<li>write the register&rsquo;s value back to memory</li>
+</ol>
+<p>If a <a href="http://localhost:1313/docs/multithreading/sections/concurrency/#switch">context switch</a> occurs during the execution of these three operations, or if the two threads are executed in parallel (i.e. on different cores),
+then the outcome <em>may</em> be unexpected.
+Among other possibilities, the following may happen:</p>
+<ul>
+<li>the current thread executes step 1, copying the value <code>0</code> from memory to a register,</li>
+<li>then the child thread executes step 1 as well, copying the value <code>0</code> to another register,</li>
+<li>then the current thread executes steps 2 and 3, writing the value <code>1</code> back to memory,</li>
+<li>then the child thread executes step 2 and 3, writing the value <code>1</code> back again to memory.</li>
+</ul>
+<p>However, the following sequence of actions would (for instance) produce the expected result:</p>
+<ul>
+<li>the current thread executes steps 1, 2 and 3,</li>
+<li>then the child thread executes steps 1, 2 and 3.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+A race condition can only occur if:</p>
+<ul>
+<li>two threads access a same resource, and</li>
+<li>at least one of them modifies it.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following algorithm performs a matrix by vector multiplication with a &ldquo;parallel&rdquo; loop, and is free of race conditions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>product(int<span style="color:#f92672">[][]</span> M, int<span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    int<span style="color:#f92672">[]</span> w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> int[M<span style="color:#f92672">.</span>length]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> parallel (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> M<span style="color:#f92672">.</span>length; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (int j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> v<span style="color:#f92672">.</span>length; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>            w[i] <span style="color:#f92672">+=</span> M[i][j] <span style="color:#f92672">*</span> v[j]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> w
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>However, adding the keyword <code>parallel</code> to the inner loop may yield an incorrect output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>product(int<span style="color:#f92672">[][]</span> M, int<span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    int<span style="color:#f92672">[]</span> w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> int[M<span style="color:#f92672">.</span>length]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> parallel (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> M<span style="color:#f92672">.</span>length; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> parallel (int j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> v<span style="color:#f92672">.</span>length; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>            w[i] <span style="color:#f92672">+=</span> M[i][j] <span style="color:#f92672">*</span> v[j]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> w
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The reason is that two threads may now modify the value of <code>w[i]</code> concurrently, for the same <code>i</code> (but different values of <code>j</code>).</p>
+</blockquote>
+<!--**_Exercise._**-->
+<!--Modify this method so that the inner loop is executed in a concurrent fashion, but ruling out race conditions.-->
+<h2 id="non-determinism">
+  Non determinism
+  <a class="anchor" href="#non-determinism">#</a>
+</h2>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+In general, a bug caused by a race condition cannot be consistently reproduced, <em>even on the same hardware</em>.</p>
+</blockquote>
+<p>This is why race conditions are notoriously difficult to identify and/or debug, even for programs that has been extensively tested (a famous example of a race condition with a dramatic impact is the <a href="https://en.wikipedia.org/wiki/Northeast_blackout_of_2003">Northeastern United States blackout of 2003</a>).</p>
+<h2 id="caution">
+  Caution
+  <a class="anchor" href="#caution">#</a>
+</h2>
+<p>Multithreading is a good example (together for instance with <em>caching</em> the results of a computation) of an <em>error-prone</em> optimization technique,
+which may impact on code readability and correctness.</p>
+<p>A common mistake made by less experienced developers is to use multithreading &ldquo;because we can&rdquo;.</p>
+<p>Instead, it is often recommended to use multithreading cautiously, and only if some bottleneck has been identified in an application
+(e.g. with a
+<a href="https://en.wikipedia.org/wiki/Profiling_%28computer_programming%29">profiler</a>):
+unacceptable processing time, non-responsive GUI, etc.</p>
+<p>We reproduce here three (loosely) related citations made in <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a> (Item 67, &ldquo;Optimize judiciously&rdquo;):</p>
+<blockquote>
+<p>More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason—including blind stupidity.</p>
+<p>William A. Wulf, 1972</p></blockquote>
+<blockquote>
+<p>We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil.</p>
+<p>Donald Knuth, 1974</p></blockquote>
+<blockquote>
+<p>We follow two rules in the matter of optimization:
+Rule 1. Don’t do it.
+Rule 2 (for experts only). Don’t do it yet — that is, not until you have a perfectly clear and unoptimized solution.</p>
+<p>M. A. Jackson, 1975</p></blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustrations">Illustrations</a></li>
+    <li><a href="#non-determinism">Non determinism</a></li>
+    <li><a href="#caution">Caution</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

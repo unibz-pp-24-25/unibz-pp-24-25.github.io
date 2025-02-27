@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Callback method
+  #
+
+
+When a method takes another method as argument, the latter is a callback method.
+
+Anonymous methods are often used as callback methods.
+
+  in Java
+  #
+
+
+  Running example
+  #
+
+
+Example.
+The two following Java methods have the same structure: both modify each unit in the input list.
+void boostUnits(List&lt;Unit&gt; units){
+  for(Unit unit: units){
+      unit.health&#43;&#43;;
+  }
+}
+
+void penalizeGreenUnits(List&lt;Unit&gt; units){
+    for(Unit unit: units){
+        if(unit.color.equals(&#34;green&#34;)){
+            unit.health--;
+        }
+    }
+}
+In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called boost and penalizeGreen respectively).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/lambda/sections/callback/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Callback method">
+  <meta property="og:description" content="Callback method # When a method takes another method as argument, the latter is a callback method.
+Anonymous methods are often used as callback methods.
+in Java # Running example # Example. The two following Java methods have the same structure: both modify each unit in the input list.
+void boostUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ unit.health&#43;&#43;; } } void penalizeGreenUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ if(unit.color.equals(&#34;green&#34;)){ unit.health--; } } } In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called boost and penalizeGreen respectively).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Callback method | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/lambda/sections/callback/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Callback method</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#running-example">Running example</a></li>
+        <li><a href="#passing-a-callback-method">Passing a callback method</a></li>
+      </ul>
+    </li>
+    <li><a href="#native-support">Native support</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="callback-method">
+  Callback method
+  <a class="anchor" href="#callback-method">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p>When a method takes another method as argument, the latter is a <strong>callback method</strong>.</p>
+</blockquote>
+<p>Anonymous methods are often used as callback methods.</p>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="running-example">
+  Running example
+  <a class="anchor" href="#running-example">#</a>
+</h3>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The two following Java methods have the same structure: both modify each unit in the input list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boostUnits</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(Unit unit: units){
+</span></span><span style="display:flex;"><span>      unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">penalizeGreenUnits</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(Unit unit: units){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(unit.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;green&#34;</span>)){
+</span></span><span style="display:flex;"><span>            unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called <code>boost</code> and <code>penalizeGreen</code> respectively).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boost</span>(Unit unit){
+</span></span><span style="display:flex;"><span>    unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">penalizeGreen</span>(Unit unit){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(unit.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;green&#34;</span>)){
+</span></span><span style="display:flex;"><span>        unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Both methods have type <code>Unit</code> $\to$ <code>void</code>, so they are instances of the <a href="http://localhost:1313/docs/lambda/sections/type/#functionalInterface">functional interface</a> <code>Consumer&lt;Unit&gt;</code>.</p>
+<p>This allows us to factorize our code with a method <code>transform</code> that takes as input:</p>
+<ul>
+<li>an array of units,</li>
+<li>a callback method with type <code>Consumer&lt;Unit&gt;</code>,</li>
+</ul>
+<p>and applies the callback method to each unit in the input array.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units, Consumer<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> method){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit unit: units){
+</span></span><span style="display:flex;"><span>        method.<span style="color:#a6e22e">accept</span>(unit);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<h3 id="passing-a-callback-method">
+  Passing a callback method
+  <a class="anchor" href="#passing-a-callback-method">#</a>
+</h3>
+<p>A callback method in Java can be:</p>
+<ul>
+<li>a method reference, or</li>
+<li>a <a href="http://localhost:1313/docs/lambda/sections/lambda/">lambda expression</a>.</li>
+</ul>
+<h4 id="methodReference">
+  Method reference as a callback method
+  <a class="anchor" href="#methodReference">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p><strong><em>Syntax.</em></strong>
+A Java <strong>method reference</strong> is written:</p>
+<ul>
+<li><code>ClassName::methodName</code> for a static method,</li>
+<li><code>objectVariable::methodName</code> for an instance method,</li>
+<li><code>ClassName::new</code> for a constructor.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong></p>
+<p>Let us assume that our methods <code>boost</code> and <code>penalizeGreen</code> above are static methods of some class called <code>UnitTransformer</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UnitTransformer</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boost</span>(Unit unit){
+</span></span><span style="display:flex;"><span>        unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">penalizeGreen</span>(Unit unit){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(unit.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;green&#34;</span>)){
+</span></span><span style="display:flex;"><span>            unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can call our method <code>transform</code> with <code>boost</code> as callback method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transform(
+</span></span><span style="display:flex;"><span>    units,
+</span></span><span style="display:flex;"><span>    UnitTransformer::boost
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>And similarly with <code>penalizeGreen</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transform(
+</span></span><span style="display:flex;"><span>    units,
+</span></span><span style="display:flex;"><span>    UnitTransformer::penalizeGreen
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div></blockquote>
+<h4 id="lambda-expression-as-a-callback-method">
+  Lambda expression as a callback method
+  <a class="anchor" href="#lambda-expression-as-a-callback-method">#</a>
+</h4>
+<p>Alternatively, instead of declaring a method <code>boost</code>, we can directly use a lambda expression:</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transform(
+</span></span><span style="display:flex;"><span>    units,
+</span></span><span style="display:flex;"><span>    unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>And similarly, instead of declaring a method <code>penalizeGreen</code>, we can use the following lambda expression:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transform(
+</span></span><span style="display:flex;"><span>    units,
+</span></span><span style="display:flex;"><span>    unit <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(unit.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;green&#34;</span>)){
+</span></span><span style="display:flex;"><span>          unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">--</span> ;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div></blockquote>
+<h2 id="native-support">
+  Native support
+  <a class="anchor" href="#native-support">#</a>
+</h2>
+<p>Programming languages that support anonymous methods (like Java, Python, C#, C++, JavaScript, etc.) often provide <em>concise syntaxes</em> to use them as callback methods.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example(continued).</em></strong></p>
+<p>In Java, the above method <code>transform</code> is not necessary.
+Instead, we can use the native method <a href="http://localhost:1313/docs/stream/sections/terminal/#forEach">forEach</a>, available (among others) for any Java <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>.
+This method takes a <code>Consumer</code> method as input, and applies this method to each element of the collection.</p>
+<p>So the following program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>getUnits().<span style="color:#a6e22e">forEach</span>(unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>);
+</span></span></code></pre></div><p>is equivalent to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>transform(
+</span></span><span style="display:flex;"><span>    getUnits(),
+</span></span><span style="display:flex;"><span>    unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units, Consumer<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> method){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit unit: units){
+</span></span><span style="display:flex;"><span>        method.<span style="color:#a6e22e">accept</span>(unit);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#running-example">Running example</a></li>
+        <li><a href="#passing-a-callback-method">Passing a callback method</a></li>
+      </ul>
+    </li>
+    <li><a href="#native-support">Native support</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

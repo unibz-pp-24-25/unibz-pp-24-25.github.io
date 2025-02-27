@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Boolean conditions
+  #
+
+A complex boolean sub-expression in the scope of a negation can be difficult to read and/or debug.
+
+Example.
+The two following expressions are equivalent (but the latter is arguably easier to read):
+$$
+\neg(\neg(a \lor b) \land \neg (\neg c \lor d))
+$$
+$$
+a \lor b \lor \neg c \lor d
+$$
+
+
+  Simplification
+  #
+
+
+In a Boolean expression, negations can always be &ldquo;pushed&rdquo; inside parentheses, as follows:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/simplify/sections/boolean/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Boolean conditions">
+  <meta property="og:description" content="Boolean conditions # A complex boolean sub-expression in the scope of a negation can be difficult to read and/or debug.
+Example. The two following expressions are equivalent (but the latter is arguably easier to read):
+$$ \neg(\neg(a \lor b) \land \neg (\neg c \lor d)) $$
+$$ a \lor b \lor \neg c \lor d $$
+Simplification # In a Boolean expression, negations can always be “pushed” inside parentheses, as follows:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Boolean conditions | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/simplify/sections/boolean/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Boolean conditions</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#simplification">Simplification</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="boolean-conditions">
+  Boolean conditions
+  <a class="anchor" href="#boolean-conditions">#</a>
+</h1>
+<p>A complex boolean sub-expression in the scope of a negation can be difficult to read and/or debug.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The two following expressions are equivalent (but the latter is arguably easier to read):</p>
+<p>$$
+\neg(\neg(a \lor b) \land \neg (\neg c \lor d))
+$$</p>
+<p>$$
+a \lor b \lor \neg c \lor d
+$$</p>
+</blockquote>
+<h2 id="simplification">
+  Simplification
+  <a class="anchor" href="#simplification">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>In a Boolean expression, negations can always be &ldquo;pushed&rdquo; inside parentheses, as follows:</p>
+<ul>
+<li>
+<p>base case:</p>
+<ul>
+<li>$\neg (x = y)$ becomes $x \neq y$</li>
+<li>$\neg (x \le y)$ becomes $x &gt; y$</li>
+<li>$\neg (x &gt; y)$ becomes $x \le y$</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>
+<p>inductive case:</p>
+<ul>
+<li>$\neg (\phi \land \psi)$ becomes $\neg \phi \lor \neg \psi$</li>
+<li>$\neg (\phi \lor \psi)$ becomes $\neg \phi \land \neg \psi$</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_boolean" id="tabs-exercise_boolean-0" checked="checked" />
+<label for="tabs-exercise_boolean-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Simplify the following Java condition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">!</span>(x <span style="color:#f92672">!=</span> y <span style="color:#f92672">&amp;&amp;</span> ( <span style="color:#f92672">!</span>x.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>y.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">||</span> x.<span style="color:#a6e22e">next</span>() <span style="color:#f92672">!=</span> y.<span style="color:#a6e22e">next</span>()))
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_boolean" id="tabs-exercise_boolean-1"  />
+<label for="tabs-exercise_boolean-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>The expression is of the form</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">!</span>(x <span style="color:#f92672">!=</span> y <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">&lt;</span>expression 1<span style="color:#f92672">&gt;</span>)
+</span></span></code></pre></div><p>So we can transform it into</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x <span style="color:#f92672">==</span> y <span style="color:#f92672">||</span> <span style="color:#f92672">!</span> <span style="color:#f92672">&lt;</span>expression 1<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>Next observe that</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">!</span> <span style="color:#f92672">&lt;</span>expression 1<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">!</span>( <span style="color:#f92672">!</span>x.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>y.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">||</span> x.<span style="color:#a6e22e">next</span>() <span style="color:#f92672">!=</span> y.<span style="color:#a6e22e">next</span>())
+</span></span></code></pre></div><p>which can be transformed into</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">&amp;&amp;</span> y.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">&amp;&amp;</span> x.<span style="color:#a6e22e">next</span>() <span style="color:#f92672">==</span> y.<span style="color:#a6e22e">next</span>()
+</span></span></code></pre></div><p>So the whole expression becomes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x <span style="color:#f92672">==</span> y <span style="color:#f92672">||</span> ( x.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">&amp;&amp;</span> y.<span style="color:#a6e22e">hasNext</span>() <span style="color:#f92672">&amp;&amp;</span> x.<span style="color:#a6e22e">next</span>() <span style="color:#f92672">==</span> y.<span style="color:#a6e22e">next</span>() )
+</span></span></code></pre></div></div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#simplification">Simplification</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

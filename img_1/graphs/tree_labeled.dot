@@ -1,0 +1,14 @@
+digraph tree {
+graph [size="4.5!"]
+    a[label="2"];
+    b[label="3"]
+    c[label="1"]
+    d[label="4"]
+    e[label="2"]
+    f[label="1"]
+    a -> b;
+    a -> c;
+    b -> d;
+    c -> e;
+    c -> f;
+}

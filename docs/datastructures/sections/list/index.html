@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Dynamic arrays and linked lists
+  #
+
+
+  Dynamic array
+  #
+
+A dynamic array is typically used to implement the abstract data type list.
+
+  Structure
+  #
+
+
+A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list.
+If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&rsquo;$,
+and $A$ is replaced with $A&rsquo;$.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/datastructures/sections/list/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Dynamic array and linked list">
+  <meta property="og:description" content="Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.
+Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A’$, and $A$ is replaced with $A’$.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Dynamic array and linked list | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/datastructures/sections/list/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Dynamic array and linked list</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#array">Dynamic array</a>
+      <ul>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#array-dequeue">Array dequeue</a></li>
+        <li><a href="#in-java">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#linkedList">Linked list</a>
+      <ul>
+        <li><a href="#doublyLinkedList">Doubly linked list</a></li>
+        <li><a href="#in-java-1">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance">Performance</a>
+      <ul>
+        <li><a href="#locality">Locality</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="dynamic-arrays-and-linked-lists">
+  Dynamic arrays and linked lists
+  <a class="anchor" href="#dynamic-arrays-and-linked-lists">#</a>
+</h1>
+<h2 id="array">
+  Dynamic array
+  <a class="anchor" href="#array">#</a>
+</h2>
+<p>A dynamic array is typically used to implement the abstract data type <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a>.</p>
+<h3 id="structure">
+  Structure
+  <a class="anchor" href="#structure">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A <strong>dynamic array</strong> stores the elements of a list in a regular array $A$, and keeps track of the size of the list.
+If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&rsquo;$,
+and $A$ is replaced with $A&rsquo;$.</p>
+</blockquote>
+<h3 id="array-dequeue">
+  Array dequeue
+  <a class="anchor" href="#array-dequeue">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>An <strong>array dequeue</strong> is a variant of a dynamic array that allows the list to be extended in both directions.
+The array is initially populated from its middle index.</p>
+</blockquote>
+<p>In addition to a list, an array dequeue is commonly used to implement a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#queue">queue</a> and/or a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
+<h3 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h3>
+<p>The class <code>ArrayList</code> implements the interface <code>List</code> as a dynamic array.</p>
+<h2 id="linkedList">
+  Linked list
+  <a class="anchor" href="#linkedList">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>linked list</strong> is a sequence of nodes, where each node (except for the last) points to its successor.
+A linked list maintains a pointer to its first node, called its <strong>head</strong>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<p><img src="/img/linkedLists/labeled/char/withDup/list.svg" alt="" /></p>
+</blockquote>
+<p>In addition to a <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a>, a linked list is often used to implement a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
+<h3 id="doublyLinkedList">
+  Doubly linked list
+  <a class="anchor" href="#doublyLinkedList">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A <strong>doubly linked list</strong> is a linked list where each node points in addition to its predecessor (if any).
+A doubly linked list maintains a pointer to its head and a pointer to its last node.</p>
+</blockquote>
+<p>In addition to a <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a> and/or a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#stack">stack</a>, a doubly linked list is often used to implement a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
+<h3 id="in-java-1">
+  in Java
+  <a class="anchor" href="#in-java-1">#</a>
+</h3>
+<p>The class<code>java.util.LinkedList</code> implements the interfaces<code>List</code> and <code>Dequeue</code> as a double linked list.</p>
+<h2 id="performance">
+  Performance
+  <a class="anchor" href="#performance">#</a>
+</h2>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-0" checked="checked" />
+<label for="tabs-my_exercise-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Determine the worst case running time of the following operations on a list, stack and/or queue, if the underlying data structure is:</p>
+<ol>
+<li>as a dynamic array</li>
+<li>a linked list</li>
+<li>a doubly-linked list</li>
+</ol>
+<ul>
+<li>
+<p>as a function of $i$:</p>
+<ul>
+<li>read or modify the value at position $i$</li>
+</ul>
+</li>
+<li>
+<p>as a function of the size $n$ of the list:</p>
+<ul>
+<li>add an element at the beginning of the list</li>
+<li>add an element at the end of the list</li>
+<li>remove the element at position $i$</li>
+<li>remove the first element of the list</li>
+<li>remove the last element of the list</li>
+</ul>
+</li>
+<li>
+<p>as a function of the cumulated size $n$ of the two lists:</p>
+<ul>
+<li>concatenate two lists</li>
+</ul>
+</li>
+</ul>
+</div>
+<input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-1"  />
+<label for="tabs-my_exercise-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>problem</th>
+          <th>dynamic array</th>
+          <th>linked list</th>
+          <th>doubly linked list</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>read or modify the value at position $i$</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(i)$</td>
+          <td>$\Theta(i)$</td>
+      </tr>
+      <tr>
+          <td>remove the element at position $i$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td>add an element at the beginning of the list</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td>add an element at the end of the list</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td>remove the first element of the list</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td>remove the last element of the list</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td>concatenate two lists</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<h3 id="locality">
+  Locality
+  <a class="anchor" href="#locality">#</a>
+</h3>
+<p>Besides constant time reading and writing, another benefit or arrays (ignored in the standard RAM model) is contiguity in memory.
+Iterating over an array can be more efficient than iterating over a linked list, because it benefits from caching.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#array">Dynamic array</a>
+      <ul>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#array-dequeue">Array dequeue</a></li>
+        <li><a href="#in-java">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#linkedList">Linked list</a>
+      <ul>
+        <li><a href="#doublyLinkedList">Doubly linked list</a></li>
+        <li><a href="#in-java-1">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance">Performance</a>
+      <ul>
+        <li><a href="#locality">Locality</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

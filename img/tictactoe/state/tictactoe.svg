@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="320"
+   height="320"
+   viewBox="0 0 320 320"
+   version="1.1"
+   id="svg7"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip-0">
+      <path
+         clip-rule="nonzero"
+         d="m 49,21 h 66.37891 V 95 H 49 Z m 0,0"
+         id="path1" />
+    </clipPath>
+  </defs>
+  <path
+     fill="none"
+     stroke-width="7.49758"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-miterlimit="10"
+     d="M 106.66666,320 V 0 M 0,213.33333 h 320"
+     id="path2" />
+  <path
+     fill="none"
+     stroke-width="7.49758"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-miterlimit="10"
+     d="M 213.33333,320 V 0 M 0,106.66666 h 320"
+     id="path3" />
+  <path
+     fill="none"
+     stroke-width="7.49758"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-miterlimit="10"
+     d="m 191.99118,53.34068 c 0,-17.682237 -14.31629,-31.998527 -31.99853,-31.998527 -17.66754,0 -31.99853,14.31629 -31.99853,31.998527 0,17.667542 14.33099,31.998528 31.99853,31.998528 17.68224,0 31.99853,-14.330986 31.99853,-31.998528 z m 0,0"
+     id="path4" />
+  <path
+     fill="none"
+     stroke-width="7.49758"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-miterlimit="10"
+     d="m 85.339208,159.99265 c 0,-17.66754 -14.330989,-31.99853 -31.998527,-31.99853 -17.682237,0 -31.998527,14.33099 -31.998527,31.99853 0,17.68224 14.31629,31.99853 31.998527,31.99853 17.667538,0 31.998527,-14.31629 31.998527,-31.99853 z m 0,0"
+     id="path5" />
+  <path
+     fill="none"
+     stroke-width="7.49758"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-miterlimit="10"
+     d="m 127.99412,191.99118 63.99706,-63.99706 m -63.99706,0 63.99706,63.99706"
+     id="path6" />
+  <g
+     clip-path="url(#clip-0)"
+     id="g7"
+     transform="matrix(3.7628038,0,0,3.7628038,-57.074091,-57.074092)">
+    <path
+       fill="none"
+       stroke-width="1.99255"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="m 62.36225,34.017594 17.007813,17.007812 m -17.007813,0 17.007813,-17.007812"
+       transform="matrix(1,0,0,-1,15.169,100.209)"
+       id="path7" />
+  </g>
+</svg>

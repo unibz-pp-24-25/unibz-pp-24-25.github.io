@@ -1,0 +1,10 @@
+@startuml
+scale 180 width
+
+class Person {
+ String name 
+ Person mother
+ Person father
+}
+
+@enduml

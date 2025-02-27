@@ -1,0 +1,15 @@
+digraph G {
+
+    a -> b0
+    xb [label="",width=.1,style=invis]
+    a -> xb [style=invis]
+    a -> b1
+    {rank=same b0 -> xb -> b1 [style=invis]}
+    b0 -> c0
+    xc [label="",width=.1,style=invis]
+    b0 -> xc [style=invis]
+    b0 -> c1
+    {rank=same c0 -> xc -> c1 [style=invis]}
+
+}
+

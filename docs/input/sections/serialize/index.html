@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Serialization
+  #
+
+
+Serializing an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized).
+
+
+  in Java
+  #
+
+Java provides a native mechanism to serialize an object (including information about the type of the object).
+The serialization format is not (meant to be) human-readable.
+The process is JVM independent, meaning that an object can be serialized on one platform and deserialized on another.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/input/sections/serialize/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Serialization">
+  <meta property="og:description" content="Serialization # Serializing an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized).
+in Java # Java provides a native mechanism to serialize an object (including information about the type of the object). The serialization format is not (meant to be) human-readable.
+The process is JVM independent, meaning that an object can be serialized on one platform and deserialized on another.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Serialization | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/input/sections/serialize/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Serialization</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#transient">Transient</a></li>
+        <li><a href="#serializable">Serializable</a></li>
+      </ul>
+    </li>
+    <li><a href="#serialversionuid"><code>serialVersionUID</code></a></li>
+    <li><a href="#serialization-and-deserialization-methods">Serialization (and deserialization) methods</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="serialization">
+  Serialization
+  <a class="anchor" href="#serialization">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p><strong>Serializing</strong> an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. <strong>deserialized</strong>).</p>
+</blockquote>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<p>Java provides a native mechanism to serialize an object (including information about the type of the object).
+The serialization format is <em>not</em> (meant to be) human-readable.</p>
+<p>The process is <em>JVM independent</em>, meaning that an object can be serialized on one platform and deserialized on another.</p>
+<h3 id="transient">
+  Transient
+  <a class="anchor" href="#transient">#</a>
+</h3>
+<p>In Java, an instance attribute can be marked with the keyword <code>transient</code> (a.k.a. &ldquo;volatile&rdquo;).
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>  String serializedAttribute;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transient</span> <span style="color:#66d9ef">int</span> transientAttribute;
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Transient attributes are <em>excluded</em> from the serialization process (meaning that a serialized object contains no value for its transient attribute).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+When an object is <em>deserialized</em> (i.e. converted back to an object), <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5">default values</a> are assigned to each of its transient attributes: <code>null</code> for a reference, <code>0</code> for an <code>int</code>, <code>false</code> for a <code>boolean</code>, etc.</p>
+</blockquote>
+<h3 id="serializable">
+  Serializable
+  <a class="anchor" href="#serializable">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>In Java:</p>
+<ul>
+<li>a value with primitive type (e.g. <code>int</code>) is <strong>serializable</strong>,</li>
+<li>an array is <strong>serializable</strong> if its elements are serializable,</li>
+<li>an object is <strong>serializable</strong> if:
+<ul>
+<li>its class implements the interface <code>Serializable</code>, and</li>
+<li>each of its attributes is serializable or marked as <code>transient</code>.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+Implementing the interface <code>Serializable</code> does not require implementing any method.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Instances of the following class are not serializable, because <code>Country</code> does not implement <code>Serializable</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(String name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Instances of the following class are not serializable either,
+because the attribute <code>country</code> has type <code>Country</code>, which does not implement <code>Serializable</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Serializable {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>    Country country;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode, Country country) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>However, if we replace</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    Country country;
+</span></span></code></pre></div><p>with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">transient</span> Country country;
+</span></span></code></pre></div><p>then instances of the class <code>City</code> become serializable, because:</p>
+<ul>
+<li>the attribute <code>name</code> has type <code>String</code>, which implements <code>Serializable</code>, and</li>
+<li>the attribute <code>zipCode</code> has a primitive type, and</li>
+<li>the attribute <code>country</code> is now declared as transient.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+Most native implementations of the Java interfaces <code>Collection</code> (<code>ArrayList</code>, <code>LinkedList</code>, <code>HashSet</code>, <code>TreeSet</code>, etc.) and <code>Map</code> (<code>HashMap</code>, <code>TreeMap</code>, etc.) also implement <code>Serializable</code>.</p>
+</blockquote>
+<h2 id="serialversionuid">
+  <code>serialVersionUID</code>
+  <a class="anchor" href="#serialversionuid">#</a>
+</h2>
+<p>If a class implements the interface <code>Serializable</code>, it is recommended to add a field:
+<code>private static final long serialVersionUID</code> (annotated with <code>@Serial</code>)
+and initialize it.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Serializable {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Serial</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The value is irrelevant, but is meant to be updated if the (instance) attributes of the class are modified.</p>
+<p>For an explanation, we refer to <a href="https://www.baeldung.com/java-serial-version-uid">this page</a>.</p>
+<h2 id="serialization-and-deserialization-methods">
+  Serialization (and deserialization) methods
+  <a class="anchor" href="#serialization-and-deserialization-methods">#</a>
+</h2>
+<p>The class <code>ObjectOutputStream</code> allows serializing an object, with the method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writeObject</span>(Object x) <span style="color:#66d9ef">throws</span> IOException
+</span></span></code></pre></div><p>Similarly, the class <code>ObjectInputStream</code> allows deserializing an object (i.e. loading it back into memory),
+with the method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object <span style="color:#a6e22e">readObject</span>() <span style="color:#66d9ef">throws</span> IOException, ClassNotFoundException
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+The return type of <code>readObject</code> is <code>Object</code>, so the returned object needs to be cast to its appropriate data type.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Let us continue with the example above (assuming that the attribute <code>City.country</code> is marked as <code>transient</code>).</p>
+<p>A instance of <code>City</code> can be serialized to a file as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;path/to/file.ser&#34;</span>;
+</span></span><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);
+</span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100, italy);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (ObjectOutputStream out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream(<span style="color:#66d9ef">new</span> FileOutputStream(path))) {
+</span></span><span style="display:flex;"><span>    out.<span style="color:#a6e22e">writeObject</span>(bologna);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And deserialized as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City deserializedBologna;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (ObjectInputStream in <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream(<span style="color:#66d9ef">new</span> FileInputStream(path))) {
+</span></span><span style="display:flex;"><span>  deserializedBologna <span style="color:#f92672">=</span> (City) in.<span style="color:#a6e22e">readObject</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException <span style="color:#f92672">|</span> ClassNotFoundException e ) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Ouputs &#39;Deserialized city: { name: Bologna, zipCode: 40100, country: null }&#39;</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">printf</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Deserialized city: { name: %s, zipCode: %d, country: %s }&#34;</span>,
+</span></span><span style="display:flex;"><span>  deserializedBologna.<span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>  deserializedBologna.<span style="color:#a6e22e">zipCode</span>,
+</span></span><span style="display:flex;"><span>  deserializedBologna.<span style="color:#a6e22e">country</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Observe that the attribute <code>country</code> after deserialization has value <code>null</code> (because it is marked as <code>transient</code>).</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#transient">Transient</a></li>
+        <li><a href="#serializable">Serializable</a></li>
+      </ul>
+    </li>
+    <li><a href="#serialversionuid"><code>serialVersionUID</code></a></li>
+    <li><a href="#serialization-and-deserialization-methods">Serialization (and deserialization) methods</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

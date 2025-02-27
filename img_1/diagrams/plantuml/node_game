@@ -1,0 +1,9 @@
+@startuml
+scale 250 width
+
+class Node {
+  int label
+  Node[] children
+}
+
+@enduml

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regular expressions on Programming project 2024-25</title>
+    <link>http://localhost:35131/docs/regex/</link>
+    <description>Recent content in Regular expressions on Programming project 2024-25</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:35131/docs/regex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pattern matching</title>
+      <link>http://localhost:35131/docs/regex/sections/pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:35131/docs/regex/sections/pattern/</guid>
+      <description>&lt;h1 id=&#34;pattern-matching&#34;&gt;&#xA;  Pattern matching&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#pattern-matching&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Two of the main uses of regexes are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;string validation&lt;/strong&gt;, i.e. check whether a string satisfies certain constraints. For instance:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;has at least one digit and one special character,&lt;/li&gt;&#xA;&lt;li&gt;is a valid address,&lt;/li&gt;&#xA;&lt;li&gt;etc.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;string search&lt;/strong&gt;, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;replacing strings in a file or a folder (e.g. within a codebase),&lt;/li&gt;&#xA;&lt;li&gt;splitting a sentence into (natural language) words,&lt;/li&gt;&#xA;&lt;li&gt;splitting a program into meaningful substrings, e.g. split the instruction &lt;code&gt;int a=5;&lt;/code&gt; into &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;=&lt;/code&gt;, &lt;code&gt;5&lt;/code&gt; and &lt;code&gt;;&lt;/code&gt;,&lt;/li&gt;&#xA;&lt;li&gt;filtering (e.g. with the &lt;code&gt;grep&lt;/code&gt; command) of modifying (e.g. with the &lt;code&gt;sed&lt;/code&gt; command) lines in a file,&lt;/li&gt;&#xA;&lt;li&gt;etc.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In both scenarios, a regex is viewed as a &lt;em&gt;pattern&lt;/em&gt; that should be &lt;em&gt;matched&lt;/em&gt; against a string.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>in practice</title>
+      <link>http://localhost:35131/docs/regex/sections/practice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:35131/docs/regex/sections/practice/</guid>
+      <description>&lt;h1 id=&#34;regexes-in-practice&#34;&gt;&#xA;  Regexes in practice&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#regexes-in-practice&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Concrete regexes deviate from theoretical ones in several ways.&#xA;In particular:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Concrete syntaxes include a wide range of &lt;em&gt;syntactic sugar&lt;/em&gt;, i.e. operators that could in theory be expressed in terms of &lt;code&gt;|&lt;/code&gt;, &lt;code&gt;*&lt;/code&gt; and concatenation.&lt;/p&gt;&#xA;&lt;!-- This is almost a necessity for most practical applications. --&gt;&#xA;&lt;!-- For instance, concrete syntaxes usually allow specifying a range of characters, like `[A-Z]` for &#34;any capital letter between A and Z&#34;, --&gt;&#xA;&lt;!-- which is syntactic sugar for $A | B | C |..| Z$. --&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Many regex engines support expressions with features (such as &lt;a href=&#34;#backreference&#34;&gt;backreferences&lt;/a&gt;) that go beyond the expressivity of theoretical regexes.&#xA;Technically, such expressions do not qualify as as regexes (they may describe a language that is not &lt;a href=&#34;http://localhost:35131/docs/background/sections/regular/#reglanguage&#34;&gt;regular&lt;/a&gt;).&#xA;However, in practice, they are still referred to as &amp;ldquo;regexes&amp;rdquo;.&#xA;This is also what we will do in this section.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using Java regexes</title>
+      <link>http://localhost:35131/docs/regex/sections/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:35131/docs/regex/sections/java/</guid>
+      <description>&lt;h1 id=&#34;using-java-regexes&#34;&gt;&#xA;  Using Java regexes&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#using-java-regexes&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;escaping-&#34;&gt;&#xA;  Escaping &lt;code&gt;\&lt;/code&gt;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#escaping-&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A regex in Java is a string.&lt;/p&gt;&#xA;&lt;p&gt;Recall that within a Java string, a &lt;code&gt;\&lt;/code&gt; character must be escaped (i.e. written &lt;code&gt;\\&lt;/code&gt;) to be read as a normal character.&#xA;So in a Java string that represents a regex, every &lt;code&gt;\&lt;/code&gt; should be written &lt;code&gt;\\&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Example.&lt;/em&gt;&lt;/strong&gt;&#xA;The string &lt;code&gt;&amp;quot;[A-Z]\\d+&amp;quot;&lt;/code&gt; represents the regex &lt;code&gt;[A-Z]\d+&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Hint.&lt;/em&gt;&lt;/strong&gt;&#xA;This is another good reason for using a regex validation tool (e.g. &lt;a href=&#34;https://regex101.com/&#34;&gt;regex101&lt;/a&gt;) to test and debug a regex, before incorporating it into a program.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

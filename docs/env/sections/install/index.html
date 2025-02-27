@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Software management
+  #
+
+
+  Dependencies
+  #
+
+As a developer, you frequently need to download, install and/or update:
+
+libraries used in your projects (called dependencies),
+core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc.
+tools for software development: editor, debugger, etc.
+
+These programs have their own dependencies, that have their own dependencies, etc.
+And two programs may depend on different versions of a same third program.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/install/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Software management">
+  <meta property="og:description" content="Software management # Dependencies # As a developer, you frequently need to download, install and/or update:
+libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Software management | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/install/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.d2bdf4d41b8b16ba58f297d496360ffb40cb9e480b1bad2b10f8936f4c137ad0.js" integrity="sha256-0r301BuLFrpY8pfUljYP&#43;0DLnkgLG60rEPiTb0wTetA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="active">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Software management</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#dependencies">Dependencies</a></li>
+    <li><a href="#automated-dependency-management">Automated dependency management</a>
+      <ul>
+        <li><a href="#package">Definitions</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#packageManager">Usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#self-containment">Self-containment</a>
+      <ul>
+        <li><a href="#self-containment-in-java">Self-containment in Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="software-management">
+  Software management
+  <a class="anchor" href="#software-management">#</a>
+</h1>
+<h2 id="dependencies">
+  Dependencies
+  <a class="anchor" href="#dependencies">#</a>
+</h2>
+<p>As a developer, you frequently need to download, install and/or update:</p>
+<ul>
+<li>libraries used in your projects (called <strong>dependencies</strong>),</li>
+<li>core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc.</li>
+<li>tools for software development: editor, debugger, etc.</li>
+</ul>
+<p>These programs have their own dependencies, that have their own dependencies, etc.
+And two programs may depend on different <em>versions</em> of a same third program.</p>
+<p><strong>Dependency management</strong> is a frequent source of complications during software development.
+Dependency patterns that may occur include:</p>
+<ul>
+<li>
+<p>co-dependencies:</p>
+<p>For instance, consider the following configuration:</p>
+<ul>
+<li>Project $P$ depends on a certain version of Library $L_1$,</li>
+<li>$P$ also depends on Library $L_2$, which depends on an older version of $L_1$ (and the two versions are not compatible),</li>
+</ul>
+<p>The build of project $P$ may fail because it can contain only one version of $L_1$.</p>
+</li>
+<li>
+<p>cyclic dependencies:</p>
+<ul>
+<li>
+<p>Library $L_1$ depends on a specific version of Library $L_2$, and</p>
+</li>
+<li>
+<p>$L_2$ depends on a specific version of $L_1$.</p>
+<p>Upgrading one of these two libraries independently may prevent the other one to run.
+But it may be possible to upgrade both at the same time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+<p>Note that in these two examples, dependencies may be direct or transitive.
+As a result, it can be very difficult to <em>diagnose</em> such problems.</p>
+<p>The term <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a> is sometimes used to refer to such situations.</p>
+<p>Two (non-exclusive) broad approaches are commonly adopted to avoid such issues:</p>
+<ul>
+<li><strong>automated dependency management</strong> (using a package manager), and</li>
+<li><strong>self-containment</strong>: avoid shared libraries, each program having a copy (some of) its own dependencies.</li>
+</ul>
+<h2 id="automated-dependency-management">
+  Automated dependency management
+  <a class="anchor" href="#automated-dependency-management">#</a>
+</h2>
+<h3 id="package">
+  Definitions
+  <a class="anchor" href="#package">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A <strong>package</strong> is a program together with some metadata.
+These metadata include the program&rsquo;s name, version, release date, authors, licence and <em>the names of its dependencies</em> (together with their <em>versions</em>).</p>
+<p>A <strong>software repository</strong> is a collection of packages that comply to the same format of metadata.
+A software repository (precisely, multiple copies of it) is generally hosted on the cloud.</p>
+<p>A <strong>package manager</strong> automates the installation (as well as configuration, update and removal) of packages from a software repository (or several) to a user&rsquo;s machine.</p>
+</blockquote>
+<h3 id="examples">
+  Examples
+  <a class="anchor" href="#examples">#</a>
+</h3>
+<p>An <em>operating system</em> (OS) may use a package manager and software repositories.
+Notably, this is the preferred way of installing software on most Linux distributions.
+Widely used OS package managers include:</p>
+<ul>
+<li>apt for Debian and derivatives,</li>
+<li>dnf for Fedora and derivatives,</li>
+<li>pacman for Arch and derivatives,</li>
+<li>Homebrew for macOS,</li>
+<li>Chocolatey (since 2011) and Winget (since May 2021) for Windows.</li>
+</ul>
+<p>Many <em>programming languages</em> have dedicated package managers.
+For instance:</p>
+<ul>
+<li>Maven for Java,</li>
+<li>npm for Node.js (Javascript)</li>
+<li>pip for Python,</li>
+<li>NuGet for .NET (C#, F#, and Visual Basic)</li>
+<li>RubyGems for Ruby,</li>
+<li>CPAN for Perl</li>
+<li>CRAN for R,</li>
+<li>etc.</li>
+</ul>
+<p>Some <em>applications</em> also have dedicated software repositories for plugins (and plugin managers to handle these plugins).
+For instance.</p>
+<ul>
+<li>The VSCode market place,</li>
+<li>CTAN for LateX,</li>
+<li>MELPA for Emacs,</li>
+<li>etc.</li>
+</ul>
+<p>Other applications (such as zsh, vim or neovim) only have plugin managers, without a centralized software repository.
+These managers install plugins directly from hosts (e.g. GitHub repositories).</p>
+<h3 id="packageManager">
+  Usage
+  <a class="anchor" href="#packageManager">#</a>
+</h3>
+<p>Installing, updating and removing software via a package manager is <em>highly recommended</em> in most scenarios.
+In particular:</p>
+<ul>
+<li><em>dependencies</em> of a package are also installed (or it some cases updated or removed) <em>transitively</em>,</li>
+<li>some package managers can install and manage <em>several versions</em> of the same package (when needed),</li>
+<li>the installation process often uses a <em>default</em> configuration and directory layout (environment variables, etc.) that facilitates interaction with other programs.</li>
+</ul>
+<p>The installation (or update or removal) procedure is also <em>significantly simpler</em>, thus leaving less room for manual errors.
+As an illustration, here is the full procedure to install Maven with the apt package manager (on Debian and derivatives):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install maven
+</span></span></code></pre></div><p>and similarly with homebrew (on macOS):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install maven
+</span></span></code></pre></div><p>or with Chocolatey (on Windows):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>choco install maven
+</span></span></code></pre></div><p>In comparison, the procedure to install Maven manually on Windows is <a href="https://phoenixnap.com/kb/install-maven-windows">more involved</a>, thus more likely to introduce errors (trough inadvertence, or by following outdated instructions).</p>
+<p>However, in some (rare) scenarios, a manual installation may be preferred.
+In particular when the latest version of a program is needed, but not available yet on the software repository.</p>
+<h2 id="self-containment">
+  Self-containment
+  <a class="anchor" href="#self-containment">#</a>
+</h2>
+<p>A variety of strategies can be adopted to build a program so that it runs in partial <em>isolation</em> from the rest of the system that it is deployed on (i.e. in its own environment, and with its <em>own dependencies</em>, that cannot be used by other programs).</p>
+<p>For instance, a Node.js project often includes a <em>copy</em> of all the Javascript libraries that it depends on (transitively).
+Further self-containment strategies may involve different levels of virtualization (e.g. via Docker).</p>
+<p>This is one way to avoid shared dependencies.
+Other benefits are increased <em>portability</em>, and ease of installation by end-users.
+Drawbacks include and increased workload on the developer&rsquo;s side (e.g. for maintenance), and limited opportunities for integration with other programs.</p>
+<h3 id="self-containment-in-java">
+  Self-containment in Java
+  <a class="anchor" href="#self-containment-in-java">#</a>
+</h3>
+<p>In Java, self-containment is usually less pronounced during development.
+Java libraries are typically managed via Maven:</p>
+<ul>
+<li>on a <em>per-user</em> basis (which can be viewed as a compromise between per-project and system-wise): each user has a hidden folder <code>&lt;homeDir&gt;/.m2/</code> that contains all Java libraries used in his/her projects, and</li>
+<li>allowing <em>multiple versions</em> of the same library to coexist.</li>
+</ul>
+<p>However, a Java application that targets non-developers can be released together with its Java dependencies, as a so-called <strong>über jar</strong> (a.k.a. <strong>fat jar</strong>).</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#dependencies">Dependencies</a></li>
+    <li><a href="#automated-dependency-management">Automated dependency management</a>
+      <ul>
+        <li><a href="#package">Definitions</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#packageManager">Usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#self-containment">Self-containment</a>
+      <ul>
+        <li><a href="#self-containment-in-java">Self-containment in Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

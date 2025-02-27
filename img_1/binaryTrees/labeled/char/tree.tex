@@ -1,0 +1,40 @@
+% \documentclass{article}
+\documentclass[tikz,margin=5mm]{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[
+  scale=2.5,
+  every node/.style = {minimum width = 6em, draw, circle, font=\Huge\bf, line width=2pt, scale=1},
+  edge from parent/.style={line width=2pt, draw},
+  level/.style = {sibling distance = 60mm/#1}
+]
+  \node {A}
+  child {
+        node {B}  
+        child {
+          node {D}
+          child {edge from parent[draw = none]}
+          child {node {H}}
+        }
+        child {
+          node {E}
+          child {node {I}}
+          child {node {J}}
+        }
+      }
+  child {
+    node {C}
+    child {
+      node {F}
+      child {node{K}}
+      child {node{L}}
+    }
+    child {
+      node {G}
+      child {edge from parent[draw = none]}
+      child {node{M}}
+    }
+    };
+\end{tikzpicture}
+\end{document}
+

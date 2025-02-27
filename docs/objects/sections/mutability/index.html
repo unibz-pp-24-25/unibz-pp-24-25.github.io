@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Mutability
+  #
+
+
+  Illustration
+  #
+
+
+
+Exercise
+The Java method createUsers below is incorrect.
+Can you see why, and how to fix this?
+public class User {
+    int id;
+    String name;
+}
+/*
+  Input:
+      - ids: a nonempty array of user identifiers
+      - names: an array of the same length as &#39;ids&#39; that contains
+        user names
+  Ouput: an array of users of the same lenght as &#39;ids&#39;,
+    such as the i-th user has identifier ids[i] and name names[i]
+*/
+User[] createUsers(int[] ids, String[] names){
+
+    User[] users = new User[names.length];
+
+    User currentUser = new User();
+
+    for(int i = 0; i &lt; ids.length; i&#43;&#43;){
+        currentUser.id = ids[i];
+        currentUser.name = names[i];
+        users[i] = currentUser;
+    }
+    return users;
+}
+
+
+Possible solution
+The output array contains $i$ times the same user (with the last id and name from the input arrays).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/mutability/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Mutability">
+  <meta property="og:description" content="Mutability # Illustration # Exercise The Java method createUsers below is incorrect.
+Can you see why, and how to fix this?
+public class User { int id; String name; } /* Input: - ids: a nonempty array of user identifiers - names: an array of the same length as &#39;ids&#39; that contains user names Ouput: an array of users of the same lenght as &#39;ids&#39;, such as the i-th user has identifier ids[i] and name names[i] */ User[] createUsers(int[] ids, String[] names){ User[] users = new User[names.length]; User currentUser = new User(); for(int i = 0; i &lt; ids.length; i&#43;&#43;){ currentUser.id = ids[i]; currentUser.name = names[i]; users[i] = currentUser; } return users; } Possible solution The output array contains $i$ times the same user (with the last id and name from the input arrays).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Mutability | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/mutability/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="active">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Mutability</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustration">Illustration</a></li>
+    <li><a href="#immutable-object">Immutable object</a>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#drawbacks">Drawbacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#terminology">Terminology</a></li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#final"><code>final</code></a></li>
+        <li><a href="#final-vs-immutable"><code>final</code> vs immutable</a></li>
+        <li><a href="#final-and-immutable-types">Final and immutable types</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="mutability">
+  Mutability
+  <a class="anchor" href="#mutability">#</a>
+</h1>
+<h2 id="illustration">
+  Illustration
+  <a class="anchor" href="#illustration">#</a>
+</h2>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_mutability_intro" id="tabs-exercise_mutability_intro-0" checked="checked" />
+<label for="tabs-exercise_mutability_intro-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The Java method <code>createUsers</code> below is incorrect.</p>
+<p>Can you see why, and how to fix this?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Input:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      - ids: a nonempty array of user identifiers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      - names: an array of the same length as &#39;ids&#39; that contains
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        user names
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Ouput: an array of users of the same lenght as &#39;ids&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    such as the i-th user has identifier ids[i] and name names[i]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>names.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    User currentUser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        currentUser.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>        currentUser.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> currentUser;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> users;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_mutability_intro" id="tabs-exercise_mutability_intro-1"  />
+<label for="tabs-exercise_mutability_intro-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p>The output array contains $i$ times the same user (with the last id and name from the input arrays).</p>
+<p>One way to fix this is:</p>
+<ul>
+<li>add an explicit constructor to the class <code>User</code>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id, String name){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>call this constructor for each new user:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> User<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>names.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>, names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> users;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<p>In this example, an instance of the class <code>User</code> is a <em>mutable</em> object, meaning that its attributes (<code>id</code> and <code>name</code>) can be modified after the object is created.
+However, these two values (or at least the value of the attribute <code>id</code>) are unlikely to change.</p>
+<p>In Java (or C#, C++, etc.), it is possible to forbid these two values to be modified.
+This would have prevented compilation of the incorrect program above.</p>
+<h2 id="immutable-object">
+  Immutable object
+  <a class="anchor" href="#immutable-object">#</a>
+</h2>
+<p>Informally, an object is <strong>mutable</strong> if it can be modified after its creation.</p>
+<p>Immutability has many known benefits (but also drawbacks):</p>
+<h3 id="benefits">
+  Benefits
+  <a class="anchor" href="#benefits">#</a>
+</h3>
+<ul>
+<li><strong><em>Easier debugging:</em></strong> as illustrated above, forcing an object to be immutable may prevent an incorrect program to compile.
+Compile-time errors are usually easier to fix that bugs.</li>
+<li><strong><em>Readability:</em></strong> code that modifies or reuses objects can be harder to understand (and <em>reason</em> about) than code that creates (fresh) immutable objects.</li>
+<li><strong><em>Thread-safety:</em></strong> multiple threads can access an immutable object concurrently without <a href="">race condition</a>.</li>
+<li><strong><em>Easier collaboration and maintenance:</em></strong> Alice can safely pass an immutable object to Bob (i.e. make the object visible to Bob&rsquo;s code).
+This will not affect the correctness of Alice&rsquo;s code (because Bob&rsquo;s code cannot modify this object).</li>
+</ul>
+<blockquote>
+<p><strong><em>Reference.</em></strong>
+For a more in-depth analysis of the benefits of immutability, we refer to <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, item 17:</p>
+<p><em>&ldquo;Classes should be immutable unless there&rsquo;s a very good reason to make them mutable.&rdquo;</em></p></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Observation.</em></strong>
+Some programming language (like Haskell or Rust), enforce (a form of) immutability by default.</p>
+</blockquote>
+<h3 id="drawbacks">
+  Drawbacks
+  <a class="anchor" href="#drawbacks">#</a>
+</h3>
+<ul>
+<li><strong><em>Performance:</em></strong> on a large scale (e.g. thousands of objects), reusing existing object may be more efficient that creating (fresh) immutable ones.</li>
+</ul>
+<h2 id="terminology">
+  Terminology
+  <a class="anchor" href="#terminology">#</a>
+</h2>
+<p>The term &ldquo;immutable object&rdquo; (or &ldquo;immutable class&rdquo;) is used with slightly different meanings.
+In particular:</p>
+<ul>
+<li>a weaker notion of immutability only requires the <em>attributes</em> of an object to be non-modifiable,</li>
+<li>a stronger notion also requires the <em>objects</em> that are referred to (transitively) to be non-modifiable.</li>
+</ul>
+<p>By convention, we will use in what follows the term &ldquo;final&rdquo; for the weaker requirement,
+and &ldquo;immutable&rdquo; for the stronger requirement.
+More precisely:</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+An object is <strong>final</strong> if its attributes cannot be modified after the object&rsquo;s creation.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+An object is <strong>immutable</strong> if it is final and the objects that it references are immutable.</p>
+</blockquote>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="final">
+  <code>final</code>
+  <a class="anchor" href="#final">#</a>
+</h3>
+<p>The Java keyword <code>final</code> ensures that a variable cannot change value after its initialization.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program does not compile.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> 3;
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+This meaning of the keyword <code>final</code> is different from that we already saw in the section on <a href="">encapsulation</a>.</p>
+</blockquote>
+<p>When the variable is an instance attribute, this also forces the attributes to be explicitly instantiated <em>before the execution of the constructor terminates</em>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program does not compile.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program compiles, and the instances of <code>User</code> are immutable (because strings in Java are themselves immutable).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+Alternatively, a <code>final</code> instance attribute can be instantiated immediately after it is declared (because this instruction is executed before the constructor).
+For instance, the following program compiles.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>In practice.</em></strong>
+Your IDE is likely to create <code>final</code> (and <code>private</code>) instance attributes by default.</p>
+</blockquote>
+<h3 id="final-vs-immutable">
+  <code>final</code> vs immutable
+  <a class="anchor" href="#final-vs-immutable">#</a>
+</h3>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The <code>final</code> keyword may not be sufficient to enforce immutability (at least as it is defined above),
+in particular when a <code>final</code> attribute refers to a mutable object.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Instances of the class <code>User</code> below are final, but not immutable, because instances of <code>Address</code> are not immutable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> Address address;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id, Address address){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Address</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> streetNumber;
+</span></span><span style="display:flex;"><span>    String street;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Address</span>(<span style="color:#66d9ef">int</span> streetNumber, String street, <span style="color:#66d9ef">int</span> zipCode){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">streetNumber</span> <span style="color:#f92672">=</span> streetNumber;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">street</span> <span style="color:#f92672">=</span> street;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For instance, the following code compiles.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Address myAddress <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Address(14, <span style="color:#e6db74">&#34;via Goethe&#34;</span>, 39100);
+</span></span><span style="display:flex;"><span>User myUser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(1, myAddress);
+</span></span><span style="display:flex;"><span>myAddress.<span style="color:#a6e22e">streetNumber</span> <span style="color:#f92672">=</span> 12;
+</span></span></code></pre></div></blockquote>
+<h3 id="final-and-immutable-types">
+  Final and immutable types
+  <a class="anchor" href="#final-and-immutable-types">#</a>
+</h3>
+<p>We already encountered several types of Java object and quasi-objects that are:</p>
+<ul>
+<li>final:
+<ul>
+<li>records,</li>
+<li>sets (resp. lists, maps) that are declared with <code>Set.of()</code> (resp. <code>List.of()</code>, <code>Map.of()</code>),</li>
+</ul>
+</li>
+<li>immutable:
+<ul>
+<li>strings,</li>
+<li>boxed types (like <code>Integer</code> or <code>Boolean</code>).</li>
+</ul>
+</li>
+</ul>
+<h4 id="record">
+  Record
+  <a class="anchor" href="#record">#</a>
+</h4>
+<p>A record is final.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+Because strings are immutable, the following records are immutable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id, String name){};
+</span></span></code></pre></div><p>However, the following records are only final (unless instance of <code>Address</code> are immutable):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id, String name, Address address){};
+</span></span></code></pre></div></blockquote>
+<h4 id="set-list-map">
+  Set, List, Map
+  <a class="anchor" href="#set-list-map">#</a>
+</h4>
+<p>If a set (resp. list, map) is created with <code>Set.of()</code> (resp. <code>List.of()</code>, <code>Map.of()</code>), then its content is final.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following Java program throws an <code>UnsupportedOperation</code> exception.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> mySet <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(2, 3);
+</span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(5);
+</span></span></code></pre></div></blockquote>
+<p>However, if the set (resp. list, map) contains references, then the objects that are referred to may be mutable.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following program compiles (assuming that the attribute <code>streetNumber</code> of the class <code>Address</code> does not have the <code>final</code> keyword).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Address myAddress <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Address(14, <span style="color:#e6db74">&#34;via Goethe&#34;</span>, 39100);
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Address<span style="color:#f92672">&gt;</span> mySet <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(myAddress);
+</span></span><span style="display:flex;"><span>myAddress.<span style="color:#a6e22e">streetNumber</span> <span style="color:#f92672">=</span> 12;
+</span></span></code></pre></div></blockquote>
+<p>By design, most other implementations of <code>List</code>, <code>Set</code> and <code>Map</code> are <em>not</em> final (this is expected, for performance reasons).</p>
+<p>However, in some scenarios, a program may create a (small) list (resp. set, map) that is not meant to be modified.
+For instance, the list of all files in a folder.
+In this case, the list (resp. set, map) can be made final.
+A common way to achieve this is the class <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableList.html">ImmutableList</a> (resp. <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableSet.html">ImmutableSet</a>, <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableMap.html">ImmutableMap</a>) of the Guava library.</p>
+<p>To use Guava in a Maven project, declare this <a href="">dependency</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.google.guava<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>guava<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>33.1.0-jre<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><p>or in a Gradle project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation group: <span style="color:#e6db74">&#39;com.google.guava&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;guava&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#e6db74">&#39;33.1.0-jre&#39;</span>
+</span></span></code></pre></div><h4 id="string">
+  String
+  <a class="anchor" href="#string">#</a>
+</h4>
+<p>Java&rsquo;s strings are immutable.</p>
+<p>However, the class <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a> implements a mutable string.
+It provides instance methods like <code>append</code>, <code>insert</code>, <code>delete</code> (a substring), etc.</p>
+<h4 id="boxed-types">
+  Boxed types
+  <a class="anchor" href="#boxed-types">#</a>
+</h4>
+<p>Java&rsquo;s <a href="http://localhost:1313/docs/objects/sections/quasi-objects/#boxedTypes">boxed types</a> (like <code>Integer</code> or <code>Boolean</code>) are immutable.</p>
+<p>However, each boxed types has a mutable &ldquo;atomic&rdquo; counterpart, e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a> for <code>Integer</code> and <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicBoolean.html">AtomicBoolean</a> for <code>Boolean</code>.</p>
+<p>The main purpose of these classes is to offer build-in <a href="">thread safety</a> for common sequences of operations.
+For instance, <code>AtomicInteger</code> provides a method equivalent to <code>i++</code>, but thread-safe (note that <code>i++</code> is a shortcut for three operations: read the value, increment it and write it back).</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_mutability_atomic" id="tabs-exercise_mutability_atomic-0" checked="checked" />
+<label for="tabs-exercise_mutability_atomic-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What does the following program output?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Boolean b <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create an atomic boolean with value true</span>
+</span></span><span style="display:flex;"><span>AtomicBoolean ab <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AtomicBoolean(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Boolean<span style="color:#f92672">&gt;</span> booleans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>AtomicBoolean<span style="color:#f92672">&gt;</span> aBooleans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>booleans.<span style="color:#a6e22e">add</span>(b);
+</span></span><span style="display:flex;"><span>aBooleans.<span style="color:#a6e22e">add</span>(ab);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Set the value of the atomic boolean to false</span>
+</span></span><span style="display:flex;"><span>ab.<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>booleans.<span style="color:#a6e22e">add</span>(b);
+</span></span><span style="display:flex;"><span>aBooleans.<span style="color:#a6e22e">add</span>(ab);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(booleans);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aBooleans);
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_mutability_atomic" id="tabs-exercise_mutability_atomic-1"  />
+<label for="tabs-exercise_mutability_atomic-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>[true, false]
+[false, false]
+</code></pre></div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustration">Illustration</a></li>
+    <li><a href="#immutable-object">Immutable object</a>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#drawbacks">Drawbacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#terminology">Terminology</a></li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#final"><code>final</code></a></li>
+        <li><a href="#final-vs-immutable"><code>final</code> vs immutable</a></li>
+        <li><a href="#final-and-immutable-types">Final and immutable types</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

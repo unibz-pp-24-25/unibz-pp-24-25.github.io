@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Pipeline
+  #
+
+
+Stream computations are specified as a pipeline, which consists of:
+
+a source (e.g. a collection or an I/O channel),
+a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&rsquo;s elements),
+one terminal operation (e.g. collecting the elements of the transformed stream).
+
+
+
+Intermediate operations are generally specified via callback methods (the terminal operation may as well).
+More precisely, the Java interface Stream provides instance methods (like filter or map) that take a callback method as argument, and transform the stream accordingly.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/stream/sections/pipeline/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Pipeline">
+  <meta property="og:description" content="Pipeline # Stream computations are specified as a pipeline, which consists of:
+a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream’s elements), one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (the terminal operation may as well). More precisely, the Java interface Stream provides instance methods (like filter or map) that take a callback method as argument, and transform the stream accordingly.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pipeline | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/stream/sections/pipeline/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Pipeline</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#explanation">Explanation</a>
+      <ul>
+        <li><a href="#source">Source</a></li>
+        <li><a href="#intermediate-operations">Intermediate operations</a></li>
+        <li><a href="#terminal-operation">Terminal operation</a></li>
+      </ul>
+    </li>
+    <li><a href="#reading-a-pipeline">Reading a pipeline</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="pipeline">
+  Pipeline
+  <a class="anchor" href="#pipeline">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p>Stream computations are specified as a <strong>pipeline</strong>, which consists of:</p>
+<ol>
+<li>a <strong>source</strong> (e.g. a collection or an I/O channel),</li>
+<li>a sequence of zero or more <strong>intermediate operations</strong>, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&rsquo;s elements),</li>
+<li><em>one</em> <strong>terminal operation</strong> (e.g. collecting the elements of the transformed stream).</li>
+</ol>
+</blockquote>
+<p><img src="/img/stream/streams_explained.jpg" alt="" /></p>
+<p>Intermediate operations are generally specified via <a href="">callback methods</a> (the terminal operation may as well).
+More precisely, the Java interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html">Stream</a> provides instance methods (like <code>filter</code> or <code>map</code>) that take a callback method as argument, and transform the stream accordingly.</p>
+<h2 id="example">
+  Example
+  <a class="anchor" href="#example">#</a>
+</h2>
+<p>Consider the following classes <code>Unit</code>, <code>Butterfly</code>, <code>Caterpillar</code> and <code>Unicorn</code>.</p>
+<p><img src="/img/diagrams/plantuml/interface_inherit_basic.svg" alt="" /></p>
+<p>The pipeline below:</p>
+<ul>
+<li>creates a stream out of a list of units,</li>
+<li>retains only butterflies,</li>
+<li>extracts the color of each butterfly,</li>
+<li>collects these colors as a set.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> butterflyColors <span style="color:#f92672">=</span> units.<span style="color:#a6e22e">stream</span>()                        <span style="color:#75715e">// create a stream</span>
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)  <span style="color:#75715e">// retain butterflies</span>
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">map</span>(b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>)                    <span style="color:#75715e">// map each butterfly to its color</span>
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());         <span style="color:#75715e">// collect the colors as a set</span>
+</span></span></code></pre></div><h2 id="explanation">
+  Explanation
+  <a class="anchor" href="#explanation">#</a>
+</h2>
+<p>This pipeline can be decomposed as follows:</p>
+<h3 id="source">
+  Source
+  <a class="anchor" href="#source">#</a>
+</h3>
+<p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html#stream%28%29">Collection.stream</a> generates a stream out of a collection (e.g. out of a <code>List</code> or a <code>Set</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>units.<span style="color:#a6e22e">stream</span>()
+</span></span></code></pre></div><p>In this example, because <code>units</code> has type <code>List&lt;Unit&gt;</code>, the stream that is returned by <code>units.stream()</code> has type <code>Stream&lt;Unit&gt;</code>.</p>
+<h3 id="intermediate-operations">
+  Intermediate operations
+  <a class="anchor" href="#intermediate-operations">#</a>
+</h3>
+<h4 id="filter">
+  Filter
+  <a class="anchor" href="#filter">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)
+</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#filter%28java.util.function.Predicate%29">Stream.filter</a> retains certain elements of the stream.</p>
+<p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Unit</code>).</p>
+<p>The method <code>filter</code> takes as argument a callback function of type</p>
+<p>$\qquad \mathit{T} \to$ <code>Boolean</code></p>
+<p>(equivalently, in Java&rsquo;s terminology, the callback function must implement the native <a href="">functional interface</a> <code>Predicate&lt;</code>$\mathit{T}$<code>&gt;</code>).</p>
+<p>In this example, the callback function is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly
+</span></span></code></pre></div><p>which has type</p>
+<p>$\qquad$ <code>Unit</code> $\to$ <code>Boolean</code></p>
+<p>The method <code>filter</code> returns a <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;Unit&gt;</code>) that consists of the elements for which the callback method evaluates to <code>true</code> (in this case, it retains only butterflies).</p>
+<h4 id="map">
+  Map
+  <a class="anchor" href="#map">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">map</span>(b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>)
+</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#map%28java.util.function.Function%29">Stream.map</a> applies a function to each element of the stream.</p>
+<p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Unit</code>).</p>
+<p>The method <code>map</code> takes as argument a callback function of type</p>
+<p>$\qquad T \to T'$</p>
+<p>where $T&rsquo;$ can be any type (equivalently, in Java&rsquo;s terminology, the callback function must implement the native functional interface <code>Function&lt;</code>$T$<code>,</code>$T&rsquo;$<code>&gt;</code>, <a href="">seen earlier</a>).</p>
+<p>In this example, the callback function is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>
+</span></span></code></pre></div><p>which has type</p>
+<p>$\qquad$ <code>Unit</code> $\to$ <code>String</code></p>
+<p>Let us name this callback function $f$.</p>
+<p>The method <code>map</code> returns a <code>Stream&lt;</code>$\mathit{T&rsquo;}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;String&gt;</code>) that consists of all objects $f(a)$ such that $a$ belongs to the original stream.</p>
+<h3 id="terminal-operation">
+  Terminal operation
+  <a class="anchor" href="#terminal-operation">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
+</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>), or a <code>Map</code>, or a string, etc.</p>
+<p>In this example, we call the static method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collectors.html#toSet%28%29">Collectors.toSet</a>, which returns a collector that produces a set.
+Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <code>.collect(Collectors.toSet())</code> returns a set with type <code>Set&lt;String&gt;</code>.</p>
+<h2 id="reading-a-pipeline">
+  Reading a pipeline
+  <a class="anchor" href="#reading-a-pipeline">#</a>
+</h2>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_stream_setIntersection" id="tabs-exercise_stream_setIntersection-0" checked="checked" />
+<label for="tabs-exercise_stream_setIntersection-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What do the following methods compute?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method1</span>(Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set1, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> set1.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> set2.<span style="color:#a6e22e">contains</span>(u))
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method2</span>(Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set1, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> set1.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(set2::contains)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_stream_setIntersection" id="tabs-exercise_stream_setIntersection-1"  />
+<label for="tabs-exercise_stream_setIntersection-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>Both methods compute the intersection of <code>set1</code> and <code>set2</code>.</p>
+</div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_stream_units" id="tabs-exercise_stream_units-0" checked="checked" />
+<label for="tabs-exercise_stream_units-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What do the methods <code>method1</code> to <code>method4</code> below compute?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method1</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&gt;</span> 0);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method2</span>(Stream<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> stream) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> stream.<span style="color:#a6e22e">map</span>(u <span style="color:#f92672">-&gt;</span> transform(u))
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">toList</span>();   <span style="color:#75715e">// collects the stream into a list</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Unit <span style="color:#a6e22e">transform</span>(Unit u) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (u <span style="color:#66d9ef">instanceof</span> Caterpillar) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Butterfly(u.<span style="color:#a6e22e">color</span>, u.<span style="color:#a6e22e">health</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> u;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method3</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> method2(method1(units));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method4</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&gt;</span> 0)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Caterpillar <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">new</span> Butterfly(u.<span style="color:#a6e22e">color</span>, u.<span style="color:#a6e22e">health</span>) :
+</span></span><span style="display:flex;"><span>                    u
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">toList</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_stream_units" id="tabs-exercise_stream_units-1"  />
+<label for="tabs-exercise_stream_units-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li><code>method1</code>:
+<ul>
+<li><strong>Input:</strong> A list of units.</li>
+<li><strong>Output:</strong> a stream that contains the same units, but discarding units with no health.</li>
+</ul>
+</li>
+<li><code>method2</code>:
+<ul>
+<li><strong>Input:</strong> A stream of units.</li>
+<li><strong>Output:</strong> A list that contains the same units, but where caterpillars become butterflies.</li>
+</ul>
+</li>
+<li><code>method3</code>:
+<ul>
+<li><strong>Input:</strong> A list of units.</li>
+<li><strong>Output:</strong> A list that contains the same units, but discarding units with no health, and transforming caterpillars into butterflies.</li>
+</ul>
+</li>
+<li><code>method4</code> is equivalent to <code>method3</code>.</li>
+</ul>
+</div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#explanation">Explanation</a>
+      <ul>
+        <li><a href="#source">Source</a></li>
+        <li><a href="#intermediate-operations">Intermediate operations</a></li>
+        <li><a href="#terminal-operation">Terminal operation</a></li>
+      </ul>
+    </li>
+    <li><a href="#reading-a-pipeline">Reading a pipeline</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

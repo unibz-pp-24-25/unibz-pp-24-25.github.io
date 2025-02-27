@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Sorting
+  #
+
+Sorting a collection (of values or objects) is needed in a variety of scenarios.
+
+  Sorting criterion
+  #
+
+In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).
+Some data types come with a natural way to compare two values.
+For instance, two real numbers can be compared w.r.t. $\le$.
+
+Observation.
+Some data type have several natural sorting criteria.
+For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/abstractdatatypes/sections/sorting/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Sorting">
+  <meta property="og:description" content="Sorting # Sorting a collection (of values or objects) is needed in a variety of scenarios.
+Sorting criterion # In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).
+Some data types come with a natural way to compare two values. For instance, two real numbers can be compared w.r.t. $\le$.
+Observation. Some data type have several natural sorting criteria. For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Sorting | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/abstractdatatypes/sections/sorting/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Sorting</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#criterion">Sorting criterion</a></li>
+    <li><a href="#properties-of-sorting-algorithms">Properties of sorting algorithms</a>
+      <ul>
+        <li><a href="#stable">Stability</a></li>
+        <li><a href="#in-place">In place</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#comparing">Comparing</a></li>
+        <li><a href="#sorting-1">Sorting</a></li>
+        <li><a href="#usage">Usage</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="sorting">
+  Sorting
+  <a class="anchor" href="#sorting">#</a>
+</h1>
+<p>Sorting a collection (of values or objects) is needed in a variety of scenarios.</p>
+<h2 id="criterion">
+  Sorting criterion
+  <a class="anchor" href="#criterion">#</a>
+</h2>
+<p>In order to sort a collection of values (resp. objects), we need a <em>sorting criterion</em>, i.e. a way to compare two values (resp. objects).</p>
+<p>Some data types come with a natural way to compare two values.
+For instance, two real numbers can be compared w.r.t. $\le$.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Observation.</em></strong>
+Some data type have several natural sorting criteria.
+For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Question.</em></strong>
+What about objects, i.e.
+which sorting criterion can be used to sort a collection of people, cities, sets, lists, trees, etc.?</p></blockquote>
+<blockquote>
+<p><strong><em>Answer.</em></strong>
+Any <a href="http://localhost:1313/docs/background/sections/order/#preorder">total preorder</a> (i.e. a total, reflexive and transitive binary relation) can be used to sort a collection.</p></blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-0" checked="checked" />
+<label for="tabs-exercise_preorders-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Which of the following are total preorders (i.e. can be used as a sorting criterion)?</p>
+<ol>
+<li>Compare two real numbers w.r.t. to their absolute value.</li>
+<li>Compare two people w.r.t. to their age.</li>
+<li>Compare two people w.r.t. to their age <em>and</em> size, i.e.</li>
+</ol>
+<p>$\qquad \qquad p_1 \preceq p_2$ iff
+$\big(p_1.{\text{age}} \le p_2.{\text{age}}$ and $p_1.{\text{size}} \le p_2.{\text{size}}\big)$.</p>
+<ol start="4">
+<li>Compare two people w.r.t. to their age <em>or</em> size, i.e.</li>
+</ol>
+<p>$\qquad \qquad p_1 \preceq p_2$ iff
+$\big(p_1.{\text{age}} \le p_2.{\text{age}}$ or $p_1.{\text{size}} \le p_2.{\text{size}}\big)$.</p>
+<ol start="5">
+<li>Compare two people w.r.t. to their age, and then their size (if they have the same age).</li>
+<li>Compare two points w.r.t. to their X coordinate, and then their Y coordinate (if they have the same X coordinate).</li>
+<li>Compare two trees w.r.t. to their number of nodes.</li>
+<li>Compare two sets w.r.t. to set inclusion.</li>
+<li>Compare two lists of integers by first sorting them, and then comparing them lexicographically.</li>
+</ol>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-1"  />
+<label for="tabs-exercise_preorders-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li>
+<ol start="3">
+<li>is a partial preorder,</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>is not transitive, and</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>is a partial order.</li>
+</ol>
+</li>
+</ul>
+<p>The others are total preorders.</p>
+</div>
+</div>
+<h2 id="properties-of-sorting-algorithms">
+  Properties of sorting algorithms
+  <a class="anchor" href="#properties-of-sorting-algorithms">#</a>
+</h2>
+<p><a href="https://en.wikipedia.org/wiki/Sorting_algorithm">Sorting algorithms</a> have been extensively studied.
+We will <em>not</em> cover them this semester (with one exception), because this is part of another course of the bachelor.</p>
+<p>We only highlight some of their properties.</p>
+<h3 id="stable">
+  Stability
+  <a class="anchor" href="#stable">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A sorting algorithm is <strong>stable</strong> if it preserves the initial order (in the input collection) of two elements that are equivalent w.r.t. to the sorting criterion.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Consider an array <code>[u1, u2]</code> of type <code>Unit[]</code>,
+where (the objects referenced by) <code>u1</code> and <code>u2</code> both have health <code>2</code>.
+And let us sort the elements of this array by health.</p>
+<ul>
+<li>A <em>stable</em> sorting algorithm outputs <code>[u1, u2]</code>.</li>
+<li>A <em>non-stable</em> sorting algorithm may output <code>[u1, u2]</code> or <code>[u2, u1]</code>.</li>
+</ul>
+</blockquote>
+<h3 id="in-place">
+  In place
+  <a class="anchor" href="#in-place">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A sorting algorithm is <strong>in place</strong> if it does not use additional data structures.</p>
+</blockquote>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="comparing">
+  Comparing
+  <a class="anchor" href="#comparing">#</a>
+</h3>
+<p>Java provides several native ways to define a total preorder.
+We highlight here two of them.</p>
+<h4 id="comparable">
+  Comparable
+  <a class="anchor" href="#comparable">#</a>
+</h4>
+<p>A class <code>T</code> can implement the interface <code>Comparable&lt;T&gt;</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+We can create a class <code>City</code> that implements <code>Comparable&lt;City&gt;</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Comparable<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>The interface <code>Comparable&lt;T&gt;</code> specifies a single method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span> (T otherObject);
+</span></span></code></pre></div><p>This method should define a <a href="http://localhost:1313/docs/background/sections/order/#preorder">total preorder</a> $\preceq$ over instances of <code>T</code>, as follows.</p>
+<p>Let $o_1$ be the current object (i.e. the instance used to call the method), and let $o_2$ be the other object (i.e. the argument of the method <code>compareTo</code>).
+Then this method should return:</p>
+<ul>
+<li>a negative integer if $o_1 \prec_o o_2$ (i.e. if $o_1 \preceq_o o_2$ and $o_2 \not\preceq_o o_1$),</li>
+<li><code>0</code> if $o_1 =_o o_2$ (i.e. if $o_1 \preceq_o o_2$ and $o_2 \preceq_o o_1$),</li>
+<li>a positive integer otherwise.</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong>
+Here is an implementation of the method <code>compareTo</code> where cities are compared by zip code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Comparable<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span>(City otherCity) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">&lt;</span> otherCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">-</span>1 :
+</span></span><span style="display:flex;"><span>            zipCode <span style="color:#f92672">==</span> otherCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>                0 : 1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+Some native Java classes already implement <code>Comparable</code>, in the expected way.
+For instance <code>Integer</code>, <code>String</code> (left to right alphabetical order), etc.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+Comparator methods are also available for primitive types (like <code>int</code>, or <code>bool</code>).
+For instance, <code>Integer</code> has a static method <code>compare(int x, int y)</code> that behaves like <code>compareTo</code>.
+So the method <code>compareTo</code> in the example above can be simplified as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Comparable<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span>(City otherCity) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">compare</span>(zipCode, otherCity.<span style="color:#a6e22e">zipCode</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The method <code>compareTo</code> is implicitly used by some of Java&rsquo;s native data structures (e.g. <code>TreeSet</code>).
+So it is usually recommended to implement <code>compareTo</code> in such a way that it &ldquo;complies&rdquo; with <code>equals</code> (and <code>hashCode</code>).
+This means that</p>
+<p>$\qquad \qquad $<code>o1.compareTo(o2)</code> should return <code>0</code> iff <code>o1.equals(o2)</code> returns <code>true</code>.</p>
+<p>If you want to use a sorting criterion that does <em>not</em> satisfy this constraint (or if you want to use alternative sorting criteria for the same class),
+then we recommend using a <code>Comparator</code> instead (explained below).</p>
+</blockquote>
+<h4 id="comparator">
+  Comparator
+  <a class="anchor" href="#comparator">#</a>
+</h4>
+<p>A <code>Comparator</code> in Java is intuitively a total preorder.</p>
+<p>The Java interface <code>Comparator&lt;T&gt;</code> specifies one method that must be implemented by each instance, with signature:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(T o1, T o2)
+</span></span></code></pre></div><p>The return value (negative integer, <code>0</code> or positive integer) has the same meaning as the one of <code>Comparable.compareTo</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong>
+We can create another comparator for our class <code>City</code>, which uses the city&rsquo; name rather than zip code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CityNameComparator</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(City c1, City c2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> c1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(c2.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<p>The interface <code>Comparator</code> also provides convenient (default) methods.
+For instance, the method <a href="https://docs.oracle.com/javase/17/docs/api/java/util/Comparator.html#thenComparing-java.util.Comparator-">thenComparing</a> returns the <a href="http://localhost:1313/docs/background/sections/order/#lexProduct">lexicographic product</a> of two comparators.</p>
+<h3 id="sorting-1">
+  Sorting
+  <a class="anchor" href="#sorting-1">#</a>
+</h3>
+<p>Java provides several methods to sort an array or collection.
+We highlight here a few of them.</p>
+<h4 id="sortArray">
+  Sorting an array
+  <a class="anchor" href="#sortArray">#</a>
+</h4>
+<p>For an array of type <code>T[]</code>, the static method <code>Arrays.sort(T[] array)</code> can be called as follows:</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> integers <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> integer<span style="color:#f92672">[]</span>{2,1,3,2};
+</span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(integers)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs [1,2,2,3]</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Arrays.<span style="color:#a6e22e">toString</span>(array));
+</span></span></code></pre></div></blockquote>
+<p>This method sorts the array using the so-called &ldquo;natural ordering&rdquo; for type <code>T</code>.
+The &ldquo;natural ordering&rdquo; is:</p>
+<ul>
+<li>the one expected for primitive types (like <code>int</code>), boxed types (like <code>Integer</code>) and a few other native types (like <code>String</code> or <code>Date</code>);
+a list can be found <a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/order.html">here</a>,</li>
+<li>the one defined by <code>T.compareTo</code> if <code>T</code> implements <code>Comparable</code>,</li>
+<li><em>underspecified</em> if <code>T</code> is a class that does not implement <code>Comparable</code>.</li>
+</ul>
+<p>The method <code>Arrays.sort(T[] array, Comparator&lt;? super T&gt; c)</code> is similar, but it uses the input comparator to sort the array.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example(continued).</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38121);
+</span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+</span></span><span style="display:flex;"><span>City<span style="color:#f92672">[]</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{trento, bologna};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the array &#39;cities&#39; contains [bologna, trento]</span>
+</span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Property.</em></strong> Both methods guarantee <em>stable</em> sorting.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City trento1 <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38122);
+</span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+</span></span><span style="display:flex;"><span>City trento2 <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38121);
+</span></span><span style="display:flex;"><span>City<span style="color:#f92672">[]</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{trento1, bologna, trento2};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the array &#39;cities&#39; contains [bologna, trento1, trento2]</span>
+</span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+For an array with primitive type (like <code>int[]</code>), these two methods use (a version of) the <a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm,
+even though Quicksort is <em>not</em> stable.
+Stability is irrelevant for these types: for instance, permuting the elements of the array <code>[5,5]</code> yields the same array.</p>
+<p>However, for an array with (arbitrary) reference type (like <code>City[]</code>), these methods use (a version of) the <a href="https://en.wikipedia.org/wiki/Merge_sort">MergeSort</a> algorithm,
+which is stable.</p>
+</blockquote>
+<h4 id="sortList">
+  Sorting a list
+  <a class="anchor" href="#sortList">#</a>
+</h4>
+<p>The class <code>Collections</code> provides a method <code>Collection.sort(List&lt;T&gt; list)</code>, whose behavior is analogous to <code>Arrays.sort</code>.
+In particular, it also guarantees stable sorting.
+Like <code>Arrays.sort</code>, it comes in two flavors (with and without comparator).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example(continued).</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+</span></span><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38122);
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList();
+</span></span><span style="display:flex;"><span>cities.<span style="color:#a6e22e">add</span>(bologna);
+</span></span><span style="display:flex;"><span>cities.<span style="color:#a6e22e">add</span>(trento);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the list &#39;cities&#39; contains [trento, bologna],</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// due to the way &#39;City&#39; implements &#39;compareTo&#39;.</span>
+</span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the list &#39;cities&#39; contains [bologna, trento],</span>
+</span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CitynameComparator());
+</span></span></code></pre></div></blockquote>
+<p>The interface <code>List</code> also provides a default method <code>sort</code> that takes a comparator as argument.
+So in the above example, we could have used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>cities.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">new</span> CitynameComparator());
+</span></span></code></pre></div><p>instead of</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CitynameComparator());
+</span></span></code></pre></div><h3 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h3>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-0" checked="checked" />
+<label for="tabs-exercise_sorting-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following class:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span>(String name, <span style="color:#66d9ef">int</span> health){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Write a Java method <code>void printHeroesOcc(Hero[] heroes)</code>
+that takes as input an array of type <code>Hero[]</code>, and prints the number of occurrences of each hero in this array,
+where two heroes are considered identical if they have the same name and health.</p>
+<p><strong><em>Constraint.</em></strong> For this exercise, you <em>cannot</em> use an associative array (a.k.a. Java <code>Map</code>).</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-1"  />
+<label for="tabs-exercise_sorting-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p>Create a comparator (compare first by health, then by name):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HeroComparator</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Hero h1, Hero h2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(h1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&lt;</span> h2.<span style="color:#a6e22e">health</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(h1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&gt;</span> h2.<span style="color:#a6e22e">health</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> 1;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> h1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(h2.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Sort the array and iterate over it to count the number of occurrences of each hero:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printHeroesOcc</span>(Hero<span style="color:#f92672">[]</span> heroes) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (heroes.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    Comparator<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> comparator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HeroComparator();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// sort the input array w.r.t. to the comparator</span>
+</span></span><span style="display:flex;"><span>    Arrays.<span style="color:#a6e22e">sort</span>(heroes, comparator);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// keeps track of the last hero seen so far</span>
+</span></span><span style="display:flex;"><span>    Hero previousHero <span style="color:#f92672">=</span> heroes<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// occurrences of the last hero seen so far</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occ <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// iterate over the array, starting fom the second hero</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;</span> heroes.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// if the current hero and the previous one have the same</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// name and amount of health</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (comparator.<span style="color:#a6e22e">compare</span>(previousHero, heroes<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>) <span style="color:#f92672">==</span> 0) {
+</span></span><span style="display:flex;"><span>            occ<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            printHero(previousHero, occ);
+</span></span><span style="display:flex;"><span>            previousHero <span style="color:#f92672">=</span> heroes<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>            occ <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    printHero(previousHero, occ);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printHero</span>(Hero hero, <span style="color:#66d9ef">int</span> occ) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(hero.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> hero.<span style="color:#a6e22e">health</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> occ);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+The solution to the exercise above relies on sorting the input array.
+But the same problem could be solved with an <a href="http://localhost:1313/docs/abstractdatatypes/sections/map/">associative array</a>, as follows:</p>
+<ul>
+<li>override <code>equals</code> and <code>hashCode</code> in the class <code>Hero</code>,</li>
+<li>compute a <code>Map&lt;Hero, Integer&gt;</code> that maps each hero to its number of occurrences in the input array,</li>
+<li>iterates over the entries of this map and print them.</li>
+</ul>
+<p>When it comes to running time, the latter solution is more efficient <em>on average</em> (assuming a hashmap), but less efficient <em>in the worst case</em>.</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#criterion">Sorting criterion</a></li>
+    <li><a href="#properties-of-sorting-algorithms">Properties of sorting algorithms</a>
+      <ul>
+        <li><a href="#stable">Stability</a></li>
+        <li><a href="#in-place">In place</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#comparing">Comparing</a></li>
+        <li><a href="#sorting-1">Sorting</a></li>
+        <li><a href="#usage">Usage</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

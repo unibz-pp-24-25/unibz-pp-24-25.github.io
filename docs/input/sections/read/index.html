@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Reading from and writing to a file in Java
+  #
+
+There are numerous ways to read from or write to a file in Java, using either native of external libraries.
+We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.
+We also restrict our scope to:
+
+reading and writing text (but Java also offers multiple ways to read or write sequences of bytes),
+reading sequentially and writing by appending (but some classes like RandomAccessFile allow accessing any position in a file).
+
+
+  Reading
+  #
+
+
+  Reading a text file line by line
+  #
+
+Here is one way to process the content of a text file line by line:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/input/sections/read/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Reading from and writing to a file in Java">
+  <meta property="og:description" content="Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.
+We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.
+We also restrict our scope to:
+reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending (but some classes like RandomAccessFile allow accessing any position in a file). Reading # Reading a text file line by line # Here is one way to process the content of a text file line by line:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Reading from and writing to a file in Java | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/input/sections/read/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Reading from and writing to a file in Java</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#read">Reading</a>
+      <ul>
+        <li><a href="#reading-a-text-file-line-by-line">Reading a text file line by line</a></li>
+        <li><a href="#reading-an-entire-text-file">Reading an entire text file</a></li>
+        <li><a href="#splitting">Splitting</a></li>
+        <li><a href="#reading-with-a-scanner">Reading with a scanner</a></li>
+      </ul>
+    </li>
+    <li><a href="#write">Writing</a>
+      <ul>
+        <li><a href="#writing-incrementally">Writing incrementally</a></li>
+        <li><a href="#writing-an-entire-list">Writing an entire list</a></li>
+        <li><a href="#writing-a-single-string">Writing a single string</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="reading-from-and-writing-to-a-file-in-java">
+  Reading from and writing to a file in Java
+  <a class="anchor" href="#reading-from-and-writing-to-a-file-in-java">#</a>
+</h1>
+<p>There are numerous ways to <a href="https://www.baeldung.com/reading-file-in-java">read</a> from or <a href="https://www.baeldung.com/java-write-to-file">write</a> to a file in Java, using either native of external libraries.</p>
+<p>We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.</p>
+<p>We also restrict our scope to:</p>
+<ul>
+<li>reading and writing <em>text</em> (but Java also offers multiple ways to read or write sequences of bytes),</li>
+<li>reading sequentially and writing by appending (but some classes like <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/RandomAccessFile.html">RandomAccessFile</a> allow accessing any position in a file).</li>
+</ul>
+<h2 id="read">
+  Reading
+  <a class="anchor" href="#read">#</a>
+</h2>
+<h3 id="reading-a-text-file-line-by-line">
+  Reading a text file line by line
+  <a class="anchor" href="#reading-a-text-file-line-by-line">#</a>
+</h3>
+<p>Here is one way to process the content of a text file line by line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (BufferedReader reader <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">newBufferedReader</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
+</span></span><span style="display:flex;"><span>    String line <span style="color:#f92672">=</span> reader.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (line <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(line);
+</span></span><span style="display:flex;"><span>        line <span style="color:#f92672">=</span> reader.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="reading-an-entire-text-file">
+  Reading an entire text file
+  <a class="anchor" href="#reading-an-entire-text-file">#</a>
+</h3>
+<p>Alternatively, if the file is small, its whole content can be stored as a list of strings (one per line), as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">lines</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
+</span></span><span style="display:flex;"><span>    lines <span style="color:#f92672">=</span> stream.<span style="color:#a6e22e">toList</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Or even as a single string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String text;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">readString</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>));
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="splitting">
+  Splitting
+  <a class="anchor" href="#splitting">#</a>
+</h3>
+<p>The method <code>String.split</code> can be used to decompose a string into an array of substring, based on some delimiter.
+For instance, in a csv file, each line can be decomposed using a comma (<code>,</code>), as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String line <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice,Bob,Carol&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [&#34;Alice&#34;, &#34;Bob&#34;, &#34;Carol&#34;]</span>
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> line.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span></code></pre></div><p>We will see in the chapter dedicated to <a href="http://localhost:1313/docs/regex/sections/java/#String">regular expressions</a> that more expressive delimiters can be used.</p>
+<h3 id="reading-with-a-scanner">
+  Reading with a scanner
+  <a class="anchor" href="#reading-with-a-scanner">#</a>
+</h3>
+<p>The class <code>Scanner</code> is a versatile tool that allows reading from the standard input, but also from a file.</p>
+<p>We refer to <a href="https://programming-project-2022-23.github.io/io/reading-scanner/">last year&rsquo;s course</a> for an overview.</p>
+<h2 id="write">
+  Writing
+  <a class="anchor" href="#write">#</a>
+</h2>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+In Java, methods that write an (underspecified) line separator produce a (sequence of) character(s) that depends on the operating system running the program: <code>\r\n</code> on Windows, and <code>\n</code> on most other modern operating systems.</p>
+</blockquote>
+<p>This is the case in all three examples below, with the methods <code>BufferedWriter.newLine</code>, <code>PrintWriter.println</code> and <code>Files.write</code>.</p>
+<h3 id="writing-incrementally">
+  Writing incrementally
+  <a class="anchor" href="#writing-incrementally">#</a>
+</h3>
+<p>A common way to write to a file consists in using a <code>BufferredWriter</code>.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(BufferedWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter(<span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
+</span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
+</span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">newLine</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>A <code>PrintWriter</code> offers additional methods to easily format the output, such as <code>print</code>, <code>println</code> or <code>printf</code>, analogous to the methods of the standard output stream <code>System.out</code>.
+It is often used as a wrapper around another writer, for instance a <code>BufferedWriter</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(PrintWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(<span style="color:#66d9ef">new</span> BufferedWriter(<span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>)))){
+</span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h3 id="writing-an-entire-list">
+  Writing an entire list
+  <a class="anchor" href="#writing-an-entire-list">#</a>
+</h3>
+<p>The method <code>Files.write</code> can be used to write all elements of a list to a file (one per line):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> strings <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">write</span>(
+</span></span><span style="display:flex;"><span>          Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>),
+</span></span><span style="display:flex;"><span>          strings
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="writing-a-single-string">
+  Writing a single string
+  <a class="anchor" href="#writing-a-single-string">#</a>
+</h3>
+<p>The method <code>Files.writeString</code> can be used to write a single string to a file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">writeString</span>(
+</span></span><span style="display:flex;"><span>          Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>),
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;foo&#34;</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note that this will overwrite the content of the file.</p>
+<p>Instead, in order to <em>append</em> a string to a file, a third argument can be added to the method <code>Files.writeString</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">writeString</span>(
+</span></span><span style="display:flex;"><span>            Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;foo&#34;</span>,
+</span></span><span style="display:flex;"><span>            StandardOpenOption.<span style="color:#a6e22e">APPEND</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#read">Reading</a>
+      <ul>
+        <li><a href="#reading-a-text-file-line-by-line">Reading a text file line by line</a></li>
+        <li><a href="#reading-an-entire-text-file">Reading an entire text file</a></li>
+        <li><a href="#splitting">Splitting</a></li>
+        <li><a href="#reading-with-a-scanner">Reading with a scanner</a></li>
+      </ul>
+    </li>
+    <li><a href="#write">Writing</a>
+      <ul>
+        <li><a href="#writing-incrementally">Writing incrementally</a></li>
+        <li><a href="#writing-an-entire-list">Writing an entire list</a></li>
+        <li><a href="#writing-a-single-string">Writing a single string</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

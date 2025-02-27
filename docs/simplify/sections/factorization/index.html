@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Factorizing
+  #
+
+
+  Duplicate code
+  #
+
+Duplicate code within a same project has undesirable consequences.
+In particular:
+
+Duplicate code means duplicate bugs.
+The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class.
+
+
+  Factorizing
+  #
+
+
+By code factorization, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. ab &#43; ac
+can be rewritten a(b&#43;c)).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/simplify/sections/factorization/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Factorizing">
+  <meta property="og:description" content="Factorizing # Duplicate code # Duplicate code within a same project has undesirable consequences. In particular:
+Duplicate code means duplicate bugs. The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class. Factorizing # By code factorization, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. ab &#43; ac can be rewritten a(b&#43;c)).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Factorizing | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/simplify/sections/factorization/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.a7956a885bf4bad23eb177ccde8649494c6891db74deab5015c185434c7d07b0.js" integrity="sha256-p5VqiFv0utI&#43;sXfM3oZJSUxokdt03qtQFcGFQ0x9B7A=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Factorizing</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#duplicate">Duplicate code</a></li>
+    <li><a href="#factorizing-1">Factorizing</a>
+      <ul>
+        <li><a href="#conditional-statement">Conditional statement</a></li>
+        <li><a href="#auxiliary-method">Auxiliary method</a></li>
+      </ul>
+    </li>
+    <li><a href="#abstract">Abstract class</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="factorizing">
+  Factorizing
+  <a class="anchor" href="#factorizing">#</a>
+</h1>
+<h2 id="duplicate">
+  Duplicate code
+  <a class="anchor" href="#duplicate">#</a>
+</h2>
+<p><a href="https://en.wikipedia.org/wiki/Duplicate_code">Duplicate code</a> within a same project has undesirable consequences.
+In particular:</p>
+<ol>
+<li>Duplicate code means <em>duplicate bugs</em>.</li>
+<li>The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class.</li>
+</ol>
+<h2 id="factorizing-1">
+  Factorizing
+  <a class="anchor" href="#factorizing-1">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>By <strong>code factorization</strong>, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. <code>ab + ac</code>
+can be rewritten <code>a(b+c)</code>).</p>
+</blockquote>
+<p>This usually comes down to simple techniques.
+We illustrate here a few of them.</p>
+<h3 id="conditional-statement">
+  Conditional statement
+  <a class="anchor" href="#conditional-statement">#</a>
+</h3>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_cond_stat" id="tabs-exercise_cond_stat-0" checked="checked" />
+<label for="tabs-exercise_cond_stat-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Factorize the following program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>condition 1<span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 1<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 3<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>condition 1<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">&lt;</span>condition 2<span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 1<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 2<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 3<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 3<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_cond_stat" id="tabs-exercise_cond_stat-1"  />
+<label for="tabs-exercise_cond_stat-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>condition 1<span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block 1<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if</span>(<span style="color:#f92672">&lt;</span>condition 2<span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 2<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>code block 3<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div></div>
+</div>
+<h3 id="auxiliary-method">
+  Auxiliary method
+  <a class="anchor" href="#auxiliary-method">#</a>
+</h3>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_aux_met" id="tabs-exercise_aux_met-0" checked="checked" />
+<label for="tabs-exercise_aux_met-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Factorize the following Java class:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Extractor</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">extractId</span>(String text){
+</span></span><span style="display:flex;"><span>        Matcher matcher <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;^[A-Z]?\\d+&#34;</span>).<span style="color:#a6e22e">matcher</span>(text);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> matcher.<span style="color:#a6e22e">find</span>()<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>                matcher.<span style="color:#a6e22e">group</span>(0):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">extractSSN</span>(String text){
+</span></span><span style="display:flex;"><span>        Matcher matcher <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;SSN:(\\d+)&#34;</span>).<span style="color:#a6e22e">matcher</span>(text);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> matcher.<span style="color:#a6e22e">find</span>()<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>                matcher.<span style="color:#a6e22e">group</span>(1):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_aux_met" id="tabs-exercise_aux_met-1"  />
+<label for="tabs-exercise_aux_met-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Extractor</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">extractId</span>(String text){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> getFirstMatch(text, <span style="color:#e6db74">&#34;^[A-Z]?\\d+&#34;</span>, 0);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">extractSSN</span>(String text){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> getFirstMatch(text, <span style="color:#e6db74">&#34;SSN:(\\d+)&#34;</span>, 1);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">getFirstMatch</span>(String text, String regex, <span style="color:#66d9ef">int</span> group){
+</span></span><span style="display:flex;"><span>        Matcher matcher <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(regex).<span style="color:#a6e22e">matcher</span>(text);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> matcher.<span style="color:#a6e22e">find</span>()<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>                matcher.<span style="color:#a6e22e">group</span>(group):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<h2 id="abstract">
+  Abstract class
+  <a class="anchor" href="#abstract">#</a>
+</h2>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_abstract_class" id="tabs-exercise_abstract_class-0" checked="checked" />
+<label for="tabs-exercise_abstract_class-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Factorize the following Java classes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 1<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 2<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Buttterfly</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 1<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 3<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wall</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 4<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_abstract_class" id="tabs-exercise_abstract_class-1"  />
+<label for="tabs-exercise_abstract_class-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 1<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">wait</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 2<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Buttterfly</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">wait</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 3<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wall</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>code block 4<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#duplicate">Duplicate code</a></li>
+    <li><a href="#factorizing-1">Factorizing</a>
+      <ul>
+        <li><a href="#conditional-statement">Conditional statement</a></li>
+        <li><a href="#auxiliary-method">Auxiliary method</a></li>
+      </ul>
+    </li>
+    <li><a href="#abstract">Abstract class</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

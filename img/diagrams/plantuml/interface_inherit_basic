@@ -1,0 +1,22 @@
+@startuml
+scale 600 width
+
+abstract class Unit {
+ String color
+ int health
+}
+
+class Butterfly {
+}
+
+class Caterpillar {
+}
+
+class Unicorn {
+}
+
+Unit <|-- Butterfly : extends
+Unit <|-- Caterpillar : extends
+Unit <|-- Unicorn : extends
+
+@enduml

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Evaluation environment
+  #
+
+The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.
+You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.
+Each student gets his or her own clone of the original machine.
+Maven, Gradle, git and a Java 21 JDK are already installed.
+
+You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client).
+In the remainder of this section, we will use RDP.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/extra/sections/eval/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Evaluation environment">
+  <meta property="og:description" content="Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.
+Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 21 JDK are already installed.
+You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client). In the remainder of this section, we will use RDP.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Evaluation environment | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/extra/sections/eval/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c85f96cbf970dc38917818a8f381a6499c0abf1a67af5b31a119689bed46f805.js" integrity="sha256-yF&#43;Wy/lw3DiReBio84GmSZwKvxpnr1sxoRlom&#43;1G&#43;AU=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/" class="">Extra</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/prelim/" class="">Terminal and text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/auto_comp/" class="">Shell autocompletion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/git_default_te/" class="">Default text editor for git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/install/" class="">Installing software</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/ssh/" class="">Ssh key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/eval/" class="active">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/extra/sections/demo/" class="">Using a terminal (demo)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Evaluation environment</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#evaluation-environment">Evaluation environment</a>
+      <ul>
+        <li><a href="#rdp-client">RDP client</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="evaluation-environment">
+  Evaluation environment
+  <a class="anchor" href="#evaluation-environment">#</a>
+</h2>
+<p>The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.
+You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.</p>
+<p>Each student gets his or her own <em>clone</em> of the original machine.
+Maven, Gradle, git and a Java 21 JDK are already installed.</p>
+<!--You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.-->
+<p>You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client).
+In the remainder of this section, we will use RDP.</p>
+<h3 id="rdp-client">
+  RDP client
+  <a class="anchor" href="#rdp-client">#</a>
+</h3>
+<p>In order to connect via RDP, you need an RDP client.</p>
+<p>Here is a (non-exhaustive) list of RDP clients:</p>
+<ul>
+<li>
+<p>Windows:</p>
+<ul>
+<li><a href="https://4it.com.au/kb/article/how-to-start-remote-desktop-rdp-from-the-command-prompt/">Windows Remote Desktop</a> (installed by default), also called MSTSC</li>
+<li><a href="https://www.royalapps.com/ts/win/features">Royal TS</a></li>
+</ul>
+</li>
+<li>
+<p>macOS:</p>
+<ul>
+<li><a href="https://apps.apple.com/it/app/microsoft-remote-desktop/id1295203466?mt=12">Microsoft Remote Desktop</a></li>
+<li><a href="https://www.royalapps.com/ts/win/features">Royal TS</a></li>
+</ul>
+</li>
+<li>
+<p>Linux:</p>
+<ul>
+<li><a href="https://remmina.org/">Remmina</a></li>
+<li><a href="https://www.rdesktop.org/">rdesktop</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="login">
+  Login
+  <a class="anchor" href="#login">#</a>
+</h3>
+<p>The registration link is shared on the <a href="https://teams.microsoft.com/l/team/19%3a5nIIq-TkfyJLi3capYBYZG42U0vNmUBTv31Ac7Gqf641%40thread.tacv2/conversations?groupId=b394eaa9-e55c-42ed-be0f-5be013ff2f03&amp;tenantId=92513267-03e3-401a-80d4-c58ed6674e3b">Microsoft Team</a> for this course.
+After logging in (with your Unibz credentials), you should see the following:</p>
+<p><img src="/img/env/vm_start_tutorial.png" alt="" /></p>
+<p>Toggling the button (bottom-left) will start your own clone of the virtual machine (this may take a few minutes).</p>
+<p>Once your machine is running, click on the 3 dots (bottom right) and select &ldquo;show RDP information&rdquo;.
+This will give you the string (host name and port) needed by your RDP client to connect to the machine.</p>
+<p>The credentials for logging in to the machine are shared on the <a href="https://teams.microsoft.com/l/team/19%3a5nIIq-TkfyJLi3capYBYZG42U0vNmUBTv31Ac7Gqf641%40thread.tacv2/conversations?groupId=b394eaa9-e55c-42ed-be0f-5be013ff2f03&amp;tenantId=92513267-03e3-401a-80d4-c58ed6674e3b">Microsoft Team</a> for this course.</p>
+<p>Once connected:</p>
+<ul>
+<li>
+<p>you can select a keyboard layout (English, German or Italian) from the drop-down menu at the top right of the screen,</p>
+<p><img src="/img/env/keyboard_layouts_vm.png" alt="" /></p>
+</li>
+<li>
+<p>you can use the super key (a.k.a. &ldquo;Windows key&rdquo;) or click on &ldquo;Activities&rdquo; (top left) to display the application menu below.
+To <strong>launch a terminal</strong>, click on the terminal icon in this menu or press Ctrl + Alt + t.</p>
+<p><img src="/img/env/apps_vm.png" alt="" /></p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#evaluation-environment">Evaluation environment</a>
+      <ul>
+        <li><a href="#rdp-client">RDP client</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+@startuml
+scale 1000 width
+
+class Exception {
+}
+
+class RuntimeException {
+}
+
+class IllegalArgumentException {
+}
+
+
+class ArrayIndexOutOfBoundsException {
+}
+
+class NullPointerException {
+}
+
+class IOException {
+}
+
+Exception <|-- RuntimeException : extends
+Exception <|-- IOException : extends
+RuntimeException <|-- ArrayIndexOutOfBoundsException : extends
+RuntimeException <|-- NullPointerException : extends
+RuntimeException <|-- IllegalArgumentException : extends
+
+@enduml

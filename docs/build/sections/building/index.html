@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Building
+  #
+
+
+  Cleaning
+  #
+
+The command
+mvn clean
+attempts to delete all content generated during a previous build (in particular, .class files).
+
+Example. Let us assume that MyClass.java is compiled into MyClass.class, and then renamed MyNewClass.java.
+In this scenario, mvn clean allows eliminating the file MyClass.class from the target directory.
+
+
+  The default lifecycle
+  #
+
+
+Maven&rsquo;s default lifecycle is a sequence of 23 operations (called phases) that can be executed during a build.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/build/sections/building/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Building">
+  <meta property="og:description" content="Building # Cleaning # The command
+mvn clean attempts to delete all content generated during a previous build (in particular, .class files).
+Example. Let us assume that MyClass.java is compiled into MyClass.class, and then renamed MyNewClass.java. In this scenario, mvn clean allows eliminating the file MyClass.class from the target directory.
+The default lifecycle # Maven’s default lifecycle is a sequence of 23 operations (called phases) that can be executed during a build.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Building | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/build/sections/building/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Building</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cleaning">Cleaning</a></li>
+    <li><a href="#phases">The default lifecycle</a></li>
+    <li><a href="#goals-and-plugins">Goals and plugins</a></li>
+    <li><a href="#installPlugin">Installing a plugin</a></li>
+    <li><a href="#useful-plugins">Useful plugins</a>
+      <ul>
+        <li><a href="#assembly">The assembly plugin</a></li>
+        <li><a href="#the-source-plugin">The source plugin</a></li>
+        <li><a href="#the-javadoc-plugin">The Javadoc plugin</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="building">
+  Building
+  <a class="anchor" href="#building">#</a>
+</h1>
+<h2 id="cleaning">
+  Cleaning
+  <a class="anchor" href="#cleaning">#</a>
+</h2>
+<p>The command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn clean
+</span></span></code></pre></div><p>attempts to delete all content generated during a previous build (in particular, <code>.class</code> files).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong> Let us assume that <code>MyClass.java</code> is compiled into <code>MyClass.class</code>, and then renamed <code>MyNewClass.java</code>.
+In this scenario, <code>mvn clean</code> allows eliminating the file <code>MyClass.class</code> from the <code>target</code> directory.</p>
+</blockquote>
+<h2 id="phases">
+  The default lifecycle
+  <a class="anchor" href="#phases">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>Maven&rsquo;s <strong>default lifecycle</strong> is a <em>sequence</em> of <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#default-lifecycle">23 operations</a> (called <strong>phases</strong>) that can be executed during a build.</p>
+</blockquote>
+<p>These include (in order):</p>
+<ul>
+<li><code>validate</code>: checks if all the information needed for the build is present</li>
+<li><code>compile</code>: compiles the source code of the project</li>
+<li><code>test-compile</code>: compiles the source code of the unit tests of the project</li>
+<li><code>test</code>: runs the unit tests</li>
+<li><code>package</code>: packages the compiled code in its distributable format (such as a <a href="http://localhost:1313/docs/build/sections/packaging/#jar">jar</a>)</li>
+<li><code>install</code>: installs the package into the <a href="http://localhost:1313/docs/build/sections/dependencies/#localRepo">local repository</a> (for use as a dependency in other local projects)</li>
+</ul>
+<p>Each phase can be executed via command-line with <code>mvn &lt;phaseName&gt;</code>.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> Executing any of these phases triggers the execution of <em>all phases that precede it</em>.</p>
+</blockquote>
+<p>For instance, executing the <code>test</code> phase triggers the execution of <code>validate</code>, <code>compile</code> and <code>test-compile</code> (among others).</p>
+<h2 id="goals-and-plugins">
+  Goals and plugins
+  <a class="anchor" href="#goals-and-plugins">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A build phase (like <code>package</code>) consists of so-called <strong>goals</strong>.</p>
+<p>A goal can be declared, configured and associated to a specific phase via a so-called <strong>plugin</strong>.</p>
+</blockquote>
+<p>In a POM:</p>
+<ul>
+<li>a plugin is specified within the <code>&lt;plugin&gt;&lt;/plugin&gt;</code> tag, and</li>
+<li>plugins are declared within:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
+</span></span></code></pre></div><p>For instance, here is the plugin called <code>maven-jar-plugin</code>, as it is <a href="http://localhost:1313/docs/build/sections/pom/#pomInherit">inherited</a> from the Super POM:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>maven-jar-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>2.4<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;executions&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;execution&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;id&gt;</span>default-jar<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;phase&gt;</span>package<span style="color:#f92672">&lt;/phase&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;goals&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;goal&gt;</span>jar<span style="color:#f92672">&lt;/goal&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/goals&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/execution&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/executions&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
+</span></span></code></pre></div><p>This plugin assigns the goal <code>jar</code> to the phase <code>package</code>.
+Intuitively, this specifies that the phase <code>package</code> must produce a <code>jar</code> file (as opposed to other formats like <code>war</code> or <code>ear</code>).</p>
+<p>In order to make this jar executable (and specify the main class of the application), we can add information to this inherited plugin,
+in the <code>pom.xml</code> file <em>of the project</em>, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>maven-jar-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;archive&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;manifest&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;addClasspath&gt;</span>true<span style="color:#f92672">&lt;/addClasspath&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;mainClass&gt;</span>org.example.Main<span style="color:#f92672">&lt;/mainClass&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/manifest&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/archive&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
+</span></span></code></pre></div><p>The <a href="">effective POM</a> in this example contains:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>maven-jar-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>2.4<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;executions&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;execution&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;id&gt;</span>default-jar<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;phase&gt;</span>package<span style="color:#f92672">&lt;/phase&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;goals&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;goal&gt;</span>jar<span style="color:#f92672">&lt;/goal&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/goals&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/execution&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/executions&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;archive&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;manifest&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;addClasspath&gt;</span>true<span style="color:#f92672">&lt;/addClasspath&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;mainClass&gt;</span>org.example.Main<span style="color:#f92672">&lt;/mainClass&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/manifest&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/archive&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
+</span></span></code></pre></div><p>A plugin can contain several goals, and these may or may not be assigned to a specific phase.</p>
+<p>Besides, a goal can be executed independently from a phase, with the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn myplugin:myGoal
+</span></span></code></pre></div><p>For instance, the <a href="https://github.com/openjfx/javafx-maven-plugin">javafx maven plugin</a> has a goal <code>run</code> to start a JavaFX application.
+It can be executed with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javafx:run
+</span></span></code></pre></div><h2 id="installPlugin">
+  Installing a plugin
+  <a class="anchor" href="#installPlugin">#</a>
+</h2>
+<p>Maven plugins are available for a variety of tasks, like code analysis, Javadoc generation, parser generation, etc.</p>
+<p>An plugin is a <a href="http://localhost:1313/docs/build/sections/artifact/">Maven artifact</a>.
+Similarly to a <a href="http://localhost:1313/docs/build/sections/dependencies/">dependency</a>, an external plugin can be downloaded from Maven Central and installed into the <a href="http://localhost:1313/docs/build/sections/dependencies/#localRepo">local repository</a>
+, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span> XXX <span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span> XXX <span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span> XXX <span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
+</span></span></code></pre></div><p>However, as illustrated above, additional XML attributes may be needed to configure the plugin.
+These are often specific to a plugin.</p>
+<h2 id="useful-plugins">
+  Useful plugins
+  <a class="anchor" href="#useful-plugins">#</a>
+</h2>
+<h3 id="assembly">
+  The assembly plugin
+  <a class="anchor" href="#assembly">#</a>
+</h3>
+<p>The assembly plugin allows building a über jar (i.e. including dependencies), as opposed to the <code>maven-jar-plugin</code>, which can build a thin jar.</p>
+<p>This is a simple way to distribute an end-user application (as opposed to a library).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-assembly-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.7.1<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;executions&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;execution&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;phase&gt;</span>package<span style="color:#f92672">&lt;/phase&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;goals&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;goal&gt;</span>single<span style="color:#f92672">&lt;/goal&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/goals&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;archive&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;manifest&gt;</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">&lt;mainClass&gt;</span>org.example.MainClass<span style="color:#f92672">&lt;/mainClass&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;/manifest&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;/archive&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;descriptorRefs&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;descriptorRef&gt;</span>jar-with-dependencies<span style="color:#f92672">&lt;/descriptorRef&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;descriptorRef&gt;</span>src<span style="color:#f92672">&lt;/descriptorRef&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;/descriptorRefs&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/execution&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/executions&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span></code></pre></div><p>In this example, the execution of the goal (called <code>single</code>) is attached to the phase <code>package</code>, so the über jar can be produced like a regular jar, with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
+</span></span></code></pre></div><h3 id="the-source-plugin">
+  The source plugin
+  <a class="anchor" href="#the-source-plugin">#</a>
+</h3>
+<p>The source plugin can package source code as a jar.
+This allows:</p>
+<ul>
+<li>distributing a Java library alongside its source code, and/or</li>
+<li>installing the library in the local repository together with the source (and navigate through it with an IDE).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-source-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.3.1<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;executions&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;execution&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>attach-sources<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;phase&gt;</span>verify<span style="color:#f92672">&lt;/phase&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;goals&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;goal&gt;</span>jar-no-fork<span style="color:#f92672">&lt;/goal&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/goals&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/execution&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/executions&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span></code></pre></div><p>In this example, the execution of the goal (called <code>jar-no-fork</code>) is attached to the phase <code>verify</code>.</p>
+<h3 id="the-javadoc-plugin">
+  The Javadoc plugin
+  <a class="anchor" href="#the-javadoc-plugin">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-javadoc-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.6.3<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;source&gt;</span>17<span style="color:#f92672">&lt;/source&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span></code></pre></div><p>This plugin has <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">many goals</a>, which are often executed independently (i.s. not bound to a phase).</p>
+<p>For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javadoc:javadoc
+</span></span></code></pre></div><p>generates Javadoc for the project in the folder <code>target/site</code>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cleaning">Cleaning</a></li>
+    <li><a href="#phases">The default lifecycle</a></li>
+    <li><a href="#goals-and-plugins">Goals and plugins</a></li>
+    <li><a href="#installPlugin">Installing a plugin</a></li>
+    <li><a href="#useful-plugins">Useful plugins</a>
+      <ul>
+        <li><a href="#assembly">The assembly plugin</a></li>
+        <li><a href="#the-source-plugin">The source plugin</a></li>
+        <li><a href="#the-javadoc-plugin">The Javadoc plugin</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Computational problem
+  #
+
+
+A computational problem is (usually) specified as:
+
+a set of possible inputs, and
+the expected outputs (for these inputs).
+
+
+
+  Problem vs algorithm
+  #
+
+For instance, here is a problem that you may have encountered already:
+
+
+Input: a sorted array A of integers, an integer a
+Output: true if a appears in A, false otherwise
+
+There are (infinitely) many algorithms that can solve this problem.
+But some of them are more efficient than others.
+Efficiency (a.k.a. computational cost) refers to the time and/or memory needed to execute an algorithm, expressed as a function of the size of the input (more on this later).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/background/sections/problem/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Computational problem">
+  <meta property="og:description" content="Computational problem # A computational problem is (usually) specified as:
+a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:
+Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others. Efficiency (a.k.a. computational cost) refers to the time and/or memory needed to execute an algorithm, expressed as a function of the size of the input (more on this later).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Computational problem | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/background/sections/problem/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Computational problem</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem-vs-algorithm">Problem vs algorithm</a></li>
+    <li><a href="#formulating-a-problem">Formulating a problem</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="computational-problem">
+  Computational problem
+  <a class="anchor" href="#computational-problem">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p>A <strong>computational problem</strong> is (usually) specified as:</p>
+<ul>
+<li>a set of possible <strong>inputs</strong>, and</li>
+<li>the expected <strong>outputs</strong> (for these inputs).</li>
+</ul>
+</blockquote>
+<h2 id="problem-vs-algorithm">
+  Problem vs algorithm
+  <a class="anchor" href="#problem-vs-algorithm">#</a>
+</h2>
+<p>For instance, here is a problem that you may have encountered already:</p>
+<blockquote>
+<ul>
+<li><strong><em>Input:</em></strong> a sorted array <em>A</em> of integers, an integer <em>a</em></li>
+<li><strong><em>Output:</em></strong> true if <em>a</em> appears in <em>A</em>, false otherwise</li>
+</ul></blockquote>
+<p>There are (infinitely) many algorithms that can solve this problem.
+But some of them are more efficient than others.
+<strong>Efficiency</strong> (a.k.a. <strong>computational cost</strong>) refers to the time and/or memory needed to execute an algorithm, expressed as a <em>function of the size of the input</em> (more on this later).</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_binary_search" id="tabs-exercise_binary_search-0" checked="checked" />
+<label for="tabs-exercise_binary_search-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Can you think of (or do you already know) an algorithm that can solve this problem efficiently?
+Why is it efficient?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_binary_search" id="tabs-exercise_binary_search-1"  />
+<label for="tabs-exercise_binary_search-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p><strong><em>Algorithm.</em></strong>
+Let <em>n</em> be the size of <em>A</em>, and let us assume for simplicity that arrays are 1-indexed and that <em>A</em> is nonempty.</p>
+<ul>
+<li>If <em>n</em> = 1, then check whether <em>A</em>[1] = <em>a</em>.</li>
+<li>Otherwise:
+<ul>
+<li>check whether <em>A</em>[<em>n</em>/2] = <em>a</em> (where &ldquo;/&rdquo; is integer division, rounded up or down if <em>n</em> is odd),</li>
+<li>depending on the result, repeat on either the left or the right half of <em>A</em>.</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>Cost.</em></strong>
+If <em>A</em> has length <em>n</em>, then the number of iterations of the procedure is (in the order of) log<em>2 _n</em> in the worst case (e.g. if <em>a</em> does not appear in <em>A</em>).</p>
+</div>
+</div>
+<p>Here is another problem that you may know:</p>
+<blockquote>
+<ul>
+<li><strong><em>Input:</em></strong> an array of integers</li>
+<li><strong><em>Output:</em></strong> an array with the same values, but sorted in ascending order</li>
+</ul></blockquote>
+<p>And yet another:</p>
+<blockquote>
+<ul>
+<li><strong><em>Input:</em></strong> a solvable grid of sudoku</li>
+<li><strong><em>Output:</em></strong> the same grid, solved</li>
+</ul></blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Note.</em></strong> A problem specifies <em>what</em> a program should do, not <em>how</em> to do it.
+In other words, a computational problem is <em>not an algorithm</em>.</p>
+</blockquote>
+<p>For instance, the following is <em>not</em> a computational problem:</p>
+<ul>
+<li><strong><em>Input:</em></strong> an array of integers.</li>
+<li><strong><em>Algorithm:</em></strong> initialize a counter to 1. Then iterate through the array, and:
+<ul>
+<li>increment the counter each time 2 consecutive numbers are encountered, and</li>
+<li>reset the counter to 1 otherwise.</li>
+</ul>
+</li>
+</ul>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_consecutive_numbers" id="tabs-exercise_consecutive_numbers-0" checked="checked" />
+<label for="tabs-exercise_consecutive_numbers-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Which problem does this algorithm solve?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_consecutive_numbers" id="tabs-exercise_consecutive_numbers-1"  />
+<label for="tabs-exercise_consecutive_numbers-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li><strong><em>Input:</em></strong> an array <em>A</em> of integers</li>
+<li><strong><em>Output:</em></strong> the length of the longest suffix of <em>A</em> that consists of consecutive numbers</li>
+</ul>
+</div>
+</div>
+<h2 id="formulating-a-problem">
+  Formulating a problem
+  <a class="anchor" href="#formulating-a-problem">#</a>
+</h2>
+<p>When developing a project, it can be helpful to express some sub(tasks) as computational problems.
+This is also a common way to <em>document</em> your code.</p>
+<p>For instance the <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a> of a class may consist of computational problems (e.g. the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#indexOf%28int%29">Javadoc for the method indexOf</a> of the class <code>String</code> in Java).</p>
+<p>When formulating a problem, make sure that:</p>
+<ul>
+<li>the output is specified for <em>all</em> inputs, and</li>
+<li>the formulation is <em>non-ambiguous</em>, meaning that it should clearly specify whether any given pair (input, output) is correct.</li>
+</ul>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_ill_problem_1" id="tabs-exercise_ill_problem_1-0" checked="checked" />
+<label for="tabs-exercise_ill_problem_1-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the class <code>Unit</code> (and its subclasses), as defined in <a href="http://localhost:1313/docs/objects/sections/inheritance/">the section about inheritance</a>.
+The following problem is not properly defined.
+Can you see why?</p>
+<ul>
+<li><strong><em>Input:</em></strong> a nonempty array <em>A</em> of instances of the class <code>Unit</code></li>
+<li><strong><em>Output:</em></strong> the unicorn with highest health in <em>A</em></li>
+</ul>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_ill_problem_1" id="tabs-exercise_ill_problem_1-1"  />
+<label for="tabs-exercise_ill_problem_1-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>There may be no unicorn in <em>A</em>, or several healthiest unicorns.</p>
+</div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_ill_problem_2" id="tabs-exercise_ill_problem_2-0" checked="checked" />
+<label for="tabs-exercise_ill_problem_2-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The following problem is not properly defined.
+Can you see why?</p>
+<ul>
+<li><strong><em>Input:</em></strong> a (finite) family of (finite) sets</li>
+<li><strong><em>Output:</em></strong> the smallest set that has a nonempty intersection with each of the input sets (where &ldquo;smallest&rdquo; here refers to the <em>size</em> of a set)</li>
+</ul>
+<p>For instance, for the input</p>
+<pre tabindex="0"><code>{ {a,c,k}, {a,b}, {a,m}, {c,d,f}, {c,e} }
+</code></pre><p>the expected output is</p>
+<pre tabindex="0"><code>{a,c}
+</code></pre></div>
+<input type="radio" class="toggle" name="tabs-exercise_ill_problem_2" id="tabs-exercise_ill_problem_2-1"  />
+<label for="tabs-exercise_ill_problem_2-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>Some inputs admit more than one solution (the simplest example is the input <code>{a,b}</code>).</p>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+A problem may admit several outputs for the same input <em>without being ambiguous</em>.
+For instance:</p>
+<ul>
+<li><strong><em>Input.</em></strong> a graph <em>G</em>, two nodes <em>s</em> and <em>t</em> in <em>G</em>,</li>
+<li><strong><em>Output:</em></strong> one of the shortest paths from <em>s</em> to <em>t</em> in <em>G</em> if any, and <code>null</code> otherwise.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p>A problem may be <a href="https://en.wikipedia.org/wiki/Undecidable_problem">undecidable</a>, meaning that for any algorithm attempting to solve this problem,
+there (provably) exist (infinitely many) inputs for which the algorithm either produces an incorrect output or does not terminate.</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p>A problem may be decidable but <a href="https://en.wikipedia.org/wiki/Computational_complexity_theory#Intractability">intractable</a>, meaning that (provably) no <em>efficient</em> algorithm can solve it (where cost is once again measured as a function of the size of the input).</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem-vs-algorithm">Problem vs algorithm</a></li>
+    <li><a href="#formulating-a-problem">Formulating a problem</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

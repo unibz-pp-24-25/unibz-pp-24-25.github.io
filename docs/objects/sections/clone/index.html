@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Duplicating objects
+  #
+
+In some scenarios, it may be useful to duplicate an object.
+In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references.
+For instance, the following program outputs &ldquo;yellow&rdquo;:
+Unicorn unicorn = new Unicorn(&#34;green&#34;);
+Unicorn shallowCopy = unicorn;
+
+unicorn.color = &#34;yellow&#34;;
+System.out.println(shallowCopy.color);
+The need to duplicate objects may notably appear in a program that rely on concurrency.
+
+
+Exercise
+In our game, the &ldquo;view&rdquo; component is in charge of rendering the game visually.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/clone/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Duplicating objects">
+  <meta property="og:description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
+In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs “yellow”:
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.
+Exercise In our game, the “view” component is in charge of rendering the game visually.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Duplicating objects | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/objects/sections/clone/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="active">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Duplicating objects</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#shallow-deep-and-hybrid-copy">Shallow, deep and hybrid copy</a></li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#copy-constructor">Copy constructor</a></li>
+        <li><a href="#the-method-clone">The method <code>clone</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="duplicating-objects">
+  Duplicating objects
+  <a class="anchor" href="#duplicating-objects">#</a>
+</h1>
+<p>In some scenarios, it may be useful to duplicate an object.</p>
+<p>In Java, as we saw earlier, copying the value of a variable with reference type does <em>not</em> copy the object that it references.
+For instance, the following program outputs &ldquo;yellow&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn unicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>Unicorn shallowCopy <span style="color:#f92672">=</span> unicorn;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>unicorn.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yellow&#34;</span>;
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(shallowCopy.<span style="color:#a6e22e">color</span>);
+</span></span></code></pre></div><p>The need to duplicate objects may notably appear in a program that rely on <em>concurrency</em>.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_clone" id="tabs-exercise_clone-0" checked="checked" />
+<label for="tabs-exercise_clone-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In our game, the &ldquo;view&rdquo; component is in charge of rendering the game visually.</p>
+<p>This component exposes a method called <code>drawSnapshot</code> that takes as input a <a href="">game snapshot</a> and draws this snapshot on screen.
+The backend calls this method whenever a snapshot must be drawn.
+However, the backend may send these snapshots <em>faster</em> than they can be displayed (due to the duration of on-screen animations).</p>
+<p>To deal with this scenario, the &ldquo;view&rdquo; <strong>buffers</strong> the snapshots that it receives (displaying a new snapshot only after all previously submitted ones have been displayed).
+For the sake of this exercise, you can think of this buffer as an array with type <code>Snapshot[]</code>.</p>
+<p>Now consider the following method <code>deleteUnit(int x, int y)</code>, executed by our backend each time it receives the instruction to delete a unit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Backend</span> <span style="color:#66d9ef">implements</span> EventHandler {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Snapshot currentSnapshot;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteUnit</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;there is a unit on the tile x, y&#34;</span><span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            removeUnitFromTile(x, y);
+</span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            shiftUnitsInColumn(x);
+</span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            performUnitMerges();
+</span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>where the auxiliary methods <code>removeUnitFromTile</code>, <code>shiftUnitsInColumn</code> and <code>performUnitMerges</code> may modify the object <code>currentSnapshot</code>.</p>
+<p>Observe that the method <code>deleteUnit</code> calls <code>drawSnapshot</code> three times.</p>
+<p>Now let us assume that the buffer of the &ldquo;view&rdquo; is nonempty when this method is executed, so that the 3 snapshots are added to the buffer, before any of them can be rendered on screen.</p>
+<p>How many of these 3 snapshots will be drawn on screen?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_clone" id="tabs-exercise_clone-1"  />
+<label for="tabs-exercise_clone-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>Only the third snapshot will be drawn (three times), because the buffer contains three references to the same object.</p>
+</div>
+</div>
+<h2 id="shallow-deep-and-hybrid-copy">
+  Shallow, deep and hybrid copy
+  <a class="anchor" href="#shallow-deep-and-hybrid-copy">#</a>
+</h2>
+<p>Copying a <em>reference</em> to an object can be viewed as the shallowest possible form of copy.
+As we saw <a href="">already</a>, this is what happens in Java when a variable with reference type is passed as argument.</p>
+<p>At the other end of the spectrum is a so-called <strong>deep copy</strong>, where all attributes of the copied object are duplicated, <em>recursively</em>.
+In this case, the copy or any object that it references (recursively) can be modified without affecting their original counterparts.</p>
+<p>Between these two extremes:</p>
+<ul>
+<li>a <strong>shallow copy</strong> creates a new object (with fresh attributes), but does not copy referenced objects recursively,</li>
+<li>a <strong>hybrid copy</strong> is anything between a shallow copy and a deep copy.</li>
+</ul>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="copy-constructor">
+  Copy constructor
+  <a class="anchor" href="#copy-constructor">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>A copy can be performed in Java with a so-called <strong>copy constructor</strong>.
+This is an additional constructor that takes an instance of the class as input, and returns a copy of this instance.</p>
+</blockquote>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// standard constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// copy constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span>(Hero original){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In order to perform a deep(er) copy, a copy constructor may call another copy constructor.
+For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Snapshot</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Hero firstHero;
+</span></span><span style="display:flex;"><span>    Hero secondHero;
+</span></span><span style="display:flex;"><span>    Board board;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> remainingActions;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// standard constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Snapshot</span>(Hero firstHero, Hero secondHero, Board board,
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">int</span> remainingActions){
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// some code here</span>
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// copy constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Snapshot</span>(Snapshot original){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstHero</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hero(original.<span style="color:#a6e22e">firstHero</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">secondHero</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hero(original.<span style="color:#a6e22e">secondHero</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">board</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Board(original.<span style="color:#a6e22e">board</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">remainingActions</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">remainingActions</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> Similarly to what we saw with the methods <a href="http://localhost:1313/docs/objects/sections/tostring/#recursion">toString</a> or <a href="http://localhost:1313/docs/objects/sections/comparing/#recursion">equals</a>,
+beware of recursive implementations of copy constructors, if your program can create an object that refers to itself (directly or indirectly).</p>
+</blockquote>
+<h3 id="the-method-clone">
+  The method <code>clone</code>
+  <a class="anchor" href="#the-method-clone">#</a>
+</h3>
+<p>Java also provides a native method called <a href="https://en.wikipedia.org/wiki/Clone_%28Java_method%29">clone</a> to duplicate objects.
+Like the methods <a href="http://localhost:1313/docs/objects/sections/tostring/">toString</a> and <a href="http://localhost:1313/docs/objects/sections/comparing/#equals">equals</a> that we saw earlier, <code>clone</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.</p>
+<p>Overriding <code>clone</code> can be more concise than using a copy constructor (especially for a class with a large number of attributes).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+Overriding <code>clone</code> can be <em>error-prone</em>, especially in presence of a class hierarchy (see <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 13 for further insight).
+Notably, the overriding class must implement the <code>Cloneable</code> interface, and an implementation of <code>clone</code> usually calls <code>super.clone</code> recursively (even for a class whose only superclass is <code>Object</code>).
+For these reasons, overriding <code>clone</code> is sometimes discouraged, in favor of conceptually simpler solutions (like copy constructors).</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#shallow-deep-and-hybrid-copy">Shallow, deep and hybrid copy</a></li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#copy-constructor">Copy constructor</a></li>
+        <li><a href="#the-method-clone">The method <code>clone</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

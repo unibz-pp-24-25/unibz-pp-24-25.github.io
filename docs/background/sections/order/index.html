@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Relation, preorder
+  #
+
+
+  Relation
+  #
+
+
+Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity.
+In particular:
+
+a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$,
+a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$,
+etc.
+
+
+For instance, if 
+(S = {a,b,c,d})
+
+, then">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/background/sections/order/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Relation, preorder">
+  <meta property="og:description" content="Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:
+a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$, a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$, etc. For instance, if (S = {a,b,c,d}) , then">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Relation, preorder | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/background/sections/order/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Relation, preorder</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#relation">Relation</a>
+      <ul>
+        <li><a href="#binaryRelation">Binary relation</a></li>
+        <li><a href="#reflexiveTransitiveAntisymmetric">Reflexivity, transitivity, antisymmetry</a></li>
+        <li><a href="#preorder">Preorder, order</a></li>
+        <li><a href="#total">Total vs partial</a></li>
+        <li><a href="#sorting">Sorting</a></li>
+        <li><a href="#lexProduct">Lexicographic product</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="relation-preorder">
+  Relation, preorder
+  <a class="anchor" href="#relation-preorder">#</a>
+</h1>
+<h2 id="relation">
+  Relation
+  <a class="anchor" href="#relation">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> A <strong>relation</strong> over a set $S$ is a set of <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#tuple">tuples</a> over $S$ with the same arity.
+In particular:</p>
+<ul>
+<li>a <strong>binary relation</strong> over $S$ is a set of <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#tuple">pairs</a>, or equivalently a subset of $S \times S$,</li>
+<li>a <strong>ternary relation</strong> over $S$ is a set of <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#tuple">triples</a>, or equivalently a subset of $S \times S \times S$,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+<p>For instance, if <span>
+(S = {a,b,c,d})
+</span>
+, then</p>
+<ul>
+<li>
+<span>
+\(\Big\{ (a,a),\ (a,b),\ (b,a),\ (b,c) \Big\}\)
+</li>
+</ul>
+</span>
+ is a binary relation over <span>
+  \(S\)
+</span>
+,
+<ul>
+<li>
+<span>
+\(\Big\{ (a,b,a),\ (c,c,c) \Big\}\)
+</li>
+</ul>
+</span>
+ is a ternary relation over <span>
+  \(S\)
+</span>
+.
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_numberOfrelations" id="tabs-exercise_numberOfrelations-0" checked="checked" />
+<label for="tabs-exercise_numberOfrelations-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>If $S$ is finite with size $n$, then how many $k$-ary relations are there over $S$?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_numberOfrelations" id="tabs-exercise_numberOfrelations-1"  />
+<label for="tabs-exercise_numberOfrelations-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>A $k$-ary relation over $S$ is a subset of $S^k$.</p>
+<p>So there are $2^{|S^k|} = 2^{n^k}$ $k$-ary relations over $S$.</p>
+</div>
+</div>
+<h3 id="binaryRelation">
+  Binary relation
+  <a class="anchor" href="#binaryRelation">#</a>
+</h3>
+<p>A binary relation can be represented in multiple ways.</p>
+<p>In particular, it can be represented as a (directed) <strong>graph</strong> (and conversely).</p>
+<p>For instance, the relation</p>
+<span>
+  \(\Big\{ (a,a),\ (a,b),\ (b,a),\ (b,c) \Big\}\)
+</span>
+<p>over</p>
+<span>
+  \(\{a,b,c,d\}\)
+</span>
+<p>can be viewed as the graph:</p>
+<p><img src="/img/order/graph_basic.svg" alt="" /></p>
+<p>A binary relation can also be represented with an infix symbol.</p>
+<p>For instance, the same relation</p>
+<span>
+  \(\Big\{ (a,a),\ (a,b),\ (b,a),\ (b,c) \Big\}\)
+</span>
+<p>can be represented as</p>
+<span>
+  \(a \preceq a \ \)
+</span>
+,
+<span>
+  \(a \preceq b\ \)
+</span>
+,
+<span>
+  \(b \preceq a\ \)
+</span>
+,
+<span>
+  \(b \preceq c\ \)
+</span>
+.
+<h3 id="reflexiveTransitiveAntisymmetric">
+  Reflexivity, transitivity, antisymmetry
+  <a class="anchor" href="#reflexiveTransitiveAntisymmetric">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> A binary relation $\preceq$ over a set $S$ is</p>
+<ul>
+<li><strong>reflexive</strong> if $x \preceq x$ for all $x \in S$</li>
+<li><strong>transitive</strong> if for all $x, y, z \in S$</li>
+</ul>
+<p>$\qquad \qquad \qquad x \preceq y$ and $y \preceq z$ imply $x \preceq z$</p>
+<ul>
+<li><strong>antisymmetric</strong> if for all $x, y \in S$</li>
+</ul>
+<p>$\qquad \qquad \qquad x \preceq y$ and $y \preceq x$ imply $x = y$</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_relation" id="tabs-exercise_relation-0" checked="checked" />
+<label for="tabs-exercise_relation-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Which of these three properties does the relation below satisfy?</p>
+<p><img src="/img/order/graph_prop.svg" alt="" /></p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_relation" id="tabs-exercise_relation-1"  />
+<label for="tabs-exercise_relation-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>Only reflexivity.</p>
+</div>
+</div>
+<h3 id="preorder">
+  Preorder, order
+  <a class="anchor" href="#preorder">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A binary relation is a <strong>preorder</strong> if it is reflexive and transitive.
+It is an <strong>order</strong> if it is also antisymmetric.</p>
+</blockquote>
+<h3 id="total">
+  Total vs partial
+  <a class="anchor" href="#total">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A preorder $\preceq$ over $S$ is <strong>total</strong> if every two elements of $S$ are comparable, i.e. if</p>
+<p>$ \qquad \qquad x \preceq y$ or $y \preceq x$ for all $x, y \in S$.</p>
+<p>A preoder that is not total is called <strong>partial</strong>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The natural order $\le$ over $\mathbb{R}$ is a total order (i.e. total, reflexive, transitive and antisymmetric).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+If $S$ is a set, then the set inclusion relation $\subseteq$ over the <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#set">power set</a> of $S$ is a partial order (i.e. reflexive, transitive and antisymmetric).</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The term &ldquo;order&rdquo; is often used to refer to a <em>total</em> order.</p>
+</blockquote>
+<h3 id="sorting">
+  Sorting
+  <a class="anchor" href="#sorting">#</a>
+</h3>
+<p>If <span>
+(S)
+</span>
+is a set, then a total preorder over <span>
+(S)
+</span>
+is intuitively any relation that allows <em>sorting</em> <span>
+(S)
+</span>
+.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Let $P$ be the set of people, and let $\preceq_{\text{age}}$ be the relation defined over $P$ by</p>
+<p>$\qquad \qquad p_1 \preceq_{\text{age}} p_2$ iff $p_1$ is younger than (or as old as) $p_2$.</p>
+<p>Then $\preceq_{\text{age}}$ is a total preorder
+(i.e. total, reflexive and transitive), but it is not an order (i.e. not antisymmetric), because two persons can have the same age.</p>
+</blockquote>
+<h3 id="lexProduct">
+  Lexicographic product
+  <a class="anchor" href="#lexProduct">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Notation.</em></strong> If $\preceq_o$ is a preorder, let us use:</p>
+<ul>
+<li>$x \prec_o y$ as a shortcut for ($ x \preceq_o y$ and $ y \not\preceq_o x$ ),</li>
+<li>$x =_o y$ as a shortcut for ($x \preceq_o y$ and $y \preceq_o x$ ).</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> The <strong>lexicographic product</strong> $\preceq_{1,2}$ of a preorder $\preceq_1$ by a preorder $\preceq_2$ is defined by</p>
+<p>$\qquad \qquad x \preceq_{1,2} y$ iff
+$x \prec_1 y$ or ( $x =_1 y$ and $x \preceq_2 y$ )</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Let $P$ be the set of people, and let $\preceq_{\text{age}}$ and
+$\preceq_{\text{size}}$
+be the total preorders defined over $S$ by</p>
+<p>$\qquad \qquad p_1 \preceq_{\text{age}} p_2$ iff $p_1$ is younger than (or as old as) $p_2$, and</p>
+<p>$\qquad \qquad p_1 \preceq_{\text{size}} p_2$ iff $p_1$ is smaller than (or as tall as) $p_2$.</p>
+<p>Then the lexicographic product $\preceq_{\text{age, size}}$ of $\preceq_{\text{age}}$ by $\preceq_{\text{size}}$ is defined by</p>
+<p>$\qquad p_1 \preceq_{\text{age, size}} p_2$ iff</p>
+<p>$\qquad \qquad p_1$ is strictly younger than $p_2$, or</p>
+<p>$\qquad \qquad$ they have the same age and $p_1$ is smaller than (or as tall as) $p_2$.</p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The lexicographic product of $\preceq_1$ by $\preceq_2$ may differ from the lexicographic product of $\preceq_2$ by $\preceq_1$.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Hint.</em></strong>
+The lexicographic product of a total preorder by a total preorder (resp. a total order) is itself a total preorder (resp. a total order).</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#relation">Relation</a>
+      <ul>
+        <li><a href="#binaryRelation">Binary relation</a></li>
+        <li><a href="#reflexiveTransitiveAntisymmetric">Reflexivity, transitivity, antisymmetry</a></li>
+        <li><a href="#preorder">Preorder, order</a></li>
+        <li><a href="#total">Total vs partial</a></li>
+        <li><a href="#sorting">Sorting</a></li>
+        <li><a href="#lexProduct">Lexicographic product</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

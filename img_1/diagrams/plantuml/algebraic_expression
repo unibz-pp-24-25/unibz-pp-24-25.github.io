@@ -1,0 +1,60 @@
+@startuml
+scale 750 width
+
+interface Expression {
+  int evaluate()
+  int countProducts()
+  int countDistinctIntegers()
+  int countSubExpressions(int result)
+}
+
+interface Operator {
+  Expression getFirstOperand()
+  Expression getSecondOperand()
+}
+
+abstract class AbstractOperator {
+  Expression firstOperand
+  Expression secondOperand
+
+  Expression getFirstOperand()
+  Expression getSecondOperand()
+  int countDistinctIntegers()
+}
+
+class Sum {
+  int evaluate()
+  int countProducts()
+  int countSubExpressions(int result)
+}
+
+class Product {
+  int evaluate()
+  int countProducts()
+  int countSubExpressions(int result)
+}
+
+class Division {
+  int evaluate()
+  int countProducts()
+  int countSubExpressions(int result)
+}
+
+class IntegerValue {
+  int evaluate()
+  int countProducts()
+  int countDistinctIntegers()
+  int countSubExpressions(int result)
+}
+
+
+Expression <|.. Operator : extends
+
+Operator <-- AbstractOperator : implements
+Expression <-- IntegerValue : implements
+
+AbstractOperator <|-- Sum : extends
+AbstractOperator <|-- Product : extends
+AbstractOperator <|-- Division : extends
+
+@enduml

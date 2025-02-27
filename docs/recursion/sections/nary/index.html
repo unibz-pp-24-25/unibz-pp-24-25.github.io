@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  N-ary recursion
+  #
+
+
+Definition.
+A recursive method that is not linear recursive uses n-ary recursion.
+
+Specific cases include:
+
+binary recursion if a method performs up to two recursive calls each time it is executed,
+ternary recursion if it performs up to three recursive calls each time it is executed,
+etc.
+
+
+Examples.
+The algorithm seen earlier to print all files in a folder uses n-ary recursion.
+All the binary tree algorithms seen earlier use binary recursion.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/nary/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="N-ary recursion">
+  <meta property="og:description" content="N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion.
+Specific cases include:
+binary recursion if a method performs up to two recursive calls each time it is executed, ternary recursion if it performs up to three recursive calls each time it is executed, etc. Examples.
+The algorithm seen earlier to print all files in a folder uses n-ary recursion.
+All the binary tree algorithms seen earlier use binary recursion.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>N-ary recursion | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/recursion/sections/nary/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>N-ary recursion</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#divide-and-conquer">Divide and conquer</a>
+      <ul>
+        <li><a href="#mergesort">Example: Mergesort</a></li>
+      </ul>
+    </li>
+    <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a></li>
+    <li><a href="#minimax">Minimax/Maximin</a>
+      <ul>
+        <li><a href="#winning-strategy">Winning strategy</a></li>
+        <li><a href="#naive-algorithm">Naive algorithm</a></li>
+        <li><a href="#application">Application</a></li>
+        <li><a href="#generalization">Generalization</a></li>
+        <li><a href="#optimization">Optimization</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="n-ary-recursion">
+  N-ary recursion
+  <a class="anchor" href="#n-ary-recursion">#</a>
+</h1>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A recursive method that is <em>not</em> linear recursive uses <strong>n-ary recursion</strong>.</p>
+</blockquote>
+<p>Specific cases include:</p>
+<ul>
+<li><strong>binary recursion</strong> if a method performs up to two recursive calls each time it is executed,</li>
+<li><strong>ternary recursion</strong> if it performs up to three recursive calls each time it is executed,</li>
+<li>etc.</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<p>The algorithm seen <a href="#printFiles">earlier</a> to print all files in a folder uses n-ary recursion.</p>
+<p>All the binary tree algorithms seen <a href="#binaryTrees">earlier</a> use binary recursion.</p>
+</blockquote>
+<h2 id="divide-and-conquer">
+  Divide and conquer
+  <a class="anchor" href="#divide-and-conquer">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="#methodology">earlier</a> to solve a problem recursively.
+In the divide-and-conquer approach, the smaller inputs $I_1$, .., $I_k$ usually have (nearly) the <em>same size</em>.</p>
+</blockquote>
+<p>Divide-and-conquer has been instrumental in discovering efficient solutions to pervasive computational problems.
+Well-known examples include:</p>
+<ul>
+<li>the <a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm">Karatsuba algorithm</a> for multiplying two numbers,</li>
+<li>the <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">Strassen algorithm</a> for matrix product,</li>
+<li>Mergesort for (stable) sorting.</li>
+</ul>
+<h3 id="mergesort">
+  Example: Mergesort
+  <a class="anchor" href="#mergesort">#</a>
+</h3>
+<p>Mergesort is one of (many) algorithms commonly used to sort an array, i.e. to solve the following problem:</p>
+<blockquote>
+<p><strong><em>Input:</em></strong> an array $A$</p>
+<p><strong><em>Output:</em></strong> a sorted array with the same elements as $A$</p></blockquote>
+<p><strong><em>Observation.</em></strong>
+As we saw <a href="">already</a>, the array can be of any type (<code>int</code>, <code>String</code>, <code>City</code>, <code>Unit</code>, etc.), and the sorting criterion can be any <a href="">total preorder</a> over this type.</p>
+<blockquote class="book-hint warning">
+<p>The Mergesort algorithm may be summarized as follows:</p>
+<ul>
+<li><strong><em>(Base case).</em></strong> If $A$ has size $1$, then return it ($A$ is already sorted).</li>
+<li><strong><em>(Inductive case)</em></strong>. Otherwise:
+<ul>
+<li><em>(divide):</em> partition $A$ into its left half $A_1$ and its right half $A_2$,</li>
+<li><em>(solve):</em> sort $A_1$ and sort $A_2$ (recursively),</li>
+<li><em>(combine):</em> merge (the sorted versions of) $A_1$ and $A_2$.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>Here is a naive implementation, in pseudocode:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Returns a sorted array that contains the same elements as A.</span>
+</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">mergesort</span>(Type<span style="color:#f92672">[]</span> A) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the input array has size 1, it is already sorted.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 1){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> A
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case (the input array has size &gt; 1)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compute the middle index (rounded down)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> middleIndex <span style="color:#f92672">=</span> (A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1) <span style="color:#f92672">/</span> 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Copy the left half of A into a new array</span>
+</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> leftHalf <span style="color:#f92672">=</span> copy(A<span style="color:#f92672">[</span>0 .. middleIndex<span style="color:#f92672">]</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Sort it</span>
+</span></span><span style="display:flex;"><span>    leftHalf <span style="color:#f92672">=</span> mergesort(leftHalf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Copy the right half of A into a new array</span>
+</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> rightHalf <span style="color:#f92672">=</span>  copy(A<span style="color:#f92672">[</span>middleIndex <span style="color:#f92672">+</span> 1 .. A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Sort it</span>
+</span></span><span style="display:flex;"><span>    rightHalf <span style="color:#f92672">=</span> mergesort(rightHalf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// merge the two sorted halves</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> merge(leftHalf, rightHalf)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> This implementation is suboptimal (some arrays can be reused).
+We only used it to keep the explanation simple.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-0" checked="checked" />
+<label for="tabs-exercise_mergeSort-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>To complete this algorithm, implement (in pseudocode) the auxiliary method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
+</span></span></code></pre></div><p>that takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
+<p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="">stable</a>.</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-1"  />
+<label for="tabs-exercise_mergeSort-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p>Iterate over <code>A</code> and <code>B</code> in parallel:</p>
+<ul>
+<li>if <code>A[0]</code> (resp. <code>B[0]</code>) is smaller than <code>B[0]</code> (resp. <code>A[0]</code>),
+then:
+<ul>
+<li>add <code>A[0]</code> (resp. <code>B[0]</code>) to the output array, and</li>
+<li>repeat with <code>A[1]</code> and <code>B[0]</code> (resp. <code>A[0]</code> and <code>B[1]</code>),</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>when reaching the end of <code>A</code> (resp. <code>B</code>), add the remaining elements of <code>B</code> (resp. <code>A</code>) to the output array.</li>
+</ul>
+<p>More precisely:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Output array</span>
+</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> C <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Type<span style="color:#f92672">[</span>A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> B.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over A</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over B</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iteratate over C</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// while we have not reached the end of A or B</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (a <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&amp;&amp;</span> b <span style="color:#f92672">&lt;</span> B.<span style="color:#a6e22e">length</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>) {
+</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            a<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            b<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If we reached the end of A,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// append all remaining elements of B to the output array.</span>
+</span></span><span style="display:flex;"><span>        append(B, b, C, c)
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Otherwise we reached the end of B.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// So append all remaining elements of A to the output array.</span>
+</span></span><span style="display:flex;"><span>        append(A, a, C, c)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>append (Type<span style="color:#f92672">[]</span> D, <span style="color:#66d9ef">int</span> d, Type<span style="color:#f92672">[]</span> C, <span style="color:#66d9ef">int</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (d <span style="color:#f92672">&lt;</span> D.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> D<span style="color:#f92672">[</span>d<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        d<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Merge sort in action.</em></strong>
+You can find visual illustrations of the execution of merge sort online.
+For instance <a href="https://imgur.com/gallery/HU2tfzo">this animation</a>,
+or <a href="https://willrosenbaum.com/blog/2022/merge-sort/">this (more accurate) one</a>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Observation.</em></strong>
+Merge sort is a <a href="">stable</a> sorting algorithm.</p>
+</blockquote>
+<h2 id="tree-and-graph-traversal">
+  Tree and graph traversal
+  <a class="anchor" href="#tree-and-graph-traversal">#</a>
+</h2>
+<p><a href="#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
+<p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
+<p>One of these algorithms was the so-called &ldquo;pre-order traversal&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
+</span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
+</span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">leftChild</span>)
+</span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">rightChild</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This algorithm naturally generalizes to trees where nodes may have more than two children.
+Nodes in such a tree can be represented as instances of the following class:</p>
+<p><img src="/img/diagrams/plantuml/node_nary.svg" alt="" /></p>
+<p>And the algorithm becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
+</span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
+</span></span><span style="display:flex;"><span>        foreach child in root.<span style="color:#a6e22e">children</span> {
+</span></span><span style="display:flex;"><span>            traverse(child)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This algorithm can in turn be adapted to traverse a <em>graph</em>.
+More precisely, to explore all nodes reachable (directly or transitively) from a given source node in the graph.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+When applied to a graph, the algorithm above:</p>
+<ul>
+<li>may not terminate (if the graph contains a loop),</li>
+<li>may process some nodes multiple times (even if the graph is acyclic).</li>
+</ul>
+</blockquote>
+<p><img src="/img/graphs/graph_labeled_small.svg" alt="" /></p>
+<p>In order to avoid this, a common technique consists in labelling nodes in a graph with an additional boolean attribute <code>visited</code>,
+which indicates whether a node has already been visited during a traversal:</p>
+<p><img src="/img/diagrams/plantuml/node_nary_visited.svg" alt="" /></p>
+<p>And the algorithm becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>root.<span style="color:#a6e22e">visited</span>){
+</span></span><span style="display:flex;"><span>        root.<span style="color:#a6e22e">visited</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">print</span>(root.<span style="color:#a6e22e">label</span>)
+</span></span><span style="display:flex;"><span>        foreach child in root.<span style="color:#a6e22e">children</span> {
+</span></span><span style="display:flex;"><span>            traverse(child)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong> This approach is often called <strong>depth-first</strong> exploration of a graph.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_graph_traversal" id="tabs-exercise_graph_traversal-0" checked="checked" />
+<label for="tabs-exercise_graph_traversal-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following graph.</p>
+<p><img src="/img/graphs/graph_labeled.svg" alt="" /></p>
+<p>What does the above algorithm print for input node A, assuming that the children of each node are sorted in label&rsquo;s alphabetical order?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_graph_traversal" id="tabs-exercise_graph_traversal-1"  />
+<label for="tabs-exercise_graph_traversal-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>A B D F C E</p>
+</div>
+</div>
+<h2 id="minimax">
+  Minimax/Maximin
+  <a class="anchor" href="#minimax">#</a>
+</h2>
+<p>Minimax is a recursive algorithm with applications in games, robotics, decision making, etc.</p>
+<p>Minimax may be easier to explain in the context of a turn-based <strong>zero-sum game</strong>, i.e. a game (like chess or tic tac toe) where players compete with each other (as opposed for instance to a <strong>collaborative game</strong>).</p>
+<p>Zero-sum two player games can be used to model decisions that minimize risk, assuming that the worst will happen if it can.
+In other words, one the two players represents the decision maker, and the other player represents &ldquo;bad luck&rdquo;.</p>
+<p>Numerous extensions and heuristics have been devise for Minimax.
+Here we only focus on the algorithm in its basic form.</p>
+<h3 id="winning-strategy">
+  Winning strategy
+  <a class="anchor" href="#winning-strategy">#</a>
+</h3>
+<p>Let Alice and Bob be our two players.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_tictactoe" id="tabs-exercise_tictactoe-0" checked="checked" />
+<label for="tabs-exercise_tictactoe-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following state of a game of tic-tac-toe, where Alice plays with crosses, and is the next person to play.</p>
+<p><img src="/img/tictactoe/state/tictactoe.svg" alt="" /></p>
+<p>Assuming that Alice plays optimally, she already has won the game.
+Can you see why?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_tictactoe" id="tabs-exercise_tictactoe-1"  />
+<label for="tabs-exercise_tictactoe-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p><img src="/img/tictactoe/state/tictactoe.svg" alt="" /></p>
+<p>If Alice plays top right or bottom right, then <em>regardless</em> of Bob&rsquo;s action, she can complete a line or a diagonal as her next move.</p>
+</div>
+</div>
+<p>Let us generalize this observation.</p>
+<blockquote class="book-hint warning">
+<p>In a turn-based two player game, a sequence of moves can be viewed as a <strong>list</strong> of board states, whose head is the initial board state.</p>
+<p>The <strong>tree</strong> that consists of all these lists represents all possible sequences of moves from the initial board state.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In the following tree, the root is a board state (of an imaginary game), and each branch represents a possible sequence of moves.
+Alice&rsquo;s possible moves are the green edges, and Bob&rsquo;s possible moves are the red edges.</p>
+<p>The numbers on the leaves represent the payoff for Alice:</p>
+<ul>
+<li>9 if this is a winning state for Alice, and</li>
+<li>0 if this is a winning sate for Bob.</li>
+</ul>
+<p><img src="/img/graphs/minimax.svg" alt="" /></p>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+In such a tree, several nodes may represent the <em>same</em> board state (e.g. in a chess game, where different sequences of moves may lead to the same board state).</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_tree_winning" id="tabs-exercise_tree_winning-0" checked="checked" />
+<label for="tabs-exercise_tree_winning-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In the tree above, determine whether Alice has already won the game (assuming that she plays optimally).</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_tree_winning" id="tabs-exercise_tree_winning-1"  />
+<label for="tabs-exercise_tree_winning-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>The answer is yes, if Alice selects the right child of the tree&rsquo;s root.</p>
+</div>
+</div>
+<blockquote class="book-hint info">
+<p><strong><em>Observation.</em></strong>
+In both exercises above, we were able to determine that Alice had already won the game, <em>regardless</em> of Bob&rsquo;s actions.
+Intuitively, this holds iff:</p>
+<ul>
+<li><em>there is</em> a move for Alice such that,
+<ul>
+<li>for <em>every</em> possible move of Bob,
+<ul>
+<li><em>there is</em> a move for Alice such that,
+<ul>
+<li>for <em>every</em> possible move of Bob,
+<ul>
+<li>&hellip;
+<ul>
+<li>either:
+<ul>
+<li><em>there is</em> a move for Alice that produces a winning state for Alice, or</li>
+<li><em>every</em> possible move of Bob produces a winning state for Alice.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>This observation leads to a natural recursive definition.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong>
+In our tree, let us assuming that the root has depth $0$.
+We call a node <strong>existential</strong> if its depth is even, and <strong>universal</strong> if its depth is odd.</p>
+</blockquote>
+<p>Existential (resp. universal) nodes are the ones selected by Alice (resp. Bob).</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A node $n$ is a <strong>winning node</strong> (for Alice) if:</p>
+<ul>
+<li>it represents a winning state for Alice, or</li>
+<li>$n$ is existential and <em>some</em> child of $n$ is a winning node, or</li>
+<li>$n$ is universal and <em>all</em> children of $n$ are a winning nodes.</li>
+</ul>
+</blockquote>
+<h3 id="naive-algorithm">
+  Naive algorithm
+  <a class="anchor" href="#naive-algorithm">#</a>
+</h3>
+<p>Let us start with a naive algorithm for games where:</p>
+<ul>
+<li>the height of the tree is finite (as opposed to chess for instance, where there can be infinite sequences of moves).</li>
+<li>each leaf is a winning state for either Alice or Bob (as opposed to tic-tac-toe for instance, where there can be a draw).</li>
+</ul>
+<p>In such a game, every node of the tree must be a winning node for Alice or for Bob.
+In order to determine this, we can intuitively propagate labels up the tree:</p>
+<p><img src="/img/graphs/minimax_labeled.svg" alt="" /></p>
+<p>Let us assume that nodes in our tree are instance of the following class <code>Node</code>.</p>
+<p><img src="/img/diagrams/plantuml/node_game.svg" alt="" /></p>
+<blockquote class="book-hint warning">
+<p><strong><em>Notation.</em></strong></p>
+<p>If <code>nodes</code> is an array of nodes and <code>f</code> a function that takes a node as argument, we will use:</p>
+<p>$\qquad$ <code>[ f(n) | n in nodes ]</code></p>
+<p>for the array obtained by applying <code>f</code> to each element of <code>nodes</code>.</p>
+</blockquote>
+<!--Let us also assume a method `int maxLabel(Node[] nodes)` (resp. `int minLabel(Node[] nodes)`) that takes as argument an array of labeled nodes, and returns the largest (resp. least) among their labels.-->
+<blockquote class="book-hint info">
+<p><strong><em>Observation.</em></strong>
+Let <code>n</code> be a non-leaf node whose children have label <code>0</code> or <code>9</code>.
+Then:</p>
+<ul>
+<li><em>there exists</em> a child of <code>n</code> with label <code>9</code> iff
+<code>max [ c.label | c in n.children ] = 9</code></li>
+<li><em>every child</em> of $n$ is labeled with <code>9</code> iff
+<code>min [ c.label | c in n.children ] = 9</code></li>
+</ul>
+</blockquote>
+<p>Using this observation and our definition of a winning node (above), we can write the following recursive algorithm (in pseudocode):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n.<span style="color:#a6e22e">label</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the largest label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// universal node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">miniMax</span>(Node n){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n.<span style="color:#a6e22e">label</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the least label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this algorithm, the method <code>maxiMin</code> (resp. <code>miniMax</code>) takes an existential (resp. universal) node as input,
+and returns:</p>
+<ul>
+<li><code>9</code> if this node is a winning node for Alice, or</li>
+<li><code>0</code> if this node is a winning node for Bob.</li>
+</ul>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+The code can be (slightly) factorized by writing a unique recursive method, with an additional boolean argument that indicates whether the input node is existential or universal.</p>
+<p>This is usually how the algorithm is presented.
+We used two methods instead for didactic reasons.</p>
+</blockquote>
+<!-- **_Note._** -->
+<!-- Traditionally, the purpose of the player (Alice here) is to minimize the score, and the purpose of the opponent (Bob here) is to maximize it. -->
+<!-- This is arguably more intuitive in the case of decision system, where labels measure _risk_ (which has to be minimized). -->
+<!-- In this case, `miniMax` (resp. `maxiMin`) takes as argument an existential (resp. universal) node. -->
+<!-- We used the opposite here for didactic reasons. -->
+<h3 id="application">
+  Application
+  <a class="anchor" href="#application">#</a>
+</h3>
+<p>In practice, in order to apply this algorithm to a game, the class <code>Node</code> is unnecessary.
+Instead, we can use:</p>
+<ul>
+<li>an auxiliary procedure that compute the &ldquo;children of a node&rdquo;, i.e. takes as argument a board state, and enumerates all board states that can be reached from it in one move.</li>
+<li>an auxiliary procedure <code>score</code> that determines whether a &ldquo;node&rdquo; is a leaf, and its &ldquo;label&rdquo; if it is a leaf.
+This procedure takes a state as input, and determines whether this state is a winning state for Alice or Bob.</li>
+</ul>
+<p>Then Alice can decide her next move by calling <code>miniMax(s)</code> for each successor state <code>s</code> of the current state, and select any of the states with the highest score.</p>
+<h3 id="generalization">
+  Generalization
+  <a class="anchor" href="#generalization">#</a>
+</h3>
+<h4 id="arbitrary-weights">
+  Arbitrary weights
+  <a class="anchor" href="#arbitrary-weights">#</a>
+</h4>
+<p>The Minimax algorithm can be generalized to scenarios where a leaf node may not represent a winning state for Alice or Bob.
+For instance, in order to model tic-tac-toe, we may label some leaves with the value <code>4</code> for a draw.</p>
+<p>More generally, any function <code>score</code> that assigns a score to a node can be used, as long as it assigns a <em>maximal</em> value to a winning state for Alice, and a <em>minimal</em> value to a winning state for Bob.</p>
+<p>The algorithm is unchanged.</p>
+<h4 id="large-or-infinite-trees">
+  Large or infinite trees
+  <a class="anchor" href="#large-or-infinite-trees">#</a>
+</h4>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning</em></strong>
+Minimax can be <em>prohibitive</em> for games with an important tree height (since the number of board states to explore may grow exponentially with the height of the tree).</p>
+<p>Besides, Minimax does <em>not</em> terminate if the tree has infinite branches (for instance in a chess game).</p>
+</blockquote>
+<p>This is why the tree of game states is usually explored <em>up to a certain depth</em>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+<a href="https://en.wikipedia.org/wiki/Deep_Blue_%28chess_computer%29">Deep Blue</a> (the first program that defeated a chess world champion) was only looking 12 moves ahead.</p>
+</blockquote>
+<p>The algorithm becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(n)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the largest label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// universal node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">miniMax</span>(Node n, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(n)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the least label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="optimization">
+  Optimization
+  <a class="anchor" href="#optimization">#</a>
+</h3>
+<p>A variety of optimization techniques have been proposed for Minimax (e.g. <a href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">alpha-beta pruning</a>).
+They are beyond the scope of this course.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#divide-and-conquer">Divide and conquer</a>
+      <ul>
+        <li><a href="#mergesort">Example: Mergesort</a></li>
+      </ul>
+    </li>
+    <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a></li>
+    <li><a href="#minimax">Minimax/Maximin</a>
+      <ul>
+        <li><a href="#winning-strategy">Winning strategy</a></li>
+        <li><a href="#naive-algorithm">Naive algorithm</a></li>
+        <li><a href="#application">Application</a></li>
+        <li><a href="#generalization">Generalization</a></li>
+        <li><a href="#optimization">Optimization</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

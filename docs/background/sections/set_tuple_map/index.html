@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Set, tuple, function
+  #
+
+
+  Set
+  #
+
+
+A set can be informally viewed as a collection of elements with no duplicate and in no specific order.
+
+
+Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$.
+
+For instance, if
+
+  \( \qquad \qquad S = \{a,b\}\)
+
+,
+then
+
+  \( \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \)
+
+
+Note. An alternative notation for the power set of $S$ is $2^S$.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/background/sections/set_tuple_map/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Set, tuple, function">
+  <meta property="og:description" content="Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order.
+Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$.
+For instance, if
+\( \qquad \qquad S = \{a,b\}\) , then
+\( \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \) Note. An alternative notation for the power set of $S$ is $2^S$.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Set, tuple, function | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/background/sections/set_tuple_map/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Set, tuple, function</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#function">Function</a></li>
+    <li><a href="#multiset">Multiset</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="set-tuple-function">
+  Set, tuple, function
+  <a class="anchor" href="#set-tuple-function">#</a>
+</h1>
+<h2 id="set">
+  Set
+  <a class="anchor" href="#set">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>set</strong> can be informally viewed as a collection of elements with <em>no duplicate</em> and in <em>no specific order</em>.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> The <strong>power set</strong> $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$.</p>
+</blockquote>
+<p>For instance, if</p>
+<span>
+  \( \qquad \qquad S = \{a,b\}\)
+</span>
+,
+<p>then</p>
+<span>
+  \( \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \)
+</span>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> An alternative notation for the power set of $S$ is $2^S$.</p>
+</blockquote>
+<p>If $S$ is finite with size $n$, then $\mathcal{P}(S)$ has size $2^n$.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> The <strong>product</strong> $S_1 \times S_2$ of two sets $S_1$ and $S_2$ is the set of all pairs $(s_1, s_2)$ such that $s_1 \in S_1$ and $s_2 \in S_2$.</p>
+</blockquote>
+<p>For instance, if</p>
+<span>
+  \( \qquad \qquad S_1 = \{a,b\} \)
+</span>
+<p>and</p>
+<span>
+  \( \qquad \qquad S_2 = \{1,2,3\} \)
+</span>
+,
+<p>then</p>
+<span>
+  \(\qquad \qquad S_1 \times S_2 = \{
+\ (a,1),
+(a,2),
+(a,3),
+(b,1),
+(b,2),
+(b,3)\
+\}
+\)
+</span>
+<blockquote class="book-hint info">
+<p><strong><em>Notation.</em></strong>
+Similarly to $S_1 \times S_2$:</p>
+<ul>
+<li>$S_1 \times S_2 \times S_3$ denotes the set of all triples $(s_1, s_2, s_3)$ such that $s_1 \in S_1, s_2 \in S_2$ and $s_3 \in S_3$.</li>
+<li>$S_1 \times .. \times S_k$ denotes the set of all tuples $(s_1, ..,  s_k)$ such that $s_1 \in S_1, .., s_k \in S_k$.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Notation.</em></strong></p>
+<ul>
+<li>$S^2$ is sometimes used for $S \times S$,</li>
+<li>$S^3$ is sometimes used for $S \times S \times S$,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+<h2 id="tuple">
+  Tuple
+  <a class="anchor" href="#tuple">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> A <strong>tuple</strong> (or <strong>list</strong>) over a set $S$ is a finite sequence of (possibly repeated) element of $S$.</p>
+</blockquote>
+<p>For instance:</p>
+<p>-$\ ()$ is the 0-tuple or <strong>empty tuple</strong>,</p>
+<p>-$\ (a)$ is a 1-tuple,</p>
+<p>-$\ (b,a)$ is a 2-tuple or <strong>pair</strong>,</p>
+<p>-$\ (a,b,a)$ is a 3-tuple or <strong>triple</strong>, etc.</p>
+<h2 id="function">
+  Function
+  <a class="anchor" href="#function">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>function</strong> (or <strong>map</strong>) $f\colon X \to Y$ maps each element $x$ of its <strong>domain</strong> $X$ to an element $f(x)$ of its <strong>codomain</strong> $Y$.</p>
+</blockquote>
+<p>A function $f\colon X \to Y$ can equivalently be viewed as a set of &ldquo;key-value&rdquo; pairs, namely the set of all pairs $(x, f(x))$ such that$ x \in X$.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> A function $f\colon X \to Y$ is:</p>
+<ul>
+<li><strong>injective</strong> is no two elements in its domain have the same image, i.e. if for all $ x_1, x_2 \in X$,</li>
+</ul>
+<p>$\qquad \qquad x_1 \neq x_2$ implies $f(x_1) \neq f(x_2)$</p>
+<ul>
+<li><strong>surjective</strong> if every element in its codomain has a preimage, i.e. if</li>
+</ul>
+<p>$\qquad \qquad$ for each $y \in Y$, there is a $x \in X$ such that $y = f(x)$.</p>
+<ul>
+<li><strong>bijective</strong> if it is injective and surjective.</li>
+</ul>
+</blockquote>
+<p>A function $f$ with <em>finite</em> domain can be represented extensionally, as a set of pairs of the form</p>
+<span>
+  \(\qquad \qquad x \mapsto f(x)\)
+</span>
+<p>For instance, the function</p>
+<span>
+  \( \qquad \qquad f\colon \{a,b,c\} \to \mathbb{N} \)
+</span>
+<p>defined by</p>
+<span>
+  \( \qquad \qquad f(a) = 1,\ f(b) = 1\)
+</span>
+and<span>
+  \(f(c) = 2\)
+</span>
+<p>can be represented as the set:</p>
+<span>
+  \(
+\qquad \qquad \{\ a \mapsto 1,\ b \mapsto 1,\ c \mapsto 2\ \}
+\)
+</span>
+<h2 id="multiset">
+  Multiset
+  <a class="anchor" href="#multiset">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p>A <strong>multiset</strong> (or <strong>bag</strong>) is a finite collection of elements in no specific order, <em>possibly with duplicates</em>.</p>
+</blockquote>
+<p>Square bracket are sometimes uses to distinguish a multiset from a set or a tuple.
+For instance:</p>
+<span>
+  \(
+\qquad [b,b,c]
+\)
+</span>
+<p>and</p>
+<span>
+  \(
+\qquad [a,b]
+\)
+</span>
+<p>are multisets (the latter is also a set).</p>
+<p>Besides,</p>
+<span>
+  \(
+\qquad [a,b,a]
+\)
+</span>
+<p>and</p>
+<span>
+  \(
+\qquad [b,a,a]
+\)
+</span>
+<p>denote the same multiset.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_multiset" id="tabs-exercise_multiset-0" checked="checked" />
+<label for="tabs-exercise_multiset-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>A multiset can equivalently be viewed as one of the mathematical objects seen above.
+Can you identify which one?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_multiset" id="tabs-exercise_multiset-1"  />
+<label for="tabs-exercise_multiset-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>A multiset can be viewed as a function that maps each element to its number of occurrences.</p>
+<p>For instance, the multiset</p>
+<p>[a, b, a]</p>
+<p>can be viewed as the function</p>
+<p>{ a ↦ 2, b ↦ 1 }</p>
+</div>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#function">Function</a></li>
+    <li><a href="#multiset">Multiset</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

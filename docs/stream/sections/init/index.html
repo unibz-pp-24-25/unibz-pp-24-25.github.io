@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Source
+  #
+
+
+  Collection
+  #
+
+A stream can be created out of a Java Collection with the instance method stream.
+
+Example.
+List&lt;Unit&gt; units = getUnits();
+units.stream();
+
+If the collection has a predictable order of iteration (e.g. if the collection is a List), then the elements will appear in this order in the stream.
+To create a stream out of the entries of a map, we can use the instance method Map.entrySet (which returns a set).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/stream/sections/init/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Source">
+  <meta property="og:description" content="Source # Collection # A stream can be created out of a Java Collection with the instance method stream.
+Example.
+List&lt;Unit&gt; units = getUnits(); units.stream(); If the collection has a predictable order of iteration (e.g. if the collection is a List), then the elements will appear in this order in the stream.
+To create a stream out of the entries of a map, we can use the instance method Map.entrySet (which returns a set).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Source | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/stream/sections/init/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Source</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#array">Array</a></li>
+    <li><a href="#generate-a-stream-with-indices">Generate a stream with indices</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="source">
+  Source
+  <a class="anchor" href="#source">#</a>
+</h1>
+<h2 id="collection">
+  Collection
+  <a class="anchor" href="#collection">#</a>
+</h2>
+<p>A stream can be created out of a Java <a href="#collection">Collection</a> with the instance method <code>stream</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>units.<span style="color:#a6e22e">stream</span>();
+</span></span></code></pre></div></blockquote>
+<p>If the collection has a predictable order of iteration (e.g. if the collection is a <code>List</code>), then the elements will appear in this order in the stream.</p>
+<p>To create a stream out of the entries of a map, we can use the instance method <a href="">Map.entrySet</a> (which returns a set).</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Integer<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> getMap();
+</span></span><span style="display:flex;"><span>map.<span style="color:#a6e22e">entrySet</span>().<span style="color:#a6e22e">stream</span>();
+</span></span></code></pre></div></blockquote>
+<h2 id="array">
+  Array
+  <a class="anchor" href="#array">#</a>
+</h2>
+<p>A stream can be created out of a Java array with the static method <code>Arrays.stream</code>.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">stream</span>(units);
+</span></span></code></pre></div></blockquote>
+<!-- **_Note._** If the array elements have primitive type (like `int` or `bool`), then this method will autobox them (i.e. produce a stream of `Integer` or `Boolean`). -->
+<h2 id="generate-a-stream-with-indices">
+  Generate a stream with indices
+  <a class="anchor" href="#generate-a-stream-with-indices">#</a>
+</h2>
+<p>An <code>IntStream</code> is a stream of <code>int</code> (see the <a href="http://localhost:1313/docs/stream/sections/numeric/">dedicated section</a> on streams with primitive numeric types).
+An <code>IntStream</code> can for instance be created with the static method <code>IntStream.range</code>, as follows:</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains [0, 2]</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> evenIntegers <span style="color:#f92672">=</span> IntStream.<span style="color:#a6e22e">range</span>(0, 4)             <span style="color:#75715e">// produce the stream (0, 1, 2, 3)</span>
+</span></span><span style="display:flex;"><span>                             .<span style="color:#a6e22e">filter</span>(i <span style="color:#f92672">-&gt;</span> i <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)       <span style="color:#75715e">// retain even numbers</span>
+</span></span><span style="display:flex;"><span>                             .<span style="color:#a6e22e">toList</span>();
+</span></span></code></pre></div></blockquote>
+<p>This can be used to iterate over a list or array while keeping track of the elements&rsquo; positions.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> evenUnits <span style="color:#f92672">=</span> IntStream.<span style="color:#a6e22e">range</span>(0, units.<span style="color:#a6e22e">length</span>)
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">filter</span>(i <span style="color:#f92672">-&gt;</span> i <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">mapToObj</span>(i <span style="color:#f92672">-&gt;</span> units<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>)
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">toList</span>();
+</span></span></code></pre></div></blockquote>
+<p>However, for this usage, external libraries offer more natural options.
+For instance, the StreamEx library can create a map from index to entry in an array, and generate a stream out of the entries of this map (analogous to the set of entries produced by <a href="">Map.entrySet</a>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> evenUnits <span style="color:#f92672">=</span> EntryStream.<span style="color:#a6e22e">of</span>(units)
+</span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">filterKeyValue</span>((index, unit) <span style="color:#f92672">-&gt;</span> index <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">values</span>()
+</span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To use StreamEx in a Maven project, declare this <a href="">dependency</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>one.util<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>streamex<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.8.2<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><p>or in a Gradle project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation group: <span style="color:#e6db74">&#39;one.util&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;streamex&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#e6db74">&#39;0.8.2&#39;</span>
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#array">Array</a></li>
+    <li><a href="#generate-a-stream-with-indices">Generate a stream with indices</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

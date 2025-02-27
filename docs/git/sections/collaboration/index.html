@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Basics: network and collaboration
+  #
+
+
+  Network
+  #
+
+In the previous section, Alice created and manipulated a git repository (with two branches).
+She may also want to backup her work.
+To this end, she can upload some of her branches to a remote machine (often called &ldquo;a remote&rdquo;).
+For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).
+Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/git/sections/collaboration/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Basics: network and collaboration">
+  <meta property="og:description" content="Basics: network and collaboration # Network # In the previous section, Alice created and manipulated a git repository (with two branches).
+She may also want to backup her work. To this end, she can upload some of her branches to a remote machine (often called “a remote”). For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).
+Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Basics: network and collaboration | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/git/sections/collaboration/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Basics: network and collaboration</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#network">Network</a></li>
+    <li><a href="#collaboration">Collaboration</a>
+      <ul>
+        <li><a href="#workflow">A basic workflow</a></li>
+        <li><a href="#to-go-further">To go further</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="basics-network-and-collaboration">
+  Basics: network and collaboration
+  <a class="anchor" href="#basics-network-and-collaboration">#</a>
+</h1>
+<h2 id="network">
+  Network
+  <a class="anchor" href="#network">#</a>
+</h2>
+<p>In the previous section, Alice created and manipulated a git repository (with two branches).</p>
+<p>She may also want to <em>backup</em> her work.
+To this end, she can upload some of her branches to a <strong>remote</strong> machine (often called &ldquo;a remote&rdquo;).
+For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).</p>
+<p>Whenever Alice wants to upload the content of a branch, she can <strong>push</strong> this branch to the remote.</p>
+<p>Alice may also want to work from another computer (or a virtual machine).
+She can achieve this by <strong>cloning</strong> the repository from the remote to this second machine.</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> By default, cloning a repository will only clone the main branch.
+But other branches (or all branches) can also be cloned explicitly.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> When two machines share a git branch, each of them has a copy of the <em>full history</em> of the branch.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> A branch can be shared with <em>several remote servers</em> (e.g. one for releases and one for development or continuous integration).</p>
+</blockquote>
+<p>For these two reasons, git is sometimes called a &ldquo;distributed&rdquo; versioning system.</p>
+<h2 id="collaboration">
+  Collaboration
+  <a class="anchor" href="#collaboration">#</a>
+</h2>
+<p>Enters Bob&hellip;</p>
+<p>Bob may want to collaborate with Alice on her project.
+He can clone Alice&rsquo;s repository, and add his own commits.</p>
+<p>In order to synchronize their work, Alice and Bob may agree to share the content of one or several branches (for instance the main branch).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> For a smooth collaboration, code on a shared branch is expected to:</p>
+<ul>
+<li>compile and</li>
+<li>pass all <a href="">unit tests</a> defined for the project.</li>
+</ul>
+</blockquote>
+<h3 id="workflow">
+  A basic workflow
+  <a class="anchor" href="#workflow">#</a>
+</h3>
+<p>Alice and Bob share the main branch of their repository, and this branch is called <code>main</code>.
+This generally means that there are (at least) 3 copies of this branch: one on Alice&rsquo;s machine, one on Bob&rsquo;s machine, and one on the remote.</p>
+<p>However Alice and Bob, do <em>not</em> work directly on this branch.
+Instead, each of them works on his/her own development branch (e.g. called <code>alice</code> and <code>bob</code> respectively).</p>
+<h4 id="backup">
+  Backup
+  <a class="anchor" href="#backup">#</a>
+</h4>
+<p>Alice regularly pushes the content of the branch <code>alice</code> to the remote, <em>for backup purposes only</em>.
+And so does Bob for the branch <code>bob</code>.</p>
+<p>However, Alice does not need a local copy of <code>bob</code>, and Bob does not need a local copy of <code>alice</code>.</p>
+<h4 id="sharing">
+  Sharing
+  <a class="anchor" href="#sharing">#</a>
+</h4>
+<p>Bob has been working on a new feature, on the branch <code>bob</code>.
+His code compiles and passes all unit tests.
+He now feels ready to share this code with Alice (via the branch <code>main</code>).</p>
+<p>However, Alice may have added commits to the <code>main</code> branch since Bob last looked at it.</p>
+<blockquote class="book-hint warning">
+<p>In order to share his work, Bob:</p>
+<ol>
+<li>switches to (his local copy of) <code>main</code> (with the <code>git checkout</code> command), then</li>
+<li><em>updates</em> his local copy of <code>main</code> (with the <code>git pull</code> command), then</li>
+<li>merges <code>main</code> into <code>bob</code> (this may require fixing merge conflicts), then</li>
+<li>merges <code>bob</code> into <code>main</code>, then</li>
+<li>pushes <code>main</code> to the remote.</li>
+</ol>
+</blockquote>
+<p>And Alice follows the same procedure to share her code (using <code>alice</code> instead of <code>bob</code>).</p>
+<h3 id="to-go-further">
+  To go further
+  <a class="anchor" href="#to-go-further">#</a>
+</h3>
+<p>There is a vast literature (and diverging opinions) on collaborative git workflows.
+This is beyond the scope of this course.</p>
+<p>Note that many of these workflows incorporate so-called &ldquo;pull requests&rdquo;, which are a mechanism for to notify team members of your team that you have completed a feature.
+Pull requests are not a functionality of git itself, but of (some) git hosting services.
+To learn more about pull requests, you may consult the corresponding <a href="https://docs.github.com/en/get-started/using-github/github-flow">GitHub</a> or <a href="https://www.atlassian.com/git/tutorials/making-a-pull-request">Atlassian</a> guides.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#network">Network</a></li>
+    <li><a href="#collaboration">Collaboration</a>
+      <ul>
+        <li><a href="#workflow">A basic workflow</a></li>
+        <li><a href="#to-go-further">To go further</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

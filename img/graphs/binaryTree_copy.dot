@@ -1,0 +1,34 @@
+digraph G {
+
+    a [label="a"]
+    xb1 [label="",style=invis]
+    xb2 [label="",style=invis]
+    xb3 [label="",style=invis]
+    xb4 [label="",style=invis]
+    b0 [label="b0"]
+    {rank=same b0 -> xb1 -> xb2 -> xb3 -> xb4 -> b1 [style=invis]}
+    
+    a -> xb1 [style=invis]
+    a -> b0
+    a -> xb2 [style=invis]
+    a -> b1
+
+
+
+    b0 -> c0
+    xc [label="",style=invis]
+    b0 -> xc [style=invis]
+    b0 -> c1
+    {rank=same c0 -> xc -> c1 [style=invis]}
+
+
+ 
+
+    b1 -> c2
+    xb8 [label="",style=invis]
+    b1 -> xb8 [style=invis]
+    b1 -> c3
+    {rank=same c2 -> xb8 -> c3 [style=invis]}
+
+}
+

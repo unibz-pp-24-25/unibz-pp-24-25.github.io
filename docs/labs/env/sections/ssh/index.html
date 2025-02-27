@@ -4,43 +4,27 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Terminal
+  ssh key
   #
 
-Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs.
-Possible benefits are:
-
-efficiency (thanks to autocompletion, there is very little to type),
-automation (via scripting),
-more transparency (a GUI may add a layer of obfuscation),
-stability over time (GUIs tend to change from one version of a program to another),
-a wider range of available actions (a GUI may allow you to execute a limited set of commands only),
-reproducibility (the same command performs the same action, with a limited reliance on memory),
-customizability.
-
-
-  Shell
-  #
-
-
-A shell interprets command typed in a terminal.
-It can also interpret programs (usually called scripts).">
+An ssh key allows you to connect to a remote machine via the ssh protocol.
+Among other uses, this is the preferred way to share data with a git hosting service (such as GitHub, Gitlab or Bitbucket).
+You only need one ssh key per machine (laptop, desktop, phone, etc.).
+So from your laptop, you can use the same ssh key to connect to a server or interact with GitHub, Gitlab, etc.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/">
   <meta property="og:site_name" content="Programming project 2024-25">
-  <meta property="og:title" content="Terminal">
-  <meta property="og:description" content="Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:
-efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), a wider range of available actions (a GUI may allow you to execute a limited set of commands only), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability. Shell # A shell interprets command typed in a terminal. It can also interpret programs (usually called scripts).">
+  <meta property="og:title" content="Ssh key">
+  <meta property="og:description" content="ssh key # An ssh key allows you to connect to a remote machine via the ssh protocol. Among other uses, this is the preferred way to share data with a git hosting service (such as GitHub, Gitlab or Bitbucket).
+You only need one ssh key per machine (laptop, desktop, phone, etc.). So from your laptop, you can use the same ssh key to connect to a server or interact with GitHub, Gitlab, etc.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Terminal | Programming project 2024-25</title>
+<title>Ssh key | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.f9539b15c62d6c906d97c466b73aab7c31f5f78df35cb6dd301bc13e30c33815.js" integrity="sha256-&#43;VObFcYtbJBtl8RmtzqrfDH1943zXLbdMBvBPjDDOBU=" crossorigin="anonymous"></script>
@@ -275,7 +259,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
     <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
@@ -395,7 +379,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/terminal/" class="active">Terminal</a>
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
   
 
         </li>
@@ -441,7 +425,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Terminal</h3>
+  <h3>Ssh key</h3>
 
   <label for="toc-control">
     
@@ -457,14 +441,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell">Shell</a>
+    <li>
       <ul>
-        <li><a href="#on-linux">on Linux</a></li>
-        <li><a href="#on-macos">on macOS</a></li>
-        <li><a href="#windows">on Windows</a></li>
+        <li></li>
+        <li><a href="#create-an-ssh-key-if-there-was-none">Create an ssh key (if there was none)</a></li>
+        <li><a href="#share-your-public-key">Share your public key</a></li>
       </ul>
     </li>
-    <li><a href="#autocompletion">Autocompletion</a></li>
   </ul>
 </nav>
 
@@ -477,75 +460,72 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="terminal">
-  Terminal
-  <a class="anchor" href="#terminal">#</a>
+  <article class="markdown book-article"><h1 id="ssh-key">
+  ssh key
+  <a class="anchor" href="#ssh-key">#</a>
 </h1>
-<p>Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).</p>
-<p>But even when a GUI is available, a Command Line Interface (CLI) can still be the <em>preferred way</em> to interact with some programs.
-Possible benefits are:</p>
+<p>An ssh key allows you to connect to a remote machine via the ssh protocol.
+Among other uses, this is the preferred way to share data with a git hosting service (such as GitHub, Gitlab or Bitbucket).</p>
+<p>You only need <em>one</em> ssh key per machine (laptop, desktop, phone, etc.).
+So from your laptop, you can use the <em>same</em> ssh key to connect to a server or interact with GitHub, Gitlab, etc.</p>
+<p>By default, ssh keys are located in the directory <code>&lt;homeDir&gt;/.ssh/</code> (or <code>&lt;homeDir&gt;\.ssh\</code> on Windows) where <code>&lt;homeDir&gt;</code> is your <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#home_path">home directory</a> (i.e. the one with your user name).</p>
+<h4 id="check-whether-there-is-already-an-ssh-key-on-your-machine">
+  Check whether there is already an ssh key on your machine
+  <a class="anchor" href="#check-whether-there-is-already-an-ssh-key-on-your-machine">#</a>
+</h4>
+<p>There may already be an ssh key on your machine.
+To check whether this is the case:</p>
 <ul>
-<li>efficiency (thanks to autocompletion, there is very little to type),</li>
-<li>automation (via scripting),</li>
-<li>more transparency (a GUI may add a layer of obfuscation),</li>
-<li>stability over time (GUIs tend to change from one version of a program to another),</li>
-<li>a wider range of available actions (a GUI may allow you to execute a limited set of commands only),</li>
-<li>reproducibility (the same command performs the same action, with a limited reliance on memory),</li>
-<li>customizability.</li>
+<li>verify whether the <code>&lt;homeDir&gt;/.ssh/</code> already exists,</li>
+<li>if it exists, then open it and check whether it contains two files with the same name, one without extension, and one with the extension <code>.pub</code>.
+For instance, <code>id_rsa</code> and <code>id_rsa.pub</code>, or <code>id_ed25519</code> and <code>id_ed25519.pub</code>.</li>
 </ul>
-<h2 id="shell">
-  Shell
-  <a class="anchor" href="#shell">#</a>
-</h2>
 <blockquote class="book-hint warning">
-<p>A <strong>shell</strong> interprets command typed in a terminal.
-It can also interpret programs (usually called <strong>scripts</strong>).</p>
-</blockquote>
-<h3 id="on-linux">
-  on Linux
-  <a class="anchor" href="#on-linux">#</a>
-</h3>
-<p>The default shell on most Linux distributions is <a href="https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">bash</a>.</p>
-<h3 id="on-macos">
-  on macOS
-  <a class="anchor" href="#on-macos">#</a>
-</h3>
-<p>The default shell on macOS is <a href="https://en.wikipedia.org/wiki/Z_shell">zsh</a>.
-It extends bash with modern features (notably customization options, via plugins).</p>
-<h3 id="windows">
-  on Windows
-  <a class="anchor" href="#windows">#</a>
-</h3>
-<p>Windows comes with two shells by default:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (a.k.a. command processor shell) and</li>
-<li>Windows PowerShell.</li>
-</ul>
-<blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-<a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> is a closely related (cross-platform) shell developed by Microsoft.
-It is <a href="https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.5#using-powershell-7-side-by-side-with-windows-powershell-51">not fully compatible</a> with Windows PowerShell (they are currently meant to &ldquo;coexist&rdquo;).</p>
-</blockquote>
-<p>Other shells are commonly used by Windows developers that offer a (possibly partial) Linux-like shell experience.
-Popular options include:</p>
+The .ssh directory is a <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#hidden">hidden</a> directory, so make sure that your file browser displays hidden files and directories.
+Alternatively, with a terminal you can list all files and directories in the current directory (including hidden ones) with:</p>
 <ul>
-<li><a href="https://gitforwindows.org/">git bash</a> (often used to learn git),</li>
-<li><a href="https://www.cygwin.com/">Cygwin</a>,</li>
-<li><a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">WSL</a>,
-whose latest version runs a full (Arch) Linux virtual machine.</li>
+<li>Linux and macOS:</li>
 </ul>
-<h2 id="autocompletion">
-  Autocompletion
-  <a class="anchor" href="#autocompletion">#</a>
-</h2>
-<p>Modern shells provide at least two types of command autocompletion:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -a
+</span></span></code></pre></div><ul>
+<li>Windows:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -force
+</span></span></code></pre></div></blockquote>
+<p>If these two files are already present, then you already have an ssh key, and you can skip the next step.</p>
+<h3 id="create-an-ssh-key-if-there-was-none">
+  Create an ssh key (if there was none)
+  <a class="anchor" href="#create-an-ssh-key-if-there-was-none">#</a>
+</h3>
+<p>If the .ssh directory does not exist or does not contain an ssh key, then generate a key with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+</span></span></code></pre></div><p>and follow the instructions (note that if you choose to enter a password, then you will have to type it each time you upload or download data to/from Github, Gitlab, etc.).</p>
+<h3 id="share-your-public-key">
+  Share your public key
+  <a class="anchor" href="#share-your-public-key">#</a>
+</h3>
+<p>If you followed the instructions above, you should now have an ssh key one your machine (whether it was already there or you just created it)</p>
+<p>Your ssh key consists of two files, with the same name (modulo the extension <code>.pub</code>):</p>
 <ul>
-<li>completion based on your command history, and</li>
-<li>smart completion (a.k.a. &ldquo;Tab-completion&rdquo;) for possible arguments, paths, etc.</li>
+<li>the file with the <code>.pub</code> extension is your <strong>public key</strong>,</li>
+<li>the file without the <code>.pub</code> extension is your <strong>private key</strong>.</li>
 </ul>
-<p>As a result, using a terminal requires very little typing.</p>
-<p>By default, autocompletion may not be activated (or installed) on your machine.
-We will see how to do it during the <a href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/auto_comp/">first lab</a>.</p>
+<p>In order to connect to/exchange with a remote machine via ssh, you need to share the public key: this is the content of the file with the pub extension.</p>
+<h4 id="with-github">
+  with GitHub
+  <a class="anchor" href="#with-github">#</a>
+</h4>
+<p>This is how to share your public ssh key with GitHub (the procedure is similar for GitLab, etc.):</p>
+<ol>
+<li>login to <a href="https://github.com/">GitHub</a>,</li>
+<li>click on your user icon (top right), and select &ldquo;Settings&rdquo;,</li>
+<li>in the left menu, select &ldquo;SSH and GPG keys&rdquo;,</li>
+<li>click on the button &ldquo;new ssh key&rdquo;,</li>
+<li>give a name to your key (e.g. <code>my_laptop</code>) in the field &ldquo;Title&rdquo;,</li>
+<li>paste the content of the <code>.pub</code> file in the field &ldquo;Key&rdquo;,</li>
+<li>click on the &ldquo;Add SSH key&rdquo; button.</li>
+</ol>
 </article>
  
       
@@ -587,14 +567,13 @@ We will see how to do it during the <a href="https://unibz-pp-24-25.github.io/do
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell">Shell</a>
+    <li>
       <ul>
-        <li><a href="#on-linux">on Linux</a></li>
-        <li><a href="#on-macos">on macOS</a></li>
-        <li><a href="#windows">on Windows</a></li>
+        <li></li>
+        <li><a href="#create-an-ssh-key-if-there-was-none">Create an ssh key (if there was none)</a></li>
+        <li><a href="#share-your-public-key">Share your public key</a></li>
       </ul>
     </li>
-    <li><a href="#autocompletion">Autocompletion</a></li>
   </ul>
 </nav>
 

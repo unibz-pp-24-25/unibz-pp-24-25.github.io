@@ -4,43 +4,39 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Terminal
+  Default text editor for git
   #
 
-Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs.
-Possible benefits are:
+Some git commands open a text editor to let you type a message.
+By default, on most systems, this editor is vi, which is not friendly to new users.
+Instead, we recommend configuring git so that it opens your favorite text editor.
+The command is:
+git config --global core.editor &lt;myEditor&gt;
+where &lt;myEditor&gt; is the command that launches your text editor.
+For instance:
 
-efficiency (thanks to autocompletion, there is very little to type),
-automation (via scripting),
-more transparency (a GUI may add a layer of obfuscation),
-stability over time (GUIs tend to change from one version of a program to another),
-a wider range of available actions (a GUI may allow you to execute a limited set of commands only),
-reproducibility (the same command performs the same action, with a limited reliance on memory),
-customizability.
-
-
-  Shell
-  #
-
-
-A shell interprets command typed in a terminal.
-It can also interpret programs (usually called scripts).">
+notepad for Notepad&#43;&#43; (Windows),
+open -e -W -n for TextEdit (macOS),
+gedit for gedit,
+sublime for sublime text,
+etc.
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/labs/env/sections/git_default_te/">
   <meta property="og:site_name" content="Programming project 2024-25">
-  <meta property="og:title" content="Terminal">
-  <meta property="og:description" content="Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:
-efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), a wider range of available actions (a GUI may allow you to execute a limited set of commands only), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability. Shell # A shell interprets command typed in a terminal. It can also interpret programs (usually called scripts).">
+  <meta property="og:title" content="Default text editor for git">
+  <meta property="og:description" content="Default text editor for git # Some git commands open a text editor to let you type a message. By default, on most systems, this editor is vi, which is not friendly to new users.
+Instead, we recommend configuring git so that it opens your favorite text editor. The command is:
+git config --global core.editor &lt;myEditor&gt; where &lt;myEditor&gt; is the command that launches your text editor. For instance:
+notepad for Notepad&#43;&#43; (Windows), open -e -W -n for TextEdit (macOS), gedit for gedit, sublime for sublime text, etc.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Terminal | Programming project 2024-25</title>
+<title>Default text editor for git | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/git_default_te/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.f9539b15c62d6c906d97c466b73aab7c31f5f78df35cb6dd301bc13e30c33815.js" integrity="sha256-&#43;VObFcYtbJBtl8RmtzqrfDH1943zXLbdMBvBPjDDOBU=" crossorigin="anonymous"></script>
@@ -275,7 +271,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
     <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
@@ -395,7 +391,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/terminal/" class="active">Terminal</a>
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
   
 
         </li>
@@ -441,7 +437,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Terminal</h3>
+  <h3>Default text editor for git</h3>
 
   <label for="toc-control">
     
@@ -457,14 +453,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell">Shell</a>
-      <ul>
-        <li><a href="#on-linux">on Linux</a></li>
-        <li><a href="#on-macos">on macOS</a></li>
-        <li><a href="#windows">on Windows</a></li>
-      </ul>
-    </li>
-    <li><a href="#autocompletion">Autocompletion</a></li>
+    <li><a href="#default-text-editor-for-git">Default text editor for git</a></li>
   </ul>
 </nav>
 
@@ -477,75 +466,24 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="terminal">
-  Terminal
-  <a class="anchor" href="#terminal">#</a>
-</h1>
-<p>Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).</p>
-<p>But even when a GUI is available, a Command Line Interface (CLI) can still be the <em>preferred way</em> to interact with some programs.
-Possible benefits are:</p>
-<ul>
-<li>efficiency (thanks to autocompletion, there is very little to type),</li>
-<li>automation (via scripting),</li>
-<li>more transparency (a GUI may add a layer of obfuscation),</li>
-<li>stability over time (GUIs tend to change from one version of a program to another),</li>
-<li>a wider range of available actions (a GUI may allow you to execute a limited set of commands only),</li>
-<li>reproducibility (the same command performs the same action, with a limited reliance on memory),</li>
-<li>customizability.</li>
-</ul>
-<h2 id="shell">
-  Shell
-  <a class="anchor" href="#shell">#</a>
+  <article class="markdown book-article"><h2 id="default-text-editor-for-git">
+  Default text editor for git
+  <a class="anchor" href="#default-text-editor-for-git">#</a>
 </h2>
-<blockquote class="book-hint warning">
-<p>A <strong>shell</strong> interprets command typed in a terminal.
-It can also interpret programs (usually called <strong>scripts</strong>).</p>
-</blockquote>
-<h3 id="on-linux">
-  on Linux
-  <a class="anchor" href="#on-linux">#</a>
-</h3>
-<p>The default shell on most Linux distributions is <a href="https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">bash</a>.</p>
-<h3 id="on-macos">
-  on macOS
-  <a class="anchor" href="#on-macos">#</a>
-</h3>
-<p>The default shell on macOS is <a href="https://en.wikipedia.org/wiki/Z_shell">zsh</a>.
-It extends bash with modern features (notably customization options, via plugins).</p>
-<h3 id="windows">
-  on Windows
-  <a class="anchor" href="#windows">#</a>
-</h3>
-<p>Windows comes with two shells by default:</p>
+<p>Some git commands open a text editor to let you type a message.
+By default, on most systems, this editor is <a href="https://unibz-pp-24-25.github.io/docs/env/sections/text_editor/#vi">vi</a>, which is not friendly to new users.</p>
+<p>Instead, we recommend configuring git so that it opens your favorite text editor.
+The command is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global core.editor &lt;myEditor&gt;
+</span></span></code></pre></div><p>where <code>&lt;myEditor&gt;</code> is the command that launches your text editor.
+For instance:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (a.k.a. command processor shell) and</li>
-<li>Windows PowerShell.</li>
+<li><code>notepad</code> for Notepad++ (Windows),</li>
+<li><code>open -e -W -n</code> for TextEdit (macOS),</li>
+<li><code>gedit</code> for gedit,</li>
+<li><code>sublime</code> for sublime text,</li>
+<li>etc.</li>
 </ul>
-<blockquote class="book-hint danger">
-<p><strong><em>Warning.</em></strong>
-<a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> is a closely related (cross-platform) shell developed by Microsoft.
-It is <a href="https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.5#using-powershell-7-side-by-side-with-windows-powershell-51">not fully compatible</a> with Windows PowerShell (they are currently meant to &ldquo;coexist&rdquo;).</p>
-</blockquote>
-<p>Other shells are commonly used by Windows developers that offer a (possibly partial) Linux-like shell experience.
-Popular options include:</p>
-<ul>
-<li><a href="https://gitforwindows.org/">git bash</a> (often used to learn git),</li>
-<li><a href="https://www.cygwin.com/">Cygwin</a>,</li>
-<li><a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">WSL</a>,
-whose latest version runs a full (Arch) Linux virtual machine.</li>
-</ul>
-<h2 id="autocompletion">
-  Autocompletion
-  <a class="anchor" href="#autocompletion">#</a>
-</h2>
-<p>Modern shells provide at least two types of command autocompletion:</p>
-<ul>
-<li>completion based on your command history, and</li>
-<li>smart completion (a.k.a. &ldquo;Tab-completion&rdquo;) for possible arguments, paths, etc.</li>
-</ul>
-<p>As a result, using a terminal requires very little typing.</p>
-<p>By default, autocompletion may not be activated (or installed) on your machine.
-We will see how to do it during the <a href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/auto_comp/">first lab</a>.</p>
 </article>
  
       
@@ -587,14 +525,7 @@ We will see how to do it during the <a href="https://unibz-pp-24-25.github.io/do
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell">Shell</a>
-      <ul>
-        <li><a href="#on-linux">on Linux</a></li>
-        <li><a href="#on-macos">on macOS</a></li>
-        <li><a href="#windows">on Windows</a></li>
-      </ul>
-    </li>
-    <li><a href="#autocompletion">Autocompletion</a></li>
+    <li><a href="#default-text-editor-for-git">Default text editor for git</a></li>
   </ul>
 </nav>
 

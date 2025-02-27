@@ -30,9 +30,9 @@
     </item>
     <item>
       <title>Terminal and text editor</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/prelim/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/prelim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/prelim/</guid>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/prelim/</guid>
       <description>&lt;h1 id=&#34;terminal-and-text-editor&#34;&gt;&#xA;  Terminal and text editor&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#terminal-and-text-editor&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;For this lab, you will need to know how to open a terminal and a text editor.&lt;/p&gt;&#xA;&lt;h2 id=&#34;terminal&#34;&gt;&#xA;  Terminal&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#terminal&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;You can launch a terminal in multiple ways:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;searching for applications,&lt;/li&gt;&#xA;&lt;li&gt;clicking on the corresponding icon or desktop shortcut (if there is one),&lt;/li&gt;&#xA;&lt;li&gt;with a keyboard shortcut (e.g. &lt;code&gt;Ctrl+Alt+t&lt;/code&gt; by default on Ubuntu).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote class=&#34;book-hint warning&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Warning.&lt;/em&gt;&lt;/strong&gt;&#xA;Windows comes with &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/env/sections/terminal/#windows&#34;&gt;two shells&lt;/a&gt; by default.&#xA;Out of these two, we (highly) recommend the Windows PowerShell.&lt;/p&gt;</description>
     </item>
     <item>
@@ -58,9 +58,9 @@
     </item>
     <item>
       <title>Shell autocompletion</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/auto_comp/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/auto_comp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/auto_comp/</guid>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/auto_comp/</guid>
       <description>&lt;h1 id=&#34;shell-autocompletion&#34;&gt;&#xA;  Shell autocompletion&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#shell-autocompletion&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;For comfort, your shell should allow you to autocomplete commands, in (at least) two ways: Tab-completion and history-based completion.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tab-completion&#34;&gt;&#xA;  Tab completion&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tab-completion&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This feature suggests &amp;ldquo;smart&amp;rdquo; completions of the current command, like possible arguments, options, paths, etc.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Example.&lt;/em&gt;&lt;/strong&gt;&#xA;On most operating systems, the command &lt;code&gt;cd&lt;/code&gt; (like &amp;ldquo;Change Directory&amp;rdquo;) allows you to change the current directory.&#xA;E.g.:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd workspace&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;allows you to navigate (from the current folder) to the subfolder called &lt;code&gt;workspace&lt;/code&gt; (if it exists).&lt;/p&gt;</description>
     </item>
     <item>
@@ -79,9 +79,9 @@
     </item>
     <item>
       <title>Default text editor for git</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/git_default_te/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/git_default_te/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/git_default_te/</guid>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/git_default_te/</guid>
       <description>&lt;h2 id=&#34;default-text-editor-for-git&#34;&gt;&#xA;  Default text editor for git&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#default-text-editor-for-git&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Some git commands open a text editor to let you type a message.&#xA;By default, on most systems, this editor is &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/env/sections/text_editor/#vi&#34;&gt;vi&lt;/a&gt;, which is not friendly to new users.&lt;/p&gt;&#xA;&lt;p&gt;Instead, we recommend configuring git so that it opens your favorite text editor.&#xA;The command is:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global core.editor &amp;lt;myEditor&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where &lt;code&gt;&amp;lt;myEditor&amp;gt;&lt;/code&gt; is the command that launches your text editor.&#xA;For instance:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;notepad&lt;/code&gt; for Notepad++ (Windows),&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;open -e -W -n&lt;/code&gt; for TextEdit (macOS),&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;gedit&lt;/code&gt; for gedit,&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sublime&lt;/code&gt; for sublime text,&lt;/li&gt;&#xA;&lt;li&gt;etc.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
@@ -100,16 +100,16 @@
     </item>
     <item>
       <title>Installing software</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/install/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/install/</guid>
-      <description>&lt;h1 id=&#34;installing-software&#34;&gt;&#xA;  Installing software&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#installing-software&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;In order to install, update and remove programming-related software (compilers, interpreters, execution environment, libraries, build automation tools, git, maven, etc.), we highly recommend using a &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/env/sections/install/#packageManager&#34;&gt;package manager&lt;/a&gt;.&#xA;This is valid regardless of the programming languages that you use (Java, Javascript, Python, C/C++, etc.).&lt;/p&gt;&#xA;&lt;p&gt;Linux distributions already come with a package manager.&#xA;So you can safely skip the next section if you use Linux.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing-a-package-manager-windows-and-macos-only&#34;&gt;&#xA;  Installing a package manager (Windows and macOS only)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#installing-a-package-manager-windows-and-macos-only&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;windows&#34;&gt;&#xA;  Windows&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#windows&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;To install &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt;:&lt;/p&gt;</description>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/install/</guid>
+      <description>&lt;h1 id=&#34;installing-software&#34;&gt;&#xA;  Installing software&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#installing-software&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;In order to install, update and remove programming-related software (compilers, interpreters, execution environment, libraries, build automation tools, git, maven, etc.), we highly recommend using a &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/env/sections/install/#packageManager&#34;&gt;package manager&lt;/a&gt;.&#xA;This is valid regardless of the programming languages that you use (Java, Javascript, Python, C/C++, etc.).&lt;/p&gt;&#xA;&lt;p&gt;Linux distributions already come with a package manager.&#xA;So you can safely skip the next section if you use Linux.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing-a-package-manager-windows-and-macos-only&#34;&gt;&#xA;  Installing a package manager (Windows and macOS only)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#installing-a-package-manager-windows-and-macos-only&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;windows&#34;&gt;&#xA;  Windows&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#windows&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;To install &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt;:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ssh key</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/ssh/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/ssh/</guid>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</guid>
       <description>&lt;h1 id=&#34;ssh-key&#34;&gt;&#xA;  ssh key&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#ssh-key&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;An ssh key allows you to connect to a remote machine via the ssh protocol.&#xA;Among other uses, this is the preferred way to share data with a git hosting service (such as GitHub, Gitlab or Bitbucket).&lt;/p&gt;&#xA;&lt;p&gt;You only need &lt;em&gt;one&lt;/em&gt; ssh key per machine (laptop, desktop, phone, etc.).&#xA;So from your laptop, you can use the &lt;em&gt;same&lt;/em&gt; ssh key to connect to a server or interact with GitHub, Gitlab, etc.&lt;/p&gt;</description>
     </item>
     <item>
@@ -173,13 +173,13 @@
       <link>https://unibz-pp-24-25.github.io/docs/env/sections/eval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-24-25.github.io/docs/env/sections/eval/</guid>
-      <description>&lt;h2 id=&#34;evaluation-environment&#34;&gt;&#xA;  Evaluation environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#evaluation-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.&lt;/p&gt;&#xA;&lt;p&gt;You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/sections/eval/&#34;&gt;first lab&lt;/a&gt; provides instructions to use this virtual environment.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;evaluation-environment&#34;&gt;&#xA;  Evaluation environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#evaluation-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.&lt;/p&gt;&#xA;&lt;p&gt;You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/&#34;&gt;first lab&lt;/a&gt; provides instructions to use this virtual environment.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Evaluation environment</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/eval/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/eval/</guid>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/</guid>
       <description>&lt;h2 id=&#34;evaluation-environment&#34;&gt;&#xA;  Evaluation environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#evaluation-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.&#xA;You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&lt;/p&gt;&#xA;&lt;p&gt;Each student gets his or her own &lt;em&gt;clone&lt;/em&gt; of the original machine.&#xA;Maven, Gradle, git and a Java 21 JDK are already installed.&lt;/p&gt;&#xA;&lt;!--You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.--&gt;&#xA;&lt;p&gt;You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client).&#xA;In the remainder of this section, we will use RDP.&lt;/p&gt;</description>
     </item>
     <item>
@@ -191,10 +191,10 @@
     </item>
     <item>
       <title>Using a terminal (demo)</title>
-      <link>https://unibz-pp-24-25.github.io/docs/labs/sections/demo/</link>
+      <link>https://unibz-pp-24-25.github.io/docs/labs/env/sections/demo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-24-25.github.io/docs/labs/sections/demo/</guid>
-      <description>&lt;h1 id=&#34;using-a-terminal-demo&#34;&gt;&#xA;  Using a terminal (demo)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#using-a-terminal-demo&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The following demo is meant to (quickly) illustrate some benefits of a properly configured terminal, as well a few terminal-based applications.&lt;/p&gt;&#xA;&lt;p&gt;This is &lt;em&gt;not&lt;/em&gt; an introduction to bash or Linux core utilities.&lt;/p&gt;&#xA;&lt;h2 id=&#34;virtual-environment&#34;&gt;&#xA;  Virtual environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#virtual-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;For this demo, we deployed a virtual machine with a pre-configured terminal.&lt;/p&gt;&#xA;&lt;p&gt;The instructions for connecting to this machine are identical to the one for the project &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/sections/eval/&#34;&gt;evaluation environment&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>https://unibz-pp-24-25.github.io/docs/labs/env/sections/demo/</guid>
+      <description>&lt;h1 id=&#34;using-a-terminal-demo&#34;&gt;&#xA;  Using a terminal (demo)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#using-a-terminal-demo&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The following demo is meant to (quickly) illustrate some benefits of a properly configured terminal, as well a few terminal-based applications.&lt;/p&gt;&#xA;&lt;p&gt;This is &lt;em&gt;not&lt;/em&gt; an introduction to bash or Linux core utilities.&lt;/p&gt;&#xA;&lt;h2 id=&#34;virtual-environment&#34;&gt;&#xA;  Virtual environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#virtual-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;For this demo, we deployed a virtual machine with a pre-configured terminal.&lt;/p&gt;&#xA;&lt;p&gt;The instructions for connecting to this machine are identical to the one for the project &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/&#34;&gt;evaluation environment&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -4,43 +4,31 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Terminal
+  Evaluation environment
   #
 
-Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs.
-Possible benefits are:
+The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.
+You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.
+Each student gets his or her own clone of the original machine.
+Maven, Gradle, git and a Java 21 JDK are already installed.
 
-efficiency (thanks to autocompletion, there is very little to type),
-automation (via scripting),
-more transparency (a GUI may add a layer of obfuscation),
-stability over time (GUIs tend to change from one version of a program to another),
-a wider range of available actions (a GUI may allow you to execute a limited set of commands only),
-reproducibility (the same command performs the same action, with a limited reliance on memory),
-customizability.
-
-
-  Shell
-  #
-
-
-A shell interprets command typed in a terminal.
-It can also interpret programs (usually called scripts).">
+You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client).
+In the remainder of this section, we will use RDP.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/">
   <meta property="og:site_name" content="Programming project 2024-25">
-  <meta property="og:title" content="Terminal">
-  <meta property="og:description" content="Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:
-efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), a wider range of available actions (a GUI may allow you to execute a limited set of commands only), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability. Shell # A shell interprets command typed in a terminal. It can also interpret programs (usually called scripts).">
+  <meta property="og:title" content="Evaluation environment">
+  <meta property="og:description" content="Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.
+Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 21 JDK are already installed.
+You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client). In the remainder of this section, we will use RDP.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Terminal | Programming project 2024-25</title>
+<title>Evaluation environment | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.f9539b15c62d6c906d97c466b73aab7c31f5f78df35cb6dd301bc13e30c33815.js" integrity="sha256-&#43;VObFcYtbJBtl8RmtzqrfDH1943zXLbdMBvBPjDDOBU=" crossorigin="anonymous"></script>
@@ -275,7 +263,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
     <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
@@ -395,7 +383,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/terminal/" class="active">Terminal</a>
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
   
 
         </li>
@@ -441,7 +429,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Terminal</h3>
+  <h3>Evaluation environment</h3>
 
   <label for="toc-control">
     
@@ -457,14 +445,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell">Shell</a>
+    <li><a href="#evaluation-environment">Evaluation environment</a>
       <ul>
-        <li><a href="#on-linux">on Linux</a></li>
-        <li><a href="#on-macos">on macOS</a></li>
-        <li><a href="#windows">on Windows</a></li>
+        <li><a href="#rdp-client">RDP client</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#keyboard-layout">Keyboard layout</a></li>
+        <li><a href="#apps">Starting an application</a></li>
       </ul>
     </li>
-    <li><a href="#autocompletion">Autocompletion</a></li>
   </ul>
 </nav>
 
@@ -477,75 +465,70 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="terminal">
-  Terminal
-  <a class="anchor" href="#terminal">#</a>
-</h1>
-<p>Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).</p>
-<p>But even when a GUI is available, a Command Line Interface (CLI) can still be the <em>preferred way</em> to interact with some programs.
-Possible benefits are:</p>
-<ul>
-<li>efficiency (thanks to autocompletion, there is very little to type),</li>
-<li>automation (via scripting),</li>
-<li>more transparency (a GUI may add a layer of obfuscation),</li>
-<li>stability over time (GUIs tend to change from one version of a program to another),</li>
-<li>a wider range of available actions (a GUI may allow you to execute a limited set of commands only),</li>
-<li>reproducibility (the same command performs the same action, with a limited reliance on memory),</li>
-<li>customizability.</li>
-</ul>
-<h2 id="shell">
-  Shell
-  <a class="anchor" href="#shell">#</a>
+  <article class="markdown book-article"><h2 id="evaluation-environment">
+  Evaluation environment
+  <a class="anchor" href="#evaluation-environment">#</a>
 </h2>
-<blockquote class="book-hint warning">
-<p>A <strong>shell</strong> interprets command typed in a terminal.
-It can also interpret programs (usually called <strong>scripts</strong>).</p>
-</blockquote>
-<h3 id="on-linux">
-  on Linux
-  <a class="anchor" href="#on-linux">#</a>
+<p>The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.
+You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.</p>
+<p>Each student gets his or her own <em>clone</em> of the original machine.
+Maven, Gradle, git and a Java 21 JDK are already installed.</p>
+<!--You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.-->
+<p>You can log in to this machine via ssh (using a terminal), or via RDP (using an RDP client).
+In the remainder of this section, we will use RDP.</p>
+<h3 id="rdp-client">
+  RDP client
+  <a class="anchor" href="#rdp-client">#</a>
 </h3>
-<p>The default shell on most Linux distributions is <a href="https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">bash</a>.</p>
-<h3 id="on-macos">
-  on macOS
-  <a class="anchor" href="#on-macos">#</a>
+<p>In order to connect via RDP, you need an RDP client.</p>
+<p>Here is a (non-exhaustive) list of RDP clients:</p>
+<ul>
+<li>
+<p>Windows:</p>
+<ul>
+<li><a href="https://4it.com.au/kb/article/how-to-start-remote-desktop-rdp-from-the-command-prompt/">Windows Remote Desktop</a> (installed by default), also called MSTSC</li>
+<li><a href="https://www.royalapps.com/ts/win/features">Royal TS</a></li>
+</ul>
+</li>
+<li>
+<p>macOS:</p>
+<ul>
+<li><a href="https://apps.apple.com/it/app/microsoft-remote-desktop/id1295203466?mt=12">Microsoft Remote Desktop</a></li>
+<li><a href="https://www.royalapps.com/ts/win/features">Royal TS</a></li>
+</ul>
+</li>
+<li>
+<p>Linux:</p>
+<ul>
+<li><a href="https://remmina.org/">Remmina</a></li>
+<li><a href="https://www.rdesktop.org/">rdesktop</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="login">
+  Login
+  <a class="anchor" href="#login">#</a>
 </h3>
-<p>The default shell on macOS is <a href="https://en.wikipedia.org/wiki/Z_shell">zsh</a>.
-It extends bash with modern features (notably customization options, via plugins).</p>
-<h3 id="windows">
-  on Windows
-  <a class="anchor" href="#windows">#</a>
+<p>The registration link is shared on the <a href="https://teams.microsoft.com/l/team/19%3a5nIIq-TkfyJLi3capYBYZG42U0vNmUBTv31Ac7Gqf641%40thread.tacv2/conversations?groupId=b394eaa9-e55c-42ed-be0f-5be013ff2f03&amp;tenantId=92513267-03e3-401a-80d4-c58ed6674e3b">Microsoft Team</a> for this course.
+After logging in (with your Unibz credentials), you should see the following:</p>
+<p><img src="/img/env/vm_start_tutorial.png" alt="" /></p>
+<p>Toggling the button (bottom-left) will start your own clone of the virtual machine (this may take a few minutes).</p>
+<p>Once your machine is running, click on the 3 dots (bottom right) and select &ldquo;show RDP information&rdquo;.
+This will give you the string (host name and port) needed by your RDP client to connect to the machine.</p>
+<p>The credentials for logging in to the machine are shared on the <a href="https://teams.microsoft.com/l/team/19%3a5nIIq-TkfyJLi3capYBYZG42U0vNmUBTv31Ac7Gqf641%40thread.tacv2/conversations?groupId=b394eaa9-e55c-42ed-be0f-5be013ff2f03&amp;tenantId=92513267-03e3-401a-80d4-c58ed6674e3b">Microsoft Team</a> for this course.</p>
+<h3 id="keyboard-layout">
+  Keyboard layout
+  <a class="anchor" href="#keyboard-layout">#</a>
 </h3>
-<p>Windows comes with two shells by default:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (a.k.a. command processor shell) and</li>
-<li>Windows PowerShell.</li>
-</ul>
-<blockquote class="book-hint danger">
-<p><strong><em>Warning.</em></strong>
-<a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> is a closely related (cross-platform) shell developed by Microsoft.
-It is <a href="https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.5#using-powershell-7-side-by-side-with-windows-powershell-51">not fully compatible</a> with Windows PowerShell (they are currently meant to &ldquo;coexist&rdquo;).</p>
-</blockquote>
-<p>Other shells are commonly used by Windows developers that offer a (possibly partial) Linux-like shell experience.
-Popular options include:</p>
-<ul>
-<li><a href="https://gitforwindows.org/">git bash</a> (often used to learn git),</li>
-<li><a href="https://www.cygwin.com/">Cygwin</a>,</li>
-<li><a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">WSL</a>,
-whose latest version runs a full (Arch) Linux virtual machine.</li>
-</ul>
-<h2 id="autocompletion">
-  Autocompletion
-  <a class="anchor" href="#autocompletion">#</a>
-</h2>
-<p>Modern shells provide at least two types of command autocompletion:</p>
-<ul>
-<li>completion based on your command history, and</li>
-<li>smart completion (a.k.a. &ldquo;Tab-completion&rdquo;) for possible arguments, paths, etc.</li>
-</ul>
-<p>As a result, using a terminal requires very little typing.</p>
-<p>By default, autocompletion may not be activated (or installed) on your machine.
-We will see how to do it during the <a href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/auto_comp/">first lab</a>.</p>
+<p>Once connected, you can select a keyboard layout (English, German or Italian) from the drop-down menu at the top right of the screen.</p>
+<p><img src="/img/env/keyboard_layouts_vm.png" alt="" /></p>
+<h3 id="apps">
+  Starting an application
+  <a class="anchor" href="#apps">#</a>
+</h3>
+<p>You can use the super key (a.k.a. &ldquo;Windows key&rdquo;) or click on &ldquo;Activities&rdquo; (top left) to display the application menu below.</p>
+<p>To <strong>launch a terminal</strong>, click on the terminal icon in this menu or press &ldquo;Ctrl + Alt + t&rdquo;.</p>
+<p><img src="/img/env/apps_vm.png" alt="" /></p>
 </article>
  
       
@@ -587,14 +570,14 @@ We will see how to do it during the <a href="https://unibz-pp-24-25.github.io/do
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell">Shell</a>
+    <li><a href="#evaluation-environment">Evaluation environment</a>
       <ul>
-        <li><a href="#on-linux">on Linux</a></li>
-        <li><a href="#on-macos">on macOS</a></li>
-        <li><a href="#windows">on Windows</a></li>
+        <li><a href="#rdp-client">RDP client</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#keyboard-layout">Keyboard layout</a></li>
+        <li><a href="#apps">Starting an application</a></li>
       </ul>
     </li>
-    <li><a href="#autocompletion">Autocompletion</a></li>
   </ul>
 </nav>
 

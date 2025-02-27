@@ -61,7 +61,7 @@
       <link>https://unibz-pp-24-25.github.io/docs/env/sections/eval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-24-25.github.io/docs/env/sections/eval/</guid>
-      <description>&lt;h2 id=&#34;evaluation-environment&#34;&gt;&#xA;  Evaluation environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#evaluation-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.&lt;/p&gt;&#xA;&lt;p&gt;You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/sections/eval/&#34;&gt;first lab&lt;/a&gt; provides instructions to use this virtual environment.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;evaluation-environment&#34;&gt;&#xA;  Evaluation environment&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#evaluation-environment&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure.&lt;/p&gt;&#xA;&lt;p&gt;You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/labs/env/sections/eval/&#34;&gt;first lab&lt;/a&gt; provides instructions to use this virtual environment.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Terminal</title>

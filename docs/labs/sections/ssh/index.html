@@ -27,7 +27,7 @@ You only need one ssh key per machine (laptop, desktop, phone, etc.). So from yo
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/labs/sections/ssh/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.6b6b266f1c10d61bc8267d9a2ed107df8fe76ef974d643f32739d90f24e382e9.js" integrity="sha256-a2smbxwQ1hvIJn2aLtEH34/nbvl01kPzJznZDyTjguk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0b29e847cdb2c3116c28ce5cdd3d73eb31206ca80015892ae2fd5e602afc950e.js" integrity="sha256-CynoR82ywxFsKM5c3T1z6zEgbKgAFYkq4v1eYCr8lQ4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -468,7 +468,7 @@ https://github.com/alex-shpak/hugo-book
 Among other uses, this is the preferred way to share data with a git hosting service (such as GitHub, Gitlab or Bitbucket).</p>
 <p>You only need <em>one</em> ssh key per machine (laptop, desktop, phone, etc.).
 So from your laptop, you can use the <em>same</em> ssh key to connect to a server or interact with GitHub, Gitlab, etc.</p>
-<p>By default, ssh keys are located in the folder <code>&lt;homeFolder&gt;/.ssh/</code> (or <code>&lt;homeFolder&gt;\.ssh\</code> on Windows) where <code>&lt;homeFolder&gt;</code> is your <a href="">home folder</a> (i.e. the one with your user name).</p>
+<p>By default, ssh keys are located in the directory <code>&lt;homeDir&gt;/.ssh/</code> (or <code>&lt;homeDir&gt;\.ssh\</code> on Windows) where <code>&lt;homeDir&gt;</code> is your <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#home_path">home directory</a> (i.e. the one with your user name).</p>
 <h4 id="check-whether-there-is-already-an-ssh-key-on-your-machine">
   Check whether there is already an ssh key on your machine
   <a class="anchor" href="#check-whether-there-is-already-an-ssh-key-on-your-machine">#</a>
@@ -476,14 +476,14 @@ So from your laptop, you can use the <em>same</em> ssh key to connect to a serve
 <p>There may already be an ssh key on your machine.
 To check whether this is the case:</p>
 <ul>
-<li>verify whether the <code>&lt;homeFolder&gt;/.ssh/</code> already exists,</li>
+<li>verify whether the <code>&lt;homeDir&gt;/.ssh/</code> already exists,</li>
 <li>if it exists, then open it and check whether it contains two files with the same name, one without extension, and one with the extension <code>.pub</code>.
 For instance, <code>id_rsa</code> and <code>id_rsa.pub</code>, or <code>id_ed25519</code> and <code>id_ed25519.pub</code>.</li>
 </ul>
 <blockquote class="book-hint warning">
 <p><strong><em>Warning.</em></strong>
-The .ssh folder is a <a href="">hidden</a> folder, so make sure that your file browser displays hidden files and folders.
-Alternatively, with a terminal you can list all files/folders in the current directory (including hidden ones) with:</p>
+The .ssh directory is a <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#hidden">hidden</a> directory, so make sure that your file browser displays hidden files and directories.
+Alternatively, with a terminal you can list all files and directories in the current directory (including hidden ones) with:</p>
 <ul>
 <li>Linux and macOS:</li>
 </ul>
@@ -498,7 +498,7 @@ Alternatively, with a terminal you can list all files/folders in the current dir
   Create an ssh key (if there was none)
   <a class="anchor" href="#create-an-ssh-key-if-there-was-none">#</a>
 </h3>
-<p>If the .ssh folder does not exist or does not contain an ssh key, then generate a key with:</p>
+<p>If the .ssh directory does not exist or does not contain an ssh key, then generate a key with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
 </span></span></code></pre></div><p>and follow the instructions (note that if you choose to enter a password, then you will have to type it each time you upload or download data to/from Github, Gitlab, etc.).</p>
 <h3 id="share-your-public-key">

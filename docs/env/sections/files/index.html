@@ -72,7 +72,7 @@ a single node (called a leaf), or a node with one or several children that are t
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.6b6b266f1c10d61bc8267d9a2ed107df8fe76ef974d643f32739d90f24e382e9.js" integrity="sha256-a2smbxwQ1hvIJn2aLtEH34/nbvl01kPzJznZDyTjguk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0b29e847cdb2c3116c28ce5cdd3d73eb31206ca80015892ae2fd5e602afc950e.js" integrity="sha256-CynoR82ywxFsKM5c3T1z6zEgbKgAFYkq4v1eYCr8lQ4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -496,9 +496,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#wd">Working directory</a></li>
     <li><a href="#home-directory">Home directory</a>
       <ul>
-        <li><a href="#absolute-paths-to-the-home-directory">Absolute paths to the home directory</a></li>
+        <li><a href="#home_path">Absolute paths to the home directory</a></li>
         <li><a href="#access-restriction">Access restriction</a></li>
-        <li><a href="#hidden-files-and-directories">Hidden files and directories</a></li>
+        <li><a href="#hidden">Hidden files and directories</a></li>
         <li><a href="#usage-and-layout">Usage and layout</a></li>
       </ul>
     </li>
@@ -669,9 +669,9 @@ E.g. in this example:</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong> The home directory is usually <em>not</em> the root of the tree (even if there is a single user on the machine).</p>
 </blockquote>
-<h3 id="absolute-paths-to-the-home-directory">
+<h3 id="home_path">
   Absolute paths to the home directory
-  <a class="anchor" href="#absolute-paths-to-the-home-directory">#</a>
+  <a class="anchor" href="#home_path">#</a>
 </h3>
 <p>The home directory (of a regular user) is normally:</p>
 <ul>
@@ -691,9 +691,9 @@ For instance, in the above example, if Alice is logged in, then <code>~/music/th
 Therefore programs that can be executed by <em>all users</em> are usually located in <em>other directories</em> (e.g. the program <code>/bin/echo</code> in the example above).</p>
 <p>Access restrictions (read, write and/or execute) may apply to the content of such directories.
 Notably, on Linux systems, (most of) the content of these directories can only be modified by a system admin.</p>
-<h3 id="hidden-files-and-directories">
+<h3 id="hidden">
   Hidden files and directories
-  <a class="anchor" href="#hidden-files-and-directories">#</a>
+  <a class="anchor" href="#hidden">#</a>
 </h3>
 <p>The home directory often contains files (resp. directories) whose names are preceded with a <code>.</code> (e.g. the file <code>/home/alice/.bashrc</code> in the above example).
 These are sometimes called &ldquo;dot files&rdquo; (resp. &ldquo;dot folders&rdquo;).
@@ -803,9 +803,9 @@ As a (soft) rule of thumb, you generally want to <em>choose the location</em> of
     <li><a href="#wd">Working directory</a></li>
     <li><a href="#home-directory">Home directory</a>
       <ul>
-        <li><a href="#absolute-paths-to-the-home-directory">Absolute paths to the home directory</a></li>
+        <li><a href="#home_path">Absolute paths to the home directory</a></li>
         <li><a href="#access-restriction">Access restriction</a></li>
-        <li><a href="#hidden-files-and-directories">Hidden files and directories</a></li>
+        <li><a href="#hidden">Hidden files and directories</a></li>
         <li><a href="#usage-and-layout">Usage and layout</a></li>
       </ul>
     </li>

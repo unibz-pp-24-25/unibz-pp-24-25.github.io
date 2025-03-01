@@ -36,7 +36,7 @@ A project of their choice, or Their own version of the board game used as our ru
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/project/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1aa4c0e8a38e66120ad76034015bf65520d1ba6544a8355c73a3bf8133a9c61b.js" integrity="sha256-GqTA6KOOZhIK12A0AVv2VSDRumVEqDVcc6O/gTOpxhs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0b299ebbe1445605681eee4e1fec1ecbb1375c5f635b9f3f7c31e5406654a65d.js" integrity="sha256-Cymeu&#43;FEVgVoHu5OH&#43;wey7E3XF9jW58/fDHlQGZUpl0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/project/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -210,6 +210,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -252,144 +265,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
-    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
-      <a href="/docs/env/" class="">Development environment</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/backup/" class="">Backup</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/install/" class="">Software management</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/os/" class="">Operating system</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/ide/" class="">IDE</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
   
 
         </li>
@@ -529,11 +404,11 @@ In particular, a repository should <em>not</em> contain:</p>
 </h3>
 <p>Any additional Java library can be used in a project.</p>
 <p>The project should be build with either <a href="%7b%7b%22../build/_index.md#maven%22%7d%7d">Maven</a> or <a href="#gradle">Gradle</a>.
-It should run on the <a href="%7b%7b%22../env/sections/eval.md%22%7d%7d">evaluation environment</a> via <em>command line</em> instructions.</p>
+It should run on the <a href="https://unibz-pp-24-25.github.io/docs/env/sections/eval/">evaluation environment</a> via <em>command line</em> instructions.</p>
 <p>For instance (depending on how the project is designed), the instructions to build the executable may be:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><p>and the instruction to run the executable may be (assuming that the executable is called <code>myJar.jar</code> and that the program takes two strings as input):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -jar myJar.jar <span style="color:#e6db74">&#34;firstInput&#34;</span> <span style="color:#e6db74">&#34;secondInput&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -jar myJar.jar &lt;firstInput&gt; &lt;secondInput&gt;
 </span></span></code></pre></div><p>If the executable cannot be built in the evaluation environment, then an <a href="%7b%7b%22../build/sections/building.md#assembly%22%7d%7d">über-jar</a> should be provided that can run in this environment (via command line still).</p>
 <!--In this case, you may use a [GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) to share this über-jar.-->
 <h3 id="documentation">

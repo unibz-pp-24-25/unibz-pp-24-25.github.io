@@ -8,61 +8,34 @@
   #
 
 
-  Tree
+  File name extension
   #
 
-Most operating system expose files as a tree (or possibly several trees for Windows).
+File names often end with an extension, which provides information about the type of the file.
+For instance, the file name myDocument.pdf has .pdf as extension.
 
-A (nonempty) tree is either:
+Examples.
+Common file name extensions include:
 
-a single node (called a leaf), or
-a node with one or several children that are trees.
+.pdf for a PDF file,
+.mp3 for an MP3 file,
+.java for a Java source file,
+.class for a compiled Java file.
 
 
-In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
-For instance:
-├── bin
-│   ├── echo
-│   └── ...
-├── home
-│   ├── alice
-│   │   ├── .bashrc
-│   │   ├── .m2
-│   │   │   └── ...
-│   │   ├── Desktop
-│   │   │   └── ...
-│   │   ├── music
-│   │   │   └── thatSong.mp3
-│   │   └── workspace
-│   │       └── pp
-│   │           ├── assignments
-│   │           │   └── ...
-│   │           └── project
-│   │               ├── .git
-│   │               │   └── ...
-│   │               ├── src
-│   │               │   └── HelloWorld.java
-│   │               └── test
-│   │                   └── testHelloWorld.java
-│   └── bob
-│       ├── .bashrc
-│       ├── Desktop
-│       │   └── ...
-│       └── music
-│           ├── thatSong.mp3
-│           └── anotherSong.mp3
-└── ...
 
-Terminology. In this course, we will use the terms &ldquo;folder&rdquo; and &ldquo;directory&rdquo; interchangeably.">
+Warning.
+A file name extension is not mandatory,
+and has no incidence on the content of the file.
+For instance:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Hierarchical file system">
-  <meta property="og:description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
-A (nonempty) tree is either:
-a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
-├── bin │ ├── echo │ └── ... ├── home │ ├── alice │ │ ├── .bashrc │ │ ├── .m2 │ │ │ └── ... │ │ ├── Desktop │ │ │ └── ... │ │ ├── music │ │ │ └── thatSong.mp3 │ │ └── workspace │ │ └── pp │ │ ├── assignments │ │ │ └── ... │ │ └── project │ │ ├── .git │ │ │ └── ... │ │ ├── src │ │ │ └── HelloWorld.java │ │ └── test │ │ └── testHelloWorld.java │ └── bob │ ├── .bashrc │ ├── Desktop │ │ └── ... │ └── music │ ├── thatSong.mp3 │ └── anotherSong.mp3 └── ... Terminology. In this course, we will use the terms “folder” and “directory” interchangeably.">
+  <meta property="og:description" content="Hierarchical file system # File name extension # File names often end with an extension, which provides information about the type of the file. For instance, the file name myDocument.pdf has .pdf as extension.
+Examples. Common file name extensions include:
+.pdf for a PDF file, .mp3 for an MP3 file, .java for a Java source file, .class for a compiled Java file. Warning. A file name extension is not mandatory, and has no incidence on the content of the file. For instance:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -72,7 +45,7 @@ a single node (called a leaf), or a node with one or several children that are t
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1aa4c0e8a38e66120ad76034015bf65520d1ba6544a8355c73a3bf8133a9c61b.js" integrity="sha256-GqTA6KOOZhIK12A0AVv2VSDRumVEqDVcc6O/gTOpxhs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0b299ebbe1445605681eee4e1fec1ecbb1375c5f635b9f3f7c31e5406654a65d.js" integrity="sha256-Cymeu&#43;FEVgVoHu5OH&#43;wey7E3XF9jW58/fDHlQGZUpl0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -245,6 +218,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -287,144 +273,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
-    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
-      <a href="/docs/env/" class="">Development environment</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/files/" class="active">Hierarchical file system</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/backup/" class="">Backup</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/install/" class="">Software management</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/os/" class="">Operating system</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/ide/" class="">IDE</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
   
 
         </li>
@@ -486,6 +334,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#file-name-extension">File name extension</a></li>
     <li><a href="#tree">Tree</a></li>
     <li><a href="#path">Path</a>
       <ul>
@@ -518,6 +367,37 @@ https://github.com/alex-shpak/hugo-book
   Hierarchical file system
   <a class="anchor" href="#hierarchical-file-system">#</a>
 </h1>
+<h2 id="file-name-extension">
+  File name extension
+  <a class="anchor" href="#file-name-extension">#</a>
+</h2>
+<p>File names often end with an <strong>extension</strong>, which provides information about the type of the file.
+For instance, the file name <code>myDocument.pdf</code> has <code>.pdf</code> as extension.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+Common file name extensions include:</p>
+<ul>
+<li><code>.pdf</code> for a PDF file,</li>
+<li><code>.mp3</code> for an MP3 file,</li>
+<li><code>.java</code> for a Java source file,</li>
+<li><code>.class</code> for a compiled Java file.</li>
+</ul>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Warning.</em></strong>
+A file name extension is not mandatory,
+and has <em>no incidence</em> on the content of the file.
+For instance:</p>
+<ul>
+<li>a text file <code>myFile.txt</code> can be renamed <code>myFile.mp3</code> an still be opened with a text editor,</li>
+<li>a bash script <code>myScript.sh</code> and the same file without the <code>.sh</code> extension can be executed in the same way,</li>
+<li>a &ldquo;README&rdquo; file is a text file (written in <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>),
+often used to describe the content of a git repository.
+It can be named either <code>README.md</code> or <code>README</code>.</li>
+</ul>
+</blockquote>
+<p>However, appropriate file extensions may be needed for some programs to behave as expected.
+For instance, an IDE or a code editor may file extensions (like <code>.java</code>) to identify the programming language at hand.</p>
 <h2 id="tree">
   Tree
   <a class="anchor" href="#tree">#</a>
@@ -527,7 +407,7 @@ https://github.com/alex-shpak/hugo-book
 <p>A (nonempty) <strong>tree</strong> is either:</p>
 <ul>
 <li>a single node (called a <strong>leaf</strong>), or</li>
-<li>a node with one or several children that are trees.</li>
+<li>a node with one or several <strong>children</strong> that are trees.</li>
 </ul>
 </blockquote>
 <p>In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
@@ -643,6 +523,97 @@ In particular, the identifier of the main partition is often the letter <code>C<
 <p>For instance, <code>../../bob/Desktop</code> is a path to Bob&rsquo;s Desktop <em>relative to</em> Alice&rsquo;s Desktop.</p>
 <p>Note that if <em>p</em> is a relative path, then <em>p</em> prefixed with <code>./</code> (or <code>.\</code> on Windows) is a path equivalent to <em>p</em>.
 This prefix is sometimes used to emphasize that a path is relative (among other purposes).</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_paths" id="tabs-exercise_paths-0" checked="checked" />
+<label for="tabs-exercise_paths-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Complete the table below , based on the tree above.</p>
+<table>
+  <thead>
+      <tr>
+          <th>absolute path to source directory $s$</th>
+          <th>absolute path to target $t$</th>
+          <th>possible path from $s$ to $t$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/home/alice/Desktop</code></td>
+          <td></td>
+          <td><code>../../bob/music/anotherSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/music</code></td>
+          <td></td>
+          <td><code>../../home/../home/alice/music</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice</code></td>
+          <td><code>/home/alice/music/thatSong.mp3</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/music</code></td>
+          <td><code>/home/bob/music/thatSong.mp3</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><code>project</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><code>alice/../alice/.bashrc</code></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_paths" id="tabs-exercise_paths-1"  />
+<label for="tabs-exercise_paths-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>absolute path to source directory $s$</th>
+          <th>absolute path to target $t$</th>
+          <th>possible path from $s$ to $t$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/home/alice/Desktop</code></td>
+          <td><code>/home/bob/music/anotherSong.mp3</code></td>
+          <td><code>../../bob/music/anotherSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/music</code></td>
+          <td><code>/home/alice/music</code></td>
+          <td><code>../../home/../home/alice/music</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice</code></td>
+          <td><code>/home/alice/music/thatSong.mp3</code></td>
+          <td><code>music/thatSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/music</code></td>
+          <td><code>/home/bob/music/thatSong.mp3</code></td>
+          <td><code>../../bob/music/thatSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/workspace/pp</code></td>
+          <td><code>/home/alice/workspace/pp/project</code></td>
+          <td><code>project</code></td>
+      </tr>
+      <tr>
+          <td><code>/home</code></td>
+          <td><code>/home/alice/.bashrc</code></td>
+          <td><code>alice/../alice/.bashrc</code></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
 <h2 id="wd">
   Working directory
   <a class="anchor" href="#wd">#</a>
@@ -793,6 +764,7 @@ As a (soft) rule of thumb, you generally want to <em>choose the location</em> of
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#file-name-extension">File name extension</a></li>
     <li><a href="#tree">Tree</a></li>
     <li><a href="#path">Path</a>
       <ul>

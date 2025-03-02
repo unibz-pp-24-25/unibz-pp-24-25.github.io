@@ -35,7 +35,7 @@ libraries used in your projects (called dependencies), core programming utilitie
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/install/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.09d0c2f62d9ec21a93c05d25875eb54341749217190bd5d7bc782386a0272e03.js" integrity="sha256-CdDC9i2ewhqTwF0lh161Q0F0khcZC9XXvHgjhqAnLgM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3209a3c6a69c2d6254737bdec13170f84b477f85813202d85bf9f146db092538.js" integrity="sha256-MgmjxqacLWJUc3vewTFw&#43;EtHf4WBMgLYW/nxRtsJJTg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -467,11 +467,22 @@ In particular:</p>
 <p>The installation (or update or removal) procedure is also <em>significantly simpler</em>, thus leaving less room for manual errors.
 As an illustration, here is the full procedure to install Maven with the apt package manager (on Debian and derivatives):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install maven
-</span></span></code></pre></div><p>and similarly with homebrew (on macOS):</p>
+</span></span></code></pre></div><p>and similarly with Homebrew (on macOS):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install maven
 </span></span></code></pre></div><p>or with Chocolatey (on Windows):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>choco install maven
 </span></span></code></pre></div><p>In comparison, the procedure to install Maven manually on Windows is <a href="https://phoenixnap.com/kb/install-maven-windows">more involved</a>, thus more likely to introduce errors (trough inadvertence, or by following outdated instructions).</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning (on Windows).</em></strong>
+The default and/or most frequent software installation instructions found on the web for Windows are typically manual.
+For most programming related software, we recommend instead looking for a corresponding package on Chocolatey (or Winget).</p>
+<p>As a (rather extreme) example, compare installing MinGW (to get the GCC compiler) with:</p>
+<ul>
+<li>this <a href="https://www.freecodecamp.org/news/how-to-install-c-and-cpp-compiler-on-windows/">long procedure</a>, or</li>
+<li>a simple command (with Chocolatey):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>choco install mingw
+</span></span></code></pre></div></blockquote>
 <p>However, in some (rare) scenarios, a manual installation may be preferred.
 In particular when the latest version of a program is needed, but not available yet on the software repository.</p>
 <h2 id="self-containment">

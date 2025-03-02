@@ -7,18 +7,20 @@
   Instance methods
   #
 
-In most object-oriented languages (like Java), methods are implemented within class declarations.
-An instance method can only be called using an instance of the class where it is declared.
-For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass.
+In many object-oriented languages (like Java), methods are implemented within class declarations.
+An instance method is called using an instance of the class where the method is declared.
+For instance, in Java, an instance method myMethod() declared in MyClass can be called by appending . to a variable myVar of type MyClass, as follows:
+myVar.myMethod();
 The object referenced by the variable is accessible in the method, as well as its attributes.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/methods/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Instance methods">
-  <meta property="og:description" content="Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.
-An instance method can only be called using an instance of the class where it is declared.
-For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.">
+  <meta property="og:description" content="Instance methods # In many object-oriented languages (like Java), methods are implemented within class declarations.
+An instance method is called using an instance of the class where the method is declared.
+For instance, in Java, an instance method myMethod() declared in MyClass can be called by appending . to a variable myVar of type MyClass, as follows:
+myVar.myMethod(); The object referenced by the variable is accessible in the method, as well as its attributes.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -28,12 +30,46 @@ For instance, in Java, an instance method declared in MyClass can be called by a
 <link rel="canonical" href="http://localhost:1313/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0652e709788e211cc0cd868139bd4e5380a2ae63011ca87c1493392d349b23ac.js" integrity="sha256-BlLnCXiOIRzAzYaBOb1OU4CirmMBHKh8FJM5LTSbI6w=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -167,6 +203,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -179,9 +228,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
-    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
-      <a href="/docs/objects/" class="">Objects and classes</a>
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
     </label>
   
 
@@ -195,7 +244,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
   
 
         </li>
@@ -208,59 +257,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/methods/" class="active">Instance methods</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
   
 
         </li>
@@ -341,10 +338,11 @@ https://github.com/alex-shpak/hugo-book
   Instance methods
   <a class="anchor" href="#instance-methods">#</a>
 </h1>
-<p>In most object-oriented languages (like Java), methods are implemented within class declarations.</p>
-<p>An <strong>instance method</strong> can only be called using an instance of the class where it is declared.</p>
-<p>For instance, in Java, an instance method declared in <code>MyClass</code> can be called by appending <code>.</code> to a variable of type <code>MyClass</code>.
-The object referenced by the variable is accessible in the method, as well as its attributes.</p>
+<p>In many object-oriented languages (like Java), methods are implemented within class declarations.</p>
+<p>An <strong>instance method</strong> is called using an instance of the class where the method is declared.</p>
+<p>For instance, in Java, an instance method <code>myMethod()</code> declared in <code>MyClass</code> can be called by appending <code>.</code> to a variable <code>myVar</code> of type <code>MyClass</code>, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myVar.<span style="color:#a6e22e">myMethod</span>();
+</span></span></code></pre></div><p>The object referenced by the variable is accessible in the method, as well as its attributes.</p>
 <p>This intuitively allows us to write methods with one less argument.
 For instance, consider the following method, which is <em>not</em> and instance method.
 It verifies whether two instance of <code>MobileUnit</code> have the same color:</p>
@@ -378,8 +376,8 @@ It verifies whether two instance of <code>MobileUnit</code> have the same color:
   Overriding
   <a class="anchor" href="#overriding">#</a>
 </h2>
-<p>A same instance method can be declared in a class <em>C</em> and a subclass <em>S</em> or <em>C</em>.
-In this case, we say that <em>S</em> <strong>overrides</strong> the method.</p>
+<p>A same instance method can be declared in a class $C$ and a subclass $S$ or $C$.
+In this case, we say that $S$ <strong>overrides</strong> the method (we also say that the <em>method</em> of $S$ overrides the method of $C$).</p>
 <p>When such a method is called, the <em>most specific</em> applicable version is executed.</p>
 <p>For instance, let us extend our example from the previous section with a method <code>regen</code>, declared in both <code>Unit</code> and <code>MobileUnit</code>, as follows:</p>
 <p><img src="/img/diagrams/plantuml/method_inherit_simple.svg" alt="" /></p>
@@ -403,7 +401,7 @@ In this case, we say that <em>S</em> <strong>overrides</strong> the method.</p>
 </span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Now consider this program.</p>
+</span></span></code></pre></div><p>Now consider this program:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>  Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
 </span></span><span style="display:flex;"><span>  myUnicorn.<span style="color:#a6e22e">regen</span>();
 </span></span></code></pre></div><p>This program increases the health of (the object referenced by) <code>myUnicorn</code> by 2, because <code>Unicorn</code> is a subclass of <code>MobileUnit</code>.
@@ -425,8 +423,9 @@ However, the following program increases the health of (the object referenced by
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This is not necessary.
 The benefit is that the program will not compile if the overridden and overriding methods have different signatures.</p>
-<p>More generally, <em>syntactic</em> mistakes (a.k.a. compile time errors) are easier to fix than <em>bugs</em> (a.k.a. runtime errors).
-So when possible, it is good practice to use features of a language that prevent compilation if incorrect programs.
+<p>More generally,
+it is good practice to use features of a language that prevent compilation of incorrect programs.
+The reason is that <em>syntactic</em> mistakes (a.k.a. compile time errors) are easier to fix than <em>bugs</em> (a.k.a. runtime errors).
 This is why debugging in an untyped language (like Python, Javascript, Lua, etc.) can be more difficult than in a <em>typed</em> one (such as Java, C#, Typescript, etc.).</p>
 </blockquote>
 <h2 id="dispatch">
@@ -445,6 +444,7 @@ And let us call the method <code>regen</code> for each unit in this array:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The most specific applicable version of the method <code>regen</code> will be executed for each unit, based on its type, even though this type cannot be determined at compile time.
 For instance, if there is an instance of <code>Unicorn</code> in this array, then the method <code>MobileUnit.regen()</code> will be executed for this instance (rather than the method <code>Unit.regen()</code>).</p>
+<p>Note that this also applies to scenarios where the type of a variable depends on the <em>input</em> of the program.</p>
 <h2 id="code-factorization">
   Code factorization
   <a class="anchor" href="#code-factorization">#</a>
@@ -497,11 +497,10 @@ Add it as an instance method to our example, so that:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// save the initial value of the first unit&#39;s health</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> copy <span style="color:#f92672">=</span> health;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of the attacker from the health of the current unit</span>
 </span></span><span style="display:flex;"><span>      health <span style="color:#f92672">-=</span> attacker.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> copy;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of the attacket becomes the inverse of the remaining health of the current unit</span>
+</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> health;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {

@@ -15,7 +15,7 @@ booting from an external drive, or
 using virtualisation.
 
 Depending on what you are developing, one operating system may be more convenient than another.
-We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.
+We review below some benefits and drawbacks of developing under Windows, macOS and Linux.
 
   Windows
   #
@@ -32,7 +32,7 @@ Here are some benefits of using Windows as your OS for software development:">
   <meta property="og:title" content="Operating system">
   <meta property="og:description" content="Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:
 partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.
-We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.
+We review below some benefits and drawbacks of developing under Windows, macOS and Linux.
 Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -43,7 +43,7 @@ Windows # Benefits and drawbacks # Here are some benefits of using Windows as yo
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/os/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.09d0c2f62d9ec21a93c05d25875eb54341749217190bd5d7bc782386a0272e03.js" integrity="sha256-CdDC9i2ewhqTwF0lh161Q0F0khcZC9XXvHgjhqAnLgM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3209a3c6a69c2d6254737bdec13170f84b477f85813202d85bf9f146db092538.js" integrity="sha256-MgmjxqacLWJUc3vewTFw&#43;EtHf4WBMgLYW/nxRtsJJTg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -377,7 +377,7 @@ You can run <em>multiple</em> OSs on the <em>same</em> computer by:</p>
 <li>using virtualisation.</li>
 </ul>
 <p>Depending on what you are developing, one operating system may be more convenient than another.</p>
-<p>We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.</p>
+<p>We review below some benefits and drawbacks of developing under Windows, macOS and Linux.</p>
 <h2 id="windows">
   Windows
   <a class="anchor" href="#windows">#</a>
@@ -403,26 +403,24 @@ You can run <em>multiple</em> OSs on the <em>same</em> computer by:</p>
   <a class="anchor" href="#when-to-use-windows-and-when-not">#</a>
 </h3>
 <p>Windows is the OS of choice for developing software meant to run on Windows only, or cross-platform software written in one of the .NET languages (mostly C#).
-C# is notably used for <em>game development</em> (e.g. for Unity) and <em>graphical interfaces</em> (although Javascript-based graphical frameworks may have become more popular lately).
-Another interesting feature of C# (compared to Java) is the Language Integrated Query framework, which provides a tight integration with database engines.</p>
+C# is notably used for <em>game development</em> (e.g. for Unity) and <em>graphical interfaces</em> (although Javascript-based graphical frameworks may have become more popular lately).</p>
+<!--Another interesting feature of C# (compared to Java) is the Language Integrated Query framework, which provides a tight integration with database engines.-->
 <p><a href="https://visualstudio.microsoft.com/">Visual studio</a> (<em>not</em> VSCode!) offers a fully integrated development suite for the .NET languages, and is also commonly used for C/C++.</p>
 <p>For other programming languages, using Windows may require <em>extra efforts</em> or <em>precautions</em> (compared to Linux or macOS), especially for new developers.</p>
-<p>In particular, <em>manual software installation/upgrade/removal</em> can be complex and error-prone.
-<em>Writing scripts</em> (e.g. for two programs to interact) can also be more involved, especially given the fact that Windows has three shells (the Windows shell, the Windows Power Shell and Power Shell), or four if counting WSL.</p>
+<p>In particular:</p>
+<ul>
+<li><em>software installation/upgrade/removal</em> can be <a href="https://unibz-pp-24-25.github.io/docs/env/sections/install/#packageManager">complex and error-prone</a>,</li>
+<li><em>writing scripts</em> (e.g. for two programs to interact) can also be more involved, due to multiple <a href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/#windows">shells</a>.</li>
+</ul>
 <p>Besides, additional care must be taken to write <em>platform-independent</em> code.
-Here are for instance two frequent sources of errors made by students:</p>
+Here are two frequent sources of errors made by students:</p>
 <ol>
-<li><strong><em>Path names:</em></strong> Windows uses <code>\</code> as a path separator, as opposed to the <code>/</code> used by other OSs (or in web URIs).</li>
-</ol>
-<blockquote class="book-hint danger">
-<p>In Java, a path can be safely written with <code>/</code>.
-At run time (i.e. when the program is executed), this symbol will be interpreted based on the underlying OS (i.e. as <code>\</code> on Windows, and as <code>/</code> on other OSs).
-However, a path written with <code>\</code> will be interpreted as such (therefore the program will throw an exception on OSs other than Windows).</p>
-</blockquote>
-<ol start="2">
-<li><strong><em>Line breaks:</em></strong> many text editors for Windows encode a line break as <em>two</em> ascii characters (<code>\r\n</code>), against a <em>single</em> character (<code>\n</code>) on most modern systems.
-This is often transparent for regular users, because many text editors apply line breaks normalization procedures (git may as well).
-However, this can be a source of bugs for developers, for instance when generating code, or when writing a script to configure a virtual environment (e.g. a Docker image).</li>
+<li>
+<p>Path separators (see the <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#separator">dedicated section</a>),</p>
+</li>
+<li>
+<p>Line breaks (see the <a href="https://unibz-pp-24-25.github.io/docs/env/sections/text_editor/#editor">dedicated section</a>).</p>
+</li>
 </ol>
 <h3 id="for-this-course">
   For this course
@@ -468,9 +466,9 @@ In particular, <a href="https://brew.sh/">Homebrew</a> offers an easy way to ins
 <p>Here are some benefits of using Linux as your OS <em>for software development</em>:</p>
 <ul>
 <li>it is primarily designed for developers,</li>
-<li>it is used by most web servers servers,</li>
 <li>it is relatively lightweight,</li>
 <li>it has an important (and high-quality) online community support,</li>
+<li>it is used by most web servers,</li>
 <li>(OS) package managers are mature and easy to use,</li>
 <li>your working environment can be easily customized and/or configured.</li>
 </ul>
@@ -489,14 +487,15 @@ In particular, <a href="https://brew.sh/">Homebrew</a> offers an easy way to ins
 It is also a good choice for writing cross-platform software.</p>
 <p>Linux (together with macOS) is also a good environment to learn the basics of programming, due to native compatibility with a wide range of technologies for general-purpose development (e.g. Docker).
 Software installation, configuration, upgrade and removal is also made easier by mature package managers.
-Besides, the Linux <strong>shell</strong> is a versatile yet relatively simple tool that can ease process management or interaction between programs.</p>
+Besides, the Linux <a href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/#shell">shell</a> is a versatile yet relatively simple tool that can ease process management or interaction between programs.</p>
 <p>Linux is arguably <em>not</em> the best choice for developing Desktop applications that target a specific OS (such as Windows or macOS), or in some specific domains such as game development.</p>
 <h3 id="for-this-course-2">
   For this course
   <a class="anchor" href="#for-this-course-2">#</a>
 </h3>
 <p>You should be able to complete all assignments and write your project using a Linux distribution (even if your collaborators use other OSs).</p>
-<p>In particular, if you face important issues when setting up your working environment (git, JDK, Maven, Gradle, etc. ) on Windows, we recommend using a Linux distribution instead (because it may save you time).
+<p>In particular, if you face important issues when setting up your working environment (git, JDK, Maven, Gradle, etc. ) on Windows,
+we recommend using a Linux distribution instead (this may save you time).
 Keep in mind however that this will not solve issues related to the configuration of your IDE.</p>
 <p>Not that you can use Linux (for development) and Windows (for other purposes) on the <em>same</em> computer.</p>
 <h3 id="which-distribution-to-choose">
@@ -504,12 +503,21 @@ Keep in mind however that this will not solve issues related to the configuratio
   <a class="anchor" href="#which-distribution-to-choose">#</a>
 </h3>
 <p>You can use any (reasonably mainstream) all-purposes Linux distribution for this course (and other courses).</p>
-<p>The choice may seem overwhelming at first sight, but most distributions are forks of a few popular ones (Debian, Fedora, Arch, &hellip;), and are relatively similar to each other.
+<p>The choice may seem overwhelming at first sight, but most distributions are forks of a few popular ones (Debian, Fedora, Arch, &hellip;),
+and are relatively similar to each other.
 Besides, Linux environments are highly customizable: for instance, the choice of a distribution does not bind you to its default desktop environment.
 Available software is also very similar from one distribution to another: regardless of the distribution, you will have access to openJDK, git, Maven, etc. via a package manager.</p>
+<h4 id="desktop-oriented-distributions">
+  Desktop oriented distributions
+  <a class="anchor" href="#desktop-oriented-distributions">#</a>
+</h4>
 <p>Distributions that are more desktop-oriented can be more friendly to newcomers (especially non-developers), but also come with unnecessary software.
 Two popular distributions in this category (for new users) are <a href="https://linuxmint.com/">Linux Mint</a> and <a href="https://zorin.com/os/">Zorin OS</a>.
 Both are forks of Ubuntu, which is itself a fork of Debian.</p>
+<h4 id="lightweight-distributions">
+  Lightweight distributions
+  <a class="anchor" href="#lightweight-distributions">#</a>
+</h4>
 <p>For a (slightly) more lightweight distribution, <a href="https://mxlinux.org/">MX Linux</a> is currently a popular choice.
 It is also based on Debian.</p>
 <h3 id="linux_install">

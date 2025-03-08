@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -9,28 +9,37 @@
 
 In many object-oriented languages (like Java), methods are implemented within class declarations.
 An instance method is called using an instance of the class where the method is declared.
-For instance, in Java, an instance method myMethod() declared in MyClass can be called by appending . to a variable myVar of type MyClass, as follows:
-myVar.myMethod();
-The object referenced by the variable is accessible in the method, as well as its attributes.">
+For instance, in Java, consider an instance method myMethod() declared in a class MyClass:
+public class MyClass {
+    ...
+    public MyClass(){
+        ...
+    }
+
+    public void myMethod(){
+        ...
+    }
+}
+This method can be called by appending . to a variable myVar of type MyClass, as follows:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/methods/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Instance methods">
   <meta property="og:description" content="Instance methods # In many object-oriented languages (like Java), methods are implemented within class declarations.
 An instance method is called using an instance of the class where the method is declared.
-For instance, in Java, an instance method myMethod() declared in MyClass can be called by appending . to a variable myVar of type MyClass, as follows:
-myVar.myMethod(); The object referenced by the variable is accessible in the method, as well as its attributes.">
+For instance, in Java, consider an instance method myMethod() declared in a class MyClass:
+public class MyClass { ... public MyClass(){ ... } public void myMethod(){ ... } } This method can be called by appending . to a variable myVar of type MyClass, as follows:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 <title>Instance methods | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/objects/sections/methods/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.0652e709788e211cc0cd868139bd4e5380a2ae63011ca87c1493392d349b23ac.js" integrity="sha256-BlLnCXiOIRzAzYaBOb1OU4CirmMBHKh8FJM5LTSbI6w=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0688f11fe1142451fcd339aa3f49b2f75f3cee40babea562459674a964f1a31c.js" integrity="sha256-BojxH&#43;EUJFH80zmqP0my91887kC6vqViRZZ0qWTxoxw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -268,6 +277,79 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle" checked />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="active">Instance methods</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
 
@@ -340,11 +422,23 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>In many object-oriented languages (like Java), methods are implemented within class declarations.</p>
 <p>An <strong>instance method</strong> is called using an instance of the class where the method is declared.</p>
-<p>For instance, in Java, an instance method <code>myMethod()</code> declared in <code>MyClass</code> can be called by appending <code>.</code> to a variable <code>myVar</code> of type <code>MyClass</code>, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myVar.<span style="color:#a6e22e">myMethod</span>();
-</span></span></code></pre></div><p>The object referenced by the variable is accessible in the method, as well as its attributes.</p>
+<p>For instance, in Java, consider an instance method <code>myMethod()</code> declared in a class <code>MyClass</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(){
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This method can be called by appending <code>.</code> to a variable <code>myVar</code> of type <code>MyClass</code>, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MyClass myVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyClass();
+</span></span><span style="display:flex;"><span>myVar.<span style="color:#a6e22e">myMethod</span>();
+</span></span></code></pre></div><p>The object referenced by the variable <code>myVar</code> is accessible from the method <code>myMethod</code> (even though it is not passed as argument to the method) (even though it is not passed as argument to the method).</p>
 <p>This intuitively allows us to write methods with one less argument.
-For instance, consider the following method, which is <em>not</em> and instance method.
+For instance, consider the following method, which is <em>not</em> an instance method.
 It verifies whether two instance of <code>MobileUnit</code> have the same color:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">sameColor</span>(MobileUnit u1, MobileUnit u2){
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> u1.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(u2.<span style="color:#a6e22e">color</span>);
@@ -471,10 +565,13 @@ For instance, in the above example, the overriding method may be better written 
 <label for="tabs-exercise_no_super_rec-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>In this example, what would be the effect of replacing <code>super.regen()</code> with <code>regen()</code>?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_no_super_rec" id="tabs-exercise_no_super_rec-1"  />
 <label for="tabs-exercise_no_super_rec-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>The method would not terminate.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!-- The method would not terminate. -->
+<!-- </div>
+ -->
 </div>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_defender" id="tabs-exercise_defender-0" checked="checked" />
@@ -487,31 +584,44 @@ Add it as an instance method to our example, so that:</p>
 <li>a unicorn gets a regen if it defends.</li>
 </ul>
 </div>
+<!--
 <input type="radio" class="toggle" name="tabs-exercise_defender" id="tabs-exercise_defender-1"  />
 <label for="tabs-exercise_defender-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>The trick here consists in viewing an encounter from the point of view of the defender:</p>
-<p><img src="/img/diagrams/plantuml/method_inherit_complex.svg" alt="" /></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> health;
-</span></span><span style="display:flex;"><span>  ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of the attacker from the health of the current unit</span>
-</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">-=</span> attacker.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of the attacket becomes the inverse of the remaining health of the current unit</span>
-</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> health;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
-</span></span><span style="display:flex;"><span>  ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
-</span></span><span style="display:flex;"><span>    regen();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">defend</span>(attacker);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!--The trick here consists in viewing an encounter from the point of view of the defender:-->
+<!---->
+<!--![](/img/diagrams/plantuml/method_inherit_complex.svg)-->
+<!---->
+<!--```Java-->
+<!--public abstract class Unit {-->
+<!--  int health;-->
+<!--  ...-->
+<!---->
+<!--  public void defend(MobileUnit attacker) {-->
+<!---->
+<!--      // subtract the health of the attacker from the health of the current unit-->
+<!--      health -= attacker.health;-->
+<!--      // the health of the attacket becomes the inverse of the remaining health of the current unit-->
+<!--      attacker.health = -health;-->
+<!--      // some code that makes the encounter asymmetric (attacker and defender are treated differently)-->
+<!--      ...-->
+<!--  }-->
+<!--}-->
+<!--```-->
+<!---->
+<!--```Java-->
+<!--public class Unicorn extends Unit {-->
+<!--  ...-->
+<!---->
+<!--  public void defend(MobileUnit attacker) {-->
+<!--    regen();-->
+<!--    super.defend(attacker);-->
+<!--  }-->
+<!--}-->
+<!--```-->
+<!---->
+<!--</div>
+-->
 </div>
 </article>
  

@@ -45,7 +45,7 @@ Examples. Common file name extensions include:
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.99a90d5f467a6f4d49c317d5847178a8b9288e6086225bf4bedea771064ab85f.js" integrity="sha256-makNX0Z6b01JwxfVhHF4qLkojmCGIlv0vt6ncQZKuF8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.59f27e4fc3206c7cd0d49bbe009c9dc12b89e6a712b9e089f1a6df557737d328.js" integrity="sha256-WfJ&#43;T8MgbHzQ1Ju&#43;AJydwSuJ5qcSueCJ8abfVXc30yg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -460,12 +460,12 @@ It can be named either <code>README.md</code> or <code>README</code>.</li>
 </ul>
 </blockquote>
 <p>However, appropriate file extensions may be needed for some programs to behave as expected.
-For instance, an IDE or a code editor may file extensions (like <code>.java</code>) to identify the programming language at hand.</p>
+For instance, an IDE or a code editor may use file extensions (like <code>.java</code>) to identify the programming language at hand.</p>
 <h2 id="tree">
   Tree
   <a class="anchor" href="#tree">#</a>
 </h2>
-<p>Most operating system expose files as a <em>tree</em> (or possibly several trees for Windows).</p>
+<p>Most operating system expose files as a (virtual) <em>tree</em> (or possibly several trees for Windows).</p>
 <blockquote class="book-hint warning">
 <p>A (nonempty) <strong>tree</strong> is either:</p>
 <ul>
@@ -473,7 +473,7 @@ For instance, an IDE or a code editor may file extensions (like <code>.java</cod
 <li>a node with one or several <strong>children</strong> that are trees.</li>
 </ul>
 </blockquote>
-<p>In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
+<p>In this tree, non-leaf nodes are directories, and the leaves can be files, links, empty directories, etc.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── bin
 </span></span><span style="display:flex;"><span>│   ├── echo
@@ -553,8 +553,8 @@ We will <em>not</em> follow this terminology.</p>
 <p>For instance, on Windows, <code>src/HelloWorld.java</code> and <code>src/helloworld.java</code> are the <em>same path</em>.</p>
 <p>In order to make sure that your code is portable:</p>
 <ul>
-<li>always use <em>case-sensitive</em> paths in your code (i.e. respect the names of your files, folders, executables, etc.),</li>
-<li>do not create two files (or subfolders, executables, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
+<li>always use <em>case-sensitive</em> paths in your code (i.e. respect the names of your files, folders, etc.),</li>
+<li>do not create two files (or subfolders, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
 </ul>
 </blockquote>
 <h3 id="separator">
@@ -610,7 +610,7 @@ This prefix is sometimes used to emphasize that a path is relative (among other 
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_paths" id="tabs-exercise_paths-0" checked="checked" />
 <label for="tabs-exercise_paths-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>Complete the table below , based on the tree above.</p>
+<div class="book-tabs-content markdown-inner"><p>Complete the table below, based on the tree above.</p>
 <table>
   <thead>
       <tr>
@@ -628,7 +628,7 @@ This prefix is sometimes used to emphasize that a path is relative (among other 
       <tr>
           <td><code>/home/alice/music</code></td>
           <td></td>
-          <td><code>../../home/../home/alice/music</code></td>
+          <td><code>./../../../home/../home/alice/music</code></td>
       </tr>
       <tr>
           <td><code>/home/alice</code></td>
@@ -653,50 +653,22 @@ This prefix is sometimes used to emphasize that a path is relative (among other 
   </tbody>
 </table>
 </div>
+<!--
 <input type="radio" class="toggle" name="tabs-exercise_paths" id="tabs-exercise_paths-1"  />
 <label for="tabs-exercise_paths-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><table>
-  <thead>
-      <tr>
-          <th>absolute path to source directory $s$</th>
-          <th>absolute path to target $t$</th>
-          <th>possible path from $s$ to $t$</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>/home/alice/Desktop</code></td>
-          <td><code>/home/bob/music/anotherSong.mp3</code></td>
-          <td><code>../../bob/music/anotherSong.mp3</code></td>
-      </tr>
-      <tr>
-          <td><code>/home/alice/music</code></td>
-          <td><code>/home/alice/music</code></td>
-          <td><code>../../home/../home/alice/music</code></td>
-      </tr>
-      <tr>
-          <td><code>/home/alice</code></td>
-          <td><code>/home/alice/music/thatSong.mp3</code></td>
-          <td><code>music/thatSong.mp3</code></td>
-      </tr>
-      <tr>
-          <td><code>/home/alice/music</code></td>
-          <td><code>/home/bob/music/thatSong.mp3</code></td>
-          <td><code>../../bob/music/thatSong.mp3</code></td>
-      </tr>
-      <tr>
-          <td><code>/home/alice/workspace/pp</code></td>
-          <td><code>/home/alice/workspace/pp/project</code></td>
-          <td><code>project</code></td>
-      </tr>
-      <tr>
-          <td><code>/home</code></td>
-          <td><code>/home/alice/.bashrc</code></td>
-          <td><code>alice/../alice/.bashrc</code></td>
-      </tr>
-  </tbody>
-</table>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!--| absolute path to source directory $s$ | absolute path to target $t$        | possible path from $s$ to $t$     |-->
+<!--| ------------------------------------- | ---------------------------------- | --------------------------------- |-->
+<!--| `/home/alice/Desktop`                 | `/home/bob/music/anotherSong.mp3`  | `../../bob/music/anotherSong.mp3` |-->
+<!--| `/home/alice/music`                   | `/home/alice/music`                | `./../../../home/../home/alice/music`  |-->
+<!--| `/home/alice`                         | `/home/alice/music/thatSong.mp3`   | `music/thatSong.mp3`              |-->
+<!--| `/home/alice/music`                   | `/home/bob/music/thatSong.mp3`     | `../../bob/music/thatSong.mp3`    |-->
+<!--| `/home/alice/workspace/pp`            | `/home/alice/workspace/pp/project` | `project`                         |-->
+<!--| `/home`                               | `/home/alice/.bashrc`              | `alice/../alice/.bashrc`          |-->
+<!---->
+<!--</div>
+-->
 </div>
 <h2 id="wd">
   Working directory

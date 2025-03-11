@@ -35,7 +35,7 @@ This can be paraphrased in English by “every $A$ is a $B$”. For instance:">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.6658e245811fe4f512a351fff272a5281e18ea7fbd1f1c00692d6571605b230a.js" integrity="sha256-ZljiRYEf5PUSo1H/8nKlKB4Y6n&#43;9HxwAaS1lcWBbIwo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f56982be9cc26503afa01888e474997c8419c269b0df53a0c54bd24ce837d99f.js" integrity="sha256-9WmCvpzCZQOvoBiI5HSZfIQZwmmw31OgxUvSTOg32Z8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -570,44 +570,160 @@ For instance:</p>
   </tbody>
 </table>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_inherit" id="tabs-exercise_inherit-1"  />
 <label for="tabs-exercise_inherit-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!--| A               | B                  | Answer                                     |-->
-<!--| --------------- | ------------------ | ------------------------------------------ |-->
-<!--| Student         | Vegetarian         | no                                         |-->
-<!--| Polygon         | Hexagon            | no                                         |-->
-<!--| Continent       | Country            | no                                         |-->
-<!--| Country         | Continent          | no                                         |-->
-<!--| City            | Country            | no                                         |-->
-<!--| ZoomMeeting     | Meeting            | yes                                        |-->
-<!--| ZoomMeeting     | Calendar           | no                                         |-->
-<!--| Chapter         | Book               | no                                         |-->
-<!--| Minute          | TimeInterval       | yes                                        |-->
-<!--| Hour            | TimeInterval       | yes                                        |-->
-<!--| Minute          | Hour               | no                                         |-->
-<!--| Integer         | RationalNumber     | yes                                        |-->
-<!--| RationalNumber  | RealNumber         | yes                                        |-->
-<!--| Integer         | RealNumber         | yes                                        |-->
-<!--| SetOfStudents   | Student            | no                                         |-->
-<!--| Student         | SetOfStudents      | no                                         |-->
-<!--| SetOfStudents   | Set                | yes                                        |-->
-<!--| SetOfStudents   | SetOfPeople        | yes                                        |-->
-<!--| ArrayOfIntegers | ArrayOfRealNumbers | yes                                        |-->
-<!--| ArrayOfIntegers | SetOfIntegers      | no                                         |-->
-<!--| UnionOfSets     | Set                | yes                                        |-->
-<!--| Set             | UnionOfSets        | arguably (except maybe the emptyset?)      |-->
-<!--| Tree            | Graph              | arguably                                   |-->
-<!--| Graph           | Tree               | no                                         |-->
-<!--| AcyclicGraph    | Tree               | no                                         |-->
-<!--| Object          | Class              | no                                         |-->
-<!--| Subclass        | Class              | yes                                        |-->
-<!--| Class           | Subclass           | arguably (a class is a subclass of itself) |-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>Answer</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Student</td>
+          <td>Vegetarian</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Polygon</td>
+          <td>Hexagon</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Continent</td>
+          <td>Country</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Country</td>
+          <td>Continent</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>City</td>
+          <td>Country</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>ZoomMeeting</td>
+          <td>Meeting</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>ZoomMeeting</td>
+          <td>Calendar</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Chapter</td>
+          <td>Book</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Minute</td>
+          <td>TimeInterval</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Hour</td>
+          <td>TimeInterval</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Minute</td>
+          <td>Hour</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Integer</td>
+          <td>RationalNumber</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>RationalNumber</td>
+          <td>RealNumber</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Integer</td>
+          <td>RealNumber</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>Student</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Student</td>
+          <td>SetOfStudents</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>Set</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>SetOfPeople</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>ArrayOfIntegers</td>
+          <td>ArrayOfRealNumbers</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>ArrayOfIntegers</td>
+          <td>SetOfIntegers</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>UnionOfSets</td>
+          <td>Set</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Set</td>
+          <td>UnionOfSets</td>
+          <td>arguably (except maybe the emptyset?)</td>
+      </tr>
+      <tr>
+          <td>Tree</td>
+          <td>Graph</td>
+          <td>arguably</td>
+      </tr>
+      <tr>
+          <td>Graph</td>
+          <td>Tree</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>AcyclicGraph</td>
+          <td>Tree</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Object</td>
+          <td>Class</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Subclass</td>
+          <td>Class</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Class</td>
+          <td>Subclass</td>
+          <td>arguably (a class is a subclass of itself)</td>
+      </tr>
+  </tbody>
+</table>
+</div>
 </div>
 <h3 id="transitivity">
   Transitivity
@@ -784,66 +900,48 @@ However, unnecessary attributes make code harder to understand, and such a desig
 <div class="book-tabs-content markdown-inner"><p>Modify our model to accommodate for the class <code>Wall</code>,
 so that an instance of <code>Wall</code> only has the <code>health</code> attribute, with (default) value 5.</p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-1"  />
 <label for="tabs-exercise_trans_inherit-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--One solution (among others) is the following:-->
-<!---->
-<!--1. modify the class `Unit` so that it only carries the attribute `health`,-->
-<!--2. `Wall` extends `Unit`,-->
-<!--3. create an (abstract) subclass of `Unit` (for instance `MobileUnit`) that carries the other two attributes,-->
-<!--4. `Butterfly` and `Unicorn` extend `MobileUnit` (therefore they also extend `Unit`, by transitivity).-->
-<!---->
-<!--![](/img/diagrams/plantuml/abstract_inherit_complex.svg)-->
-<!---->
-<!--Or in Java:-->
-<!---->
-<!--```java-->
-<!--public abstract class Unit {-->
-<!--    int health;-->
-<!---->
-<!--    public Unit(int health) {-->
-<!--      this.health = health;-->
-<!--    }-->
-<!--}-->
-<!--```-->
-<!---->
-<!--```java-->
-<!--public class Wall extends Unit {-->
-<!---->
-<!--    public Wall() {-->
-<!--      super(5);-->
-<!--    }-->
-<!--}-->
-<!--```-->
-<!---->
-<!--```java-->
-<!--public abstract class MobileUnit extends Unit {-->
-<!--    String color;-->
-<!--    int attackCountdown;-->
-<!---->
-<!--    public MobileUnit(String color, int health) {-->
-<!--      super(health);-->
-<!--      this.color = color;-->
-<!--      this.attackCountdown = -1;-->
-<!--    }-->
-<!--}-->
-<!--```-->
-<!---->
-<!--```java-->
-<!--public class Unicorn extends MobileUnit {-->
-<!---->
-<!--    public Unicorn(String color) {-->
-<!--      super(color, 1);-->
-<!--    }-->
-<!--}-->
-<!--```-->
-<!---->
-<!--and similarly for `Butterfly`.-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>One solution (among others) is the following:</p>
+<ol>
+<li>modify the class <code>Unit</code> so that it only carries the attribute <code>health</code>,</li>
+<li><code>Wall</code> extends <code>Unit</code>,</li>
+<li>create an (abstract) subclass of <code>Unit</code> (for instance <code>MobileUnit</code>) that carries the other two attributes,</li>
+<li><code>Butterfly</code> and <code>Unicorn</code> extend <code>MobileUnit</code> (therefore they also extend <code>Unit</code>, by transitivity).</li>
+</ol>
+<p><img src="/img/diagrams/plantuml/abstract_inherit_complex.svg" alt="" /></p>
+<p>Or in Java:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(<span style="color:#66d9ef">int</span> health) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wall</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Wall</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(5);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>    String color;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> attackCountdown;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MobileUnit</span>(String color, <span style="color:#66d9ef">int</span> health) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(health);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attackCountdown</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span>(String color) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 1);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>and similarly for <code>Butterfly</code>.</p>
+</div>
 </div>
 </article>
  

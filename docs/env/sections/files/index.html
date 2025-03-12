@@ -45,7 +45,7 @@ Examples. Common file name extensions include:
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.f848a90cd7ad9f3e5869b6369c0fcc7e36b0b325959e0141b9a9e5ab932da4f6.js" integrity="sha256-&#43;EipDNetnz5YabY2nA/MfjawsyWVngFBuanlq5MtpPY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b90fc79e208dad4d487a571a0a67788cb10d359d9ad2d1b5442bbc0351428572.js" integrity="sha256-uQ/HniCNrU1IelcaCmd4jLENNZ2a0tG1RCu8A1FChXI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -690,13 +690,10 @@ We will <em>not</em> follow this terminology.</p>
 <label for="tabs-number_of_paths-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>How many paths are there from a directory to a node?</p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-1"  />
 <label for="tabs-number_of_paths-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--(Countably) infinitely many.-->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>(Countably) infinitely many.</p>
+</div>
 </div>
 <h3 id="case-sensitivity">
   Case sensitivity
@@ -807,22 +804,50 @@ This prefix is sometimes used to emphasize that a path is relative (among other 
   </tbody>
 </table>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_paths" id="tabs-exercise_paths-1"  />
 <label for="tabs-exercise_paths-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!--| absolute path to source directory $s$ | absolute path to target $t$        | possible path from $s$ to $t$     |-->
-<!--| ------------------------------------- | ---------------------------------- | --------------------------------- |-->
-<!--| `/home/alice/Desktop`                 | `/home/bob/music/anotherSong.mp3`  | `../../bob/music/anotherSong.mp3` |-->
-<!--| `/home/alice/music`                   | `/home/alice/music`                | `./../../../home/../home/alice/music`  |-->
-<!--| `/home/alice`                         | `/home/alice/music/thatSong.mp3`   | `music/thatSong.mp3`              |-->
-<!--| `/home/alice/music`                   | `/home/bob/music/thatSong.mp3`     | `../../bob/music/thatSong.mp3`    |-->
-<!--| `/home/alice/workspace/pp`            | `/home/alice/workspace/pp/project` | `project`                         |-->
-<!--| `/home`                               | `/home/alice/.bashrc`              | `alice/../alice/.bashrc`          |-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>absolute path to source directory $s$</th>
+          <th>absolute path to target $t$</th>
+          <th>possible path from $s$ to $t$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/home/alice/Desktop</code></td>
+          <td><code>/home/bob/music/anotherSong.mp3</code></td>
+          <td><code>../../bob/music/anotherSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/music</code></td>
+          <td><code>/home/alice/music</code></td>
+          <td><code>./../../../home/../home/alice/music</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice</code></td>
+          <td><code>/home/alice/music/thatSong.mp3</code></td>
+          <td><code>music/thatSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/music</code></td>
+          <td><code>/home/bob/music/thatSong.mp3</code></td>
+          <td><code>../../bob/music/thatSong.mp3</code></td>
+      </tr>
+      <tr>
+          <td><code>/home/alice/workspace/pp</code></td>
+          <td><code>/home/alice/workspace/pp/project</code></td>
+          <td><code>project</code></td>
+      </tr>
+      <tr>
+          <td><code>/home</code></td>
+          <td><code>/home/alice/.bashrc</code></td>
+          <td><code>alice/../alice/.bashrc</code></td>
+      </tr>
+  </tbody>
+</table>
+</div>
 </div>
 <h2 id="wd">
   Working directory

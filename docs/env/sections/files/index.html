@@ -45,7 +45,7 @@ Examples. Common file name extensions include:
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.f56982be9cc26503afa01888e474997c8419c269b0df53a0c54bd24ce837d99f.js" integrity="sha256-9WmCvpzCZQOvoBiI5HSZfIQZwmmw31OgxUvSTOg32Z8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f848a90cd7ad9f3e5869b6369c0fcc7e36b0b325959e0141b9a9e5ab932da4f6.js" integrity="sha256-&#43;EipDNetnz5YabY2nA/MfjawsyWVngFBuanlq5MtpPY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -356,6 +356,144 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle" checked />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="active">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
 
@@ -552,10 +690,13 @@ We will <em>not</em> follow this terminology.</p>
 <label for="tabs-number_of_paths-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>How many paths are there from a directory to a node?</p>
 </div>
+<!--
 <input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-1"  />
 <label for="tabs-number_of_paths-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>(Countably) infinitely many.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!--(Countably) infinitely many.-->
+<!--</div>
+-->
 </div>
 <h3 id="case-sensitivity">
   Case sensitivity
@@ -689,7 +830,8 @@ This prefix is sometimes used to emphasize that a path is relative (among other 
 </h2>
 <p>Each <em>process</em> (e.g. a process that executes a Java program) has a <strong>working directory</strong>, which is a directory of the hierarchical file system.
 This directory may vary depending on the program and/or how it was started.</p>
-<p>Many programs (implicitly) interpret a relative path as <em>relative to their working directory</em>, regardless of whether the path is prefixed with <code>./</code> (or <code>.\</code> on Windows).</p>
+<p>Many programs (implicitly) interpret a relative path as <em>relative to their working directory</em>.</p>
+<!--regardless of whether the path is prefixed with `./` (or `.\` on Windows).-->
 <p>In particular, this is the case of:</p>
 <ul>
 <li>Java programs,</li>
@@ -763,12 +905,11 @@ For instance, every git <a href="%7b%7b%22../../git/sections/basics.md#repositor
 Make sure that this structure allows you to <em>retrieve your own work</em> easily.</p>
 <!-- You may also create dedicated (sub)directories for content that requires no [back up]() (such as generated files, downloadable data, etc.). -->
 <blockquote class="book-hint danger">
-<p><strong><em>Warning</em></strong>. When you download or create a project/document in your home directory, <em>choose its location</em>.
-Do <em>not</em>:</p>
+<p><strong><em>Warning</em></strong>. When you download or create a project/document in your home directory, <em>choose its location</em>.</p>
 <ul>
-<li>let an application decide this location for you,</li>
-<li>rely exclusively on the &ldquo;recently opened&rdquo; feature of an app to locate your files,</li>
-<li>store files and project directly at the root of your home directory.</li>
+<li>Do <em>not</em> let an application decide this location for you.</li>
+<li>Do <em>not</em> rely exclusively on the &ldquo;recently opened&rdquo; feature of an app to locate your files.</li>
+<li>Do <em>not</em> store files and project directly at the root of your home directory.</li>
 </ul>
 </blockquote>
 <blockquote class="book-hint danger">

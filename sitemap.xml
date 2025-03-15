@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://unibz-pp-24-25.github.io/docs/background/sections/problem/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/objects/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/project/sections/free_project/</loc>
@@ -67,6 +69,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/quiz/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/background/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/</loc>
   </url><url>

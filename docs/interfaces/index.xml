@@ -2,10 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interfaces on Programming project 2024-25</title>
-    <link>http://localhost:1313/docs/interfaces/</link>
+    <link>https://unibz-pp-24-25.github.io/docs/interfaces/</link>
     <description>Recent content in Interfaces on Programming project 2024-25</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/docs/interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unibz-pp-24-25.github.io/docs/interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Specification and programming interface</title>
+      <link>https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/</guid>
+      <description>&lt;h1 id=&#34;specification-and-programming-interface&#34;&gt;&#xA;  Specification and programming interface&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#specification-and-programming-interface&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;specification&#34;&gt;&#xA;  Specification&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#specification&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote class=&#34;book-hint warning&#34;&gt;&#xA;&lt;p&gt;The &lt;strong&gt;specification&lt;/strong&gt; of a &lt;em&gt;method&lt;/em&gt; usually consists of:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;the &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/background/sections/problem/&#34;&gt;computational problem&lt;/a&gt; that the method solves (if any), and&lt;/li&gt;&#xA;&lt;li&gt;(if needed,) a description of the &lt;em&gt;format&lt;/em&gt; of the input and expected output, and&lt;/li&gt;&#xA;&lt;li&gt;(if applicable,) a description of the behavior of the program for &lt;em&gt;invalid&lt;/em&gt; inputs (e.g. errors thrown by the method), and&lt;/li&gt;&#xA;&lt;li&gt;(&lt;em&gt;if useful&lt;/em&gt;,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Example.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java interfaces</title>
+      <link>https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/</guid>
+      <description>&lt;h1 id=&#34;java-interfaces&#34;&gt;&#xA;  Java interfaces&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#java-interfaces&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;A Java interface is a &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#programmingInterface&#34;&gt;programming interface&lt;/a&gt; with additional (object-oriented) features.&lt;/p&gt;&#xA;&lt;p&gt;Syntactically, a Java interface is similar to a class.&#xA;But (in its simplest form), it contains no code.&#xA;Instead, it &lt;a href=&#34;https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#specification&#34;&gt;specifies&lt;/a&gt; the behavior of some methods (which are &lt;strong&gt;implemented&lt;/strong&gt; in some &lt;em&gt;classes&lt;/em&gt;).&lt;/p&gt;&#xA;&lt;h2 id=&#34;snapshotExample&#34;&gt;&#xA;  Examples&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#snapshotExample&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The implementation of our game contains an interface called &lt;code&gt;Snapshot&lt;/code&gt;, which describes what a game snapshot is.&#xA;This interface specifies (among others) a method called &lt;code&gt;getSizeOfReinforcement&lt;/code&gt;, as follows:&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

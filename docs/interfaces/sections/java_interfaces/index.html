@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -19,7 +19,7 @@ The implementation of our game contains an interface called Snapshot, which desc
 This interface specifies (among others) a method called getSizeOfReinforcement, as follows:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/interfaces/sections/java_interfaces/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Java interfaces">
   <meta property="og:description" content="Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.
@@ -31,10 +31,10 @@ Examples # The implementation of our game contains an interface called Snapshot,
 <title>Java interfaces | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/interfaces/sections/java_interfaces/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b90fc79e208dad4d487a571a0a67788cb10d359d9ad2d1b5442bbc0351428572.js" integrity="sha256-uQ/HniCNrU1IelcaCmd4jLENNZ2a0tG1RCu8A1FChXI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8c7585f3d1190dc42e508e323a9b7aad23c206167c6bc2d32f232c12e5fb55f2.js" integrity="sha256-jHWF89EZDcQuUI4yOpt6rSPCBhZ8a8LTLyMsEuX7VfI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -352,6 +352,53 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle" checked />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="active">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
     <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -589,10 +636,10 @@ https://github.com/alex-shpak/hugo-book
   Java interfaces
   <a class="anchor" href="#java-interfaces">#</a>
 </h1>
-<p>A Java interface is a <a href="">programming interface</a> with additional (object-oriented) features.</p>
+<p>A Java interface is a <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#programmingInterface">programming interface</a> with additional (object-oriented) features.</p>
 <p>Syntactically, a Java interface is similar to a class.
 But (in its simplest form), it contains no code.
-Instead, it <a href="">specifies</a> the behavior of some methods (which are <strong>implemented</strong> in some <em>classes</em>).</p>
+Instead, it <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#specification">specifies</a> the behavior of some methods (which are <strong>implemented</strong> in some <em>classes</em>).</p>
 <h2 id="snapshotExample">
   Examples
   <a class="anchor" href="#snapshotExample">#</a>
@@ -617,7 +664,7 @@ any (non-abstract) class that implements this interface must implement all metho
 <p>A Java interface can be used to specify how two components of a system <em>communicate</em> (before the interface is even implemented!).
 For instance, the <code>Snapshot</code> interface specifies which information must be provided by our backend to the component in charge of displaying the game on screen.</p>
 <!-- And it is currently no real implementation of this interface (only dummy ones, for demonstration purposes). -->
-<p>The name of an interface can be used as a <a href="http://localhost:1313/docs/objects/sections/classes/#refType">reference type</a> (similarly to the name of a class).
+<p>The name of an interface can be used as a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#refType">reference type</a> (similarly to the name of a class).
 For instance, the <code>Snapshot</code> interface also specifies a method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Board <span style="color:#a6e22e">getBoard</span>();
 </span></span></code></pre></div><p>which must return an object of type <code>Board</code>.
@@ -635,17 +682,20 @@ And <code>Board</code> is itself an interface, which specifies the information n
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Returns true if the input coordinates are within the board&#39;s boundaries
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Return the maximum possible index for a column (a.k.a. number of columns -1)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">areValidCoordinates</span>(<span style="color:#66d9ef">int</span> rowIndex, <span style="color:#66d9ef">int</span> columnIndex);
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getMaxColumnIndex</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Removes the unit standing at the input coordinates, and does nothing
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * if there is none.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Returns the maximum possible index for a row (a.k.a. number of rows -1)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">removeUnit</span>(<span style="color:#66d9ef">int</span> rowIndex, <span style="color:#66d9ef">int</span> columnIndex)
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">throws</span> CoordinatesOutOfBoardException;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getMaxRowIndex</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Returns the unit standing on the tile at the input coordinates, if any.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Throws an exception if the coordinates are out of this board&#39;s boundaries.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    Optional<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUnit</span>(<span style="color:#66d9ef">int</span> rowIndex, <span style="color:#66d9ef">int</span> columnIndex) <span style="color:#66d9ef">throws</span> CoordinatesOutOfBoardException;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
@@ -664,7 +714,7 @@ And <code>Board</code> is itself an interface, which specifies the information n
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Observe that these interfaces only specify <em>what</em> classes should implement, not <em>how</em>.
-In other words, these interfaces specify how components can communicate without exposing unnecessary implementation details.</p>
+In other words, these interfaces specifies <em>communication</em> between components, without exposing unnecessary implementation details.</p>
 <h2 id="when-to-use-a-java-interface">
   When to use a Java interface?
   <a class="anchor" href="#when-to-use-a-java-interface">#</a>
@@ -680,14 +730,19 @@ For instance, the method <code>drawSnapshot</code> (mentioned above) can be call
 <li>
 <p>As a <em>contract</em>, an interface allows two programmers to work independently, ensuring interoperability between the methods and/or components that they are respectively developing.</p>
 </li>
+<li>
+<p>An interface leaves room for <em>alternative implementations</em> to coexist, which share the same functionalities.
+E.g. implementations that are specific to a platform/architecture,
+or that offer different guarantees on performances (like the multiple implementations of Java&rsquo;s <a href="%7b%7b%22../../abstractDataTypes/_index.md#collection%22%7d%7d">Collection interface</a> and subinterfaces).</p>
+</li>
 </ul>
 <h2 id="inheritance">
   Inheritance
   <a class="anchor" href="#inheritance">#</a>
 </h2>
 <p>An interface in Java can extend another interface, like a class can extend another class, with the same keyword <code>extends</code>.</p>
-<p>However, Java interfaces support <em>multiple inheritance</em> (whereas java classes do not).
-This means that an interface <em>A</em> can extend two interfaces <em>B</em> and <em>C</em> even if <em>B</em> and <em>C</em> do not extend each other.</p>
+<p>However, Java interfaces support <em>multiple inheritance</em> (whereas Java classes do not).
+This means that an interface $A$ can extend two interfaces $B$ and $C$ even if $B$ and $C$ do not extend each other.</p>
 <h2 id="implementing-an-interface">
   Implementing an interface
   <a class="anchor" href="#implementing-an-interface">#</a>
@@ -702,10 +757,10 @@ For instance:</p>
 To differentiate them, you may for instance use the suffix <code>Impl</code>, as illustrated above.</p>
 </blockquote>
 <blockquote class="book-hint warning">
-<p>Consider a class <em>C</em> that implements an interface <em>I</em> :</p>
+<p>Consider a class $C$ that implements an interface $I$ :</p>
 <ul>
-<li>if <em>C</em> is abstract, then it <strong><em>can</em></strong> implement some of the methods declared in <em>I</em></li>
-<li>if <em>C</em> is not abstract, then each method declared in <em>I</em> <strong><em>must</em></strong> be implemented in <em>C</em> (or some superclass of <em>C</em> ), otherwise the program will not compile.</li>
+<li>if $C$ is abstract, then it <strong><em>can</em></strong> implement some of the methods declared in $I$,</li>
+<li>if $C$ is not abstract, then each method declared in $I$ <strong><em>must</em></strong> be implemented in $C$ (or some superclass of $C$), otherwise the program will not compile.</li>
 </ul>
 </blockquote>
 <div class="book-tabs">
@@ -715,19 +770,14 @@ To differentiate them, you may for instance use the suffix <code>Impl</code>, as
 Can you see why?</p>
 <p><img src="/img/diagrams/plantuml/abstract_inherit.svg" alt="" /></p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_interface_inherit" id="tabs-exercise_interface_inherit-1"  />
 <label for="tabs-exercise_interface_inherit-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!--The class `Butterfly` does not implement the method `sleep`.-->
-<!---->
-<!--> **_Note._**-->
-<!--> In this example, the class `Butterfly` inherits an implementation of `boost` (from `AbstractUnit`), and [overrides](http://localhost:1313/docs/objects/sections/methods/#overriding) it.-->
-<!--> This is _not_ an error.-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>The class <code>Butterfly</code> does not implement the method <code>sleep</code>.</p>
+<blockquote>
+<p><strong><em>Note.</em></strong>
+In this example, the class <code>Butterfly</code> inherits an implementation of <code>boost</code> (from <code>AbstractUnit</code>), and <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">overrides</a> it.
+This is <em>not</em> an error.</p></blockquote>
+</div>
 </div>
 <p>Since Java interfaces support multiple inheritance, a Java class can implement several interface that do not extend each other.</p>
 <p>For instance, the class <code>Unicorn</code> could implement an interface <code>Animal</code> and another interface <code>ImaginaryCreature</code>, even though none of these two interfaces extends the other (not all animals are imaginary, and not all imaginary creatures are animals).
@@ -763,15 +813,19 @@ Can you see why?</p>
 <p>However, in practice, they have partially overlapping features, which may be confusing.</p>
 <p>In particular:</p>
 <ul>
-<li>an abstract class can have <a href="http://localhost:1313/docs/objects/sections/inheritance/#inheritance">abstract methods</a>, which behave similarly to interface methods (with the additional constraint that an abstract method must be implemented by <em>at least one</em> subclass).</li>
+<li>an abstract class can have <a href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">abstract methods</a>,
+which behave similarly to interface methods (with the additional constraint that an abstract method must be implemented by <em>at least one</em> subclass).</li>
 <li>Since Java 8 (2014), interfaces can carry code, in so-called <a href="https://docs.oracle.com/javase%2Ftutorial%2F/java/IandI/defaultmethods.html">default methods</a>.
 This feature was introduced for backward compatibility reasons, but arguably contradicts the meaning of the term &ldquo;interface&rdquo;.</li>
 </ul>
-<p>A benefit of default methods (i.e. methods implemented in interfaces) is that they allow multiple inheritance of implemented methods (since interfaces allow multiple inheritance), which is not possible with classes.
-For this reason, some authors (like Joshua Bloch) recommend using default methods instead of abstract methods.
-However, a program where interfaces play the role of abstract classes may be confusing for less experienced Java developers.</p>
-<p>For this course, we chose to present Java interfaces from a more traditional (pre-Java 8) perspective, because this perspective is arguably easier to understand, and because this is still the dominant usage of Java interfaces.
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+A benefit of default methods (i.e. methods implemented in interfaces) is that they allow multiple inheritance of implemented methods (since interfaces allow multiple inheritance), which is not possible with classes.
+For this reason, some authors (like <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Joshua Bloch</a>) recommend using interfaces with default methods to play the role of abstract classes.
+However, this may be confusing for less experienced Java developers.</p>
+<p>For this course, we chose to present Java interfaces from a more traditional (pre-Java 8) perspective, because this is arguably easier to understand, and still the dominant usage of Java interfaces.
 However, for your project, feel free to deviate from this model if you think that this is appropriate (in particular if you need multiple inheritance).</p>
+</blockquote>
 </article>
  
       

@@ -37,7 +37,7 @@ a basic graphical user interface (GUI) that they can reuse and/or customize, exa
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/project/sections/board_game/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.a5b258ebc7b5316294136f867266cbcfcef658f875b75f8daac09947837fb2ea.js" integrity="sha256-pbJY68e1MWKUE2&#43;GcmbLz872WPh1t1&#43;NqsCZR4N/suo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8c7585f3d1190dc42e508e323a9b7aad23c206167c6bc2d32f232c12e5fb55f2.js" integrity="sha256-jHWF89EZDcQuUI4yOpt6rSPCBhZ8a8LTLyMsEuX7VfI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -355,6 +355,53 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
     <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -636,7 +683,7 @@ The project is designed so that:</p>
 <li>you can develop a fully functional game (player vs player or player vs bot) by focusing exclusively on the <em>backend</em> (i.e. the mechanics of the game), without modifying the GUI.</li>
 <li>backend and frontend are <em>decoupled</em>.</li>
 </ul>
-<p>Communication between frontend and backend is specified via <a href="">Java interfaces</a>.
+<p>Communication between frontend and backend is specified via <a href="https://unibz-pp-24-25.github.io/docs/interfaces/">Java interfaces</a>.
 It revolves around the notion of a game <em>snapshot</em>, which contains all the information needed to describe a state of the game (equivalently, you can think of a snapshot as a save state).
 In particular, snapshots are independent of a specific GUI.</p>
 <p>For instance, a method is available that allows you to pass a snapshot to the GUI component.

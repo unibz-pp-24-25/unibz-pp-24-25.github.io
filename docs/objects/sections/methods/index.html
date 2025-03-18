@@ -39,7 +39,7 @@ public class MyClass { ... public MyClass(){ ... } public void myMethod(){ ... }
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c3505371a5a9c3ee7c55aa627a48413ba75e49351e5dc7f21be4d383e894e603.js" integrity="sha256-w1BTcaWpw&#43;58VapiekhBO6deSTUeXcfyG&#43;TTg&#43;iU5gM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f8859408e50a9b5ec7dde54b1bba4951c0bca452590ee30c77813dae788c10f6.js" integrity="sha256-&#43;IWUCOUKm17H3eVLG7pJUcC8pFJZDuMMd4E9rniMEPY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -542,6 +542,170 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
     <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
@@ -786,13 +950,10 @@ For instance, in the above example, the overriding method may be better written 
 <label for="tabs-exercise_no_super_rec-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>In this example, what would be the effect of replacing <code>super.regen()</code> with <code>regen()</code>?</p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_no_super_rec" id="tabs-exercise_no_super_rec-1"  />
 <label for="tabs-exercise_no_super_rec-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--The method would not terminate.-->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>The method would not terminate.</p>
+</div>
 </div>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_defender" id="tabs-exercise_defender-0" checked="checked" />
@@ -805,44 +966,33 @@ Add it as an instance method to our example, so that:</p>
 <li>a unicorn gets a regen if it defends.</li>
 </ul>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_defender" id="tabs-exercise_defender-1"  />
 <label for="tabs-exercise_defender-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--The trick here consists in viewing an encounter from the point of view of the defender:-->
-<!---->
-<!--![](/img/diagrams/plantuml/method_inherit_complex.svg)-->
-<!---->
-<!--```Java-->
-<!--public abstract class Unit {-->
-<!--  int health;-->
-<!--  ...-->
-<!---->
-<!--  public void defend(MobileUnit attacker) {-->
-<!---->
-<!--      // subtract the health of the attacker from the health of the current unit-->
-<!--      health -= attacker.health;-->
-<!--      // the health of the attacket becomes the inverse of the remaining health of the current unit-->
-<!--      attacker.health = -health;-->
-<!--      // some code that makes the encounter asymmetric (attacker and defender are treated differently)-->
-<!--      ...-->
-<!--  }-->
-<!--}-->
-<!--```-->
-<!---->
-<!--```Java-->
-<!--public class Unicorn extends Unit {-->
-<!--  ...-->
-<!---->
-<!--  public void defend(MobileUnit attacker) {-->
-<!--    regen();-->
-<!--    super.defend(attacker);-->
-<!--  }-->
-<!--}-->
-<!--```-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>The trick here consists in viewing an encounter from the point of view of the defender:</p>
+<p><img src="/img/diagrams/plantuml/method_inherit_complex.svg" alt="" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of the attacker from the health of the current unit</span>
+</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">-=</span> attacker.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of the attacket becomes the inverse of the remaining health of the current unit</span>
+</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>health;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// some code that makes the encounter asymmetric (attacker and defender are treated differently)</span>
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
+</span></span><span style="display:flex;"><span>    regen();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">defend</span>(attacker);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 </article>
  

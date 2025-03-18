@@ -44,7 +44,7 @@ Input: a sorted array $A$ of integers, an integer $a$ Output: true if $a$ appear
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/background/sections/problem/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c3505371a5a9c3ee7c55aa627a48413ba75e49351e5dc7f21be4d383e894e603.js" integrity="sha256-w1BTcaWpw&#43;58VapiekhBO6deSTUeXcfyG&#43;TTg&#43;iU5gM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f8859408e50a9b5ec7dde54b1bba4951c0bca452590ee30c77813dae788c10f6.js" integrity="sha256-&#43;IWUCOUKm17H3eVLG7pJUcC8pFJZDuMMd4E9rniMEPY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -547,6 +547,170 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle" checked />
     <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
@@ -669,24 +833,22 @@ But some of them are more efficient than others.
 <div class="book-tabs-content markdown-inner"><p>Can you think of (or do you already know) an algorithm that can solve this problem efficiently?
 Why is it efficient?</p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_binary_search" id="tabs-exercise_binary_search-1"  />
 <label for="tabs-exercise_binary_search-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!--**_Algorithm._**-->
-<!--Let $n$ be the size of $A$, and let us assume for simplicity that arrays are $1$-indexed and that $A$ is nonempty.-->
-<!---->
-<!--- If $n = 1$, then check whether $A$[1] $= a$.-->
-<!--- Otherwise:-->
-<!--  - check whether $A[n/2] = a$ (where "$/$" is integer division, rounded up or down if $n$ is odd),-->
-<!--  - depending on the result, repeat on either the left or the right half of $A$.-->
-<!---->
-<!--**_Cost._**-->
-<!--If $A$ has length $n$, then the number of iterations of the procedure is (in the order of) $\log_2 n$ in the worst case (e.g. if $a$ does not appear in $A$).-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p><strong><em>Algorithm.</em></strong>
+Let $n$ be the size of $A$, and let us assume for simplicity that arrays are $1$-indexed and that $A$ is nonempty.</p>
+<ul>
+<li>If $n = 1$, then check whether $A$[1] $= a$.</li>
+<li>Otherwise:
+<ul>
+<li>check whether $A[n/2] = a$ (where &ldquo;$/$&rdquo; is integer division, rounded up or down if $n$ is odd),</li>
+<li>depending on the result, repeat on either the left or the right half of $A$.</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>Cost.</em></strong>
+If $A$ has length $n$, then the number of iterations of the procedure is (in the order of) $\log_2 n$ in the worst case (e.g. if $a$ does not appear in $A$).</p>
+</div>
 </div>
 <p>Here is another problem that you may know:</p>
 <blockquote>
@@ -720,16 +882,13 @@ In other words, a computational problem is <em>not an algorithm</em>.</p>
 <div class="book-tabs-content markdown-inner"><p>Which problem does this algorithm solve?
 Is this algorithm efficient?</p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_consecutive_numbers" id="tabs-exercise_consecutive_numbers-1"  />
 <label for="tabs-exercise_consecutive_numbers-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!--- **_Input:_** an array $A$ of integers-->
-<!--- **_Output:_** the length of the longest suffix of $A$ that consists of consecutive numbers-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><ul>
+<li><strong><em>Input:</em></strong> an array $A$ of integers</li>
+<li><strong><em>Output:</em></strong> the length of the longest suffix of $A$ that consists of consecutive numbers</li>
+</ul>
+</div>
 </div>
 <h2 id="formulating-a-problem">
   Formulating a problem
@@ -755,13 +914,10 @@ Can you see why?</p>
 <li><strong><em>Output:</em></strong> the unicorn with highest health in <em>A</em></li>
 </ul>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_ill_problem_1" id="tabs-exercise_ill_problem_1-1"  />
 <label for="tabs-exercise_ill_problem_1-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--There may be no unicorn in _A_, or several healthiest unicorns.-->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>There may be no unicorn in <em>A</em>, or several healthiest unicorns.</p>
+</div>
 </div>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_ill_problem_2" id="tabs-exercise_ill_problem_2-0" checked="checked" />
@@ -777,13 +933,10 @@ Can you see why?</p>
 </code></pre><p>the expected output is</p>
 <pre tabindex="0"><code>{a,c}
 </code></pre></div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_ill_problem_2" id="tabs-exercise_ill_problem_2-1"  />
 <label for="tabs-exercise_ill_problem_2-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--Some inputs admit more than one solution (the simplest example is the input `{{a,b}}`).-->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>Some inputs admit more than one solution (the simplest example is the input <code>{{a,b}}</code>).</p>
+</div>
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>

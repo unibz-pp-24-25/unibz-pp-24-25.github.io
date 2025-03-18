@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=34431&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -10,6 +10,7 @@
 Git is a so-called distributed version control system, originally co-authored by Linus Torvalds to facilitate the development of the Linux kernel.
 It was first released in 2005, and has become ubiquitous in software development.
 For instance, 93.87% of respondents to the 2022 Stack overflow survey declared using it.
+
 Git allows synchronizing the content of a directory (called a repository) across several machines.
 Notably:
 
@@ -17,10 +18,11 @@ each machine contains a copy of the repository and its full history,
 git allows parallel histories to coexist (in so-called branches), and provides ways to reconcile them.
 
 
+
 Warning. Git is not suited to large datasets (more than 1 GB).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:34431/docs/git/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/git/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="git">
   <meta property="og:description" content="Git # Git is a so-called distributed version control system, originally co-authored by Linus Torvalds to facilitate the development of the Linux kernel.
@@ -32,16 +34,50 @@ each machine contains a copy of the repository and its full history, git allows 
 <title>git | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:34431/docs/git/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/git/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c9a5491de913e716e3aaff7086fdc28ed3e03463693a0a5c68c81adc8448fa2c.js" integrity="sha256-yaVJHekT5xbjqv9whv3CjtPgNGNpOgpcaMga3IRI&#43;iw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:34431/docs/git/index.xml" title="Programming project 2024-25" />
+  <script defer src="/en.search.min.f8859408e50a9b5ec7dde54b1bba4951c0bca452590ee30c77813dae788c10f6.js" integrity="sha256-&#43;IWUCOUKm17H3eVLG7pJUcC8pFJZDuMMd4E9rniMEPY=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/git/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -169,7 +205,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -295,110 +344,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
-  
-
-        </li>
-      
-    
   </ul>
 
         </li>
@@ -441,973 +386,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
-    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
-      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2de9da23438414913111ffd05054662f" class="toggle"  />
-    <label for="section-2de9da23438414913111ffd05054662f" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/datastructures/sections/list/" class="">Dynamic array and linked list</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/datastructures/sections/hash/" class="">Hash table</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
-    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
-      <a href="/docs/errors/" class="">Errors</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
-    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
-    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
-      <a href="/docs/input/" class="">I/O and serialization</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/property/" class="">Configuration files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-5c4910c712e8dfeaf9f3180911e57b92" class="toggle"  />
-    <label for="section-5c4910c712e8dfeaf9f3180911e57b92" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/practice/" class="">in practice</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
-    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
-      <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
-    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
-      <a href="/docs/stream/" class="">Streams in Java</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/init/" class="">Source</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/optional/" class="">Optional</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
-    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
-      <a href="/docs/generics/" class="">Generic programming</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/generics/" class="">Generics</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/variance/" class="">Variance</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-e2a96fb94742b1e663314eaa5e569503" class="toggle"  />
-    <label for="section-e2a96fb94742b1e663314eaa5e569503" class="flex justify-between">
-      <a href="/docs/multithreading/" class="">Multithreading</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
-    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
-    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
-      <a href="/docs/simplify/" class="">Simplifying code</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -1506,7 +484,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/ide/" class="">IDE</a>
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
   
 
         </li>
@@ -1519,7 +497,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
   
 
         </li>
@@ -1631,6 +609,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
@@ -1714,105 +705,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
-    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/layout/" class="">Layout</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/building/" class="">Building</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
     <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
@@ -1830,58 +722,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/background/sections/problem/" class="">Computational problem</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
   
 
         </li>
@@ -1966,12 +806,14 @@ https://github.com/alex-shpak/hugo-book
 <p>Git is a so-called <a href="https://en.wikipedia.org/wiki/Distributed_version_control">distributed version control</a> system, originally co-authored by Linus Torvalds to facilitate the development of the Linux kernel.</p>
 <p>It was first released in 2005, and has become ubiquitous in software development.
 For instance, <a href="https://survey.stackoverflow.co/2022/#section-version-control-version-control-systems">93.87%</a> of respondents to the 2022 Stack overflow survey declared using it.</p>
+<blockquote class="book-hint warning">
 <p>Git allows synchronizing the content of a directory (called a <strong>repository</strong>) across several machines.
 Notably:</p>
 <ul>
 <li>each machine contains a copy of the repository <em>and its full history</em>,</li>
 <li>git allows parallel histories to coexist (in so-called <strong>branches</strong>), and provides ways to reconcile them.</li>
 </ul>
+</blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong> Git is <em>not</em> suited to large datasets (more than 1 GB).</p>
 </blockquote>
@@ -1982,7 +824,7 @@ Notably:</p>
 <p>Git has almost 150 commands, each of which may be called with multiple options.
 But in practice, most users use a handful of these commands on a regular basis.</p>
 <p>This chapter only provides a basic introduction and a minimal set of commands, which you are likely to need during the development of you project.
-Additional resources can be found <a href="http://localhost:34431/docs/git/sections/resources/">here</a>.</p>
+Additional resources can be found <a href="https://unibz-pp-24-25.github.io/docs/git/sections/resources/">here</a>.</p>
 <h2 id="terminology">
   Terminology
   <a class="anchor" href="#terminology">#</a>
@@ -2010,9 +852,10 @@ Here is a <em>very approximative</em> map from git concepts to terms that you ar
 <p>However, git is mostly used (and almost exclusively taught) via its Command Line Interface (CLI).
 In addition, the documentation and help that you may find online overwhelmingly relies on its CLI.</p>
 <p>Possible explanations are efficiency (autocompletion, aliases, scripts, etc.), transparency, reproducibility, stability over time, etc.</p>
-<p>If you you use git via CLI, then we recommend using a modern shell for command autocompletion.
-In particular, if you are using Windows, consider using <a href="https://www.atlassian.com/git/tutorials/git-bash">git bash</a> or the <a href="https://github.com/dahlbyk/posh-git">posh-git</a> extension for Powershell.</p>
-<p>If you want a flavor of how a terminal can be configured (for git and other purposes), then you can follow the demo in the <a href="http://localhost:34431/docs/env/sections/terminal/">dedicated section</a>.</p>
+<p>If you you use git via CLI, then we recommend using a modern <a href="https://unibz-pp-24-25.github.io/docs/env/sections/terminal/">shell</a> for command autocompletion.</p>
+<!--In particular, if you are using Windows, consider using [git bash](https://www.atlassian.com/git/tutorials/git-bash) or the [posh-git](https://github.com/dahlbyk/posh-git) extension for Powershell.-->
+<p>If you want a flavor of how a terminal can be configured (for git and other purposes),
+then you can follow the demo of the <a href="https://unibz-pp-24-25.github.io/docs/labs/env/sections/demo/">first lab</a>.</p>
 <h2 id="hosting-service">
   Hosting service
   <a class="anchor" href="#hosting-service">#</a>

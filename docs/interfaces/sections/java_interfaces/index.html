@@ -11,12 +11,14 @@ A Java interface is a programming interface with additional (object-oriented) fe
 Syntactically, a Java interface is similar to a class.
 But (in its simplest form), it contains no code.
 Instead, it specifies the behavior of some methods (which are implemented in some classes).
+A Java interface can be used to specify how two components of a system communicate (before the interface is even implemented!).
 
   Examples
   #
 
-The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is.
-This interface specifies (among others) a method called getSizeOfReinforcement, as follows:">
+The implementation of our game contains an interface called DisplayManager.
+This interface specifies how the backend can share with the frontend information to be drawn
+on screen.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
@@ -24,7 +26,8 @@ This interface specifies (among others) a method called getSizeOfReinforcement, 
   <meta property="og:title" content="Java interfaces">
   <meta property="og:description" content="Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.
 Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).
-Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:">
+A Java interface can be used to specify how two components of a system communicate (before the interface is even implemented!).
+Examples # The implementation of our game contains an interface called DisplayManager. This interface specifies how the backend can share with the frontend information to be drawn on screen.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -34,7 +37,7 @@ Examples # The implementation of our game contains an interface called Snapshot,
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5d3b88edcd65b8472b1ceef630bcb0e548b36148891eb3f92a3d25417d4aaaa7.js" integrity="sha256-XTuI7c1luEcrHO72MLyw5UizYUiJHrP5Kj0lQX1Kqqc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a077ace6a95cfca8afeb8bd2c2db1144bcced235eeb425783ef6cea43338cdcc.js" integrity="sha256-oHes5qlc/Kiv64vSwtsRRLzO0jXutCV4PvbOpDM4zcw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -335,6 +338,58 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
@@ -723,6 +778,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -804,12 +872,32 @@ https://github.com/alex-shpak/hugo-book
 <p>Syntactically, a Java interface is similar to a class.
 But (in its simplest form), it contains no code.
 Instead, it <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#specification">specifies</a> the behavior of some methods (which are <strong>implemented</strong> in some <em>classes</em>).</p>
+<p>A Java interface can be used to specify how two components of a system <em>communicate</em> (before the interface is even implemented!).</p>
 <h2 id="snapshotExample">
   Examples
   <a class="anchor" href="#snapshotExample">#</a>
 </h2>
-<p>The implementation of our game contains an interface called <code>Snapshot</code>, which describes what a game snapshot is.
-This interface specifies (among others) a method called <code>getSizeOfReinforcement</code>, as follows:</p>
+<p>The implementation of our game contains an interface called <code>DisplayManager</code>.
+This interface specifies how the backend can share with the frontend information to be drawn
+on screen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">DisplayManager</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Displays the input snapshot on screen, as well as the input message.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawSnapshot</span>(Snapshot snapshot, String message);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+This description contains <em>no code</em>.</p>
+</blockquote>
+<p>The method above takes as argument an object of type <code>Snapshot</code>.
+A snapshot intuitively contains all the information needed by the fronted to draw the current state of the game on screen (board, active player, stats, etc.).</p>
+<p><code>Snapshot</code> is itself an interface, which specifies (among others) a method called <code>getSizeOfReinforcement</code>, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Snapshot</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ...
@@ -822,14 +910,18 @@ This interface specifies (among others) a method called <code>getSizeOfReinforce
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Note that this description contains <em>no code</em>.</p>
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+The name of an interface can be used as a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#refType">reference type</a> (similarly to the name of a class).
+For instance, <code>Snaphost</code> is used above as the type of the first argument of the method <code>drawSnapshot</code>.</p>
+</blockquote>
+<blockquote class="book-hint warning">
 <p>A Java interface acts not only as documentation, but also as a <em>contract</em> :
 any (non-abstract) class that implements this interface must implement all methods declared in the interface (otherwise the program will not compile).</p>
-<p>A Java interface can be used to specify how two components of a system <em>communicate</em> (before the interface is even implemented!).
-For instance, the <code>Snapshot</code> interface specifies which information must be provided by our backend to the component in charge of displaying the game on screen.</p>
-<!-- And it is currently no real implementation of this interface (only dummy ones, for demonstration purposes). -->
-<p>The name of an interface can be used as a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#refType">reference type</a> (similarly to the name of a class).
-For instance, the <code>Snapshot</code> interface also specifies a method</p>
+</blockquote>
+<p>So a (non-abstract) class that implements the interface <code>Snapshot</code> must implement the method <code>getSizeOfReinforcement</code> (or <a href="/content/docs/objects/sections/inheritance.md">inherit</a> an implementation of this method).</p>
+<p>The interface <code>Snapshot</code> specifies another method</p>
+<!-- And there is currently no real implementation of this interface (only dummy ones, for demonstration purposes). -->
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Board <span style="color:#a6e22e">getBoard</span>();
 </span></span></code></pre></div><p>which must return an object of type <code>Board</code>.
 And <code>Board</code> is itself an interface, which specifies the information needed to draw the game board (units, position, etc).</p>
@@ -864,19 +956,6 @@ And <code>Board</code> is itself an interface, which specifies the information n
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Finally, the interface <code>DisplayManager</code> specifies a method that can be called (e.g. from the backend) to draw a <code>Snapshot</code> on screen (together with a message):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">DisplayManager</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Displays the input snapshot on screen, as well as the input message.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawSnapshot</span>(Snapshot snapshot, String message);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Observe that these interfaces only specify <em>what</em> classes should implement, not <em>how</em>.
 In other words, these interfaces specifies <em>communication</em> between components, without exposing unnecessary implementation details.</p>
 <h2 id="when-to-use-a-java-interface">
@@ -895,9 +974,13 @@ For instance, the method <code>drawSnapshot</code> (mentioned above) can be call
 <p>As a <em>contract</em>, an interface allows two programmers to work independently, ensuring interoperability between the methods and/or components that they are respectively developing.</p>
 </li>
 <li>
-<p>An interface leaves room for <em>alternative implementations</em> to coexist, which share the same functionalities.
-E.g. implementations that are specific to a platform/architecture,
-or that offer different guarantees on performances (like the multiple implementations of Java&rsquo;s <a href="%7b%7b%22../../abstractDataTypes/_index.md#collection%22%7d%7d">Collection interface</a> and subinterfaces).</p>
+<p>An interface leaves room for <em>alternative implementations</em> to coexist, which share some functionalities.
+E.g.:</p>
+<ul>
+<li>alternative game modes in the example above,</li>
+<li>implementations that are specific to a specific hardware, operating system, &hellip;</li>
+<li>implementations that offer different guarantees on performances (like the multiple implementations of Java&rsquo;s <a href="%7b%7b%22../../abstractDataTypes/_index.md#collection%22%7d%7d">Collection interface</a> and subinterfaces).</li>
+</ul>
 </li>
 </ul>
 <h2 id="inheritance">

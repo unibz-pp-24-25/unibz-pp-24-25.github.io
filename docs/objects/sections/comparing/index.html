@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -12,9 +12,9 @@
   #
 
 
-Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object o, using
-either a supertype of o (this is an upcast),
-or a subtype of o (this is a downcast).
+Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object $o$, using
+either a supertype of $o$ (this is an upcast),
+or a subtype of $o$ (this is a downcast).
 
 
   Upcast
@@ -24,10 +24,10 @@ Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. t
 Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/comparing/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Cast and equality">
-  <meta property="og:description" content="Cast and Equality # Cast # Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast).
+  <meta property="og:description" content="Cast and Equality # Cast # Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object $o$, using either a supertype of $o$ (this is an upcast), or a subtype of $o$ (this is a downcast).
 Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.
 Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
   <meta property="og:locale" content="en_us">
@@ -36,15 +36,49 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <title>Cast and equality | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/objects/sections/comparing/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a077ace6a95cfca8afeb8bd2c2db1144bcced235eeb425783ef6cea43338cdcc.js" integrity="sha256-oHes5qlc/Kiv64vSwtsRRLzO0jXutCV4PvbOpDM4zcw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -178,6 +212,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -207,6 +301,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
   
 
         </li>
@@ -271,12 +378,30 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -284,7 +409,23 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
   
 
         </li>
@@ -297,7 +438,41 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
   
 
         </li>
@@ -310,7 +485,309 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -406,9 +883,9 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#cast">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>Java (as well as C# and C++) provides mechanisms to change the type associated with an object <em>o</em>, using
-either a <em>supertype</em> of <em>o</em> (this is an <strong>upcast</strong>),
-or a <em>subtype</em> of <em>o</em> (this is a <strong>downcast</strong>).</p>
+<p>Java (as well as C# and C++) provides mechanisms to change the type associated with an object $o$, using
+either a <em>supertype</em> of $o$ (this is an <strong>upcast</strong>),
+or a <em>subtype</em> of $o$ (this is a <strong>downcast</strong>).</p>
 </blockquote>
 <h3 id="upcast">
   Upcast
@@ -422,10 +899,10 @@ Consider the following classes:</p>
 <p><img src="/img/diagrams/plantuml/downcast_simple.svg" alt="" /></p>
 <p>Now consider the following program, where the method <code>getUnits</code> produces an array of units that depends on the player&rsquo;s input.
 The type of objects in this array (<code>Unicorn</code> or <code>Butterfly</code>) cannot be determined at compile time.
-Thanks to the implicit upcast, they can nonetheless be treated as (underspecified) units.</p>
+Thanks to the implicit upcast, they can nonetheless be referred to as (underspecified) units.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
-</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(unit.<span style="color:#a6e22e">health</span>);
+</span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
 <h3 id="downcast">
@@ -449,11 +926,11 @@ The output of this operation has type <code>Unicorn</code>, thus allowing the ca
   Object equality
   <a class="anchor" href="#equals">#</a>
 </h2>
-<p>As we saw in a <a href="">previous chapter</a>, a constructor in Java creates an object in memory and returns a (fresh) <em>reference</em> to that object.
-Since two objects have different locations in memory, their respective references must differ, <em>even if the objects are identical</em>.</p>
+<p>As we saw in a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#constructor">previous chapter</a>, a constructor in Java creates an object in memory and returns a (fresh) <em>reference</em> to that object.
+Since two objects have different locations in memory, their respective references must differ, <em>even if the content of the two objects is identical</em>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-Consider (a simplified version of) the class <code>City</code> that we saw <a href="">earlier</a>.</p>
+Consider (a simplified version of) the class <code>City</code> that we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/">earlier</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
@@ -469,16 +946,16 @@ Consider (a simplified version of) the class <code>City</code> that we saw <a hr
 </span></span><span style="display:flex;"><span>City city2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(city1 <span style="color:#f92672">==</span> city2);
 </span></span></code></pre></div></blockquote>
-<p>However, in some scenarios, it may be useful to compare the objects themselves, rather than their references.
+<p>However, in some scenarios, it may be useful to compare the content of two objects, rather than their references.
 Java provides a native method called <code>equals</code> for this purpose.</p>
-<p>Like the method <code>toString</code> that we saw <a href="http://localhost:1313/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
+<p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
 So every (user-defined of native) class inherits <code>equals</code>.</p>
 <p>Here is the source code of <code>Object.equals</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In other words, by default, this method behaves like the <code>==</code> operator.
-In order to use this method to check whether two objects are equal, it has to be <a href="http://localhost:1313/docs/objects/sections/methods/#overriding">overriden</a>.</p>
+In order to use this method to check whether two objects are equal, it has to be <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">overriden</a>.</p>
 <p>For instance, here is a prototypical implementation of the method <code>equals</code> within our class <code>City</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object o) {
@@ -497,15 +974,15 @@ In order to use this method to check whether two objects are equal, it has to be
 </blockquote>
 <p>Note in this example:</p>
 <ul>
-<li>the (safe) downcast from <code>Object</code> to <code>City</code>, and</li>
-<li>the recursive call to <code>equals</code> (because <code>String</code> is not a primitive type).</li>
+<li>the (safe) <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#downcast">downcast</a> from <code>Object</code> to <code>City</code>, and</li>
+<li>the recursive call to <code>equals</code> (because the attribute <code>name</code> has type <code>String</code>).</li>
 </ul>
 <h3 id="recursion">
   Recursion
   <a class="anchor" href="#recursion">#</a>
 </h3>
 <blockquote class="book-hint danger">
-<p><strong><em>Warning.</em></strong> Similarly to what we saw with the method <a href="http://localhost:1313/docs/objects/sections/tostring/#recursion">toString</a>,
+<p><strong><em>Warning.</em></strong> Similarly to what we saw with the method <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/#recursion">toString</a>,
 beware of naive (recursive) implementations of <code>equals</code> if your program can create an object that refers to itself (directly or indirectly).</p>
 </blockquote>
 <h3 id="built-in-implementations">
@@ -520,7 +997,7 @@ We will encounter several of them during this course, notably for the class <cod
 </h3>
 <p>The method <code>equals</code> is usually overridden together with another method of the class <code>Object</code>, called <code>hashCode</code>.
 In particular, this is needed for the method <code>equals</code> of the class <code>HashSet</code> to behave correctly.
-We will explore this topic <a href="">later in this course</a>, when we introduce the notion of a hash table.</p>
+We will explore this topic <a href="%7b%7b%22../../dataStructures/sections/hash.md#hashCode%22%7d%7d">later in this course</a>, when we introduce the notion of a hash table.</p>
 </article>
  
       

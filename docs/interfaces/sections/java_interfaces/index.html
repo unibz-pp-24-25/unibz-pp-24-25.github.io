@@ -37,7 +37,7 @@ Examples # The implementation of our game contains an interface called DisplayMa
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.a077ace6a95cfca8afeb8bd2c2db1144bcced235eeb425783ef6cea43338cdcc.js" integrity="sha256-oHes5qlc/Kiv64vSwtsRRLzO0jXutCV4PvbOpDM4zcw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bb8fafd9a2cc8a92688e560b714a34306095d648d61f453c5cf9e6a3ae45ca85.js" integrity="sha256-u4&#43;v2aLMipJojlYLcUo0MGCV1kjWH0U8XPnmo65FyoU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -725,7 +725,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
   
 
         </li>
@@ -738,7 +738,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/resources/" class="">To go further</a>
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
   
 
         </li>
@@ -1017,19 +1017,14 @@ To differentiate them, you may for instance use the suffix <code>Impl</code>, as
 Can you see why?</p>
 <p><img src="/img/diagrams/plantuml/abstract_inherit.svg" alt="" /></p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_interface_inherit" id="tabs-exercise_interface_inherit-1"  />
 <label for="tabs-exercise_interface_inherit-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- The class `Butterfly` does not implement the method `sleep`. -->
-<!---->
-<!-- > **_Note._** -->
-<!-- > In this example, the class `Butterfly` inherits an implementation of `boost` (from `AbstractUnit`), and [overrides](https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding) it. -->
-<!-- > This is _not_ an error. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>The class <code>Butterfly</code> does not implement the method <code>sleep</code>.</p>
+<blockquote>
+<p><strong><em>Note.</em></strong>
+In this example, the class <code>Butterfly</code> inherits an implementation of <code>boost</code> (from <code>AbstractUnit</code>), and <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">overrides</a> it.
+This is <em>not</em> an error.</p></blockquote>
+</div>
 </div>
 <p>Since Java interfaces support multiple inheritance, a Java class can implement several interface that do not extend each other.</p>
 <p>For instance, the class <code>Unicorn</code> could implement an interface <code>Animal</code> and another interface <code>ImaginaryCreature</code>, even though none of these two interfaces extends the other (not all animals are imaginary, and not all imaginary creatures are animals).
@@ -1044,14 +1039,10 @@ This would be declared as follows:</p>
 Can you see why?</p>
 <p><img src="/img/diagrams/plantuml/multiple_inherit.svg" alt="" /></p>
 </div>
-<!--
 <input type="radio" class="toggle" name="tabs-exercise_interface_multiple_inherit" id="tabs-exercise_interface_multiple_inherit-1"  />
 <label for="tabs-exercise_interface_multiple_inherit-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!--The class `Unicorn` does not implement the method `hide`.-->
-<!---->
-<!--</div>
--->
+<div class="book-tabs-content markdown-inner"><p>The class <code>Unicorn</code> does not implement the method <code>hide</code>.</p>
+</div>
 </div>
 <h2 id="interfaceVsAbstractClass">
   Interfaces vs abstract classes

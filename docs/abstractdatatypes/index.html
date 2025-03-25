@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=34431&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -8,7 +8,7 @@
   #
 
 
-An abstract data type (ADT) is a programming interface
+An abstract data type (ADT) is an interface
 to access and manipulate a collection of elements.
 
 
@@ -25,10 +25,10 @@ For instance, a queue may be implemented as an array or as a linked list (among 
 Each implementation may have advantages and drawbacks (in terms of performance, memory footprint, parallelization opportunities, etc.) for different tasks (reading, writing, etc.).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:34431/docs/abstractdatatypes/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Abstract data types">
-  <meta property="og:description" content="Abstract data types # An abstract data type (ADT) is a programming interface to access and manipulate a collection of elements.
+  <meta property="og:description" content="Abstract data types # An abstract data type (ADT) is an interface to access and manipulate a collection of elements.
 For instance, a queue is an ADT that mimics the behavior of a “first come first served” queue (e.g. a waiting line at a post office). This interface typically exposes three methods:
 one that checks whether the queue is empty, one that takes as input an element and adds it to the end of the queue, one that removes the first element of the queue and returns it. An ADT may have several implementations. For instance, a queue may be implemented as an array or as a linked list (among others). Each implementation may have advantages and drawbacks (in terms of performance, memory footprint, parallelization opportunities, etc.) for different tasks (reading, writing, etc.).">
   <meta property="og:locale" content="en_us">
@@ -36,16 +36,50 @@ one that checks whether the queue is empty, one that takes as input an element a
 <title>Abstract data types | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:34431/docs/abstractdatatypes/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c9a5491de913e716e3aaff7086fdc28ed3e03463693a0a5c68c81adc8448fa2c.js" integrity="sha256-yaVJHekT5xbjqv9whv3CjtPgNGNpOgpcaMga3IRI&#43;iw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:34431/docs/abstractdatatypes/index.xml" title="Programming project 2024-25" />
+  <script defer src="/en.search.min.d3bd8dda6331944d7006ac32077acee58b5cb0f6b7e7f33e28310a677153416f.js" integrity="sha256-072N2mMxlE1wBqwyB3rO5YtcsPa35/M&#43;KDEKZ3FTQW8=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -173,7 +207,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -345,59 +392,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -510,913 +505,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2de9da23438414913111ffd05054662f" class="toggle"  />
-    <label for="section-2de9da23438414913111ffd05054662f" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/datastructures/sections/list/" class="">Dynamic array and linked list</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/datastructures/sections/hash/" class="">Hash table</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
-    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
-      <a href="/docs/errors/" class="">Errors</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
-    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
-    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
-      <a href="/docs/input/" class="">I/O and serialization</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/property/" class="">Configuration files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-5c4910c712e8dfeaf9f3180911e57b92" class="toggle"  />
-    <label for="section-5c4910c712e8dfeaf9f3180911e57b92" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/practice/" class="">in practice</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
-    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
-      <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
-    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
-      <a href="/docs/stream/" class="">Streams in Java</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/init/" class="">Source</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/optional/" class="">Optional</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
-    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
-      <a href="/docs/generics/" class="">Generic programming</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/generics/" class="">Generics</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/variance/" class="">Variance</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-e2a96fb94742b1e663314eaa5e569503" class="toggle"  />
-    <label for="section-e2a96fb94742b1e663314eaa5e569503" class="flex justify-between">
-      <a href="/docs/multithreading/" class="">Multithreading</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
-    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
-    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
-      <a href="/docs/simplify/" class="">Simplifying code</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
-  
-
-        </li>
-      
-    
   </ul>
 
         </li>
@@ -1510,7 +598,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/ide/" class="">IDE</a>
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
   
 
         </li>
@@ -1523,7 +611,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
   
 
         </li>
@@ -1635,6 +723,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
@@ -1687,30 +788,12 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/git/sections/resources/" class="">To go further</a>
   
 
         </li>
       
     
-  </ul>
-
-        </li>
-      
-    
       
         <li>
           
@@ -1718,88 +801,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
-    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/layout/" class="">Layout</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/build/sections/building/" class="">Building</a>
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
   
 
         </li>
@@ -1847,45 +849,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
   
 
         </li>
@@ -1971,7 +934,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#abstract-data-types">#</a>
 </h1>
 <blockquote class="book-hint warning">
-<p>An <strong>abstract data type</strong> (ADT) is a programming <a href="http://localhost:34431/docs/interfaces/sections/specification/#programmingInterface">interface</a>
+<p>An <strong>abstract data type</strong> (ADT) is an <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#programmingInterface">interface</a>
 to access and manipulate a collection of elements.</p>
 </blockquote>
 <blockquote class="book-hint info">
@@ -1987,10 +950,10 @@ This interface typically exposes three methods:</p>
 For instance, a queue may be implemented as an array or as a linked list (among others).
 Each implementation may have advantages and drawbacks (in terms of performance, memory footprint, parallelization opportunities, etc.) for different tasks (reading, writing, etc.).</p>
 <blockquote class="book-hint danger">
-<p>A <strong>data structure</strong> (e.g. an array, a linked list, a hash map, etc.) is <em>not</em> an ADT, but a (concrete) way to store a collection of elements (values, objects, etc.) in memory.
-However, a data structure can implement one or several ADT(s).</p>
+<p>A <strong>data structure</strong> (e.g. an array, a linked list, a hash table, etc.) is <em>not</em> an ADT, but a (concrete) way to store a collection of elements (values, objects, etc.) in memory.
+A data structure can be used to <em>implement</em> one or several ADT(s).</p>
 </blockquote>
-<p>Some ADTs correspond to <a href="http://localhost:34431/docs/background/sections/set_tuple_map/">basic mathematical objects</a> (set, tuple, function, etc.), and are therefore easy to understand and manipulate.
+<p>Some ADTs correspond to <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/">basic mathematical objects</a> (set, tuple, function, etc.), and are therefore easy to understand and manipulate.
 They allow you to easily write code that is <em>correct</em>,
 but may be <em>inefficient</em> if you do not have a good understanding of underlying (concrete) data structure.</p>
 <p>Another benefit of ADTs is that they can make your code significantly easier to read (thus requiring less documentation).
@@ -2003,18 +966,18 @@ For instance, if your program manipulates a collection of objects without duplic
   Parameterized types
   <a class="anchor" href="#parameterized-types">#</a>
 </h3>
-<p>An ADT in Java is usually a <a href="http://localhost:34431/docs/generics/sections/generics/#genericType">parameterized type</a>, meaning that it has one or several types as parameter.</p>
+<p>An ADT in Java is usually a <a href="%7b%7b%22../generics/sections/generics.md#genericType%22%7d%7d">parameterized type</a>, meaning that it has one or several types as parameter(s).</p>
 <p>For instance, a set of strings in Java has type <code>Set&lt;String&gt;</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
-In Java, a primitive type (like <code>int</code> or <code>bool</code>) <em>cannot</em> be used as a type parameter, but a <a href="http://localhost:34431/docs/objects/sections/quasi-objects/#boxedTypes">boxed type</a> (like <code>Integer</code> or <code>Boolean</code>) can.
+In Java, a primitive type (like <code>int</code> or <code>bool</code>) <em>cannot</em> be used as a type parameter, but a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#boxedTypes">boxed type</a> (like <code>Integer</code> or <code>Boolean</code>) can.
 For instance, the type <code>Set&lt;Integer&gt;</code> is valid.</p>
 </blockquote>
 <h3 id="collection">
   The interface <code>Collection</code>
   <a class="anchor" href="#collection">#</a>
 </h3>
-<p>In Java, many ADTs and data structures extend or implement the interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>
+<p>In Java, many ADTs and data structures extend or implement the <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>
 (the only exception in this chapter is <code>Map</code>).</p>
 <p>Among others, the interface <code>Collection</code> specifies the following methods (if <code>E</code> is the type of the elements in the collection):</p>
 <ul>

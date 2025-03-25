@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -13,7 +13,7 @@ An associative array (or dictionary or map) simulates a function with finite dom
 A associative array exposes at least the following methods:
 
 lookup (or get) takes a key as input, and returns the value for this key (if any).
-insert (or put ) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value.
+insert (or put) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value.
 remove (or delete) deletes the entry for a given key (if any).
 
 
@@ -21,27 +21,61 @@ Note. Associative arrays are pervasive in programming.
 Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash maps and a variety of search trees).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/abstractdatatypes/sections/map/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Associative array">
   <meta property="og:description" content="Associative array # An associative array (or dictionary or map) simulates a function with finite domain.
 A associative array exposes at least the following methods:
-lookup (or get) takes a key as input, and returns the value for this key (if any). insert (or put ) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value. remove (or delete) deletes the entry for a given key (if any). Note. Associative arrays are pervasive in programming. Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash maps and a variety of search trees).">
+lookup (or get) takes a key as input, and returns the value for this key (if any). insert (or put) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value. remove (or delete) deletes the entry for a given key (if any). Note. Associative arrays are pervasive in programming. Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash maps and a variety of search trees).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 <title>Associative array | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/abstractdatatypes/sections/map/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d3bd8dda6331944d7006ac32077acee58b5cb0f6b7e7f33e28310a677153416f.js" integrity="sha256-072N2mMxlE1wBqwyB3rO5YtcsPa35/M&#43;KDEKZ3FTQW8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -175,6 +209,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -294,25 +388,17 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -320,7 +406,23 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
   
 
         </li>
@@ -333,7 +435,41 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle" checked />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
   
 
         </li>
@@ -346,7 +482,369 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="active">Associative array</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -432,12 +930,12 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#associative-array">#</a>
 </h1>
 <blockquote class="book-hint warning">
-<p>An <strong>associative array</strong> (or <strong>dictionary</strong> or <strong>map</strong>) simulates a <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#function">function</a> with <em>finite</em> domain.</p>
+<p>An <strong>associative array</strong> (or <strong>dictionary</strong> or <strong>map</strong>) simulates a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a> with <em>finite</em> domain.</p>
 </blockquote>
 <p>A associative array exposes at least the following methods:</p>
 <ul>
 <li><strong>lookup</strong> (or <strong>get</strong>) takes a key as input, and returns the value for this key (if any).</li>
-<li><strong>insert</strong> (or <strong>put</strong> ) inserts a pair <em>(key, value)</em>. If an entry for this key was already present, then overwrites its value.</li>
+<li><strong>insert</strong> (or <strong>put</strong>) inserts a pair <em>(key, value)</em>. If an entry for this key was already present, then overwrites its value.</li>
 <li><strong>remove</strong> (or <strong>delete</strong>) deletes the entry for a given key (if any).</li>
 </ul>
 <blockquote class="book-hint info">
@@ -453,7 +951,7 @@ The most commonly used is <code>HashMap</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong> The interface <code>Map</code> does <em>not</em> extend the interface <code>Collection</code>.</p>
 </blockquote>
-<p><code>Map</code> is a generic type with <em>two</em> parameters: one for the type of its keys, and one for the type of its values.
+<p><code>Map</code> is a parameterized type with <em>two</em> parameters: one for the type of its keys, and one for the type of its values.
 For instance, a map from integers to strings has type <code>Map&lt;Integer, String&gt;</code>.</p>
 <h3 id="syntax">
   Syntax
@@ -563,8 +1061,8 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
   Comparing keys
   <a class="anchor" href="#comparing-keys">#</a>
 </h3>
-<p>The identity of two keys in Java is determined by the method <code>equals</code>, analogously to what we saw <a href="http://localhost:1313/docs/objects/sections/comparing/#equals">already</a> for the identity of two elements in a set.</p>
-<p>For instance, consider once again the classes <code>City</code> and <code>SmartCity</code> that we used in the section on <a href="http://localhost:1313/docs/abstractdatatypes/sections/set/#duplicates">sets</a>, where <code>SmartCity</code> overrides <code>equals</code> (and <code>hashCode</code>), whereas <code>City</code> does not:</p>
+<p>The identity of two keys in Java is determined by the method <code>equals</code>, analogously to what we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">already</a> for the identity of two elements in a set.</p>
+<p>For instance, consider once again the classes <code>City</code> and <code>SmartCity</code> that we used in the section on <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/#duplicates">sets</a>, where <code>SmartCity</code> overrides <code>equals</code> (and <code>hashCode</code>), whereas <code>City</code> does not:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>City trentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);
@@ -598,47 +1096,54 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 the method should return
 <code>2</code>.</p>
 </div>
+<!--
 <input type="radio" class="toggle" name="tabs-exercise_map_Countrepeated" id="tabs-exercise_map_Countrepeated-1"  />
 <label for="tabs-exercise_map_Countrepeated-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countRepeatedChars</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: character</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// value: number of occurrences of this character</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>Character, Integer<span style="color:#f92672">&gt;</span> charToOcc <span style="color:#f92672">=</span> computeCharToOccMap(chars);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// return value</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> repeatedChars <span style="color:#f92672">=</span> 0;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// count the number of entries in the map with a value &gt; 1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Integer occ  : charToOcc.<span style="color:#a6e22e">values</span>()){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(occ <span style="color:#f92672">&gt;</span> 1){
-</span></span><span style="display:flex;"><span>            repeatedChars<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> repeatedChars;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Auxiliary method.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Returns a map that associates each character to its number of occurrences
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Map<span style="color:#f92672">&lt;</span>Character, Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">computeCharToOccMap</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// create an empty map</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>Character, Integer<span style="color:#f92672">&gt;</span> charToOcc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each character in the input array</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">char</span> character : chars) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// retrieve the number of occurrences seen so far for this character</span>
-</span></span><span style="display:flex;"><span>        Integer occ <span style="color:#f92672">=</span> charToOcc.<span style="color:#a6e22e">get</span>(character);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// increment this number by 1</span>
-</span></span><span style="display:flex;"><span>        occ <span style="color:#f92672">=</span> (occ <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#f92672">?</span> 1 : occ <span style="color:#f92672">+</span> 1;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// update the map for this character</span>
-</span></span><span style="display:flex;"><span>        charToOcc.<span style="color:#a6e22e">put</span>(character, occ);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> charToOcc;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!--```java-->
+<!--int countRepeatedChars(char[] chars) {-->
+<!---->
+<!--    // key: character-->
+<!--    // value: number of occurrences of this character-->
+<!--    Map<Character, Integer> charToOcc = computeCharToOccMap(chars);-->
+<!---->
+<!--    // return value-->
+<!--    int repeatedChars = 0;-->
+<!--    // count the number of entries in the map with a value > 1-->
+<!--    for (Integer occ  : charToOcc.values()){-->
+<!--        if(occ > 1){-->
+<!--            repeatedChars++;-->
+<!--        }-->
+<!--    }-->
+<!--    return repeatedChars;-->
+<!--}-->
+<!---->
+<!--/**-->
+<!--* Auxiliary method.-->
+<!--*-->
+<!--* Returns a map that associates each character to its number of occurrences-->
+<!--*/-->
+<!--private Map<Character, Integer> computeCharToOccMap(char[] chars) {-->
+<!---->
+<!--    // create an empty map-->
+<!--    Map<Character, Integer> charToOcc = new HashMap<>();-->
+<!---->
+<!--    // for each character in the input array-->
+<!--    for (char character : chars) {-->
+<!--        // retrieve the number of occurrences seen so far for this character-->
+<!--        Integer occ = charToOcc.get(character);-->
+<!--        // increment this number by 1-->
+<!--        occ = (occ == null) ? 1 : occ + 1;-->
+<!--        // update the map for this character-->
+<!--        charToOcc.put(character, occ);-->
+<!--    }-->
+<!--    return charToOcc;-->
+<!--}-->
+<!--```-->
+<!---->
+<!--</div>
+-->
 </div>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_map_miniboard" id="tabs-exercise_map_miniboard-0" checked="checked" />
@@ -654,47 +1159,54 @@ that takes a board as input, and prints the number of unit of each color, in any
 yellow: 2
 red: 2
 </code></pre></div>
+<!--
 <input type="radio" class="toggle" name="tabs-exercise_map_miniboard" id="tabs-exercise_map_miniboard-1"  />
 <label for="tabs-exercise_map_miniboard-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printNumberOfUnitsByColor</span>(Unit<span style="color:#f92672">[][]</span> board) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: a color</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// value: the set of all units with this color</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>String, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> colorToUnits <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit<span style="color:#f92672">[]</span> row : board) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Unit unit : row) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (unit <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>                updateMap(unit, colorToUnits);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each entry in the map</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Entry<span style="color:#f92672">&lt;</span>String, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> entry : colorToUnits.<span style="color:#a6e22e">entrySet</span>()) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// print the color and the number of units</span>
-</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(
-</span></span><span style="display:flex;"><span>            entry.<span style="color:#a6e22e">getKey</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> entry.<span style="color:#a6e22e">getValue</span>().<span style="color:#a6e22e">size</span>()
-</span></span><span style="display:flex;"><span>        );
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Auxiliary method
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateMap</span>(Unit unit, Map<span style="color:#f92672">&lt;</span>String,Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> colorToUnits){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// retrieve the set of units seen so for the color</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// of the current unit</span>
-</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> colorToUnits.<span style="color:#a6e22e">get</span>(unit.<span style="color:#a6e22e">color</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (units <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// if this is the first unit seen with this color,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// then create an entry (in the map) for this color</span>
-</span></span><span style="display:flex;"><span>        units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>        colorToUnits.<span style="color:#a6e22e">put</span>(unit.<span style="color:#a6e22e">color</span>, units);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    units.<span style="color:#a6e22e">add</span>(unit);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!--```java-->
+<!--void printNumberOfUnitsByColor(Unit[][] board) {-->
+<!---->
+<!--    // key: a color-->
+<!--    // value: the set of all units with this color-->
+<!--    Map<String, Set<Unit>> colorToUnits = new HashMap<>();-->
+<!---->
+<!--    for (Unit[] row : board) {-->
+<!--        for (Unit unit : row) {-->
+<!--            if (unit != null) {-->
+<!--                updateMap(unit, colorToUnits);-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--    // for each entry in the map-->
+<!--    for (Entry<String, Set<Unit>> entry : colorToUnits.entrySet()) {-->
+<!--        // print the color and the number of units-->
+<!--        System.out.println(-->
+<!--            entry.getKey() + ": " + entry.getValue().size()-->
+<!--        );-->
+<!--    }-->
+<!--}-->
+<!---->
+<!--/**-->
+<!-- * Auxiliary method-->
+<!-- */-->
+<!--private void updateMap(Unit unit, Map<String,Set<Unit>> colorToUnits){-->
+<!---->
+<!--    // retrieve the set of units seen so for the color-->
+<!--    // of the current unit-->
+<!--    Set<Unit> units = colorToUnits.get(unit.color);-->
+<!--    if (units == null) {-->
+<!--        // if this is the first unit seen with this color,-->
+<!--        // then create an entry (in the map) for this color-->
+<!--        units = new HashSet<>();-->
+<!--        colorToUnits.put(unit.color, units);-->
+<!--    }-->
+<!--    units.add(unit);-->
+<!--}-->
+<!--```-->
+<!---->
+<!--</div>
+-->
 </div>
 </article>
  

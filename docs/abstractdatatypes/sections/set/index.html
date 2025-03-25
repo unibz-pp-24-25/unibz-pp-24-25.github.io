@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -22,7 +22,7 @@ Warning.
 A set provides no guarantee on the order of its elements!">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/abstractdatatypes/sections/set/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Set">
   <meta property="og:description" content="Set # The abstract data type set simulates a (usually finite) mathematical set.
@@ -34,15 +34,49 @@ add: adds an element to the set if it was not present already (and returns true 
 <title>Set | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/abstractdatatypes/sections/set/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d3bd8dda6331944d7006ac32077acee58b5cb0f6b7e7f33e28310a677153416f.js" integrity="sha256-072N2mMxlE1wBqwyB3rO5YtcsPa35/M&#43;KDEKZ3FTQW8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -176,6 +210,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -295,25 +389,17 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -321,7 +407,23 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
   
 
         </li>
@@ -334,7 +436,41 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle" checked />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
   
 
         </li>
@@ -347,7 +483,369 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <a href="/docs/abstractdatatypes/sections/set/" class="active">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -433,7 +931,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#set">#</a>
 </h1>
 <blockquote class="book-hint warning">
-<p>The abstract data type <strong>set</strong> simulates a (usually finite) mathematical <a href="http://localhost:1313/docs/background/sections/set_tuple_map/#set">set</a>.</p>
+<p>The abstract data type <strong>set</strong> simulates a (usually finite) mathematical <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#set">set</a>.</p>
 </blockquote>
 <p>A set may expose the following methods:</p>
 <ul>
@@ -451,7 +949,7 @@ A set provides no guarantee on the <em>order</em> of its elements!</p>
   <a class="anchor" href="#java">#</a>
 </h2>
 <p>Java provides an interface <code>Set</code> with 8 native implementations (i.e. different <em>classes</em> that implement this interface).
-The most commonly used are <a href="http://localhost:1313/docs/datastructures/sections/hash/#hashSet">HashSet</a> and <a href="http://localhost:1313/docs/datastructures/sections/tree/#treeMap">TreeSet</a>.</p>
+The most commonly used are <a href="%7b%7bref%22../../dataStructures/sections/hash.md#hashSet%22%7d%7d">HashSet</a> and <a href="%7b%7bref%22../../dataStructures/sections/tree.md#treeMap%22%7d%7d">TreeSet</a>.</p>
 <p>The interface <code>Set</code> extends the interface <code>Collection</code>.</p>
 <h3 id="syntax">
   Syntax
@@ -519,8 +1017,8 @@ But what does &ldquo;identical&rdquo; mean for two objects?</p>
 <p>In Java, the method <code>equals</code> is (implicitly) used to determine whether two elements added to a <code>Set</code> should be considered identical.</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-<a href="http://localhost:1313/docs/objects/sections/comparing/#hashCode">Recall</a> that the method <code>equals</code> should be overridden <em>together with</em> the method <code>hashCode</code> (more on this later).
-This is essential for a <code>HashSet</code> to behave as expected (more on this <a href="http://localhost:1313/docs/datastructures/sections/hash/#hashCode">later</a>).</p>
+<a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#hashCode">Recall</a> that the method <code>equals</code> should be overridden <em>together with</em> the method <code>hashCode</code> (more on this later).
+This is essential for a <code>HashSet</code> to behave as expected (more on this <a href="%7b%7bref%22../../dataStructures/sections/hash.md#hashCode%22%7d%7d">later</a>).</p>
 </blockquote>
 <p>For instance, consider a naive implementation of the class <code>City</code>, which does <em>not</em> override <code>equals</code> (or <code>hashCode</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
@@ -533,7 +1031,7 @@ This is essential for a <code>HashSet</code> to behave as expected (more on this
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span>zipCode;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><a href="http://localhost:1313/docs/objects/sections/comparing/#equals">Recall</a>
+</span></span></code></pre></div><p><a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">Recall</a>
 that every class inherits a default implementation of <code>equals</code> (and <code>hashCode</code>), from the class <code>Object</code>.
 According to this default implementation, <code>equals</code> behaves like <code>==</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
@@ -626,27 +1124,34 @@ For instance, remove duplicates from an array (assuming that the order of elemen
 <p>For instance, with the board below as input, the method should return 5.</p>
 <p><img src="/img/adt/miniboard.png" alt="" /></p>
 </div>
+<!--
 <input type="radio" class="toggle" name="tabs-exercise_set_miniboard" id="tabs-exercise_set_miniboard-1"  />
 <label for="tabs-exercise_set_miniboard-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countUnits</span>(Unit<span style="color:#f92672">[][]</span> board) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit<span style="color:#f92672">[]</span> row : board) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Unit unit : row) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (unit <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>                  units.<span style="color:#a6e22e">add</span>(unit);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">size</span>();
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!--```java-->
+<!--int countUnits(Unit[][] board) {-->
+<!---->
+<!--    Set<Unit> units = new HashSet<>();-->
+<!---->
+<!--    for (Unit[] row : board) {-->
+<!--        for (Unit unit : row) {-->
+<!--            if (unit != null) {-->
+<!--                  units.add(unit);-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--    return units.size();-->
+<!--}-->
+<!--```-->
+<!---->
+<!--</div>
+-->
 </div>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_set_family" id="tabs-exercise_set_family-0" checked="checked" />
 <label for="tabs-exercise_set_family-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>What dose the following program output?</p>
+<div class="book-tabs-content markdown-inner"><p>What does the following program print?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> aSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>aSet.<span style="color:#a6e22e">add</span>(1);
@@ -662,10 +1167,13 @@ For instance, remove duplicates from an array (assuming that the order of elemen
 </span></span><span style="display:flex;"><span>anotherSet.<span style="color:#a6e22e">add</span>(2);
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aFamily.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div></div>
+<!--
 <input type="radio" class="toggle" name="tabs-exercise_set_family" id="tabs-exercise_set_family-1"  />
 <label for="tabs-exercise_set_family-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p><code>2</code> and <code>2</code>.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!--`2` and `2`.-->
+<!--</div>
+-->
 </div>
 </article>
  

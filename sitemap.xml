@@ -4,6 +4,8 @@
   <url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/basics/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/background/sections/problem/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/list/</loc>
@@ -23,6 +25,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/collaboration/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/classes/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/exceptions/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/files/</loc>
   </url><url>
@@ -58,6 +62,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/checked/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/content/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/create/</loc>
@@ -80,6 +86,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/board_game/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/custom/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/os/</loc>
@@ -88,11 +96,15 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/requirements/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/branches/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/errors/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/sharing/</loc>
   </url><url>

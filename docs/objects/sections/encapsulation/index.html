@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -8,7 +8,7 @@
   #
 
 
-Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data from other components of a system.
 
 
 From Wikipedia:
@@ -20,10 +20,10 @@ the &ldquo;view&rdquo; component (which is in charge of rendering the game on sc
 if these snapshots are received faster than they can be displayed.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/encapsulation/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Encapsulation">
-  <meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to “bundling” data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+  <meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to “bundling” data with the code that operates on it, and restrict visibility of this code and data from other components of a system.
 From Wikipedia: “Essentially, encapsulation prevents external code from being concerned […]”
 Each component hides its internal logic by exposing only data and methods that other components may need.
 Example. As we saw earlier, in our game, the “view” component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.">
@@ -33,15 +33,49 @@ Example. As we saw earlier, in our game, the “view” component (which is in c
 <title>Encapsulation | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/objects/sections/encapsulation/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.611a5c9b4d157d1aad7ba4a04b6ae9f0ad0a7a16b3c4f7206f5ca4dd3396d4f4.js" integrity="sha256-YRpcm00VfRqte6SgS2rp8K0KehazxPcgb1yk3TOW1PQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -175,6 +209,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -204,6 +298,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
   
 
         </li>
@@ -255,7 +362,46 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -274,6 +420,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -281,7 +432,23 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
   
 
         </li>
@@ -294,7 +461,455 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -381,14 +996,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#encapsulation">#</a>
 </h1>
 <blockquote class="book-hint warning">
-<p><strong>Encapsulation</strong> is a (vague) principle in object-oriented programming that refers to <em>&ldquo;bundling&rdquo;</em> data with the code that operates on it, and <em>restrict visibility</em> of this code and data to other components of a system.</p>
+<p><strong>Encapsulation</strong> is a (vague) principle in object-oriented programming that refers to <em>&ldquo;bundling&rdquo;</em> data with the code that operates on it, and <em>restrict visibility</em> of this code and data from other components of a system.</p>
 </blockquote>
 <blockquote>
 <p>From <a href="https://en.wikipedia.org/wiki/Encapsulation_%28computer_programming%29">Wikipedia</a>:
 &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;</p></blockquote>
 <p>Each component hides its internal logic by exposing only data and methods that other components may need.</p>
 <blockquote class="book-hint info">
-<p><strong><em>Example.</em></strong> As we saw <a href="">earlier</a>, in our game,
+<p><strong><em>Example.</em></strong> As we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/clone/">earlier</a>, in our game,
 the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may <em>buffer</em> the game snapshots that it receives from the backend,
 if these snapshots are received faster than they can be displayed.</p>
 <p>As a buffer, this component uses a structure called a <strong>queue</strong>.
@@ -402,9 +1017,10 @@ Among others:</p>
 <ol>
 <li><strong><em>Easier debugging.</em></strong>
 If our queue is internal to the &ldquo;view&rdquo; component, then we know that it cannot be responsible for the malfunction of another component.</li>
-<li><strong><em>Easier collaboration</em></strong>. Alice may refactor the implementation of the &ldquo;view&rdquo; component, knowing that this will not affect Bob, who is currently working on the backend.</li>
+<li><strong><em>Easier collaboration</em></strong>. Carol may refactor the implementation of the &ldquo;view&rdquo; component, knowing that this will not affect Alice, who is currently working on the backend.</li>
 </ol>
-<p>This is why a common practice in object-oriented programming consists in <em>hiding all attributes and methods</em> of a new class by default, and make accessible only the ones that need to be (in particular, this is likely to be the default behaviour of your IDE).</p>
+<p>This is why a common practice in object-oriented programming consists in <em>hiding all attributes and methods</em> of a new class by default.
+And make accessible only the ones that need to be (in particular, this is likely to be the default behavior of your IDE).</p>
 <p>Encapsulation also largely dictates how <em>libraries</em> are structured.
 For instance, when you create a <code>String</code> in Java, you do not have access to the internal representation of the string object.</p>
 <h2 id="inJava">
@@ -479,7 +1095,7 @@ For instance, in the example below, the attribute <code>myAttribute</code> is pa
 </table>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-A method declared in an <a href="">interface</a> is (implicitly) public.</p>
+A method declared in an <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> is (implicitly) public.</p>
 </blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
@@ -519,13 +1135,16 @@ Can you see why, and how to fix this?</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-1"  />
 <label for="tabs-exercise_encapsulation_relax-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><ul>
-<li><code>Unicorn.getConfigFilePath</code> tries to access the package-private attribute <code>Unit.configFolder</code> (it should be made protected of public),</li>
-<li><code>Run.getConfigFilePath</code>, tries to access the package-private attribute <code>name</code> of <code>myUnicorn</code> (it should be made public).</li>
-</ul>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- - `Unicorn.getConfigFilePath` tries to access the package-private attribute `Unit.configFolder` (it should be made protected of public), -->
+<!-- - `Run.getConfigFilePath`, tries to access the package-private attribute `name` of `myUnicorn` (it should be made public). -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Hint.</em></strong>
@@ -592,15 +1211,18 @@ Can you see how?</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-1"  />
 <label for="tabs-exercise_encapsulation_restrict-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><ul>
-<li><code>Unit.health</code> can be made protected,</li>
-<li>the constructor of <code>Unit</code> can be made protected,</li>
-<li><code>Unit.attack</code> can be made protected,</li>
-<li><code>Unicorn.regen</code> can be made private.</li>
-</ul>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- - `Unit.health` can be made protected, -->
+<!-- - the constructor of `Unit` can be made protected, -->
+<!-- - `Unit.attack` can be made protected, -->
+<!-- - `Unicorn.regen` can be made private. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong> The constructor of an <em>abstract</em> class can always be made protected (since it can only be called in the constructor of a subclass).</p>
@@ -651,7 +1273,7 @@ Getter and setter methods can be automatically generated by your IDE.</p>
   <a class="anchor" href="#composition">#</a>
 </h3>
 <blockquote class="book-hint info">
-<p><strong><em>Example</em></strong> (from <a href="http://localhost:1313/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 18).</p>
+<p><strong><em>Example</em></strong> (from <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 18).</p>
 <p>Consider a class <code>MyHashSet</code> that extends Java&rsquo;s <code>Hashset</code> functionality by keeping track of the number of objects <em>added</em> to the set (as opposed to the output of <code>HashSet.size()</code>, which returns the numer of elements <em>remaining</em> in the set).</p>
 <p>This class <code>myHashSet</code> may have an attribute <code>int counter</code> (initialized to <code>0</code>) that keeps track of the number of elements added to the set so far.
 And it may be implemented by overriding <code>add</code> and <code>addAll</code> in the expected way, i.e.:</p>
@@ -666,7 +1288,7 @@ And it may be implemented by overriding <code>add</code> and <code>addAll</code>
 </span></span><span style="display:flex;"><span>    counter <span style="color:#f92672">+=</span> c.<span style="color:#a6e22e">size</span>();
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">addAll</span>(c);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>However, this implementation of <code>addAll</code> would count every insertion twice, because the implementation of <code>HashSet.addAll</code> calls <code>HashSet.add</code>.</p>
+</span></span></code></pre></div><p>However, this implementation of <code>addAll</code> would count every insertion twice, because the implementation of <code>HashSet.addAll</code> calls the method <code>add</code> (which is overridden in this case).</p>
 </blockquote>
 <p>A design pattern called <strong>composition</strong> can be used to avoid such unintended effects.
 Intuitively, instead of extending the original class, use an instance <code>Hashset set</code> of it as a (private) attribute of the new class.

@@ -38,7 +38,7 @@ Exercise In our game, the “view” component is in charge of rendering the gam
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/clone/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.a460318d0ecd2cd99d56970e5136c6e49a1df5833df8669708a625587732a5fa.js" integrity="sha256-pGAxjQ7NLNmdVpcOUTbG5Jod9YM9&#43;GaXCKYlWHcypfo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e3d4017860ba4e4d5db90c08767b6352a1e1f867d77493e800a76969707898fb.js" integrity="sha256-49QBeGC6Tk1duQwIdntjUqHh&#43;GfXdJPoAKdpaXB4mPs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1276,7 +1276,7 @@ Like the methods <a href="https://unibz-pp-24-25.github.io/docs/objects/sections
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
 Overriding <code>clone</code> can be <em>error-prone</em>, especially in presence of a class hierarchy (see <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 13 for further insight).
-Notably, the overriding class must implement the <code>Cloneable</code> interface, and an implementation of <code>clone</code> usually calls <code>super.clone</code> recursively (even for a class whose only superclass is <code>Object</code>).
+Notably, the overriding class must implement the <code>Cloneable</code> interface (even though this interface has not method!), and an implementation of <code>clone</code> usually calls <code>super.clone</code> recursively (even for a class whose only superclass is <code>Object</code>).
 For these reasons, overriding <code>clone</code> is sometimes discouraged, in favor of conceptually simpler solutions (like copy constructors).</p>
 </blockquote>
 </article>

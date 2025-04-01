@@ -7,7 +7,7 @@
   Errors
   #
 
-We all make mistakes when writing code.
+We all make mistakes when we write code.
 Developing efficient strategies to identify mistakes is an essential part of programming.
 
   Compile time vs runtime errors
@@ -17,7 +17,7 @@ Developing efficient strategies to identify mistakes is an essential part of pro
 In (pre)compiled languages (like Java, C/C&#43;&#43;, C#, Python, Rust, Go, etc.), a distinction is generally made between compile time errors and runtime errors.
 
 A compile time error prevents a program from compiling.
-It can be thought of as a syntactic error.
+It can be thought of as a &ldquo;syntactic&rdquo; error.
 A runtime error (a.k.a. bug) occurs during the execution of a program.
 It may depend on the input of the program.
 
@@ -31,10 +31,10 @@ Besides, an IDE can identify some compile time errors (and highlight them) befor
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/errors/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Errors">
-  <meta property="og:description" content="Errors # We all make mistakes when writing code.
+  <meta property="og:description" content="Errors # We all make mistakes when we write code.
 Developing efficient strategies to identify mistakes is an essential part of programming.
 Compile time vs runtime errors # In (pre)compiled languages (like Java, C/C&#43;&#43;, C#, Python, Rust, Go, etc.), a distinction is generally made between compile time errors and runtime errors.
-A compile time error prevents a program from compiling. It can be thought of as a syntactic error. A runtime error (a.k.a. bug) occurs during the execution of a program. It may depend on the input of the program. Hint. Compile time errors tend to be (much) easier to fix than bugs, especially in large projects. Besides, an IDE can identify some compile time errors (and highlight them) before the program is even compiled.">
+A compile time error prevents a program from compiling. It can be thought of as a “syntactic” error. A runtime error (a.k.a. bug) occurs during the execution of a program. It may depend on the input of the program. Hint. Compile time errors tend to be (much) easier to fix than bugs, especially in large projects. Besides, an IDE can identify some compile time errors (and highlight them) before the program is even compiled.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 <title>Errors | Programming project 2024-25</title>
@@ -43,7 +43,7 @@ A compile time error prevents a program from compiling. It can be thought of as 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.a460318d0ecd2cd99d56970e5136c6e49a1df5833df8669708a625587732a5fa.js" integrity="sha256-pGAxjQ7NLNmdVpcOUTbG5Jod9YM9&#43;GaXCKYlWHcypfo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e3d4017860ba4e4d5db90c08767b6352a1e1f867d77493e800a76969707898fb.js" integrity="sha256-49QBeGC6Tk1duQwIdntjUqHh&#43;GfXdJPoAKdpaXB4mPs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/errors/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -1127,7 +1127,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#compile-time-vs-runtime-errors">Compile time vs runtime errors</a></li>
     <li><a href="#error-messages">Error messages</a></li>
-    <li><a href="#invalid-inputs">Invalid inputs</a></li>
+    <li><a href="#anticipation">Anticipation</a></li>
     <li><a href="#controlled-environment">Controlled environment</a></li>
   </ul>
 </nav>
@@ -1145,7 +1145,7 @@ https://github.com/alex-shpak/hugo-book
   Errors
   <a class="anchor" href="#errors">#</a>
 </h1>
-<p>We all make mistakes when writing code.</p>
+<p>We all make mistakes when we write code.</p>
 <p>Developing efficient strategies to identify mistakes is an essential part of programming.</p>
 <h2 id="compile-time-vs-runtime-errors">
   Compile time vs runtime errors
@@ -1155,7 +1155,7 @@ https://github.com/alex-shpak/hugo-book
 <p>In (pre)compiled languages (like Java, C/C++, C#, Python, Rust, Go, etc.), a distinction is generally made between <strong>compile time errors</strong> and <strong>runtime errors</strong>.</p>
 <ul>
 <li>A compile time error prevents a program from compiling.
-It can be thought of as a syntactic error.</li>
+It can be thought of as a &ldquo;syntactic&rdquo; error.</li>
 <li>A runtime error (a.k.a. <strong>bug</strong>) occurs during the execution of a program.
 It may depend on the <em>input</em> of the program.</li>
 </ul>
@@ -1169,7 +1169,9 @@ Besides, an IDE can identify some compile time errors (and highlight them) befor
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
 For interpreted languages (like Javascript, Lua, etc.), the term &ldquo;compile time error&rdquo; is meaningless.
-However, a distinction can still be made between errors that can be detected at runtime only, and errors that can be preemptively identified (e.g. highlighted by an IDE).</p>
+However, a distinction can still be made between errors
+that can be preemptively identified (e.g. highlighted by an IDE),
+and errors that can only be detected at runtime.</p>
 </blockquote>
 <h2 id="error-messages">
   Error messages
@@ -1217,16 +1219,20 @@ However, a distinction can still be made between errors that can be detected at 
 <input type="radio" class="toggle" name="tabs-exercise_errors" id="tabs-exercise_errors-0" checked="checked" />
 <label for="tabs-exercise_errors-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>In this program, there are several reasons why the method <code>MyClass.myMethod</code> may fail at runtime.
-Can you identify them?</p>
+Can you identify some of them?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_errors" id="tabs-exercise_errors-1"  />
 <label for="tabs-exercise_errors-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><ul>
-<li>the input array may be null,</li>
-<li>the input array may be empty,</li>
-<li>the first city in this array may have a zip code $\ge$ 20 000 and no name.</li>
-</ul>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- - the input array may be null, -->
+<!-- - the input array may have length 0, -->
+<!-- - the input array may be empty, -->
+<!-- - the first city in this array may have a zip code $\ge$ 20 000 and no name. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <p>In the above example, if we execute the following,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">null</span>);
@@ -1253,22 +1259,29 @@ Can you identify them?</p>
 <div class="book-tabs-content markdown-inner"><p>Which type of error will the following call to <code>myMethod</code> produce?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> City(30100, <span style="color:#66d9ef">null</span>) });
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_error_message" id="tabs-exercise_error_message-1"  />
 <label for="tabs-exercise_error_message-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>java.lang.NullPointerException: Cannot invoke &#34;String.length()&#34; because &#34;firstCity.name&#34; is null
-	at MyClass.myMethod(MyClass.java:7)
-</code></pre></div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- ``` -->
+<!-- java.lang.NullPointerException: Cannot invoke "String.length()" because "firstCity.name" is null -->
+<!-- 	at MyClass.myMethod(MyClass.java:7) -->
+<!-- ``` -->
+<!---->
+<!-- </div>
+ -->
 </div>
-<h2 id="invalid-inputs">
-  Invalid inputs
-  <a class="anchor" href="#invalid-inputs">#</a>
+<h2 id="anticipation">
+  Anticipation
+  <a class="anchor" href="#anticipation">#</a>
 </h2>
 <p>Consider the following method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">least</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> x <span style="color:#f92672">&lt;=</span> y <span style="color:#f92672">?</span>
 </span></span><span style="display:flex;"><span>      x : y;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Observe that:</p>
+</span></span></code></pre></div><p>This method has two desirable features (shared with mathematical functions):</p>
 <ul>
 <li>any arguments for this method (i.e. any pair of integers in this example) are a valid input,</li>
 <li>its execution only depends on its arguments, i.e. if the method is called twice with the same arguments, then it has the same behavior.</li>
@@ -1285,9 +1298,9 @@ This may benefit:</p>
 For instance, consider a method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> grid);
 </span></span></code></pre></div><p>that takes as input a grid of sudoku, and returns <code>true</code> iff it is solvable, meaning that this grid admits a unique solution.
-A <em>valid input</em> for this problem may be a 9 x 9 array of integers with values between <code>0</code> and <code>9</code> (where <code>0</code> indicate the absence of value).
+A <em>valid input</em> for this problem could be a 9 x 9 array of integers with values between <code>0</code> and <code>9</code> (where <code>0</code> indicate the absence of value).
 However, Java does not provide such a precise data type.</p>
-<p>The method could produce an (informative) error message if the input array:</p>
+<p>It may be useful to produce an (informative) error message if the input array:</p>
 <ul>
 <li>is not <code>9 x 9</code>, or</li>
 <li>contains a value <code>&lt; 0</code> or <code>&gt; 9</code>.</li>
@@ -1297,9 +1310,9 @@ However, Java does not provide such a precise data type.</p>
   Controlled environment
   <a class="anchor" href="#controlled-environment">#</a>
 </h2>
-<p>Anticipating all types of invalid inputs (and producing error messages for these) may induce a lot of boilerplate code.
-If you have <em>control</em> over the input a method, then this may not be necessary.
-In particular, this may be the case for some <strong>auxiliary methods</strong> (i.e. which are not <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/#inJava">visible</a> to other classes or components).</p>
+<p>Anticipating all types of invalid inputs/scenarios (and producing error messages for these) may induce a lot of boilerplate code.
+If you have <em>control</em> over the input and/or execution environment of a method, then this may not be necessary.
+For instance, in the case of <strong>auxiliary methods</strong> (i.e. methods that are not <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/#inJava">visible</a> to other classes or components).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example (continued).</em></strong>
 Consider the method <code>boolean isSolvable (int[][] grid)</code> described above.
@@ -1350,7 +1363,7 @@ In this scenario, there is probably no need to implement error messages in <code
   <ul>
     <li><a href="#compile-time-vs-runtime-errors">Compile time vs runtime errors</a></li>
     <li><a href="#error-messages">Error messages</a></li>
-    <li><a href="#invalid-inputs">Invalid inputs</a></li>
+    <li><a href="#anticipation">Anticipation</a></li>
     <li><a href="#controlled-environment">Controlled environment</a></li>
   </ul>
 </nav>

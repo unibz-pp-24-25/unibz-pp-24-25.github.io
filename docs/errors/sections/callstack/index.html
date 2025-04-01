@@ -10,15 +10,15 @@
 
 A call stack is a stack that keeps track of the methods that are active during the execution of a program.
 By &ldquo;active&rdquo;, we mean that an execution of the method has started and has not terminated yet.
-When the execution of a method starts, it is &ldquo;added&rdquo; to the stack.
-When it terminates, the method is &ldquo;removed&rdquo; from the stack, and control is passed back to the method that called it.">
+When the execution of a method starts, the method is &ldquo;pushed&rdquo; on top of the stack.
+When it terminates, the method is &ldquo;popped&rdquo; from the stack, and control is passed back to the method that called it (which is now on top of the stack).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Call stack">
   <meta property="og:description" content="Call stack # A call stack is a stack that keeps track of the methods that are active during the execution of a program. By “active”, we mean that an execution of the method has started and has not terminated yet.
-When the execution of a method starts, it is “added” to the stack. When it terminates, the method is “removed” from the stack, and control is passed back to the method that called it.">
+When the execution of a method starts, the method is “pushed” on top of the stack. When it terminates, the method is “popped” from the stack, and control is passed back to the method that called it (which is now on top of the stack).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -28,7 +28,7 @@ When the execution of a method starts, it is “added” to the stack. When it t
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.3e18bf056ae1bb89daa15335a5e336c119200ec485fdd76e987db40f1528da71.js" integrity="sha256-Phi/BWrhu4naoVM1peM2wRkgDsSF/ddumH20DxUo2nE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8b3da678ff43c627fd6fe90b46db8db3b1283b6434765cc0f234574f37e011b8.js" integrity="sha256-iz2meP9Dxif9b&#43;kLRtuNs7EoO2Q0dlzA8jRXTzfgEbg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1125,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class="book-hint warning">
 <p>A <strong>call stack</strong> is a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">stack</a> that keeps track of the methods that are active during the execution of a program.
 By &ldquo;active&rdquo;, we mean that an execution of the method has started and has not terminated yet.</p>
-<p>When the execution of a method starts, it is &ldquo;added&rdquo; to the stack.
-When it terminates, the method is &ldquo;removed&rdquo; from the stack, and control is passed back to the method that called it.</p>
+<p>When the execution of a method starts, the method is &ldquo;pushed&rdquo; on top of the stack.
+When it terminates, the method is &ldquo;popped&rdquo; from the stack, and control is passed back to the method that called it (which is now on top of the stack).</p>
 </blockquote>
 <p>A <strong>debugger</strong> provides a representation of the successive states of a call stack, with references to the source code.
 This gives the illusion of source code being interpreted verbatim.</p>
@@ -1219,21 +1219,21 @@ In our game, consider the following implementation of the method <code>callReinf
 <p>When the method <code>callReinforcement</code> is called, it is added (a.k.a. <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">pushed</a>) on top of the call stack.
 This is rendered by a debugger as:</p>
 <pre tabindex="0"><code>callReinforcement
-&lt;bottom of the stack&gt;
+&lt;rest of the call stack&gt;
 </code></pre><p>If execution &ldquo;reaches&rdquo; Line 13, then the method <code>generateRandomUnit</code> is called and added to the stack:</p>
 <pre tabindex="0"><code>generateRandomUnit
 callReinforcement: 13
-&lt;bottom of the stack&gt;
+&lt;rest of the call stack&gt;
 </code></pre><p>When the method <code>generateRandomUnit</code> terminates, it passes control (as well as a <code>Unit</code>) back to the method that called it, namely <code>callReinforcement</code>,
 which can resume its execution:</p>
 <pre tabindex="0"><code>callReinforcement
-&lt;bottom of the stack&gt;
+&lt;rest of the call stack&gt;
 </code></pre><p>Similarly, when execution &ldquo;reaches&rdquo; Line 14, <code>findInsertionSpot</code> is added to the stack, executed, and then removed from the stack, passing control back to <code>callReinforcement</code>.</p>
 <p>Then if execution &ldquo;reaches&rdquo; Line 16, <code>addUnit</code> is executed, which in turn calls <code>performUnitMerges</code>:</p>
 <pre tabindex="0"><code>performUnitMerges
 addUnit: 32
 callReinforcement: 16
-&lt;bottom of the stack&gt;
+&lt;rest of the call stack&gt;
 </code></pre><p>etc.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
@@ -1242,7 +1242,7 @@ E.g.:</p>
 <pre tabindex="0"><code>method1
 method2: 16
 method1: 8
-&lt;bottom of the stack&gt;
+&lt;rest of the call stack&gt;
 </code></pre></blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>

@@ -37,7 +37,7 @@ Observation. Some data type have several natural sorting criteria. For instance,
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e3d4017860ba4e4d5db90c08767b6352a1e1f867d77493e800a76969707898fb.js" integrity="sha256-49QBeGC6Tk1duQwIdntjUqHh&#43;GfXdJPoAKdpaXB4mPs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3e18bf056ae1bb89daa15335a5e336c119200ec485fdd76e987db40f1528da71.js" integrity="sha256-Phi/BWrhu4naoVM1peM2wRkgDsSF/ddumH20DxUo2nE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1436,7 +1436,7 @@ which is stable.</p>
   Sorting a list
   <a class="anchor" href="#sortList">#</a>
 </h4>
-<p>The class <code>Collections</code> provides a method <code>Collection.sort(List&lt;T&gt; list)</code>, whose behavior is analogous to <code>Arrays.sort</code>.
+<p>The class <code>Collections</code> provides a static method <code>Collections.sort(List&lt;T&gt; list)</code>, whose behavior is analogous to <code>Arrays.sort</code>.
 In particular, it also guarantees stable sorting.
 Like <code>Arrays.sort</code>, it comes in two flavors (with and without comparator).</p>
 <blockquote class="book-hint info">
@@ -1482,80 +1482,61 @@ that takes as input an array of type <code>Hero[]</code>, and prints the number 
 where two heroes are considered identical if they have the same name and health.</p>
 <p><strong><em>Constraint.</em></strong> For this exercise, you <em>cannot</em> use an associative array (a.k.a. Java <code>Map</code>).</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-1"  />
 <label for="tabs-exercise_sorting-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- Create a comparator (compare first by health, then by name): -->
-<!---->
-<!-- ```Java -->
-<!-- public class HeroComparator implements Comparator<Hero> { -->
-<!---->
-<!--     @Override -->
-<!--     public int compare(Hero h1, Hero h2) { -->
-<!--         int healthComparison = Integer.compare(h1.health, h2.health); -->
-<!--         return healthComparison != 0 ? -->
-<!--             healthComparison : -->
-<!--             h1.name.compareTo(h2.name); -->
-<!--     } -->
-<!-- ``` -->
-<!---->
-<!-- Sort the array and iterate over it to count the number of occurrences of each hero: -->
-<!---->
-<!-- ```Java -->
-<!-- void printHeroesOcc(Hero[] heroes) { -->
-<!--     if (heroes.length == 0) { -->
-<!--         return; -->
-<!--     } -->
-<!--     Comparator<Hero> comparator = new HeroComparator(); -->
-<!--     // sort the input array w.r.t. to the comparator -->
-<!--     Arrays.sort(heroes, comparator); -->
-<!--     // keeps track of the last hero seen so far -->
-<!--     Hero previousHero = heroes[0]; -->
-<!--     // occurrences of the last hero seen so far -->
-<!--     int occ = 1; -->
-<!--     // iterate over the array, starting fom the second hero -->
-<!--     for (int i = 1; i < heroes.length; i++) { -->
-<!--         // if the current hero and the previous one have the same -->
-<!--         // name and amount of health -->
-<!--         if (comparator.compare(previousHero, heroes[i]) == 0) { -->
-<!--             occ++; -->
-<!--         } else { -->
-<!--             printHero(previousHero, occ); -->
-<!--             previousHero = heroes[i]; -->
-<!--             occ = 1; -->
-<!--         } -->
-<!--     } -->
-<!--     printHero(previousHero, occ); -->
-<!-- } -->
-<!---->
-<!-- private void printHero(Hero hero, int occ) { -->
-<!--     System.out.println(hero.name + "," + hero.health + ": " + occ); -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
-<!---->
-<!-- 
+<div class="book-tabs-content markdown-inner"><p>Create a comparator (compare first by health, then by name):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HeroComparator</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Hero h1, Hero h2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> healthComparison <span style="color:#f92672">=</span> Integer.<span style="color:#a6e22e">compare</span>(h1.<span style="color:#a6e22e">health</span>, h2.<span style="color:#a6e22e">health</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> healthComparison <span style="color:#f92672">!=</span> 0 <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>            healthComparison :
+</span></span><span style="display:flex;"><span>            h1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(h2.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Sort the array and iterate over it to count the number of occurrences of each hero:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printHeroesOcc</span>(Hero<span style="color:#f92672">[]</span> heroes) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (heroes.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    Comparator<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> comparator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HeroComparator();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// sort the input array w.r.t. to the comparator</span>
+</span></span><span style="display:flex;"><span>    Arrays.<span style="color:#a6e22e">sort</span>(heroes, comparator);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// keeps track of the last hero seen so far</span>
+</span></span><span style="display:flex;"><span>    Hero previousHero <span style="color:#f92672">=</span> heroes<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// occurrences of the last hero seen so far</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occ <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// iterate over the array, starting fom the second hero</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;</span> heroes.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// if the current hero and the previous one have the same</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// name and amount of health</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (comparator.<span style="color:#a6e22e">compare</span>(previousHero, heroes<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>) <span style="color:#f92672">==</span> 0) {
+</span></span><span style="display:flex;"><span>            occ<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            printHero(previousHero, occ);
+</span></span><span style="display:flex;"><span>            previousHero <span style="color:#f92672">=</span> heroes<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>            occ <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    printHero(previousHero, occ);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printHero</span>(Hero hero, <span style="color:#66d9ef">int</span> occ) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(hero.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> hero.<span style="color:#a6e22e">health</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> occ);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
- -->
-<!-- <blockquote class="book-hint info">
-   -->
-<!-- **_Note._** -->
-<!-- The solution to the exercise above relies on sorting the input array. -->
-<!-- But the same problem could be solved with an [associative array](https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/), as follows: -->
-<!---->
-<!-- - override `equals` and `hashCode` in the class `Hero`, -->
-<!-- - compute a `Map<Hero, Integer>` that maps each hero to its number of occurrences in the input array, -->
-<!-- - iterates over the entries of this map and print them. -->
-<!---->
-<!-- When it comes to running time, the latter solution is more efficient [on average]({{"../../background/sections/cost.md#worstCaseOrAverage"}}) (assuming a [hash map]({{"../../dataStructures/sections/hash.md"}})), but less efficient in the [worst case]({{"../../background/sections/cost.md#worstCaseOrAverage"}}). -->
-<!---->
-<!-- 
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong>
+The solution to the exercise above relies on sorting the input array.
+But the same problem could be solved with an <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">associative array</a>, as follows:</p>
+<ul>
+<li>override <code>equals</code> and <code>hashCode</code> in the class <code>Hero</code>,</li>
+<li>compute a <code>Map&lt;Hero, Integer&gt;</code> that maps each hero to its number of occurrences in the input array,</li>
+<li>iterates over the entries of this map and print them.</li>
+</ul>
+<p>When it comes to running time, the latter solution is more efficient <a href="%7b%7b%22../../background/sections/cost.md#worstCaseOrAverage%22%7d%7d">on average</a> (assuming a <a href="%7b%7b%22../../dataStructures/sections/hash.md%22%7d%7d">hash map</a>), but less efficient in the <a href="%7b%7b%22../../background/sections/cost.md#worstCaseOrAverage%22%7d%7d">worst case</a>.</p>
 </blockquote>
- -->
 </article>
  
       

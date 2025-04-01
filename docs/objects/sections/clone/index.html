@@ -38,7 +38,7 @@ Exercise In our game, the “view” component is in charge of rendering the gam
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/clone/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e3d4017860ba4e4d5db90c08767b6352a1e1f867d77493e800a76969707898fb.js" integrity="sha256-49QBeGC6Tk1duQwIdntjUqHh&#43;GfXdJPoAKdpaXB4mPs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3e18bf056ae1bb89daa15335a5e336c119200ec485fdd76e987db40f1528da71.js" integrity="sha256-Phi/BWrhu4naoVM1peM2wRkgDsSF/ddumH20DxUo2nE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1190,13 +1190,10 @@ For the sake of this exercise, you can think of this buffer as an array with typ
 <p>Now let us assume that the buffer of the &ldquo;view&rdquo; is nonempty when this method is executed, so that the 3 snapshots are added to the buffer, before any of them can be rendered on screen.</p>
 <p>How many of these 3 snapshots will be drawn on screen?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_clone" id="tabs-exercise_clone-1"  />
 <label for="tabs-exercise_clone-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!-- Only the third snapshot will be drawn (three times), because the buffer contains three references to the same object. -->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>Only the third snapshot will be drawn (three times), because the buffer contains three references to the same object.</p>
+</div>
 </div>
 <h2 id="shallow-deep-and-hybrid-copy">
   Shallow, deep and hybrid copy

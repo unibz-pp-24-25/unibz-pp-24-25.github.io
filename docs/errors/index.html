@@ -43,7 +43,7 @@ A compile time error prevents a program from compiling. It can be thought of as 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.8b3da678ff43c627fd6fe90b46db8db3b1283b6434765cc0f234574f37e011b8.js" integrity="sha256-iz2meP9Dxif9b&#43;kLRtuNs7EoO2Q0dlzA8jRXTzfgEbg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.92449cd1a8994755f7d8de332b5ea4804b1a0cc1e2a7b439a7e5c36594969c83.js" integrity="sha256-kkSc0aiZR1X32N4zK16kgEsaDMHip7Q5p&#43;XDZZSWnIM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/errors/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -1221,18 +1221,15 @@ and errors that can only be detected at runtime.</p>
 <div class="book-tabs-content markdown-inner"><p>In this program, there are several reasons why the method <code>MyClass.myMethod</code> may fail at runtime.
 Can you identify some of them?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_errors" id="tabs-exercise_errors-1"  />
 <label for="tabs-exercise_errors-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- - the input array may be null, -->
-<!-- - the input array may have length 0, -->
-<!-- - the input array may be empty, -->
-<!-- - the first city in this array may have a zip code $\ge$ 20 000 and no name. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><ul>
+<li>the input array may be null,</li>
+<li>the input array may have length 0,</li>
+<li>the input array may be empty,</li>
+<li>the first city in this array may have a zip code $\ge$ 20 000 and no name.</li>
+</ul>
+</div>
 </div>
 <p>In the above example, if we execute the following,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">null</span>);
@@ -1259,18 +1256,11 @@ Can you identify some of them?</p>
 <div class="book-tabs-content markdown-inner"><p>Which type of error will the following call to <code>myMethod</code> produce?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> City(30100, <span style="color:#66d9ef">null</span>) });
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_error_message" id="tabs-exercise_error_message-1"  />
 <label for="tabs-exercise_error_message-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ``` -->
-<!-- java.lang.NullPointerException: Cannot invoke "String.length()" because "firstCity.name" is null -->
-<!-- 	at MyClass.myMethod(MyClass.java:7) -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>java.lang.NullPointerException: Cannot invoke &#34;String.length()&#34; because &#34;firstCity.name&#34; is null
+	at MyClass.myMethod(MyClass.java:7)
+</code></pre></div>
 </div>
 <h2 id="anticipation">
   Anticipation

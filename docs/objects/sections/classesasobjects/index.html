@@ -36,7 +36,7 @@ Static attributes and methods # Static attributes # Java (as well as C# and C&#4
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1cefc8b8a2e7d903eaecd14903f64a0b6c53db69766e27ee42d26be74e9aa8a7.js" integrity="sha256-HO/IuKLn2QPq7NFJA/ZKC2xT22l2bifuQtJr506aqKc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.81a547c3811a83ecc1829cf8c214e37788da22078dbea8b17f8ac9f14645a6ce.js" integrity="sha256-gaVHw4Eag&#43;zBgpz4whTjd4jaIgeNvqixf4rJ8UZFps4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1122,6 +1122,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#staticAttributes">Static attributes</a></li>
         <li><a href="#staticMethods">Static methods</a></li>
         <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#java-interfaces">Java interfaces</a></li>
       </ul>
     </li>
     <li><a href="#reflection">Reflection</a></li>
@@ -1246,6 +1247,11 @@ The specific type of objects in this array (<code>Unicorn</code> or <code>EvilUn
 </span></span></code></pre></div><p>In this example, the method of the superclass (i.e. <code>Unicorn.configFileExists</code>) will be executed for each object in the array, regardless of its type.</p>
 <p>This is another reason why calling a static method via an instance (rather than via a class name) is often discouraged.
 In this example, writing <code>Unicorn.configFileExists()</code> (with a capital <code>U</code>) would make it clear that this loop serves no purpose (the same method is executed <code>unicorns.length</code> times).</p>
+<h3 id="java-interfaces">
+  Java interfaces
+  <a class="anchor" href="#java-interfaces">#</a>
+</h3>
+<p>Since Java 8 (2014), an <a href="../../interfaces/sections/java_interfaces.md">interface</a> can also carry static methods and attributes.</p>
 <h2 id="reflection">
   Reflection
   <a class="anchor" href="#reflection">#</a>
@@ -1320,6 +1326,7 @@ Notably, it is used (internally) by numerous <a href="https://en.wikipedia.org/w
         <li><a href="#staticAttributes">Static attributes</a></li>
         <li><a href="#staticMethods">Static methods</a></li>
         <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#java-interfaces">Java interfaces</a></li>
       </ul>
     </li>
     <li><a href="#reflection">Reflection</a></li>

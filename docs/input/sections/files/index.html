@@ -29,7 +29,7 @@ With Java 7 (2011), A new I/O package called NIO2 was released, with additional 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/input/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.81a547c3811a83ecc1829cf8c214e37788da22078dbea8b17f8ac9f14645a6ce.js" integrity="sha256-gaVHw4Eag&#43;zBgpz4whTjd4jaIgeNvqixf4rJ8UZFps4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a850ab6c652e37d2397ba6bb5a8e5098c2945bcda9c87b579c75ba17a65bce3c.js" integrity="sha256-qFCrbGUuN9I5e6a7Wo5QmMKUW82pyHtXnHW6F6Zbzjw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -600,7 +600,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked</a>
   
 
         </li>
@@ -687,6 +687,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -1192,12 +1218,12 @@ So the program may run on Windows, but fail on other systems.</p>
 </blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-Paths are <em>case sensitive</em> on Linux, Android, etc., but <em>case insensitive</em> on Windows and macOS.
-For maximal compatibility, make sure that path names in your code respect the case of your file and directory names.</p>
+Paths are <em>case-sensitive</em> (by default) on Linux, Android, etc., but <em>case insensitive</em> (by default) on Windows and macOS.
+For maximal compatibility, make sure that path names in your code <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#case">respect the case</a> of your file and directory names.</p>
 </blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-Do <em>not</em> use <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#absolute">absolute paths</a> in your code (e.g. <code>/home/Alice/workspace/javaProject/myFile.txt</code>, or <code>C:\Users\Alice\workspace\javaProject\myFile.txt</code>).
+Do <em>not</em> use <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#absolute">absolute paths</a> in your code (e.g. <code>/home/alice/workspace/javaProject/myFile.txt</code>, or <code>C:\Users\alice\workspace\javaProject\myFile.txt</code>).
 Your program may run on your own computer, but will fail on others.</p>
 </blockquote>
 <h3 id="working-directory">
@@ -1214,22 +1240,22 @@ When a Java program is executed, relative paths are understood as paths <em>from
 <p>For instance,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>());
 </span></span></code></pre></div><p>may output on Windows:</p>
-<pre tabindex="0"><code>C:\Users\Alice\workspace\javaProject
+<pre tabindex="0"><code>C:\Users\alice\workspace\javaProject
 </code></pre><p>or on macOS:</p>
-<pre tabindex="0"><code>/Users/Alice/workspace/javaProject
+<pre tabindex="0"><code>/Users/alice/workspace/javaProject
 </code></pre><p>or on Linux:</p>
-<pre tabindex="0"><code>/home/Alice/workspace/javaProject
+<pre tabindex="0"><code>/home/alice/workspace/javaProject
 </code></pre><h3 id="the-path-interface">
   The Path interface
   <a class="anchor" href="#the-path-interface">#</a>
 </h3>
-<p>Here are examples of outputs for some methods of the <code>Path</code> interface (assuming that the WD is <code>/home/Alice/workspace/javaProject</code>):</p>
+<p>Here are examples of outputs for some methods of the <code>Path</code> interface (assuming that the WD is <code>/home/alice/workspace/javaProject</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/../main/resources/myFile.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/Alice/workspace/javaProject/src/main/../main/resources/myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/alice/workspace/javaProject/src/main/../main/resources/myFile.txt&#39;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toAbsolutePath</span>());
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/Alice/workspace/javaProject/src/main/resources/myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/alice/workspace/javaProject/src/main/resources/myFile.txt&#39;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toRealPath</span>());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;myFile.txt&#39;</span>

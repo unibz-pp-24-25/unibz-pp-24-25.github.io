@@ -66,8 +66,6 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</loc>
   </url><url>
-    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/checked/</loc>
-  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/input/sections/property/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/content/</loc>
@@ -81,6 +79,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/navigate/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/background/sections/order/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/checked/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/install/</loc>
   </url><url>
@@ -106,6 +106,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/requirements/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/input/sections/serialize/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/branches/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/</loc>
@@ -119,6 +121,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/backtracking/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/ide/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/input/sections/json/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/</loc>
   </url><url>

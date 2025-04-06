@@ -13,17 +13,17 @@
 
 In the previous section, Alice created and manipulated a git repository (with two branches).
 She may also want to backup her work.
-To this end, she can upload some of her branches to a remote machine (often called &ldquo;a remote&rdquo;).
+To this end, she can upload some of her branches to a remote server.
 For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).
-Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.">
+Whenever Alice wants to upload the content of a branch, she can push this branch to the remote server.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/git/sections/collaboration/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Basics: network and collaboration">
   <meta property="og:description" content="Basics: network and collaboration # Network # In the previous section, Alice created and manipulated a git repository (with two branches).
-She may also want to backup her work. To this end, she can upload some of her branches to a remote machine (often called “a remote”). For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).
-Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.">
+She may also want to backup her work. To this end, she can upload some of her branches to a remote server. For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).
+Whenever Alice wants to upload the content of a branch, she can push this branch to the remote server.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -33,7 +33,7 @@ Whenever Alice wants to upload the content of a branch, she can push this branch
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/git/sections/collaboration/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.81a547c3811a83ecc1829cf8c214e37788da22078dbea8b17f8ac9f14645a6ce.js" integrity="sha256-gaVHw4Eag&#43;zBgpz4whTjd4jaIgeNvqixf4rJ8UZFps4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a850ab6c652e37d2397ba6bb5a8e5098c2945bcda9c87b579c75ba17a65bce3c.js" integrity="sha256-qFCrbGUuN9I5e6a7Wo5QmMKUW82pyHtXnHW6F6Zbzjw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -604,7 +604,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked</a>
   
 
         </li>
@@ -691,6 +691,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -1143,11 +1169,11 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>In the previous section, Alice created and manipulated a git repository (with two branches).</p>
 <p>She may also want to <em>backup</em> her work.
-To this end, she can upload some of her branches to a <strong>remote</strong> machine (often called &ldquo;a remote&rdquo;).
+To this end, she can upload some of her branches to a <strong>remote</strong> server.
 For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).</p>
-<p>Whenever Alice wants to upload the content of a branch, she can <strong>push</strong> this branch to the remote.</p>
+<p>Whenever Alice wants to upload the content of a branch, she can <strong>push</strong> this branch to the remote server.</p>
 <p>Alice may also want to work from another computer (or a virtual machine).
-She can achieve this by <strong>cloning</strong> the repository from the remote to this second machine.</p>
+She can achieve this by <strong>cloning</strong> the repository from the remote server to this second machine.</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong> By default, cloning a repository will only clone the main branch.
 But other branches (or all branches) can also be cloned explicitly.</p>
@@ -1179,14 +1205,14 @@ He can clone Alice&rsquo;s repository, and add his own commits.</p>
   <a class="anchor" href="#workflow">#</a>
 </h3>
 <p>Alice and Bob share the main branch of their repository, and this branch is called <code>main</code>.
-This generally means that there are (at least) 3 copies of this branch: one on Alice&rsquo;s machine, one on Bob&rsquo;s machine, and one on the remote.</p>
+This generally means that there are (at least) 3 copies of this branch: one on Alice&rsquo;s machine, one on Bob&rsquo;s machine, and one on the remote server.</p>
 <p>However Alice and Bob, do <em>not</em> work directly on this branch.
 Instead, each of them works on his/her own development branch (e.g. called <code>alice</code> and <code>bob</code> respectively).</p>
 <h4 id="backup">
   Backup
   <a class="anchor" href="#backup">#</a>
 </h4>
-<p>Alice regularly pushes the content of the branch <code>alice</code> to the remote, <em>for backup purposes only</em>.
+<p>Alice regularly pushes the content of the branch <code>alice</code> to the remote server, <em>for backup purposes only</em>.
 And so does Bob for the branch <code>bob</code>.</p>
 <p>However, Alice does not need a local copy of <code>bob</code>, and Bob does not need a local copy of <code>alice</code>.</p>
 <h4 id="sharing">
@@ -1204,7 +1230,7 @@ He now feels ready to share this code with Alice (via the branch <code>main</cod
 <li><em>updates</em> his local copy of <code>main</code> (with the <code>git pull</code> command), then</li>
 <li>merges <code>main</code> into <code>bob</code> (this may require fixing merge conflicts), then</li>
 <li>merges <code>bob</code> into <code>main</code>, then</li>
-<li>pushes <code>main</code> to the remote.</li>
+<li>pushes <code>main</code> to the remote server.</li>
 </ol>
 </blockquote>
 <p>And Alice follows the same procedure to share her code (using <code>alice</code> instead of <code>bob</code>).</p>

@@ -14,6 +14,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/project/sections/free_project/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/sections/packaging/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/input/sections/files/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/schedule/</loc>
@@ -33,6 +35,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/files/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/sections/layout/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/project/sections/board_game/</loc>
   </url><url>
@@ -54,6 +58,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/config/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/sections/pom/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/git_default_te/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/evaluation/</loc>
@@ -65,6 +71,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/objects/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/sections/artifact/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/input/sections/property/</loc>
   </url><url>
@@ -94,11 +102,15 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/custom/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/os/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/sections/building/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/</loc>
   </url><url>
@@ -149,6 +161,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/env/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/build/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/background/</loc>
   </url><url>

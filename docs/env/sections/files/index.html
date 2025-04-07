@@ -45,7 +45,7 @@ Examples. Common file name extensions include:
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.a850ab6c652e37d2397ba6bb5a8e5098c2945bcda9c87b579c75ba17a65bce3c.js" integrity="sha256-qFCrbGUuN9I5e6a7Wo5QmMKUW82pyHtXnHW6F6Zbzjw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.76215b68b60a03da2b996bed90b337f2dea13895107e3d46be479bf8e2435e1f.js" integrity="sha256-diFbaLYKA9ormWvtkLM38t6hOJUQfj1Gvkeb&#43;OJDXh8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1158,6 +1158,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#case">Case sensitivity</a></li>
         <li><a href="#separator">Path separator</a></li>
+        <li><a href="#good-practices">Good practices</a></li>
         <li><a href="#convention">Convention</a></li>
         <li><a href="#absolute">Absolute path</a></li>
         <li><a href="#relative-path">Relative path</a></li>
@@ -1329,6 +1330,21 @@ Some programs executed on Windows automatically convert the <code>/</code> path 
 In Java, a path can be safely written with <code>/</code>.
 At run time (i.e. when the program is executed), this symbol will be interpreted based on the underlying OS (i.e. as <code>\</code> on Windows, and as <code>/</code> on other OSs).
 However, a path written with <code>\</code> will be interpreted as such (therefore the program will throw an exception on OSs other than Windows).</p>
+</blockquote>
+<h3 id="good-practices">
+  Good practices
+  <a class="anchor" href="#good-practices">#</a>
+</h3>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The following are usually discouraged:</p>
+<ul>
+<li>path separators (<code>/</code> or <code>\</code>) in a file or folder name,</li>
+<li>whitespace characters in a file or folder name,</li>
+<li><code>.</code> in a folder name.</li>
+</ul>
+<p>Your file browser and/or file system may let you to create such names.
+But these may cause some programs to fail.</p>
 </blockquote>
 <h3 id="convention">
   Convention
@@ -1612,6 +1628,7 @@ As a (soft) rule of thumb, you generally want to <em>choose the location</em> of
       <ul>
         <li><a href="#case">Case sensitivity</a></li>
         <li><a href="#separator">Path separator</a></li>
+        <li><a href="#good-practices">Good practices</a></li>
         <li><a href="#convention">Convention</a></li>
         <li><a href="#absolute">Absolute path</a></li>
         <li><a href="#relative-path">Relative path</a></li>

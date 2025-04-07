@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Runtine vs checked
+  Runtime vs checked
   #
 
 
@@ -29,7 +29,7 @@ In Java, an Exception that is not a RuntimeException is called a checked excepti
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/errors/sections/checked/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Runtime vs checked">
-  <meta property="og:description" content="Runtine vs checked # Runtime exceptions # In Java, the simplest exceptions are the instances of the native class RuntimeException. These are also called unchecked exception.
+  <meta property="og:description" content="Runtime vs checked # Runtime exceptions # In Java, the simplest exceptions are the instances of the native class RuntimeException. These are also called unchecked exception.
 An unchecked exception that is not caught is automatically rethrown.
 The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
 Checked exceptions # In Java, an Exception that is not a RuntimeException is called a checked exception.">
@@ -42,7 +42,7 @@ Checked exceptions # In Java, an Exception that is not a RuntimeException is cal
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/checked/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.0434453fbbedf2942844ea8cbe2570a9fa36b4a7d3a06a4242f957209fb6aa57.js" integrity="sha256-BDRFP7vt8pQoROqMviVwqfo2tKfToGpCQvlXIJ&#43;2qlc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.216e5dad519542e271e31cf3c465e9cf8b2469d26e86ac293b51e2b2e0964778.js" integrity="sha256-IW5drVGVQuJx4xzzxGXpz4skadJuhqwpO1HisuCWR3g=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1266,9 +1266,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="runtine-vs-checked">
-  Runtine vs checked
-  <a class="anchor" href="#runtine-vs-checked">#</a>
+  <article class="markdown book-article"><h1 id="runtime-vs-checked">
+  Runtime vs checked
+  <a class="anchor" href="#runtime-vs-checked">#</a>
 </h1>
 <h2 id="unchecked">
   Runtime exceptions
@@ -1305,7 +1305,7 @@ Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the prog
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Then a method that calls <code>myMethod</code> will in turn have to catch the exception, or rethrow it explicitly, etc.</p>
+</span></span></code></pre></div><p>Then a method that calls <code>someMethod</code> will in turn have to catch the exception, or rethrow it explicitly, etc.</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
 Checked exceptions add boilerplate code to method signatures (e.g. <code>throws IOException</code> in the above example).

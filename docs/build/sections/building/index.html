@@ -42,7 +42,7 @@ The default lifecycle # Maven’s default lifecycle is a sequence of 23 operatio
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/build/sections/building/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.03326809752205c930eb512b838773bc37d3f3708ec2ac1bb7614d220c1c61bf.js" integrity="sha256-AzJoCXUiBckw61Erg4dzvDfT83COwqwbt2FNIgwcYb8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d208ae415420f47b67f6eeb7544a7c406f38cc3b8e24ef3c7e999792f3494a32.js" integrity="sha256-0giuQVQg9Htn9u63VEp8QG84zDuOJO88fpmXkvNJSjI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1402,7 +1402,7 @@ in the <code>pom.xml</code> file <em>of the project</em>, as follows:</p>
 </span></span></code></pre></div><p>A plugin can contain several goals, and these may or may not be assigned to a specific phase.</p>
 <p>Besides, a goal can be executed independently from a phase, with the command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn myplugin:myGoal
-</span></span></code></pre></div><p>For instance, the <a href="https://github.com/openjfx/javafx-maven-plugin">javafx maven plugin</a> has a goal <code>run</code> to start a JavaFX application.
+</span></span></code></pre></div><p>For instance, the <a href="https://github.com/openjfx/javafx-maven-plugin">Javafx Maven plugin</a> has a goal <code>run</code> to start a JavaFX application.
 It can be executed with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javafx:run
 </span></span></code></pre></div><h2 id="installPlugin">
@@ -1410,7 +1410,7 @@ It can be executed with:</p>
   <a class="anchor" href="#installPlugin">#</a>
 </h2>
 <p>Maven plugins are available for a variety of tasks, like code analysis, Javadoc generation, parser generation, etc.</p>
-<p>An plugin is a <a href="https://unibz-pp-24-25.github.io/docs/build/sections/artifact/">Maven artifact</a>.
+<p>A plugin is a <a href="https://unibz-pp-24-25.github.io/docs/build/sections/artifact/">Maven artifact</a>.
 Similarly to a <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/">dependency</a>, an external plugin can be downloaded from Maven Central and installed into the <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/#localRepo">local repository</a>
 , as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
@@ -1425,7 +1425,7 @@ Similarly to a <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dep
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
-</span></span></code></pre></div><p>However, as illustrated above, additional XML attributes may be needed to configure the plugin.
+</span></span></code></pre></div><p>However, as illustrated with <a href="https://github.com/openjfx/javafx-maven-plugin">this example</a>, additional XML attributes may be needed to configure the plugin.
 These are often specific to a plugin.</p>
 <h2 id="useful-plugins">
   Useful plugins
@@ -1495,9 +1495,9 @@ This allows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-javadoc-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.6.3<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.11.2<span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;configuration&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;source&gt;</span>17<span style="color:#f92672">&lt;/source&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;source&gt;</span>21<span style="color:#f92672">&lt;/source&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/configuration&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
 </span></span></code></pre></div><p>This plugin has <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">many goals</a>, which are often executed independently (i.s. not bound to a phase).</p>

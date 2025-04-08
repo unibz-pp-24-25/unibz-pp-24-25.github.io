@@ -35,7 +35,7 @@ Finding a library’s coordinates # The coordinates of a library are often provi
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.03326809752205c930eb512b838773bc37d3f3708ec2ac1bb7614d220c1c61bf.js" integrity="sha256-AzJoCXUiBckw61Erg4dzvDfT83COwqwbt2FNIgwcYb8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d208ae415420f47b67f6eeb7544a7c406f38cc3b8e24ef3c7e999792f3494a32.js" integrity="sha256-0giuQVQg9Htn9u63VEp8QG84zDuOJO88fpmXkvNJSjI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1277,7 +1277,7 @@ This repository contains more than 260.000 artifacts (more than 6 million when c
 <p>The coordinates of a library are often provided as part of its documentation.
 For instance, this is the case of Google&rsquo;s <a href="https://github.com/google/guava?tab=readme-ov-file#adding-guava-to-your-build">Guava</a> library.</p>
 <p>Alternatively, <a href="https://mvnrepository.com/">this website</a> can be used to search for the coordinates of an artifact on Maven Central (as well as 1990 other repositories).
-For instance, <a href="https://mvnrepository.com/artifact/com.github.haifengl/smile-core/3.1.0">here</a> are the coordinates for the latest version of the <a href="https://haifengl.github.io/index.html">Smile</a> library for machine learning.</p>
+For instance, <a href="https://mvnrepository.com/artifact/com.github.haifengl/smile-core/4.3.0">here</a> are the coordinates for the latest version of the <a href="https://haifengl.github.io/index.html">Smile</a> library for machine learning.</p>
 <h2 id="localRepo">
   Local repository
   <a class="anchor" href="#localRepo">#</a>
@@ -1311,11 +1311,14 @@ Maven (like Gradle) does not support cyclic dependencies, i.e. an artifact canno
 <label for="tabs-exercise_mv_dep_graph-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Does this imply that the dependencies of an artifact form a tree?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_mv_dep_graph" id="tabs-exercise_mv_dep_graph-1"  />
 <label for="tabs-exercise_mv_dep_graph-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>No.
-A tree is a rooted acyclic graph, but the converse does not hold.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!-- No. -->
+<!-- A tree is a rooted acyclic graph, but the converse does not hold. -->
+<!-- </div>
+ -->
 </div>
 <p>To display the dependency graph of a project (unraveled as a tree), run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn dependency:tree
@@ -1354,7 +1357,7 @@ Here is how to declare dependencies on Guava, Smile and JUNIT 5, while specifyin
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.github.haifengl<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>smile-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>3.1.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>4.3.0<span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>

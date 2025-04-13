@@ -36,7 +36,7 @@ A project of their choice, or Their own version of the board game used as our ru
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/project/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d208ae415420f47b67f6eeb7544a7c406f38cc3b8e24ef3c7e999792f3494a32.js" integrity="sha256-0giuQVQg9Htn9u63VEp8QG84zDuOJO88fpmXkvNJSjI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.349c5e1f1b9dd53b64eafc8b0c1bd31de5084122f21c870309cad20428f96494.js" integrity="sha256-NJxeHxud1Ttk6vyLDBvTHeUIQSLyHIcDCcrSBCj5ZJQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/project/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -635,6 +635,66 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
   
 
         </li>
@@ -1298,13 +1358,13 @@ https://github.com/alex-shpak/hugo-book
 If a project incorporates external code, it has to be <em>referenced</em> clearly in the <code>README.md</code> file of the project.
 If the project takes inspiration from a tutorial or the source code of another project, then this should be referenced as well.</p>
 <p>The source code must be submitted as a GitHub repository.
-The <a href="%7b%7b%22../git/sections/basics.md%22%25%7d%7d">commit history</a> must reflect the <em>individual contribution</em> of each member of the group.
+The <a href="https://unibz-pp-24-25.github.io/docs/git/sections/basics/">commit history</a> must reflect the <em>individual contribution</em> of each member of the group.
 For this reason:</p>
 <ul>
 <li>each student should use a different (and only one) GitHub account, and</li>
 <li>each student should commit his/her <em>own code</em>.</li>
 </ul>
-<p>The repository should contain at its root a <a href="%7b%7b%22../git/sections/ignore.md%22%25%7d%7d"><code>.gitignore</code></a> file hat indicates files that should not be tracked.
+<p>The repository should contain at its root a <a href="https://unibz-pp-24-25.github.io/docs/git/sections/ignore/"><code>.gitignore</code></a> file hat indicates files that should not be tracked.
 In particular, a repository should <em>not</em> contain:</p>
 <ul>
 <li>compiled classes,</li>
@@ -1320,13 +1380,13 @@ In particular, a repository should <em>not</em> contain:</p>
   <a class="anchor" href="#dependencies-build-and-packaging">#</a>
 </h3>
 <p>Any additional Java library can be used in a project.</p>
-<p>The project should be build with either <a href="%7b%7b%22../build/_index.md#maven%22%7d%7d">Maven</a> or <a href="https://unibz-pp-24-25.github.io/docs/build/#gradle">Gradle</a>.
+<p>The project should be build with either <a href="https://unibz-pp-24-25.github.io/docs/build/#maven">Maven</a> or <a href="https://unibz-pp-24-25.github.io/docs/build/#gradle">Gradle</a>.
 It should run on the <a href="https://unibz-pp-24-25.github.io/docs/env/sections/eval/">evaluation environment</a> via <em>command line</em> instructions.</p>
 <p>For instance (depending on how the project is designed), the instructions to build the executable may be:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><p>and the instruction to run the executable may be (assuming that the executable is called <code>myJar.jar</code> and that the program takes two strings as input):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -jar myJar.jar &lt;firstInput&gt; &lt;secondInput&gt;
-</span></span></code></pre></div><p>If the executable cannot be built in the evaluation environment, then an <a href="%7b%7b%22../build/sections/building.md#assembly%22%7d%7d">über-jar</a> should be provided that can run in this environment (via command line still).</p>
+</span></span></code></pre></div><p>If the executable cannot be built in the evaluation environment, then an <a href="https://unibz-pp-24-25.github.io/docs/build/sections/building/#assembly">über-jar</a> should be provided that can run in this environment (via command line still).</p>
 <!--In this case, you may use a [GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) to share this über-jar.-->
 <h3 id="documentation">
   Documentation

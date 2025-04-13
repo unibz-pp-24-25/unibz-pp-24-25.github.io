@@ -28,7 +28,7 @@ When the execution of a method starts, the method is “pushed” on top of the 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d208ae415420f47b67f6eeb7544a7c406f38cc3b8e24ef3c7e999792f3494a32.js" integrity="sha256-0giuQVQg9Htn9u63VEp8QG84zDuOJO88fpmXkvNJSjI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.349c5e1f1b9dd53b64eafc8b0c1bd31de5084122f21c870309cad20428f96494.js" integrity="sha256-NJxeHxud1Ttk6vyLDBvTHeUIQSLyHIcDCcrSBCj5ZJQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -626,6 +626,66 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
   
 
         </li>
@@ -1343,32 +1403,347 @@ In our game, consider the following implementation of the method <code>callReinf
 </div></blockquote>
 <p>When the method <code>callReinforcement</code> is called, it is added (a.k.a. <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">pushed</a>) on top of the call stack.
 This is rendered by a debugger as:</p>
-<pre tabindex="0"><code>callReinforcement
-&lt;rest of the call stack&gt;
-</code></pre><p>If execution &ldquo;reaches&rdquo; Line 13, then the method <code>generateRandomUnit</code> is called and added to the stack:</p>
-<pre tabindex="0"><code>generateRandomUnit
-callReinforcement: 13
-&lt;rest of the call stack&gt;
-</code></pre><p>When the method <code>generateRandomUnit</code> terminates, it passes control (as well as a <code>Unit</code>) back to the method that called it, namely <code>callReinforcement</code>,
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 200 41"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='120' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='128' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>&gt;</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>If execution &ldquo;reaches&rdquo; Line 13, then the method <code>generateRandomUnit</code> is called and added to the stack:</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 200 57"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='80' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='88' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='104' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>U</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='112' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='120' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='120' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='128' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='128' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='136' y='20' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='144' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='152' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>3</text>
+<text text-anchor='middle' x='160' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='176' y='36' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='184' y='36' fill='currentColor' style='font-size:1em'>&gt;</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>When the method <code>generateRandomUnit</code> terminates, it passes control (as well as a <code>Unit</code>) back to the method that called it, namely <code>callReinforcement</code>,
 which can resume its execution:</p>
-<pre tabindex="0"><code>callReinforcement
-&lt;rest of the call stack&gt;
-</code></pre><p>Similarly, when execution &ldquo;reaches&rdquo; Line 14, <code>findInsertionSpot</code> is added to the stack, executed, and then removed from the stack, passing control back to <code>callReinforcement</code>.</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 200 41"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='120' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='128' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>&gt;</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>Similarly, when execution &ldquo;reaches&rdquo; Line 14, <code>findInsertionSpot</code> is added to the stack, executed, and then removed from the stack, passing control back to <code>callReinforcement</code>.</p>
 <p>Then if execution &ldquo;reaches&rdquo; Line 16, <code>addUnit</code> is executed, which in turn calls <code>performUnitMerges</code>:</p>
-<pre tabindex="0"><code>performUnitMerges
-addUnit: 32
-callReinforcement: 16
-&lt;rest of the call stack&gt;
-</code></pre><p>etc.</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 200 73"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='0' y='52' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='8' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='16' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>U</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='24' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='32' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='48' y='52' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>U</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='56' y='52' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='64' y='36' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>3</text>
+<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='72' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='80' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='80' y='52' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>M</text>
+<text text-anchor='middle' x='88' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='88' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='96' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='104' y='36' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='104' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='112' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='112' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='120' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='120' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='128' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='128' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='136' y='36' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='144' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='152' y='36' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='152' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='160' y='36' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='160' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='176' y='52' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='184' y='52' fill='currentColor' style='font-size:1em'>&gt;</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>etc.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
 If a method is recursive (i.e. if it calls itself, <em>directly or indirectly</em>), then it may appear multiple times in the call stack.
 E.g.:</p>
-<pre tabindex="0"><code>method1
-method2: 16
-method1: 8
-&lt;rest of the call stack&gt;
-</code></pre></blockquote>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 200 73"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='0' y='52' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='16' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='24' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='32' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='48' y='52' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='56' y='52' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>8</text>
+<text text-anchor='middle' x='72' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='80' y='52' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='88' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='104' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='112' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='120' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='128' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='144' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='152' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='160' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='176' y='52' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='184' y='52' fill='currentColor' style='font-size:1em'>&gt;</text>
+</g>
+
+    </svg>
+  
+</div>
+</blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
 A <strong>stack overflow</strong> occurs when the size of the call stack exceeds the capacity allowed by the execution environment.

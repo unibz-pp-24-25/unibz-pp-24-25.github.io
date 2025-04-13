@@ -36,7 +36,7 @@ lookup (or get) takes a key as input, and returns the value for this key (if any
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d208ae415420f47b67f6eeb7544a7c406f38cc3b8e24ef3c7e999792f3494a32.js" integrity="sha256-0giuQVQg9Htn9u63VEp8QG84zDuOJO88fpmXkvNJSjI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.349c5e1f1b9dd53b64eafc8b0c1bd31de5084122f21c870309cad20428f96494.js" integrity="sha256-NJxeHxud1Ttk6vyLDBvTHeUIQSLyHIcDCcrSBCj5ZJQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -634,6 +634,66 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
   
 
         </li>
@@ -1484,10 +1544,39 @@ that takes a board as input, and prints the number of unit of each color, in any
 <p>For instance, for the board below:</p>
 <p><img src="/img/adt/miniboard.png" alt="" /></p>
 <p>The method could print:</p>
-<pre tabindex="0"><code>blue: 1
-yellow: 2
-red: 2
-</code></pre></div>
+<div class="goat svg-container ">
+<pre><code>&lt;svg
+  xmlns=&quot;http://www.w3.org/2000/svg&quot;
+  font-family=&quot;Menlo,Lucida Console,monospace&quot;
+  
+    viewBox=&quot;0 0 80 57&quot;
+  &gt;
+  &lt;g transform='translate(8,16)'&gt;
+</code></pre>
+<p><text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'>2</text>
+</g></p>
+<pre><code>&lt;/svg&gt;
+</code></pre>
+</div>
+</div>
 <input type="radio" class="toggle" name="tabs-exercise_map_miniboard" id="tabs-exercise_map_miniboard-1"  />
 <label for="tabs-exercise_map_miniboard-1">Possible solution</label>
 <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printNumberOfUnitsByColor</span>(Unit<span style="color:#f92672">[][]</span> board) {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -23,7 +23,7 @@ The algorithm seen earlier to print all files in a folder uses n-ary recursion.
 All the binary tree algorithms seen earlier use binary recursion.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/nary/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="N-ary recursion">
   <meta property="og:description" content="N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion.
@@ -37,15 +37,49 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <title>N-ary recursion | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/recursion/sections/nary/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.ca9333395f39812077e8cc12fcf95059280455fd98b16d80c90ce7dfc46d2044.js" integrity="sha256-ypMzOV85gSB36MwS/PlQWSgEVf2YsW2AyQzn38RtIEQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.349c5e1f1b9dd53b64eafc8b0c1bd31de5084122f21c870309cad20428f96494.js" integrity="sha256-NJxeHxud1Ttk6vyLDBvTHeUIQSLyHIcDCcrSBCj5ZJQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -179,6 +213,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -199,6 +293,962 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle" checked />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="active">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -299,15 +1349,15 @@ A recursive method that is <em>not</em> linear recursive uses <strong>n-ary recu
 </ul>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
-<p>The algorithm seen <a href="#printFiles">earlier</a> to print all files in a folder uses n-ary recursion.</p>
-<p>All the binary tree algorithms seen <a href="#binaryTrees">earlier</a> use binary recursion.</p>
+<p>The algorithm seen <a href="https://unibz-pp-24-25.github.io/docs/recursion/#printFiles">earlier</a> to print all files in a folder uses n-ary recursion.</p>
+<p>All the binary tree algorithms seen <a href="https://unibz-pp-24-25.github.io/docs/recursion/#binaryTrees">earlier</a> use binary recursion.</p>
 </blockquote>
 <h2 id="divide-and-conquer">
   Divide and conquer
   <a class="anchor" href="#divide-and-conquer">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="#methodology">earlier</a> to solve a problem recursively.
+<p>The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="https://unibz-pp-24-25.github.io/docs/recursion/#methodology">earlier</a> to solve a problem recursively.
 In the divide-and-conquer approach, the smaller inputs $I_1$, .., $I_k$ usually have (nearly) the <em>same size</em>.</p>
 </blockquote>
 <p>Divide-and-conquer has been instrumental in discovering efficient solutions to pervasive computational problems.
@@ -326,7 +1376,7 @@ Well-known examples include:</p>
 <p><strong><em>Input:</em></strong> an array $A$</p>
 <p><strong><em>Output:</em></strong> a sorted array with the same elements as $A$</p></blockquote>
 <p><strong><em>Observation.</em></strong>
-As we saw <a href="">already</a>, the array can be of any type (<code>int</code>, <code>String</code>, <code>City</code>, <code>Unit</code>, etc.), and the sorting criterion can be any <a href="">total preorder</a> over this type.</p>
+As we saw <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/">already</a>, the array can be of any type (<code>int</code>, <code>String</code>, <code>City</code>, <code>Unit</code>, etc.), and the sorting criterion can be any <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#preorder">total preorder</a> over this type.</p>
 <blockquote class="book-hint warning">
 <p>The Mergesort algorithm may be summarized as follows:</p>
 <ul>
@@ -377,63 +1427,68 @@ We only used it to keep the explanation simple.</p>
 <div class="book-tabs-content markdown-inner"><p>To complete this algorithm, implement (in pseudocode) the auxiliary method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
 </span></span></code></pre></div><p>that takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
-<p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="">stable</a>.</p>
+<p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a>.</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-1"  />
 <label for="tabs-exercise_mergeSort-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>Iterate over <code>A</code> and <code>B</code> in parallel:</p>
-<ul>
-<li>if <code>A[0]</code> (resp. <code>B[0]</code>) is smaller than <code>B[0]</code> (resp. <code>A[0]</code>),
-then:
-<ul>
-<li>add <code>A[0]</code> (resp. <code>B[0]</code>) to the output array, and</li>
-<li>repeat with <code>A[1]</code> and <code>B[0]</code> (resp. <code>A[0]</code> and <code>B[1]</code>),</li>
-<li>etc.</li>
-</ul>
-</li>
-<li>when reaching the end of <code>A</code> (resp. <code>B</code>), add the remaining elements of <code>B</code> (resp. <code>A</code>) to the output array.</li>
-</ul>
-<p>More precisely:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Output array</span>
-</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> C <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Type<span style="color:#f92672">[</span>A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> B.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over A</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over B</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 0
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iteratate over C</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// while we have not reached the end of A or B</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (a <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&amp;&amp;</span> b <span style="color:#f92672">&lt;</span> B.<span style="color:#a6e22e">length</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>) {
-</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            a<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            b<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If we reached the end of A,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// append all remaining elements of B to the output array.</span>
-</span></span><span style="display:flex;"><span>        append(B, b, C, c)
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Otherwise we reached the end of B.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// So append all remaining elements of A to the output array.</span>
-</span></span><span style="display:flex;"><span>        append(A, a, C, c)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>append (Type<span style="color:#f92672">[]</span> D, <span style="color:#66d9ef">int</span> d, Type<span style="color:#f92672">[]</span> C, <span style="color:#66d9ef">int</span> c) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (d <span style="color:#f92672">&lt;</span> D.<span style="color:#a6e22e">length</span>){
-</span></span><span style="display:flex;"><span>        C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> D<span style="color:#f92672">[</span>d<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>        d<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- Iterate over `A` and `B` in parallel: -->
+<!---->
+<!-- - if `A[0]` (resp. `B[0]`) is smaller than `B[0]` (resp. `A[0]`), -->
+<!--   then: -->
+<!--   - add `A[0]` (resp. `B[0]`) to the output array, and -->
+<!--   - repeat with `A[1]` and `B[0]` (resp. `A[0]` and `B[1]`), -->
+<!--   - etc. -->
+<!-- - when reaching the end of `A` (resp. `B`), add the remaining elements of `B` (resp. `A`) to the output array. -->
+<!---->
+<!-- More precisely: -->
+<!---->
+<!-- ```java -->
+<!-- Type[] merge(Type[] A, Type[] B){ -->
+<!---->
+<!--     // Output array -->
+<!--     Type[] C = new Type[A.length + B.length] -->
+<!---->
+<!--     // Index to iterate over A -->
+<!--     int a = 0 -->
+<!--     // Index to iterate over B -->
+<!--     int b = 0 -->
+<!--     // Index to iteratate over C -->
+<!--     int c = 0 -->
+<!---->
+<!--     // while we have not reached the end of A or B -->
+<!--     while (a < A.length && b < B.length) { -->
+<!--         if(A[a] <= B[b]) { -->
+<!--             C[c] = A[a] -->
+<!--             a++ -->
+<!--         } else { -->
+<!--             C[c] = B[b] -->
+<!--             b++ -->
+<!--     } -->
+<!---->
+<!--     // If we reached the end of A, -->
+<!--     if(a == A.length){ -->
+<!--         // append all remaining elements of B to the output array. -->
+<!--         append(B, b, C, c) -->
+<!--     } else -->
+<!--         // Otherwise we reached the end of B. -->
+<!--         // So append all remaining elements of A to the output array. -->
+<!--         append(A, a, C, c) -->
+<!--     } -->
+<!-- } -->
+<!---->
+<!-- append (Type[] D, int d, Type[] C, int c) { -->
+<!--     while (d < D.length){ -->
+<!--         C[c] = D[d] -->
+<!--         d++ -->
+<!--     } -->
+<!-- } -->
+<!-- ``` -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Merge sort in action.</em></strong>
@@ -443,13 +1498,13 @@ or <a href="https://willrosenbaum.com/blog/2022/merge-sort/">this (more accurate
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
-Merge sort is a <a href="">stable</a> sorting algorithm.</p>
+Merge sort is a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a> sorting algorithm.</p>
 </blockquote>
 <h2 id="tree-and-graph-traversal">
   Tree and graph traversal
   <a class="anchor" href="#tree-and-graph-traversal">#</a>
 </h2>
-<p><a href="#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
+<p><a href="https://unibz-pp-24-25.github.io/docs/recursion/#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>One of these algorithms was the so-called &ldquo;pre-order traversal&rdquo;:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
@@ -506,10 +1561,13 @@ which indicates whether a node has already been visited during a traversal:</p>
 <p><img src="/img/graphs/graph_labeled.svg" alt="" /></p>
 <p>What does the above algorithm print for input node A, assuming that the children of each node are sorted in label&rsquo;s alphabetical order?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_graph_traversal" id="tabs-exercise_graph_traversal-1"  />
 <label for="tabs-exercise_graph_traversal-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>A B D F C E</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!-- A B D F C E -->
+<!-- </div>
+ -->
 </div>
 <h2 id="minimax">
   Minimax/Maximin
@@ -534,11 +1592,17 @@ Here we only focus on the algorithm in its basic form.</p>
 <p>Assuming that Alice plays optimally, she already has won the game.
 Can you see why?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_tictactoe" id="tabs-exercise_tictactoe-1"  />
 <label for="tabs-exercise_tictactoe-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p><img src="/img/tictactoe/state/tictactoe.svg" alt="" /></p>
-<p>If Alice plays top right or bottom right, then <em>regardless</em> of Bob&rsquo;s action, she can complete a line or a diagonal as her next move.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- ![](/img/tictactoe/state/tictactoe.svg) -->
+<!---->
+<!-- If Alice plays top right or bottom right, then _regardless_ of Bob's action, she can complete a line or a diagonal as her next move. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <p>Let us generalize this observation.</p>
 <blockquote class="book-hint warning">
@@ -565,10 +1629,14 @@ In such a tree, several nodes may represent the <em>same</em> board state (e.g. 
 <label for="tabs-exercise_tree_winning-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>In the tree above, determine whether Alice has already won the game (assuming that she plays optimally).</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_tree_winning" id="tabs-exercise_tree_winning-1"  />
 <label for="tabs-exercise_tree_winning-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>The answer is yes, if Alice selects the right child of the tree&rsquo;s root.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!-- The answer is yes, if Alice selects the right child of the tree's root. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>

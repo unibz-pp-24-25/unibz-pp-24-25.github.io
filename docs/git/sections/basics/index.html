@@ -51,7 +51,7 @@ an ID, the name of the commit’s author, a timestamp, a message that describes 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/git/sections/basics/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7e4de940d83d8d262d1f1b2c5f875e3ddfff0203d9b1d83adb333bbee6f8c8ec.js" integrity="sha256-fk3pQNg9jSYtHxssX4dePd//AgPZsdg62zM7vub4yOw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c9c096d2d3444b737d0eea7d2b526335053f7fb1be1a699293b06dbda55cc775.js" integrity="sha256-ycCW0tNES3N9Dup9K1JjNQU/f7G&#43;GmmSk7BtvaVcx3U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1448,148 +1448,16 @@ Because the two branches have diverged, this will generate a new commit, called 
 <p>Before she can create a merge commit, Alice may need to fix potential <strong>conflicts</strong> between the diverging branches.</p>
 <p>In this happens, then git will provide Alice a list of files that contain so-called &ldquo;merge conflicts&rdquo;.
 In each of theses files, each conflict will be identified as follows:</p>
-
-
-
-<div class="goat svg-container ">
-  
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      font-family="Menlo,Lucida Console,monospace"
-      
-        viewBox="0 0 400 153"
-      >
-      <g transform='translate(8,16)'>
-<polygon points='8.000000,0.000000 -4.000000,-5.600000 -4.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 0.000000, 0.000000)'></polygon>
-<polygon points='8.000000,128.000000 -4.000000,122.400002 -4.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 0.000000, 128.000000)'></polygon>
-<polygon points='16.000000,0.000000 4.000000,-5.600000 4.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 8.000000, 0.000000)'></polygon>
-<polygon points='16.000000,128.000000 4.000000,122.400002 4.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 8.000000, 128.000000)'></polygon>
-<polygon points='24.000000,0.000000 12.000000,-5.600000 12.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 16.000000, 0.000000)'></polygon>
-<polygon points='24.000000,128.000000 12.000000,122.400002 12.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 16.000000, 128.000000)'></polygon>
-<polygon points='32.000000,0.000000 20.000000,-5.600000 20.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 24.000000, 0.000000)'></polygon>
-<polygon points='32.000000,128.000000 20.000000,122.400002 20.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 24.000000, 128.000000)'></polygon>
-<polygon points='40.000000,0.000000 28.000000,-5.600000 28.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 32.000000, 0.000000)'></polygon>
-<polygon points='40.000000,128.000000 28.000000,122.400002 28.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 32.000000, 128.000000)'></polygon>
-<polygon points='48.000000,0.000000 36.000000,-5.600000 36.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 40.000000, 0.000000)'></polygon>
-<polygon points='48.000000,128.000000 36.000000,122.400002 36.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 40.000000, 128.000000)'></polygon>
-<polygon points='56.000000,0.000000 44.000000,-5.600000 44.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 48.000000, 0.000000)'></polygon>
-<polygon points='56.000000,128.000000 44.000000,122.400002 44.000000,133.600006' fill='currentColor' transform='rotate(0.000000, 48.000000, 128.000000)'></polygon>
-<text text-anchor='middle' x='0' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='8' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>&lt;</text>
-<text text-anchor='middle' x='16' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='16' y='100' fill='currentColor' style='font-size:1em'>&lt;</text>
-<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>C</text>
-<text text-anchor='middle' x='24' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='24' y='100' fill='currentColor' style='font-size:1em'>C</text>
-<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>o</text>
-<text text-anchor='middle' x='32' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='32' y='100' fill='currentColor' style='font-size:1em'>o</text>
-<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='40' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='40' y='100' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>f</text>
-<text text-anchor='middle' x='48' y='68' fill='currentColor' style='font-size:1em'>=</text>
-<text text-anchor='middle' x='48' y='100' fill='currentColor' style='font-size:1em'>f</text>
-<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>l</text>
-<text text-anchor='middle' x='56' y='100' fill='currentColor' style='font-size:1em'>l</text>
-<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>H</text>
-<text text-anchor='middle' x='64' y='36' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='64' y='100' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='64' y='132' fill='currentColor' style='font-size:1em'>&lt;</text>
-<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>E</text>
-<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='72' y='100' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='72' y='132' fill='currentColor' style='font-size:1em'>m</text>
-<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>A</text>
-<text text-anchor='middle' x='80' y='36' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='80' y='100' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='80' y='132' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>D</text>
-<text text-anchor='middle' x='88' y='36' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='88' y='100' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='88' y='132' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='96' y='36' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='96' y='100' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='96' y='132' fill='currentColor' style='font-size:1em'>g</text>
-<text text-anchor='middle' x='104' y='36' fill='currentColor' style='font-size:1em'>g</text>
-<text text-anchor='middle' x='104' y='100' fill='currentColor' style='font-size:1em'>g</text>
-<text text-anchor='middle' x='104' y='132' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='112' y='132' fill='currentColor' style='font-size:1em'>d</text>
-<text text-anchor='middle' x='120' y='36' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='120' y='100' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='120' y='132' fill='currentColor' style='font-size:1em'>B</text>
-<text text-anchor='middle' x='128' y='36' fill='currentColor' style='font-size:1em'>o</text>
-<text text-anchor='middle' x='128' y='100' fill='currentColor' style='font-size:1em'>o</text>
-<text text-anchor='middle' x='128' y='132' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='136' y='36' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='136' y='100' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='136' y='132' fill='currentColor' style='font-size:1em'>a</text>
-<text text-anchor='middle' x='144' y='36' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='144' y='100' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='144' y='132' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='152' y='36' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='152' y='100' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='152' y='132' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='160' y='36' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='160' y='100' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='160' y='132' fill='currentColor' style='font-size:1em'>h</text>
-<text text-anchor='middle' x='168' y='36' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='168' y='100' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='168' y='132' fill='currentColor' style='font-size:1em'>N</text>
-<text text-anchor='middle' x='176' y='132' fill='currentColor' style='font-size:1em'>a</text>
-<text text-anchor='middle' x='184' y='36' fill='currentColor' style='font-size:1em'>f</text>
-<text text-anchor='middle' x='184' y='100' fill='currentColor' style='font-size:1em'>f</text>
-<text text-anchor='middle' x='184' y='132' fill='currentColor' style='font-size:1em'>m</text>
-<text text-anchor='middle' x='192' y='36' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='192' y='100' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='192' y='132' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='200' y='36' fill='currentColor' style='font-size:1em'>o</text>
-<text text-anchor='middle' x='200' y='100' fill='currentColor' style='font-size:1em'>o</text>
-<text text-anchor='middle' x='200' y='132' fill='currentColor' style='font-size:1em'>&gt;</text>
-<text text-anchor='middle' x='208' y='36' fill='currentColor' style='font-size:1em'>m</text>
-<text text-anchor='middle' x='208' y='100' fill='currentColor' style='font-size:1em'>m</text>
-<text text-anchor='middle' x='224' y='36' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='224' y='100' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='232' y='36' fill='currentColor' style='font-size:1em'>h</text>
-<text text-anchor='middle' x='232' y='100' fill='currentColor' style='font-size:1em'>h</text>
-<text text-anchor='middle' x='240' y='36' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='240' y='100' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='256' y='36' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='256' y='100' fill='currentColor' style='font-size:1em'>m</text>
-<text text-anchor='middle' x='264' y='36' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='264' y='100' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='272' y='36' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='272' y='100' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='280' y='36' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='280' y='100' fill='currentColor' style='font-size:1em'>g</text>
-<text text-anchor='middle' x='288' y='36' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='288' y='100' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='296' y='36' fill='currentColor' style='font-size:1em'>v</text>
-<text text-anchor='middle' x='296' y='100' fill='currentColor' style='font-size:1em'>d</text>
-<text text-anchor='middle' x='304' y='36' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='312' y='36' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='312' y='100' fill='currentColor' style='font-size:1em'>b</text>
-<text text-anchor='middle' x='320' y='36' fill='currentColor' style='font-size:1em'>g</text>
-<text text-anchor='middle' x='320' y='100' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='328' y='100' fill='currentColor' style='font-size:1em'>a</text>
-<text text-anchor='middle' x='336' y='36' fill='currentColor' style='font-size:1em'>b</text>
-<text text-anchor='middle' x='336' y='100' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='344' y='36' fill='currentColor' style='font-size:1em'>r</text>
-<text text-anchor='middle' x='344' y='100' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='352' y='36' fill='currentColor' style='font-size:1em'>a</text>
-<text text-anchor='middle' x='352' y='100' fill='currentColor' style='font-size:1em'>h</text>
-<text text-anchor='middle' x='360' y='36' fill='currentColor' style='font-size:1em'>n</text>
-<text text-anchor='middle' x='360' y='100' fill='currentColor' style='font-size:1em'>&gt;</text>
-<text text-anchor='middle' x='368' y='36' fill='currentColor' style='font-size:1em'>c</text>
-<text text-anchor='middle' x='376' y='36' fill='currentColor' style='font-size:1em'>h</text>
-<text text-anchor='middle' x='384' y='36' fill='currentColor' style='font-size:1em'>&gt;</text>
-</g>
-
-    </svg>
-  
-</div>
-<h2 id="after-a-merge">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;Conflicting content from the receiving branch&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>=======
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;Conflicting content from the merged branch&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;mergedBranchName&gt;
+</span></span></code></pre></div><h2 id="after-a-merge">
   After a merge
   <a class="anchor" href="#after-a-merge">#</a>
 </h2>

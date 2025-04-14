@@ -44,7 +44,7 @@ takes as input an absolute path to an (existing) folder $f$, and prints an absol
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.cbce2fbec5e2e4d79373fb9d5a5a62b33f320adef0beb2f26dbd72584bd64392.js" integrity="sha256-y84vvsXi5NeTc/udWlpisz8yCt7wvrLybb1yWEvWQ5I=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.822cb7fe8b0b7d75da137f1a7559676a23d9e36f09e0add4769944dc7a9b1d56.js" integrity="sha256-giy3/osLfXXaE38adVlnaiPZ428J4K3UdplE3HqbHVY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/recursion/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -1758,32 +1758,31 @@ For instance, some problems with an array as input can be solved recursively by 
 For instance, in a binary tree, return the least label (in alphabetical order) and the maximal depth at which it occurs.</p>
 <p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Character leastLabel, <span style="color:#66d9ef">int</span> depth){};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Character leastLabel, <span style="color:#66d9ef">int</span> depth){};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Result <span style="color:#a6e22e">leastLabelAndDepth</span>(Node root) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Result(<span style="color:#66d9ef">null</span>, 0);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// recursive calls</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Recursive calls.</span>
 </span></span><span style="display:flex;"><span>    Result leftResult <span style="color:#f92672">=</span> leastLabelAndDepth(root.<span style="color:#a6e22e">leftChild</span>);
 </span></span><span style="display:flex;"><span>    Result rightResult <span style="color:#f92672">=</span> leastLabelAndDepth(root.<span style="color:#a6e22e">rightChild</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// initialize the return values with the values returned by the left recursive call</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initialize the return values with the values returned by the left recursive call.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> leastLabel <span style="color:#f92672">=</span> leftResult.<span style="color:#a6e22e">leastLabel</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> depth <span style="color:#f92672">=</span> leftResult.<span style="color:#a6e22e">depth</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// if the least label in the right subtree is &lt; to the least label in the left subtree</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the least label in the right subtree is &lt; to the least label in the left subtree</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (rightResult.<span style="color:#a6e22e">leastLabel</span> <span style="color:#f92672">&lt;</span> leastLabel) {
 </span></span><span style="display:flex;"><span>        leastLabel <span style="color:#f92672">=</span> rightResult.<span style="color:#a6e22e">leastLabel</span>;
 </span></span><span style="display:flex;"><span>        depth <span style="color:#f92672">=</span> rightResult.<span style="color:#a6e22e">depth</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// if the least labels in the right and left subtrees are identical</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the least labels in the right and left subtrees are identical</span>
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (rightResult.<span style="color:#a6e22e">leastLabel</span> <span style="color:#f92672">==</span> leastLabel) {
 </span></span><span style="display:flex;"><span>        depth <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">max</span>(depth, rightResult.<span style="color:#a6e22e">depth</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// if the root&#39;s label is &lt; to the least label seen so far</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the root&#39;s label is &lt; to the least label seen so far</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root.<span style="color:#a6e22e">label</span> <span style="color:#f92672">&lt;</span> leastLabel) {
 </span></span><span style="display:flex;"><span>        leastLabel <span style="color:#f92672">=</span> root.<span style="color:#a6e22e">label</span>;
 </span></span><span style="display:flex;"><span>        depth <span style="color:#f92672">=</span> 0;

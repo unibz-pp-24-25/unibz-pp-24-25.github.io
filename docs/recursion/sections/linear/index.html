@@ -45,7 +45,7 @@ Example # Exercise Write in pseudocode a (linear) recursive algorithm for a meth
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/linear/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c9c096d2d3444b737d0eea7d2b526335053f7fb1be1a699293b06dbda55cc775.js" integrity="sha256-ycCW0tNES3N9Dup9K1JjNQU/f7G&#43;GmmSk7BtvaVcx3U=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.75e453d10c1e4bf2bde532c08ff6583dd9322e8b27f5015b5e7b167b47a1b3ea.js" integrity="sha256-deRT0QweS/K95TLAj/ZYPdkyLosn9QFbXnsWe0ehs&#43;o=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1364,34 +1364,27 @@ A linear recursive algorithm is often easy to transform into an iterative one (i
 <li>returns the number of occurrences of <code>c</code> in <code>A</code>.</li>
 </ul>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_array_linearRec" id="tabs-exercise_array_linearRec-1"  />
 <label for="tabs-exercise_array_linearRec-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ```java -->
-<!-- int occ(char[] A, char c) { -->
-<!--     return occRec(A, c, 0) -->
-<!-- } -->
-<!---->
-<!-- int occRec(char[] A, char c, int i) { -->
-<!--     // Base case: the segment under consideration is empty -->
-<!--     if(i == A.length){ -->
-<!--         return 0 -->
-<!--     } -->
-<!--     // Inductive case. -->
-<!--     // Count the number of occurrences of c in the "suffix" segment A[i+1 .. A.length-1] -->
-<!--     int occInSuffix = occRec(A, c, i + 1) -->
-<!--     return A[i] == c ? -->
-<!--         // If the current character is c, then return this value + 1, -->
-<!--         occInSuffix + 1 : -->
-<!--         // otherwise return this value as it is. -->
-<!--         occInSuffix -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, 0)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occRec</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c, <span style="color:#66d9ef">int</span> i) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the segment under consideration is empty</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Count the number of occurrences of c in the &#34;suffix&#34; segment A[i+1 .. A.length-1]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occInSuffix <span style="color:#f92672">=</span> occRec(A, c, i <span style="color:#f92672">+</span> 1)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If the current character is c, then return this value + 1,</span>
+</span></span><span style="display:flex;"><span>        occInSuffix <span style="color:#f92672">+</span> 1 :
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// otherwise return this value as it is.</span>
+</span></span><span style="display:flex;"><span>        occInSuffix
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 <h2 id="tail-recursion">
   Tail recursion
@@ -1455,49 +1448,37 @@ This transformation can be viewed as a &ldquo;manual&rdquo; form of tail-call el
 <p>Rewrite it into a tail-recursive algorithm.
 Then convert it into an iterative algorithm.</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_array_TailRec" id="tabs-exercise_array_TailRec-1"  />
 <label for="tabs-exercise_array_TailRec-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- Tail recursive algorithm: -->
-<!---->
-<!-- ```java -->
-<!-- int occ(char[] A, char c) { -->
-<!--     return occRec(A, c, 0, 0) -->
-<!-- } -->
-<!---->
-<!-- int occRec(char[] A, char c, int i, int occurences) { -->
-<!--     // Base case: the segment under consideration is empty -->
-<!--     if(i == A.length){ -->
-<!--         return 0; -->
-<!--     } -->
-<!--     // Inductive case. -->
-<!--     // If the current character is c, then increment the number of occurrences. -->
-<!--     if (A[i] == c) { -->
-<!--         occurrences++; -->
-<!--     } -->
-<!--     // Recursive call -->
-<!--     return occRec(A, c, i + 1, occurrences) -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- Iterative algorithm: -->
-<!---->
-<!-- ```java -->
-<!-- int occ(char[] A, char c) { -->
-<!--     int occurrences = 0 -->
-<!--     for (int i = 0; i < A.length; i++) { -->
-<!--         if (A[i] == c) { -->
-<!--             occurrences++ -->
-<!--         } -->
-<!--     } -->
-<!--     return occurrences -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>Tail recursive algorithm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, 0, 0)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occRec</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> occurences) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the segment under consideration is empty</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the current character is c, then increment the number of occurrences.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c) {
+</span></span><span style="display:flex;"><span>        occurrences<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Recursive call</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, i <span style="color:#f92672">+</span> 1, occurrences)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Iterative algorithm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occurrences <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c) {
+</span></span><span style="display:flex;"><span>            occurrences<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occurrences
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 <p>A common strategy to convert a linear recursive method into a tail-recursive one consists in using additional arguments (like the argument <code>occurrences</code> in the above example).
 These extra arguments are sometimes called <strong>accumulators</strong>.</p>
@@ -1547,33 +1528,26 @@ A <strong>linked list</strong> is a set of objects organized in a <em>sequence</
 <p>the algorithm should output a list with labels:</p>
 <p><img src="/img/linkedLists/labeled/char/noDup/list.svg" alt="" /></p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_linkedList_removeDup" id="tabs-exercise_linkedList_removeDup-1"  />
 <label for="tabs-exercise_linkedList_removeDup-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ```java -->
-<!-- Node removeDuplicates(Node head) { -->
-<!--     // Base case: empty list. -->
-<!--     if(head == null) { -->
-<!--         return null -->
-<!--     } -->
-<!--     // Inductive case. -->
-<!--     // Remove all duplicate in the tail. -->
-<!--     Node tailHead = removeDuplicates(head.next) -->
-<!--     // Compare the head with the (possibly new) head of the tail. -->
-<!--     if (tailHead != null && head.label == tailHead.label) { -->
-<!--         // If they have the same label, then return the tail. -->
-<!--         return tailHead -->
-<!--     } -->
-<!--     // Otherwise add the head to the returned list. -->
-<!--     head.next = tailHead -->
-<!--     return head -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">removeDuplicates</span>(Node head) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: empty list.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(head <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Remove all duplicate in the tail.</span>
+</span></span><span style="display:flex;"><span>    Node tailHead <span style="color:#f92672">=</span> removeDuplicates(head.<span style="color:#a6e22e">next</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compare the head with the (possibly new) head of the tail.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (tailHead <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> head.<span style="color:#a6e22e">label</span> <span style="color:#f92672">==</span> tailHead.<span style="color:#a6e22e">label</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If they have the same label, then return the tail.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> tailHead
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Otherwise add the head to the returned list.</span>
+</span></span><span style="display:flex;"><span>    head.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> tailHead
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> head
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 </article>
  

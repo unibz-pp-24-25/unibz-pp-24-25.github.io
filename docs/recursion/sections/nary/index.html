@@ -40,7 +40,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.ee4cc65f731314d764b61295739c07e9ddb7b97ded8d553468bcd7039c1cad88.js" integrity="sha256-7kzGX3MTFNdkthKVc5wH6d23uX3tjVU0aLzXA5wcrYg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.651697c500cd8f223ced36775f55427b69d2d7ecd1db331a06078fc4b5a992d2.js" integrity="sha256-ZRaXxQDNjyI87TZ3X1VCe2nS1&#43;zR2zMaBgePxLWpktI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1744,7 +1744,7 @@ It takes an existential node as input, and returns:</p>
 <p><strong><em>Note.</em></strong>
 The code can be (slightly) factorized by writing a unique recursive method, with an additional boolean argument that indicates whether the input node is existential or universal.</p>
 <p>This is usually how the algorithm is presented.
-We used two methods instead for didactic reasons.</p>
+We used two methods instead for readability.</p>
 </blockquote>
 <!-- **_Note._** -->
 <!-- Traditionally, the purpose of the player (Alice here) is to minimize the score, and the purpose of the opponent (Bob here) is to maximize it. -->
@@ -1758,11 +1758,23 @@ We used two methods instead for didactic reasons.</p>
 <p>In practice, in order to apply this algorithm to a game, the class <code>Node</code> is unnecessary.
 Instead, we can use:</p>
 <ul>
-<li>an auxiliary procedure that compute the &ldquo;children of a node&rdquo;, i.e. takes as argument a board state, and enumerates all board states that can be reached from it in one move.</li>
-<li>an auxiliary procedure <code>score</code> that determines whether a &ldquo;node&rdquo; is a leaf, and its &ldquo;label&rdquo; if it is a leaf.
+<li>an auxiliary procedure <code>possibleMoves</code> that compute the &ldquo;children of a node&rdquo;, i.e. takes as argument a board state, and enumerates all board states that can be reached from it in one move.</li>
+<li>an auxiliary procedure <code>score</code> that returns the &ldquo;label of a leaf node&rdquo;.
 This procedure takes a state as input, and determines whether this state is a winning state for Alice or Bob.</li>
 </ul>
-<p>Then Alice can decide her next move by calling <code>miniMax(s)</code> for each successor state <code>s</code> of the current state, and select any of the states with the highest score.</p>
+<p>The method <code>maximim</code> becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(State s){
+</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>State<span style="color:#f92672">&gt;</span> children <span style="color:#f92672">=</span> possibleMoves(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(children.<span style="color:#a6e22e">size</span> <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(s)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the largest label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c) <span style="color:#f92672">|</span> c in children <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And similarly for <code>miniMax</code>.</p>
+<p>Then Alice can decide her next move by calling <code>miniMax(c)</code> for each successor state <code>c</code> of the current state, and select one of the states with the highest score.</p>
 <h3 id="generalization">
   Generalization
   <a class="anchor" href="#generalization">#</a>
@@ -1791,23 +1803,29 @@ Minimax can be <em>prohibitive</em> for games with an important tree height (sin
 </blockquote>
 <p>The algorithm becomes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(State s, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>State<span style="color:#f92672">&gt;</span> children <span style="color:#f92672">=</span> possibleMoves(s)
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(children.<span style="color:#a6e22e">size</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(s)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the largest label computed for a child</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in children <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// universal node</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">miniMax</span>(Node n, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>State<span style="color:#f92672">&gt;</span> children <span style="color:#f92672">=</span> possibleMoves(s)
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(children.<span style="color:#a6e22e">size</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(s)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the least label computed for a child</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in children <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="optimization">
   Optimization

@@ -40,7 +40,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.75e453d10c1e4bf2bde532c08ff6583dd9322e8b27f5015b5e7b167b47a1b3ea.js" integrity="sha256-deRT0QweS/K95TLAj/ZYPdkyLosn9QFbXnsWe0ehs&#43;o=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ee4cc65f731314d764b61295739c07e9ddb7b97ded8d553468bcd7039c1cad88.js" integrity="sha256-7kzGX3MTFNdkthKVc5wH6d23uX3tjVU0aLzXA5wcrYg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1611,7 +1611,7 @@ Alice&rsquo;s possible moves are the green edges, and Bob&rsquo;s possible moves
 <p>The numbers on the leaves represent the payoff for Alice:</p>
 <ul>
 <li>9 if this is a winning state for Alice, and</li>
-<li>0 if this is a winning sate for Bob.</li>
+<li>0 if this is a winning state for Bob.</li>
 </ul>
 <p><img src="/img/graphs/minimax.svg" alt="" /></p>
 </blockquote>
@@ -1672,7 +1672,7 @@ Intuitively, this holds iff:</p>
 In our tree, let us assuming that the root has depth $0$.
 We call a node <strong>existential</strong> if its depth is even, and <strong>universal</strong> if its depth is odd.</p>
 </blockquote>
-<p>Existential (resp. universal) nodes are the ones selected by Alice (resp. Bob).</p>
+<p>Existential (resp. universal) nodes are the ones where Alice (resp. Bob) plays.</p>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
 A node $n$ is a <strong>winning node</strong> (for Alice) if:</p>
@@ -1714,7 +1714,12 @@ Then:</p>
 <code>min [ c.label | c in n.children ] = 9</code></li>
 </ul>
 </blockquote>
-<p>Using this observation and our definition of a winning node (above), we can write the following recursive algorithm (in pseudocode):</p>
+<p>Using this observation and our definition of a winning node (above), we can write the following recursive method <code>maxiMin</code> (in pseudocode).
+It takes an existential node as input, and returns:</p>
+<ul>
+<li><code>9</code> if this node is a winning node for Alice, or</li>
+<li><code>0</code> if this node is a winning node for Bob.</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
@@ -1734,12 +1739,7 @@ Then:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the least label computed for a child</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In this algorithm, the method <code>maxiMin</code> (resp. <code>miniMax</code>) takes an existential (resp. universal) node as input,
-and returns:</p>
-<ul>
-<li><code>9</code> if this node is a winning node for Alice, or</li>
-<li><code>0</code> if this node is a winning node for Bob.</li>
-</ul>
+</span></span></code></pre></div><p>In this algorithm, the method <code>miniMax</code> takes a universal node as input, and its return value has the same meaning as <code>maximin</code> (i.e. <code>9</code> if the node is a winning node for Alice, or <code>0</code> if it is a winning node for Bob).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
 The code can be (slightly) factorized by writing a unique recursive method, with an additional boolean argument that indicates whether the input node is existential or universal.</p>

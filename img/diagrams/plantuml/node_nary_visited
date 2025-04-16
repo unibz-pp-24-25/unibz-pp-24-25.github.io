@@ -2,7 +2,7 @@
 scale 250 width
 
 class Node {
-  Char label
+  char label
   boolean visited
   Node[] children
 }

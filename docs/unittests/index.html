@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=35131&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -22,31 +22,65 @@ performance test
 regression test
 etc.
 
-A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do.
+A test can help developers clarify what a program (resp. component, method) is expected to do.
 So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:35131/docs/unittests/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/unittests/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Unit tests">
   <meta property="og:description" content="Unit tests # Testing software # Testing is an integral part of software development.
 Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
-functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
+functional vs non-functional test unit vs integration test security test performance test regression test etc. A test can help developers clarify what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 <title>Unit tests | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:35131/docs/unittests/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/unittests/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.6131cb94a83471639515accfb911b3d584a42e60181cda870ceef0e2501516e3.js" integrity="sha256-YTHLlKg0cWOVFazPuRGz1YSkLmAYHNqHDO7w4lAVFuM=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:35131/docs/unittests/index.xml" title="Programming project 2024-25" />
+  <script defer src="/en.search.min.38b106dd982bff893f2549d1ddf6564f86458e2afc74c8eecbf3a6bf9a25ba2a.js" integrity="sha256-OLEG3Zgr/4k/JUnR3fZWT4ZFjir8dMjuy/Omv5oluio=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/unittests/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -85,6 +119,118 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
     
       
         <li>
@@ -247,7 +393,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
@@ -260,7 +406,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -279,6 +425,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -286,7 +437,23 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
   
 
         </li>
@@ -299,7 +466,179 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -377,9 +716,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5c4910c712e8dfeaf9f3180911e57b92" class="toggle"  />
-    <label for="section-5c4910c712e8dfeaf9f3180911e57b92" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
 
@@ -393,7 +732,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -406,7 +745,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -419,41 +758,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
-    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
-      <a href="/docs/stream/" class="">Streams in Java</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -466,7 +771,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/stream/sections/init/" class="">Source</a>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -479,59 +784,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -631,6 +884,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -638,7 +896,23 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
   
 
         </li>
@@ -651,7 +925,421 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -740,7 +1428,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#testing-software">#</a>
 </h2>
 <p>Testing is an integral part of software development.</p>
-<p>Different terminologies coexists to <a href="https://en.wikipedia.org/wiki/Software_testing#Testing_types,_techniques_and_tactics">categorize</a> software tests (more or less precise, an with overlapping meanings).
+<p>Different terminologies coexists to <a href="https://en.wikipedia.org/wiki/Software_testing_tactics">categorize</a> software tests (more or less precise, an with overlapping meanings).
 Common categories are:</p>
 <ul>
 <li>functional vs non-functional test</li>
@@ -750,10 +1438,10 @@ Common categories are:</p>
 <li>regression test</li>
 <li>etc.</li>
 </ul>
-<p>A side benefit of many tests is that they help clarifying <em>what</em> a program (resp. component, method) is expected to do.
+<p>A test can help developers clarify <em>what</em> a program (resp. component, method) is expected to do.
 So in a sense, tests are part of the <em>documentation</em> or specification of a system, because they provide precise <em>examples</em> of the expected behavior of the program (resp. component, method).</p>
 <p>This is why tests are often part of the development process itself.
-Notably, <a href="http://localhost:35131/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
+Notably, <a href="https://unibz-pp-24-25.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
 <h2 id="unit-tests-1">
   Unit tests
   <a class="anchor" href="#unit-tests-1">#</a>
@@ -762,7 +1450,7 @@ Notably, <a href="http://localhost:35131/docs/unittests/sections/tdd/">test-driv
 <p>A <strong>unit test</strong> is usually understood as:</p>
 <ul>
 <li>testing the behavior of a <em>small</em> piece of code (typically a method),</li>
-<li>automated (typically integrated to the <a href="">build</a> process),</li>
+<li>automated (typically integrated to the <a href="https://unibz-pp-24-25.github.io/docs/build/">build</a> process),</li>
 <li>fast.</li>
 </ul>
 <!-- - isolated. -->
@@ -776,7 +1464,7 @@ However, many of them do <em>not</em> qualify as unit tests.</p>
 <blockquote class="book-hint warning">
 <p>In its simplest form, a unit test can be viewed as a pair</p>
 <p>$\qquad$ (input, expected output)</p>
-<p>for a given <a href="http://localhost:35131/docs/background/sections/problem/">computational problem</a>.</p>
+<p>for a given <a href="https://unibz-pp-24-25.github.io/docs/background/sections/problem/">computational problem</a>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
@@ -806,40 +1494,56 @@ Consider the following problem:</p>
 <code>4</code>.</p>
 <p><strong><em>Question.</em></strong> Does there exist a (finite) set of unit tests for this problem that guarantees that an implementation is correct?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
 <label for="tabs-exercise_finite_unitTests-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>No.</p>
-<p>A unit tests for this problem is a pair
-$(a, i)$,
-where</p>
-<ul>
-<li>$a$ is an array of characters, and</li>
-<li>$i$ is a natural number.</li>
-</ul>
-<p>Take any finite set</p>
-<p>$\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$</p>
-<p>of such unit tests.</p>
-<p>Because this set if finite,
-there exists an array of characters $a_0$ that does not appear in this set of tests.</p>
-<p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
-<p>Now consider the method (in pseudocode):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int sizeOfLongestNonDecreasingSequence(char<span style="color:#f92672">[]</span> characters) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_1) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_1
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_2) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_2
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_n) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_n
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> j;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
-<p>So given any set of unit tests (for this problem), there exists an incorrect algorithm that passes these tests.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- No. -->
+<!---->
+<!-- For any (finite) set of unit tests (for this problem), there exists an algorithm that passes the tests but is incorrect. -->
+<!---->
+<!-- To demonstrate this, observe that a unit tests for this problem is a pair -->
+<!-- $(a, i)$, -->
+<!-- where -->
+<!---->
+<!-- - $a$ is an array of characters, and -->
+<!-- - $i$ is a natural number. -->
+<!---->
+<!-- Take any finite set -->
+<!---->
+<!-- $\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$ -->
+<!---->
+<!-- of such unit tests. -->
+<!---->
+<!-- Because this set is finite, -->
+<!-- there exists an array of characters $a_0$ that does not appear in this set of tests. -->
+<!---->
+<!-- Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$. -->
+<!---->
+<!-- Now consider the method (in pseudocode): -->
+<!---->
+<!-- ```perl -->
+<!-- int sizeOfLongestNonDecreasingSequence(char[] characters) { -->
+<!--     if(characters == a_1) { -->
+<!--       return i_1 -->
+<!--     } -->
+<!--     if(characters == a_2) { -->
+<!--       return i_2 -->
+<!--     } -->
+<!--     ... -->
+<!---->
+<!--     if(characters == a_n) { -->
+<!--       return i_n -->
+<!--     } -->
+<!--     return j; -->
+<!-- } -->
+<!-- ``` -->
+<!---->
+<!-- This algorithm will pass the unit tests, but is incorrect for the input $a_0$. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <p>This (artificial) exercise was only meant to illustrate the following:</p>
 <blockquote class="book-hint danger">
@@ -897,7 +1601,7 @@ A unit test should itself be <em>free of bugs</em>.</p>
   <a class="anchor" href="#unit-tests-and-build-automation">#</a>
 </h2>
 <p>Unit tests are usually integrated to the standard build automation process of a project.</p>
-<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="http://localhost:35131/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
+<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
 This effectively prevents further phases to be executed if a test fails.</p>
 <h2 id="regression-tests">
   Regression tests
@@ -922,56 +1626,46 @@ Her code compiles and passes all unit tests.
 Now she wants to share her code with the other two.</p>
 <p>Which sequence of git commands should Alice execute?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-1"  />
 <label for="tabs-exercise_git_collab_reminder-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><ol>
-<li>Commit her changes (locally, to the branch <code>alice</code>):</li>
-</ol>
-<ul>
-<li><code>git add .</code></li>
-<li><code>git commit -m &quot;commit message&quot;</code></li>
-</ul>
-<ol start="2">
-<li>Update the remote copy of the branch <code>alice</code> (for backup only):</li>
-</ol>
-<ul>
-<li><code>git push</code></li>
-</ul>
-<ol start="3">
-<li>Synchronize the local copy of the branch <code>main</code> (because Bob and Carol may have added content to it):</li>
-</ol>
-<ul>
-<li><code>git checkout main</code></li>
-<li><code>git pull</code></li>
-</ul>
-<ol start="4">
-<li>Merge (locally) the content of <code>main</code> into <code>alice</code> (and fix the merge conflicts, if any):</li>
-</ol>
-<ul>
-<li><code>git checkout alice</code></li>
-<li><code>git merge main</code></li>
-</ul>
-<ol start="5">
-<li>Merge (locally) the content of <code>alice</code> into <code>main</code> (there should be no more conflict).
-After this step, the local copies of <code>alice</code> and <code>main</code> will be identical.</li>
-</ol>
-<ul>
-<li><code>git checkout main</code></li>
-<li><code>git merge alice</code></li>
-</ul>
-<ol start="6">
-<li>Upload the changes:</li>
-</ol>
-<ul>
-<li><code>git push</code></li>
-</ul>
-<ol start="7">
-<li>Go back to work:</li>
-</ol>
-<ul>
-<li><code>git checkout alice</code></li>
-</ul>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- 1. Commit her changes (locally, to the branch `alice`): -->
+<!---->
+<!-- - `git add .` -->
+<!-- - `git commit -m "commit message"` -->
+<!---->
+<!-- 2. Update the remote copy of the branch `alice` (for backup only): -->
+<!---->
+<!-- - `git push` -->
+<!---->
+<!-- 3. Synchronize the local copy of the branch `main` (because Bob and Carol may have added content to it): -->
+<!---->
+<!-- - `git checkout main` -->
+<!-- - `git pull` -->
+<!---->
+<!-- 4. Merge (locally) the content of `main` into `alice` (and fix the merge conflicts, if any): -->
+<!---->
+<!-- - `git checkout alice` -->
+<!-- - `git merge main` -->
+<!---->
+<!-- 5. Merge (locally) the content of `alice` into `main` (there should be no more conflict). -->
+<!--    After this step, the local copies of `alice` and `main` will be identical. -->
+<!---->
+<!-- - `git checkout main` -->
+<!-- - `git merge alice` -->
+<!---->
+<!-- 6. Upload the changes: -->
+<!---->
+<!-- - `git push` -->
+<!---->
+<!-- 7. Go back to work: -->
+<!---->
+<!-- - `git checkout alice` -->
+<!---->
+<!-- </div>
+ -->
 </div>
 </article>
  

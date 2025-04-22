@@ -1,0 +1,37 @@
+% \documentclass{article}
+\documentclass[tikz,margin=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\begin{document}
+\begin{tikzpicture}[
+  background rectangle/.style={fill=white},
+  show background rectangle,
+  scale=2.5,
+  every node/.style = {minimum width = 6em, draw, circle, font=\Huge\bf, line width=2pt, scale=1},
+  edge from parent/.style={line width=2pt, draw},
+  level/.style = {sibling distance = 60mm/#1}
+]
+  \node {+}
+  child {
+        node {*}  
+        child {
+          node {3}
+        }
+        child {
+          node {6}
+        }
+      }
+  child {
+    node {/}
+    child {
+      node {+}
+      child {node{7}}
+      child {node{3}}
+    }
+    child {
+      node {2}
+    }
+  };
+\end{tikzpicture}
+\end{document}
+

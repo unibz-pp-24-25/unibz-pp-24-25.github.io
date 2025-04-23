@@ -40,7 +40,7 @@ functional vs non-functional test unit vs integration test security test perform
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/unittests/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.38b106dd982bff893f2549d1ddf6564f86458e2afc74c8eecbf3a6bf9a25ba2a.js" integrity="sha256-OLEG3Zgr/4k/JUnR3fZWT4ZFjir8dMjuy/Omv5oluio=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2d4c73c5bf18ee22ca9264094f1b03c3ecf42f1a6d4f748be2ac162aa8e23180.js" integrity="sha256-LUxzxb8Y7iLKkmQJTxsDw&#43;z0LxptT3SL4qwWKqjiMYA=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/unittests/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -1494,56 +1494,40 @@ Consider the following problem:</p>
 <code>4</code>.</p>
 <p><strong><em>Question.</em></strong> Does there exist a (finite) set of unit tests for this problem that guarantees that an implementation is correct?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
 <label for="tabs-exercise_finite_unitTests-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- No. -->
-<!---->
-<!-- For any (finite) set of unit tests (for this problem), there exists an algorithm that passes the tests but is incorrect. -->
-<!---->
-<!-- To demonstrate this, observe that a unit tests for this problem is a pair -->
-<!-- $(a, i)$, -->
-<!-- where -->
-<!---->
-<!-- - $a$ is an array of characters, and -->
-<!-- - $i$ is a natural number. -->
-<!---->
-<!-- Take any finite set -->
-<!---->
-<!-- $\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$ -->
-<!---->
-<!-- of such unit tests. -->
-<!---->
-<!-- Because this set is finite, -->
-<!-- there exists an array of characters $a_0$ that does not appear in this set of tests. -->
-<!---->
-<!-- Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$. -->
-<!---->
-<!-- Now consider the method (in pseudocode): -->
-<!---->
-<!-- ```perl -->
-<!-- int sizeOfLongestNonDecreasingSequence(char[] characters) { -->
-<!--     if(characters == a_1) { -->
-<!--       return i_1 -->
-<!--     } -->
-<!--     if(characters == a_2) { -->
-<!--       return i_2 -->
-<!--     } -->
-<!--     ... -->
-<!---->
-<!--     if(characters == a_n) { -->
-<!--       return i_n -->
-<!--     } -->
-<!--     return j; -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- This algorithm will pass the unit tests, but is incorrect for the input $a_0$. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>No.</p>
+<p>For any (finite) set of unit tests (for this problem), there exists an algorithm that passes the tests but is incorrect.</p>
+<p>To demonstrate this, observe that a unit tests for this problem is a pair
+$(a, i)$,
+where</p>
+<ul>
+<li>$a$ is an array of characters, and</li>
+<li>$i$ is a natural number.</li>
+</ul>
+<p>Take any finite set</p>
+<p>$\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$</p>
+<p>of such unit tests.</p>
+<p>Because this set is finite,
+there exists an array of characters $a_0$ that does not appear in this set of tests.</p>
+<p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
+<p>Now consider the method (in pseudocode):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int sizeOfLongestNonDecreasingSequence(char<span style="color:#f92672">[]</span> characters) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_1) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_2) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_n) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_n
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> j;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
+</div>
 </div>
 <p>This (artificial) exercise was only meant to illustrate the following:</p>
 <blockquote class="book-hint danger">
@@ -1626,46 +1610,56 @@ Her code compiles and passes all unit tests.
 Now she wants to share her code with the other two.</p>
 <p>Which sequence of git commands should Alice execute?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-1"  />
 <label for="tabs-exercise_git_collab_reminder-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- 1. Commit her changes (locally, to the branch `alice`): -->
-<!---->
-<!-- - `git add .` -->
-<!-- - `git commit -m "commit message"` -->
-<!---->
-<!-- 2. Update the remote copy of the branch `alice` (for backup only): -->
-<!---->
-<!-- - `git push` -->
-<!---->
-<!-- 3. Synchronize the local copy of the branch `main` (because Bob and Carol may have added content to it): -->
-<!---->
-<!-- - `git checkout main` -->
-<!-- - `git pull` -->
-<!---->
-<!-- 4. Merge (locally) the content of `main` into `alice` (and fix the merge conflicts, if any): -->
-<!---->
-<!-- - `git checkout alice` -->
-<!-- - `git merge main` -->
-<!---->
-<!-- 5. Merge (locally) the content of `alice` into `main` (there should be no more conflict). -->
-<!--    After this step, the local copies of `alice` and `main` will be identical. -->
-<!---->
-<!-- - `git checkout main` -->
-<!-- - `git merge alice` -->
-<!---->
-<!-- 6. Upload the changes: -->
-<!---->
-<!-- - `git push` -->
-<!---->
-<!-- 7. Go back to work: -->
-<!---->
-<!-- - `git checkout alice` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><ol>
+<li>Commit her changes (locally, to the branch <code>alice</code>):</li>
+</ol>
+<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;commit message&quot;</code></li>
+</ul>
+<ol start="2">
+<li>Update the remote copy of the branch <code>alice</code> (for backup only):</li>
+</ol>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<ol start="3">
+<li>Synchronize the local copy of the branch <code>main</code> (because Bob and Carol may have added content to it):</li>
+</ol>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git pull</code></li>
+</ul>
+<ol start="4">
+<li>Merge (locally) the content of <code>main</code> into <code>alice</code> (and fix the merge conflicts, if any):</li>
+</ol>
+<ul>
+<li><code>git checkout alice</code></li>
+<li><code>git merge main</code></li>
+</ul>
+<ol start="5">
+<li>Merge (locally) the content of <code>alice</code> into <code>main</code> (there should be no more conflict).
+After this step, the local copies of <code>alice</code> and <code>main</code> will be identical.</li>
+</ol>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git merge alice</code></li>
+</ul>
+<ol start="6">
+<li>Upload the changes:</li>
+</ol>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<ol start="7">
+<li>Go back to work:</li>
+</ol>
+<ul>
+<li><code>git checkout alice</code></li>
+</ul>
+</div>
 </div>
 </article>
  

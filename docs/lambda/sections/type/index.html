@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -27,7 +27,7 @@ In other words, this is a function with domain int and codomain int.
 This is written:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/lambda/sections/type/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Type of a method">
   <meta property="og:description" content="Type of a method # Terminology. The type (a.k.a. signature) of a method consists of:
@@ -40,15 +40,49 @@ In other words, this is a function with domain int and codomain int. This is wri
 <title>Type of a method | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/lambda/sections/type/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.47bce9fcac645045af5f227fced5ea4c66a362bc53517037645ed1bc5cec8f70.js" integrity="sha256-R7zp/KxkUEWvXyJ/ztXqTGajYrxTUXA3ZF7RvFzsj3A=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -182,6 +216,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -301,7 +395,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
@@ -314,7 +408,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -346,6 +440,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -353,7 +452,1034 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle" checked />
+    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
+      <a href="/docs/lambda/" class="">First-class methods</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="active">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/closure/" class="">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
+    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
+    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -418,7 +1544,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#functionalInterface">Functional interface</a></li>
-        <li><a href="#native-functional-interfaces">Native functional interfaces</a></li>
+        <li><a href="#native_functional_interfaces">Native functional interfaces</a></li>
       </ul>
     </li>
   </ul>
@@ -447,7 +1573,7 @@ The <strong>type</strong> (a.k.a. <strong>signature</strong>) of a method consis
 </blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Notation.</em></strong>
-The type of a method is sometimes described analogously to the type of a mathematical <a href="">function</a>.
+The type of a method is sometimes described analogously to the type of a mathematical <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a>.
 For instance, consider the following Java method <code>square</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">square</span>(<span style="color:#66d9ef">int</span> x){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x;
@@ -471,18 +1597,18 @@ This is written:</p>
   <a class="anchor" href="#in-java">#</a>
 </h2>
 <p>Syntactically, Java does not provide a method typing system like the one above.
-Instead, Java uses (abuses?) <a href="http://localhost:1313/docs/interfaces/sections/java_interfaces/">interfaces</a> for this purpose.</p>
+Instead, Java uses (abuses?) <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interfaces</a> for this purpose.</p>
 <h3 id="functionalInterface">
   Functional interface
   <a class="anchor" href="#functionalInterface">#</a>
 </h3>
 <p>A method type in Java is described with a so-called <em>functional interface</em>.</p>
 <blockquote class="book-hint warning">
-<p><strong><em>Syntax.</em></strong> A Java <strong>functional interface</strong> is an <a href="http://localhost:1313/docs/interfaces/sections/java_interfaces/">interface</a> with a single (standard) method.</p>
+<p><strong><em>Syntax.</em></strong> A Java <strong>functional interface</strong> is an <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> with a single (standard) method.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
-In this definition, &ldquo;standard&rdquo; method stands for a method that does not have the <a href="http://localhost:1313/docs/interfaces/sections/java_interfaces/#interfaceVsAbstractClass">default</a> qualifier (&ldquo;standard&rdquo; interface methods are also called &ldquo;abstract&rdquo;).</p>
+In this definition, &ldquo;standard&rdquo; method stands for a method that does not have the <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/#interfaceVsAbstractClass">default</a> qualifier (&ldquo;standard&rdquo; interface methods are also called &ldquo;abstract&rdquo;).</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
@@ -512,9 +1638,9 @@ This will for instance cause a compilation error if the interface has more than 
 </span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">myMethod</span>(Unit unit, Integer x);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
-<h3 id="native-functional-interfaces">
+<h3 id="native_functional_interfaces">
   Native functional interfaces
-  <a class="anchor" href="#native-functional-interfaces">#</a>
+  <a class="anchor" href="#native_functional_interfaces">#</a>
 </h3>
 <p>Java provides native (parameterized) functional interfaces for some frequent method types.</p>
 <p>We highlight here a few of them:</p>
@@ -529,9 +1655,21 @@ Its method is called <code>apply</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>a method with type <code>Unit</code> $\to$ <code>Integer</code> implements the functional interface <code>Function&lt;Unit, Integer&gt;</code></li>
-<li>a method with type <code>Unit</code> $\to$ <code>Unit</code> implements the functional interface <code>Function&lt;Unit, Unit&gt;</code></li>
+<li>A method with type <code>Unit</code> $\to$ <code>Integer</code> implements the functional interface <code>Function&lt;Unit, Integer&gt;</code></li>
+<li>A method with type <code>Unit</code> $\to$ <code>Unit</code> implements the functional interface <code>Function&lt;Unit, Unit&gt;</code></li>
 </ul>
+</blockquote>
+<h4 id="bifunction">
+  <code>BiFunction</code>
+  <a class="anchor" href="#bifunction">#</a>
+</h4>
+<blockquote class="book-hint warning">
+<p>The functional interface <code>BiFunction&lt;InputType1, InputType2, OutputType&gt;</code> stands for the type <code>InputType1</code> \times <code>InputType2</code> $\to$ <code>OutputType</code>.
+Its method is called is also called <code>apply</code>.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+A method with type <code>Unit</code> $\times$ <code>Unit</code> $\to$ <code>Integer</code> implements the functional interface <code>BiFunction&lt;Unit, Unit, Integer&gt;</code></p>
 </blockquote>
 <h4 id="consumer">
   <code>Consumer</code>
@@ -544,10 +1682,15 @@ Its method is called <code>accept</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>a method with type <code>Integer</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Integer&gt;</code></li>
-<li>a method with type <code>Unit</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Unit&gt;</code></li>
+<li>A method with type <code>Integer</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Integer&gt;</code></li>
+<li>A method with type <code>Unit</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Unit&gt;</code></li>
 </ul>
 </blockquote>
+<h4 id="biconsumer">
+  <code>BiConsumer</code>
+  <a class="anchor" href="#biconsumer">#</a>
+</h4>
+<p>This is the analogous of <code>BiFunction</code>, but for consumers.</p>
 <h4 id="supplier">
   <code>Supplier</code>
   <a class="anchor" href="#supplier">#</a>
@@ -559,15 +1702,15 @@ Its method is called <code>get</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>a method with type <code>void</code> $\to$ <code>Integer</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
-<li>a method with type <code>void</code> $\to$ <code>Unit</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
+<li>A method with type <code>void</code> $\to$ <code>Integer</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
+<li>A method with type <code>void</code> $\to$ <code>Unit</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
 </ul>
 </blockquote>
 <h4 id="comparator">
   <code>Comparator</code>
   <a class="anchor" href="#comparator">#</a>
 </h4>
-<p>The interface <code>Comparator&lt;T&gt;</code> (already seen in the section dedicated to <a href="">sorting</a>) is functional.
+<p>The interface <code>Comparator&lt;T&gt;</code> (already seen in the section dedicated to <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#comparator">sorting</a>) is functional.
 Its method is called <code>compare</code>, and has type <code>T</code> $\times$ <code>T</code> $\to$ <code>int</code>.</p>
 </article>
  
@@ -613,7 +1756,7 @@ Its method is called <code>compare</code>, and has type <code>T</code> $\times$ 
     <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#functionalInterface">Functional interface</a></li>
-        <li><a href="#native-functional-interfaces">Native functional interfaces</a></li>
+        <li><a href="#native_functional_interfaces">Native functional interfaces</a></li>
       </ul>
     </li>
   </ul>

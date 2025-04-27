@@ -10,6 +10,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/simplify/sections/factorization/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/functional/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/recursion/sections/linear/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/list/</loc>
@@ -22,6 +24,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/input/sections/files/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/schedule/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/</loc>
@@ -29,6 +33,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/prelim/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/anonymous/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/collaboration/</loc>
   </url><url>
@@ -80,6 +86,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/install/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/lambda/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</loc>
@@ -122,9 +130,13 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/os/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/type/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/build/sections/building/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/</loc>
   </url><url>
@@ -137,6 +149,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/branches/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/errors/</loc>
   </url><url>
@@ -154,6 +168,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/currying/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/clone/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/eval/</loc>
@@ -168,9 +184,13 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/demo/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/lambda/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/resources/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/quiz/</loc>
   </url><url>

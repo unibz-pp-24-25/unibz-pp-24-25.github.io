@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Free variable and closure
+  #
+
+
+  Illustration
+  #
+
+
+Example.
+In a previous exercise, we encountered the two following functions (renamed here $f$ and $g$, instead of $f_2$ and $g_2$):
+$$f(x,y) = g(x)(y)  \qquad \qquad \qquad g(x) = y \mapsto x^y$$
+If we fix two values for $x$ and $y$ (e.g. 5 and 6), then from the definition of $f$:
+$$f(5,6) = g(5)(6)$$
+In this equation,
+$g(5)$ evaluates to the function $y \mapsto 5^y$.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Free variable and closure">
+  <meta property="og:description" content="Free variable and closure # Illustration # Example.
+In a previous exercise, we encountered the two following functions (renamed here $f$ and $g$, instead of $f_2$ and $g_2$):
+$$f(x,y) = g(x)(y) \qquad \qquad \qquad g(x) = y \mapsto x^y$$
+If we fix two values for $x$ and $y$ (e.g. 5 and 6), then from the definition of $f$:
+$$f(5,6) = g(5)(6)$$
+In this equation, $g(5)$ evaluates to the function $y \mapsto 5^y$.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Free variable and closure | Programming project 2024-25</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.47bce9fcac645045af5f227fced5ea4c66a362bc53517037645ed1bc5cec8f70.js" integrity="sha256-R7zp/KxkUEWvXyJ/ztXqTGajYrxTUXA3ZF7RvFzsj3A=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-85f15178f01450fce91df9efce108685" class="toggle"  />
+    <label for="section-85f15178f01450fce91df9efce108685" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-29012f2cba9206afc50d2993e3920e12" class="toggle"  />
+    <label for="section-29012f2cba9206afc50d2993e3920e12" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle" checked />
+    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
+      <a href="/docs/lambda/" class="">First-class methods</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/closure/" class="active">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
+    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
+    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Free variable and closure</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustration">Illustration</a></li>
+    <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#restrictions">Restrictions</a>
+      <ul>
+        <li><a href="#free-variables-and-lambda-expressions-in-java">Free variables and lambda expressions in Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="free-variable-and-closure">
+  Free variable and closure
+  <a class="anchor" href="#free-variable-and-closure">#</a>
+</h1>
+<h2 id="illustration">
+  Illustration
+  <a class="anchor" href="#illustration">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<p>In a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/functional/#functional_example">previous exercise</a>, we encountered the two following functions (renamed here $f$ and $g$, instead of $f_2$ and $g_2$):</p>
+<p>$$f(x,y) = g(x)(y)  \qquad \qquad \qquad g(x) = y \mapsto x^y$$</p>
+<p>If we fix two values for $x$ and $y$ (e.g. 5 and 6), then from the definition of $f$:</p>
+<p>$$f(5,6) = g(5)(6)$$</p>
+<p>In this equation,
+$g(5)$ evaluates to the <em>function</em> $y \mapsto 5^y$.</p>
+<p>Equivalently, we could give this function a name, e.g. $h(y) = 5^y$.</p>
+<p>This function $h$ is called a <strong><em>closure</em></strong>.
+Intuitively, it only exists &ldquo;at runtime&rdquo;, because it depends on the value of $x$ (5 in this example).</p>
+<p>In other words,
+we can think of $y \mapsto x^y$ as a &ldquo;template&rdquo; for a family of closures, one for each possible value of $x$.</p>
+</blockquote>
+<p>Closures are ubiquitous in functional programming, but are also an important feature of some imperative languages (notably JavaScript, where they were initially used to simulate objects).</p>
+<h2 id="definitions">
+  Definitions
+  <a class="anchor" href="#definitions">#</a>
+</h2>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> A method may access variables that:</p>
+<ul>
+<li>are <em>not</em> arguments of the method, and</li>
+<li>are declared <em>outside</em> of the method&rsquo;s body.</li>
+</ul>
+<p>These are often called <strong><em>free variables</em></strong> (or <strong>captured variables</strong>).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example (in Java).</em></strong></p>
+<p>In the method <code>sum</code> below, the variable <code>a</code> is free.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>(){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 5;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(<span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A <strong>closure</strong> is a method together with a binding for its free variables.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
+<p>The Java method <code>myMethod</code> below returns a closure.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Function<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> a) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">+</span> a;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we call <code>myMethod</code> with a given value $v$ for <code>a</code>,
+then it will return the function with type <code>Integer</code> $\to$ <code>Integer</code> defined by $x \mapsto x + v$.</p>
+<p>For instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Function<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myClosure <span style="color:#f92672">=</span> myMethod(5);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// has value 11</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> output <span style="color:#f92672">=</span> myClosure.<span style="color:#a6e22e">apply</span>(6);
+</span></span></code></pre></div></blockquote>
+<h2 id="restrictions">
+  Restrictions
+  <a class="anchor" href="#restrictions">#</a>
+</h2>
+<!-- In practice, lambda expressions are often used to represent functions with [no side effect](https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/). -->
+<p>Some languages (like Java, JavaScript, C++, etc) restrict (or allow the user to restrict) the creation of closures, so as to reduce side effects.</p>
+<h3 id="free-variables-and-lambda-expressions-in-java">
+  Free variables and lambda expressions in Java
+  <a class="anchor" href="#free-variables-and-lambda-expressions-in-java">#</a>
+</h3>
+<blockquote class="book-hint danger">
+<p><strong><em>Restriction.</em></strong> Variable that are free in a Java lambda expression must be <strong>effectively final</strong>, meaning that they cannot be modified after being initialized.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+The following method is nearly identical to the one above, but the program does <em>not</em> compile, because the free variable <code>a</code> is not effectively final.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Function<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> a) {
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">+</span> a;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The following program does not compile either, for the same reason.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Function<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> a) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>              a <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> a;
+</span></span><span style="display:flex;"><span>           };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustration">Illustration</a></li>
+    <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#restrictions">Restrictions</a>
+      <ul>
+        <li><a href="#free-variables-and-lambda-expressions-in-java">Free variables and lambda expressions in Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

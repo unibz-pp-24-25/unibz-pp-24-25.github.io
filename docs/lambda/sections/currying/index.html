@@ -46,7 +46,7 @@ Notation # Before defining currying, we introduce a convenient notation:">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/currying/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.01e3a56e19976cd4d70f3437d3f177dc745a6e9e271e80f3a1abd438a3c5dc67.js" integrity="sha256-AeOlbhmXbNTXDzQ30/F33HRabp4nHoDzoavUOKPF3Gc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7b107c4d95d308961371f1803d1ff5608388b7827e7881f011b18091dd808ada.js" integrity="sha256-exB8TZXTCJYTcfGAPR/1YIOIt4J&#43;eIHwEbGAkd2Aito=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1635,7 +1635,7 @@ For instance, all methods in Haskell are in curried form.</p>
 <p>In Java, we may have a method with signature</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">convert</span>(<span style="color:#66d9ef">int</span> radix, <span style="color:#66d9ef">int</span> input)
 </span></span></code></pre></div><p>that prints the digits of the number <code>input</code> in base <code>radix</code> (for instance, <code>convert(2,5)</code> should print <code>101</code>).</p>
-<p>We may want to do this for all elements of a list of numbers <code>myList</code>, once in base 2, and once in base 8.</p>
+<p>We may want to do this for each element of a list of numbers <code>myList</code>, and for different bases, e.g. once in base 2 and once in base 8.</p>
 <p>We could declare two new methods:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">convertToBaseTwo</span>(<span style="color:#66d9ef">int</span> input){
 </span></span><span style="display:flex;"><span>    convert(2, input);
@@ -1647,18 +1647,26 @@ For instance, all methods in Haskell are in curried form.</p>
 </span></span></code></pre></div><p>Then we could pass these two methods to the method <code>forEach</code> encountered <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/#forEach">earlier</a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(MyClass::convertToBaseTwo);
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(MyClass::convertToBaseEight);
-</span></span></code></pre></div><p>However, with this pattern, for each new radix <code>X</code>, we would need to create a new method <code>convertToBaseX</code>.</p>
-<p>Instead, we can use the curried form <code>curriedConvert</code> of the method <code>convert</code>.</p>
+</span></span></code></pre></div><p>However, with this pattern, for each new radix <code>X</code>, we would need to create a new method <code>convertToBaseX</code>.
+Besides, if the desired radix is only supplied at runtime (e.g. by the system&rsquo;s user), then this pattern cannot be applied.</p>
+<p>Intuitively, we would like to produce (on the fly) a method <code>convertToBaseX</code> that converts an integer into base <code>X</code>.
+This is precisely what the curried form of the method <code>convert</code> does.</p>
 <p>This method has type <code>Integer</code> $\to$ <code>Integer</code> $\to$ <code>void</code>, and can be defined as:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Consumer<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">curriedConvert</span>(<span style="color:#66d9ef">int</span> radix) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">-&gt;</span> convert(radix, x);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This allows us to pass <a href="">closures</a> as arguments to the method <code>forEach</code>:</p>
+</span></span></code></pre></div><p>This allows us to generate <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/">closures</a> and pass them as arguments to the method <code>forEach</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(2));
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(8));
-</span></span></code></pre></div><p>Alternatively, we could use the curried form anonymously:</p>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> radix <span style="color:#f92672">=</span> getRadixFromUser();
+</span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(radix));
+</span></span></code></pre></div><p>Alternatively, we could use the curried form of <code>convert</code> anonymously:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> convert(2, x));
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> convert(8, x));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> radix <span style="color:#f92672">=</span> getRadixFromUser();
+</span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> convert(radix, x));
 </span></span></code></pre></div></blockquote>
 <h3 id="n-ary-method">
   N-ary method

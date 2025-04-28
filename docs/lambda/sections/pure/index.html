@@ -31,7 +31,13 @@ has no side-effect.
 
 
 
-Warning. The second condition above is usually not a requirement in functional languages (e.g. currying immediately violates it).">
+  Example
+  #
+
+
+
+Exercise
+The Java method createUsers below is not a pure function.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/">
@@ -40,7 +46,7 @@ Warning. The second condition above is usually not a requirement in functional l
   <meta property="og:description" content="Pure function # Side effects # Definition. A method has side effects if it modifies resources (variable, object, array, etc.) that are accessible outside of its scope.
 Definition # A pure function is a method that largely behaves like a mathematical function. More precisely:
 Definition. A pure function is a method that:
-returns a value, returns the same value if called twice with the same arguments, and has no side-effect. Warning. The second condition above is usually not a requirement in functional languages (e.g. currying immediately violates it).">
+returns a value, returns the same value if called twice with the same arguments, and has no side-effect. Example # Exercise The Java method createUsers below is not a pure function.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -50,7 +56,7 @@ returns a value, returns the same value if called twice with the same arguments,
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.fa361eb007ff924ba74abc7c86f6b1c7e71ec98c80844cfa01a3b95a88d51840.js" integrity="sha256-&#43;jYesAf/kkunSrx8hvaxx&#43;ceyYyAhEz6AaO5WojVGEA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2e8326cbd59c848711cd251ae6e258043cbc378235528dd6a55791dee96426fb.js" integrity="sha256-LoMmy9WchIcRzSUa5uJYBDy8N4I1Uo3WpVeR3ulkJvs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1598,9 +1604,6 @@ A <strong>pure function</strong> is a method that:</p>
 <li>has no side-effect.</li>
 </ol>
 </blockquote>
-<blockquote class="book-hint danger">
-<p><strong><em>Warning.</em></strong> The second condition above is usually <em>not</em> a requirement in functional languages (e.g. <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/currying/">currying</a> immediately violates it).</p>
-</blockquote>
 <h2 id="example">
   Example
   <a class="anchor" href="#example">#</a>
@@ -1631,36 +1634,29 @@ A <strong>pure function</strong> is a method that:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_pure_function" id="tabs-exercise_pure_function-1"  />
 <label for="tabs-exercise_pure_function-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ```java -->
-<!-- public class MyClass { -->
-<!---->
-<!--     String[] names; -->
-<!--     User[] users; -->
-<!---->
-<!--     public MyClass(){ -->
-<!--         String[] names = parseNames(); -->
-<!--         users = createUsers(names); -->
-<!--     } -->
-<!---->
-<!--     ... -->
-<!---->
-<!--     Users[] createUsers(String[] names) { -->
-<!--         User[] users = new User[ids.length]; -->
-<!--         for(int i = 0; i < ids.length; i++){ -->
-<!--             users[i] = new User(i, names[i]); -->
-<!--         } -->
-<!--         return users; -->
-<!--     } -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> names;
+</span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(){
+</span></span><span style="display:flex;"><span>        String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> parseNames();
+</span></span><span style="display:flex;"><span>        users <span style="color:#f92672">=</span> createUsers(names);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Users<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(String<span style="color:#f92672">[]</span> names) {
+</span></span><span style="display:flex;"><span>        User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>ids.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>            users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(i, names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> users;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 <h2 id="benefits">
   Benefits

@@ -43,7 +43,7 @@ In other words, this is a function with domain int and codomain int. This is wri
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2dbd3033bacebea7e43fbe1f3220c651e7a66bedb6ee5ef617fac09f01e32bf8.js" integrity="sha256-Lb0wM7rOvqfkP74fMiDGUeema&#43;227l72F/rAnwHjK/g=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fa361eb007ff924ba74abc7c86f6b1c7e71ec98c80844cfa01a3b95a88d51840.js" integrity="sha256-&#43;jYesAf/kkunSrx8hvaxx&#43;ceyYyAhEz6AaO5WojVGEA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1613,11 +1613,21 @@ In this definition, &ldquo;standard&rdquo; method stands for a method that does 
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following is a functional interface, which describes the type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code>.</p>
-<p>Any method with type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code> implements this interface.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UnitPerIntegerToUnit</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">myMethod</span>(Unit unit, Integer x);
+</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">execute</span>(Unit unit, Integer x);
 </span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Any method with type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code> automatically implements this interface.
+For instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>UnitPerIntegerToUnit boost <span style="color:#f92672">=</span> (Unit unit, Integer extraHealth) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                                    unit.<span style="color:#a6e22e">health</span> <span style="color:#f92672">+=</span> extraHealth;
+</span></span><span style="display:flex;"><span>                                    <span style="color:#66d9ef">return</span> unit;
+</span></span><span style="display:flex;"><span>                              };
+</span></span></code></pre></div></blockquote>
+<p>An instance of a functional interface (which is a method) can be executed by calling the (only) method declared in the interface:</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit boostedUnit <span style="color:#f92672">=</span> boost.<span style="color:#a6e22e">execute</span>(<span style="color:#66d9ef">new</span> Unicorn());
 </span></span></code></pre></div></blockquote>
 <p>The name of a functional interface is irrelevant, as well as the name of its method (and the arguments of this method).</p>
 <blockquote class="book-hint info">
@@ -1635,7 +1645,7 @@ This will for instance cause a compilation error if the interface has more than 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@FunctionalInterface</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UnitPerIntegerToUnit</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">myMethod</span>(Unit unit, Integer x);
+</span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">execute</span>(Unit unit, Integer x);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
 <h3 id="native_functional_interfaces">

@@ -8,12 +8,12 @@ interface Expression {
   int countSubExpressions(int result)
 }
 
-interface Operator {
+interface Operation {
   Expression getFirstOperand()
   Expression getSecondOperand()
 }
 
-abstract class AbstractOperator {
+abstract class AbstractOperation {
   Expression firstOperand
   Expression secondOperand
 
@@ -48,13 +48,13 @@ class IntegerValue {
 }
 
 
-Expression <|.. Operator : extends
+Expression <|.. Operation : extends
 
-Operator <-- AbstractOperator : implements
+Operation <-- AbstractOperation : implements
 Expression <-- IntegerValue : implements
 
-AbstractOperator <|-- Sum : extends
-AbstractOperator <|-- Product : extends
-AbstractOperator <|-- Division : extends
+AbstractOperation <|-- Sum : extends
+AbstractOperation <|-- Product : extends
+AbstractOperation <|-- Division : extends
 
 @enduml

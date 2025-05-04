@@ -7,7 +7,7 @@
   Intermediate operations
   #
 
-In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.
+In a stream pipeline, an intermediate operation transforms a stream into another stream.
 
   Stateless operations
   #
@@ -26,7 +26,7 @@ We have already explained their behavior in detail in our initial pipeline examp
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/stream/sections/intermediate/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Intermediate operations">
-  <meta property="og:description" content="Intermediate operations # In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.
+  <meta property="og:description" content="Intermediate operations # In a stream pipeline, an intermediate operation transforms a stream into another stream.
 Stateless operations # A stateless intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream.
 Stream.filter and Stream.map # These two instance methods allow specifying a stateless operation, via a callback method. We have already explained their behavior in detail in our initial pipeline example.">
   <meta property="og:locale" content="en_us">
@@ -38,7 +38,7 @@ Stream.filter and Stream.map # These two instance methods allow specifying a sta
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/stream/sections/intermediate/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.777dca74aa44dd4109d302244f9cb0ce564ff3be3083a9bde36cb6c71a7e151e.js" integrity="sha256-d33KdKpE3UEJ0wIkT5ywzlZP874wg6m942y2xxp&#43;FR4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0983f52651df61f4ad6164d0f36c6a47c2acc152192f5b14a13e3cf141cd8dcd.js" integrity="sha256-CYP1JlHfYfStYWTQ82xqR8KswVIZL1sUoT488UHNjc0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1678,7 +1678,7 @@ https://github.com/alex-shpak/hugo-book
   Intermediate operations
   <a class="anchor" href="#intermediate-operations">#</a>
 </h1>
-<p>In a <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/">stream pipeline</a>, an intermediate operation takes a stream as input, and produces another stream.</p>
+<p>In a <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/">stream pipeline</a>, an intermediate operation transforms a stream into another stream.</p>
 <h2 id="stateless-operations">
   Stateless operations
   <a class="anchor" href="#stateless-operations">#</a>
@@ -1724,7 +1724,7 @@ with the exceptions of the zip code of Bologna:</p>
 <p>$\qquad$ <code>Region</code> $\to$ <code>Stream&lt;City&gt;</code></p>
 <p>Let us name this callback function $f$.</p>
 <p>The method <code>flatMap</code> returns a <code>Stream&lt;</code>$\mathit{T&rsquo;}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;City&gt;</code>).
-This stream is the concatenation of all streams $f(a)$ such that $a$ belongs to the original stream.</p>
+This stream is the <em>concatenation</em> of all streams $f(a)$ such that $a$ belongs to the original stream.</p>
 <h2 id="stateful-operations">
   Stateful operations
   <a class="anchor" href="#stateful-operations">#</a>

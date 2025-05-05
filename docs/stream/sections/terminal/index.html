@@ -39,7 +39,7 @@ execute a method for each element of the stream (e.g. print the value of each of
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2f98f2582118aa80edf34709ba5db41550ab17a2d1d6ddecdaf14661976be288.js" integrity="sha256-L5jyWCEYqoDt80cJul20FVCrF6LR1t3s2vFGYZdr4og=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d6cc9fa96b62ee0c6b29a254b288804eb798f4383e30c1f6732a9db33f5bce7c.js" integrity="sha256-1syfqWti7gxrKaJUsoiATreY9Dg&#43;MMH2cyqdsz9bznw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1792,15 +1792,10 @@ as a stream of paths (i.e. a stream with type <code>Stream&lt;Path&gt;</code>).<
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_joining" id="tabs-exercise_joining-1"  />
 <label for="tabs-exercise_joining-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- A string that consists of all lines that contain the string `foo` in any `.txt` file of the directory. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>A string that consists of all lines that contain the string <code>foo</code> in any <code>.txt</code> file of the directory.</p>
+</div>
 </div>
 <h4 id="collectorstocollection">
   <code>Collectors.toCollection</code>
@@ -1951,14 +1946,10 @@ A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_anyMatch" id="tabs-exercise_anyMatch-1"  />
 <label for="tabs-exercise_anyMatch-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!-- The list of all `.txt` files in the input directory that contain the string `foo`. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>The list of all <code>.txt</code> files in the input directory that contain the string <code>foo</code>.</p>
+</div>
 </div>
 <h3 id="streamallmatch">
   <code>Stream.allMatch</code>
@@ -2059,19 +2050,14 @@ For instance,</p>
 <label for="tabs-exercise_reduce-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What is the type of this callback function?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_reduce" id="tabs-exercise_reduce-1"  />
 <label for="tabs-exercise_reduce-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- $\qquad T \times T \to T$ -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>$\qquad T \times T \to T$</p>
+</div>
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3, 4);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Has value 24</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> product <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>()

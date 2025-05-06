@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38283&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -34,7 +34,7 @@ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) {
     boolean flag2 = false;
 
     for (List&lt;Integer&gt; list : lists) {
-        for (Integer value : list) {
+        for (int value : list) {
             if (value &gt; 20) {
                 flag2 = true;
                 break;
@@ -51,23 +51,23 @@ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) {
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:38283/docs/simplify/sections/break/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/simplify/sections/break/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Break statements and flags">
   <meta property="og:description" content="Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
 This can usually be avoided:
 using return statements (possibly with auxiliary functions), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:
-without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (Integer value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; }">
+without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (int value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; }">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 <title>Break statements and flags | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:38283/docs/simplify/sections/break/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/simplify/sections/break/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.38b106dd982bff893f2549d1ddf6564f86458e2afc74c8eecbf3a6bf9a25ba2a.js" integrity="sha256-OLEG3Zgr/4k/JUnR3fZWT4ZFjir8dMjuy/Omv5oluio=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2c26991bceed7f8146ef81bdb96c7ffa8f86e0bbea45b4113076110417ac784d.js" integrity="sha256-LCaZG87tf4FG74G9uWx/&#43;o&#43;G4LvqRbQRMHYRBBeseE0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -451,6 +451,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -828,6 +841,316 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
+    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
+      <a href="/docs/lambda/" class="">First-class methods</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/closure/" class="">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
+    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
+    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
     <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
@@ -918,6 +1241,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/simplify/sections/break/" class="active">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -1075,7 +1411,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
     <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
-      <a href="/docs/git/" class="">git</a>
+      <a href="/docs/git/" class="">Git</a>
     </label>
   
 
@@ -1484,7 +1820,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> flag2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list : lists) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Integer value : list) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> value : list) {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (value <span style="color:#f92672">&gt;</span> 20) {
 </span></span><span style="display:flex;"><span>                flag2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
@@ -1517,7 +1853,7 @@ https://github.com/alex-shpak/hugo-book
 <!-- } -->
 <!---->
 <!-- private boolean isValid(List<Integer> values) { -->
-<!--     for (Integer value : values) { -->
+<!--     for (int value : values) { -->
 <!--         if(value > 20) { -->
 <!--             return true; -->
 <!--         } -->

@@ -11,7 +11,7 @@
   Duplicate code
   #
 
-Duplicate code within a same project has undesirable consequences.
+Duplicate code within a project has undesirable consequences.
 In particular:
 
 Duplicate code means duplicate bugs.
@@ -22,15 +22,15 @@ The application may be harder to extend: adding a new feature may require modify
   #
 
 
-By code factorization, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. ab &#43; ac
+By code factorization, we mean eliminating duplicate statements or expressions, by (loose) analogy to the factorization of an algebraic expression (e.g. ab &#43; ac
 can be rewritten a(b&#43;c)).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/simplify/sections/factorization/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Factorizing">
-  <meta property="og:description" content="Factorizing # Duplicate code # Duplicate code within a same project has undesirable consequences. In particular:
-Duplicate code means duplicate bugs. The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class. Factorizing # By code factorization, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. ab &#43; ac can be rewritten a(b&#43;c)).">
+  <meta property="og:description" content="Factorizing # Duplicate code # Duplicate code within a project has undesirable consequences. In particular:
+Duplicate code means duplicate bugs. The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class. Factorizing # By code factorization, we mean eliminating duplicate statements or expressions, by (loose) analogy to the factorization of an algebraic expression (e.g. ab &#43; ac can be rewritten a(b&#43;c)).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -40,7 +40,7 @@ Duplicate code means duplicate bugs. The application may be harder to extend: ad
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/simplify/sections/factorization/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d6cc9fa96b62ee0c6b29a254b288804eb798f4383e30c1f6732a9db33f5bce7c.js" integrity="sha256-1syfqWti7gxrKaJUsoiATreY9Dg&#43;MMH2cyqdsz9bznw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2c26991bceed7f8146ef81bdb96c7ffa8f86e0bbea45b4113076110417ac784d.js" integrity="sha256-LCaZG87tf4FG74G9uWx/&#43;o&#43;G4LvqRbQRMHYRBBeseE0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1051,6 +1051,79 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
+    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
     <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
@@ -1128,6 +1201,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/simplify/sections/factorization/" class="active">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -1678,7 +1777,7 @@ https://github.com/alex-shpak/hugo-book
   Duplicate code
   <a class="anchor" href="#duplicate">#</a>
 </h2>
-<p><a href="https://en.wikipedia.org/wiki/Duplicate_code">Duplicate code</a> within a same project has undesirable consequences.
+<p><a href="https://en.wikipedia.org/wiki/Duplicate_code">Duplicate code</a> within a project has undesirable consequences.
 In particular:</p>
 <ol>
 <li>Duplicate code means <em>duplicate bugs</em>.</li>
@@ -1689,7 +1788,7 @@ In particular:</p>
   <a class="anchor" href="#factorizing-1">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>By <strong>code factorization</strong>, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. <code>ab + ac</code>
+<p>By <strong>code factorization</strong>, we mean eliminating duplicate statements or expressions, by (loose) analogy to the factorization of an algebraic expression (e.g. <code>ab + ac</code>
 can be rewritten <code>a(b+c)</code>).</p>
 </blockquote>
 <p>This usually comes down to simple techniques.
@@ -1739,50 +1838,58 @@ We illustrate here a few of them.</p>
 <input type="radio" class="toggle" name="tabs-exercise_aux_met" id="tabs-exercise_aux_met-0" checked="checked" />
 <label for="tabs-exercise_aux_met-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Factorize the following Java class:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Extractor</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LayoutValidator</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">extractId</span>(String text){
-</span></span><span style="display:flex;"><span>        Matcher matcher <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;^[A-Z]?\\d+&#34;</span>).<span style="color:#a6e22e">matcher</span>(text);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> matcher.<span style="color:#a6e22e">find</span>()<span style="color:#f92672">?</span>
-</span></span><span style="display:flex;"><span>                matcher.<span style="color:#a6e22e">group</span>(0):
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">noCompiledFileInSource</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (Files.<span style="color:#a6e22e">walk</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/java&#34;</span>))
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">anyMatch</span>(f <span style="color:#f92672">-&gt;</span> f.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#34;.class&#34;</span>))) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (IOException ex) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(ex);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">extractSSN</span>(String text){
-</span></span><span style="display:flex;"><span>        Matcher matcher <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;SSN:(\\d+)&#34;</span>).<span style="color:#a6e22e">matcher</span>(text);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> matcher.<span style="color:#a6e22e">find</span>()<span style="color:#f92672">?</span>
-</span></span><span style="display:flex;"><span>                matcher.<span style="color:#a6e22e">group</span>(1):
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">atLeastOnePropertyFile</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (Files.<span style="color:#a6e22e">walk</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources&#34;</span>))
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">anyMatch</span>(f <span style="color:#f92672">-&gt;</span> f.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#34;.properties&#34;</span>))) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (IOException ex) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(ex);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_aux_met" id="tabs-exercise_aux_met-1"  />
 <label for="tabs-exercise_aux_met-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ```java -->
-<!-- public class Extractor { -->
-<!---->
-<!--     String extractId(String text){ -->
-<!--         return getFirstMatch(text, "^[A-Z]?\\d+", 0); -->
-<!--     } -->
-<!---->
-<!--     String extractSSN(String text){ -->
-<!--         return getFirstMatch(text, "SSN:(\\d+)", 1); -->
-<!--     } -->
-<!---->
-<!--     String getFirstMatch(String text, String regex, int group){ -->
-<!--         Matcher matcher = Pattern.compile(regex).matcher(text); -->
-<!--         return matcher.find()? -->
-<!--                 matcher.group(group): -->
-<!--                 null; -->
-<!--     } -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LayoutValidator</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">noCompiledFileInSource</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span>containsFileWithExtension(<span style="color:#e6db74">&#34;src/main/java&#34;</span>, <span style="color:#e6db74">&#34;.class&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">atLeastOnePropertyFile</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> containsFileWithExtension(<span style="color:#e6db74">&#34;src/main/resources&#34;</span>, <span style="color:#e6db74">&#34;.properties&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">containsFileWithExtension</span>(String directory, String extension) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (Files.<span style="color:#a6e22e">walk</span>(Path.<span style="color:#a6e22e">of</span>(directory))
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">anyMatch</span>(f <span style="color:#f92672">-&gt;</span> f.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">endsWith</span>(extension))) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (IOException ex) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(ex);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 <h2 id="abstract">
   Abstract class

@@ -40,6 +40,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/collaboration/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/simplify/sections/break/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/classes/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/unittests/sections/structured/</loc>
@@ -47,6 +49,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/unittests/sections/tdd/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/exceptions/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/generics/sections/generics/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/files/</loc>
   </url><url>
@@ -76,6 +80,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/backup/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/simplify/sections/boolean/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/config/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/build/sections/pom/</loc>
@@ -97,6 +103,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/objects/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/labs/env/sections/ssh/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/build/sections/artifact/</loc>
   </url><url>
@@ -122,6 +130,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/generics/sections/variance/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/abstractdatatypes/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/commit/</loc>
@@ -139,6 +149,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/stream/sections/numeric/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/os/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/generics/sections/erasure/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/lambda/sections/type/</loc>
   </url><url>
@@ -205,6 +217,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/stream/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/resources/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/generics/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/</loc>
   </url><url>

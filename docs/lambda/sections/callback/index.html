@@ -1824,7 +1824,7 @@ A Java <strong>method reference</strong> is written:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example(continued).</em></strong></p>
 <p>In Java, the above method <code>transform</code> is not necessary.
-Instead, we can use the native method <a href="%7b%7bref%22../../stream/sections/terminal.md#forEach%22%7d%7d">forEach</a>, available (among others) for any Java <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>.
+Instead, we can use the native method <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/#forEach">forEach</a>, available (among others) for any Java <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>.
 This method takes a <code>Consumer</code> method as input, and applies this method to each element of the collection.</p>
 <p>So the following program:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>getUnits().<span style="color:#a6e22e">forEach</span>(unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>);

@@ -48,7 +48,9 @@ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) {
     return flag1;
 }
 
-">
+
+Solution 1
+With an auxiliary method:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/simplify/sections/break/">
@@ -57,7 +59,7 @@ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) {
   <meta property="og:description" content="Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
 This can usually be avoided:
 using return statements (possibly with auxiliary functions), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:
-without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (int value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; }">
+without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (int value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; } Solution 1 With an auxiliary method:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -67,7 +69,7 @@ without boolean flag and without break statement. /** * Returns true iff each of
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/simplify/sections/break/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1a7b453061d44faa748842341d618d286fddd86c33ddec7b010520f1267f7af6.js" integrity="sha256-GntFMGHUT6p0iEI0HWGNKG/d2Gwz3ex7AQUg8SZ/evY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9f6b34498e8c3717e40c11da90fb6fa28e30fc79e616c736af7feb402e474720.js" integrity="sha256-n2s0SY6MNxfkDBHakPtvoo4w/HnmFsc2r3/rQC5HRyA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1834,51 +1836,35 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flag1;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_break" id="tabs-exercise_break-1"  />
 <label for="tabs-exercise_break-1">Solution 1</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- With an auxiliary method: -->
-<!---->
-<!-- ```java -->
-<!-- boolean check(List<List<Integer>> lists) { -->
-<!---->
-<!--     for (List<Integer> list : lists) { -->
-<!--         if(!isValid(list)) { -->
-<!--             return false; -->
-<!--         } -->
-<!--     } -->
-<!--     return true; -->
-<!-- } -->
-<!---->
-<!-- private boolean isValid(List<Integer> values) { -->
-<!--     for (int value : values) { -->
-<!--         if(value > 20) { -->
-<!--             return true; -->
-<!--         } -->
-<!--     } -->
-<!--     return false; -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
-<!---->
-<!-- 
+<div class="book-tabs-content markdown-inner"><p>With an auxiliary method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">check</span>(List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> lists) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list : lists) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>isValid(list)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isValid</span>(List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> values) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> value : values) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(value <span style="color:#f92672">&gt;</span> 20) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 <input type="radio" class="toggle" name="tabs-exercise_break" id="tabs-exercise_break-2"  />
 <label for="tabs-exercise_break-2">Solution 2</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ```java -->
-<!-- boolean check(List<List<Integer>> lists) { -->
-<!--     return lists.stream() -->
-<!--         .allMatch(l -> l.stream().anyMatch(v -> v > 20)); -->
-<!-- } -->
-<!-- ``` -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">check</span>(List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> lists) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> lists.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">allMatch</span>(l <span style="color:#f92672">-&gt;</span> l.<span style="color:#a6e22e">stream</span>().<span style="color:#a6e22e">anyMatch</span>(v <span style="color:#f92672">-&gt;</span> v <span style="color:#f92672">&gt;</span> 20));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
 </div>
 </article>
  

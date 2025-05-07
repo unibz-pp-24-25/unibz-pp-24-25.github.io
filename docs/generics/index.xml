@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="https://unibz-pp-24-25.github.io/docs/generics/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Type checking</title>
+      <link>https://unibz-pp-24-25.github.io/docs/generics/sections/type_checking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-24-25.github.io/docs/generics/sections/type_checking/</guid>
+      <description>&lt;h1 id=&#34;type-checking&#34;&gt;&#xA;  Type checking&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#type-checking&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;statically-vs-dynamically-typed-languages&#34;&gt;&#xA;  Statically vs dynamically typed languages&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#statically-vs-dynamically-typed-languages&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote class=&#34;book-hint warning&#34;&gt;&#xA;&lt;p&gt;A compiled programming language is said to be &lt;strong&gt;statically typed&lt;/strong&gt; if (most) type checks are performed during the compilation of a program, rather than during its execution.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Such languages include , C/C++, C#, Go, Java, Kotlin, Typescript, Rust, etc., as well as functional (or functional-like) languages like Haskell or Scala.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Example.&lt;/em&gt;&lt;/strong&gt;&#xA;The following Java program does not &lt;em&gt;compile&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Generics</title>
       <link>https://unibz-pp-24-25.github.io/docs/generics/sections/generics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

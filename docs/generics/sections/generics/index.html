@@ -46,7 +46,7 @@ Generic method # Example # Consider the following interface Unit and its two imp
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/generics/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2c26991bceed7f8146ef81bdb96c7ffa8f86e0bbea45b4113076110417ac784d.js" integrity="sha256-LCaZG87tf4FG74G9uWx/&#43;o&#43;G4LvqRbQRMHYRBBeseE0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3c1eb7a8953678461d88fff2fe066d6dd76d5507915a3abae2067b80eced9db5.js" integrity="sha256-PB63qJU2eEYdiP/y/gZtbddtVQeRWjq64gZ7gOztnbU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1814,8 +1814,8 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
 </span></span><span style="display:flex;"><span>Unicorn u <span style="color:#f92672">=</span> healthiestButterfly(butterflies);
 </span></span></code></pre></div><p>Neither does the following program (<em>as expected</em> still):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Unicorn(5) };
-</span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiestButterfly(butterflies);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorns<span style="color:#f92672">[]</span> unicorns <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Unicorn(8), <span style="color:#66d9ef">new</span> Unicorn(3) };
+</span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiestButterfly(unicorns);
 </span></span></code></pre></div><p>Now let us assume that we need to perform the same operation on arrays of unicorns.</p>
 <p>We could write a nearly identical method <code>healthiestUnicorn</code>, with type:</p>
 <p>$\qquad$ <code>Unicorn[]</code> $\to$ <code>Unicorn</code></p>
@@ -1831,12 +1831,9 @@ https://github.com/alex-shpak/hugo-book
 The compiler cannot enforce anymore that:</p>
 <ol>
 <li>the returned <code>Unit</code> has the same type as the units of the input array,</li>
-<li>the input units must have the same type.
-For instance, the following program would compile:</li>
+<li>the input units must have the same type.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unit<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Unicorn(5) };
-</span></span><span style="display:flex;"><span>Unit healthiest <span style="color:#f92672">=</span> healthiest(units);
-</span></span></code></pre></div><h4 id="solution">
+<h4 id="solution">
   Solution
   <a class="anchor" href="#solution">#</a>
 </h4>
@@ -1867,7 +1864,9 @@ In order words, we can create a method <code>healthiest</code> with type:</p>
 </span></span></code></pre></div><p>The block <code>&lt;T extends Unit&gt;</code>:</p>
 <ul>
 <li><em>declares</em> the type variable <code>T</code>, and</li>
-<li>specifies that the type <code>Unit</code> is an <strong>upper bound</strong> on the value of <code>T</code>.</li>
+<li>specifies that the value of <code>T</code> must be a <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/">subtype</a> of <code>Unit</code>.
+In other words, <code>Unit</code> is an &ldquo;upper bound&rdquo; on the value of <code>T</code>.
+So in our example, <code>T</code> can take the value <code>Unit</code>, <code>Butterfly</code> or <code>Unicorn</code>.</li>
 </ul>
 <p>This variable <code>T</code> can be used not only in the method&rsquo;s signature, but also in its body.</p>
 <blockquote class="book-hint info">
@@ -1905,7 +1904,7 @@ So any other variable name could be used, for instance</p>
 <p>It is also possible to declare several type variables.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> Unit <span style="color:#a6e22e">myMethod</span> (T arg1, V arg2) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">myMethod</span> (T arg1, V arg2) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
@@ -1921,14 +1920,14 @@ Let us recall the signature of our generic method above:</p>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The following program will compile (and run as expected):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> getButterflies();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
 </span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiest(butterflies);
 </span></span><span style="display:flex;"><span>Unit u <span style="color:#f92672">=</span> healthiest(butterflies);
 </span></span></code></pre></div><p>However, the following program will not compile, <em>as expected</em> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> getButterflies();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
 </span></span><span style="display:flex;"><span>Unicorn u <span style="color:#f92672">=</span> healthiest(butterflies);
 </span></span></code></pre></div><p>The following program will not compile either, <em>as expected</em> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> getStrings();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]</span>{ <span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span> };
 </span></span><span style="display:flex;"><span>String u <span style="color:#f92672">=</span> healthiest(strings);
 </span></span></code></pre></div></blockquote>
 <h2 id="genericType">
@@ -2161,10 +2160,10 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
   Inheritance
   <a class="anchor" href="#inheritance">#</a>
 </h4>
-<p>If a class extends a generic class, then the subclass must redeclare the type variables of the superclass, or instantiate them (with a type).</p>
+<p>If a class extends a generic class, then the subclass must declare the type variables used to refer to the superclass.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-The following program does <em>not</em> compile:</p>
+The following program does <em>not</em> compile, because the type variable <code>T</code> (in the subclass) is not declared.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}

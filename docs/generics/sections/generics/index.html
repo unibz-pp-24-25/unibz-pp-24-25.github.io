@@ -46,7 +46,7 @@ Generic method # Example # Consider the following interface Unit and its two imp
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/generics/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7de13bb70edea38b693d29a2ab3131b42feed3c5dac07ecfab23575eb18e7fd6.js" integrity="sha256-feE7tw7eo4tpPSmiqzExtC/u08XawH7PqyNXXrGOf9Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4afd850e85593b7846a2df11071e47811b7b3a4d1173750894e78185088c4b9c.js" integrity="sha256-Sv2FDoVZO3hGot8RBx5HgRt7Ok0Rc3UIlOeBhQiMS5w=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2100,70 +2100,52 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 <label for="tabs-exercise_generics-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Consider the following generic class.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pair</span><span style="color:#f92672">&lt;</span>T, V <span style="color:#66d9ef">extends</span> T<span style="color:#f92672">&gt;</span>{
-</span></span><span style="display:flex;"><span>    T arg1;
-</span></span><span style="display:flex;"><span>    V arg2;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Pair</span>(T arg1, V arg2){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg1</span> <span style="color:#f92672">=</span> arg1;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg2</span> <span style="color:#f92672">=</span> arg2;
+</span></span><span style="display:flex;"><span>        ,,,
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    V <span style="color:#a6e22e">someMethod</span>(V mArg){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> mArg;
+</span></span><span style="display:flex;"><span>        ,,,
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Which of the following Java programs compile?</p>
 <ol>
-<li></li>
-</ol>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div><ol start="2">
-<li></li>
-</ol>
+</span></span></code></pre></div></li>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
-</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div><ol start="3">
-<li></li>
-</ol>
+</span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
+</span></span></code></pre></div></li>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
-</span></span></code></pre></div><ol start="4">
-<li></li>
-</ol>
+</span></span></code></pre></div></li>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div><ol start="5">
-<li></li>
-</ol>
+</span></span></code></pre></div></li>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
-</span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div><ol start="6">
-<li></li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
-</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div><ol start="7">
-<li></li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
-</span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div><ol start="8">
-<li></li>
-</ol>
+</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
+</span></span></code></pre></div></li>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
 </span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
-</span></span></code></pre></div><ol start="9">
-<li></li>
-</ol>
+</span></span></code></pre></div></li>
+<li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div></div>
+</span></span></code></pre></div></li>
+</ol>
+</div>
 <!-- 
 <input type="radio" class="toggle" name="tabs-exercise_generics" id="tabs-exercise_generics-1"  />
 <label for="tabs-exercise_generics-1">Solution</label>
 <div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!-- 3, 4 and 8. -->
+<!-- 3, 4 and 6. -->
 <!---->
 <!-- </div>
  -->

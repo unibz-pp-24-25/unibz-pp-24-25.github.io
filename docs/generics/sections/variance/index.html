@@ -26,7 +26,7 @@ The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, 
 Examples.
 
 If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer.
-If Butterfly $\sqsubseteq$ Unit, then a method that takes a Unit as input should also accept a Butterfly.
+If Butterfly $\sqsubseteq$ Unit, then a method that returns a Unit can also return a Butterfly.
 
 
 
@@ -42,7 +42,7 @@ A natural question is whether subtyping between parameterized types should be de
   <meta property="og:description" content="Variance # Subtype # Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a subtype of $B$.
 Subtype and substitution # The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
 Examples.
-If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer. If Butterfly $\sqsubseteq$ Unit, then a method that takes a Unit as input should also accept a Butterfly. Type parameters and subtyping # A natural question is whether subtyping between parameterized types should be determined by subtyping between their parameters.">
+If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer. If Butterfly $\sqsubseteq$ Unit, then a method that returns a Unit can also return a Butterfly. Type parameters and subtyping # A natural question is whether subtyping between parameterized types should be determined by subtyping between their parameters.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -52,7 +52,7 @@ If Integer $\sqsubseteq$ Number, then a method that takes a Number as input shou
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7de13bb70edea38b693d29a2ab3131b42feed3c5dac07ecfab23575eb18e7fd6.js" integrity="sha256-feE7tw7eo4tpPSmiqzExtC/u08XawH7PqyNXXrGOf9Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4afd850e85593b7846a2df11071e47811b7b3a4d1173750894e78185088c4b9c.js" integrity="sha256-Sv2FDoVZO3hGot8RBx5HgRt7Ok0Rc3UIlOeBhQiMS5w=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1824,7 +1824,7 @@ If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that 
 <p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>If <code>Integer</code> $\sqsubseteq$ <code>Number</code>, then a method that takes a <code>Number</code> as input should also accept an <code>Integer</code>.</li>
-<li>If <code>Butterfly</code> $\sqsubseteq$ <code>Unit</code>, then a method that takes a <code>Unit</code> as input should also accept a <code>Butterfly</code>.</li>
+<li>If <code>Butterfly</code> $\sqsubseteq$ <code>Unit</code>, then a method that returns a <code>Unit</code> can also return a <code>Butterfly</code>.</li>
 </ul>
 </blockquote>
 <h2 id="type-parameters-and-subtyping">
@@ -1942,12 +1942,12 @@ Java generic types are <em>invariant</em>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-The following Java program does <em>not</em> compile:</p>
+The following Java program does <em>not</em> compile, because the generic type <code>List&lt;E&gt;</code> is invariant:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> aList;
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
 </span></span></code></pre></div></blockquote>
-<p>So a Java generic type cannot be <em>declared</em> as covariant or contravariant.
+<p>So (unfortunately?) a Java generic type cannot be <em>declared</em> as covariant or contravariant.
 However, each time we <em>use</em> a generic type,
 we can specify that it should be interpreted by the compiler as covariant or contravariant.</p>
 <h5 id="covariance-1">
@@ -1971,11 +1971,12 @@ The following Java program does compiles:</p>
 It can be used to specify a <strong>lower bound</strong> on the value of a type variable, or to allow contravariance (in combination with <code>?</code>).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-The instance method <code>Stream.filter</code> takes as argument a callback function with type <code>Predicate&lt;T&gt;</code>, where <code>T</code> is the type of the elements of the stream.</p>
+The Java interface <code>Stream&lt;T&gt;</code> is a generic type, where <code>T</code> is the type of the elements of the stream.</p>
+<p>This interface has an instance method <code>Stream.filter</code> that takes as argument a callback function with type <code>Predicate&lt;T&gt;</code>.</p>
 <p>As we saw above, <code>Predicate&lt;T&gt;</code> should intuitively be interpreted as contravariant.
 Accordingly, the signature of the method <code>filter</code> is</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filter</span>(Predicate<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> predicate)
-</span></span></code></pre></div><p>It accepts as argument any <code>Predicate&lt;V&gt;</code> such that <code>T</code> $\sqsubseteq$ <code>V</code>.
+</span></span></code></pre></div><p>It accepts as argument any method with type <code>Predicate&lt;V&gt;</code> such that <code>T</code> $\sqsubseteq$ <code>V</code>.
 So the following program compiles:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
 </span></span><span style="display:flex;"><span>integers.<span style="color:#a6e22e">stream</span>()

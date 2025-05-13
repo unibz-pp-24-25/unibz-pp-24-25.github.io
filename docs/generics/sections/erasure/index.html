@@ -40,7 +40,7 @@ Procedure # Intuitively, type erasure consists in producing a program equivalent
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/erasure/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7de13bb70edea38b693d29a2ab3131b42feed3c5dac07ecfab23575eb18e7fd6.js" integrity="sha256-feE7tw7eo4tpPSmiqzExtC/u08XawH7PqyNXXrGOf9Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4afd850e85593b7846a2df11071e47811b7b3a4d1173750894e78185088c4b9c.js" integrity="sha256-Sv2FDoVZO3hGot8RBx5HgRt7Ok0Rc3UIlOeBhQiMS5w=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1815,12 +1815,12 @@ If all type checks succeed, then:</p>
 </h2>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-Type erasure is traditionally illustrated with a Java program before and after erasure (for instance, in Oracle&rsquo;s <a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html">Java tutorials</a>).
+Type erasure is traditionally illustrated with a Java program before and after erasure (for instance here, but also in Oracle&rsquo;s <a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html">Java tutorials</a>).
 However, these illustrations should <em>not</em> be taken literally, because compilation produces <em>byte code</em>, not source code.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/#covarContravarUsage">earlier</a> illustrate covariance and contravariance, together with the methods <code>unbox</code> and <code>replaceValue</code>:</p>
+Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/#covarContravarUsage">earlier</a> to illustrate covariance and contravariance, together with the methods <code>unbox</code> and <code>replaceValue</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;

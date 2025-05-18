@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -22,7 +22,7 @@ If the size of the list exceeds the capacity of $A$, then the content of $A$ is 
 and $A$ is replaced with $A&rsquo;$.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/datastructures/sections/list/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/datastructures/sections/list/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Dynamic array and linked list">
   <meta property="og:description" content="Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.
@@ -33,15 +33,49 @@ Structure # A dynamic array stores the elements of a list in a regular array $A$
 <title>Dynamic array and linked list | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/datastructures/sections/list/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/list/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.09c392c32e55b186a068f66dad9472ef6aa51d766cb980a61853ee973e1ea87e.js" integrity="sha256-CcOSwy5VsYagaPZtrZRy72qlHXZsuYCmGFPulz4eqH4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e4ff52748313923f2caffa5a11a3f1a1a6d78f0ea0e8052a7ce49d5dbf7de45e.js" integrity="sha256-5P9SdIMTkj8sr/paEaPxoabXjw6g6AUqfOSdXb995F4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -175,6 +209,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -294,7 +388,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
@@ -307,7 +401,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -339,6 +433,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -346,7 +445,1331 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2de9da23438414913111ffd05054662f" class="toggle" checked />
+    <label for="section-2de9da23438414913111ffd05054662f" class="flex justify-between">
+      <a href="/docs/datastructures/" class="">Data structures</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/list/" class="active">Dynamic array and linked list</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/hash/" class="">Hash table</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
+    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
+      <a href="/docs/lambda/" class="">First-class methods</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/closure/" class="">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
+    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
+    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
+    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
+    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">Git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
   
 
         </li>
@@ -411,7 +1834,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#array">Dynamic array</a>
       <ul>
         <li><a href="#structure">Structure</a></li>
-        <li><a href="#array-dequeue">Array dequeue</a></li>
+        <li><a href="#alternative-structure-array-deque">Alternative structure: array deque</a></li>
         <li><a href="#in-java">in Java</a></li>
       </ul>
     </li>
@@ -446,7 +1869,7 @@ https://github.com/alex-shpak/hugo-book
   Dynamic array
   <a class="anchor" href="#array">#</a>
 </h2>
-<p>A dynamic array is typically used to implement the abstract data type <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a>.</p>
+<p>A dynamic array is typically used to implement the abstract data type <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/list/">list</a>.</p>
 <h3 id="structure">
   Structure
   <a class="anchor" href="#structure">#</a>
@@ -456,20 +1879,21 @@ https://github.com/alex-shpak/hugo-book
 If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&rsquo;$,
 and $A$ is replaced with $A&rsquo;$.</p>
 </blockquote>
-<h3 id="array-dequeue">
-  Array dequeue
-  <a class="anchor" href="#array-dequeue">#</a>
+<h3 id="alternative-structure-array-deque">
+  Alternative structure: array deque
+  <a class="anchor" href="#alternative-structure-array-deque">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>An <strong>array dequeue</strong> is a variant of a dynamic array that allows the list to be extended in both directions.
+<p>An <strong>array deque</strong> is a variant of a dynamic array that allows the list to be extended in both directions.
 The array is initially populated from its middle index.</p>
 </blockquote>
-<p>In addition to a list, an array dequeue is commonly used to implement a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#queue">queue</a> and/or a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
+<p>In addition to a list, an array dequeue is commonly used to implement a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a> and/or a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
 <h3 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h3>
-<p>The class <code>ArrayList</code> implements the interface <code>List</code> as a dynamic array.</p>
+<p>The class <code>ArrayList</code> implements the interface <code>List</code> as a (regular) dynamic array.</p>
+<p>The class <code>ArrayDeque</code> implements the interfaces <code>Queue</code> and <code>Deque</code> as an array deque.</p>
 <h2 id="linkedList">
   Linked list
   <a class="anchor" href="#linkedList">#</a>
@@ -482,7 +1906,7 @@ A linked list maintains a pointer to its first node, called its <strong>head</st
 <p><strong><em>Example.</em></strong></p>
 <p><img src="/img/linkedLists/labeled/char/withDup/list.svg" alt="" /></p>
 </blockquote>
-<p>In addition to a <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a>, a linked list is often used to implement a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
+<p>In addition to a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/list/">list</a>, a linked list is often used to implement a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
 <h3 id="doublyLinkedList">
   Doubly linked list
   <a class="anchor" href="#doublyLinkedList">#</a>
@@ -491,12 +1915,12 @@ A linked list maintains a pointer to its first node, called its <strong>head</st
 <p>A <strong>doubly linked list</strong> is a linked list where each node points in addition to its predecessor (if any).
 A doubly linked list maintains a pointer to its head and a pointer to its last node.</p>
 </blockquote>
-<p>In addition to a <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a> and/or a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#stack">stack</a>, a doubly linked list is often used to implement a <a href="http://localhost:1313/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
+<p>In addition to a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/list/">list</a> and/or a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">stack</a>, a doubly linked list is often used to implement a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
 <h3 id="in-java-1">
   in Java
   <a class="anchor" href="#in-java-1">#</a>
 </h3>
-<p>The class<code>java.util.LinkedList</code> implements the interfaces<code>List</code> and <code>Dequeue</code> as a double linked list.</p>
+<p>The class <code>LinkedList</code> implements the interfaces <code>List</code> and <code>Deque</code> as a double linked list.</p>
 <h2 id="performance">
   Performance
   <a class="anchor" href="#performance">#</a>
@@ -504,9 +1928,9 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-0" checked="checked" />
 <label for="tabs-my_exercise-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>Determine the worst case running time of the following operations on a list, stack and/or queue, if the underlying data structure is:</p>
+<div class="book-tabs-content markdown-inner"><p>Determine the <a href="https://unibz-pp-24-25.github.io/docs/background/sections/cost/">worst case running time</a> of the following operations on a list, stack and/or queue, if the underlying data structure is:</p>
 <ol>
-<li>as a dynamic array</li>
+<li>a (large enough) dynamic array</li>
 <li>a linked list</li>
 <li>a doubly-linked list</li>
 </ol>
@@ -535,63 +1959,21 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
 </li>
 </ul>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-1"  />
 <label for="tabs-my_exercise-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><table>
-  <thead>
-      <tr>
-          <th>problem</th>
-          <th>dynamic array</th>
-          <th>linked list</th>
-          <th>doubly linked list</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>read or modify the value at position $i$</td>
-          <td>$\Theta(1)$</td>
-          <td>$\Theta(i)$</td>
-          <td>$\Theta(i)$</td>
-      </tr>
-      <tr>
-          <td>remove the element at position $i$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(n)$</td>
-      </tr>
-      <tr>
-          <td>add an element at the beginning of the list</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(1)$</td>
-          <td>$\Theta(1)$</td>
-      </tr>
-      <tr>
-          <td>add an element at the end of the list</td>
-          <td>$\Theta(1)$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(n)$</td>
-      </tr>
-      <tr>
-          <td>remove the first element of the list</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(1)$</td>
-          <td>$\Theta(1)$</td>
-      </tr>
-      <tr>
-          <td>remove the last element of the list</td>
-          <td>$\Theta(1)$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(1)$</td>
-      </tr>
-      <tr>
-          <td>concatenate two lists</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(1)$</td>
-      </tr>
-  </tbody>
-</table>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!-- | problem | dynamic array | linked list | doubly linked list | -->
+<!-- | --------| --------------| ----------- |--------------------| -->
+<!-- | read or modify the value at position $i$ | $\Theta(1)$ | $\Theta(i)$ | $\Theta(i)$ | -->
+<!-- | add an element at the beginning of the list| $\Theta(n)$| $\Theta(1)$ | $\Theta(1)$ -->
+<!-- | add an element at the end of the list|$\Theta(1)$| $\Theta(n)$ | $\Theta(n)$ | -->
+<!-- | remove the element at position $i$| $\Theta(n)$ | $\Theta(n)$| $\Theta(n)$ | -->
+<!-- | remove the first element of the list| $\Theta(n)$| $\Theta(1)$ | $\Theta(1)$ | -->
+<!-- | remove the last element of the list| $\Theta(1)$| $\Theta(n)$ | $\Theta(1)$ | -->
+<!-- | concatenate two lists|$\Theta(n)$| $\Theta(n)$| $\Theta(1)$ | -->
+<!-- </div>
+ -->
 </div>
 <h3 id="locality">
   Locality
@@ -643,7 +2025,7 @@ Iterating over an array can be more efficient than iterating over a linked list,
     <li><a href="#array">Dynamic array</a>
       <ul>
         <li><a href="#structure">Structure</a></li>
-        <li><a href="#array-dequeue">Array dequeue</a></li>
+        <li><a href="#alternative-structure-array-deque">Alternative structure: array deque</a></li>
         <li><a href="#in-java">in Java</a></li>
       </ul>
     </li>

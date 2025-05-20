@@ -1955,7 +1955,7 @@ For instance:</p>
 <blockquote class="book-hint warning">
 <p>Many modern languages (such as Java, C#, Python, Ruby, JavaScript, Go, etc.) use an optimization technique called <strong>interning</strong> in order to manage strings (or sometimes integers, etc.) in memory.
 This consists in storing only one copy of each distinct string created during the execution of a program.
-These strings are stored in a shared <strong>pool</strong>, and each of them is an <a href="%7b%7bref%22./mutability.md%22%7d%7d">immutable</a> object (meaning that it cannot be modified).</p>
+These strings are stored in a shared <strong>pool</strong>, and each of them is an <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutable</a> object (meaning that it cannot be modified).</p>
 </blockquote>
 <p>Some benefits are faster string comparisons, lower memory footprint, etc.</p>
 <h3 id="in-java-2">
@@ -2001,7 +2001,7 @@ For instance</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because of (implicit) interning</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
-</span></span></code></pre></div><p>In order to support interning, string in Java are <a href="%7b%7bref%22./mutability.md%22%7d%7d">immutable</a>.</p>
+</span></span></code></pre></div><p>In order to support interning, string in Java are <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutable</a>.</p>
 <p>In particular, the instance methods of the class <code>String</code> do <em>not</em> modify the current string, even if the names of some of these methods (<code>substring</code>, <code>replace</code>, etc.) suggest that they do.
 Instead, these methods (may) return (a reference to) a <em>different</em> object.
 For instance:</p>
@@ -2051,7 +2051,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>Integer j <span style="color:#f92672">=</span> 2;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(i <span style="color:#f92672">==</span> j);
-</span></span></code></pre></div><p>Like strings, instances of boxed types are <a href="%7b%7bref%22./mutability.md%22%7d%7d">immutable</a>.
+</span></span></code></pre></div><p>Like strings, instances of boxed types are <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutable</a>.
 This can affect performance.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Integer i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000000 ; i<span style="color:#f92672">++</span>){

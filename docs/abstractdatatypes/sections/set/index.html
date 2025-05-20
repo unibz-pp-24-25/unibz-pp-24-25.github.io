@@ -1874,7 +1874,7 @@ A set provides no guarantee on the <em>order</em> of its elements!</p>
   <a class="anchor" href="#java">#</a>
 </h2>
 <p>Java provides an interface <code>Set</code> with 8 native implementations (i.e. different <em>classes</em> that implement this interface).
-The most commonly used are <a href="%7b%7bref%22../../dataStructures/sections/hash.md#hashSet%22%7d%7d">HashSet</a> and <a href="%7b%7bref%22../../dataStructures/sections/tree.md#treeMap%22%7d%7d">TreeSet</a>.</p>
+The most commonly used are <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/#hashSet">HashSet</a> and <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/tree/#treeMap">TreeSet</a>.</p>
 <p>The interface <code>Set</code> extends the interface <code>Collection</code>.</p>
 <h3 id="syntax">
   Syntax
@@ -1943,7 +1943,7 @@ But what does &ldquo;identical&rdquo; mean for two objects?</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
 <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#hashCode">Recall</a> that the method <code>equals</code> should be overridden <em>together with</em> the method <code>hashCode</code> (more on this later).
-This is essential for a <code>HashSet</code> to behave as expected (more on this <a href="%7b%7bref%22../../dataStructures/sections/hash.md#hashCode%22%7d%7d">later</a>).</p>
+This is essential for a <code>HashSet</code> to behave as expected (more on this <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/#hashCode">later</a>).</p>
 </blockquote>
 <p>For instance, consider a naive implementation of the class <code>City</code>, which does <em>not</em> override <code>equals</code> (or <code>hashCode</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {

@@ -36,7 +36,7 @@ Terminology. A key-value pair in associative array is also called an entry.">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e4ff52748313923f2caffa5a11a3f1a1a6d78f0ea0e8052a7ce49d5dbf7de45e.js" integrity="sha256-5P9SdIMTkj8sr/paEaPxoabXjw6g6AUqfOSdXb995F4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.74233743e0029352873878a49d2ad01a0aa6e0aa4f127d5f27a5834848203a88.js" integrity="sha256-dCM3Q&#43;ACk1KHOHiknSrQGgqm4KpPEn1fJ6WDSEggOog=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1934,7 +1934,7 @@ The following is a chaining hash table, which stores our associative array.</p>
   Hash function
   <a class="anchor" href="#hash-function">#</a>
 </h3>
-<p>In a hash table, whether a certain entry is assigned to a certain slot is determined by a so-called hash function.</p>
+<p>In a hash table, a so-called hash function determines which slot each entry is assigned to.</p>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
 A <strong>hash function</strong> maps each key in $K$ to an index in $A$.</p>
@@ -2062,7 +2062,7 @@ The ratio $\alpha = \frac{n}{m}$ is called the <strong>load factor</strong> of t
 <p>In other words, the <em>average</em> running time of lookup, insertion and deletion is $\alpha = \frac{n}{m}$.</p>
 <p>If we assume that the size $m$ of $A$ is always reasonable for the number $n$ of entries of the associate array,
 then $\alpha$ is independent of $n$.
-So under this assumption, the <em>average</em> running time of lookup, insertion and deletion is constant (i.e. is in $\Theta(1)$.</p>
+So under this assumption, the <em>average</em> running time of lookup, insertion and deletion is constant (i.e. is in $\Theta(1)$).</p>
 <h2 id="open-indexing">
   Open indexing
   <a class="anchor" href="#open-indexing">#</a>
@@ -2209,14 +2209,15 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 </span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">==</span> downcastObject.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">&amp;&amp;</span>
 </span></span><span style="display:flex;"><span>           name.<span style="color:#a6e22e">equals</span>(downcastObject.<span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>What does the following program output?</p>
+</span></span></code></pre></div><p>Can we predict the output of the following program (and if so, what is it)?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
 </span></span><span style="display:flex;"><span>City bolognaAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet();
 </span></span><span style="display:flex;"><span>cities.<span style="color:#a6e22e">add</span>(bologna);
+</span></span><span style="display:flex;"><span>cities.<span style="color:#a6e22e">add</span>(bolognaAgain);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">contains</span>(bolognaAgain));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div></div>
 <!-- 
 <input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-1"  />
@@ -2237,15 +2238,17 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 <!-- Since $o_1$ and $o_2$ are different objects, $i_1$ and $i_2$ _may of may not_ be identical. -->
 <!---->
 <!-- The instruction `cities.add(bologna)` adds a node with key $o_1$ to $A[i_1]$. -->
+<!-- The instruction `cities.add(bolognaAgain)` adds a node with key $o_2$ to $A[i_2]$. -->
 <!---->
-<!-- Then the instruction `cities.contains(bolognaAgain)` searches for a node with a key equal to $o_2$ in $A[i_2]$. -->
+<!-- Then the instruction `cities.size()` returns the number of entries in the hash table. -->
 <!---->
 <!-- - If $i_1 = i_2$ (i.e. if we have a collision), -->
-<!--   since $o_1$`.equals(`$o_2$`)` evaluates to true, -->
-<!--   the method `contains` will return `true`. -->
+<!--   then the method `put` will not insert $o2$ in the hash table (since $o_1$`.equals(`$o_2$`)` evaluates to true). -->
+<!--   Therefore the method `cities.size()` will return `1`, -->
 <!---->
-<!-- - If $i_1 \neq i_2$, since the slot $A[i_2]$ is empty, -->
-<!--   the method `contains` will return `false`. -->
+<!-- - If $i_1 \neq i_2$, -->
+<!--   then the method `put` will insert $o2$ in the hash table (at slot $i_2$). -->
+<!--   Therefore the method `cities.size()` will return `2`. -->
 <!---->
 <!-- </div>
  -->
@@ -2253,10 +2256,10 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
 As show with this exercise, if a class overrides <code>equals</code> without overriding <code>hashCode</code>,
-then the behavior of the three basic operations on hash tables (insertion, lookup and deletion) may depend on <a href="#collision">collisions</a>.</p>
+then the behavior of the basic operations on hash tables (insertion, lookup and deletion) may depend on <a href="#collision">collisions</a>.</p>
 </blockquote>
 <p>This makes the behavior of several methods implemented by <code>HashMap</code>, <code>LinkedHashMap</code>, <code>HashSet</code> and <code>LinkedHashSet</code> (among others) unpredictable.</p>
-<p>To avoid this, whenever <code>equals</code> is override, <code>hashCode</code> should be overridden accordingly.</p>
+<p>To avoid this, whenever <code>equals</code> is overridden, <code>hashCode</code> should be overridden accordingly.</p>
 <!--In particular, if the equality of two instances is determined by equality of some class attributes, then `hashCode` should be a function (in the mathematical sense) of these attribute.-->
 <!--Semantically, _any_ function that produces an `int` out of these attributes is correct.-->
 <blockquote class="book-hint info">

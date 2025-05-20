@@ -36,7 +36,7 @@ Structure # A dynamic array stores the elements of a list in a regular array $A$
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/list/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e4ff52748313923f2caffa5a11a3f1a1a6d78f0ea0e8052a7ce49d5dbf7de45e.js" integrity="sha256-5P9SdIMTkj8sr/paEaPxoabXjw6g6AUqfOSdXb995F4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.74233743e0029352873878a49d2ad01a0aa6e0aa4f127d5f27a5834848203a88.js" integrity="sha256-dCM3Q&#43;ACk1KHOHiknSrQGgqm4KpPEn1fJ6WDSEggOog=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1959,21 +1959,63 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
 </li>
 </ul>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-1"  />
 <label for="tabs-my_exercise-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!-- | problem | dynamic array | linked list | doubly linked list | -->
-<!-- | --------| --------------| ----------- |--------------------| -->
-<!-- | read or modify the value at position $i$ | $\Theta(1)$ | $\Theta(i)$ | $\Theta(i)$ | -->
-<!-- | add an element at the beginning of the list| $\Theta(n)$| $\Theta(1)$ | $\Theta(1)$ -->
-<!-- | add an element at the end of the list|$\Theta(1)$| $\Theta(n)$ | $\Theta(n)$ | -->
-<!-- | remove the element at position $i$| $\Theta(n)$ | $\Theta(n)$| $\Theta(n)$ | -->
-<!-- | remove the first element of the list| $\Theta(n)$| $\Theta(1)$ | $\Theta(1)$ | -->
-<!-- | remove the last element of the list| $\Theta(1)$| $\Theta(n)$ | $\Theta(1)$ | -->
-<!-- | concatenate two lists|$\Theta(n)$| $\Theta(n)$| $\Theta(1)$ | -->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>problem</th>
+          <th>dynamic array</th>
+          <th>linked list</th>
+          <th>doubly linked list</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>read or modify the value at position $i$</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(i)$</td>
+          <td>$\Theta(i)$</td>
+      </tr>
+      <tr>
+          <td>add an element at the beginning of the list</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td>add an element at the end of the list</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td>remove the element at position $i$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td>remove the first element of the list</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td>remove the last element of the list</td>
+          <td>$\Theta(1)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td>concatenate two lists</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(1)$</td>
+      </tr>
+  </tbody>
+</table>
+</div>
 </div>
 <h3 id="locality">
   Locality

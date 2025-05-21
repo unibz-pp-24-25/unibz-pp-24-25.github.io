@@ -18,7 +18,7 @@ Reminder. An associative array (or map) is a finite set of key-value pairs, wher
 
 
 Terminology.
-A key-value pair in associative array is also called an entry.">
+A key-value pair in an associative array is also called an entry.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
@@ -26,7 +26,7 @@ A key-value pair in associative array is also called an entry.">
   <meta property="og:title" content="Hash table">
   <meta property="og:description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
 Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct.
-Terminology. A key-value pair in associative array is also called an entry.">
+Terminology. A key-value pair in an associative array is also called an entry.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -36,7 +36,7 @@ Terminology. A key-value pair in associative array is also called an entry.">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.74233743e0029352873878a49d2ad01a0aa6e0aa4f127d5f27a5834848203a88.js" integrity="sha256-dCM3Q&#43;ACk1KHOHiknSrQGgqm4KpPEn1fJ6WDSEggOog=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0ccd93b34d5f2d1a6efdb62b5ba253c7f44d1ce8a7122c6f2d1c9b70461ac6a8.js" integrity="sha256-DM2Ts01fLRpu/bYrW6JTx/RNHOinEixvLRybcEYaxqg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1883,7 +1883,7 @@ https://github.com/alex-shpak/hugo-book
 </blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Terminology.</em></strong>
-A key-value pair in associative array is also called an <strong>entry</strong>.</p>
+A key-value pair in an associative array is also called an <strong>entry</strong>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Running example.</em></strong>
@@ -2019,25 +2019,19 @@ we need to:</p>
 <p>What is the worst case asymptotic running time of the lookup operation?</p>
 <p>Instead, what would be the best possible scenario?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-1"  />
 <label for="tabs-exercise_hash_wc-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- A worst possible input (of size $n$) for the lookup operation consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that, -->
-<!-- for each pair $k' \mapsto v$ stored in $A$: -->
-<!---->
-<!-- - $k' \neq k$ and -->
-<!-- - $h(k') = h(k)$. -->
-<!---->
-<!-- In this case, any algorithm for lookup would need to inspect the whole list $A[h(k)]$. -->
-<!-- So the worst-case running time of such an algorithm is in $\Theta(n)$. -->
-<!---->
-<!-- A best possible input consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that $h(k') \neq h(k)$ for each pair $k' \mapsto v$ stored in $A$. -->
-<!-- A standard algorithm for lookup in this case would have constant running time (expressed as function of $n$). -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>A worst possible input (of size $n$) for the lookup operation consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that,
+for each pair $k&rsquo; \mapsto v$ stored in $A$:</p>
+<ul>
+<li>$k&rsquo; \neq k$ and</li>
+<li>$h(k&rsquo;) = h(k)$.</li>
+</ul>
+<p>In this case, any algorithm for lookup would need to inspect the whole list $A[h(k)]$.
+So the worst-case running time of such an algorithm is in $\Theta(n)$.</p>
+<p>A best possible input consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that $h(k&rsquo;) \neq h(k)$ for each pair $k&rsquo; \mapsto v$ stored in $A$.
+A standard algorithm for lookup in this case would have constant running time (expressed as function of $n$).</p>
+</div>
 </div>
 <h3 id="load-factor-and-rehashing">
   Load factor and rehashing
@@ -2219,39 +2213,34 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-1"  />
 <label for="tabs-exercise_hashCode-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- The output is unpredictable. -->
-<!---->
-<!-- Observe that the variables -->
-<!-- `bologna` and -->
-<!-- `bolognaAgain` point to two different objects $o_1$ and $o_2$. -->
-<!---->
-<!-- In the hash table that stores the set `cities`: -->
-<!---->
-<!-- - the slot associated to $o_1$ is $i_1 = h$($o_1$.`hashCode()`), -->
-<!-- - the slot associated to $o_2$ is $i_2 = h$($o_2$.`hashCode()`). -->
-<!---->
-<!-- Since $o_1$ and $o_2$ are different objects, $i_1$ and $i_2$ _may of may not_ be identical. -->
-<!---->
-<!-- The instruction `cities.add(bologna)` adds a node with key $o_1$ to $A[i_1]$. -->
-<!-- The instruction `cities.add(bolognaAgain)` adds a node with key $o_2$ to $A[i_2]$. -->
-<!---->
-<!-- Then the instruction `cities.size()` returns the number of entries in the hash table. -->
-<!---->
-<!-- - If $i_1 = i_2$ (i.e. if we have a collision), -->
-<!--   then the method `put` will not insert $o2$ in the hash table (since $o_1$`.equals(`$o_2$`)` evaluates to true). -->
-<!--   Therefore the method `cities.size()` will return `1`, -->
-<!---->
-<!-- - If $i_1 \neq i_2$, -->
-<!--   then the method `put` will insert $o2$ in the hash table (at slot $i_2$). -->
-<!--   Therefore the method `cities.size()` will return `2`. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>The output is unpredictable.</p>
+<p>Observe that the variables
+<code>bologna</code> and
+<code>bolognaAgain</code> point to two different objects $o_1$ and $o_2$.</p>
+<p>In the hash table that stores the set <code>cities</code>:</p>
+<ul>
+<li>the slot associated to $o_1$ is $i_1 = h$($o_1$.<code>hashCode()</code>),</li>
+<li>the slot associated to $o_2$ is $i_2 = h$($o_2$.<code>hashCode()</code>).</li>
+</ul>
+<p>Since $o_1$ and $o_2$ are different objects, $i_1$ and $i_2$ <em>may of may not</em> be identical.</p>
+<p>The instruction <code>cities.add(bologna)</code> adds a node with key $o_1$ to $A[i_1]$.
+The instruction <code>cities.add(bolognaAgain)</code> adds a node with key $o_2$ to $A[i_2]$.</p>
+<p>Then the instruction <code>cities.size()</code> returns the number of entries in the hash table.</p>
+<ul>
+<li>
+<p>If $i_1 = i_2$ (i.e. if we have a collision),
+then the method <code>put</code> will not insert $o2$ in the hash table (since $o_1$<code>.equals(</code>$o_2$<code>)</code> evaluates to true).
+Therefore the method <code>cities.size()</code> will return <code>1</code>,</p>
+</li>
+<li>
+<p>If $i_1 \neq i_2$,
+then the method <code>put</code> will insert $o2$ in the hash table (at slot $i_2$).
+Therefore the method <code>cities.size()</code> will return <code>2</code>.</p>
+</li>
+</ul>
+</div>
 </div>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
@@ -2260,6 +2249,12 @@ then the behavior of the basic operations on hash tables (insertion, lookup and 
 </blockquote>
 <p>This makes the behavior of several methods implemented by <code>HashMap</code>, <code>LinkedHashMap</code>, <code>HashSet</code> and <code>LinkedHashSet</code> (among others) unpredictable.</p>
 <p>To avoid this, whenever <code>equals</code> is overridden, <code>hashCode</code> should be overridden accordingly.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Requirement.</em></strong>
+For two Java objects $o_1$ and $o_2$,</p>
+<p>$\qquad$ if $o_1$.<code>equals</code>($o_2$),
+then <code>hashCode</code>($o_1$) = <code>hashCode</code>($o_2$).</p>
+</blockquote>
 <!--In particular, if the equality of two instances is determined by equality of some class attributes, then `hashCode` should be a function (in the mathematical sense) of these attribute.-->
 <!--Semantically, _any_ function that produces an `int` out of these attributes is correct.-->
 <blockquote class="book-hint info">

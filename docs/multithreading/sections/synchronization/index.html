@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -15,7 +15,7 @@ Programming languages that support multithreading also allow expressing constrai
 For instance, we saw earlier that a thread can be forced to wait for a child thread to terminate before resuming its execution.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/multithreading/sections/synchronization/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Synchronization">
   <meta property="og:description" content="Synchronization # The behavior of a program that runs multiple threads can be hard to predict. In particular, two threads may compete to access a same resource (e.g. the value of some object’s attribute), without guarantee on the order in which they access it. This may lead (among other things) to a race condition
@@ -26,15 +26,49 @@ Programming languages that support multithreading also allow expressing constrai
 <title>Synchronization | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/multithreading/sections/synchronization/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5c4b354c020f30fa3d3a6c75848d859acd2431a20eb3c3e39d249dc9e65a8e2d.js" integrity="sha256-XEs1TAIPMPo9Omx1hI2Fms0kMaIOs8PjnSSdyeZaji0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -168,6 +202,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -287,7 +381,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
@@ -300,7 +394,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -332,6 +426,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+  </ul>
+
+        </li>
+      
+    
       
         <li>
           
@@ -339,7 +438,1443 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2de9da23438414913111ffd05054662f" class="toggle"  />
+    <label for="section-2de9da23438414913111ffd05054662f" class="flex justify-between">
+      <a href="/docs/datastructures/" class="">Data structures</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/list/" class="">Dynamic array and linked list</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/hash/" class="">Hash table</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
+    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
+      <a href="/docs/lambda/" class="">First-class methods</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/closure/" class="">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
+    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
+    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e2a96fb94742b1e663314eaa5e569503" class="toggle" checked />
+    <label for="section-e2a96fb94742b1e663314eaa5e569503" class="flex justify-between">
+      <a href="/docs/multithreading/" class="">Multithreading</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/synchronization/" class="active">Synchronization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
+    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
+    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">Git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
   
 
         </li>
@@ -401,12 +1936,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#mutual-exclusion">Mutual exclusion</a>
+    <li><a href="#mutual_exclusion">Mutual exclusion</a>
       <ul>
         <li><a href="#in-java">in Java</a></li>
       </ul>
     </li>
-    <li><a href="#condition-variables">Condition variables</a>
+    <li><a href="#condition_variable">Condition variables</a>
       <ul>
         <li><a href="#producerConsumer">The producer/consumer pattern</a></li>
         <li><a href="#in-java-1">in Java</a></li>
@@ -432,18 +1967,18 @@ https://github.com/alex-shpak/hugo-book
 <p>The behavior of a program that runs multiple threads can be hard to predict.
 In particular, two threads may compete to access a same resource (e.g. the value of some object&rsquo;s attribute),
 without guarantee on the <em>order</em> in which they access it.
-This may lead (among other things) to a <a href="http://localhost:1313/docs/multithreading/sections/race/">race condition</a></p>
+This may lead (among other things) to a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a></p>
 <p>Programming languages that support multithreading also allow expressing <em>constraints</em> on the order of execution of some instructions.
-For instance, we saw <a href="http://localhost:1313/docs/multithreading/sections/simple/#spawnSync">earlier</a> that a thread can be forced to wait for a child thread to terminate before resuming its execution.</p>
-<p>In this section, we review two additional mechanisms (mutual exclusion and condition variables) that allow synchronizing the behaviors of threads.</p>
-<p>For a more exhaustive overview of the possibilities offered by Java in that regard, we refer to the Javadoc of the package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a>,
-which summarizes the situations where a Java statement <em>must</em> be executed before another (in Java&rsquo;s terminology, this binary relation over statements is called the &ldquo;happens before&rdquo; relation).</p>
+For instance, we saw <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/#spawnSync">earlier</a> that a thread can be forced to wait for a child thread to terminate before resuming its execution.</p>
+<p>In this section, we review two additional mechanisms (<a href="#mutual_exclusion">mutual exclusion</a> and <a href="#condition_variable">condition variables</a>) that allow synchronizing the behaviors of threads.</p>
+<p>For a more exhaustive overview of the possibilities offered by Java in that regard, we refer to the Javadoc of the package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a>.
+In particular, it summarizes the situations where a Java statement <em>must</em> be executed before another (in Java&rsquo;s terminology, this binary relation over statements is called the &ldquo;happens before&rdquo; relation).</p>
 <!--Let $a_1$ (resp. $a_2$) be an instruction executed in a thread $t_1$ (resp. $t_2$).-->
 <!--By default, if $t_1$ and $t_2$ are executed concurrently, there is no guarantee that $a_1$ is executed before $a_2$.-->
 <!--However, most programming languages provide mechanisms to enforce it.-->
-<h2 id="mutual-exclusion">
+<h2 id="mutual_exclusion">
   Mutual exclusion
-  <a class="anchor" href="#mutual-exclusion">#</a>
+  <a class="anchor" href="#mutual_exclusion">#</a>
 </h2>
 <blockquote class="book-hint warning">
 <p><strong>Mutual exclusion</strong> prevents two threads to access a same resource concurrently.
@@ -610,23 +2145,37 @@ For the same object, a synchronized method can call another, as long as they are
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(counter.<span style="color:#a6e22e">getValue</span>());
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-1"  />
 <label for="tabs-exercise_synchronized-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>Because the two methods <code>inc</code> and <code>doubleDec</code> are synchronized (and are called on the same object), their executions cannot interleave.
-This guarantees that the <em>second</em> print statement must output <code>1</code>.</p>
-<p>As for the first print statement, observe that:</p>
-<ul>
-<li>there is no guarantee on the order of execution of <code>counter.inc(5)</code>, <code>counter.doubleDec(2)</code> and the first call to <code>counter.getvalue()</code>.</li>
-<li>the method <code>getValue()</code> is not synchronized, so the first call to <code>counter.getvalue()</code> this method may be executed during the execution of <code>counter.inc(5)</code> or <code>counter.doubleDec(2)</code>.</li>
-</ul>
-<p>So the possible output values here are
-<code>0</code>,
-<code>5</code>,
-<code>3</code>,
-<code>1</code>,
-<code>-2</code> and
-<code>-4</code>.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- Because the two methods `inc` and `doubleDec` are synchronized (and are called on the same object), their executions cannot interleave. -->
+<!-- This rules out race conditions, so the _second_ print statement must output `1`. -->
+<!---->
+<!-- As for the first print statement, observe that: -->
+<!---->
+<!-- - there is no guarantee on the order of execution of `counter.inc(5)`, `counter.doubleDec(2)` and the first call to `counter.getvalue()`. -->
+<!-- - the method `getValue()` is not synchronized, so the first call to `counter.getvalue()` may be executed during the execution of `counter.inc(5)` or `counter.doubleDec(2)`. -->
+<!---->
+<!-- So the possible output values here are -->
+<!-- `0`, -->
+<!-- `5`, -->
+<!-- `3`, -->
+<!-- `1`, -->
+<!-- `-2` and -->
+<!-- `-4`. -->
+<!---->
+<!-- If the method `getValue()` also had the keyword `synchronized`, then it could not be called during the execution of `counter.doubleDec(2)`. -->
+<!-- In this case, the possible outputs would be -->
+<!-- `0`, -->
+<!-- `5`, -->
+<!-- `1`, -->
+<!-- and -->
+<!-- `-4`. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <blockquote class="book-hint warning">
 <p>A <strong>synchronized static method</strong> uses the intrinsic lock of the object that represents the class itself (this object is an instance of <code>Class</code>).</p>
@@ -652,11 +2201,11 @@ This guarantees that the <em>second</em> print statement must output <code>1</co
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>  </div>
 </div>
-<h2 id="condition-variables">
+<h2 id="condition_variable">
   Condition variables
-  <a class="anchor" href="#condition-variables">#</a>
+  <a class="anchor" href="#condition_variable">#</a>
 </h2>
-<p>We saw earlier that a thread $t_1$ can wait for another thread $t_2$ to terminate (e.g. with the pseudocode keyword <code>sync</code>, or with the Java instance method <code>Thread.join</code>).</p>
+<p>We saw earlier that a thread $t_1$ can wait for another thread $t_2$ to terminate (e.g. with the pseudocode keyword <code>sync</code> in our abstract model, or in Java with the instance method <code>Thread.join</code>).</p>
 <p>In this case, when it terminates, $t_2$ <strong>wakes up</strong> $t_1$, which can resume its execution.</p>
 <p>A similar but more flexible mechanism is the notion of <strong>condition variable</strong>.
 Intuitively, it allows putting a thread to sleep, and waking it up when a certain condition is verified.</p>
@@ -667,7 +2216,7 @@ These include C++, C#, Go, Java, Python or Rust.</p>
   <a class="anchor" href="#producerConsumer">#</a>
 </h3>
 <p>A prototypical application of condition variables is the so-called <strong>producer/consumer</strong> pattern.
-In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="">queue</a>.</p>
+In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
 <ol>
 <li>A pool of <strong>producer</strong> threads, which create elements and add (a.k.a. <strong>enqueue</strong>) them to the queue,</li>
 <li>A pool of <strong>consumer</strong> threads, which receive (a.k.a <strong>dequeue</strong>) these elements and process them.</li>
@@ -689,29 +2238,33 @@ As discussed above, a thread can acquire the intrinsic lock of an object by:</p>
 <li>executing a <a href="#syncMethod">synchronized method</a> for this object.</li>
 </ul>
 </blockquote>
-<p>A condition variable in Java can be simulated thanks to he method <code>Object.wait</code>, together with the method <code>Object.notify</code> (or <code>Object.notifyAll</code>).</p>
+<p>A condition variable in Java can be simulated with a combination of the instance methods <code>Object.wait()</code> and <code>Object.notify()</code> (or <code>Object.notifyAll()</code>).</p>
 <h4 id="wait">
   <code>wait</code>
   <a class="anchor" href="#wait">#</a>
 </h4>
-<p>The instance method <code>Object.wait</code> can only be called by a thread that acquired the intrinsic lock of the object.
-It has the effect of releasing this lock, and putting the current thread to sleep, until another thread executes the method <code>notify</code> (or <code>notifyAll</code>) for this same object.</p>
+<p>The instance method <code>Object.wait()</code> can only be called by a thread that acquired the intrinsic lock of the object.
+It has the effect of releasing this lock, and putting the current thread to sleep, until another thread executes the method <code>notify()</code> (or <code>notifyAll()</code>) for this same object.</p>
 <h4 id="notify">
   <code>notify</code>
   <a class="anchor" href="#notify">#</a>
 </h4>
-<p>Similarly to <code>Object.wait</code>, the instance method <code>Object.notify</code> can only be called by a thread that acquired the intrinsic lock of the object.
+<p>Similarly to <code>Object.wait()</code>, the instance method <code>Object.notify()</code> can only be called by a thread that acquired the intrinsic lock of the object.
 It has the effect of attempting to wake up <em>one</em> thread (if any) that is waiting for the lock of this object.
 The awakened thread will only proceed (i.e. actually wake up) after the notifying thread releases the lock of the object.</p>
 <h4 id="notifyAll">
   <code>notifyAll</code>
   <a class="anchor" href="#notifyAll">#</a>
 </h4>
-<p>The instance method <code>Object.notifyAll</code> is identical to <code>Object.notify</code>, but attempts to wake up <em>all</em> threads that are waiting for the lock of this object.</p>
+<p>The instance method <code>Object.notifyAll()</code> is identical to <code>Object.notify()</code>, but attempts to wake up <em>all</em> threads that are waiting for the lock of this object.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-For simplicity, we will use a queue with a capacity of 1.
-The example is borrowed from the <a href="https://docs.oracle.com/javase%2Ftutorial%2F/essential/concurrency/guardmeth.html">Oracle tutorials</a>.</p>
+The following example is an implementation of the producer-consumer pattern borrowed from the <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/guardmeth.html">Oracle tutorials</a>.</p>
+<p>For simplicity:</p>
+<ul>
+<li>we will use a queue with a capacity of 1 (so that the queue is either empty of full),</li>
+<li>we assume a single producer and a single consumer.</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>pulic <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T item;
@@ -723,18 +2276,18 @@ The example is borrowed from the <a href="https://docs.oracle.com/javase%2Ftutor
 </span></span><span style="display:flex;"><span>                wait();
 </span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (InterruptedException e) {}
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        isEmpty <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> item;
+</span></span><span style="display:flex;"><span>        isEmpty <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span>        notifyAll();
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>When a producer thread $p$ executes the method <code>enqueue</code>, it acquires the intrinsic lock of the queue (because the method is synchronized).
-If the queue is full, it releases the lock and waits for a consumer thread to wake it up.
+</span></span></code></pre></div><p>When the producer thread $p$ executes the method <code>enqueue</code>, it acquires the intrinsic lock of the queue (because the method is synchronized).
+If the queue is full, it releases the lock and waits for the consumer thread to wake it up.
 If this happens, thread $p$:</p>
 <ul>
 <li>adds the produced item to the queue,</li>
-<li>indicates that the queue should now be considered full,</li>
-<li>wakes up a consumer thread (if any) waiting for the queue to be empty,</li>
+<li>indicates that the queue should now be considered nonempty (a.k.a. full, since the queue has capacity 1),</li>
+<li>wakes up the consumer thread (which was waiting for the queue to be nonempty),</li>
 <li>releases the intrinsic lock on the queue (by exiting the synchronized method).</li>
 </ul>
 <p>The method dequeue is symmetric:</p>
@@ -793,14 +2346,12 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Finally, the main thread may for instance spawn one producer and two consumers:</p>
+</span></span></code></pre></div><p>Finally, the main thread may spawn one producer and one consumer, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyQueue<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>    Thread p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Producer(queue));
-</span></span><span style="display:flex;"><span>    Thread c1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Consumer(queue));
-</span></span><span style="display:flex;"><span>    Thread c2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Consumer(queue));
-</span></span><span style="display:flex;"><span>    p1.<span style="color:#a6e22e">start</span>();
-</span></span><span style="display:flex;"><span>    c1.<span style="color:#a6e22e">start</span>();
-</span></span><span style="display:flex;"><span>    c2.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>    Thread p <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Producer(queue));
+</span></span><span style="display:flex;"><span>    Thread c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Consumer(queue));
+</span></span><span style="display:flex;"><span>    p.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>    c.<span style="color:#a6e22e">start</span>();
 </span></span></code></pre></div></blockquote>
 <h3 id="spurious-wakeup">
   Spurious wakeup
@@ -809,7 +2360,7 @@ If this happens, thread $p$:</p>
 <p>In the example above, the loop <code>while(!isEmpty)</code> (in the method <code>enqueue</code>) seems unnecessary, in the sense that it could be replaced with the conditional statements <code>if(!isEmpty)</code>.
 And similarly for the loop in the method <code>dequeue</code>.</p>
 <p>The purpose of this loop is to handle the abnormal case where a consumer (resp. producer) is awaken while the condition variable <code>isEmpty</code> has value <code>false</code> (resp. <code>true</code>).
-Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="http://localhost:1313/docs/multithreading/sections/race/">race condition</a>).</p>
+Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a>).</p>
 <p>This is the reason why it is customary to write:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>conditionVariable<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();
@@ -859,12 +2410,12 @@ Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wak
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#mutual-exclusion">Mutual exclusion</a>
+    <li><a href="#mutual_exclusion">Mutual exclusion</a>
       <ul>
         <li><a href="#in-java">in Java</a></li>
       </ul>
     </li>
-    <li><a href="#condition-variables">Condition variables</a>
+    <li><a href="#condition_variable">Condition variables</a>
       <ul>
         <li><a href="#producerConsumer">The producer/consumer pattern</a></li>
         <li><a href="#in-java-1">in Java</a></li>

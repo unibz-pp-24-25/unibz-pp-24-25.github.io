@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=34431&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -9,32 +9,66 @@
 
 A variety of programming languages (like Java) allow associating a computational task to a thread,
 and executing several threads in parallel (on different cores) or concurrently (on the same core, in an interleaved fashion).
-A consequence is that the precise order in which threads execute their respective operations is in general unpredictable.
-When threads need to communicate, this can result in a program whose behavior is difficult to predict.
-Notably, bugs that involve multithreading may not be consistently reproducible, even on the same hardware.">
+A consequence is that the precise order in which threads execute their respective operations can be unpredictable.
+When threads need to communicate, this can result in a program whose behavior is difficult to understand.
+Notably, bugs that involve multithreading may not be consistently reproducible (even on the same hardware).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:34431/docs/multithreading/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/multithreading/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Multithreading">
   <meta property="og:description" content="Multithreading # A variety of programming languages (like Java) allow associating a computational task to a thread, and executing several threads in parallel (on different cores) or concurrently (on the same core, in an interleaved fashion).
-A consequence is that the precise order in which threads execute their respective operations is in general unpredictable.
-When threads need to communicate, this can result in a program whose behavior is difficult to predict. Notably, bugs that involve multithreading may not be consistently reproducible, even on the same hardware.">
+A consequence is that the precise order in which threads execute their respective operations can be unpredictable.
+When threads need to communicate, this can result in a program whose behavior is difficult to understand. Notably, bugs that involve multithreading may not be consistently reproducible (even on the same hardware).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 <title>Multithreading | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:34431/docs/multithreading/">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c9a5491de913e716e3aaff7086fdc28ed3e03463693a0a5c68c81adc8448fa2c.js" integrity="sha256-yaVJHekT5xbjqv9whv3CjtPgNGNpOgpcaMga3IRI&#43;iw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:34431/docs/multithreading/index.xml" title="Programming project 2024-25" />
+  <script defer src="/en.search.min.5c4b354c020f30fa3d3a6c75848d859acd2431a20eb3c3e39d249dc9e65a8e2d.js" integrity="sha256-XEs1TAIPMPo9Omx1hI2Fms0kMaIOs8PjnSSdyeZaji0=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/multithreading/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -162,7 +196,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+    <a href="/docs/intro/sections/bibliography/" class="">Additional resources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -334,7 +381,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
   
 
         </li>
@@ -347,7 +394,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -374,19 +421,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -639,7 +673,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
   
 
         </li>
@@ -829,74 +863,27 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5c4910c712e8dfeaf9f3180911e57b92" class="toggle"  />
-    <label for="section-5c4910c712e8dfeaf9f3180911e57b92" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/practice/" class="">in practice</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
     <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
-      <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
+      <a href="/docs/lambda/" class="">First-class methods</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -970,7 +957,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
+    <a href="/docs/lambda/sections/closure/" class="">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
   
 
         </li>
@@ -1499,7 +1499,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/ide/" class="">IDE</a>
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
   
 
         </li>
@@ -1512,7 +1512,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
   
 
         </li>
@@ -1558,7 +1558,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
     <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
-      <a href="/docs/git/" class="">git</a>
+      <a href="/docs/git/" class="">Git</a>
     </label>
   
 
@@ -1624,6 +1624,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
@@ -1676,7 +1689,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
   
 
         </li>
@@ -1689,7 +1702,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/resources/" class="">To go further</a>
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
   
 
         </li>
@@ -1867,19 +1880,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
-  
-
-        </li>
-      
-    
   </ul>
 
         </li>
@@ -1949,16 +1949,16 @@ https://github.com/alex-shpak/hugo-book
   Multithreading
   <a class="anchor" href="#multithreading">#</a>
 </h1>
-<p>A variety of programming languages (like Java) allow associating a computational task to a <a href="http://localhost:34431/docs/multithreading/sections/thread/#thread">thread</a>,
-and executing several threads <a href="http://localhost:34431/docs/multithreading/sections/concurrency/#parallelVsConcurrent">in parallel</a> (on different cores) or <a href="http://localhost:34431/docs/multithreading/sections/concurrency/#parallelVsConcurrent">concurrently</a> (on the same core, in an interleaved fashion).</p>
-<p>A consequence is that the precise order in which threads execute their respective operations is in general <em>unpredictable</em>.</p>
-<p>When threads need to communicate, this can result in a program whose behavior is difficult to predict.
-Notably, bugs that involve multithreading may not be consistently reproducible, even on the same hardware.</p>
+<p>A variety of programming languages (like Java) allow associating a computational task to a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/thread/#thread">thread</a>,
+and executing several threads <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/concurrency/#parallelVsConcurrent">in parallel</a> (on different cores) or <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/concurrency/#parallelVsConcurrent">concurrently</a> (on the same core, in an interleaved fashion).</p>
+<p>A consequence is that the precise order in which threads execute their respective operations can be <em>unpredictable</em>.</p>
+<p>When threads need to communicate, this can result in a program whose behavior is difficult to understand.
+Notably, bugs that involve multithreading may not be consistently reproducible (even on the same hardware).</p>
 <p>In this chapter, we give a very brief (and simplified) overview of multithreading as a programming tool,
 and how to use it in Java.</p>
-<p>This includes basic mechanisms (such as <a href="">mutual exclusion</a> or <a href="">condition variables</a>) to impose constraints on the order of execution of certain instructions,
+<p>This includes basic mechanisms (such as <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/#mutual_exclusion">mutual exclusion</a> or <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/#condition_variable">condition variables</a>) to impose constraints on the order of execution of certain instructions,
 when several threads are running in parallel and/or concurrently.</p>
-<p>We also present some higher-level <a href="">utilities</a> that allow taking advantage of multithreading in a less error-prone fashion.</p>
+<p>We also present some higher-level <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/abstractions/">utilities</a> that allow taking advantage of multithreading in a less error-prone fashion.</p>
 </article>
  
       

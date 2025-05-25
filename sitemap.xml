@@ -8,6 +8,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/background/sections/problem/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/concurrency/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/datastructures/sections/list/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/simplify/sections/factorization/</loc>
@@ -68,6 +70,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/project/sections/board_game/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/thread/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/project/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/input/sections/read/</loc>
@@ -81,6 +85,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/stream/sections/init/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/lecturers/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/</loc>
   </url><url>
@@ -128,6 +134,8 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/navigate/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/background/sections/order/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/errors/sections/checked/</loc>
@@ -135,6 +143,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/install/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/</loc>
   </url><url>
@@ -198,6 +208,10 @@
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/text_editor/</loc>
   </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/troubleshooting/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/sections/abstractions/</loc>
+  </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/git/sections/backtracking/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/env/sections/ide/</loc>
@@ -233,6 +247,8 @@
     <loc>https://unibz-pp-24-25.github.io/docs/generics/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/</loc>
+  </url><url>
+    <loc>https://unibz-pp-24-25.github.io/docs/multithreading/</loc>
   </url><url>
     <loc>https://unibz-pp-24-25.github.io/docs/intro/sections/quiz/</loc>
   </url><url>

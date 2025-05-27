@@ -35,7 +35,7 @@ This syntax extends imperative pseudocode with three keywords:">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5c4b354c020f30fa3d3a6c75848d859acd2431a20eb3c3e39d249dc9e65a8e2d.js" integrity="sha256-XEs1TAIPMPo9Omx1hI2Fms0kMaIOs8PjnSSdyeZaji0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.396c547dc0645e1e149fcfb0b72794e53b450bc7bd70ef4e1503e382237b6521.js" integrity="sha256-OWxUfcBkXh4Un8&#43;wtyeU5TtFC8e9cO9OFQPjgiN7ZSE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2130,14 +2130,10 @@ The <strong>span</strong> of a program&rsquo;s execution is the maximal number o
 <div class="book-tabs-content markdown-inner"><p>Let $f(n)$ measure the span of the program above, where $n$ is the size of the input vector.</p>
 <p>Assuming a number of cores $\ge n$, which asymptotic class of cost functions does $f$ belong to?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_parallel" id="tabs-exercise_parallel-1"  />
 <label for="tabs-exercise_parallel-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!-- $f$ is in $\Theta(\log n)$ -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>$f$ is in $\Theta(\log n)$</p>
+</div>
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
@@ -2236,15 +2232,17 @@ This is useful if the child thread needs to access variables that are not <a hre
   Waiting for a thread to terminate
   <a class="anchor" href="#waiting-for-a-thread-to-terminate">#</a>
 </h3>
-<p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with more fine-grained control.</p>
-<p>Calling the instance method <code>Thread.join</code> for a thread $t$ causes the <em>current</em> thread to pause its execution until termination of $t$
-(in comparison, the <code>sync</code> keyword causes the current thread to wait for termination of <em>all</em> its children).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>); } );
-</span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
+<p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with more fine-grained control.
+Calling the <code>Thread</code> instance method $c$<code>.join()</code> for a child thread $c$ causes the <em>current</em> (a.k.a. parent) thread to pause its execution until termination of $c$,</p>
+<p>In contrast, the <code>sync</code> keyword causes the current thread to wait for termination of <em>all</em> its children.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread childThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>); } );
+</span></span><span style="display:flex;"><span>childThread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// wait for the spawned thread to terminate</span>
-</span></span><span style="display:flex;"><span>    myThread.<span style="color:#a6e22e">join</span>()
+</span></span><span style="display:flex;"><span>    childThread.<span style="color:#a6e22e">join</span>()
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (InterruptedException e) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
 </span></span><span style="display:flex;"><span>}

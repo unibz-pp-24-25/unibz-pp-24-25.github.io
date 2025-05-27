@@ -29,7 +29,7 @@ Programming languages that support multithreading also allow expressing constrai
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5c4b354c020f30fa3d3a6c75848d859acd2431a20eb3c3e39d249dc9e65a8e2d.js" integrity="sha256-XEs1TAIPMPo9Omx1hI2Fms0kMaIOs8PjnSSdyeZaji0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.396c547dc0645e1e149fcfb0b72794e53b450bc7bd70ef4e1503e382237b6521.js" integrity="sha256-OWxUfcBkXh4Un8&#43;wtyeU5TtFC8e9cO9OFQPjgiN7ZSE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2072,7 +2072,7 @@ So the program below is equivalent:</p>
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>method body<span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -2080,7 +2080,7 @@ So the program below is equivalent:</p>
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">synchronized</span>(<span style="color:#66d9ef">this</span>){
 </span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span>method body<span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>        }
@@ -2095,16 +2095,19 @@ A constructor <em>cannot</em> be synchronized (the program will not compile).</p
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
 Let $m$ be a synchronized instance method, let $o$ be an object, let $t_1$ and $t_2$ be two different threads, and let us assume that $t_1$ executes $o.m$ (i.e. $t_1$ executes the method $m$ for the object $o$).</p>
-<p>Then $t_2$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$</p>
+<p>Then $t_2$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$ (since $t_1$ acquired the lock on the object $o$).</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
-For the same object, a synchronized method can call another, as long as they are executed by the same thread.</p>
+We mentioned above that a thread can reacquire a lock that it already owns.</p>
+<p>As a consequence, for the same object, a synchronized method can call another, as long as they are executed by the same thread.</p>
 </blockquote>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-0" checked="checked" />
 <label for="tabs-exercise_synchronized-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What are the possible outputs of the following program?</p>
+<p>And what would these possible outputs be if the method <code>getValue()</code> were <em>not</em> synchronized?</p>
+<p>Can the value <code>3</code> be printed, and if so, in which precise scenario(s)?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> value;
@@ -2122,16 +2125,16 @@ For the same object, a synchronized method can call another, as long as they are
 </span></span><span style="display:flex;"><span>        value <span style="color:#f92672">-=</span> delta;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getValue</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getValue</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> value;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Thread t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { counter.<span style="color:#a6e22e">inc</span>(5); } );
+</span></span><span style="display:flex;"><span>Thread t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { counter.<span style="color:#a6e22e">doubleDec</span>(2); } );
 </span></span><span style="display:flex;"><span>t1.<span style="color:#a6e22e">start</span>();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Thread t2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { counter.<span style="color:#a6e22e">doubleDec</span>(2); } );
+</span></span><span style="display:flex;"><span>Thread t2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { counter.<span style="color:#a6e22e">inc</span>(5); } );
 </span></span><span style="display:flex;"><span>t2.<span style="color:#a6e22e">start</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(counter.<span style="color:#a6e22e">getValue</span>());
@@ -2150,30 +2153,31 @@ For the same object, a synchronized method can call another, as long as they are
 <label for="tabs-exercise_synchronized-1">Solution</label>
 <div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
 <!---->
-<!-- Because the two methods `inc` and `doubleDec` are synchronized (and are called on the same object), their executions cannot interleave. -->
+<!-- Because the two methods `inc` and `doubleDec` are synchronized (and are called for the same object), their executions cannot interleave. -->
 <!-- This rules out race conditions, so the _second_ print statement must output `1`. -->
 <!---->
 <!-- As for the first print statement, observe that: -->
 <!---->
 <!-- - there is no guarantee on the order of execution of `counter.inc(5)`, `counter.doubleDec(2)` and the first call to `counter.getvalue()`. -->
-<!-- - the method `getValue()` is not synchronized, so the first call to `counter.getvalue()` may be executed during the execution of `counter.inc(5)` or `counter.doubleDec(2)`. -->
+<!-- - the method `getValue()` is synchronized, so it cannot be called during the execution of `counter.doubleDec(2)`. -->
 <!---->
 <!-- So the possible output values here are -->
+<!-- `-4`, -->
 <!-- `0`, -->
-<!-- `5`, -->
-<!-- `3`, -->
-<!-- `1`, -->
-<!-- `-2` and -->
-<!-- `-4`. -->
+<!-- `1` -->
+<!-- and `5`. -->
 <!---->
-<!-- If the method `getValue()` also had the keyword `synchronized`, then it could not be called during the execution of `counter.doubleDec(2)`. -->
-<!-- In this case, the possible outputs would be -->
+<!-- If the method `getValue()` were not synchronized, then it could be called during the execution of `counter.doubleDec(2)`. -->
+<!-- In this case, the possible outputs values would be -->
+<!-- `-4`, -->
+<!-- `-2`, -->
 <!-- `0`, -->
-<!-- `5`, -->
 <!-- `1`, -->
-<!-- and -->
-<!-- `-4`. -->
+<!-- `3` and -->
+<!-- `5`. -->
 <!---->
+<!-- The value `3` can only be printed in the second case, and only if the counter was first incremented by `5`, and then decremented by `2`. -->
+<!-- The counter cannot be first decremented by 2 and then (immediately) incremented by 5, because the methods `inc` and `doubleDec` are synchronized. -->
 <!-- </div>
  -->
 </div>
@@ -2219,7 +2223,7 @@ These include C++, C#, Go, Java, Python or Rust.</p>
 In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
 <ol>
 <li>A pool of <strong>producer</strong> threads, which create elements and add (a.k.a. <strong>enqueue</strong>) them to the queue,</li>
-<li>A pool of <strong>consumer</strong> threads, which receive (a.k.a <strong>dequeue</strong>) these elements and process them.</li>
+<li>A pool of <strong>consumer</strong> threads, which receive (a.k.a. <strong>dequeue</strong>) these elements and process them.</li>
 </ol>
 <p>Two situations may occur where threads should be put to sleep:</p>
 <ul>
@@ -2243,20 +2247,21 @@ As discussed above, a thread can acquire the intrinsic lock of an object by:</p>
   <code>wait</code>
   <a class="anchor" href="#wait">#</a>
 </h4>
-<p>The instance method <code>Object.wait()</code> can only be called by a thread that acquired the intrinsic lock of the object.
-It has the effect of releasing this lock, and putting the current thread to sleep, until another thread executes the method <code>notify()</code> (or <code>notifyAll()</code>) for this same object.</p>
+<p>The instance method $o$<code>.wait()</code> can only be called by a thread that acquired the intrinsic lock of the object $o$.
+It has the effect of releasing this lock, and putting the current thread to sleep,
+until another thread executes $o$.<code>notify()</code> (or $o$.<code>notifyAll()</code>) (for the same object $o$).</p>
 <h4 id="notify">
   <code>notify</code>
   <a class="anchor" href="#notify">#</a>
 </h4>
-<p>Similarly to <code>Object.wait()</code>, the instance method <code>Object.notify()</code> can only be called by a thread that acquired the intrinsic lock of the object.
+<p>Similarly to $o$<code>.wait()</code>, the instance method $o$<code>.notify()</code> can only be called by a thread that acquired the intrinsic lock of the object.
 It has the effect of attempting to wake up <em>one</em> thread (if any) that is waiting for the lock of this object.
 The awakened thread will only proceed (i.e. actually wake up) after the notifying thread releases the lock of the object.</p>
 <h4 id="notifyAll">
   <code>notifyAll</code>
   <a class="anchor" href="#notifyAll">#</a>
 </h4>
-<p>The instance method <code>Object.notifyAll()</code> is identical to <code>Object.notify()</code>, but attempts to wake up <em>all</em> threads that are waiting for the lock of this object.</p>
+<p>The instance method $o$<code>.notifyAll()</code> is identical to $o$<code>.notify()</code>, but attempts to wake up <em>all</em> threads that are waiting for the lock of this object.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following example is an implementation of the producer-consumer pattern borrowed from the <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/guardmeth.html">Oracle tutorials</a>.</p>
@@ -2278,7 +2283,7 @@ The following example is an implementation of the producer-consumer pattern borr
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> item;
 </span></span><span style="display:flex;"><span>        isEmpty <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-</span></span><span style="display:flex;"><span>        notifyAll();
+</span></span><span style="display:flex;"><span>        notify();
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>When the producer thread $p$ executes the method <code>enqueue</code>, it acquires the intrinsic lock of the queue (because the method is synchronized).
@@ -2302,11 +2307,11 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (InterruptedException e) {}
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        isEmpty <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>        notifyAll();
+</span></span><span style="display:flex;"><span>        notify();
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> item;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Producer threads could be implemented as follows:</p>
+</span></span></code></pre></div><p>A producer thread could be implemented as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span> <span style="color:#66d9ef">implements</span> Runnable {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue;
@@ -2326,7 +2331,7 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>And consumer threads could be implemented as follows:</p>
+</span></span></code></pre></div><p>And a consumer thread could be implemented as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span> <span style="color:#66d9ef">implements</span> Runnable {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue;
@@ -2360,13 +2365,14 @@ If this happens, thread $p$:</p>
 <p>In the example above, the loop <code>while(!isEmpty)</code> (in the method <code>enqueue</code>) seems unnecessary, in the sense that it could be replaced with the conditional statements <code>if(!isEmpty)</code>.
 And similarly for the loop in the method <code>dequeue</code>.</p>
 <p>The purpose of this loop is to handle the abnormal case where a consumer (resp. producer) is awaken while the condition variable <code>isEmpty</code> has value <code>false</code> (resp. <code>true</code>).
-Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a>).</p>
-<p>This is the reason why it is customary to write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>conditionVariable<span style="color:#f92672">&gt;</span>){
+Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes.
+For instance, in the example above, if we had two producer threads, then one producer thread could wake up the other (instead of waking up the consumer thread), when it exits the method <code>enqueue</code>.</p>
+<p>To avoid spurious wakeups, it is customary to write:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>rather than:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>conditionVariable<span style="color:#f92672">&gt;</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></article>

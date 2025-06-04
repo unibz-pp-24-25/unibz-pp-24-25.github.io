@@ -27,9 +27,9 @@ Programming languages that support multithreading also allow expressing constrai
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
-<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.f0351d5c25e0eea9082c331897093f7196a63e3b47c9191bec02c70e7740621c.css" integrity="sha256-8DUdXCXg7qkILDMYlwk/cZamPjtHyRkb7ALHDndAYhw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.396c547dc0645e1e149fcfb0b72794e53b450bc7bd70ef4e1503e382237b6521.js" integrity="sha256-OWxUfcBkXh4Un8&#43;wtyeU5TtFC8e9cO9OFQPjgiN7ZSE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.08f8cf69c9fcdd7db2efbe3e7f874ec5171414c6d81453f0e8f920dc8e32413b.js" integrity="sha256-CPjPacn83X2y774&#43;f4dOxRcUFMbYFFPw6Pkg3I4yQTs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -421,6 +421,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -2148,38 +2161,31 @@ We mentioned above that a thread can reacquire a lock that it already owns.</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(counter.<span style="color:#a6e22e">getValue</span>());
 </span></span></code></pre></div></div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-1"  />
 <label for="tabs-exercise_synchronized-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- Because the two methods `inc` and `doubleDec` are synchronized (and are called for the same object), their executions cannot interleave. -->
-<!-- This rules out race conditions, so the _second_ print statement must output `1`. -->
-<!---->
-<!-- As for the first print statement, observe that: -->
-<!---->
-<!-- - there is no guarantee on the order of execution of `counter.inc(5)`, `counter.doubleDec(2)` and the first call to `counter.getvalue()`. -->
-<!-- - the method `getValue()` is synchronized, so it cannot be called during the execution of `counter.doubleDec(2)`. -->
-<!---->
-<!-- So the possible output values here are -->
-<!-- `-4`, -->
-<!-- `0`, -->
-<!-- `1` -->
-<!-- and `5`. -->
-<!---->
-<!-- If the method `getValue()` were not synchronized, then it could be called during the execution of `counter.doubleDec(2)`. -->
-<!-- In this case, the possible outputs values would be -->
-<!-- `-4`, -->
-<!-- `-2`, -->
-<!-- `0`, -->
-<!-- `1`, -->
-<!-- `3` and -->
-<!-- `5`. -->
-<!---->
-<!-- The value `3` can only be printed in the second case, and only if the counter was first incremented by `5`, and then decremented by `2`. -->
-<!-- The counter cannot be first decremented by 2 and then (immediately) incremented by 5, because the methods `inc` and `doubleDec` are synchronized. -->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>Because the two methods <code>inc</code> and <code>doubleDec</code> are synchronized (and are called for the same object), their executions cannot interleave.
+This rules out race conditions, so the <em>second</em> print statement must output <code>1</code>.</p>
+<p>As for the first print statement, observe that:</p>
+<ul>
+<li>there is no guarantee on the order of execution of <code>counter.inc(5)</code>, <code>counter.doubleDec(2)</code> and the first call to <code>counter.getvalue()</code>.</li>
+<li>the method <code>getValue()</code> is synchronized, so it cannot be called during the execution of <code>counter.doubleDec(2)</code>.</li>
+</ul>
+<p>So the possible output values here are
+<code>-4</code>,
+<code>0</code>,
+<code>1</code>
+and <code>5</code>.</p>
+<p>If the method <code>getValue()</code> were not synchronized, then it could be called during the execution of <code>counter.doubleDec(2)</code>.
+In this case, the possible outputs values would be
+<code>-4</code>,
+<code>-2</code>,
+<code>0</code>,
+<code>1</code>,
+<code>3</code> and
+<code>5</code>.</p>
+<p>The value <code>3</code> can only be printed in the second case, and only if the counter was first incremented by <code>5</code>, and then decremented by <code>2</code>.
+The counter cannot be first decremented by 2 and then (immediately) incremented by 5, because the methods <code>inc</code> and <code>doubleDec</code> are synchronized.</p>
+</div>
 </div>
 <blockquote class="book-hint warning">
 <p>A <strong>synchronized static method</strong> uses the intrinsic lock of the object that represents the class itself (this object is an instance of <code>Class</code>).</p>

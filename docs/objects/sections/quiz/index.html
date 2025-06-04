@@ -1,65 +1,111 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
   Quiz
   #
 
-To answer the quiz (and check your answers), click here or scan this code:
+To answer the quiz (and check your answers), click here
 
-
-  Boxed type
+  Objects and references
   #
+
+
 
 public class City {
 
-  int population;
+  String name;
+  Country country;
 
-    public City (int population){
-      this.population = population;
+  public City(String name,
+              Country country) {
+    this.name = name;
+    this.country = country;
   }
 }
-int myInteger = 1;
-Integer myBoxedInteger = 1;
-Integer myBoxedCopy = myInteger;
-City myCity = new City(5000);
+  
 
-myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity);
+public class Country {
 
-System.out.println( myInteger &#43; &#34;, &#34;&#43; myBoxedInteger &#43; &#34;, &#34;&#43; myBoxedCopy &#43; &#34;,&#34;
-                  &#43; myCity.population);
+  String name;
+  City capital;
 
-void myMethod(int integer, Integer boxedInteger, Integer boxedCopy, City city) {
-    integer &#43;= 1;
-    boxedInteger &#43;= 1;
-    boxedCopy &#43;= 1;
-    city.population &#43;= 1;
+  public Country(String name,
+                 City capital) {
+    this.name = name;
+    this.capital = capital;
+  }
 }
-This Java program outputs:">
+  
+
+Country italy = new Country(&#34;Italy&#34;, null);
+City florence = new City(&#34;Florence&#34;, italy);
+City rome = new City(&#34;Rome&#34;, italy);
+italy.capital = rome;
+
+System.out.print(italy.capital.name &#43; &#34;, &#34;);
+System.out.print(florence.country.capital.name &#43; &#34;, &#34;);
+System.out.print(rome.country.capital.name &#43; &#34;, &#34;);
+System.out.print(rome.country.capital.country.capital.name);
+This Java program:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/objects/sections/quiz/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/quiz/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Quiz">
-  <meta property="og:description" content="Quiz # To answer the quiz (and check your answers), click here or scan this code:
-Boxed type # public class City { int population; public City (int population){ this.population = population; } } int myInteger = 1; Integer myBoxedInteger = 1; Integer myBoxedCopy = myInteger; City myCity = new City(5000); myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity); System.out.println( myInteger &#43; &#34;, &#34;&#43; myBoxedInteger &#43; &#34;, &#34;&#43; myBoxedCopy &#43; &#34;,&#34; &#43; myCity.population); void myMethod(int integer, Integer boxedInteger, Integer boxedCopy, City city) { integer &#43;= 1; boxedInteger &#43;= 1; boxedCopy &#43;= 1; city.population &#43;= 1; } This Java program outputs:">
+  <meta property="og:description" content="Quiz # To answer the quiz (and check your answers), click here
+Objects and references # public class City { String name; Country country; public City(String name, Country country) { this.name = name; this.country = country; } } public class Country { String name; City capital; public Country(String name, City capital) { this.name = name; this.capital = capital; } } Country italy = new Country(&#34;Italy&#34;, null); City florence = new City(&#34;Florence&#34;, italy); City rome = new City(&#34;Rome&#34;, italy); italy.capital = rome; System.out.print(italy.capital.name &#43; &#34;, &#34;); System.out.print(florence.country.capital.name &#43; &#34;, &#34;); System.out.print(rome.country.capital.name &#43; &#34;, &#34;); System.out.print(rome.country.capital.country.capital.name); This Java program:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 <title>Quiz | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/objects/sections/quiz/">
-<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/quiz/">
+<link rel="stylesheet" href="/book.min.f0351d5c25e0eea9082c331897093f7196a63e3b47c9191bec02c70e7740621c.css" integrity="sha256-8DUdXCXg7qkILDMYlwk/cZamPjtHyRkb7ALHDndAYhw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b731b9c52c9c40b6de4e35be5c6512b580e8870ec0d497cfe49aa26106a6283e.js" integrity="sha256-tzG5xSycQLbeTjW&#43;XGUStYDohw7A1JfP5JqiYQamKD4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.08f8cf69c9fcdd7db2efbe3e7f874ec5171414c6d81453f0e8f920dc8e32413b.js" integrity="sha256-CPjPacn83X2y774&#43;f4dOxRcUFMbYFFPw6Pkg3I4yQTs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -193,6 +239,66 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba33d8a9bf780b57832f569fe09e5c26" class="toggle"  />
+    <label for="section-ba33d8a9bf780b57832f569fe09e5c26" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -221,6 +327,58 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
@@ -234,7 +392,1539 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/objects/sections/quiz/" class="active">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5933d7510d07450e8c15a6a0ebd380b0" class="toggle"  />
+    <label for="section-5933d7510d07450e8c15a6a0ebd380b0" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bfaa2b89c0853780e84ab9c868d56bd" class="toggle"  />
+    <label for="section-6bfaa2b89c0853780e84ab9c868d56bd" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2de9da23438414913111ffd05054662f" class="toggle"  />
+    <label for="section-2de9da23438414913111ffd05054662f" class="flex justify-between">
+      <a href="/docs/datastructures/" class="">Data structures</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/list/" class="">Dynamic array and linked list</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/hash/" class="">Hash table</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="toggle"  />
+    <label for="section-50027a2c524e8f72a4c6b2a6d8cec98e" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb154713c839715a5585b2a7913c99b5" class="toggle"  />
+    <label for="section-fb154713c839715a5585b2a7913c99b5" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="toggle"  />
+    <label for="section-dc278ca0f2b5fde4dfe6c2fa75ea1c98" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-35cd663b1751527caf51f3abaa1d3f77" class="toggle"  />
+    <label for="section-35cd663b1751527caf51f3abaa1d3f77" class="flex justify-between">
+      <a href="/docs/lambda/" class="">First-class methods</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/functional/" class="">Functional programming</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/closure/" class="">Free variable and closure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/currying/" class="">Currying</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f93e1aa0bccac696ec9af373a353010" class="toggle"  />
+    <label for="section-3f93e1aa0bccac696ec9af373a353010" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="toggle"  />
+    <label for="section-0c3cfe6ac985c7980a60c7f9b6c91241" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e2a96fb94742b1e663314eaa5e569503" class="toggle"  />
+    <label for="section-e2a96fb94742b1e663314eaa5e569503" class="flex justify-between">
+      <a href="/docs/multithreading/" class="">Multithreading</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dec6c566dc70f820bab9ec7ff47ae94b" class="toggle"  />
+    <label for="section-dec6c566dc70f820bab9ec7ff47ae94b" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84599da0227dcb54f4402978878c76ee" class="toggle"  />
+    <label for="section-84599da0227dcb54f4402978878c76ee" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9c9fe6c549336d0426f7d22637c8205" class="toggle"  />
+    <label for="section-a9c9fe6c549336d0426f7d22637c8205" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c5296cc17be274316dd1d777e04506" class="toggle"  />
+    <label for="section-f1c5296cc17be274316dd1d777e04506" class="flex justify-between">
+      <a href="/docs/git/" class="">Git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignore</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f207d34fa930b6f6e13e4f97a94bc96f" class="toggle"  />
+    <label for="section-f207d34fa930b6f6e13e4f97a94bc96f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/build/sections/building/" class="">Building</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6afd72ae37923560357201746de85ea9" class="toggle"  />
+    <label for="section-6afd72ae37923560357201746de85ea9" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
   
 
         </li>
@@ -296,9 +1986,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#boxed-type">Boxed type</a></li>
     <li><a href="#objects-and-references">Objects and references</a></li>
-    <li><a href="#copy-constructor">Copy constructor</a></li>
     <li><a href="#tostring"><code>toString</code></a></li>
     <li><a href="#static-attribute">Static attribute</a></li>
   </ul>
@@ -317,48 +2005,7 @@ https://github.com/alex-shpak/hugo-book
   Quiz
   <a class="anchor" href="#quiz">#</a>
 </h1>
-<p>To answer the quiz (and check your answers), <a href="https://forms.gle/P2GgesHngYRZAGSh7">click here</a> or scan this code:</p>
-<p><img src="/img/qr_codes/quiz2_400.svg" alt="" /></p>
-<h2 id="boxed-type">
-  Boxed type
-  <a class="anchor" href="#boxed-type">#</a>
-</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> population;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span> (<span style="color:#66d9ef">int</span> population){
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">population</span> <span style="color:#f92672">=</span> population;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInteger <span style="color:#f92672">=</span> 1;
-</span></span><span style="display:flex;"><span>Integer myBoxedInteger <span style="color:#f92672">=</span> 1;
-</span></span><span style="display:flex;"><span>Integer myBoxedCopy <span style="color:#f92672">=</span> myInteger;
-</span></span><span style="display:flex;"><span>City myCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(5000);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>( myInteger <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span> myBoxedInteger <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span> myBoxedCopy <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">+</span> myCity.<span style="color:#a6e22e">population</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span> integer, Integer boxedInteger, Integer boxedCopy, City city) {
-</span></span><span style="display:flex;"><span>    integer <span style="color:#f92672">+=</span> 1;
-</span></span><span style="display:flex;"><span>    boxedInteger <span style="color:#f92672">+=</span> 1;
-</span></span><span style="display:flex;"><span>    boxedCopy <span style="color:#f92672">+=</span> 1;
-</span></span><span style="display:flex;"><span>    city.<span style="color:#a6e22e">population</span> <span style="color:#f92672">+=</span> 1;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This Java program outputs:</p>
-<ul>
-<li>1, 1, 1, 5000</li>
-<li>1, 1, 1, 5001</li>
-<li>1, 2, 1, 5000</li>
-<li>1, 2, 1, 5001</li>
-<li>1, 2, 2, 5000</li>
-<li>1, 2, 2, 5001</li>
-<li>2, 2, 2, 5000</li>
-<li>2, 2, 2, 5001</li>
-<li>I do not know the answer</li>
-</ul>
+<p>To answer the quiz (and check your answers), <a href="https://forms.gle/goKtAxHqvMRrjVfMA">click here</a></p>
 <h2 id="objects-and-references">
   Objects and references
   <a class="anchor" href="#objects-and-references">#</a>
@@ -410,69 +2057,6 @@ https://github.com/alex-shpak/hugo-book
 <li>outputs Rome, null, Rome, null</li>
 <li>outputs Rome, null, Rome, Rome</li>
 <li>outputs Rome, Rome, Rome, Rome</li>
-<li>I do not know the answer</li>
-</ul>
-<h2 id="copy-constructor">
-  Copy constructor
-  <a class="anchor" href="#copy-constructor">#</a>
-</h2>
-<div class="book-columns flex flex-wrap">
-<div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  String name;
-</span></span><span style="display:flex;"><span>  Country country;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name,
-</span></span><span style="display:flex;"><span>              Country country) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span> (City original) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">name</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>          original.<span style="color:#a6e22e">country</span>;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>  </div>
-<div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  String name;
-</span></span><span style="display:flex;"><span>  City capital;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(String name,
-</span></span><span style="display:flex;"><span>                 City capital) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> capital;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Country</span>(Country original){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">name</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">new</span> City(original.<span style="color:#a6e22e">capital</span>);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>  </div>
-</div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>, <span style="color:#66d9ef">null</span>);
-</span></span><span style="display:flex;"><span>City rome <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, italy);
-</span></span><span style="display:flex;"><span>italy.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> rome;
-</span></span><span style="display:flex;"><span>Country littleItaly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(italy);
-</span></span><span style="display:flex;"><span>littleItaly.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;littleItaly&#34;</span>;
-</span></span><span style="display:flex;"><span>littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;littleRome&#34;</span>;
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span>);
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(littleItaly.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">country</span>.<span style="color:#a6e22e">capital</span>.<span style="color:#a6e22e">name</span>);
-</span></span></code></pre></div><p>This Java program:</p>
-<ul>
-<li>does not terminate</li>
-<li>outputs Rome, Italy, Rome</li>
-<li>outputs Rome, littleItaly, Rome</li>
-<li>outputs littleRome, Italy, Rome</li>
-<li>outputs littleRome, littleItaly, Rome</li>
-<li>outputs littleRome, littleItaly, littleRome</li>
 <li>I do not know the answer</li>
 </ul>
 <h2 id="tostring">
@@ -616,9 +2200,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#boxed-type">Boxed type</a></li>
     <li><a href="#objects-and-references">Objects and references</a></li>
-    <li><a href="#copy-constructor">Copy constructor</a></li>
     <li><a href="#tostring"><code>toString</code></a></li>
     <li><a href="#static-attribute">Static attribute</a></li>
   </ul>

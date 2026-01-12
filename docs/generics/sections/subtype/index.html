@@ -27,7 +27,7 @@ In some situations, this requires reasoning about types and their hierarchy (not
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b552986f3b3bec4947cd7a9031c44a9e73d0092a4364adf3ae433ad859a66b06.js" integrity="sha256-tVKYbzs77ElHzXqQMcRKnnPQCSpDZK3zrkM62FmmawY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1948,12 +1948,14 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#subtype">The subtype relation</a></li>
-    <li><a href="#function-type">Function type</a>
+    <li><a href="#functionSubtype">Method subtyping</a>
       <ul>
-        <li><a href="#examples">Examples</a></li>
+        <li><a href="#domain-codomain-and-set-inclusion">Domain, codomain and set inclusion</a></li>
+        <li><a href="#method_type">Method type</a></li>
+        <li><a href="#exercises">Exercises</a></li>
+        <li><a href="#generalization">Generalization</a></li>
       </ul>
     </li>
-    <li><a href="#functionSubtype">Function subtyping</a></li>
   </ul>
 </nav>
 
@@ -1984,16 +1986,21 @@ This will allow us to understand (in the <a href="https://unibz-pp-24-25.github.
 <p>Intuitively, $A$ is a <strong>subtype</strong> of $B$ if &ldquo;every $A$ is a $B$&rdquo;.</p>
 </blockquote>
 <blockquote class="book-hint info">
-<p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Notation.</em></strong>
+We will use $A \sqsubseteq B$ to indicate that $A$ is a subtype of $B$.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong>
+In Java,</p>
 <ul>
-<li><code>Integer</code> is a subtype of <code>Number</code>,</li>
-<li><code>String</code> is a subtype of <code>Object</code>.</li>
+<li><code>Integer</code> $\sqsubseteq$ <code>Number</code>,</li>
+<li><code>String</code> $\sqsubseteq$ <code>Object</code>.</li>
 </ul>
 </blockquote>
 <p>In object-oriented programming, subtyping generalizes hierarchical relations between classes, interfaces, etc.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-In Java, $A$ is a subtype of $B$ if:</p>
+In Java, $A \sqsubseteq B$ if:</p>
 <ul>
 <li>$A$ and $B$ are classes and $A$ <code>extends</code> $B$ (directly or transitively), or</li>
 <li>$A$ and $B$ are interfaces and $A$ <code>extends</code> $B$ (directly or transitively), or</li>
@@ -2028,70 +2035,85 @@ In Java:</p>
 <li>if an object has type <code>String</code>, then it also has type <code>Object</code>.</li>
 </ul>
 </blockquote>
-<blockquote>
-<p><strong><em>Question.</em></strong> How do these observations generalize to <em>functions</em> (or methods) and the type of their arguments and return value?</p>
-</blockquote>
-<h2 id="function-type">
-  Function type
-  <a class="anchor" href="#function-type">#</a>
+<h2 id="functionSubtype">
+  Method subtyping
+  <a class="anchor" href="#functionSubtype">#</a>
 </h2>
-<blockquote class="book-hint warning">
-<p><strong><em>Definition.</em></strong>
-A function has type</p>
-<p>$\qquad X \to Y$</p>
-<p>if it maps <em>every</em> element of $X$ to <em>some</em> element of $Y$.</p>
+<blockquote>
+<p><strong><em>Question.</em></strong> How do the observations above generalize to <em>methods</em> and the types of their arguments and return value?</p>
 </blockquote>
-<h3 id="examples">
-  Examples
-  <a class="anchor" href="#examples">#</a>
+<p>To answer this question, we will first use mathematical <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">functions</a> as an analogy, for simplicity.</p>
+<h3 id="domain-codomain-and-set-inclusion">
+  Domain, codomain and set inclusion
+  <a class="anchor" href="#domain-codomain-and-set-inclusion">#</a>
 </h3>
+<blockquote class="book-hint warning">
+<p><strong><em>Reminder.</em></strong>
+A function $f\colon X \to Y$ maps <em>every</em> element of its <strong>domain</strong> $X$ to <em>some</em> element of its <strong>codomain</strong> $Y$.</p>
+</blockquote>
+<!-- <blockquote class="book-hint info">
+   -->
+<!-- **_Notation._** -->
+<!-- if $X$ and $Y$ are sets, then we will use $X \to Y$ for the set of all functions with domain $X$ and codomain $Y$ (although a more common notation for $X \to Y$ is $Y^X$). -->
+<!-- 
+</blockquote>
+ -->
 <blockquote class="book-hint info">
 <p><strong><em>Glossary (reminder).</em></strong></p>
 <ul>
-<li>$\mathbb{R}$ : real numbers</li>
-<li>$\mathbb{Z}$ : integers</li>
 <li>$\mathbb{N}$ : natural numbers (a.k.a. positive integers, including <code>0</code>)</li>
+<li>$\mathbb{Z}$ : integers</li>
+<li>$\mathbb{Q}$ : rational numbers</li>
 </ul>
-<p>Observe that:</p>
-<ul>
-<li>$\mathbb{N}$ is a subtype of $\mathbb{Z}$</li>
-<li>$\mathbb{Z}$ is a subtype of $\mathbb{R}$</li>
-<li>$\mathbb{N}$ is a subtype of $\mathbb{R}$</li>
-</ul>
+<p>Observe that $\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q}$.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-Consider a function <code>getLength</code> that:</p>
-<ul>
-<li>takes as argument a string, and</li>
-<li>returns the length of this string.</li>
-</ul>
-<p>This function has type</p>
-<p>$\qquad$ <code>String</code> $\to \mathbb{N}$</p>
-<p>because it maps every string to a natural number.</p>
-<p>It also has type</p>
-<p>$\qquad$ <code>String</code> $\to \mathbb{Z}$</p>
-<p>because it maps every string to an integer (since natural numbers are integers).</p>
-<p>For the same reason, it also has type</p>
-<p>$\qquad$ <code>String</code> $\to \mathbb{R}$</p>
-<p>However, it does <em>not</em> have type</p>
-<p>$\qquad$ <code>Object</code> $\to \mathbb{N}$</p>
-<p>because it does not map <em>every</em> object to an integer (only strings).</p>
+Consider the function $\mathit{population}$ that maps an Italian city to its population (i.e. number of inhabitants),
+and let $\mathit{ItalianCities}$ denote the set of all Italian cities.</p>
+<p>We can write</p>
+<p>$\qquad \mathit{population}\,\colon \mathit{ItalianCities} \to \mathbb{N}$</p>
+<p>because the function $\mathit{population}$ maps every Italian city to a natural number.</p>
+<p>We can also write</p>
+<p>$\qquad \mathit{population}\,\colon \mathit{ItalianCities} \to \mathbb{Z}$</p>
+<p>because it maps every Italian city to an integer (since natural numbers are integers).</p>
+<p>For the same reason, we can also write</p>
+<p>$\qquad \mathit{population}\,\colon \mathit{ItalianCities} \to \mathbb{Q}$</p>
+<p>However, we cannot write</p>
+<p>$\qquad \mathit{population}\,\colon \mathit{Cities} \to \mathbb{N}$</p>
+<p>because it does not map <em>every</em> city (only Italian ones).</p>
 </blockquote>
+<h3 id="method_type">
+  Method type
+  <a class="anchor" href="#method_type">#</a>
+</h3>
+<p>Simple method types are analogous to the domains and codomains of functions:</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong>
+A method has <strong>type</strong> $X \to Y$ if it accepts as input any element with type $X$, and returns an element with type $Y$.</p>
+</blockquote>
+<h3 id="exercises">
+  Exercises
+  <a class="anchor" href="#exercises">#</a>
+</h3>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_function_types" id="tabs-exercise_function_types-0" checked="checked" />
 <label for="tabs-exercise_function_types-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>Consider the function
-$f\colon \mathbb{R} \to \mathbb{R}$ defined by
-$f(x) = x^2$.</p>
+<div class="book-tabs-content markdown-inner"><p>Imagine a programming language that supports arbitrary rationals, integers and natural numbers (e.g. this can be simulated in Java with the <code>java.math</code> library).
+In this language, we naturally have $\mathbb{N} \sqsubseteq \mathbb{Z} \sqsubseteq \mathbb{Q}$.</p>
+<p>Now consider a method $f$ with type $\mathbb{Q} \to \mathbb{Q}$ that:</p>
+<ul>
+<li>takes as input a number $x$, and</li>
+<li>returns $x^2$.</li>
+</ul>
 <p>Which of the following types are also valid for $f$ ?</p>
 <ol>
-<li>$\qquad \mathbb{R} \to \mathbb{Z}$</li>
-<li>$\qquad \mathbb{R} \to \mathbb{N}$</li>
-<li>$\qquad \mathbb{Z} \to \mathbb{R}$</li>
+<li>$\qquad \mathbb{Q} \to \mathbb{Z}$</li>
+<li>$\qquad \mathbb{Q} \to \mathbb{N}$</li>
+<li>$\qquad \mathbb{Z} \to \mathbb{Q}$</li>
 <li>$\qquad \mathbb{Z} \to \mathbb{Z}$</li>
 <li>$\qquad \mathbb{Z} \to \mathbb{N}$</li>
-<li>$\qquad \mathbb{N} \to \mathbb{R}$</li>
+<li>$\qquad \mathbb{N} \to \mathbb{Q}$</li>
 <li>$\qquad \mathbb{N} \to \mathbb{Z}$</li>
 <li>$\qquad \mathbb{N} \to \mathbb{N}$</li>
 </ol>
@@ -2101,26 +2123,20 @@ $f(x) = x^2$.</p>
 <div class="book-tabs-content markdown-inner"><p>3, 4, 5, 6, 7, 8</p>
 </div>
 </div>
-<h2 id="functionSubtype">
-  Function subtyping
-  <a class="anchor" href="#functionSubtype">#</a>
-</h2>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_function_subtypes" id="tabs-exercise_function_subtypes-0" checked="checked" />
 <label for="tabs-exercise_function_subtypes-0">Exercise (continued)</label>
-<div class="book-tabs-content markdown-inner"><p>Which of the 8 proposals below are (always) correct?</p>
-<p>If a function has type</p>
-<p>$\qquad \mathbb{Z} \to \mathbb{Z}$</p>
-<p>then it also has type:</p>
+<div class="book-tabs-content markdown-inner"><p>In our imaginary language, which of the following are correct?</p>
+<p>A method with type $\mathbb{Z} \to \mathbb{Z}$ also has type:</p>
 <ol>
 <li>$\qquad \mathbb{N} \to \mathbb{N}$</li>
 <li>$\qquad \mathbb{N} \to \mathbb{Z}$</li>
-<li>$\qquad \mathbb{N} \to \mathbb{R}$</li>
+<li>$\qquad \mathbb{N} \to \mathbb{Q}$</li>
 <li>$\qquad \mathbb{Z} \to \mathbb{N}$</li>
-<li>$\qquad \mathbb{Z} \to \mathbb{R}$</li>
-<li>$\qquad \mathbb{R} \to \mathbb{N}$</li>
-<li>$\qquad \mathbb{R} \to \mathbb{Z}$</li>
-<li>$\qquad \mathbb{R} \to \mathbb{R}$</li>
+<li>$\qquad \mathbb{Z} \to \mathbb{Q}$</li>
+<li>$\qquad \mathbb{Q} \to \mathbb{N}$</li>
+<li>$\qquad \mathbb{Q} \to \mathbb{Z}$</li>
+<li>$\qquad \mathbb{Q} \to \mathbb{Q}$</li>
 </ol>
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_function_subtypes" id="tabs-exercise_function_subtypes-1"  />
@@ -2128,20 +2144,60 @@ $f(x) = x^2$.</p>
 <div class="book-tabs-content markdown-inner"><p>2, 3, 5</p>
 </div>
 </div>
+<h3 id="generalization">
+  Generalization
+  <a class="anchor" href="#generalization">#</a>
+</h3>
 <p>We can now generalize these observations:</p>
+<!-- <blockquote class="book-hint warning">
+   -->
+<!-- **_Property._** If $X_1 \subseteq X_2$ and $Y_1 \subseteq Y_2$, then -->
+<!---->
+<!-- $\qquad f\colon X_2 \to Y_1$ -->
+<!---->
+<!-- implies -->
+<!---->
+<!-- $\qquad f\colon X_1 \to Y_2$ -->
+<!---->
+<!-- 
+</blockquote>
+ -->
+<!---->
+<!-- <blockquote class="book-hint info">
+   -->
+<!-- **_Note._** -->
+<!-- Another way to write this is -->
+<!---->
+<!-- $\qquad Y_1^{X_2} \subseteq Y_2^{X_1}$ -->
+<!---->
+<!-- where $Y^X$ is the set of all functions from $X$ to $Y$. -->
+<!---->
+<!-- 
+</blockquote>
+ -->
+<!---->
+<!-- ### Methods -->
+<!---->
+<!-- An analogous principle applies to the subtype relation between methods. -->
+<!-- <blockquote class="book-hint info">
+   -->
+<!-- **_Notation._** -->
+<!-- Recall that use the symbol $\sqsubseteq$ for the [subtype](#subtype) relation, and the symbol $\to$ to construct a [method type](https://unibz-pp-24-25.github.io/docs/lambda/sections/type/). -->
+<!-- 
+</blockquote>
+ -->
 <blockquote class="book-hint warning">
-<p><strong><em>Property.</em></strong> If $X_1$ is a subtype of $X_2$ and $Y_1$ is a subtype of $Y_2$, then</p>
-<p>$\qquad X_2 \to Y_1$</p>
-<p>is a subtype of</p>
-<p>$\qquad X_1 \to Y_2$</p>
+<p><strong><em>Property.</em></strong> $X_1 \sqsubseteq X_2$ and $Y_1 \sqsubseteq Y_2$
+imply</p>
+<p>$\qquad X_2 \to Y_1 \sqsubseteq X_1 \to Y_2$</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-A function from <code>Unit</code> to <code>Integer</code> is also a function:</p>
+If <code>Butterfly</code> $\sqsubseteq$ <code>Unit</code>, then a Java method with type <code>Unit</code> $\to$ <code>Integer</code> also has type:</p>
 <ul>
-<li>from <code>Butterfly</code> to <code>Integer</code>,</li>
-<li>from <code>Unit</code> to <code>Number</code>, and</li>
-<li>from <code>Butterfly</code> to <code>Number</code>.</li>
+<li><code>Butterfly</code> $\to$ <code>Integer</code></li>
+<li><code>Unit</code> $\to$ <code>Number</code></li>
+<li><code>Butterfly</code> $\to$ <code>Number</code></li>
 </ul>
 </blockquote>
 </article>
@@ -2186,12 +2242,14 @@ A function from <code>Unit</code> to <code>Integer</code> is also a function:</p
 <nav id="TableOfContents">
   <ul>
     <li><a href="#subtype">The subtype relation</a></li>
-    <li><a href="#function-type">Function type</a>
+    <li><a href="#functionSubtype">Method subtyping</a>
       <ul>
-        <li><a href="#examples">Examples</a></li>
+        <li><a href="#domain-codomain-and-set-inclusion">Domain, codomain and set inclusion</a></li>
+        <li><a href="#method_type">Method type</a></li>
+        <li><a href="#exercises">Exercises</a></li>
+        <li><a href="#generalization">Generalization</a></li>
       </ul>
     </li>
-    <li><a href="#functionSubtype">Function subtyping</a></li>
   </ul>
 </nav>
 

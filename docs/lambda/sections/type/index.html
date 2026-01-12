@@ -17,23 +17,36 @@ its return type.
 
 
 Notation.
-The type of a method is sometimes described analogously to the type of a mathematical function.
+Method types are sometimes described analogously to the domain and codomain of a mathematical function.
 For instance, consider the following Java method square:
 int square(int x){
     return x * x;
 }
-This method takes as input an int, and returns an int.
-In other words, this is a function with domain int and codomain int.
-This is written:">
+This method has type:
+$\qquad$ int $\to$ int
+Similarly, we may use:
+
+int $\times$ int $\to$ int if the method takes two int and returns another,
+Unit $\times$ int $\to$ Unit if the method takes a Unit and an int (in that order) and returns a Unit,
+Unit[] $\to$ void if the method takes an array of Units[] and returns nothing,
+etc.
+
+
+
+Warning.
+We leave the notion of method type underspecified for now, on purpose.
+As we will see later on, just like an object, a method may have (or &ldquo;implement&rdquo;) several types, due to inheritance.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Type of a method">
   <meta property="og:description" content="Type of a method # Terminology. The type (a.k.a. signature) of a method consists of:
-the type(s) of its argument(s), and its return type. Notation. The type of a method is sometimes described analogously to the type of a mathematical function. For instance, consider the following Java method square:
-int square(int x){ return x * x; } This method takes as input an int, and returns an int.
-In other words, this is a function with domain int and codomain int. This is written:">
+the type(s) of its argument(s), and its return type. Notation. Method types are sometimes described analogously to the domain and codomain of a mathematical function. For instance, consider the following Java method square:
+int square(int x){ return x * x; } This method has type:
+$\qquad$ int $\to$ int
+Similarly, we may use:
+int $\times$ int $\to$ int if the method takes two int and returns another, Unit $\times$ int $\to$ Unit if the method takes a Unit and an int (in that order) and returns a Unit, Unit[] $\to$ void if the method takes an array of Units[] and returns nothing, etc. Warning. We leave the notion of method type underspecified for now, on purpose. As we will see later on, just like an object, a method may have (or “implement”) several types, due to inheritance.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -43,7 +56,7 @@ In other words, this is a function with domain int and codomain int. This is wri
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b552986f3b3bec4947cd7a9031c44a9e73d0092a4364adf3ae433ad859a66b06.js" integrity="sha256-tVKYbzs77ElHzXqQMcRKnnPQCSpDZK3zrkM62FmmawY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1995,16 +2008,12 @@ The <strong>type</strong> (a.k.a. <strong>signature</strong>) of a method consis
 </blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Notation.</em></strong>
-The type of a method is sometimes described analogously to the type of a mathematical <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a>.
+Method types are sometimes described analogously to the domain and codomain of a mathematical <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a>.
 For instance, consider the following Java method <code>square</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">square</span>(<span style="color:#66d9ef">int</span> x){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This method takes as input an <code>int</code>, and returns an <code>int</code>.</p>
-<p>In other words, this is a function with domain <code>int</code> and codomain <code>int</code>.
-This is written:</p>
-<p>$\qquad$<code>square</code>$\colon$ <code>int</code> $\to$ <code>int</code></p>
-<p>And the type of this function is</p>
+</span></span></code></pre></div><p>This method has type:</p>
 <p>$\qquad$ <code>int</code> $\to$ <code>int</code></p>
 <p>Similarly, we may use:</p>
 <ul>
@@ -2013,6 +2022,11 @@ This is written:</p>
 <li><code>Unit[]</code> $\to$ <code>void</code> if the method takes an array of <code>Units[]</code> and returns nothing,</li>
 <li>etc.</li>
 </ul>
+</blockquote>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+We leave the notion of method type underspecified for now, on purpose.
+As we will see <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/#method_type">later on</a>, just like an object, a method may have (or &ldquo;implement&rdquo;) several types, due to inheritance.</p>
 </blockquote>
 <h2 id="in-java">
   in Java

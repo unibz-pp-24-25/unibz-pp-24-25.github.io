@@ -38,7 +38,7 @@ Foundations # Functional programming is rooted in (typed) lambda calculus, a mod
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/functional/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b552986f3b3bec4947cd7a9031c44a9e73d0092a4364adf3ae433ad859a66b06.js" integrity="sha256-tVKYbzs77ElHzXqQMcRKnnPQCSpDZK3zrkM62FmmawY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2007,9 +2007,6 @@ a model of computation exclusively based on (anonymous) function composition and
 <li>iteration can only be simulated via recursion (in other words, a functional program has <em>no loop</em>),</li>
 <li>methods have no <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/">side effects</a>.</li>
 </ul>
-<blockquote class="book-hint danger">
-<p>In practice, most functional languages are <strong>not</strong> pure.</p>
-</blockquote>
 <h3 id="benefits-and-drawbacks">
   Benefits and drawbacks
   <a class="anchor" href="#benefits-and-drawbacks">#</a>
@@ -2024,7 +2021,7 @@ a model of computation exclusively based on (anonymous) function composition and
 <p>Potential drawbacks are:</p>
 <ul>
 <li>more time spent writing code (before it even compiles!),</li>
-<li>programs that can be harder to read (e.g. due to <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/">closures</a> or <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/currying/">currying</a>).</li>
+<li>programs that may be harder to read (at least for newcomers).</li>
 </ul>
 <h3 id="usage">
   Usage
@@ -2036,7 +2033,7 @@ However, over the years:</p>
 <li>some functional languages (e.g. Scala or Erlang/Elixir) have gained traction in industry, and</li>
 <li>many imperative language have incorporated functional features: Python, JavaScript, C#, C++, Rust, Java, etc.</li>
 </ul>
-<p>For instance, a very common &ldquo;functional&rdquo; pattern consists in applying an input method to each elements of an input list.
+<p>For instance, a common &ldquo;functional&rdquo; pattern consists in applying an input method to each elements of an input list.
 This can be written with a very concise syntax in Python, Java, etc.</p>
 <p>Besides, <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutability</a> is widely advocated as a software engineering principle (in mid-sized to large projects), to simplify debugging.</p>
 <h4 id="in-java">
@@ -2052,10 +2049,15 @@ This can be written with a very concise syntax in Python, Java, etc.</p>
 <li><a href="https://unibz-pp-24-25.github.io/docs/stream/">streams</a>,</li>
 <li>etc.</li>
 </ul>
+<p>Other functional features have been introduced since, e.g. <a href="https://docs.oracle.com/en/java/javase/17/language/pattern-matching.html">pattern matching</a> in Java 16 (2021).</p>
+<p>Some older features of Java, like <a href="https://unibz-pp-24-25.github.io/docs/generics/">generic types</a> or <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutability</a>, are (often indirectly) inspired by functional programming.</p>
 <h3 id="key-notions">
   Key notions
   <a class="anchor" href="#key-notions">#</a>
 </h3>
+<p>We illustrate some standard features of functional languages.
+For simplicity, we use mathematical functions.
+This is only a (rough) analogy: in particular, a function type is <em>not</em> a set of mathematical functions.</p>
 <h4 id="anonymous">
   Anonymous function
   <a class="anchor" href="#anonymous">#</a>
@@ -2134,19 +2136,21 @@ They can be both described as the function with domain $\mathbb{R}$ and co-domai
 </div>
 </div>
 <h4 id="type">
-  Function type (illustration)
+  Function type (rough analogy)
   <a class="anchor" href="#type">#</a>
 </h4>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_function_type" id="tabs-exercise_function_type-0" checked="checked" />
 <label for="tabs-exercise_function_type-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>In the exercise above, let us assume that the $f_i$ functions all have type $\mathbb{N} \times \mathbb{N} \to \mathbb{N}$
-(in other words, they map a pair of natural numbers to a natural number).</p>
+<div class="book-tabs-content markdown-inner"><p>In the exercise above, let us assume that every $f_i$ function has domain $\mathbb{N} \times \mathbb{N}$ and codomain $\mathbb{N}$.
+This can be written
+$$ f_i\colon \mathbb{N} \times \mathbb{N} \to \mathbb{N}$$
+for each $i$.</p>
 <p>Complete the table below with the $g_j$ functions:</p>
 <table>
   <thead>
       <tr>
-          <th>type</th>
+          <th>domain $\to$ codomain</th>
           <th>functions</th>
       </tr>
   </thead>
@@ -2183,7 +2187,7 @@ They can be both described as the function with domain $\mathbb{R}$ and co-domai
 <div class="book-tabs-content markdown-inner"><table>
   <thead>
       <tr>
-          <th>type</th>
+          <th>domain $\to$ codomain</th>
           <th>functions</th>
       </tr>
   </thead>

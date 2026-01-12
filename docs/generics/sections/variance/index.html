@@ -12,21 +12,21 @@
   #
 
 
-Notation.
-If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a subtype of $B$.
+Reminder.
+If $A$ and $B$ are types, we use $A \sqsubseteq B$ to indicate that $A$ is a subtype of $B$.
 
 
-  Subtype and substitution
-  #
 
 
-The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
 
 
-Examples.
 
-If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer.
-If Butterfly $\sqsubseteq$ Unit, then a method that returns a Unit can also return a Butterfly.
+
+
+
+
+
+
 
 
 
@@ -39,10 +39,8 @@ A natural question is whether subtyping between parameterized types should be de
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Variance">
-  <meta property="og:description" content="Variance # Subtype # Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a subtype of $B$.
-Subtype and substitution # The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
-Examples.
-If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer. If Butterfly $\sqsubseteq$ Unit, then a method that returns a Unit can also return a Butterfly. Type parameters and subtyping # A natural question is whether subtyping between parameterized types should be determined by subtyping between their parameters.">
+  <meta property="og:description" content="Variance # Subtype # Reminder. If $A$ and $B$ are types, we use $A \sqsubseteq B$ to indicate that $A$ is a subtype of $B$.
+Type parameters and subtyping # A natural question is whether subtyping between parameterized types should be determined by subtyping between their parameters.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -52,7 +50,7 @@ If Integer $\sqsubseteq$ Number, then a method that takes a Number as input shou
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b552986f3b3bec4947cd7a9031c44a9e73d0092a4364adf3ae433ad859a66b06.js" integrity="sha256-tVKYbzs77ElHzXqQMcRKnnPQCSpDZK3zrkM62FmmawY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1973,7 +1971,6 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#subtype">Subtype</a></li>
-    <li><a href="#subtype-and-substitution">Subtype and substitution</a></li>
     <li><a href="#type-parameters-and-subtyping">Type parameters and subtyping</a>
       <ul>
         <li><a href="#covariance">Covariance</a></li>
@@ -2008,23 +2005,29 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#subtype">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p><strong><em>Notation.</em></strong>
-If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to denote the fact that $A$ is a <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/#subtype">subtype</a> of $B$.</p>
+<p><strong><em>Reminder.</em></strong>
+If $A$ and $B$ are types, we use $A \sqsubseteq B$ to indicate that $A$ is a <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/">subtype</a> of $B$.</p>
 </blockquote>
-<h2 id="subtype-and-substitution">
-  Subtype and substitution
-  <a class="anchor" href="#subtype-and-substitution">#</a>
-</h2>
-<blockquote class="book-hint warning">
-<p>The <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a> intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.</p>
+<!-- ## Subtype and substitution -->
+<!---->
+<!-- <blockquote class="book-hint warning">
+   -->
+<!-- The [Liskov substitution principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks. -->
+<!---->
+<!-- 
 </blockquote>
-<blockquote class="book-hint info">
-<p><strong><em>Examples.</em></strong></p>
-<ul>
-<li>If <code>Integer</code> $\sqsubseteq$ <code>Number</code>, then a method that takes a <code>Number</code> as input should also accept an <code>Integer</code>.</li>
-<li>If <code>Butterfly</code> $\sqsubseteq$ <code>Unit</code>, then a method that returns a <code>Unit</code> can also return a <code>Butterfly</code>.</li>
-</ul>
+ -->
+<!---->
+<!-- <blockquote class="book-hint info">
+   -->
+<!-- **_Examples._** -->
+<!---->
+<!-- - If `Integer` $\sqsubseteq$ `Number`, then a method that takes a `Number` as input should also accept an `Integer`. -->
+<!-- - If `Butterfly` $\sqsubseteq$ `Unit`, then a method that returns a `Unit` can also return a `Butterfly`. -->
+<!---->
+<!-- 
 </blockquote>
+ -->
 <h2 id="type-parameters-and-subtyping">
   Type parameters and subtyping
   <a class="anchor" href="#type-parameters-and-subtyping">#</a>
@@ -2279,7 +2282,6 @@ As a rule of thumb:</p>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#subtype">Subtype</a></li>
-    <li><a href="#subtype-and-substitution">Subtype and substitution</a></li>
     <li><a href="#type-parameters-and-subtyping">Type parameters and subtyping</a>
       <ul>
         <li><a href="#covariance">Covariance</a></li>

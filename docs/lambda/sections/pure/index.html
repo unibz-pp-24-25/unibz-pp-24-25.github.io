@@ -56,7 +56,7 @@ returns a value, returns the same value if called twice with the same arguments,
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b552986f3b3bec4947cd7a9031c44a9e73d0092a4364adf3ae433ad859a66b06.js" integrity="sha256-tVKYbzs77ElHzXqQMcRKnnPQCSpDZK3zrkM62FmmawY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1986,7 +1986,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#easier-parallelization">Easier parallelization</a></li>
       </ul>
     </li>
-    <li><a href="#in-functional-programs">In functional programs</a></li>
   </ul>
 </nav>
 
@@ -2116,16 +2115,6 @@ If $f$ and $g$ are pure functions, the two programs below (written in pseudocode
 </span></span><span style="display:flex;"><span>   result <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
 </span></span></code></pre></div>  </div>
 </div>
-<h2 id="in-functional-programs">
-  In functional programs
-  <a class="anchor" href="#in-functional-programs">#</a>
-</h2>
-<p>As we will see in the <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/">dedicated section</a>,
-functional programs often declare functions with so-called <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/#free_variables">free variables</a> (i.e. variables declared outside of the function&rsquo;s scope).
-These functions are not pure, because they violate the second requirement above
-(&ldquo;returns the same value if called twice with the same arguments&rdquo;).</p>
-<p>However, these functions are usually not called directly.
-Instead, we will see that functional programs rely on <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/#closure">closures</a>, which are typically pure.</p>
 </article>
  
       
@@ -2177,7 +2166,6 @@ Instead, we will see that functional programs rely on <a href="https://unibz-pp-
         <li><a href="#easier-parallelization">Easier parallelization</a></li>
       </ul>
     </li>
-    <li><a href="#in-functional-programs">In functional programs</a></li>
   </ul>
 </nav>
 

@@ -17,7 +17,7 @@ In the previous section, we encountered the function $g \colon \mathbb{N} \to (\
 $$ g(x) = y \mapsto x^y$$
 As we saw in a previous exercise, for any pair $(x,y) \in \mathbb{N} \times \mathbb{N}$:
 $$ g(x)(y) = x^y $$
-The function $g$ is called the currying (or curried form) of the function
+The function $g$ is called the curried form of the function
 $$(x, y) \mapsto x^y $$
 
 
@@ -34,7 +34,7 @@ Before defining currying, we introduce a convenient notation:">
 In the previous section, we encountered the function $g \colon \mathbb{N} \to (\mathbb{N} \to \mathbb{N})$ defined by:
 $$ g(x) = y \mapsto x^y$$
 As we saw in a previous exercise, for any pair $(x,y) \in \mathbb{N} \times \mathbb{N}$: $$ g(x)(y) = x^y $$
-The function $g$ is called the currying (or curried form) of the function
+The function $g$ is called the curried form of the function
 $$(x, y) \mapsto x^y $$
 Notation # Before defining currying, we introduce a convenient notation:">
   <meta property="og:locale" content="en_us">
@@ -46,7 +46,7 @@ Notation # Before defining currying, we introduce a convenient notation:">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/currying/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b552986f3b3bec4947cd7a9031c44a9e73d0092a4364adf3ae433ad859a66b06.js" integrity="sha256-tVKYbzs77ElHzXqQMcRKnnPQCSpDZK3zrkM62FmmawY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2001,7 +2001,7 @@ https://github.com/alex-shpak/hugo-book
 <p>$$ g(x) = y \mapsto x^y$$</p>
 <p>As we saw in a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/functional/#functional_example">previous exercise</a>, for any pair $(x,y) \in \mathbb{N} \times \mathbb{N}$:
 $$ g(x)(y) = x^y $$</p>
-<p>The function $g$ is called the <strong>currying</strong> (or <strong>curried form</strong>) of the function</p>
+<p>The function $g$ is called the <strong>curried form</strong> of the function</p>
 <p>$$(x, y) \mapsto x^y $$</p>
 </blockquote>
 <h2 id="notation">
@@ -2030,11 +2030,11 @@ $$ x \mapsto y \mapsto x + y $$</p>
 </h2>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
-If $f$ is a function with $n$ arguments, then the <strong>currying</strong> (or <strong>curried form</strong>) of $f$ is the function</p>
+If $f$ is a function with $n$ arguments, then $f$ <strong>in curried form</strong> is the function</p>
 <p>$$ x_1 \mapsto .. \mapsto x_n \mapsto f(x_1, .., x_n) $$</p>
 <p>If $f$ has type
 $$T_1 \times .. \times T_n \to T_{\text{output}}$$</p>
-<p>then the currying of $f$ has type
+<p>then its curried form has type
 $$T_1 \to .. \to T_n \to T_{\text{output}}$$</p>
 </blockquote>
 <blockquote class="book-hint info">
@@ -2047,7 +2047,7 @@ $$ f(x_1, x_2, x_3) = g(x_1)(x_2)(x_3)$$</p>
   <a class="anchor" href="#usage">#</a>
 </h2>
 <p>Currying is central to most functional programming languages.
-For instance, all methods in Haskell are in curried form.</p>
+For instance, functions in Haskell are traditionally written in curried form.</p>
 <h3 id="code-factorization">
   Code factorization
   <a class="anchor" href="#code-factorization">#</a>

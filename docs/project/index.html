@@ -36,7 +36,7 @@ A project of their choice, or Their own version of the board game used as our ru
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/project/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/project/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -2037,9 +2037,9 @@ In particular, a repository should <em>not</em> contain:</p>
 <p>The project should be build with either <a href="https://unibz-pp-24-25.github.io/docs/build/#maven">Maven</a> or <a href="https://unibz-pp-24-25.github.io/docs/build/#gradle">Gradle</a>.
 It should run on the <a href="https://unibz-pp-24-25.github.io/docs/env/sections/eval/">evaluation environment</a> via <em>command line</em> instructions.</p>
 <p>For instance (depending on how the project is designed), the instructions to build the executable may be:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><p>and the instruction to run the executable may be (assuming that the executable is called <code>myJar.jar</code> and that the program takes two strings as input):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -jar myJar.jar &lt;firstInput&gt; &lt;secondInput&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -jar myJar.jar &lt;firstInput&gt; &lt;secondInput&gt;
 </span></span></code></pre></div><p>If the executable cannot be built in the evaluation environment, then an <a href="https://unibz-pp-24-25.github.io/docs/build/sections/building/#assembly">über-jar</a> should be provided that can run in this environment (via command line still).</p>
 <!--In this case, you may use a [GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) to share this über-jar.-->
 <h3 id="documentation">

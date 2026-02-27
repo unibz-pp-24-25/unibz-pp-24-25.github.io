@@ -50,7 +50,7 @@ Type parameters and subtyping # A natural question is whether subtyping between 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2129,7 +2129,7 @@ Java arrays are <em>covariant</em>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following Java program compiles:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number<span style="color:#f92672">[]</span> anArray;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number<span style="color:#f92672">[]</span> anArray;
 </span></span><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> anotherArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{};
 </span></span><span style="display:flex;"><span>anArray <span style="color:#f92672">=</span> anotherArray;
 </span></span></code></pre></div></blockquote>
@@ -2144,7 +2144,7 @@ Java generic types are <em>invariant</em>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following Java program does <em>not</em> compile, because the generic type <code>List&lt;E&gt;</code> is invariant:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> aList;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> aList;
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
 </span></span></code></pre></div></blockquote>
@@ -2160,7 +2160,7 @@ We can also use it with a <code>?</code> to allow covariance.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following Java program does compiles:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> aList;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> aList;
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
 </span></span></code></pre></div></blockquote>
@@ -2176,10 +2176,10 @@ The Java interface <code>Stream&lt;T&gt;</code> is a generic type, where <code>T
 <p>This interface has an instance method <code>Stream.filter</code> that takes as argument a callback function with type <code>Predicate&lt;T&gt;</code>.</p>
 <p>As we saw above, <code>Predicate&lt;T&gt;</code> should intuitively be interpreted as contravariant.
 Accordingly, the signature of the method <code>filter</code> is</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filter</span>(Predicate<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> predicate)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filter</span>(Predicate<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> predicate)
 </span></span></code></pre></div><p>It accepts as argument any method with type <code>Predicate&lt;V&gt;</code> such that <code>T</code> $\sqsubseteq$ <code>V</code>.
 So the following program compiles:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
 </span></span><span style="display:flex;"><span>integers.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">filter</span>(MyClass::myPredicate);
 </span></span><span style="display:flex;"><span>
@@ -2199,7 +2199,7 @@ So the following program compiles:</p>
 The instance method <code>Stream.map</code> takes as argument a callback function with type <code>Function&lt;T,R&gt;</code>, where <code>T</code> is the type of the elements of the stream.</p>
 <p>As we saw above, the generic type <code>Function&lt;T,R&gt;</code> should intuitively be interpreted as contravariant in <code>T</code> and covariant in <code>R</code>.
 Accordingly, the signature of the method <code>map</code> is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> Stream<span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">map</span>(Function<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T,<span style="color:#f92672">?</span> <span style="color:#66d9ef">extends</span> R<span style="color:#f92672">&gt;</span> mapper)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> Stream<span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">map</span>(Function<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T,<span style="color:#f92672">?</span> <span style="color:#66d9ef">extends</span> R<span style="color:#f92672">&gt;</span> mapper)
 </span></span></code></pre></div></blockquote>
 <h5 id="covarContravarUsage">
   When to use covariance or contravariance in Java?
@@ -2213,7 +2213,7 @@ As a rule of thumb:</p>
 </ul>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;
 </span></span><span style="display:flex;"><span>
@@ -2230,7 +2230,7 @@ As a rule of thumb:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Covariance can be used, because the method Box.getValue() does not take a T as argument.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Covariance can be used, because the method Box.getValue() does not take a T as argument.</span>
 </span></span><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> box){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> box.<span style="color:#a6e22e">getValue</span>();
 </span></span><span style="display:flex;"><span>}

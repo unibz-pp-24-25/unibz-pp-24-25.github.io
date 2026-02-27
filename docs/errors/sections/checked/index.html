@@ -42,7 +42,7 @@ Checked exceptions # In Java, an Exception that is not a RuntimeException is cal
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/checked/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2008,7 +2008,7 @@ You may be familiar wit some of them:
 Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the program does not <em>compile</em>.</p>
 </blockquote>
 <p>For instance, the following code does not compile, because the method of <code>Files.readAllLines</code> may throw an <code>IOException</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="rethrow">
@@ -2016,7 +2016,7 @@ Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the prog
   <a class="anchor" href="#rethrow">#</a>
 </h3>
 <p>This can be fixed by either <a href="https://unibz-pp-24-25.github.io/docs/errors/sections/exceptions/#catch">catching</a> the exception, or <em>explicitly</em> rethrowing it, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Then a method that calls <code>someMethod</code> will in turn have to catch the exception, or rethrow it explicitly, etc.</p>

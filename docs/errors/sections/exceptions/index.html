@@ -30,7 +30,7 @@ An exception is an object or data structure that stores information about an exc
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/exceptions/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1999,9 +1999,9 @@ However, the purpose of exceptions may vary from one language to another.</p>
 <p>By default, when an exception is <strong>thrown</strong>, the program interrupts its execution, and the current <a href="https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/">call stack</a> is sent to an output stream called <code>System.error</code>.
 This output is called the <strong>stack trace</strong> (because it allows tracing back the method calls that led to the exception being thrown).</p>
 <p>For instance, consider the following class:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -2009,7 +2009,7 @@ This output is called the <strong>stack trace</strong> (because it allows tracin
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        Integer.<span style="color:#a6e22e">parseInt</span>(<span style="color:#e6db74">&#34;clearlyNotANumber&#34;</span>);
@@ -2018,7 +2018,7 @@ This output is called the <strong>stack trace</strong> (because it allows tracin
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>When <code>myMethod</code> is executed, the following stack trace is printed to <code>System.error</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>NumberFormatException: For input string: <span style="color:#e6db74">&#34;clearlyNotANumber&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>NumberFormatException: For input string: <span style="color:#e6db74">&#34;clearlyNotANumber&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>at java<span style="color:#f92672">.</span>base<span style="color:#f92672">/</span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>NumberFormatException<span style="color:#f92672">.</span>forInputString(NumberFormatException<span style="color:#f92672">.</span>java:67)
 </span></span><span style="display:flex;"><span>at java<span style="color:#f92672">.</span>base<span style="color:#f92672">/</span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>Integer<span style="color:#f92672">.</span>parseInt(Integer<span style="color:#f92672">.</span>java:668)
@@ -2049,7 +2049,7 @@ To debug your code, by default:</p>
   <a class="anchor" href="#throw">#</a>
 </h3>
 <p>An exception can be thrown with the keyword <code>throw</code>, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> sudokuGrid){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> sudokuGrid){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(sudokuGrid.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 9){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;A sudoku grid should have 9 rows&#34;</span>);
 </span></span><span style="display:flex;"><span>    }
@@ -2082,7 +2082,7 @@ Instead, control is passed to the catching method.</p>
 </ul>
 <p>This can be achieved by catching the exception thrown by <code>Integer.parseInt</code>.
 Syntactically, this is done with a <code>try/catch</code> block, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(String inputString){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(String inputString){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(inputString);
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (NumberFormatException e) {
@@ -2105,9 +2105,9 @@ In particular, it can be used to add information about the context in which an e
 In such a case, a common practice consists in <strong>chaining</strong> these two exceptions.</p>
 <p>Most native Java classes for exceptions have a dedicated constructor for this purpose: it takes as input a string (for the error message), and the exception that was caught.
 For instance, we can modify our example in such a way that if the input string cannot be converted to an integer, then the program gets interrupted, but with a less generic error message:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -2119,7 +2119,7 @@ For instance, we can modify our example in such a way that if the input string c
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(String inputString){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>{
@@ -2133,9 +2133,9 @@ For instance, we can modify our example in such a way that if the input string c
 </div>
 </div><p>Note in this example the second argument <code>e</code> of the constructor for <code>IllegalArgumentException</code>.</p>
 <p>If the method is called as follows,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(<span style="color:#e6db74">&#34;notANumberEither&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(<span style="color:#e6db74">&#34;notANumberEither&#34;</span>);
 </span></span></code></pre></div><p>then the program will be interrupted, with the following stack trace:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Java.lang.IllegalArgumentException: Please provide a valid number
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Java.lang.IllegalArgumentException: Please provide a valid number
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  at MyClass.myMethod<span style="color:#f92672">(</span>MyClass.java:7<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>  &lt;rest of the stack trace&gt;

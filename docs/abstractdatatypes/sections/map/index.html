@@ -36,7 +36,7 @@ lookup (or get) takes a key as input, and returns the value for this key (if any
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2011,7 +2011,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 <ul>
 <li>Create a <code>Map</code> and populate it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
 </span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Create an empty map whose keys are zipCodes,</span>
@@ -2031,7 +2031,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </span></span></code></pre></div><ul>
 <li>Retrieve the value associated to a given key:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains (a reference to) Milan</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains (a reference to) Milan</span>
 </span></span><span style="display:flex;"><span>City aCity <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">get</span>(20100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Has value null</span>
@@ -2039,7 +2039,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </span></span></code></pre></div><ul>
 <li>Check whether a map contains an entry for a given key:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(zipCodeToCity.<span style="color:#a6e22e">containsKey</span>(20100));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false</span>
@@ -2047,12 +2047,12 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </span></span></code></pre></div><ul>
 <li>Retrieve the number of entries in a map:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 2</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 2</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(zipCodeToCity.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div><ul>
 <li>Overwrite an entry in a map:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Replaces { 20100 ↦ milan } with { 20100 ↦ bologna }</span>
 </span></span><span style="display:flex;"><span>zipCodeToCity.<span style="color:#a6e22e">put</span>(20100, bologna);
@@ -2071,14 +2071,14 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </span></span></code></pre></div><ul>
 <li>Retrieve the set of keys of a map (note that this is an instance of <code>Set&lt;E&gt;</code>, where <code>E</code> is the type of the keys)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> keys <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">keySet</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> keys <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">keySet</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(keys.<span style="color:#a6e22e">contains</span>(20100));
 </span></span></code></pre></div><ul>
 <li>Retrieve a collection with all values in the map, in no specific order (may contain duplicates):</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Collection<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> values <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">values</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Collection<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> values <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">values</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(values.<span style="color:#a6e22e">contains</span>(milan));
@@ -2094,7 +2094,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </span></span></code></pre></div><ul>
 <li>Wrap the map into a <em>set</em> of entries (a.k.a. &ldquo;key-value&rdquo; pairs):</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates a &#34;wrapper&#34; Set around the map.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates a &#34;wrapper&#34; Set around the map.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// No data is duplicated.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Each element of this set has type Entry&lt;Integer,City&gt;</span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Entry<span style="color:#f92672">&lt;</span>Integer,City<span style="color:#f92672">&gt;&gt;</span> entries <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">entrySet</span>();
@@ -2113,7 +2113,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </h3>
 <p>The identity of two keys in Java is determined by the method <code>equals</code>, analogously to what we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">already</a> for the identity of two elements in a set.</p>
 <p>For instance, consider once again the classes <code>City</code> and <code>SmartCity</code> that we used in the section on <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/#duplicates">sets</a>, where <code>SmartCity</code> overrides <code>equals</code> (and <code>hashCode</code>), whereas <code>City</code> does not:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>City trentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);
 </span></span><span style="display:flex;"><span>
@@ -2148,7 +2148,7 @@ the method should return
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_map_Countrepeated" id="tabs-exercise_map_Countrepeated-1"  />
 <label for="tabs-exercise_map_Countrepeated-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countRepeatedChars</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars) {
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countRepeatedChars</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: character</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// value: number of occurrences of this character</span>
@@ -2198,13 +2198,13 @@ that takes a board as input, and prints the number of unit of each color, in any
 <p>For instance, for the board below:</p>
 <p><img src="/img/adt/miniboard.png" alt="" /></p>
 <p>The method could print:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>blue: <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>blue: <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>yellow: <span style="color:#ae81ff">2</span>
 </span></span><span style="display:flex;"><span>red: <span style="color:#ae81ff">2</span>
 </span></span></code></pre></div></div>
 <input type="radio" class="toggle" name="tabs-exercise_map_miniboard" id="tabs-exercise_map_miniboard-1"  />
 <label for="tabs-exercise_map_miniboard-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printNumberOfUnitsByColor</span>(Unit<span style="color:#f92672">[][]</span> board) {
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printNumberOfUnitsByColor</span>(Unit<span style="color:#f92672">[][]</span> board) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: a color</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// value: the set of all units with this color</span>

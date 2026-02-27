@@ -40,7 +40,7 @@ isEmpty is self-explanatory, append adds an element at the end of the list, prep
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/list/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2012,7 +2012,7 @@ The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</
 <ul>
 <li>Create a <code>List</code> and populate it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
 </span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an empty list of cities</span>
@@ -2035,17 +2035,17 @@ The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</
 </span></span></code></pre></div><ul>
 <li>Retrieve the size of a list:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myList.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div><ul>
 <li>Retrieve the element at index <em>i</em> (the first index being <code>0</code>, like in an array):</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains (a reference to) Florence</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains (a reference to) Florence</span>
 </span></span><span style="display:flex;"><span>City secondCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(1);
 </span></span></code></pre></div><ul>
 <li>Insert an element at index <em>i</em> (shift the position of all subsequent elements by 1).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(1, trento);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Now contains (a reference to) Trento</span>
@@ -2055,7 +2055,7 @@ The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</
 </span></span></code></pre></div><ul>
 <li>Remove the element a index <em>i</em> (shift the position of all subsequent elements by -1), and return it</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(1);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(1);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
 </span></span><span style="display:flex;"><span>Sysetm.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myList.<span style="color:#a6e22e">size</span>());
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Now contains (a reference to) Florence</span>
@@ -2063,7 +2063,7 @@ The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</
 </span></span></code></pre></div><ul>
 <li>Remove the first occurrence of an object in the list (shift the position of all subsequent elements by -1):</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(milan);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(milan);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// contains (a reference to) Florence</span>
 </span></span><span style="display:flex;"><span>City firstCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(0);
 </span></span></code></pre></div><p>For more operations, consult the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html">Javadoc</a> of the interface <code>List</code>.</p>

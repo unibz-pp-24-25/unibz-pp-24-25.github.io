@@ -37,7 +37,7 @@ add: adds an element to the set if it was not present already (and returns true 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2009,7 +2009,7 @@ The most commonly used are <a href="https://unibz-pp-24-25.github.io/docs/datast
 <ul>
 <li>Create a <code>Set</code> and populate it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
 </span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an empty set of cities</span>
@@ -2028,11 +2028,11 @@ The most commonly used are <a href="https://unibz-pp-24-25.github.io/docs/datast
 </span></span></code></pre></div><ul>
 <li>Remove an element from a set:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">remove</span>(milan);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">remove</span>(milan);
 </span></span></code></pre></div><ul>
 <li>Check whether a set contains an certain element:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs false</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs false</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">contains</span>(milan));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
@@ -2040,12 +2040,12 @@ The most commonly used are <a href="https://unibz-pp-24-25.github.io/docs/datast
 </span></span></code></pre></div><ul>
 <li>Retrieve the cardinality of a set:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 1</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div><ul>
 <li>Compute the intersection of two sets:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100));
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100));
 </span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">retainAll</span>(myOtherSet);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 1</span>
@@ -2053,7 +2053,7 @@ The most commonly used are <a href="https://unibz-pp-24-25.github.io/docs/datast
 </span></span></code></pre></div><ul>
 <li>Add a collection to a set:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">addAll</span>(myOtherSet);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">addAll</span>(myOtherSet);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 2</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mySet.<span style="color:#a6e22e">size</span>());
@@ -2071,7 +2071,7 @@ But what does &ldquo;identical&rdquo; mean for two objects?</p>
 This is essential for a <code>HashSet</code> to behave as expected (more on this <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/#hashCode">later</a>).</p>
 </blockquote>
 <p>For instance, consider a naive implementation of the class <code>City</code>, which does <em>not</em> override <code>equals</code> (or <code>hashCode</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipcode;
@@ -2084,7 +2084,7 @@ This is essential for a <code>HashSet</code> to behave as expected (more on this
 </span></span></code></pre></div><p><a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">Recall</a>
 that every class inherits a default implementation of <code>equals</code> (and <code>hashCode</code>), from the class <code>Object</code>.
 According to this default implementation, <code>equals</code> behaves like <code>==</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>City trentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(trento, trentoAgain);
@@ -2092,7 +2092,7 @@ According to this default implementation, <code>equals</code> behaves like <code
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 2</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div><p>Now consider a class <code>SmartCity</code> identical to <code>City</code>, but that overrides <code>equals</code> (and<code>hashCode</code>) in the standard way:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartCity</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartCity</span> {
 </span></span><span style="display:flex;"><span>  String name;
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> zipCode;
 </span></span><span style="display:flex;"><span>
@@ -2115,7 +2115,7 @@ According to this default implementation, <code>equals</code> behaves like <code
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A Java <code>Set</code> cannot contain two instances of <code>SmartCity</code> that have the same name and zip code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SmartCity smartTrento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SmartCity smartTrento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>SmartCity smartTrentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> smartCities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
@@ -2143,14 +2143,14 @@ Again, we refer to the <a href="https://docs.oracle.com/en/java/javase/17/docs/a
 </h2>
 <p>Implementations of the ADT set can be useful in a variety of contexts.
 For instance, remove duplicates from an array (assuming that the order of elements in the array is irrelevant):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{1,2,3,1,2};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{1,2,3,1,2};
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> tuple <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(myArray);
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(tuple);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(set.<span style="color:#a6e22e">size</span>());
 </span></span></code></pre></div><p>Or check whether two lists contain the same (distinct) elements:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SmartCity mantova <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SmartCity mantova <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100);
 </span></span><span style="display:flex;"><span>SmartCity bergamo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartCity(<span style="color:#e6db74">&#34;Bergamo&#34;</span>, 24100);
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> list1 <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(mantova, bergamo);
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>SmartCity<span style="color:#f92672">&gt;</span> list2 <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(bergamo, mantova);
@@ -2176,7 +2176,7 @@ For instance, remove duplicates from an array (assuming that the order of elemen
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_set_miniboard" id="tabs-exercise_set_miniboard-1"  />
 <label for="tabs-exercise_set_miniboard-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countUnits</span>(Unit<span style="color:#f92672">[][]</span> board) {
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countUnits</span>(Unit<span style="color:#f92672">[][]</span> board) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>
@@ -2195,7 +2195,7 @@ For instance, remove duplicates from an array (assuming that the order of elemen
 <input type="radio" class="toggle" name="tabs-exercise_set_family" id="tabs-exercise_set_family-0" checked="checked" />
 <label for="tabs-exercise_set_family-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What does the following program print?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> aSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> aSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>aSet.<span style="color:#a6e22e">add</span>(1);
 </span></span><span style="display:flex;"><span>aSet.<span style="color:#a6e22e">add</span>(2);

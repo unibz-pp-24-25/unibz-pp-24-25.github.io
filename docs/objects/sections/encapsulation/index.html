@@ -37,7 +37,7 @@ Example. As we saw earlier, in our game, the “view” component (which is in c
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2016,7 +2016,7 @@ For instance, when you create a <code>String</code> in Java, you do not have acc
 </h2>
 <p>Each attribute or method of a <em>class</em> can have an <strong>access modifier</strong>, which specifies which other classes can access it.
 For instance, the keywords <code>private</code> and <code>protected</code> below are access modifiers.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> myAttribute;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> myAttribute;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> 1;
@@ -2037,7 +2037,7 @@ There is no keyword for the &ldquo;package-private&rdquo; level.
 Instead, this is the default level for an attribute or method <em>without</em> access modifier.
 For instance, in the example below, the attribute <code>myAttribute</code> is package-private:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myAttribute;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myAttribute;
 </span></span></code></pre></div><p>Here is a recap table from the <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Oracle tutorials</a>:</p>
 <table>
   <thead>
@@ -2093,16 +2093,16 @@ If a method <em>m1</em> overrides (or implements) a method <em>m2</em>, then <em
 <label for="tabs-exercise_encapsulation_relax-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>The following program does not compile.
 Can you see why, and how to fix this?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
 </span></span><span style="display:flex;"><span>└── units
 </span></span><span style="display:flex;"><span>    ├── Unit.java
 </span></span><span style="display:flex;"><span>    └── impl
 </span></span><span style="display:flex;"><span>        └── Unicorn.java
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> String configFolder <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;path/to/config&#34;</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>
@@ -2114,7 +2114,7 @@ Can you see why, and how to fix this?</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> configFolder <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/unicorn.properties&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Run</span> {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Run</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testUnicorn</span>(){
 </span></span><span style="display:flex;"><span>        Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;Storm&#34;</span>);
@@ -2150,12 +2150,12 @@ As a rule of thumb, in Java:</p>
 <label for="tabs-exercise_encapsulation_restrict-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Encapsulation in this program can be improved.
 Can you see how?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
 </span></span><span style="display:flex;"><span>└── units
 </span></span><span style="display:flex;"><span>    ├── Unit.java
 </span></span><span style="display:flex;"><span>    └── impl
 </span></span><span style="display:flex;"><span>        └── Unicorn.java
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> health;
 </span></span><span style="display:flex;"><span>
@@ -2168,7 +2168,7 @@ Can you see how?</p>
 </span></span><span style="display:flex;"><span>        defender.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>health;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span> (){
@@ -2185,7 +2185,7 @@ Can you see how?</p>
 </span></span><span style="display:flex;"><span>        health <span style="color:#f92672">+=</span> 1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Run</span> {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Run</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testUnicorn</span>(){
 </span></span><span style="display:flex;"><span>        Unicorn u1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
@@ -2222,7 +2222,7 @@ An attribute may be:</p>
 <p>This can be achieved with private attributes and so-called &ldquo;getter&rdquo; and &ldquo;setter&rdquo; methods.
 For instance, in the following class,
 the attribute <code>health</code> has public visibility but is not modifiable.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> health;
 </span></span><span style="display:flex;"><span>
@@ -2232,7 +2232,7 @@ the attribute <code>health</code> has public visibility but is not modifiable.</
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Conversely, in the following class,
 the attribute <code>health</code> can be modified but is not visible.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Butterfly</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Butterfly</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> health;
 </span></span><span style="display:flex;"><span>
@@ -2257,7 +2257,7 @@ Getter and setter methods can be automatically generated by your IDE.</p>
 <p>Consider a class <code>MyHashSet</code> that extends Java&rsquo;s <code>HashSet</code> functionalities by keeping track of the number of times something has been <em>added</em> to the set (as opposed to the output of <code>HashSet.size()</code>, which returns the number of elements <em>remaining</em> in the set).</p>
 <p>This class <code>myHashSet</code> may have a private attribute <code>int counter</code> (initialized to <code>0</code>) that keeps track of the number of elements added to the set so far.
 And the class may be implemented by overriding <code>add</code> and <code>addAll</code> in the expected way, i.e.:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyHashSet</span> <span style="color:#66d9ef">extends</span> HashSet {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyHashSet</span> <span style="color:#66d9ef">extends</span> HashSet {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> counter;
 </span></span><span style="display:flex;"><span>
@@ -2281,7 +2281,7 @@ And the class may be implemented by overriding <code>add</code> and <code>addAll
 Intuitively, instead of extending the original class, use an instance of the original class as a (private) attribute of the new class (e.g.
 an instance <code>Hashset</code> named <code>set</code> in this example).
 However, this requires re-implementing all methods of the original class (albeit in a straightforward way), for instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyHashSet</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyHashSet</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isEmpty</span>(){
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> set.<span style="color:#a6e22e">isEmpty</span>();
@@ -2293,10 +2293,10 @@ However, this requires re-implementing all methods of the original class (albeit
 </h3>
 <p>As show by the example above, in order to improve encapsulation, one may want in some scenarios to forbid overriding a method or extending a class.
 In Java, this can be enforced with the keyword <code>final</code>, for instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NonExtensibleClass</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NonExtensibleClass</span> {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nonOverridableMethod</span>(){
 </span></span><span style="display:flex;"><span>        ...

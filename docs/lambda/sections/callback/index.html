@@ -54,7 +54,7 @@ void boostUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ unit.health&#43;
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2012,7 +2012,7 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The two following Java methods have the same structure: both modify each unit in the input list.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boostUnits</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boostUnits</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(Unit unit: units){
 </span></span><span style="display:flex;"><span>      unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>  }
@@ -2026,7 +2026,7 @@ The two following Java methods have the same structure: both modify each unit in
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called <code>boost</code> and <code>penalizeGreen</code> respectively).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boost</span>(Unit unit){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boost</span>(Unit unit){
 </span></span><span style="display:flex;"><span>    unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2042,7 +2042,7 @@ The two following Java methods have the same structure: both modify each unit in
 <li>a callback method with type <code>Consumer&lt;Unit&gt;</code>,</li>
 </ul>
 <p>and applies the callback method to each unit in the input array.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units, Consumer<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> method){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units, Consumer<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> method){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit unit: units){
 </span></span><span style="display:flex;"><span>        method.<span style="color:#a6e22e">accept</span>(unit);
 </span></span><span style="display:flex;"><span>    }
@@ -2074,7 +2074,7 @@ A Java <strong>method reference</strong> is written:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example (continued).</em></strong></p>
 <p>Let us assume that our methods <code>boost</code> and <code>penalizeGreen</code> above are static methods of some class called <code>UnitTransformer</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UnitTransformer</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UnitTransformer</span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">boost</span>(Unit unit){
 </span></span><span style="display:flex;"><span>        unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>;
@@ -2087,14 +2087,14 @@ A Java <strong>method reference</strong> is written:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>We can call our method <code>transform</code> with <code>boost</code> as callback method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>transform(
 </span></span><span style="display:flex;"><span>    units,
 </span></span><span style="display:flex;"><span>    UnitTransformer::boost
 </span></span><span style="display:flex;"><span>);
 </span></span></code></pre></div><p>And similarly with <code>penalizeGreen</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>transform(
 </span></span><span style="display:flex;"><span>    units,
@@ -2108,14 +2108,14 @@ A Java <strong>method reference</strong> is written:</p>
 <p>Alternatively, instead of declaring a method <code>boost</code>, we can directly use a lambda expression:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example (continued).</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>transform(
 </span></span><span style="display:flex;"><span>    units,
 </span></span><span style="display:flex;"><span>    unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>
 </span></span><span style="display:flex;"><span>);
 </span></span></code></pre></div><p>And similarly, instead of declaring a method <code>penalizeGreen</code>, we can use the following lambda expression:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>transform(
 </span></span><span style="display:flex;"><span>    units,
@@ -2137,9 +2137,9 @@ A Java <strong>method reference</strong> is written:</p>
 Instead, we can use the native method <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/#forEach">forEach</a>, available (among others) for any Java <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>.
 This method takes a <code>Consumer</code> method as input, and applies this method to each element of the collection.</p>
 <p>So the following program:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>getUnits().<span style="color:#a6e22e">forEach</span>(unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>getUnits().<span style="color:#a6e22e">forEach</span>(unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>);
 </span></span></code></pre></div><p>is equivalent to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>transform(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>transform(
 </span></span><span style="display:flex;"><span>    getUnits(),
 </span></span><span style="display:flex;"><span>    unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>
 </span></span><span style="display:flex;"><span>);

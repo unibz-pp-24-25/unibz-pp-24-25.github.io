@@ -46,7 +46,7 @@ Notation # Before defining currying, we introduce a convenient notation:">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/currying/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2055,11 +2055,11 @@ For instance, functions in Haskell are traditionally written in curried form.</p
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <p>In Java, we may have a method with signature</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">convert</span>(<span style="color:#66d9ef">int</span> radix, <span style="color:#66d9ef">int</span> input)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">convert</span>(<span style="color:#66d9ef">int</span> radix, <span style="color:#66d9ef">int</span> input)
 </span></span></code></pre></div><p>that prints the digits of the number <code>input</code> in base <code>radix</code> (for instance, <code>convert(2,5)</code> should print <code>101</code>).</p>
 <p>We may want to do this for each element of a list of numbers <code>myList</code>, and for different bases, e.g. once in base 2 and once in base 8.</p>
 <p>We could declare two new methods:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">convertToBaseTwo</span>(<span style="color:#66d9ef">int</span> input){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">convertToBaseTwo</span>(<span style="color:#66d9ef">int</span> input){
 </span></span><span style="display:flex;"><span>    convert(2, input);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2067,24 +2067,24 @@ For instance, functions in Haskell are traditionally written in curried form.</p
 </span></span><span style="display:flex;"><span>    convert(8, input);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Then we could pass these two methods to the method <code>forEach</code> encountered <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/#forEach">earlier</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(MyClass::convertToBaseTwo);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(MyClass::convertToBaseTwo);
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(MyClass::convertToBaseEight);
 </span></span></code></pre></div><p>However, with this pattern, for each new radix <code>X</code>, we would need to create a new method <code>convertToBaseX</code>.
 Besides, if the desired radix is only supplied at runtime (e.g. by the system&rsquo;s user), then this pattern cannot be applied.</p>
 <p>Intuitively, we would like to produce (on the fly) a method <code>convertToBaseX</code> that converts an integer into base <code>X</code>.
 This is precisely what the curried form of the method <code>convert</code> does.</p>
 <p>This method has type <code>Integer</code> $\to$ <code>Integer</code> $\to$ <code>void</code>, and can be defined as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Consumer<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">curriedConvert</span>(<span style="color:#66d9ef">int</span> radix) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Consumer<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">curriedConvert</span>(<span style="color:#66d9ef">int</span> radix) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">-&gt;</span> convert(radix, x);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This allows us to generate <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/closure/">closures</a> and pass them as arguments to the method <code>forEach</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(2));
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(2));
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(8));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> radix <span style="color:#f92672">=</span> getRadixFromUser();
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(curriedConvert(radix));
 </span></span></code></pre></div><p>Alternatively, we could use the curried form of <code>convert</code> anonymously:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> convert(2, x));
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> convert(2, x));
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> convert(8, x));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> radix <span style="color:#f92672">=</span> getRadixFromUser();
@@ -2106,7 +2106,7 @@ Assume that we want to write a method that takes as input a <a href="https://uni
 <p>Instead, we can use a callback method in curried form, with type</p>
 <p>$\qquad$ <code>Integer</code> $\to$ <code>Integer</code> $\to$ <code>Integer</code> $\to$ <code>String</code></p>
 <p>Or in Java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Function<span style="color:#f92672">&lt;</span>Integer, Function<span style="color:#f92672">&lt;</span>Integer, Function<span style="color:#f92672">&lt;</span>Integer, String<span style="color:#f92672">&gt;&gt;&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Function<span style="color:#f92672">&lt;</span>Integer, Function<span style="color:#f92672">&lt;</span>Integer, Function<span style="color:#f92672">&lt;</span>Integer, String<span style="color:#f92672">&gt;&gt;&gt;</span>
 </span></span></code></pre></div></blockquote>
 </article>
  

@@ -39,7 +39,7 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2010,7 +2010,7 @@ Consider the following classes:</p>
 <p>Now consider the following program, where the method <code>getUnits</code> produces an array of units that depends on the player&rsquo;s input.
 The type of objects in this array (<code>Unicorn</code> or <code>Butterfly</code>) cannot be determined at compile time.
 Thanks to the implicit upcast, they can nonetheless be referred to as (underspecified) units.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
@@ -2024,7 +2024,7 @@ However, this may not be safe.
 For instance, in the above example, downcasting a unit from <code>Unit</code> to <code>Unicorn</code> may cause a <code>ClassCastException</code> (at runtime), because this unit is a instance of <code>Butterfly</code>.
 This is why downcasting is often used in combination with the <code>instanceof</code> operator.
 For instance the above example can be modifed as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(unit <span style="color:#66d9ef">instanceof</span> Unicorn){
 </span></span><span style="display:flex;"><span>        ((Unicorn) unit).<span style="color:#a6e22e">regen</span>();
@@ -2041,7 +2041,7 @@ Since two objects have different locations in memory, their respective reference
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider (a simplified version of) the class <code>City</code> that we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/">earlier</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
@@ -2052,7 +2052,7 @@ Consider (a simplified version of) the class <code>City</code> that we saw <a hr
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span> }
 </span></span></code></pre></div><p>The following program will output <code>false</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City city1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City city1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>City city2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(city1 <span style="color:#f92672">==</span> city2);
 </span></span></code></pre></div></blockquote>
@@ -2061,13 +2061,13 @@ Java provides a native method called <code>equals</code> for this purpose.</p>
 <p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
 So every (user-defined of native) class inherits <code>equals</code>.</p>
 <p>Here is the source code of <code>Object.equals</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In other words, by default, this method behaves like the <code>==</code> operator.
 In order to use this method to check whether two objects are equal, it has to be <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">overriden</a>.</p>
 <p>For instance, here is a prototypical implementation of the method <code>equals</code> within our class <code>City</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object o) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> o) { <span style="color:#75715e">// same reference</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;

@@ -34,7 +34,7 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2003,7 +2003,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
 <li>extracts the color of each butterfly,</li>
 <li>collects these colors as a set.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> butterflyColors <span style="color:#f92672">=</span> units.<span style="color:#a6e22e">stream</span>()                        <span style="color:#75715e">// create a stream</span>
 </span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)  <span style="color:#75715e">// retain butterflies</span>
@@ -2019,7 +2019,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
   <a class="anchor" href="#source">#</a>
 </h3>
 <p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html#stream%28%29">Collection.stream</a> generates a stream out of a collection (e.g. out of a <code>List</code> or a <code>Set</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>units.<span style="color:#a6e22e">stream</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>units.<span style="color:#a6e22e">stream</span>()
 </span></span></code></pre></div><p>In this example, because <code>units</code> has type <code>List&lt;Unit&gt;</code>, the stream that is returned by <code>units.stream()</code> has type <code>Stream&lt;Unit&gt;</code>.</p>
 <h3 id="intermediate-operations">
   Intermediate operations
@@ -2029,14 +2029,14 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
   Filter
   <a class="anchor" href="#filter">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)
 </span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#filter%28java.util.function.Predicate%29">Stream.filter</a> retains certain elements of the stream.</p>
 <p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Unit</code>).</p>
 <p>The method <code>filter</code> takes as argument a callback function of type</p>
 <p>$\qquad \mathit{T} \to$ <code>Boolean</code></p>
 <p>(equivalently, in Java&rsquo;s terminology, the callback function must implement the native <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/#functionalInterface">functional interface</a> <code>Predicate&lt;</code>$\mathit{T}$<code>&gt;</code>).</p>
 <p>In this example, the callback function is</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly
 </span></span></code></pre></div><p>which has type</p>
 <p>$\qquad$ <code>Unit</code> $\to$ <code>Boolean</code></p>
 <p>The method <code>filter</code> returns a <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;Unit&gt;</code>) that consists of the elements for which the callback method evaluates to <code>true</code> (in this case, it retains only butterflies).</p>
@@ -2044,14 +2044,14 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
   Map
   <a class="anchor" href="#map">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">map</span>(b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">map</span>(b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>)
 </span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#map%28java.util.function.Function%29">Stream.map</a> applies a function to each element of the stream.</p>
 <p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Unit</code>).</p>
 <p>The method <code>map</code> takes as argument a callback function of type</p>
 <p>$\qquad T \to T'$</p>
 <p>where $T&rsquo;$ can be any type (equivalently, in Java&rsquo;s terminology, the callback function must implement the native functional interface <code>Function&lt;</code>$T$<code>,</code>$T&rsquo;$<code>&gt;</code>, <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/#function">seen earlier</a>).</p>
 <p>In this example, the callback function is</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>
 </span></span></code></pre></div><p>which has type</p>
 <p>$\qquad$ <code>Unit</code> $\to$ <code>String</code></p>
 <p>Let us name this callback function $f$.</p>
@@ -2060,7 +2060,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
   Terminal operation
   <a class="anchor" href="#terminal-operation">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
 </span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>), or a <code>Map</code>, a <code>String</code>, etc.</p>
 <p>In this example, we call the static method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collectors.html#toSet%28%29">Collectors.toSet</a>, which returns a collector that produces a set.
 Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <code>.collect(Collectors.toSet())</code> returns a set with type <code>Set&lt;String&gt;</code>.</p>
@@ -2072,7 +2072,7 @@ Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <
 <input type="radio" class="toggle" name="tabs-exercise_stream_setIntersection" id="tabs-exercise_stream_setIntersection-0" checked="checked" />
 <label for="tabs-exercise_stream_setIntersection-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What do the following methods compute?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method1</span>(Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set1, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set2) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method1</span>(Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set1, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set2) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> set1.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> set2.<span style="color:#a6e22e">contains</span>(u))
 </span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
@@ -2093,7 +2093,7 @@ Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <
 <input type="radio" class="toggle" name="tabs-exercise_stream_units" id="tabs-exercise_stream_units-0" checked="checked" />
 <label for="tabs-exercise_stream_units-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What do the methods <code>method1</code> to <code>method4</code> below compute?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method1</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method1</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&gt;</span> 0);
 </span></span><span style="display:flex;"><span>}

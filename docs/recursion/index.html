@@ -44,7 +44,7 @@ takes as input an absolute path to an (existing) folder $f$, and prints an absol
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/recursion/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -2009,7 +2009,7 @@ https://github.com/alex-shpak/hugo-book
 <li>prints an absolute path to each file contained recursively in $f$ (in any order).</li>
 </ul>
 <p>For instance, in the following example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>└── foo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>└── foo
 </span></span><span style="display:flex;"><span>    ├── fred.txt
 </span></span><span style="display:flex;"><span>    └── bar
 </span></span><span style="display:flex;"><span>       ├── thud.txt
@@ -2035,7 +2035,7 @@ E.g. <code>children(&quot;foo&quot;)</code> returns <code>{ &quot;/foo/fred.txt&
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_recursion_files" id="tabs-exercise_recursion_files-1"  />
 <label for="tabs-exercise_recursion_files-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFiles</span>(String folder){
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFiles</span>(String folder){
 </span></span><span style="display:flex;"><span>    foreach child in <span style="color:#a6e22e">children</span>(folder){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(isFile(child)){
 </span></span><span style="display:flex;"><span>            print(child)
@@ -2060,7 +2060,7 @@ A method is <strong>recursive</strong> if it calls itself, directly or indirectl
 <ul>
 <li>the following method is recursive:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>    myMethod() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>    myMethod() {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>        myMethod()
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
@@ -2070,7 +2070,7 @@ A method is <strong>recursive</strong> if it calls itself, directly or indirectl
 <ul>
 <li>the following two methods are recursive:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>    myMethod1() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>    myMethod1() {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>        myMethod2()
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
@@ -2133,7 +2133,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_binTree_sum" id="tabs-exercise_binTree_sum-1"  />
 <label for="tabs-exercise_binTree_sum-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(Node root){
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
@@ -2154,7 +2154,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_binTree_height" id="tabs-exercise_binTree_height-1"  />
 <label for="tabs-exercise_binTree_height-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">height</span>(Node root){
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">height</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
@@ -2177,9 +2177,9 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <div class="book-tabs-content markdown-inner"><p>Let us represent a binary tree as above, but where nodes are labeled with a character.</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>Consider the following recursive algorithm:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -2189,7 +2189,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
@@ -2211,9 +2211,9 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-0" checked="checked" />
 <label for="tabs-exercise_inorder_traversal-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What about the following algorithm (for the same tree)?</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -2223,7 +2223,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">leftChild</span>)
@@ -2243,9 +2243,9 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-0" checked="checked" />
 <label for="tabs-exercise_postorder_traversal-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>And this algorithm?</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -2255,7 +2255,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">leftChild</span>)
@@ -2293,7 +2293,7 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
 <input type="radio" class="toggle" name="tabs-exercise_leftMost" id="tabs-exercise_leftMost-1"  />
 <label for="tabs-exercise_leftMost-1">Possible solution</label>
 <div class="book-tabs-content markdown-inner"><p>We can adapt the in-order traversal algorithm (above), as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">leftMost</span>(Node root, <span style="color:#66d9ef">char</span> label){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">leftMost</span>(Node root, <span style="color:#66d9ef">char</span> label){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
@@ -2320,7 +2320,7 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
   <a class="anchor" href="#syntax">#</a>
 </h2>
 <p>A recursive method often has the following structure (in pseudocode):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(Type input) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(Type input) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>input is minimal<span style="color:#f92672">&gt;</span>) {
@@ -2347,7 +2347,7 @@ Termination is guaranteed if the input of each recursive call is strictly <em>sm
 </h3>
 <p>A recursive method is often an <em>auxiliary method</em>.
 For instance, some problems with an array as input can be solved recursively by dividing the array in sub-segments, as follows (in pseudocode):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>solveProblem(Type<span style="color:#f92672">[]</span> array) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>solveProblem(Type<span style="color:#f92672">[]</span> array) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(array.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 0){
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// the initial segment is the whole array</span>
 </span></span><span style="display:flex;"><span>        solveProblemRec(array, 0, array.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)
@@ -2379,7 +2379,7 @@ For instance, some problems with an array as input can be solved recursively by 
 For instance, in a binary tree, return the least label (in alphabetical order) and the maximal depth at which it occurs.</p>
 <p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Character leastLabel, <span style="color:#66d9ef">int</span> depth){};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Character leastLabel, <span style="color:#66d9ef">int</span> depth){};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Result <span style="color:#a6e22e">leastLabelAndDepth</span>(Node root) {
 </span></span><span style="display:flex;"><span>

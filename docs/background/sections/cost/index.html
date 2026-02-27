@@ -45,7 +45,7 @@ the number of entries for array, the number of nodes for tree, etc. Time or memo
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/background/sections/cost/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2039,7 +2039,7 @@ https://github.com/alex-shpak/hugo-book
 <input type="radio" class="toggle" name="tabs-exercise_linear" id="tabs-exercise_linear-0" checked="checked" />
 <label for="tabs-exercise_linear-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Consider the following algorithm, which returns true iff the input array <code>A</code> contains the input value <code>a</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>boolean contains(int<span style="color:#f92672">[]</span> A, int a){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>boolean contains(int<span style="color:#f92672">[]</span> A, int a){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span>(v in A) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(v <span style="color:#f92672">==</span> a){
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> true
@@ -2058,7 +2058,7 @@ https://github.com/alex-shpak/hugo-book
 <input type="radio" class="toggle" name="tabs-exercise_logarithmic" id="tabs-exercise_logarithmic-0" checked="checked" />
 <label for="tabs-exercise_logarithmic-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Consider the following algorithm (known as binary search), which solves the same problem as the previous one, but assuming that the input array is <em>sorted</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> a){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> a){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> begin <span style="color:#f92672">=</span> 0
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> end <span style="color:#f92672">=</span> A.<span style="color:#a6e22e">lenghth</span> <span style="color:#f92672">-</span> 1
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">while</span>(begin <span style="color:#f92672">&lt;</span> end){
@@ -2347,7 +2347,7 @@ In particular, for a given index $i$, the cost of accessing the $i^\text{th}$ el
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider the following method</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> i){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> i){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> A.<span style="color:#a6e22e">length</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Let $n$ be the size of the input array $A$, and let us express the running time of this method as a function of $n$.
@@ -2365,9 +2365,9 @@ If we adopt the RAM cost model, then:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider the same algorithm as <a href="#worstCaseOrAverage">above</a> (but where the meaning of <code>foreach</code> is made explicit)</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -2379,7 +2379,7 @@ Consider the same algorithm as <a href="#worstCaseOrAverage">above</a> (but wher
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> a){
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> a){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">while</span> (i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> a){

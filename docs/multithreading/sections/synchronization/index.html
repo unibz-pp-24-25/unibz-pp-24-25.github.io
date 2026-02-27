@@ -29,7 +29,7 @@ Programming languages that support multithreading also allow expressing constrai
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2018,13 +2018,13 @@ In can be used in two ways:</p>
 <p>A thread that enters this block acquires the intrinsic lock of $o$, and releases it when exits the block.</p>
 </blockquote>
 <p>The syntax is the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span>(<span style="color:#f92672">&lt;</span>object<span style="color:#f92672">&gt;</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span>(<span style="color:#f92672">&lt;</span>object<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block<span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider the two following classes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> value;
 </span></span><span style="display:flex;"><span>
@@ -2037,14 +2037,14 @@ Consider the two following classes:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The method <code>increment</code> below uses an instance of <code>Lock</code> to ensure that a counter is only incremented by one thread at a time:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">increment</span>(Counter counter, Lock lock){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">increment</span>(Counter counter, Lock lock){
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span>(lock){
 </span></span><span style="display:flex;"><span>        counter.<span style="color:#a6e22e">value</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>As a result, the following program is free of race condition:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
 </span></span><span style="display:flex;"><span>Lock lock <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Lock();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Thread t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { increment(counter, lock); } );
@@ -2056,13 +2056,13 @@ Consider the two following classes:</p>
 <p>Observe that in the example above, any object could be used as a lock.
 In particular, the object <code>counter</code> itself.
 So the program below is equivalent:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">increment</span>(Counter counter){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">increment</span>(Counter counter){
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span>(counter){
 </span></span><span style="display:flex;"><span>        counter.<span style="color:#a6e22e">value</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Thread t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { increment(counter); } );
 </span></span><span style="display:flex;"><span>Thread t2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { increment(counter); } );
@@ -2077,13 +2077,13 @@ So the program below is equivalent:</p>
 <p>A <strong>synchronized instance method</strong> uses the intrinsic lock of the object for which this method is called.</p>
 </blockquote>
 <p>The syntax is the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>() {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In other words, the two following classes are equivalent:</p>
 <div class="book-columns flex flex-wrap">
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>method body<span style="color:#f92672">&gt;</span>
@@ -2091,7 +2091,7 @@ So the program below is equivalent:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>  </div>
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">synchronized</span>(<span style="color:#66d9ef">this</span>){
@@ -2121,7 +2121,7 @@ We mentioned above that a thread can reacquire a lock that it already owns.</p>
 <div class="book-tabs-content markdown-inner"><p>What are the possible outputs of the following program?</p>
 <p>And what would these possible outputs be if the method <code>getValue()</code> were <em>not</em> synchronized?</p>
 <p>Can the value <code>3</code> be printed, and if so, in which precise scenario(s)?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> value;
 </span></span><span style="display:flex;"><span>
@@ -2142,7 +2142,7 @@ We mentioned above that a thread can reacquire a lock that it already owns.</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> value;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Thread t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { counter.<span style="color:#a6e22e">doubleDec</span>(2); } );
 </span></span><span style="display:flex;"><span>t1.<span style="color:#a6e22e">start</span>();
@@ -2193,7 +2193,7 @@ The counter cannot be first decremented by 2 and then (immediately) incremented 
 <p>In other words, the two following classes are equivalent:</p>
 <div class="book-columns flex flex-wrap">
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>method body<span style="color:#f92672">&gt;</span>
@@ -2201,7 +2201,7 @@ The counter cannot be first decremented by 2 and then (immediately) incremented 
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>  </div>
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">synchronized</span>(Class.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;my.project.name.MyClass&#34;</span>)){
@@ -2276,7 +2276,7 @@ The following example is an implementation of the producer-consumer pattern borr
 <li>we will use a queue with a capacity of 1 (so that the queue is either empty of full),</li>
 <li>we assume a single producer and a single consumer.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>pulic <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>pulic <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T item;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> isEmpty <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
@@ -2302,7 +2302,7 @@ If this happens, thread $p$:</p>
 <li>releases the intrinsic lock on the queue (by exiting the synchronized method).</li>
 </ul>
 <p>The method dequeue is symmetric:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
@@ -2318,7 +2318,7 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A producer thread could be implemented as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span> <span style="color:#66d9ef">implements</span> Runnable {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span> <span style="color:#66d9ef">implements</span> Runnable {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue;
 </span></span><span style="display:flex;"><span>
@@ -2338,7 +2338,7 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And a consumer thread could be implemented as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span> <span style="color:#66d9ef">implements</span> Runnable {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span> <span style="color:#66d9ef">implements</span> Runnable {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue;
 </span></span><span style="display:flex;"><span>
@@ -2358,7 +2358,7 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Finally, the main thread may spawn one producer and one consumer, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyQueue<span style="color:#f92672">&lt;&gt;</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    MyQueue<span style="color:#f92672">&lt;</span>Item<span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyQueue<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>    Thread p <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Producer(queue));
 </span></span><span style="display:flex;"><span>    Thread c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Consumer(queue));
 </span></span><span style="display:flex;"><span>    p.<span style="color:#a6e22e">start</span>();
@@ -2374,11 +2374,11 @@ And similarly for the loop in the method <code>dequeue</code>.</p>
 Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes.
 For instance, in the example above, if we had two producer threads, then one producer thread could wake up the other (instead of waking up the consumer thread), when it exits the method <code>enqueue</code>.</p>
 <p>To avoid spurious wakeups, it is customary to write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>rather than:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></article>

@@ -45,7 +45,7 @@ Example # Exercise Write in pseudocode a (linear) recursive algorithm for a meth
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/linear/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2020,7 +2020,7 @@ A linear recursive algorithm is often easy to transform into an iterative one (i
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_array_linearRec" id="tabs-exercise_array_linearRec-1"  />
 <label for="tabs-exercise_array_linearRec-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, 0)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2049,16 +2049,16 @@ A linear recursive algorithm is often easy to transform into an iterative one (i
   <a class="anchor" href="#motivation">#</a>
 </h3>
 <p>Consider a (not necessarily recursive) method <code>method1</code> that calls a method <code>method2</code>, for instance:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>    method2()
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
@@ -2067,7 +2067,7 @@ A linear recursive algorithm is often easy to transform into an iterative one (i
 </div>
 </div><p>The execution of <code>method1</code> is interrupted when it calls <code>method2</code>.</p>
 <p>During this interruption, the <a href="https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/">call stack</a> contains:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method2
 </span></span><span style="display:flex;"><span>method1: <span style="color:#ae81ff">3</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the stack<span style="color:#f92672">&gt;</span>
 </span></span></code></pre></div><blockquote class="book-hint warning">
@@ -2075,12 +2075,12 @@ A linear recursive algorithm is often easy to transform into an iterative one (i
 </blockquote>
 <p>In this example, variables that are local to <code>method1</code> remain in memory during the execution of <code>method2</code> (because they may be needed when the execution of <code>method1</code> resumes).
 However, if no instruction in <code>method1</code> needs to be executed <em>after</em> the call to <code>method2</code>, then there is no need to maintain this information in memory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>    method2()
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In other words, the call stack in this case could be safely be reduced to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method2
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the stack<span style="color:#f92672">&gt;</span>
 </span></span></code></pre></div><p>This optimization technique is known as <a href="https://en.wikipedia.org/wiki/Tail_call">tail-call elimination</a>.
 Some compilers apply it (but most Java compilers do not).</p>
@@ -2105,7 +2105,7 @@ Then convert it into an iterative algorithm.</p>
 <input type="radio" class="toggle" name="tabs-exercise_array_TailRec" id="tabs-exercise_array_TailRec-1"  />
 <label for="tabs-exercise_array_TailRec-1">Possible solution</label>
 <div class="book-tabs-content markdown-inner"><p>Tail recursive algorithm:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, 0, 0)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2123,7 +2123,7 @@ Then convert it into an iterative algorithm.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> occRec(A, c, i <span style="color:#f92672">+</span> 1, occurrences)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Iterative algorithm:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">occ</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">char</span> c) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> occurrences <span style="color:#f92672">=</span> 0
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> c) {
@@ -2184,7 +2184,7 @@ A <strong>linked list</strong> is a set of objects organized in a <em>sequence</
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_linkedList_removeDup" id="tabs-exercise_linkedList_removeDup-1"  />
 <label for="tabs-exercise_linkedList_removeDup-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">removeDuplicates</span>(Node head) {
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">removeDuplicates</span>(Node head) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: empty list.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(head <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>

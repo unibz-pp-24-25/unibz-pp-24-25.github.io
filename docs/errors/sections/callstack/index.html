@@ -28,7 +28,7 @@ When the execution of a method starts, the method is “pushed” on top of the 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/callstack/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1972,9 +1972,9 @@ This gives the illusion of source code being interpreted verbatim.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 In our game, consider the following implementation of the method <code>callReinforcement</code>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -2014,7 +2014,7 @@ In our game, consider the following implementation of the method <code>callReinf
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Backend</span> <span style="color:#66d9ef">implements</span> EventHandler {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Backend</span> <span style="color:#66d9ef">implements</span> EventHandler {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  Snapshot currentSnapshot;
 </span></span><span style="display:flex;"><span>  ...
@@ -2057,19 +2057,19 @@ In our game, consider the following implementation of the method <code>callReinf
 </div></blockquote>
 <p>When the method <code>callReinforcement</code> is called, it is added (a.k.a. <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#stack">pushed</a>) on top of the call stack.
 This is rendered by a debugger as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>callReinforcement
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>callReinforcement
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the call stack<span style="color:#f92672">&gt;</span>
 </span></span></code></pre></div><p>If execution &ldquo;reaches&rdquo; Line 13, then the method <code>generateRandomUnit</code> is called and added to the stack:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>generateRandomUnit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>generateRandomUnit
 </span></span><span style="display:flex;"><span>callReinforcement: <span style="color:#ae81ff">13</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the call stack<span style="color:#f92672">&gt;</span>
 </span></span></code></pre></div><p>When the method <code>generateRandomUnit</code> terminates, it passes control (as well as a <code>Unit</code>) back to the method that called it, namely <code>callReinforcement</code>,
 which can resume its execution:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>callReinforcement
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>callReinforcement
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the call stack<span style="color:#f92672">&gt;</span>
 </span></span></code></pre></div><p>Similarly, when execution &ldquo;reaches&rdquo; Line 14, <code>findInsertionSpot</code> is added to the stack, executed, and then removed from the stack, passing control back to <code>callReinforcement</code>.</p>
 <p>Then if execution &ldquo;reaches&rdquo; Line 16, <code>addUnit</code> is executed, which in turn calls <code>performUnitMerges</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>performUnitMerges
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>performUnitMerges
 </span></span><span style="display:flex;"><span>addUnit: <span style="color:#ae81ff">32</span>
 </span></span><span style="display:flex;"><span>callReinforcement: <span style="color:#ae81ff">16</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the call stack<span style="color:#f92672">&gt;</span>
@@ -2078,7 +2078,7 @@ which can resume its execution:</p>
 <p><strong><em>Note.</em></strong>
 If a method is recursive (i.e. if it calls itself, <em>directly or indirectly</em>), then it may appear multiple times in the call stack.
 E.g.:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1
 </span></span><span style="display:flex;"><span>method2: <span style="color:#ae81ff">16</span>
 </span></span><span style="display:flex;"><span>method1: <span style="color:#ae81ff">8</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>rest of the call stack<span style="color:#f92672">&gt;</span>

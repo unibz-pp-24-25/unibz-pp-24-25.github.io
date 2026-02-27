@@ -40,7 +40,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2050,7 +2050,7 @@ As we saw <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/secti
 <p><strong><em>Warning.</em></strong> This implementation is suboptimal (some arrays can be reused).
 We only used it to keep the explanation simple.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Returns a sorted array that contains the same elements as A.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Returns a sorted array that contains the same elements as A.</span>
 </span></span><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">mergesort</span>(Type<span style="color:#f92672">[]</span> A) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the input array has size 1, it is already sorted.</span>
@@ -2080,7 +2080,7 @@ We only used it to keep the explanation simple.</p>
 <input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-0" checked="checked" />
 <label for="tabs-exercise_mergeSort-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>To complete this algorithm, implement (in pseudocode) the auxiliary method</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
 </span></span></code></pre></div><p>that takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
 <p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a>.</p>
 </div>
@@ -2099,7 +2099,7 @@ then:
 <li>when reaching the end of <code>A</code> (resp. <code>B</code>), add the remaining elements of <code>B</code> (resp. <code>A</code>) to the output array.</li>
 </ul>
 <p>More precisely:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B){
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Output array</span>
 </span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> C <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Type<span style="color:#f92672">[</span>A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> B.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>
@@ -2157,7 +2157,7 @@ Merge sort is a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes
 <p><a href="https://unibz-pp-24-25.github.io/docs/recursion/#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>One of these algorithms was the so-called &ldquo;pre-order traversal&rdquo;:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
@@ -2169,7 +2169,7 @@ Merge sort is a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes
 Nodes in such a tree can be represented as instances of the following class:</p>
 <p><img src="/img/diagrams/plantuml/node_nary.svg" alt="" /></p>
 <p>And the algorithm becomes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
 </span></span><span style="display:flex;"><span>        foreach child in root.<span style="color:#a6e22e">children</span> {
@@ -2192,7 +2192,7 @@ When applied to a graph, the algorithm above:</p>
 which indicates whether a node has already been visited during a traversal:</p>
 <p><img src="/img/diagrams/plantuml/node_nary_visited.svg" alt="" /></p>
 <p>And the algorithm becomes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>root.<span style="color:#a6e22e">visited</span>){
 </span></span><span style="display:flex;"><span>        root.<span style="color:#a6e22e">visited</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">print</span>(root.<span style="color:#a6e22e">label</span>)
@@ -2362,7 +2362,7 @@ It takes an existential node as input, and returns:</p>
 <li><code>9</code> if this node is a winning node for Alice, or</li>
 <li><code>0</code> if this node is a winning node for Bob.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0){
@@ -2405,7 +2405,7 @@ Instead, we can use:</p>
 This procedure takes a state as input, and determines whether this state is a winning state for Alice or Bob.</li>
 </ul>
 <p>The method <code>maximim</code> becomes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(State s){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(State s){
 </span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>State<span style="color:#f92672">&gt;</span> children <span style="color:#f92672">=</span> possibleMoves(s)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
@@ -2444,7 +2444,7 @@ Minimax can be <em>prohibitive</em> for games with an important tree height (sin
 <a href="https://en.wikipedia.org/wiki/Deep_Blue_%28chess_computer%29">Deep Blue</a> (the first program that defeated a chess world champion) was only looking 12 moves ahead.</p>
 </blockquote>
 <p>The algorithm becomes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(State s, <span style="color:#66d9ef">int</span> depth){
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>State<span style="color:#f92672">&gt;</span> children <span style="color:#f92672">=</span> possibleMoves(s)

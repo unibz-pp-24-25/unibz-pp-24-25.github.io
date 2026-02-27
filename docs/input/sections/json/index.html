@@ -44,7 +44,7 @@ Install # Jackson can be used within a Maven project, by declaring the following
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/input/sections/json/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2001,13 +2001,13 @@ Jackson was initially designed for JSON, but extensions of Jackson allow manipul
   <a class="anchor" href="#install">#</a>
 </h2>
 <p>Jackson can be used within a Maven project, by declaring the following <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/">dependency</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>jackson-databind<span style="color:#f92672">&lt;/artifactId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>2.17.0<span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><p>And similarly for Gradle:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation group: <span style="color:#e6db74">&#39;com.fasterxml.jackson.core&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;jackson-databind&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#ae81ff">2.17</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation group: <span style="color:#e6db74">&#39;com.fasterxml.jackson.core&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;jackson-databind&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#ae81ff">2.17</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><p>For the latest version, search <a href="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind">Maven Central</a>.</p>
 <p>Installing this dependency will transitively install:</p>
 <ul>
@@ -2022,7 +2022,7 @@ Jackson was initially designed for JSON, but extensions of Jackson allow manipul
 for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in N minutes</a> on the GitHub page of the <code>jackson-databind</code> library.</p>
 <p>We focus here on some simple features of the library.</p>
 <p>An <code>ObjectMapper</code> can be used to map a Java object (or array or value) to some JSON string, and conversely.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper();
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Optional: indent the output JSON strings (and adds line breaks) when applicable</span>
 </span></span><span style="display:flex;"><span>mapper.<span style="color:#a6e22e">enable</span>(SerializationFeature.<span style="color:#a6e22e">INDENT_OUTPUT</span>);
 </span></span></code></pre></div><h3 id="convert-a-value">
@@ -2033,7 +2033,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
   Serialize
   <a class="anchor" href="#serialize">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 15</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs 15</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mapper.<span style="color:#a6e22e">writeValueAsString</span>(15));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;abcd&#34;</span>
@@ -2042,7 +2042,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
   Deserialize
   <a class="anchor" href="#deserialize">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates an Integer with value 15</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates an Integer with value 15</span>
 </span></span><span style="display:flex;"><span>Integer integer <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(<span style="color:#e6db74">&#34;15&#34;</span>, Integer.<span style="color:#a6e22e">class</span>);
 </span></span></code></pre></div><h3 id="convert-an-array-or-collection">
   Convert an array or collection
@@ -2052,7 +2052,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
   Serialize
   <a class="anchor" href="#serialize-1">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs [2,3]</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mapper.<span style="color:#a6e22e">writeValueAsString</span>(<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span>{2, 3}));
 </span></span><span style="display:flex;"><span>
@@ -2088,7 +2088,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
   Deserialize
   <a class="anchor" href="#deserialize-1">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates an array with values [2,3,2]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates an array with values [2,3,2]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> integers <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(<span style="color:#e6db74">&#34;[2,3,2]&#34;</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span>.<span style="color:#a6e22e">class</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an Arraylist with values [2,3,2]</span>
@@ -2109,7 +2109,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
 </h4>
 <div class="book-columns flex flex-wrap">
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Country country;
@@ -2121,7 +2121,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>  </div>
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> City capital;
@@ -2133,7 +2133,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>  </div>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>, <span style="color:#66d9ef">null</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>, <span style="color:#66d9ef">null</span>);
 </span></span><span style="display:flex;"><span>City rome <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, italy);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* Outputs:
@@ -2147,7 +2147,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mapper.<span style="color:#a6e22e">writeValueAsString</span>(rome));
 </span></span></code></pre></div><p>However, recall that a JSON object cannot contain a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/objects/#objectRef">reference</a> to another JSON object.
 As a consequence, some Java objects cannot be finitely represented in JSON:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>italy.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> rome;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>italy.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> rome;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Throws a JsonMappingException: Document nesting depth (1001) exceeds the maximum allowed</span>
 </span></span><span style="display:flex;"><span>mapper.<span style="color:#a6e22e">writeValueAsString</span>(rome);
 </span></span></code></pre></div><p>By default, Jackson serializes:</p>
@@ -2156,9 +2156,9 @@ As a consequence, some Java objects cannot be finitely represented in JSON:</p>
 <li>non-public fields that have a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/#getterSetter">getter</a> method.</li>
 </ul>
 <p>However, it is also possible to force serialization of other attributes, either for all classes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mapper.<span style="color:#a6e22e">setVisibility</span>(PropertyAccessor.<span style="color:#a6e22e">FIELD</span>, Visibility.<span style="color:#a6e22e">ANY</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mapper.<span style="color:#a6e22e">setVisibility</span>(PropertyAccessor.<span style="color:#a6e22e">FIELD</span>, Visibility.<span style="color:#a6e22e">ANY</span>);
 </span></span></code></pre></div><p>or for a specific class:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@JsonAutoDetect</span>(fieldVisibility <span style="color:#f92672">=</span> Visibility.<span style="color:#a6e22e">ANY</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@JsonAutoDetect</span>(fieldVisibility <span style="color:#f92672">=</span> Visibility.<span style="color:#a6e22e">ANY</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
@@ -2167,7 +2167,7 @@ As a consequence, some Java objects cannot be finitely represented in JSON:</p>
 If a public attribute <code>attribute</code> and a getter <code>getAttribute</code> coexist, then the latter takes precedence.</p>
 </blockquote>
 <p>Some public attributes can also be explicitly ignored:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@JsonIgnoreProperties</span>(<span style="color:#e6db74">&#34;name&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@JsonIgnoreProperties</span>(<span style="color:#e6db74">&#34;name&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
 </span></span><span style="display:flex;"><span>    ...
@@ -2180,7 +2180,7 @@ If a public attribute <code>attribute</code> and a getter <code>getAttribute</co
 the attributes (a.k.a. &ldquo;keys&rdquo;) of the JSON object must be mapped to attributes of the targeted class.</p>
 <p>This can be done by adding (Jackson-specific) annotations to a constructor for the class.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> zipCode;
@@ -2191,7 +2191,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String jsonCity <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{\&#34;name\&#34; : \&#34;Bologna\&#34;, \&#34;code\&#34; : 40100 }&#34;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String jsonCity <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{\&#34;name\&#34; : \&#34;Bologna\&#34;, \&#34;code\&#34; : 40100 }&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains the object City{ name: &#34;Bologna&#34;, zipCode: 40100 }</span>
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(jsonCity, City.<span style="color:#a6e22e">class</span>);
@@ -2199,7 +2199,7 @@ For instance:</p>
 Note that the name of the JSON attribute and the name of the constructor argument can differ (e.g. &ldquo;code&rdquo; and <code>zipCode</code> in this example).</p>
 <p>These annotations can also be used to populate more complex structures, such as nested objects, arrays, collections, etc.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>
@@ -2208,7 +2208,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String jsonCountries <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String jsonCountries <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;{\&#34;name\&#34; : \&#34;Italy\&#34;}, &#34;</span> <span style="color:#f92672">+</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;{\&#34;name\&#34; : \&#34;Austria\&#34;} &#34;</span> <span style="color:#f92672">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;]&#34;</span>;
@@ -2224,7 +2224,7 @@ For instance:</p>
 <input type="radio" class="toggle" name="tabs-exercise_JSON_serialize" id="tabs-exercise_JSON_serialize-0" checked="checked" />
 <label for="tabs-exercise_JSON_serialize-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What does the following program print?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Country country;
@@ -2235,7 +2235,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Country</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name;
 </span></span><span style="display:flex;"><span>
@@ -2244,7 +2244,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>City rome <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, italy);
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, italy);
@@ -2285,13 +2285,13 @@ In particular, in the examples above:</p>
 <li><code>readValue(string, class)</code> can be replaced with <code>readValue(file, class)</code>.</li>
 </ul>
 <p>For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Serialize</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Serialize</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>      mapper.<span style="color:#a6e22e">writeValue</span>(<span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;path/to/file.json&#34;</span>), rome);
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Deserialize</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Deserialize</span>
 </span></span><span style="display:flex;"><span>City myCity;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>      myCity <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(<span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;path/to/file.json&#34;</span>), City.<span style="color:#a6e22e">class</span>);

@@ -29,7 +29,7 @@ With Java 7 (2011), A new I/O package called NIO2 was released, with additional 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/input/sections/files/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2003,7 +2003,7 @@ For instance, among the methods below, this is the case of:</p>
 <p>An instance of <code>Path</code> represents a <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#path">path</a> in the hierarchical file system.</p>
 <p>An instance of <code>Path</code> can be created in multiple ways.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path myPath <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path myPath <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>Path samePath <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path&#34;</span>, <span style="color:#e6db74">&#34;to&#34;</span>, <span style="color:#e6db74">&#34;file.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Extend a path</span>
@@ -2048,22 +2048,22 @@ Your program may run on your own computer, but will fail on others.</p>
 When a Java program is executed, relative paths are understood as paths <em>from</em> the current <a href="https://unibz-pp-24-25.github.io/docs/env/sections/files/#wd">working directory</a> (WD).</p>
 </blockquote>
 <p>If you need to know the WD, you can use the following (among other possibilities):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>();
 </span></span></code></pre></div><p>This instruction returns an absolute <code>Path</code> to the WD.</p>
 <p>For instance,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>());
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>());
 </span></span></code></pre></div><p>may output on Windows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\a</span>lice<span style="color:#ae81ff">\w</span>orkspace<span style="color:#ae81ff">\j</span>avaProject
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\a</span>lice<span style="color:#ae81ff">\w</span>orkspace<span style="color:#ae81ff">\j</span>avaProject
 </span></span></code></pre></div><p>or on macOS:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/Users/alice/workspace/javaProject
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/Users/alice/workspace/javaProject
 </span></span></code></pre></div><p>or on Linux:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/alice/workspace/javaProject
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/alice/workspace/javaProject
 </span></span></code></pre></div><h3 id="the-path-interface">
   The Path interface
   <a class="anchor" href="#the-path-interface">#</a>
 </h3>
 <p>Here are examples of outputs for some methods of the <code>Path</code> interface (assuming that the WD is <code>/home/alice/workspace/javaProject</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/../main/resources/myFile.txt&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/../main/resources/myFile.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/alice/workspace/javaProject/src/main/../main/resources/myFile.txt&#39;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toAbsolutePath</span>());
@@ -2080,7 +2080,7 @@ When a Java program is executed, relative paths are understood as paths <em>from
 <p><strong><em>Hint.</em></strong>
 The method <code>String.endsWith</code> can be used to check whether a file has a certain extension.
 E.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;true&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;true&#39;</span>
 </span></span><span style="display:flex;"><span>path.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#34;.txt&#34;</span>);
 </span></span></code></pre></div></blockquote>
 <h2 id="existence-and-metadata">
@@ -2088,7 +2088,7 @@ E.g.</p>
   <a class="anchor" href="#existence-and-metadata">#</a>
 </h2>
 <p>Static methods of the class <code>Files</code> can be used to check whether a file or directory exists, and retrieve metadata about it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources/myFile.txt&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources/myFile.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Exists = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">exists</span>(path));
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Is directory = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">isDirectory</span>(path));
@@ -2100,7 +2100,7 @@ E.g.</p>
   Navigation
   <a class="anchor" href="#navigation">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources/myFile.txt&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources/myFile.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Get the parent directory &#39;src/main/resources&#39;</span>
 </span></span><span style="display:flex;"><span>Path dir <span style="color:#f92672">=</span> path.<span style="color:#a6e22e">getParent</span>();
@@ -2115,7 +2115,7 @@ E.g.</p>
   Manipulation
   <a class="anchor" href="#manipulation">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Create a directory</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Create a directory</span>
 </span></span><span style="display:flex;"><span>Path folder <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;myFolder&#34;</span>);
 </span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">createDirectory</span>(folder);
 </span></span><span style="display:flex;"><span>

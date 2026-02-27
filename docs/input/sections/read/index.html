@@ -41,7 +41,7 @@ reading and writing text (but Java also offers multiple ways to read or write se
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/input/sections/read/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2008,7 +2008,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#reading-a-text-file-line-by-line">#</a>
 </h3>
 <p>Here is one way to process the content of a text file line by line:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (BufferedReader reader <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">newBufferedReader</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (BufferedReader reader <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">newBufferedReader</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
 </span></span><span style="display:flex;"><span>    String line <span style="color:#f92672">=</span> reader.<span style="color:#a6e22e">readLine</span>();
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (line <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(line);
@@ -2022,14 +2022,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#reading-an-entire-text-file">#</a>
 </h3>
 <p>Alternatively, if the file is small, its whole content can be stored as a list of strings (one per line), as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">lines</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
 </span></span><span style="display:flex;"><span>    lines <span style="color:#f92672">=</span> stream.<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Or even as a single string:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String text;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String text;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">readString</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>));
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
@@ -2041,7 +2041,7 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>The method <code>String.split</code> can be used to decompose a string into an array of substring, based on some delimiter.
 For instance, in a csv file, each line can be decomposed using a comma (<code>,</code>), as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String line <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice,Bob,Carol&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String line <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice,Bob,Carol&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [&#34;Alice&#34;, &#34;Bob&#34;, &#34;Carol&#34;]</span>
 </span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> line.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
 </span></span></code></pre></div><p><a href="https://docs.oracle.com/javase/tutorial/essential/regex/">Regular expressions</a> allow you (among other things) to use more expressive delimiters.
@@ -2067,7 +2067,7 @@ In Java, methods that write an (underspecified) line separator produce a (sequen
 </h3>
 <p>A common way to write to a file consists in using a <code>BufferredWriter</code>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(BufferedWriter writer <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">newBufferedWriter</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(BufferedWriter writer <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">newBufferedWriter</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">newLine</span>();
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
@@ -2075,7 +2075,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>A <code>PrintWriter</code> offers additional methods to easily format the output, such as <code>print</code>, <code>println</code> or <code>printf</code>, analogous to the methods of the standard output stream <code>System.out</code>.
 It is often used as a wrapper around another writer, for instance a <code>BufferedWriter</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(PrintWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(Files.<span style="color:#a6e22e">newBufferedWriter</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>)))){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(PrintWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(Files.<span style="color:#a6e22e">newBufferedWriter</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>)))){
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
 </span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">printStackTrace</span>();
@@ -2085,7 +2085,7 @@ It is often used as a wrapper around another writer, for instance a <code>Buffer
   <a class="anchor" href="#writing-an-entire-list">#</a>
 </h3>
 <p>The method <code>Files.write</code> can be used to write all elements of a list to a file (one per line):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> strings <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> strings <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">write</span>(
 </span></span><span style="display:flex;"><span>          Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>),
@@ -2099,7 +2099,7 @@ It is often used as a wrapper around another writer, for instance a <code>Buffer
   <a class="anchor" href="#writing-a-single-string">#</a>
 </h3>
 <p>The method <code>Files.writeString</code> can be used to write a single string to a file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">writeString</span>(
 </span></span><span style="display:flex;"><span>          Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>),
 </span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;foo&#34;</span>
@@ -2109,7 +2109,7 @@ It is often used as a wrapper around another writer, for instance a <code>Buffer
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Note that this will overwrite the content of the file.</p>
 <p>Instead, in order to <em>append</em> a string to a file, a third argument can be added to the method <code>Files.writeString</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">writeString</span>(
 </span></span><span style="display:flex;"><span>            Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>),
 </span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;foo&#34;</span>,

@@ -40,7 +40,7 @@ Procedure # Intuitively, type erasure consists in producing a program equivalent
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/erasure/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2019,7 +2019,7 @@ However, these illustrations should <em>not</em> be taken literally, because com
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/#covarContravarUsage">earlier</a> to illustrate covariance and contravariance, together with the methods <code>unbox</code> and <code>replaceValue</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;
 </span></span><span style="display:flex;"><span>
@@ -2036,7 +2036,7 @@ Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> box){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> box){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> box.<span style="color:#a6e22e">getValue</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2044,7 +2044,7 @@ Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https
 </span></span><span style="display:flex;"><span>    box.<span style="color:#a6e22e">setValue</span>(integer);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The bytecode generated after type erasure may be equivalent to bytecode generated for the following program:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Object boxedValue;
 </span></span><span style="display:flex;"><span>
@@ -2061,7 +2061,7 @@ Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box box){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box box){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (Number) box.<span style="color:#a6e22e">getValue</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2073,11 +2073,11 @@ Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https
 <p><strong><em>Example.</em></strong>
 Generic methods are compiled in a similar way.</p>
 <p>For instance, consider once again our generic method</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The bytecode generated after type erasure may be equivalent to bytecode generated for a method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit <span style="color:#a6e22e">healthiest</span>(Unit<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit <span style="color:#a6e22e">healthiest</span>(Unit<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
@@ -2107,7 +2107,7 @@ However, after type erasure, this may result in two methods with the same name a
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following program does <em>not</em> compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String s, T t) {
 </span></span><span style="display:flex;"><span>        ...
@@ -2126,7 +2126,7 @@ The following program does <em>not</em> compile:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following program does <em>not</em> compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">create</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> T();

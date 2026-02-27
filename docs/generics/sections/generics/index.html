@@ -46,7 +46,7 @@ Generic method # Example # Consider the following interface Unit and its two imp
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/generics/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2022,10 +2022,10 @@ https://github.com/alex-shpak/hugo-book
 <p>$\qquad$ <code>Butterfly[]</code> $\to$ <code>Butterfly</code></p>
 <p>that returns one of the healthiest butterflies in the input array (or <code>null</code> if the array is empty).</p>
 <p>The following program does not compile, <em>as expected</em> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
 </span></span><span style="display:flex;"><span>Unicorn u <span style="color:#f92672">=</span> healthiestButterfly(butterflies);
 </span></span></code></pre></div><p>Neither does the following program (<em>as expected</em> still):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorns<span style="color:#f92672">[]</span> unicorns <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Unicorn(8), <span style="color:#66d9ef">new</span> Unicorn(3) };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorns<span style="color:#f92672">[]</span> unicorns <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Unicorn(8), <span style="color:#66d9ef">new</span> Unicorn(3) };
 </span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiestButterfly(unicorns);
 </span></span></code></pre></div><p>Now let us assume that we need to perform the same operation on arrays of unicorns.</p>
 <p>We could write a nearly identical method <code>healthiestUnicorn</code>, with type:</p>
@@ -2069,7 +2069,7 @@ In order words, we can create a method <code>healthiest</code> with type:</p>
   <a class="anchor" href="#extendsSyntax">#</a>
 </h4>
 <p>The generic method in our example can be written as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The block <code>&lt;T extends Unit&gt;</code>:</p>
@@ -2084,7 +2084,7 @@ So in our example, <code>T</code> can take the value <code>Unit</code>, <code>Bu
 <p><strong><em>Example.</em></strong>
 We could implement our method in the following (unnecessarily verbose) way.
 Observe that the type <code>T</code> also appears in the body of the method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span> (T<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span> (T<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T selected <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(units)
 </span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">max</span>((u1, u2) <span style="color:#f92672">-&gt;</span> u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-</span> u2.<span style="color:#a6e22e">health</span>)
@@ -2096,11 +2096,11 @@ Observe that the type <code>T</code> also appears in the body of the method:</p>
 <p><strong><em>Warning.</em></strong>
 In this example, <code>T</code> is a (type) <em>variable</em>.
 So any other variable name could be used, for instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>X <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> X <span style="color:#a6e22e">healthiest</span> (X<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>X <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> X <span style="color:#a6e22e">healthiest</span> (X<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>   ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>TypeOfUnit <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> TypeOfUnit <span style="color:#a6e22e">healthiest</span> (TypeOfUnit<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>TypeOfUnit <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> TypeOfUnit <span style="color:#a6e22e">healthiest</span> (TypeOfUnit<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>   ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>By convention, the letters <code>T</code>, <code>E</code> and <code>V</code> are often used for type variables (as well as <code>R</code> if the type variable is used for the return type of a method).</p>
@@ -2108,14 +2108,14 @@ So any other variable name could be used, for instance</p>
 <p>If there is no upper bound on the type variable (in other words, if the upper bound is <code>Object</code>), then the <code>extends</code> statement can be omitted.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">myMethod</span> (T arg1, String arg2) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">myMethod</span> (T arg1, String arg2) {
 </span></span><span style="display:flex;"><span>   ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
 <p>It is also possible to declare several type variables.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">myMethod</span> (T arg1, V arg2) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">myMethod</span> (T arg1, V arg2) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
@@ -2127,17 +2127,17 @@ So any other variable name could be used, for instance</p>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong>
 Let us recall the signature of our generic method above:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The following program will compile (and run as expected):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
 </span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiest(butterflies);
 </span></span></code></pre></div><p>However, the following program will not compile, <em>as expected</em> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
 </span></span><span style="display:flex;"><span>Unicorn u <span style="color:#f92672">=</span> healthiest(butterflies);
 </span></span></code></pre></div><p>The following program will not compile either, <em>as expected</em> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]</span>{ <span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]</span>{ <span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span> };
 </span></span><span style="display:flex;"><span>String u <span style="color:#f92672">=</span> healthiest(strings);
 </span></span></code></pre></div></blockquote>
 <h2 id="genericType">
@@ -2204,14 +2204,14 @@ This method has signature <code>boolean add(E e)</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 We can create a generic wrapper class <code>Box</code> (similar to Java&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/optional/">Optional</a>), as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
 <p>These type variables are visible in the whole the class (resp. record, interface) body.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;
 </span></span><span style="display:flex;"><span>
@@ -2237,7 +2237,7 @@ Therefore a type variable associated to a class (resp. interface) <em>cannot</em
 <li>as the type of a static attribute of this class (resp. interface).</li>
 </ul>
 <p>For instance, the following class does not compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> T myAttribute;
 </span></span><span style="display:flex;"><span>    ...
@@ -2250,13 +2250,13 @@ Therefore a type variable associated to a class (resp. interface) <em>cannot</em
 <p>An instance of a generic class (resp. record) can be created by providing parameter types when calling its constructor.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
 </span></span></code></pre></div></blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Syntactic sugar.</em></strong>
 In this example, the second type parameter <code>String</code> (used with the constructor) is redundant.
 So it can be safely be omitted:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
 </span></span></code></pre></div></blockquote>
 <h4 id="instance-method-call">
   Instance method call
@@ -2266,7 +2266,7 @@ So it can be safely be omitted:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;
 </span></span><span style="display:flex;"><span>
@@ -2283,10 +2283,10 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The following program will compile (and run as expected).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
 </span></span><span style="display:flex;"><span>String unboxedString <span style="color:#f92672">=</span> myBoxedString.<span style="color:#a6e22e">get</span>();
 </span></span></code></pre></div><p>The following program will not compile, <em>as expected</em> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
 </span></span><span style="display:flex;"><span>Integer unboxedInteger <span style="color:#f92672">=</span> myBoxedString.<span style="color:#a6e22e">get</span>();
 </span></span></code></pre></div></blockquote>
 <h4 id="more-examples">
@@ -2297,7 +2297,7 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 <input type="radio" class="toggle" name="tabs-exercise_generics" id="tabs-exercise_generics-0" checked="checked" />
 <label for="tabs-exercise_generics-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Consider the following generic class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pair</span><span style="color:#f92672">&lt;</span>T, V <span style="color:#66d9ef">extends</span> T<span style="color:#f92672">&gt;</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pair</span><span style="color:#f92672">&lt;</span>T, V <span style="color:#66d9ef">extends</span> T<span style="color:#f92672">&gt;</span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Pair</span>(T arg1, V arg2){
 </span></span><span style="display:flex;"><span>        ,,,
@@ -2310,31 +2310,31 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 </span></span></code></pre></div><p>Which of the following Java programs compile?</p>
 <ol>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
 </span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
 </span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
 </span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
 </span></span></code></pre></div></li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
 </span></span></code></pre></div></li>
 </ol>
@@ -2352,7 +2352,7 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following program does <em>not</em> compile, because the type variable <code>T</code> (in the subclass) is not declared.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2360,7 +2360,7 @@ The following program does <em>not</em> compile, because the type variable <code
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>However, the following are all valid:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2368,7 +2368,7 @@ The following program does <em>not</em> compile, because the type variable <code
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2376,7 +2376,7 @@ The following program does <em>not</em> compile, because the type variable <code
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2384,7 +2384,7 @@ The following program does <em>not</em> compile, because the type variable <code
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2396,7 +2396,7 @@ The following program does <em>not</em> compile, because the type variable <code
 <p>The subclass can also declare additional type variable</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>

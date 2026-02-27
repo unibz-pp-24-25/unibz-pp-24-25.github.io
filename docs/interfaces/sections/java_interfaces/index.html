@@ -37,7 +37,7 @@ Examples # The implementation of our game contains an interface called DisplayMa
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1990,7 +1990,7 @@ Instead, it <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/s
 <p>The implementation of our game contains an interface called <code>DisplayManager</code>.
 This interface specifies how the backend can share with the frontend information to be drawn
 on screen.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">DisplayManager</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">DisplayManager</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
@@ -2008,7 +2008,7 @@ This description contains <em>no code</em>.</p>
 <p>The method above takes as argument an object of type <code>Snapshot</code>.
 A snapshot intuitively contains all the information needed by the fronted to draw the current state of the game on screen (board, active player, stats, etc.).</p>
 <p><code>Snapshot</code> is itself an interface, which specifies (among others) a method called <code>getSizeOfReinforcement</code>, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Snapshot</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Snapshot</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
@@ -2032,11 +2032,11 @@ any (non-abstract) class that implements this interface must implement all metho
 <p>So a (non-abstract) class that implements the interface <code>Snapshot</code> must implement the method <code>getSizeOfReinforcement</code> (or <a href="/content/docs/objects/sections/inheritance.md">inherit</a> an implementation of this method).</p>
 <p>The interface <code>Snapshot</code> specifies another method</p>
 <!-- And there is currently no real implementation of this interface (only dummy ones, for demonstration purposes). -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Board <span style="color:#a6e22e">getBoard</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Board <span style="color:#a6e22e">getBoard</span>();
 </span></span></code></pre></div><p>which must return an object of type <code>Board</code>.
 And <code>Board</code> is itself an interface, which specifies the information needed to draw the game board (units, position, etc).</p>
 <p>Here is for instance a fragment of the <code>Board</code> interface:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span> <span style="color:#75715e">/**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span> <span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  * Board for an ongoing game.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  * This is a two-dimensional grid.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  *
@@ -2106,7 +2106,7 @@ This means that an interface $A$ can extend two interfaces $B$ and $C$ even if $
 </h2>
 <p>In Java, the keyword <code>implements</code> is used to indicate that a class implements an interface.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnapshotImpl</span> <span style="color:#66d9ef">implements</span> Snapshot {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnapshotImpl</span> <span style="color:#66d9ef">implements</span> Snapshot {
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
@@ -2140,7 +2140,7 @@ This is <em>not</em> an error.</p>
 <p>Since Java interfaces support multiple inheritance, a Java class can implement several interface that do not extend each other.</p>
 <p>For instance, the class <code>Unicorn</code> could implement an interface <code>Animal</code> and another interface <code>ImaginaryCreature</code>, even though none of these two interfaces extends the other (not all animals are imaginary, and not all imaginary creatures are animals).
 This would be declared as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit <span style="color:#66d9ef">implements</span> Animal, ImaginaryCreature {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit <span style="color:#66d9ef">implements</span> Animal, ImaginaryCreature {
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="book-tabs">

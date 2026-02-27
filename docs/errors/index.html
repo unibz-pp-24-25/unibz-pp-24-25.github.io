@@ -43,7 +43,7 @@ A compile time error prevents a program from compiling. It can be thought of as 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/errors/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -2018,7 +2018,7 @@ and errors that can only be detected at runtime.</p>
 </h2>
 <p>A precise error message can significantly simplify debugging.</p>
 <p>As a toy example, consider the following Java program:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
@@ -2028,9 +2028,9 @@ and errors that can only be detected at runtime.</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+</span></span></code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -2042,7 +2042,7 @@ and errors that can only be detected at runtime.</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(City<span style="color:#f92672">[]</span> cities){
 </span></span><span style="display:flex;"><span>
@@ -2071,9 +2071,9 @@ Can you identify some of them?</p>
 </div>
 </div>
 <p>In the above example, if we execute the following,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">null</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">null</span>);
 </span></span></code></pre></div><p>then we obtain this error message:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">NullPointerException</span>: Cannot load from object array because <span style="color:#e6db74">&#34;cities&#34;</span> is <span style="color:#66d9ef">null</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">NullPointerException</span>: Cannot load from object array because <span style="color:#e6db74">&#34;cities&#34;</span> is <span style="color:#66d9ef">null</span>
 </span></span><span style="display:flex;"><span>	at MyClass.<span style="color:#a6e22e">myMethod</span>(MyClass.<span style="color:#a6e22e">java</span>:5)
 </span></span></code></pre></div><p>Note that this message provides a clear indication of:</p>
 <ul>
@@ -2085,19 +2085,19 @@ Can you identify some of them?</p>
 <p><strong><em>Hint.</em></strong> A <code>NullPointerException</code> in Java often indicates an attempt to access an object (or array) via a pointer (e.g. a variable) whose value is <code>null</code>.</p>
 </blockquote>
 <p>Similarly, if the method is called with an empty array,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{});
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{});
 </span></span></code></pre></div><p>we get the following error message:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>ArrayIndexOutOfBoundsException: Index <span style="color:#ae81ff">0</span> out of bounds <span style="color:#66d9ef">for</span> length <span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>ArrayIndexOutOfBoundsException: Index <span style="color:#ae81ff">0</span> out of bounds <span style="color:#66d9ef">for</span> length <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>	at MyClass<span style="color:#f92672">.</span>myMethod(MyClass<span style="color:#f92672">.</span>java:5)
 </span></span></code></pre></div><div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_error_message" id="tabs-exercise_error_message-0" checked="checked" />
 <label for="tabs-exercise_error_message-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>Which type of error will the following call to <code>myMethod</code> produce?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> City(30100, <span style="color:#66d9ef">null</span>) });
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    myMethod(<span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> City(30100, <span style="color:#66d9ef">null</span>) });
 </span></span></code></pre></div></div>
 <input type="radio" class="toggle" name="tabs-exercise_error_message" id="tabs-exercise_error_message-1"  />
 <label for="tabs-exercise_error_message-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>NullPointerException: Cannot invoke <span style="color:#e6db74">&#34;String.length()&#34;</span> because <span style="color:#e6db74">&#34;firstCity.name&#34;</span> is null
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>NullPointerException: Cannot invoke <span style="color:#e6db74">&#34;String.length()&#34;</span> because <span style="color:#e6db74">&#34;firstCity.name&#34;</span> is null
 </span></span><span style="display:flex;"><span>	at MyClass<span style="color:#f92672">.</span>myMethod(MyClass<span style="color:#f92672">.</span>java:7)
 </span></span></code></pre></div></div>
 </div>
@@ -2106,7 +2106,7 @@ Can you identify some of them?</p>
   <a class="anchor" href="#anticipation">#</a>
 </h2>
 <p>Consider the following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">least</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">least</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> x <span style="color:#f92672">&lt;=</span> y <span style="color:#f92672">?</span>
 </span></span><span style="display:flex;"><span>      x : y;
 </span></span><span style="display:flex;"><span>}
@@ -2125,7 +2125,7 @@ This may benefit:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 For instance, consider a method</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> grid);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> grid);
 </span></span></code></pre></div><p>that takes as input a grid of sudoku, and returns <code>true</code> iff it is solvable, meaning that this grid admits a unique solution.
 A <em>valid input</em> for this problem could be a 9 x 9 array of integers with values between <code>0</code> and <code>9</code> (where <code>0</code> indicate the absence of value).
 However, Java does not provide such a precise data type.</p>

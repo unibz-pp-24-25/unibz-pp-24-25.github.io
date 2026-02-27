@@ -39,7 +39,7 @@ execute a method for each element of the stream (e.g. print the value of each of
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.320407ca4c948425f8a71e3f7a4be79cd1f6651bbead97c4b80cf10ccd09f9d0.js" integrity="sha256-MgQHykyUhCX4px4/ekvnnNH2ZRu&#43;rZfEuAzxDM0J&#43;dA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.21890d4f939f9a9b4be3d65b92052c956ce0eb70f85c8b696d23468269cc9f1e.js" integrity="sha256-IYkNT5OfmptL49ZbkgUslWzg63D4XItpbSNGgmnMnx4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2017,7 +2017,7 @@ then <code>foreach</code> takes as argument a callback method of type</p>
 <p>(equivalently, in Java&rsquo;s terminology, the callback method must implement the native functional interface <code>Consumer&lt;</code>$\mathit{T}$<code>&gt;</code>, <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/#consumer">seen earlier</a>).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// outputs `4, `2` and `4`</span>
 </span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">filter</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
@@ -2026,7 +2026,7 @@ then <code>foreach</code> takes as argument a callback method of type</p>
 <blockquote class="book-hint info">
 <p><strong><em>Hint.</em></strong>
 In the absence of intermediate operation, the instance method <code>Collection.forEach</code> can be used instead, with the same effect:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// ouputs `4`, `1`, `3`, `2`, and `4`</span>
 </span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);
 </span></span></code></pre></div></blockquote>
@@ -2043,7 +2043,7 @@ In the absence of intermediate operation, the instance method <code>Collection.f
 <p><strong><em>Example.</em></strong>
 We already used this method in several of our examples.
 For instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [1, 1, 2, 2, 3]</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
@@ -2064,7 +2064,7 @@ For instance</p>
 <code>joining</code> (optionally) take a string as argument, which is used to separate the concatenated elements in the output string.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
 </span></span><span style="display:flex;"><span>City matera <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100);
 </span></span><span style="display:flex;"><span>
@@ -2082,7 +2082,7 @@ For instance</p>
 and returns the content of the directory,
 as a stream of paths (i.e. a stream with type <code>Stream&lt;Path&gt;</code>).</p>
 <p>What does the method <code>mysteriousMethod</code> below return?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>Files.<span style="color:#a6e22e">isDirectory</span>(path)) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
@@ -2112,7 +2112,7 @@ as a stream of paths (i.e. a stream with type <code>Stream&lt;Path&gt;</code>).<
   <a class="anchor" href="#collectorstocollection">#</a>
 </h4>
 <p>This static method takes as argument the constructor of a Java collection (e.g. <code>HashSet::new</code>, <code>TreeSet::new</code>, <code>ArrayList::new</code>, etc.), and returns a collector for this type of collection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// This is the TreeSet {1, 2, 3}</span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputSet <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
@@ -2124,7 +2124,7 @@ as a stream of paths (i.e. a stream with type <code>Stream&lt;Path&gt;</code>).<
 <p>As we saw in our <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/#example">initial pipeline example</a>, this static method takes no argument, and returns a collector that produces a Java <code>Set</code>.</p>
 <p>The Java specification does <em>not</em> require a specific implementation.
 So this set could for instance be a <code>HashSet</code>or a <code>TreeSet</code>, depending on the Java Virtual Machine that executes the program.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains {1, 2, 3}</span>
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputSet <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
@@ -2150,7 +2150,7 @@ then <code>toMap</code> takes as argument two callback functions, of type</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following method takes a list of cities, and returns a map from city name to city.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, City<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">buildMap</span>(List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, City<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">buildMap</span>(List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cities.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toMap</span>(
 </span></span><span style="display:flex;"><span>                c <span style="color:#f92672">-&gt;</span> c.<span style="color:#a6e22e">name</span>,
@@ -2172,7 +2172,7 @@ The grouping criterion is specified as a callback function.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following method take a list of units as argument, and returns a map from a color to a list of units that share this color:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">groupByColor</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">groupByColor</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">groupingBy</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">color</span>));
 </span></span><span style="display:flex;"><span>}
@@ -2187,7 +2187,7 @@ This callback function computes a key for each element of the stream.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following method take a list of units as argument, and returns a map from color to number of units that share this color.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Long<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">groupByColorAndCount</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Long<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">groupByColorAndCount</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">groupingBy</span>(
 </span></span><span style="display:flex;"><span>                        u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">color</span>,
@@ -2215,11 +2215,11 @@ then <code>anyMatch</code> takes as argument a callback function of type</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following two programs are equivalent:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> containsEvenNumber <span style="color:#f92672">=</span> integers.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">anyMatch</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0);
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> containsEvenNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x : integers){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0){
@@ -2237,7 +2237,7 @@ A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a
 <input type="radio" class="toggle" name="tabs-exercise_anyMatch" id="tabs-exercise_anyMatch-0" checked="checked" />
 <label for="tabs-exercise_anyMatch-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What does the method <code>mysteriousMethod</code> below return?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Path<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Path<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Files.<span style="color:#a6e22e">isDirectory</span>(path)) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> List.<span style="color:#a6e22e">of</span>();
@@ -2282,12 +2282,12 @@ A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a
 <blockquote class="book-hint info">
 <p><strong><em>Example</em></strong>
 The following two programs are equivalent:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
 </span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> firstEvenNumber <span style="color:#f92672">=</span> integers.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>                                      .<span style="color:#a6e22e">filter</span>(x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
 </span></span><span style="display:flex;"><span>                                      .<span style="color:#a6e22e">findFirst</span>();
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
 </span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> firstEvenNumber <span style="color:#f92672">=</span> Optional.<span style="color:#a6e22e">empty</span>();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x : integers){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0){
@@ -2303,7 +2303,7 @@ The following two programs are equivalent:</p>
 <p>This instance method returns the size of the stream.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// has value 2</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
@@ -2318,7 +2318,7 @@ The following two programs are equivalent:</p>
 <p>The output value has type <code>Optional&lt;</code>$T$<code>&gt;</code> if the elements of the stream have type $T$ (we will see the meaning of <code>Optional</code> in the <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/optional/">dedicated section</a>).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);,
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);,
 </span></span><span style="display:flex;"><span>City matera <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100);,
 </span></span><span style="display:flex;"><span>
@@ -2367,7 +2367,7 @@ For instance,</p>
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3, 4);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3, 4);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Has value 24</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> product <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>()

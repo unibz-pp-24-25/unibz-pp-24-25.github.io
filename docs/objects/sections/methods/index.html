@@ -7,9 +7,13 @@
   Instance methods
   #
 
-In many object-oriented languages (like Java), methods are implemented within class declarations.
+In many object-oriented languages (like Java), methods are implemented within classes.
+
 An instance method is called using an instance of the class where the method is declared.
-For instance, in Java, consider an instance method myMethod() declared in a class MyClass:
+
+
+Example.
+In Java, consider an instance method myMethod() declared in a class MyClass:
 public class MyClass {
     ...
     public MyClass(){
@@ -26,9 +30,9 @@ This method can be called by appending . to a variable myVar of type MyClass, as
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Instance methods">
-  <meta property="og:description" content="Instance methods # In many object-oriented languages (like Java), methods are implemented within class declarations.
+  <meta property="og:description" content="Instance methods # In many object-oriented languages (like Java), methods are implemented within classes.
 An instance method is called using an instance of the class where the method is declared.
-For instance, in Java, consider an instance method myMethod() declared in a class MyClass:
+Example. In Java, consider an instance method myMethod() declared in a class MyClass:
 public class MyClass { ... public MyClass(){ ... } public void myMethod(){ ... } } This method can be called by appending . to a variable myVar of type MyClass, as follows:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -39,7 +43,7 @@ public class MyClass { ... public MyClass(){ ... } public void myMethod(){ ... }
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.cbd63b16bcda02c7f084ac328b3c93b6a698a5adc4df262fb1d1986ceca4a321.js" integrity="sha256-y9Y7FrzaAsfwhKwyizyTtqaYpa3E3yYvsdGYbOykoyE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5024d08b0485a863d177257b10923e740f67cbb7e450f03645632e4173dcaf51.js" integrity="sha256-UCTQiwSFqGPRdyV7EJI&#43;dA9ny7fkUPA2RWMuQXPcr1E=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1978,9 +1982,13 @@ https://github.com/alex-shpak/hugo-book
   Instance methods
   <a class="anchor" href="#instance-methods">#</a>
 </h1>
-<p>In many object-oriented languages (like Java), methods are implemented within class declarations.</p>
+<p>In many object-oriented languages (like Java), methods are implemented within classes.</p>
+<blockquote class="book-hint warning">
 <p>An <strong>instance method</strong> is called using an instance of the class where the method is declared.</p>
-<p>For instance, in Java, consider an instance method <code>myMethod()</code> declared in a class <code>MyClass</code>:</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In Java, consider an instance method <code>myMethod()</code> declared in a class <code>MyClass</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(){
@@ -1994,34 +2002,37 @@ https://github.com/alex-shpak/hugo-book
 </span></span></code></pre></div><p>This method can be called by appending <code>.</code> to a variable <code>myVar</code> of type <code>MyClass</code>, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MyClass myVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyClass();
 </span></span><span style="display:flex;"><span>myVar.<span style="color:#a6e22e">myMethod</span>();
-</span></span></code></pre></div><p>The object referenced by the variable <code>myVar</code> is accessible from the method <code>myMethod</code> (even though it is not passed as argument to the method) (even though it is not passed as argument to the method).</p>
-<p>This intuitively allows us to write methods with one less argument.
-For instance, consider the following method, which is <em>not</em> an instance method.
+</span></span></code></pre></div><p>The object referenced by the variable <code>myVar</code> is accessible from the method <code>myMethod</code> (even though it is not passed as argument to the method).</p>
+</blockquote>
+<p>This intuitively lets us write methods with one less argument.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+The following method is <em>not</em> an instance method.
 It verifies whether two instance of <code>MobileUnit</code> have the same color:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">sameColor</span>(MobileUnit u1, MobileUnit u2){
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> u1.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(u2.<span style="color:#a6e22e">color</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> u1.<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">equals</span>(u2.<span style="color:#a6e22e">color</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This method may be called as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>  Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
-</span></span><span style="display:flex;"><span>  Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;green&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;green&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">boolean</span> sameColor <span style="color:#f92672">=</span> sameColor(myUnicorn, myButterfly);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> sameColor <span style="color:#f92672">=</span> sameColor(myUnicorn, myButterfly);
 </span></span></code></pre></div><p>Instead, one may write an equivalent method, as an instance method of our class <code>MobileUnit</code>, with one less argument:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>  String color;
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">sameColorAs</span>(MobileUnit otherUnit){
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> color.<span style="color:#a6e22e">equals</span>(otherUnit.<span style="color:#a6e22e">color</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> color.<span style="color:#a6e22e">equals</span>(otherUnit.<span style="color:#a6e22e">color</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>and we can call this method as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>  Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
-</span></span><span style="display:flex;"><span>  Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;green&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;green&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">boolean</span> sameColor <span style="color:#f92672">=</span> myUnicorn.<span style="color:#a6e22e">sameColorAs</span>(myButterfly);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><!-- In this example, observe that: -->
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> sameColor <span style="color:#f92672">=</span> myUnicorn.<span style="color:#a6e22e">sameColorAs</span>(myButterfly);
+</span></span></code></pre></div></blockquote>
+<!-- In this example, observe that: -->
 <!-- - the implementation of `sameColorAs` is in the superclass `MobileUnit`, -->
 <!-- - in this method , we used the attribute `color`. -->
 <h2 id="overriding">
@@ -2056,25 +2067,25 @@ In this case, we say that $S$ <strong>overrides</strong> the method (we also say
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now consider this program:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>  Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
-</span></span><span style="display:flex;"><span>  myUnicorn.<span style="color:#a6e22e">regen</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>myUnicorn.<span style="color:#a6e22e">regen</span>();
 </span></span></code></pre></div><p>This program increases the health of (the object referenced by) <code>myUnicorn</code> by 2, because <code>Unicorn</code> is a subclass of <code>MobileUnit</code>.
 However, the following program increases the health of (the object referenced by) <code>myWall</code> by 1, because <code>Wall</code> is a subclass of <code>Unit</code>, but not a subclass of <code>MobileUnit</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>  Wall myWall <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Wall();
-</span></span><span style="display:flex;"><span>  myWall.<span style="color:#a6e22e">regen</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>Wall myWall <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Wall();
+</span></span><span style="display:flex;"><span>myWall.<span style="color:#a6e22e">regen</span>();
 </span></span></code></pre></div><blockquote class="book-hint info">
 <p><strong><em>Hint.</em></strong> In Java, you can use the annotation <code>@Override</code> to indicate that a method overrides another, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(health <span style="color:#f92672">&lt;</span> 10){
-</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(health <span style="color:#f92672">&lt;</span> 10){
+</span></span><span style="display:flex;"><span>            health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">+=</span> 1;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
-</span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This is not necessary.
 The benefit is that the program will not compile if the overridden and overriding methods have different signatures.</p>
@@ -2095,7 +2106,7 @@ This is a feature of most (class-based) object-oriented languages.</p>
 And let us call the method <code>regen</code> for each unit in this array:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> ramdomUnits <span style="color:#f92672">=</span> generateRandomUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: randomUnits){
-</span></span><span style="display:flex;"><span>  unit.<span style="color:#a6e22e">regen</span>();
+</span></span><span style="display:flex;"><span>    unit.<span style="color:#a6e22e">regen</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The most specific applicable version of the method <code>regen</code> will be executed for each unit, based on its type, even though this type cannot be determined at compile time.
 For instance, if there is an instance of <code>Unicorn</code> in this array, then the method <code>MobileUnit.regen()</code> will be executed for this instance (rather than the method <code>Unit.regen()</code>).</p>
@@ -2108,19 +2119,19 @@ For instance, if there is an instance of <code>Unicorn</code> in this array, the
 This is a possible source of <a href="https://en.wikipedia.org/wiki/Duplicate_code">duplicate code</a>.
 For instance, in the example above, both implementations of <code>regen()</code> contain:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(health <span style="color:#f92672">&lt;</span> 10){
-</span></span><span style="display:flex;"><span>  health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A common way to factorize this consists in calling the overridden method inside the overriding one.
 In Java, the keyword <code>super</code> allows us to distinguish the two methods (since they have the same name).
 For instance, in the above example, the overriding method may be better written as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
-</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">regen</span>();
-</span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
-</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">regen</span>();
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_no_super_rec" id="tabs-exercise_no_super_rec-0" checked="checked" />
@@ -2148,27 +2159,27 @@ Add it as an instance method to our example, so that:</p>
 <div class="book-tabs-content markdown-inner"><p>The trick here consists in viewing an encounter from the point of view of the defender:</p>
 <p><img src="/img/diagrams/plantuml/method_inherit_complex.svg" alt="" /></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> health;
-</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of the attacker from the health of the current unit</span>
-</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">-=</span> attacker.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of the attacket becomes the inverse of the remaining health of the current unit</span>
-</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>health;
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// some code that makes the encounter asymmetric (attacker and defender are treated differently)</span>
-</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// subtract the health of the attacker from the health of the current unit</span>
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">-=</span> attacker.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// the health of the attacket becomes the inverse of the remaining health of the current unit</span>
+</span></span><span style="display:flex;"><span>        attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>health;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// some code that makes the encounter asymmetric (attacker and defender are treated differently)</span>
+</span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
-</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
-</span></span><span style="display:flex;"><span>    regen();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">defend</span>(attacker);
-</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
+</span></span><span style="display:flex;"><span>        regen();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">defend</span>(attacker);
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
 </div>

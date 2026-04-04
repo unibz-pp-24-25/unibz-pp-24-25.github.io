@@ -35,7 +35,7 @@ This can be paraphrased in English by “every $A$ is a $B$”. For instance:">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.8dfd14241b2fd5cafa0865331a2768ae944883f6ccc6548afc8661269b558d84.js" integrity="sha256-jf0UJBsv1cr6CGUzGidorpRIg/bMxlSK/IZhJptVjYQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cbd63b16bcda02c7f084ac328b3c93b6a698a5adc4df262fb1d1986ceca4a321.js" integrity="sha256-y9Y7FrzaAsfwhKwyizyTtqaYpa3E3yYvsdGYbOykoyE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2341,9 +2341,9 @@ In Java:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> attackCountdown;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span>(String color) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
-</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">=</span> 1;
-</span></span><span style="display:flex;"><span>      attackCountdown <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>        attackCountdown <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
@@ -2360,9 +2360,9 @@ But there are of course other ways to model this.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> attackCountdown;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Butterfly</span>(String color) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
-</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">=</span> 2;
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> attackCountdown <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> attackCountdown <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now consider a method <code>encounter</code> that manages an encounter between two units.
@@ -2373,19 +2373,19 @@ Without inheritance, one would need to implement at least three versions of this
 <li>butterfly vs butterfly.</li>
 </ul>
 <p>For instance, the first of these three methods could be implemented as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unicorn u1, Unicorn u2) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unicorn u1, Unicorn u2) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of u2 from the health of u1</span>
-</span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of u2 becomes the inverse of the remaining health of u1</span>
-</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// subtract the health of u2 from the health of u1</span>
+</span></span><span style="display:flex;"><span>    u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// the health of u2 becomes the inverse of the remaining health of u1</span>
+</span></span><span style="display:flex;"><span>    u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>More generally, if the game has $n$ types of units, then the code will contain $\frac{n(n-1)}{2} + n$ nearly identical <code>encounter</code> methods.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Question.</em></strong> Can we use inheritance in this example to avoid duplicate code (and how)?</p>
 </blockquote>
 <p>Observe that a unicorn and a butterfly (viewed as object) have identical attributes (a.k.a. &ldquo;keys&rdquo;), namely <code>String color</code>, <code>int health</code>, and <code>int attackCountdown</code>.
-So we can create a superclass of <code>Unicorn</code> and <code>Butterfly</code> that carries these attributes, and let the two subclasses inherit it.
+So we can create a superclass of <code>Unicorn</code> and <code>Butterfly</code> that carries these attributes, and let the two subclasses inherit them.
 For instance, this superclass may be called <code>Unit</code>.</p>
 <p><img src="/img/diagrams/plantuml/abstract_inherit_simple.svg" alt="" /></p>
 <p>We may also want every unit in the game to have a concrete type (like &ldquo;unicorn&rdquo; or &ldquo;butterfly&rdquo;), rather than being a generic &ldquo;unit&rdquo;.
@@ -2398,9 +2398,9 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> attackCountdown;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(String color, <span style="color:#66d9ef">int</span> health) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> attackCountdown <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> attackCountdown <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Because this class is abstract, the following code will <em>not</em> compile:</p>
@@ -2411,14 +2411,14 @@ We can also use the constructor of <code>Unit</code> within the constructor of <
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span>(String color) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 1);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(color, 1);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And we can proceed similarly for the class <code>Butterfly</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Butterfly</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Butterfly</span>(String color) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 2);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(color, 2);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
@@ -2432,17 +2432,16 @@ For instance,</p>
 </span></span></code></pre></div><p>outputs</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>1
 </span></span></code></pre></div><p>This allows us to write a generic <code>encounter</code> method, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unit u1, Unit u2) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unit u1, Unit u2) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>    u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And this method can be called with unicorns and/or butterflies as inputs.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
-</span></span><span style="display:flex;"><span>  Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;yellow&#34;</span>);
-</span></span><span style="display:flex;"><span>  encounter(myUnicorn, myButterfly);
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;yellow&#34;</span>);
+</span></span><span style="display:flex;"><span>encounter(myUnicorn, myButterfly);
 </span></span></code></pre></div><h3 id="transitive-inheritance">
   Transitive inheritance
   <a class="anchor" href="#transitive-inheritance">#</a>
@@ -2450,7 +2449,7 @@ For instance:</p>
 <p>In the example above, we assumed that all units have a color and can attack.
 What if we also want to create a type of unit called <code>Wall</code> that has no color and cannot attack?
 An instance of this class does not need the attributes <code>color</code> and <code>attackCountdown</code>.</p>
-<p>A quick solution here consists is setting <code>attackCountdown</code> to -1, and <code>color</code> to <code>null</code>.
+<p>A quick solution here consists in setting <code>attackCountdown</code> to -1, and <code>color</code> to <code>null</code>.
 However, unnecessary attributes make code harder to understand, and such a design may not scale well if the game is extended with more units types.</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-0" checked="checked" />
@@ -2473,13 +2472,13 @@ so that an instance of <code>Wall</code> only has the <code>health</code> attrib
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(<span style="color:#66d9ef">int</span> health) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wall</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Wall</span>() {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(5);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(5);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
@@ -2487,15 +2486,15 @@ so that an instance of <code>Wall</code> only has the <code>health</code> attrib
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> attackCountdown;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MobileUnit</span>(String color, <span style="color:#66d9ef">int</span> health) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(health);
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attackCountdown</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(health);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attackCountdown</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span>(String color) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 1);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(color, 1);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>and similarly for <code>Butterfly</code>.</p>

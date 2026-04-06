@@ -7,30 +7,26 @@
   Interfaces
   #
 
-The term interface is used to refer to a variety of artifacts.
-For instance (in computer science alone): (graphical) user interface, command-line interface, Application Programming Interface (API), hardware interfaces, etc.
-What do these have in common?
-One may think of an interface as a set of conventions adopted by two &ldquo;agents&rdquo; (human being, program, &hellip;) to communicate.
-For instance:
+The term interface is used to in a variety of contexts:
 
-if Alice sends a message to Bob, then she has to use a language that Bob understands,
-if Alice uses git via command-line, then she has to use a command that git recognizes as a possible input,
-if a program calls git, then it also has to use a command that git recognizes as a possible input,
+Graphical User interface (GUI),
+Terminal User interface (TUI),
+Command-Line Interface (CLI),
+Application Programming Interface (API),
+hardware interface,
 etc.
 
 
-Warning.
-A program interface usually specifies communication in one direction only.
-So when two programs communicate, they may use different interfaces, one in each direction (a rough analogy could be communication between a human being and a dog).">
+
+
+A programming interface is a set of commands, methods, classes, etc. that allow interacting with a program.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/interfaces/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Interfaces">
-  <meta property="og:description" content="Interfaces # The term interface is used to refer to a variety of artifacts. For instance (in computer science alone): (graphical) user interface, command-line interface, Application Programming Interface (API), hardware interfaces, etc.
-What do these have in common?
-One may think of an interface as a set of conventions adopted by two “agents” (human being, program, …) to communicate. For instance:
-if Alice sends a message to Bob, then she has to use a language that Bob understands, if Alice uses git via command-line, then she has to use a command that git recognizes as a possible input, if a program calls git, then it also has to use a command that git recognizes as a possible input, etc. Warning. A program interface usually specifies communication in one direction only. So when two programs communicate, they may use different interfaces, one in each direction (a rough analogy could be communication between a human being and a dog).">
+  <meta property="og:description" content="Interfaces # The term interface is used to in a variety of contexts:
+Graphical User interface (GUI), Terminal User interface (TUI), Command-Line Interface (CLI), Application Programming Interface (API), hardware interface, etc. A programming interface is a set of commands, methods, classes, etc. that allow interacting with a program.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 <title>Interfaces | Programming project 2024-25</title>
@@ -39,7 +35,7 @@ if Alice sends a message to Bob, then she has to use a language that Bob underst
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/interfaces/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5024d08b0485a863d177257b10923e740f67cbb7e450f03645632e4173dcaf51.js" integrity="sha256-UCTQiwSFqGPRdyV7EJI&#43;dA9ny7fkUPA2RWMuQXPcr1E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.28f3441f16e5e0a7a6e1dc133638da973e9864bb8a3ff1d622b167f5b3593027.js" integrity="sha256-KPNEHxbl4Kem4dwTNjjalz6YZLuKP/HWIrFn9bNZMCc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/interfaces/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -1973,21 +1969,32 @@ https://github.com/alex-shpak/hugo-book
   Interfaces
   <a class="anchor" href="#interfaces">#</a>
 </h1>
-<p>The term <strong>interface</strong> is used to refer to a variety of artifacts.
-For instance (in computer science alone): (graphical) user interface, command-line interface, Application Programming Interface (API), hardware interfaces, etc.</p>
-<p>What do these have in common?</p>
-<p>One may think of an interface as a set of <em>conventions</em> adopted by two &ldquo;agents&rdquo; (human being, program, &hellip;) to communicate.
-For instance:</p>
+<p>The term <strong>interface</strong> is used to in a variety of contexts:</p>
 <ul>
-<li>if Alice sends a message to Bob, then she has to use a language that Bob understands,</li>
-<li>if Alice uses git via command-line, then she has to use a command that git recognizes as a possible input,</li>
-<li>if a program calls git, then it also has to use a command that git recognizes as a possible input,</li>
+<li>Graphical User interface (GUI),</li>
+<li>Terminal User interface (TUI),</li>
+<li>Command-Line Interface (CLI),</li>
+<li>Application Programming Interface (API),</li>
+<li>hardware interface,</li>
 <li>etc.</li>
 </ul>
+<!-- For instance (in computer science alone): (graphical) user interface, command-line interface, Application Programming Interface (API), hardware interfaces, etc. -->
+<!---->
+<blockquote class="book-hint warning">
+<p>A <strong>programming interface</strong> is a set of commands, methods, classes, etc. that allow interacting with a program.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>if Alice uses git via its CLI, then she has to enter commands that git recognizes as a possible inputs,</li>
+<li>if Alice uses git via a GUI, then her clicks trigger such commands,</li>
+<li>if a program calls git, then it also has to use such commands.</li>
+</ul>
+</blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
 A program interface usually specifies communication in <em>one direction</em> only.
-So when two programs communicate, they may use different interfaces, one in each direction (a rough analogy could be communication between a human being and a dog).</p>
+So when two programs communicate, they may use <em>different interfaces</em>, one in each direction</p>
 </blockquote>
 </article>
  

@@ -43,7 +43,7 @@ public class MyClass { ... public MyClass(){ ... } public void myMethod(){ ... }
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5024d08b0485a863d177257b10923e740f67cbb7e450f03645632e4173dcaf51.js" integrity="sha256-UCTQiwSFqGPRdyV7EJI&#43;dA9ny7fkUPA2RWMuQXPcr1E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.28f3441f16e5e0a7a6e1dc133638da973e9864bb8a3ff1d622b167f5b3593027.js" integrity="sha256-KPNEHxbl4Kem4dwTNjjalz6YZLuKP/HWIrFn9bNZMCc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2002,9 +2002,16 @@ In Java, consider an instance method <code>myMethod()</code> declared in a class
 </span></span></code></pre></div><p>This method can be called by appending <code>.</code> to a variable <code>myVar</code> of type <code>MyClass</code>, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MyClass myVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyClass();
 </span></span><span style="display:flex;"><span>myVar.<span style="color:#a6e22e">myMethod</span>();
-</span></span></code></pre></div><p>The object referenced by the variable <code>myVar</code> is accessible from the method <code>myMethod</code> (even though it is not passed as argument to the method).</p>
+</span></span></code></pre></div></blockquote>
+<p>The object used to call an instance method can be accessed <em>within</em> this method.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong>
+The object referenced by the variable <code>myVar</code> is accessible within <code>myMethod</code> (even though it is not passed as argument).</p>
 </blockquote>
-<p>This intuitively lets us write methods with one less argument.</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Benefit.</em></strong>
+This intuitively lets us write a method with one less argument.</p>
+</blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following method is <em>not</em> an instance method.
@@ -2040,8 +2047,8 @@ It verifies whether two instance of <code>MobileUnit</code> have the same color:
   <a class="anchor" href="#overriding">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>A same instance method can be declared in a class $C$ and a subclass $S$ or $C$.
-In this case, we say that $S$ <strong>overrides</strong> the method (we also say that the <em>method</em> of $S$ overrides the method of $C$).</p>
+<p>A same instance method $m$ can be declared in a class $C$ and a subclass $S$ or $C$.
+In this case, we say that $S$ <strong>overrides</strong> $m$.</p>
 </blockquote>
 <p>When such a method is called, the <em>most specific</em> applicable version is executed.</p>
 <p>For instance, let us extend our example from the previous section with an instance method <code>regen</code>, declared in both <code>Unit</code> and <code>MobileUnit</code>, as follows:</p>
@@ -2066,18 +2073,17 @@ In this case, we say that $S$ <strong>overrides</strong> the method (we also say
 </span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Now consider this program:</p>
+</span></span></code></pre></div><p>The following increases the health of (the object referenced by) <code>myUnicorn</code> by 2, because <code>Unicorn</code> is a subclass of <code>MobileUnit</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
 </span></span><span style="display:flex;"><span>myUnicorn.<span style="color:#a6e22e">regen</span>();
-</span></span></code></pre></div><p>This program increases the health of (the object referenced by) <code>myUnicorn</code> by 2, because <code>Unicorn</code> is a subclass of <code>MobileUnit</code>.
-However, the following program increases the health of (the object referenced by) <code>myWall</code> by 1, because <code>Wall</code> is a subclass of <code>Unit</code>, but not a subclass of <code>MobileUnit</code>.</p>
+</span></span></code></pre></div><p>In contrast, the following increases the health of (the object referenced by) <code>myWall</code> by 1, because <code>Wall</code> is a subclass of <code>Unit</code>, but not a subclass of <code>MobileUnit</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>Wall myWall <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Wall();
 </span></span><span style="display:flex;"><span>myWall.<span style="color:#a6e22e">regen</span>();
 </span></span></code></pre></div><blockquote class="book-hint info">
-<p><strong><em>Hint.</em></strong> In Java, you can use the annotation <code>@Override</code> to indicate that a method overrides another, as follows:</p>
+<p><strong><em>Hint.</em></strong> In Java, we can use the annotation <code>@Override</code> to indicate an overriding method, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
-</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>(){
@@ -2099,7 +2105,7 @@ This is why debugging in an untyped language (like Python, Javascript, Lua, etc.
   <a class="anchor" href="#dispatch">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p><strong>Dynamic dispatch</strong> consists in determining which version of a method must be called when a program is executed (a.k.a. &ldquo;at run time&rdquo;), when this cannot be determined by analyzing the program alone.
+<p><strong>Dynamic dispatch</strong> determines which version of a method must be called when a program is executed (a.k.a. &ldquo;at run time&rdquo;), if this cannot be determined by analyzing the program alone.
 This is a feature of most (class-based) object-oriented languages.</p>
 </blockquote>
 <p>For instance, in our example, assume a method <code>generateRandomUnits</code> that generates a random array of units (butterflies, unicorns or walls).
@@ -2172,7 +2178,7 @@ Add it as an instance method to our example, so that:</p>
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>

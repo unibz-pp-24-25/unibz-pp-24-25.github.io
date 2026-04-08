@@ -8,28 +8,31 @@
   #
 
 
-  Cast
+  Downcast
   #
 
 
-Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object $o$, using
-either a supertype of $o$ (this is an upcast),
-or a subtype of $o$ (this is a downcast).
+Java (as well as C# and C&#43;&#43;) lets us change locally the type $c$ that the compiler associates to an object,
+using instead a subtype of $c$.
+This is called a downcast.
 
 
-  Upcast
-  #
+Example.
+Consider the following classes:
 
-Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.
-Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
+In the code below,
+the operation (Unicorn) unit is a downcast.
+It lets us call the instance method regen of the class Unicorn with a Unit.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Cast and equality">
-  <meta property="og:description" content="Cast and Equality # Cast # Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object $o$, using either a supertype of $o$ (this is an upcast), or a subtype of $o$ (this is a downcast).
-Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.
-Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
+  <meta property="og:description" content="Cast and Equality # Downcast # Java (as well as C# and C&#43;&#43;) lets us change locally the type $c$ that the compiler associates to an object, using instead a subtype of $c$.
+This is called a downcast.
+Example. Consider the following classes:
+In the code below, the operation (Unicorn) unit is a downcast.
+It lets us call the instance method regen of the class Unicorn with a Unit.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -39,7 +42,7 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.79d1f4cf0a53d77396d7dc1cf1a7bb169494283722633e26dc4c17f8875a63e9.js" integrity="sha256-edH0zwpT13OW19wc8ae7FpSUKDciYz4m3EwX&#43;IdaY&#43;k=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.60fb2941a6312c60bf3e145598e129422629fa6f2a82a9c5262f974f6ca70e8b.js" integrity="sha256-YPspQaYxLGC/PhRVmOEpQiYp&#43;m8qgqnFJi&#43;XT2ynDos=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1959,12 +1962,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#cast">Cast</a>
-      <ul>
-        <li><a href="#upcast">Upcast</a></li>
-        <li><a href="#downcast">Downcast</a></li>
-      </ul>
-    </li>
+    <li><a href="#downcast">Downcast</a></li>
     <li><a href="#equals">Object equality</a>
       <ul>
         <li><a href="#recursion">Recursion</a></li>
@@ -1988,55 +1986,51 @@ https://github.com/alex-shpak/hugo-book
   Cast and Equality
   <a class="anchor" href="#cast-and-equality">#</a>
 </h1>
-<h2 id="cast">
-  Cast
-  <a class="anchor" href="#cast">#</a>
+<h2 id="downcast">
+  Downcast
+  <a class="anchor" href="#downcast">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>Java (as well as C# and C++) provides mechanisms to change the type associated with an object $o$, using
-either a <em>supertype</em> of $o$ (this is an <strong>upcast</strong>),
-or a <em>subtype</em> of $o$ (this is a <strong>downcast</strong>).</p>
+<p>Java (as well as C# and C++) lets us change locally the type $c$ that the compiler associates to an object,
+using instead a <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/#subtype">subtype</a> of $c$.</p>
+<p>This is called a <strong>downcast</strong>.</p>
 </blockquote>
-<h3 id="upcast">
-  Upcast
-  <a class="anchor" href="#upcast">#</a>
-</h3>
-<p><em>Explicit</em> upcasts are uncommon, but may still be useful in some scenarios, e.g. to <a href="https://stackoverflow.com/questions/5361999/whats-the-need-to-use-upcasting-in-java">disambiguate two method calls</a>.</p>
-<p><em>Implicit</em> upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider the following classes:</p>
 <p><img src="/img/diagrams/plantuml/downcast_simple.svg" alt="" /></p>
-<p>Now consider the following program, where the method <code>getUnits</code> produces an array of units that depends on the player&rsquo;s input.
-The type of objects in this array (<code>Unicorn</code> or <code>Butterfly</code>) cannot be determined at compile time.
-Thanks to the implicit upcast, they can nonetheless be referred to as (underspecified) units.</p>
+<p>In the code below,
+the operation <code>(Unicorn) unit</code> is a downcast.</p>
+<p>It lets us call the instance method <code>regen</code> of the class <code>Unicorn</code> with a <code>Unit</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
-</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    ((Unicorn) unit).<span style="color:#a6e22e">regen</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
-<h3 id="downcast">
-  Downcast
-  <a class="anchor" href="#downcast">#</a>
-</h3>
-<p>Downcasting in Java is frequent for objects whose type cannot be determined at compile time.
-However, this may not be safe.
-For instance, in the above example, downcasting a unit from <code>Unit</code> to <code>Unicorn</code> may cause a <code>ClassCastException</code> (at runtime), because this unit is a instance of <code>Butterfly</code>.
-This is why downcasting is often used in combination with the <code>instanceof</code> operator.
-For instance the above example can be modifed as follows:</p>
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+The cast in this example is not <strong>safe</strong>, because the array may contain butterflies.
+This would cause a <code>ClassCastException</code> at runtime.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p><strong><em>Syntax.</em></strong> The keyword <code>instanceof</code> lets us check whether a downcast is safe
+(or alternatively the method <code>getClass()</code> of the class <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/#object"><code>Object</code></a>, illustrated <a href="#equals">below</a>).</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example(continued).</em></strong>
+We can use <code>instanceof</code> to check whether a <code>Unit</code> can be downcast to a <code>Unicorn</code>, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(unit <span style="color:#66d9ef">instanceof</span> Unicorn){
 </span></span><span style="display:flex;"><span>        ((Unicorn) unit).<span style="color:#a6e22e">regen</span>();
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Here the operation <code>(Unicorn) unit</code> is a downcast.
-This allows the call to the method <code>regen</code>.</p>
+</span></span></code></pre></div></blockquote>
 <h2 id="equals">
   Object equality
   <a class="anchor" href="#equals">#</a>
 </h2>
-<p>As we saw in a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#constructor">previous chapter</a>, a constructor in Java creates an object in memory and returns a (fresh) <em>reference</em> to that object.
+<p>As we saw in a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#constructor">previous chapter</a>, a constructor in Java creates an object in memory and returns a <em>reference</em> to that object.
 Since two objects have different locations in memory, their respective references must differ, <em>even if the content of the two objects is identical</em>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
@@ -2051,14 +2045,14 @@ Consider (a simplified version of) the class <code>City</code> that we saw <a hr
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipcode;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span> }
-</span></span></code></pre></div><p>The following program will output <code>false</code>:</p>
+</span></span></code></pre></div><p>The following outputs <code>false</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City city1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>City city2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(city1 <span style="color:#f92672">==</span> city2);
 </span></span></code></pre></div></blockquote>
 <p>However, in some scenarios, it may be useful to compare the content of two objects, rather than their references.
 Java provides a native method called <code>equals</code> for this purpose.</p>
-<p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
+<p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/">earlier</a>, <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
 So every (user-defined of native) class inherits <code>equals</code>.</p>
 <p>Here is the source code of <code>Object.equals</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
@@ -2084,7 +2078,8 @@ In order to use this method to check whether two objects are equal, it has to be
 </blockquote>
 <p>Note in this example:</p>
 <ul>
-<li>the (safe) <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#downcast">downcast</a> from <code>Object</code> to <code>City</code>, and</li>
+<li>the usage of the method <code>getClass()</code> (inherited from the class <code>Object</code>) to retrieve the classes associated with <code>o</code> and the current object,</li>
+<li>the (safe) <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#downcast">cast</a> from <code>Object</code> to <code>City</code>, and</li>
 <li>the recursive call to <code>equals</code> (because the attribute <code>name</code> has type <code>String</code>).</li>
 </ul>
 <h3 id="recursion">
@@ -2149,12 +2144,7 @@ We will explore this topic <a href="%7b%7b%22../../dataStructures/sections/hash.
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#cast">Cast</a>
-      <ul>
-        <li><a href="#upcast">Upcast</a></li>
-        <li><a href="#downcast">Downcast</a></li>
-      </ul>
-    </li>
+    <li><a href="#downcast">Downcast</a></li>
     <li><a href="#equals">Object equality</a>
       <ul>
         <li><a href="#recursion">Recursion</a></li>

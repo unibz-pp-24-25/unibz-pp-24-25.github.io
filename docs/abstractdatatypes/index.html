@@ -39,7 +39,7 @@ one that checks whether the queue is empty, one that takes as input an element a
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.60fb2941a6312c60bf3e145598e129422629fa6f2a82a9c5262f974f6ca70e8b.js" integrity="sha256-YPspQaYxLGC/PhRVmOEpQiYp&#43;m8qgqnFJi&#43;XT2ynDos=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a3085c555c12dced6198203b7268bea9de2fbce70aa87db3255013270b4db621.js" integrity="sha256-owhcVVwS3O1hmCA7cmi&#43;qd4vvOcKqH2zJVATJwtNtiE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
@@ -1962,9 +1962,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#parameterized-types">Parameterized types</a></li>
+        <li><a href="#generic-types">Generic types</a></li>
         <li><a href="#collection">The interface <code>Collection</code></a></li>
-        <li><a href="#external-libraries">External libraries</a></li>
       </ul>
     </li>
   </ul>
@@ -2012,11 +2011,11 @@ For instance, if your program manipulates a collection of objects without duplic
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h2>
-<h3 id="parameterized-types">
-  Parameterized types
-  <a class="anchor" href="#parameterized-types">#</a>
+<h3 id="generic-types">
+  Generic types
+  <a class="anchor" href="#generic-types">#</a>
 </h3>
-<p>An ADT in Java is usually a <a href="%7b%7b%22../generics/sections/generics.md#genericType%22%7d%7d">parameterized type</a>, meaning that it has one or several types as parameter(s).</p>
+<p>An ADT in Java is usually a <a href="%7b%7b%22../generics/sections/generics.md#genericType%22%7d%7d">generic type</a>, meaning that it has one or several types as parameter(s).</p>
 <p>For instance, a set of strings in Java has type <code>Set&lt;String&gt;</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
@@ -2027,7 +2026,7 @@ For instance, the type <code>Set&lt;Integer&gt;</code> is valid.</p>
   The interface <code>Collection</code>
   <a class="anchor" href="#collection">#</a>
 </h3>
-<p>In Java, many ADTs and data structures extend or implement the <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>
+<p>Many Java ADTs and data structures extend or implement the <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>
 (the only exception in this chapter is <code>Map</code>).</p>
 <p>Among others, the interface <code>Collection</code> specifies the following methods (if <code>E</code> is the type of the elements in the collection):</p>
 <ul>
@@ -2035,13 +2034,17 @@ For instance, the type <code>Set&lt;Integer&gt;</code> is valid.</p>
 <li><code>boolean add(E e)</code></li>
 <li><code>boolean contains(Object o)</code></li>
 <li><code>boolean isEmpty()</code></li>
-<li><code>boolean remove(E e)</code>,</li>
+<li><code>boolean remove(E e)</code></li>
 <li>etc.</li>
 </ul>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
 Some of these methods are so-called &ldquo;optional operations&rdquo;, meaning that they may not be available for some implementations of <code>Collection</code>.</p>
 </blockquote>
+<h4 id="iteration">
+  Iteration
+  <a class="anchor" href="#iteration">#</a>
+</h4>
 <p>Like an array, a collection can be iterated over, for instance with a &ldquo;foreach&rdquo;-like loop:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (E element: myCollection){
 </span></span><span style="display:flex;"><span>      ...
@@ -2051,13 +2054,16 @@ Some of these methods are so-called &ldquo;optional operations&rdquo;, meaning t
 <p><strong><em>Warning.</em></strong>
 Some collections (e.g. some implementations of the subinterface <code>Set</code>) do <em>not</em> offer any guarantee on the order of their elements!</p>
 </blockquote>
-<h3 id="external-libraries">
+<h4 id="external-libraries">
   External libraries
   <a class="anchor" href="#external-libraries">#</a>
-</h3>
+</h4>
 <p>Some external libraries provide additional implementations of Java&rsquo;s ADTs.</p>
-<p>For instance, Java has 19 native implementations of the ADT <code>Map</code> (e.g. <code>HashMap</code>,<code>TreeMap</code>, etc.).
-But <a href="https://github.com/google/guava">Guava</a> provides additional ones, like <code>ImmutableMap</code>, <code>HashBiMap</code>, etc.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+Java has 19 native implementations of the ADT <code>Map</code> (e.g. <code>HashMap</code> or <code>TreeMap</code>).</p>
+<p><a href="https://github.com/google/guava">Guava</a> provides additional ones, like <code>ImmutableMap</code> or <code>HashBiMap</code>.</p>
+</blockquote>
 </article>
  
       
@@ -2101,9 +2107,8 @@ But <a href="https://github.com/google/guava">Guava</a> provides additional ones
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#parameterized-types">Parameterized types</a></li>
+        <li><a href="#generic-types">Generic types</a></li>
         <li><a href="#collection">The interface <code>Collection</code></a></li>
-        <li><a href="#external-libraries">External libraries</a></li>
       </ul>
     </li>
   </ul>

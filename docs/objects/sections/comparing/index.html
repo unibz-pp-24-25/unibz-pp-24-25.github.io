@@ -42,7 +42,7 @@ It lets us call the instance method regen of the class Unicorn with a Unit.">
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.60fb2941a6312c60bf3e145598e129422629fa6f2a82a9c5262f974f6ca70e8b.js" integrity="sha256-YPspQaYxLGC/PhRVmOEpQiYp&#43;m8qgqnFJi&#43;XT2ynDos=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a3085c555c12dced6198203b7268bea9de2fbce70aa87db3255013270b4db621.js" integrity="sha256-owhcVVwS3O1hmCA7cmi&#43;qd4vvOcKqH2zJVATJwtNtiE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2014,7 +2014,7 @@ This would cause a <code>ClassCastException</code> at runtime.</p>
 </blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Syntax.</em></strong> The keyword <code>instanceof</code> lets us check whether a downcast is safe
-(or alternatively the method <code>getClass()</code> of the class <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/#object"><code>Object</code></a>, illustrated <a href="#equals">below</a>).</p>
+(or alternatively the method <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/#reflection"><code>getClass()</code></a> of the class <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/tostring/#object"><code>Object</code></a>, as illustrated <a href="#equals">below</a>).</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example(continued).</em></strong>
@@ -2042,7 +2042,7 @@ Consider (a simplified version of) the class <code>City</code> that we saw <a hr
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipcode;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span> }
 </span></span></code></pre></div><p>The following outputs <code>false</code>:</p>
@@ -2059,7 +2059,7 @@ So every (user-defined of native) class inherits <code>equals</code>.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In other words, by default, this method behaves like the <code>==</code> operator.
-In order to use this method to check whether two objects are equal, it has to be <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">overriden</a>.</p>
+If we want another behavior, we need to <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">override</a> it.</p>
 <p>For instance, here is a prototypical implementation of the method <code>equals</code> within our class <code>City</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object o) {
@@ -2078,7 +2078,7 @@ In order to use this method to check whether two objects are equal, it has to be
 </blockquote>
 <p>Note in this example:</p>
 <ul>
-<li>the usage of the method <code>getClass()</code> (inherited from the class <code>Object</code>) to retrieve the classes associated with <code>o</code> and the current object,</li>
+<li>the usage of the method <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/#reflection"><code>getClass()</code></a> (inherited from the class <code>Object</code>) to retrieve the classes associated with <code>o</code> and the current object,</li>
 <li>the (safe) <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#downcast">cast</a> from <code>Object</code> to <code>City</code>, and</li>
 <li>the recursive call to <code>equals</code> (because the attribute <code>name</code> has type <code>String</code>).</li>
 </ul>

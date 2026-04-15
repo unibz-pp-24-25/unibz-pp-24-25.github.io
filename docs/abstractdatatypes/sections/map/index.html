@@ -10,23 +10,23 @@
 
 An associative array (or dictionary or map) simulates a function with finite domain.
 
-A associative array exposes at least the following methods:
+An associative array exposes at least the following methods:
 
 lookup (or get) takes a key as input, and returns the value for this key (if any).
-insert (or put) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value.
+insert (or put) inserts a pair (key, value). If an entry for this key was already present, then it overwrites its value.
 remove (or delete) deletes the entry for a given key (if any).
 
 
 Note. Associative arrays are pervasive in programming.
-Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash maps and a variety of search trees).">
+Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash tables and a variety of search trees).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
   <meta property="og:site_name" content="Programming project 2024-25">
   <meta property="og:title" content="Associative array">
   <meta property="og:description" content="Associative array # An associative array (or dictionary or map) simulates a function with finite domain.
-A associative array exposes at least the following methods:
-lookup (or get) takes a key as input, and returns the value for this key (if any). insert (or put) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value. remove (or delete) deletes the entry for a given key (if any). Note. Associative arrays are pervasive in programming. Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash maps and a variety of search trees).">
+An associative array exposes at least the following methods:
+lookup (or get) takes a key as input, and returns the value for this key (if any). insert (or put) inserts a pair (key, value). If an entry for this key was already present, then it overwrites its value. remove (or delete) deletes the entry for a given key (if any). Note. Associative arrays are pervasive in programming. Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash tables and a variety of search trees).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -36,7 +36,7 @@ lookup (or get) takes a key as input, and returns the value for this key (if any
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.a3085c555c12dced6198203b7268bea9de2fbce70aa87db3255013270b4db621.js" integrity="sha256-owhcVVwS3O1hmCA7cmi&#43;qd4vvOcKqH2zJVATJwtNtiE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.41321142aa1a5472a2e86952938febaf1e5b635a5761576788bb2fed4234678b.js" integrity="sha256-QTIRQqoaVHKi6GlSk4/rrx5bY1pXYVdniLsv7UI0Z4s=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1980,17 +1980,17 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#associative-array">#</a>
 </h1>
 <blockquote class="book-hint warning">
-<p>An <strong>associative array</strong> (or <strong>dictionary</strong> or <strong>map</strong>) simulates a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a> with <em>finite</em> domain.</p>
+<p>An <strong>associative array</strong> (or <strong>dictionary</strong> or <strong>map</strong>) simulates a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a> with finite domain.</p>
 </blockquote>
-<p>A associative array exposes at least the following methods:</p>
+<p>An associative array exposes at least the following methods:</p>
 <ul>
 <li><strong>lookup</strong> (or <strong>get</strong>) takes a key as input, and returns the value for this key (if any).</li>
-<li><strong>insert</strong> (or <strong>put</strong>) inserts a pair <em>(key, value)</em>. If an entry for this key was already present, then overwrites its value.</li>
+<li><strong>insert</strong> (or <strong>put</strong>) inserts a pair <em>(key, value)</em>. If an entry for this key was already present, then it overwrites its value.</li>
 <li><strong>remove</strong> (or <strong>delete</strong>) deletes the entry for a given key (if any).</li>
 </ul>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong> Associative arrays are pervasive in programming.
-Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably hash maps and a variety of search trees).</p>
+Many data structures have been designed over the years whose main purpose is to implement associative arrays efficiently (notably <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">hash tables</a> and a variety of search trees).</p>
 </blockquote>
 <h2 id="java">
   in Java
@@ -1999,9 +1999,9 @@ Many data structures have been designed over the years whose main purpose is to 
 <p>Java provides an interface <code>Map</code> with 19 native implementations (i.e. 19 different <em>classes</em> that implement this interface).
 The most commonly used is <code>HashMap</code>.</p>
 <blockquote class="book-hint info">
-<p><strong><em>Note.</em></strong> The interface <code>Map</code> does <em>not</em> extend the interface <code>Collection</code>.</p>
+<p><strong><em>Note.</em></strong> In contrast to <code>List</code> and <code>Set</code>, the interface <code>Map</code> does <em>not</em> extend the interface <code>Collection</code>.</p>
 </blockquote>
-<p><code>Map</code> is a parameterized type with <em>two</em> parameters: one for the type of its keys, and one for the type of its values.
+<p><code>Map</code> is a generic type with <em>two</em> parameters: one for the type of its keys, and one for the type of its values.
 For instance, a map from integers to strings has type <code>Map&lt;Integer, String&gt;</code>.</p>
 <h3 id="syntax">
   Syntax

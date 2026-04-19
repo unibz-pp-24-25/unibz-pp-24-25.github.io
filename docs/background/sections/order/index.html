@@ -70,7 +70,7 @@ a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \ti
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/background/sections/order/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.41321142aa1a5472a2e86952938febaf1e5b635a5761576788bb2fed4234678b.js" integrity="sha256-QTIRQqoaVHKi6GlSk4/rrx5bY1pXYVdniLsv7UI0Z4s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fff339312809fb702ac38e5b0da3254548f78671bc724de32a624da5cc4c5d83.js" integrity="sha256-//M5MSgJ&#43;3Aqw45bDaMlRUj3hnG8ck3jKmJNpcxMXYM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2151,11 +2151,11 @@ It is an <strong>order</strong> if it is also antisymmetric.</p>
 <p><strong><em>Definition.</em></strong>
 A preorder $\preceq$ over $S$ is <strong>total</strong> if every two elements of $S$ are comparable, i.e. if</p>
 <p>$ \qquad \qquad x \preceq y$ or $y \preceq x$ for all $x, y \in S$.</p>
-<p>A preoder that is not total is called <strong>partial</strong>.</p>
+<p>A preorder that is not total is called <strong>partial</strong>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-The natural order $\le$ over $\mathbb{R}$ is a total order (i.e. total, reflexive, transitive and antisymmetric).</p>
+The natural order $\le$ over $\mathbb{R}$ is a total order (i.e. total, transitive and antisymmetric).</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
@@ -2175,7 +2175,7 @@ The term &ldquo;order&rdquo; is often used to refer to a <em>total</em> order.</
 Let $P$ be the set of people, and let $\preceq_{\text{age}}$ be the relation defined over $P$ by</p>
 <p>$\qquad \qquad p_1 \preceq_{\text{age}} p_2$ iff $p_1$ is younger than (or as old as) $p_2$.</p>
 <p>Then $\preceq_{\text{age}}$ is a total preorder
-(i.e. total, reflexive and transitive), but it is not an order (i.e. not antisymmetric), because two persons can have the same age.</p>
+(i.e. total and transitive), but it is not an order (i.e. not antisymmetric), because two persons can have the same age.</p>
 </blockquote>
 <h3 id="lexProduct">
   Lexicographic product
@@ -2184,7 +2184,7 @@ Let $P$ be the set of people, and let $\preceq_{\text{age}}$ be the relation def
 <blockquote class="book-hint warning">
 <p><strong><em>Notation.</em></strong> If $\preceq_o$ is a preorder, let us use:</p>
 <ul>
-<li>$x \prec_o y$ as a shortcut for ($ x \preceq_o y$ and $ y \not\preceq_o x$ ),</li>
+<li>$x \prec_o y$ as a shortcut for ($ x \preceq_o y$ and $ y \not\preceq_o x$),</li>
 <li>$x =_o y$ as a shortcut for ($x \preceq_o y$ and $y \preceq_o x$ ).</li>
 </ul>
 </blockquote>

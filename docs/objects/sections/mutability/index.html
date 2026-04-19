@@ -25,7 +25,7 @@ public class User {
       - ids: a nonempty array of user identifiers
       - names: an array of the same length as &#39;ids&#39; that contains
         user names
-  Ouput: an array of users of the same lenght as &#39;ids&#39;,
+  Ouput: an array of users of the same length as &#39;ids&#39;,
     such as the i-th user has identifier ids[i] and name names[i]
 */
 User[] createUsers(int[] ids, String[] names){
@@ -52,7 +52,7 @@ The output array contains $i$ times the same user (with the last id and name fro
   <meta property="og:title" content="Mutability">
   <meta property="og:description" content="Mutability # Illustration # Exercise The Java method createUsers below is incorrect.
 Can you see why, and how to fix this?
-public class User { int id; String name; } /* Input: - ids: a nonempty array of user identifiers - names: an array of the same length as &#39;ids&#39; that contains user names Ouput: an array of users of the same lenght as &#39;ids&#39;, such as the i-th user has identifier ids[i] and name names[i] */ User[] createUsers(int[] ids, String[] names){ User[] users = new User[names.length]; User currentUser = new User(); for(int i = 0; i &lt; ids.length; i&#43;&#43;){ currentUser.id = ids[i]; currentUser.name = names[i]; users[i] = currentUser; } return users; } Possible solution The output array contains $i$ times the same user (with the last id and name from the input arrays).">
+public class User { int id; String name; } /* Input: - ids: a nonempty array of user identifiers - names: an array of the same length as &#39;ids&#39; that contains user names Ouput: an array of users of the same length as &#39;ids&#39;, such as the i-th user has identifier ids[i] and name names[i] */ User[] createUsers(int[] ids, String[] names){ User[] users = new User[names.length]; User currentUser = new User(); for(int i = 0; i &lt; ids.length; i&#43;&#43;){ currentUser.id = ids[i]; currentUser.name = names[i]; users[i] = currentUser; } return users; } Possible solution The output array contains $i$ times the same user (with the last id and name from the input arrays).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -62,7 +62,7 @@ public class User { int id; String name; } /* Input: - ids: a nonempty array of 
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.41321142aa1a5472a2e86952938febaf1e5b635a5761576788bb2fed4234678b.js" integrity="sha256-QTIRQqoaVHKi6GlSk4/rrx5bY1pXYVdniLsv7UI0Z4s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fff339312809fb702ac38e5b0da3254548f78671bc724de32a624da5cc4c5d83.js" integrity="sha256-//M5MSgJ&#43;3Aqw45bDaMlRUj3hnG8ck3jKmJNpcxMXYM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1989,7 +1989,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#drawbacks">Drawbacks</a></li>
       </ul>
     </li>
-    <li><a href="#terminology">Terminology</a></li>
+    <li><a href="#polysemy">Polysemy</a></li>
     <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#final"><code>final</code></a></li>
@@ -2031,7 +2031,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">      - ids: a nonempty array of user identifiers
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">      - names: an array of the same length as &#39;ids&#39; that contains
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">        user names
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Ouput: an array of users of the same lenght as &#39;ids&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Ouput: an array of users of the same length as &#39;ids&#39;,
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    such as the i-th user has identifier ids[i] and name names[i]
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names){
@@ -2117,26 +2117,33 @@ Some programming language (like Haskell or Rust), enforce (a form of) immutabili
 <ul>
 <li><strong><em>Performance:</em></strong> on a large scale (e.g. thousands of objects), reusing existing object may be more efficient that creating (fresh) immutable ones.</li>
 </ul>
-<h2 id="terminology">
-  Terminology
-  <a class="anchor" href="#terminology">#</a>
+<h2 id="polysemy">
+  Polysemy
+  <a class="anchor" href="#polysemy">#</a>
 </h2>
-<p>The term &ldquo;immutable object&rdquo; (or &ldquo;immutable class&rdquo;) is used with slightly different meanings.
+<p>The precise meaning of &ldquo;immutable object&rdquo; (or &ldquo;immutable class&rdquo;) may vary.<br>
 In particular:</p>
 <ul>
 <li>a weaker notion of immutability only requires the <em>attributes</em> of an object to be non-modifiable,</li>
 <li>a stronger notion also requires the <em>objects that are referred to</em> (transitively) to be non-modifiable.</li>
 </ul>
-<p>By convention, we will use in what follows the term &ldquo;final&rdquo; for the weaker requirement,
-and &ldquo;immutable&rdquo; for the stronger requirement.
+<blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong>
+As a convention, we will use &ldquo;final&rdquo; for the weaker requirement,
+and &ldquo;immutable&rdquo; for the stronger requirement.<br>
 More precisely:</p>
 <blockquote class="book-hint warning">
-<p><strong><em>Definition.</em></strong>
+  <p><strong><em>Definition.</em></strong>
 An object is <strong>final</strong> if its attributes cannot be modified after the object&rsquo;s creation.</p>
 </blockquote>
 <blockquote class="book-hint warning">
-<p><strong><em>Definition.</em></strong>
-An object is <strong>immutable</strong> if it is final and the other objects that it references are immutable.</p>
+  <p><strong><em>Definition.</em></strong>
+An object is <strong>immutable</strong> if:</p>
+<ul>
+<li>it is final, and</li>
+<li>the other objects that it references are <em>immutable</em>.</li>
+</ul>
+</blockquote>
 </blockquote>
 <h2 id="in-java">
   in Java
@@ -2403,7 +2410,7 @@ For instance, <code>AtomicInteger</code> provides a method equivalent to <code>i
         <li><a href="#drawbacks">Drawbacks</a></li>
       </ul>
     </li>
-    <li><a href="#terminology">Terminology</a></li>
+    <li><a href="#polysemy">Polysemy</a></li>
     <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#final"><code>final</code></a></li>

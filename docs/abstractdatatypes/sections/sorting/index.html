@@ -37,7 +37,7 @@ Observation. Some data types have several natural sorting criteria. For instance
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.fff339312809fb702ac38e5b0da3254548f78671bc724de32a624da5cc4c5d83.js" integrity="sha256-//M5MSgJ&#43;3Aqw45bDaMlRUj3hnG8ck3jKmJNpcxMXYM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1bd547a4509f43883a031effdd5e172a1926964816a9db0d63dcf37e2dfce63f.js" integrity="sha256-G9VHpFCfQ4g6Ax7/3V4XKhkmlkgWqdsNY9zzfi385j8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2113,7 +2113,7 @@ And let us sort the elements of this array by health.</p>
 </h3>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
-A sorting algorithm is <strong>in place</strong> if it does not use additional data structures.</p>
+A sorting algorithm is <strong>in place</strong> if it does not use additional data structures (precisely, if it only requires a <em>fixed</em> amount of extra memory).</p>
 </blockquote>
 <h2 id="in-java">
   in Java
@@ -2139,7 +2139,7 @@ We can create a class <code>City</code> that implements <code>Comparable&lt;City
 </span></span></code></pre></div></blockquote>
 <p>The interface <code>Comparable&lt;T&gt;</code> specifies a single method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span> (T otherObject);
-</span></span></code></pre></div><p>This method should define a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#preorder">total preorder</a> $\preceq$ over instances of <code>T</code>, as follows.</p>
+</span></span></code></pre></div><p>This method should define a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#preorder">total preorder</a> $\preceq_o$ over instances of <code>T</code>, as follows.</p>
 <p>Let $o_1$ be the current object (i.e. the instance used to call the method), and let $o_2$ be the other object (i.e. the argument of the method <code>compareTo</code>).
 Then this method should return:</p>
 <ul>
@@ -2227,7 +2227,7 @@ We highlight here a few of them.</p>
   Sorting an array
   <a class="anchor" href="#sortArray">#</a>
 </h4>
-<p>For an array of type <code>T[]</code>, the static method <code>Arrays.sort(T[] array)</code> can be called as follows:</p>
+<p>The <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/">static</a> method <code>Arrays.sort</code> sorts an array.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> integers <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> integer<span style="color:#f92672">[]</span>{2,1,3,2};

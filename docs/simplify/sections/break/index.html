@@ -31,9 +31,10 @@ without break statement.
 boolean check(List&lt;List&lt;Integer&gt;&gt; lists) {
 
     boolean flag1 = true;
-    boolean flag2 = false;
+    boolean flag2;
 
     for (List&lt;Integer&gt; list : lists) {
+        flag2 = false;
         for (int value : list) {
             if (value &gt; 20) {
                 flag2 = true;
@@ -59,7 +60,7 @@ With an auxiliary method:">
   <meta property="og:description" content="Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
 This can usually be avoided:
 using return statements (possibly with auxiliary functions), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:
-without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (int value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; } Solution 1 With an auxiliary method:">
+without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2; for (List&lt;Integer&gt; list : lists) { flag2 = false; for (int value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; } Solution 1 With an auxiliary method:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -69,7 +70,7 @@ without boolean flag and without break statement. /** * Returns true iff each of
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/simplify/sections/break/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1bd547a4509f43883a031effdd5e172a1926964816a9db0d63dcf37e2dfce63f.js" integrity="sha256-G9VHpFCfQ4g6Ax7/3V4XKhkmlkgWqdsNY9zzfi385j8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3f5e1881157fbc1f486fbfdd589a18cfe8071d1a2fce5b6a41a5609a15472dab.js" integrity="sha256-P14YgRV/vB9Ib7/dWJoYz&#43;gHHRovzltqQaVgmhVHLas=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2030,9 +2031,10 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">check</span>(List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> lists) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> flag1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> flag2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> flag2;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list : lists) {
+</span></span><span style="display:flex;"><span>        flag2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> value : list) {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (value <span style="color:#f92672">&gt;</span> 20) {
 </span></span><span style="display:flex;"><span>                flag2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;

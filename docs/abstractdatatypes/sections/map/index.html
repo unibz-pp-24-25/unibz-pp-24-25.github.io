@@ -36,7 +36,7 @@ lookup (or get) takes a key as input, and returns the value for this key (if any
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.3f5e1881157fbc1f486fbfdd589a18cfe8071d1a2fce5b6a41a5609a15472dab.js" integrity="sha256-P14YgRV/vB9Ib7/dWJoYz&#43;gHHRovzltqQaVgmhVHLas=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.07a570f326d406aa193b6a9bf382f07d8c82f08e094028a8e4151f644489effb.js" integrity="sha256-B6Vw8ybUBqoZO2qb84LwfYyC8I4JQCio5BUfZESJ7/s=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2097,7 +2097,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates a &#34;wrapper&#34; Set around the map.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// No data is duplicated.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Each element of this set has type Entry&lt;Integer,City&gt;</span>
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Entry<span style="color:#f92672">&lt;</span>Integer,City<span style="color:#f92672">&gt;&gt;</span> entries <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">entrySet</span>();
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Entry<span style="color:#f92672">&lt;</span>Integer, City<span style="color:#f92672">&gt;&gt;</span> entries <span style="color:#f92672">=</span> zipCodeToCity.<span style="color:#a6e22e">entrySet</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Iterates over entries</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Entry<span style="color:#f92672">&lt;</span>Integer, City<span style="color:#f92672">&gt;</span> entry : entries){

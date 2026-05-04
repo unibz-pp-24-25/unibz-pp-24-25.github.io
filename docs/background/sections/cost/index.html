@@ -45,7 +45,7 @@ the number of entries for array, the number of nodes for tree, etc. Time or memo
 <link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/background/sections/cost/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.07a570f326d406aa193b6a9bf382f07d8c82f08e094028a8e4151f644489effb.js" integrity="sha256-B6Vw8ybUBqoZO2qb84LwfYyC8I4JQCio5BUfZESJ7/s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9de4d52a0e12a305e6611ed847595d33edda7aba2b959c0f0bb19cbf1748c4f8.js" integrity="sha256-neTVKg4SowXmYR7YR1ldM&#43;3aerorlZwPC7GcvxdIxPg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2119,7 +2119,7 @@ The following are linear functions:</p>
   Comparing cost functions
   <a class="anchor" href="#comparing-cost-functions">#</a>
 </h3>
-<p>Two cost functions $f$ and $g$ are said to be <strong>asymptotically equivalent</strong> if they intuitively have the same growth.</p>
+<p>Two cost functions $f$ and $g$ are said to be <strong>asymptotically equivalent</strong> if they intuitively have the same growth, modulo fixed costs.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
 <ul>
@@ -2186,7 +2186,7 @@ let $g(n) = n$.</p>
 <p>Then</p>
 <ul>
 <li>$\lim_{n \to \infty} h(n) = \lim_{n \to \infty} \log_2(n) = \infty$, and</li>
-<li>$f(n) = n \cdot \log_2 n = g(n) h(n)$,</li>
+<li>$f(n) = n \cdot \log_2 n = g(n) h(n)$.</li>
 </ul>
 <p>Therefore $f$ outgrows $g$.</p>
 </blockquote>
@@ -2216,7 +2216,7 @@ Instead, the definition of $f$ is used (typically with $n$ as variable).</p>
 <p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>if $f(n) = n$, then the class $\Theta(f)$ is usually denoted with $\Theta(n)$,</li>
-<li>if $f(n) = n^2$, then the class $\Theta(f)$ is usually denoted with $\Theta(n^2)$,</li>
+<li>if $g(n) = n^2$, then the class $\Theta(g)$ is usually denoted with $\Theta(n^2)$,</li>
 <li>etc.</li>
 </ul>
 </blockquote>
@@ -2283,7 +2283,7 @@ If $f(n)$ is a sum of terms (e.g. a polynomial), then it belongs to the class th
 <ul>
 <li>$f(n) = 2n^2 + 3n + 20$ is in $\Theta(2n^2) = \Theta(n^2)$</li>
 <li>$f(n) = \frac{3}{2}n^3 + 2n^2 + 3n + 20$ is in $\Theta(\frac{3}{2}n^3) = \Theta(n^3)$</li>
-<li>$f(n) = 2 n\log(n) + 3n + \sqrt{n}$ is in $\Theta(2 n \log n) = \Theta(n \log n)$</li>
+<li>$f(n) = 2 n\log_2(n) + 3n + \sqrt{n}$ is in $\Theta(2 n \log_2 n) = \Theta(n \log n)$</li>
 </ul>
 </blockquote>
 <h3 id="big-o">
@@ -2298,6 +2298,7 @@ $O(f)$ denotes the union of all classes of functions that are at most as expensi
 <p><strong><em>Example.</em></strong>
 $f(n) = 3n + 5$ is in $\Theta(n)$, therefore the following also hold:</p>
 <ul>
+<li>$f$ is in $O(n)$</li>
 <li>$f$ is in $O(n^2)$</li>
 <li>$f$ is in $O(n^2 \log n)$</li>
 <li>$f$ is in $O(n^{2.5})$</li>
